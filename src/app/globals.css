@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-dm-serif);
+
+  /* Colors */
+  --color-navy-50: #f8fafc;
+  --color-navy-100: #f1f5f9;
+  --color-navy-200: #e2e8f0;
+  --color-navy-300: #cbd5e1;
+  --color-navy-400: #94a3b8;
+  --color-navy-500: #64748b;
+  --color-navy-600: #475569;
+  --color-navy-700: #334155;
+  --color-navy-800: #1e293b;
+  --color-navy-900: #0F172A;
+  --color-navy-950: #020617;
+
+  --color-purple-50: #f5f3ff;
+  --color-purple-100: #ede9fe;
+  --color-purple-200: #ddd6fe;
+  --color-purple-300: #c4b5fd;
+  --color-purple-400: #a78bfa;
+  --color-purple-500: #8b5cf6;
+  --color-purple-600: #7c3aed;
+  --color-purple-700: #6d28d9;
+  --color-purple-800: #5b21b6;
+  --color-purple-900: #4c1d95;
+  --color-brand-purple: #6C63FF; /* The specific accent color requested */
+  --color-brand-purple-light: #A78BFA;
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-navy-900;
+  }
+}
+
+/* Utilities */
+@utility container-custom {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}

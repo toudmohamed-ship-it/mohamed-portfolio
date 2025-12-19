@@ -1,0 +1,42 @@
+export const BLOG_POSTS = [
+    {
+        slug: "local-seo-morocco",
+        title: "How to Improve Local SEO in Morocco",
+        excerpt: "A complete guide to ranking for 'Near Me' searches in the Moroccan market.",
+        date: "Dec 12, 2024",
+        category: "Local SEO",
+        content: "Content placeholder...",
+    },
+    {
+        slug: "technical-seo-checklist-2025",
+        title: "The Ultimate Technical SEO Checklist for 2025",
+        excerpt: "Don't let technical errors kill your rankings. Here is what you need to check.",
+        date: "Dec 10, 2024",
+        category: "Technical SEO",
+        content: "Content placeholder...",
+    },
+    {
+        slug: "why-websites-fail",
+        title: "Why Most Websites Fail to Rank on Google (And How to Fix It)",
+        excerpt: "It's not just about keywords. It's about authority, user experience, and intent.",
+        date: "Dec 05, 2024",
+        category: "Strategy",
+        content: "Content placeholder...",
+    },
+    {
+        slug: "ga4-event-tracking",
+        title: "A Beginner's Guide to GA4 Event Tracking",
+        excerpt: "Stop relying on pageviews. Learn how to track what matters: clicks, scrolls, and conversions.",
+        date: "Nov 28, 2024",
+        category: "Analytics",
+        content: "Content placeholder...",
+    },
+    {
+        slug: "keyword-research-process",
+        title: "My 4-Step Keyword Research Process",
+        excerpt: "How I find low-competition, high-value keywords for any niche.",
+        date: "Nov 15, 2024",
+        category: "Keyword Research",
+        content: "Content placeholder...",
+    },
+];
