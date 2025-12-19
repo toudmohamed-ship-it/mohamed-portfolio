@@ -71,8 +71,13 @@ export const metadata: Metadata = {
     canonical: 'https://www.mohamedtoudghi.com',
   },
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png', type: 'image/png' },
+    ],
   },
 };
 

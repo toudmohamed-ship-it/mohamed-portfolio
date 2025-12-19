@@ -39,16 +39,9 @@ export default function Navbar() {
                         transition={{ duration: 0.5 }}
                     >
                         <img
-                            src="/logo.png"
+                            src="/logo.svg"
                             alt="Mohamed Toudghi Logo"
-                            className="h-24 w-auto object-contain"
-                            style={{
-                                maskImage: 'url(/logo.png)',
-                                maskSize: 'contain',
-                                maskRepeat: 'no-repeat',
-                                // @ts-ignore - Webkit property
-                                WebkitMaskImage: 'url(/logo.png)',
-                            }}
+                            className="h-16 md:h-20 w-auto object-contain"
                         />
                     </motion.div>
                 </Link>

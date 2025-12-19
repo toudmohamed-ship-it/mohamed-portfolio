@@ -1,0 +1,13 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy Blue Elements (MT) -->
+  <path d="M20 60V20L40 45L60 20V60" stroke="#0F172A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 25H120" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="112" cy="25" r="3" stroke="#0F172A" stroke-width="1.5" />
+  <path d="M115 28L118 31" stroke="#0F172A" stroke-width="2" stroke-linecap="round" />
+  
+  <path d="M90 60V25" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Purple Growth Arrow -->
+  <path d="M100 55L125 35L150 45L180 15" stroke="#A855F7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M165 15H180V30" stroke="#A855F7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
