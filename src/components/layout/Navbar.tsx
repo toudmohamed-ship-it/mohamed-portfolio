@@ -24,15 +24,15 @@ export default function Navbar() {
     return (
         <header
             className={clsx(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                isScrolled
-                    ? "bg-white/80 backdrop-blur-md shadow-sm py-4"
+                "fixed top-0 left-0 right-0 z-[60] transition-all duration-300",
+                (isScrolled || isOpen)
+                    ? "bg-white shadow-sm py-4"
                     : "bg-transparent py-6"
             )}
         >
             <div className="container-custom flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="z-50">
+                <Link href="/" className="z-[70]">
                     <span className="font-serif text-2xl font-bold text-navy-900 tracking-tight">
                         M.Toudghi
                     </span>
@@ -52,12 +52,11 @@ export default function Navbar() {
                             {link.label}
                         </Link>
                     ))}
-                    {/* CTA removed for cleaner look as per request */}
                 </nav>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden z-50 p-2 text-navy-900"
+                    className="md:hidden z-[70] p-2 text-navy-900"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
@@ -68,22 +67,33 @@ export default function Navbar() {
                 <AnimatePresence>
                     {isOpen && (
                         <motion.div
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-white z-[65] flex flex-col items-center justify-center space-y-8 md:hidden h-screen w-screen"
                         >
-                            {NAV_LINKS.map((link) => (
-                                <Link
+                            {NAV_LINKS.map((link, index) => (
+                                <motion.div
                                     key={link.href}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="font-serif text-2xl text-navy-900 hover:text-brand-purple transition-colors"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1 }}
                                 >
-                                    {link.label}
-                                </Link>
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="font-serif text-3xl text-navy-900 hover:text-brand-purple transition-colors"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </motion.div>
                             ))}
-                            <div className="pt-8">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.4 }}
+                                className="pt-8"
+                            >
                                 <Link
                                     href="/contact"
                                     onClick={() => setIsOpen(false)}
@@ -91,7 +101,7 @@ export default function Navbar() {
                                 >
                                     Let's Talk
                                 </Link>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     )}
                 </AnimatePresence>

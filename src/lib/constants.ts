@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
     title: "SEO & Digital Marketing Specialist",
     email: "toudmohamed@gmail.com",
     phone: "+212 618 623 792",
-    linkedin: "https://www.linkedin.com/in/mohamed-toudghi/",
+    linkedin: "https://www.linkedin.com/in/mohamed-toudghi-53a43825b/",
     whatsapp: "https://wa.me/212618623792"
 };
 
