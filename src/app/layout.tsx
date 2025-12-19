@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant in Morocco",
     template: "%s | Mohamed Toudghi"
   },
-  description: "Expert SEO Specialist and Digital Marketing Consultant based in Morocco. Specializing in Technical SEO, Local SEO, Analytics, and Website Optimization. Proven results across international clients.",
+  description: "Expert SEO Specialist & Digital Marketing Consultant in Morocco. Specializing in Technical SEO, Local SEO, and Analytics to drive growth for your business.",
   keywords: [
     "SEO Specialist Morocco",
     "Digital Marketing Consultant",

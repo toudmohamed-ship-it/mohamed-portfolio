@@ -7,7 +7,7 @@ import { CASE_STUDIES } from "@/lib/data";
 
 export const metadata = {
     title: "Portfolio | Proven SEO Results & Case Studies",
-    description: "Real SEO results and case studies across Technical SEO, Local SEO, content strategy, and performance analytics. Proven growth for international businesses and service-based companies.",
+    description: "Explore proven SEO results and case studies across Technical SEO, Local SEO, and analytics. Real growth stories for international businesses.",
     keywords: ["SEO Case Studies", "SEO Portfolio", "Proven SEO Results", "Technical SEO Examples", "Local SEO Success Stories"],
     openGraph: {
         title: "SEO Portfolio & Case Studies | Mohamed Toudghi",

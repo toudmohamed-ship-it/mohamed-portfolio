@@ -4,7 +4,7 @@ import { Download, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
     title: "About | SEO Expert & Data-Driven Digital Marketer",
-    description: "Learn about Mohamed Toudghi's journey from Al Akhawayn University to becoming a leading SEO Specialist. Expert in Technical SEO, Analytics, and Digital Marketing with proven international results.",
+    description: "Discover Mohamed Toudghi's journey to becoming a leading SEO Specialist. Expert in Technical SEO, Analytics, and Digital Marketing with proven results.",
     keywords: ["About Mohamed Toudghi", "SEO Expert Background", "Digital Marketing Experience", "Al Akhawayn University", "SEO Certifications"],
     openGraph: {
         title: "About Mohamed Toudghi | SEO Expert Journey",

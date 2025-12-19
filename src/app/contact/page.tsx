@@ -5,7 +5,7 @@ import { PERSONAL_INFO } from "@/lib/constants";
 
 export const metadata = {
     title: "Contact | Get a Free SEO Consultation",
-    description: "Get in touch for SEO audits, digital marketing consulting, or web optimization inquiries. Free 15-minute discovery call available. Based in Morocco, serving international clients.",
+    description: "Get in touch for expert SEO audits and digital marketing consulting. Free 15-minute discovery calls available for international clients.",
     keywords: ["Contact SEO Specialist", "Free SEO Consultation", "SEO Audit Request", "Digital Marketing Inquiry", "Hire SEO Expert Morocco"],
     openGraph: {
         title: "Contact Mohamed Toudghi | Free SEO Consultation",

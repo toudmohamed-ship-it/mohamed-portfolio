@@ -6,11 +6,11 @@ import { Search, Globe, MapPin, BarChart2, Code2, LayoutDashboard, Database, Tar
 
 export const metadata = {
     title: "SEO Services | Technical Audits, Local SEO & Analytics Setup",
-    description: "Professional SEO and digital marketing services including Technical SEO Audits, Local SEO optimization, Google Analytics setup, and Website Optimization. Customized solutions for business growth.",
+    description: "Explore proven SEO results and case studies across Technical SEO, Local SEO, and analytics. Real growth stories for international businesses.",
     keywords: ["SEO Services Morocco", "Technical SEO Audit", "Local SEO Services", "Google Analytics Setup", "Website Optimization Services", "SEO Consultant"],
     openGraph: {
         title: "SEO & Digital Marketing Services | Mohamed Toudghi",
-        description: "End-to-end SEO and digital growth solutions: Technical Audits, Local SEO, Analytics Setup, and Website Optimization.",
+        description: "Get in touch for expert SEO audits and digital marketing consulting. Free 15-minute discovery calls available for international clients.",
         images: ['/og-image.jpg'],
     },
     alternates: {
