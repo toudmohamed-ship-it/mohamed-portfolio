@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: "/private/",
         },
-        sitemap: "https://mohamed-toudghi.com/sitemap.xml", // Placeholder domain
+        sitemap: "https://mohamedtoudghi.com/sitemap.xml", // Placeholder domain
     };
 }
