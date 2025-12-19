@@ -41,7 +41,7 @@ export default function Navbar() {
                         <img
                             src="/logo.png"
                             alt="Mohamed Toudghi Logo"
-                            className="h-10 w-auto object-contain"
+                            className="h-12 w-auto object-contain mix-blend-multiply"
                         />
                     </motion.div>
                 </Link>
