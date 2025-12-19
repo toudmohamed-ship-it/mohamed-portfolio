@@ -10,10 +10,10 @@ export const NAV_LINKS = [
 export const PERSONAL_INFO = {
     name: "Mohamed Toudghi",
     title: "SEO & Digital Marketing Specialist",
-    email: "m.toudghi@aui.ma",
-    phone: "+212 600 000 000", // Placeholder, user to update if needed or remove
-    linkedin: "https://www.linkedin.com/in/mohamed-toudghi/", // Placeholder link format
-    whatsapp: "https://wa.me/212600000000", // Placeholder
+    email: "toudmohamed@gmail.com",
+    phone: "+212 618 623 792",
+    linkedin: "https://www.linkedin.com/in/mohamed-toudghi/",
+    whatsapp: "https://wa.me/212618623792"
 };
 
 export const SOCIAL_LINKS = [

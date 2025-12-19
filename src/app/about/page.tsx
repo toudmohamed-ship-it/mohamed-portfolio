@@ -79,10 +79,12 @@ export default function AboutPage() {
                         </div>
 
                         <div className="pt-6">
-                            <Button>
-                                <Download className="mr-2 h-4 w-4" />
-                                Download Resume
-                            </Button>
+                            <a href="/resume.pdf" download="Mohamed_Toudghi_Resume.pdf">
+                                <Button>
+                                    <Download className="mr-2 h-4 w-4" />
+                                    Download Resume
+                                </Button>
+                            </a>
                         </div>
                     </div>
 
