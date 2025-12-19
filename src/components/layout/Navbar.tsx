@@ -32,10 +32,18 @@ export default function Navbar() {
         >
             <div className="container-custom flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="z-[70]">
-                    <span className="font-serif text-2xl font-bold text-navy-900 tracking-tight">
-                        M.Toudghi
-                    </span>
+                <Link href="/" className="z-[70] flex items-center gap-2">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <img
+                            src="/logo.png"
+                            alt="Mohamed Toudghi Logo"
+                            className="h-10 w-auto object-contain"
+                        />
+                    </motion.div>
                 </Link>
 
                 {/* Desktop Nav */}

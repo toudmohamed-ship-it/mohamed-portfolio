@@ -70,6 +70,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://mohamedtoudghi.com',
   },
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
 };
 
 import Navbar from "@/components/layout/Navbar";
