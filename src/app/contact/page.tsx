@@ -4,8 +4,17 @@ import { Mail, Linkedin, Phone } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 
 export const metadata = {
-    title: "Contact Me | Mohamed Toudghi",
-    description: "Get in touch for SEO audits, digital marketing consulting, or web optimization inquiries.",
+    title: "Contact | Get a Free SEO Consultation",
+    description: "Get in touch for SEO audits, digital marketing consulting, or web optimization inquiries. Free 15-minute discovery call available. Based in Morocco, serving international clients.",
+    keywords: ["Contact SEO Specialist", "Free SEO Consultation", "SEO Audit Request", "Digital Marketing Inquiry", "Hire SEO Expert Morocco"],
+    openGraph: {
+        title: "Contact Mohamed Toudghi | Free SEO Consultation",
+        description: "Ready to improve your website's SEO? Get in touch for a free consultation. Expert SEO services for businesses worldwide.",
+        images: ['/og-image.jpg'],
+    },
+    alternates: {
+        canonical: 'https://mohamed-toudghi.com/contact',
+    },
 };
 
 export default function ContactPage() {

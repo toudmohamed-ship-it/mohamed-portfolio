@@ -3,8 +3,17 @@ import Button from "@/components/ui/Button";
 import { Download, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-    title: "About Mohamed Toudghi | SEO Specialist",
-    description: "Learn about my journey from AUI to becoming a leading Digital Marketing & SEO Specialist.",
+    title: "About | SEO Expert & Data-Driven Digital Marketer",
+    description: "Learn about Mohamed Toudghi's journey from Al Akhawayn University to becoming a leading SEO Specialist. Expert in Technical SEO, Analytics, and Digital Marketing with proven international results.",
+    keywords: ["About Mohamed Toudghi", "SEO Expert Background", "Digital Marketing Experience", "Al Akhawayn University", "SEO Certifications"],
+    openGraph: {
+        title: "About Mohamed Toudghi | SEO Expert Journey",
+        description: "Learn about my journey from AUI to becoming a leading SEO Specialist with expertise in Technical SEO, Analytics, and Digital Marketing.",
+        images: ['/og-image.jpg'],
+    },
+    alternates: {
+        canonical: 'https://mohamed-toudghi.com/about',
+    },
 };
 
 export default function AboutPage() {

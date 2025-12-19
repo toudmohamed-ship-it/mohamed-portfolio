@@ -5,8 +5,17 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { Search, Globe, MapPin, BarChart2, Code2, LayoutDashboard, Database, Target, LineChart } from "lucide-react";
 
 export const metadata = {
-    title: "Services | Mohamed Toudghi",
-    description: "End-to-end SEO and digital growth solutions designed to improve visibility, performance, and conversions.",
+    title: "SEO Services | Technical Audits, Local SEO & Analytics Setup",
+    description: "Professional SEO and digital marketing services including Technical SEO Audits, Local SEO optimization, Google Analytics setup, and Website Optimization. Customized solutions for business growth.",
+    keywords: ["SEO Services Morocco", "Technical SEO Audit", "Local SEO Services", "Google Analytics Setup", "Website Optimization Services", "SEO Consultant"],
+    openGraph: {
+        title: "SEO & Digital Marketing Services | Mohamed Toudghi",
+        description: "End-to-end SEO and digital growth solutions: Technical Audits, Local SEO, Analytics Setup, and Website Optimization.",
+        images: ['/og-image.jpg'],
+    },
+    alternates: {
+        canonical: 'https://mohamed-toudghi.com/services',
+    },
 };
 
 const SERVICES_DATA = [

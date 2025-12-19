@@ -6,8 +6,17 @@ import { ArrowRight } from "lucide-react";
 import { CASE_STUDIES } from "@/lib/data";
 
 export const metadata = {
-    title: "Portfolio | Mohamed Toudghi",
-    description: "Real results for businesses across technical SEO, local SEO, content strategy, and performance analytics.",
+    title: "Portfolio | Proven SEO Results & Case Studies",
+    description: "Real SEO results and case studies across Technical SEO, Local SEO, content strategy, and performance analytics. Proven growth for international businesses and service-based companies.",
+    keywords: ["SEO Case Studies", "SEO Portfolio", "Proven SEO Results", "Technical SEO Examples", "Local SEO Success Stories"],
+    openGraph: {
+        title: "SEO Portfolio & Case Studies | Mohamed Toudghi",
+        description: "Proven SEO results across international clients including marketplace optimization, local service businesses, and SaaS launches.",
+        images: ['/og-image.jpg'],
+    },
+    alternates: {
+        canonical: 'https://mohamed-toudghi.com/portfolio',
+    },
 };
 
 export default function PortfolioPage() {

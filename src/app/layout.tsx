@@ -14,8 +14,62 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Mohamed Toudghi | SEO & Digital Marketing Specialist",
-  description: "Portfolio of Mohamed Toudghi, an expert in SEO, Data Analytics, and Digital Marketing Strategy.",
+  metadataBase: new URL('https://mohamed-toudghi.com'),
+  title: {
+    default: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant in Morocco",
+    template: "%s | Mohamed Toudghi"
+  },
+  description: "Expert SEO Specialist and Digital Marketing Consultant based in Morocco. Specializing in Technical SEO, Local SEO, Analytics, and Website Optimization. Proven results across international clients.",
+  keywords: [
+    "SEO Specialist Morocco",
+    "Digital Marketing Consultant",
+    "Technical SEO Expert",
+    "Local SEO Morocco",
+    "Google Analytics Setup",
+    "Website Optimization",
+    "SEO Audit Services",
+    "Mohamed Toudghi",
+    "Conversion Rate Optimization",
+    "International SEO"
+  ],
+  authors: [{ name: "Mohamed Toudghi" }],
+  creator: "Mohamed Toudghi",
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://mohamed-toudghi.com',
+    title: 'Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant',
+    description: 'Expert SEO Specialist based in Morocco with proven results in Technical SEO, Local SEO, and Analytics. Helping businesses grow through data-driven digital marketing.',
+    siteName: 'Mohamed Toudghi Portfolio',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Mohamed Toudghi - SEO & Digital Marketing Specialist',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant',
+    description: 'Expert SEO Specialist based in Morocco. Specializing in Technical SEO, Analytics, and Website Optimization.',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://mohamed-toudghi.com',
+  },
 };
 
 import Navbar from "@/components/layout/Navbar";
