@@ -14,7 +14,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mohamedtoudghi.com'),
+  metadataBase: new URL('https://www.mohamedtoudghi.com'),
   title: {
     default: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant in Morocco",
     template: "%s | Mohamed Toudghi"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://mohamedtoudghi.com',
+    url: 'https://www.mohamedtoudghi.com',
     title: 'Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant',
     description: 'Expert SEO Specialist based in Morocco with proven results in Technical SEO, Local SEO, and Analytics. Helping businesses grow through data-driven digital marketing.',
     siteName: 'Mohamed Toudghi Portfolio',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://mohamedtoudghi.com',
+    canonical: 'https://www.mohamedtoudghi.com',
   },
   icons: {
     icon: '/icon.png',

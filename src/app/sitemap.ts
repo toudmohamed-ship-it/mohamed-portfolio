@@ -3,7 +3,7 @@ import { CASE_STUDIES } from "@/lib/data";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://mohamedtoudghi.com";
+    const baseUrl = "https://www.mohamedtoudghi.com";
 
     const staticRoutes = [
         "",

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://mohamedtoudghi.com/sitemap.xml
+Sitemap: https://www.mohamedtoudghi.com/sitemap.xml

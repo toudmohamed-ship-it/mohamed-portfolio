@@ -13,7 +13,7 @@ export const metadata = {
         images: ['/og-image.jpg'],
     },
     alternates: {
-        canonical: 'https://mohamedtoudghi.com/contact',
+        canonical: 'https://www.mohamedtoudghi.com/contact',
     },
 };
 

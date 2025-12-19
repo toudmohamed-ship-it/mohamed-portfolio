@@ -6,7 +6,7 @@ export default function SchemaMarkup() {
         "@type": "Person",
         name: PERSONAL_INFO.name,
         jobTitle: PERSONAL_INFO.title,
-        url: "https://mohamedtoudghi.com",
+        url: "https://www.mohamedtoudghi.com",
         sameAs: [
             PERSONAL_INFO.linkedin,
         ],
@@ -17,9 +17,9 @@ export default function SchemaMarkup() {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         name: "Mohamed Toudghi - SEO & Digital Marketing",
-        image: "https://mohamedtoudghi.com/og-image.jpg",
-        "@id": "https://mohamedtoudghi.com",
-        url: "https://mohamedtoudghi.com",
+        image: "https://www.mohamedtoudghi.com/og-image.jpg",
+        "@id": "https://www.mohamedtoudghi.com",
+        url: "https://www.mohamedtoudghi.com",
         telephone: PERSONAL_INFO.phone,
         address: {
             "@type": "PostalAddress",

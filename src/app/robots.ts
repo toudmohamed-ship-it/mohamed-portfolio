@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: "/private/",
         },
-        sitemap: "https://mohamedtoudghi.com/sitemap.xml",
+        sitemap: "https://www.mohamedtoudghi.com/sitemap.xml",
     };
 }
