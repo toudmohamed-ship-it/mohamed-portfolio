@@ -16,7 +16,6 @@ export default function ContactForm() {
         const formData = new FormData(form);
 
         try {
-            // TODO: Replace with your actual Formspree form ID after signup
             const response = await fetch("https://formspree.io/f/xojajakq", {
                 method: "POST",
                 body: formData,
