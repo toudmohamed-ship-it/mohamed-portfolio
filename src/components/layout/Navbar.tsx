@@ -39,9 +39,9 @@ export default function Navbar() {
                         transition={{ duration: 0.5 }}
                     >
                         <img
-                            src="/logo.svg"
+                            src="/logo.png"
                             alt="Mohamed Toudghi Logo"
-                            className="h-16 md:h-20 w-auto object-contain"
+                            className="h-16 md:h-20 w-auto object-contain mix-blend-multiply brightness-[1.05]"
                         />
                     </motion.div>
                 </Link>
