@@ -67,6 +67,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'SGUSHuPBmaMkgTXn53ifmKreVw6C7d_TcwlOQYpjBq8',
+  },
   alternates: {
     canonical: 'https://www.mohamedtoudghi.com',
   },
