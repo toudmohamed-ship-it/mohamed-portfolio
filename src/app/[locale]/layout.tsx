@@ -35,21 +35,53 @@ type Props = {
 export async function generateMetadata({ params }: Omit<Props, 'children'>): Promise<Metadata> {
   const { locale } = await params;
 
-  // Basic robust metadata (can be improved with translations later if needed)
+  const descriptions: Record<string, string> = {
+    en: "Mohamed Toudghi is an SEO Specialist & Digital Marketing Consultant based in Morocco. Expert in Technical SEO, Analytics (GA4, GTM), Local SEO, and data-driven growth strategies for businesses worldwide.",
+    fr: "Mohamed Toudghi est un spécialiste SEO et consultant en marketing digital basé au Maroc. Expert en SEO technique, Analytics (GA4, GTM), SEO local et stratégies de croissance basées sur les données.",
+    ar: "محمد تودغي متخصص في تحسين محركات البحث ومستشار تسويق رقمي من المغرب. خبير في SEO التقني، التحليلات (GA4، GTM)، SEO المحلي، واستراتيجيات النمو المبنية على البيانات."
+  };
+
+  const titles: Record<string, string> = {
+    en: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant",
+    fr: "Mohamed Toudghi | Spécialiste SEO & Consultant Marketing Digital",
+    ar: "محمد تودغي | متخصص SEO ومستشار تسويق رقمي"
+  };
+
+  const baseUrl = 'https://www.mohamedtoudghi.com';
+  const canonicalPath = locale === 'en' ? '' : `/${locale}`;
+
   return {
-    metadataBase: new URL('https://www.mohamedtoudghi.com'),
+    metadataBase: new URL(baseUrl),
     title: {
-      default: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant",
+      default: titles[locale] || titles.en,
       template: "%s | Mohamed Toudghi"
     },
-    description: "Expert SEO Specialist based in Morocco.",
+    description: descriptions[locale] || descriptions.en,
     alternates: {
+      canonical: `${baseUrl}${canonicalPath}`,
       languages: {
         'en': '/en',
         'fr': '/fr',
         'ar': '/ar',
       },
-    }
+    },
+    openGraph: {
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
+      url: `${baseUrl}${canonicalPath}`,
+      siteName: 'Mohamed Toudghi',
+      locale: locale === 'ar' ? 'ar_MA' : locale === 'fr' ? 'fr_FR' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
