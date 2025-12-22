@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
     alternates: {
       canonical: `${baseUrl}${canonicalPath}`,
       languages: {
-        'en': '/en',
+        'en': '/',
         'fr': '/fr',
         'ar': '/ar',
       },

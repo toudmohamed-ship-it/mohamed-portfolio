@@ -16,46 +16,15 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Redirect root to /en
+      // Redirect /en/* to /* (English is now at root)
       {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      },
-      // Redirect old page URLs to /en versions
-      {
-        source: '/about',
-        destination: '/en/about',
+        source: '/en',
+        destination: '/',
         permanent: true,
       },
       {
-        source: '/services',
-        destination: '/en/services',
-        permanent: true,
-      },
-      {
-        source: '/portfolio',
-        destination: '/en/portfolio',
-        permanent: true,
-      },
-      {
-        source: '/portfolio/:slug',
-        destination: '/en/portfolio/:slug',
-        permanent: true,
-      },
-      {
-        source: '/blog',
-        destination: '/en/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/:slug',
-        destination: '/en/blog/:slug',
-        permanent: true,
-      },
-      {
-        source: '/contact',
-        destination: '/en/contact',
+        source: '/en/:path*',
+        destination: '/:path*',
         permanent: true,
       },
     ];
