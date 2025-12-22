@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
         destination: '/:path*',
         permanent: true,
       },
+      {
+        source: '/portfolio/medical-spa-seo',
+        destination: '/portfolio/premium-medspa-seo-audit',
+        permanent: true,
+      },
     ];
   },
 };

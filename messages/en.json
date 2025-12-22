@@ -136,8 +136,8 @@
             }
         },
         "premium-medspa-seo-audit": {
-            "client": "Premium Medical Spa",
-            "title": "Technical SEO Audit & Local Optimization for Medical Spa",
+            "client": "Premium Medical Spa (U.S.-Based)",
+            "title": "Technical SEO Audit & Local Optimization for U.S.-Based Medical Spa",
             "summary": "Resolved critical technical SEO issues blocking Google indexation and developed comprehensive local SEO strategy.",
             "tags": "Technical SEO • Local SEO • Site Audit",
             "challenge": "A medical spa website was experiencing poor visibility despite offering premium services. Initial investigation revealed that SEO metadata (titles & descriptions) were not appearing in the HTML source due to a plugin conflict between RankMath and Yoast SEO. Additionally, canonical tags were misconfigured—some self-referenced incorrectly, while others pointed to local development domains instead of the live site. These issues prevented Google from properly crawling, indexing, and ranking the site's service pages.",
@@ -165,19 +165,6 @@
                 "0": "Improved User Engagement Time by 40%",
                 "1": "Structured Data appearance (Rich Snippets) in SERPs",
                 "2": "Better internal search functionality"
-            }
-        },
-        "medical-spa-seo": {
-            "client": "U.S.-Based Medical Spa",
-            "title": "SEO & Website Optimization for a U.S.-Based Medical Spa",
-            "summary": "Improved SEO foundations, optimized service pages, and strengthened local search visibility for a healthcare services website.",
-            "tags": "Local SEO • Content Optimization • Technical SEO",
-            "challenge": "The medical spa was struggling to rank for local service terms and faced strong competition in the area. Service pages lacked depth and optimization.",
-            "approach": "Conducted a full site audit and optimized service pages with localized keywords and schema. Enhanced Google Business Profile signals and citation consistency.",
-            "results": {
-                "0": "Increased local organic traffic by 45%",
-                "1": "Ranked in top 3 for key local service terms",
-                "2": "Significant uplift in booked appointments via organic search"
             }
         },
         "law-firm-local-seo": {

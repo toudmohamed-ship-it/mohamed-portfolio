@@ -136,8 +136,8 @@
             }
         },
         "premium-medspa-seo-audit": {
-            "client": "Spa Médical Premium",
-            "title": "Audit SEO Technique & Optimisation Locale",
+            "client": "Spa Médical Premium (Basé aux É.-U.)",
+            "title": "Audit SEO Technique & Optimisation Locale pour un Spa Médical aux États-Unis",
             "summary": "Résolution de problèmes techniques critiques bloquant l'indexation Google et élaboration d'une stratégie SEO locale complète.",
             "tags": "SEO Technique • SEO Local • Audit de Site",
             "challenge": "Un site de spa médical manquait de visibilité malgré des services premium. L'enquête a révélé que les métadonnées SEO n'apparaissaient pas dans le code HTML à cause d'un conflit de plugins (RankMath vs Yoast). De plus, les balises canoniques étaient mal configurées, pointant vers des domaines de développement locaux.",
@@ -165,19 +165,6 @@
                 "0": "Amélioration du temps d'engagement utilisateur de 40%",
                 "1": "Apparition des données structurées (Rich Snippets) dans les SERPs",
                 "2": "Meilleure fonctionnalité de recherche interne"
-            }
-        },
-        "medical-spa-seo": {
-            "client": "Spa Médical (USA)",
-            "title": "SEO & Optimisation de Site pour un Spa Médical aux US",
-            "summary": "Amélioration des fondations SEO, optimisation des pages de services et renforcement de la visibilité locale.",
-            "tags": "SEO Local • Optimisation de Contenu • SEO Technique",
-            "challenge": "Le spa avait du mal à se classer sur des termes locaux face à une forte concurrence. Les pages de services manquaient de profondeur.",
-            "approach": "Audit complet et optimisation des pages de services avec des mots-clés localisés et du schema. Renforcement du profil Google Business et de la cohérence des citations.",
-            "results": {
-                "0": "Augmentation du trafic organique local de 45%",
-                "1": "Classement dans le top 3 pour les termes de services clés",
-                "2": "Hausse significative des rendez-vous pris via la recherche organique"
             }
         },
         "law-firm-local-seo": {

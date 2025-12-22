@@ -16,9 +16,13 @@ interface Props {
 
 // Generate Static Params for all locales and slugs
 export async function generateStaticParams() {
-    return CASE_STUDIES.map((study) => ({
-        slug: study.slug,
-    }));
+    const locales = ['en', 'fr', 'ar'];
+    return locales.flatMap((locale) =>
+        CASE_STUDIES.map((study) => ({
+            locale,
+            slug: study.slug,
+        }))
+    );
 }
 
 // Dynamic Metadata

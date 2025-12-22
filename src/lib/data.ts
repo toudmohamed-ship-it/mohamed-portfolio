@@ -87,13 +87,6 @@ export const CASE_STUDIES = [
         tools: ["SEO Audit", "Content Strategy", "Internal Linking"],
     },
     {
-        slug: "medical-spa-seo",
-        imageColor: "bg-cyan-800",
-        results: ["", "", ""],
-        gallery: [],
-        tools: ["Local SEO", "Google Business Profile", "Technical SEO"],
-    },
-    {
         slug: "law-firm-local-seo",
         imageColor: "bg-slate-800",
         results: ["", "", ""],
