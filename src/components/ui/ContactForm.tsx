@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import { CheckCircle2, AlertCircle } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+    const t = useTranslations("ContactForm");
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [message, setMessage] = useState("");
 
@@ -26,22 +28,22 @@ export default function ContactForm() {
 
             if (response.ok) {
                 setStatus("success");
-                setMessage("Thank you! I'll get back to you within 24 hours.");
+                setMessage(t('messages.success'));
                 form.reset();
             } else {
                 setStatus("error");
-                setMessage("Oops! Something went wrong. Please try again or email me directly.");
+                setMessage(t('messages.error'));
             }
         } catch (error) {
             setStatus("error");
-            setMessage("Unable to send message. Please try again or contact me via email.");
+            setMessage(t('messages.generic_error'));
         }
     };
 
     return (
         <div className="bg-white border border-navy-100 p-8 md:p-10 rounded-3xl shadow-lg">
-            <h2 className="text-2xl font-serif font-bold text-navy-900 mb-2">Send a Message</h2>
-            <p className="text-navy-500 mb-8">I usually respond within 24 hours.</p>
+            <h2 className="text-2xl font-serif font-bold text-navy-900 mb-2">{t('title')}</h2>
+            <p className="text-navy-500 mb-8">{t('subtitle')}</p>
 
             {status === "success" && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
@@ -61,28 +63,28 @@ export default function ContactForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-semibold text-navy-700">
-                            Name
+                            {t('labels.name')}
                         </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             className="w-full px-4 py-3 rounded-lg bg-navy-50 border border-navy-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all"
-                            placeholder="John Doe"
+                            placeholder={t('placeholders.name')}
                             required
                             disabled={status === "loading"}
                         />
                     </div>
                     <div className="space-y-2">
                         <label htmlFor="email" className="text-sm font-semibold text-navy-700">
-                            Email
+                            {t('labels.email')}
                         </label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             className="w-full px-4 py-3 rounded-lg bg-navy-50 border border-navy-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all"
-                            placeholder="john@company.com"
+                            placeholder={t('placeholders.email')}
                             required
                             disabled={status === "loading"}
                         />
@@ -91,7 +93,7 @@ export default function ContactForm() {
 
                 <div className="space-y-2">
                     <label htmlFor="service" className="text-sm font-semibold text-navy-700">
-                        Service Needed
+                        {t('labels.service')}
                     </label>
                     <select
                         id="service"
@@ -101,25 +103,25 @@ export default function ContactForm() {
                         disabled={status === "loading"}
                     >
                         <option value="" disabled>
-                            Select a service...
+                            {t('placeholders.service')}
                         </option>
-                        <option value="seo">Technical SEO</option>
-                        <option value="marketing">Digital Marketing Strategy</option>
-                        <option value="analytics">Analytics & Tracking</option>
-                        <option value="web">Website Optimization</option>
-                        <option value="other">Other</option>
+                        <option value="seo">{t('services.seo')}</option>
+                        <option value="marketing">{t('services.marketing')}</option>
+                        <option value="analytics">{t('services.analytics')}</option>
+                        <option value="web">{t('services.web')}</option>
+                        <option value="other">{t('services.other')}</option>
                     </select>
                 </div>
 
                 <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-semibold text-navy-700">
-                        Message
+                        {t('labels.message')}
                     </label>
                     <textarea
                         id="message"
                         name="message"
                         className="w-full px-4 py-3 rounded-lg bg-navy-50 border border-navy-200 focus:border-brand-purple focus:ring-2 focus:ring-purple-100 outline-none transition-all min-h-[150px]"
-                        placeholder="Tell me about your project or goals..."
+                        placeholder={t('placeholders.message')}
                         required
                         disabled={status === "loading"}
                     ></textarea>
@@ -131,7 +133,7 @@ export default function ContactForm() {
                     className="w-full"
                     disabled={status === "loading"}
                 >
-                    {status === "loading" ? "Sending..." : "Send Message"}
+                    {status === "loading" ? t('button.loading') : t('button.idle')}
                 </Button>
             </form>
         </div>

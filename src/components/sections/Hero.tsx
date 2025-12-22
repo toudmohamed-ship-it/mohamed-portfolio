@@ -1,12 +1,15 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+    const t = useTranslations('HomePage.hero');
+
     return (
         <section className="relative overflow-hidden py-16 md:py-20 lg:py-28">
             {/* Background Decor */}
@@ -23,27 +26,27 @@ export default function Hero() {
                     className="space-y-6"
                 >
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-navy-900 leading-tight">
-                        SEO & Digital Marketing Specialist
+                        {t('role')}
                     </h1>
 
                     <h2 className="text-xl md:text-2xl font-medium text-navy-800">
-                        Helping businesses improve organic visibility and conversions through data-driven SEO, analytics, and optimization.
+                        {t('subheadline')}
                     </h2>
 
                     <p className="text-lg text-navy-600 max-w-xl leading-relaxed">
-                        I work across technical SEO, local SEO, and performance analytics to solve complex search challenges and build scalable growth systems.
+                        {t('description')}
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-2">
                         <Link href="/contact">
                             <Button size="lg" className="group">
-                                Work With Me
+                                {t('cta_contact')}
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Button>
                         </Link>
                         <Link href="/portfolio">
                             <Button variant="outline" size="lg">
-                                View Case Studies
+                                {t('cta_projects')}
                             </Button>
                         </Link>
                     </div>

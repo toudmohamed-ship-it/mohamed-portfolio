@@ -1,41 +1,87 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CASE_STUDIES } from "@/lib/data";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { ArrowLeft, CheckCircle2, ChevronRight, BarChart, Settings, Code, FileText } from "lucide-react";
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 
 interface Props {
     params: {
         slug: string;
+        locale: string;
     };
 }
 
+// Generate Static Params for all locales and slugs
 export async function generateStaticParams() {
     return CASE_STUDIES.map((study) => ({
         slug: study.slug,
     }));
 }
 
+// Dynamic Metadata
 export async function generateMetadata({ params }: Props) {
-    const { slug } = await params;
+    const { slug, locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'CaseStudies' });
     const study = CASE_STUDIES.find((s) => s.slug === slug);
 
     if (!study) return { title: "Case Study Not Found" };
 
     return {
-        title: `${study.title} | Case Study`,
-        description: study.summary,
+        title: `${t(`${study.slug}.title`)} | Case Study`,
+        description: t(`${study.slug}.summary`),
     };
 }
 
 export default async function CaseStudyPage({ params }: Props) {
-    const { slug } = await params;
+    const { slug, locale } = await params;
+    // Enable static rendering
+    setRequestLocale(locale);
+
     const study = CASE_STUDIES.find((s) => s.slug === slug);
 
     if (!study) {
         notFound();
     }
+
+    const t = await getTranslations({ locale, namespace: 'CaseStudies' });
+    const tUI = await getTranslations({ locale, namespace: 'CaseStudyPage' });
+    const tCommon = await getTranslations({ locale, namespace: 'HomePage.FinalCTA' });
+
+    // Helper to get array from translation object safely
+    const getResultItems = (slug: string) => {
+        const items = [];
+        // Use the actual data length to determine how many items to look for
+        const count = study.results.length;
+        for (let i = 0; i < count; i++) {
+            try {
+                const val = t(`${slug}.results.${i}`);
+                if (val && val !== `${slug}.results.${i}`) items.push(val);
+            } catch (e) { break; }
+        }
+        return items;
+    };
+
+    // Safely get gallery alt texts
+    const getGalleryAlts = (slug: string) => {
+        const alts: Record<string, string> = {};
+        // Use the actual gallery length to determine how many items to look for
+        // Using "gallery" length as proxy for gallery_alts since they should match
+        const count = (study as any).gallery ? (study as any).gallery.length : 0;
+        for (let i = 0; i < count; i++) {
+            try {
+                const val = t(`${slug}.gallery_alts.${i}`);
+                if (val && val !== `${slug}.gallery_alts.${i}`) alts[i] = val;
+            } catch (e) { break; }
+        }
+        return alts;
+    };
+
+    const resultItems = getResultItems(study.slug);
+    const galleryAlts = getGalleryAlts(study.slug);
+    const tags = t(`${study.slug}.tags`).split(' • ');
 
     return (
         <>
@@ -43,21 +89,21 @@ export default async function CaseStudyPage({ params }: Props) {
             <section className="bg-navy-50 py-20 border-b border-navy-100">
                 <div className="container-custom">
                     <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-navy-500 hover:text-brand-purple mb-8 transition-colors">
-                        <ArrowLeft className="mr-1 h-4 w-4" /> Back to Portfolio
+                        <ArrowLeft className="mr-1 h-4 w-4 rtl:rotate-180" /> {tUI('back_to_portfolio')}
                     </Link>
                     <div className="max-w-4xl">
                         <div className="flex flex-wrap gap-2 mb-6">
-                            {study.tags.map(tag => (
-                                <span key={tag} className="px-3 py-1 bg-white border border-navy-200 rounded-full text-xs font-semibold text-navy-700">
+                            {tags.map((tag, i) => (
+                                <span key={i} className="px-3 py-1 bg-white border border-navy-200 rounded-full text-xs font-semibold text-navy-700">
                                     {tag}
                                 </span>
                             ))}
                         </div>
                         <h1 className="text-3xl md:text-5xl font-serif font-bold text-navy-900 mb-6 leading-tight">
-                            {study.title}
+                            {t(`${study.slug}.title`)}
                         </h1>
                         <p className="text-xl text-navy-600 leading-relaxed max-w-3xl">
-                            {study.summary}
+                            {t(`${study.slug}.summary`)}
                         </p>
                     </div>
                 </div>
@@ -74,10 +120,10 @@ export default async function CaseStudyPage({ params }: Props) {
                         <div className="space-y-4">
                             <h2 className="text-2xl font-serif font-bold text-navy-900 flex items-center gap-3">
                                 <div className="p-2 bg-red-50 text-red-600 rounded-lg"><BarChart size={24} /></div>
-                                The Challenge
+                                {tUI('challenge')}
                             </h2>
                             <p className="text-lg text-navy-600 leading-relaxed border-l-4 border-navy-100 pl-6">
-                                {study.challenge}
+                                {t(`${study.slug}.challenge`)}
                             </p>
                         </div>
 
@@ -85,10 +131,10 @@ export default async function CaseStudyPage({ params }: Props) {
                         <div className="space-y-4">
                             <h2 className="text-2xl font-serif font-bold text-navy-900 flex items-center gap-3">
                                 <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Settings size={24} /></div>
-                                My Approach
+                                {tUI('approach')}
                             </h2>
                             <p className="text-lg text-navy-600 leading-relaxed">
-                                {study.approach}
+                                {t(`${study.slug}.approach`)}
                             </p>
                         </div>
 
@@ -96,24 +142,24 @@ export default async function CaseStudyPage({ params }: Props) {
                         <div className="space-y-4">
                             <h2 className="text-2xl font-serif font-bold text-navy-900 flex items-center gap-3">
                                 <div className="p-2 bg-purple-50 text-purple-600 rounded-lg"><Code size={24} /></div>
-                                Key Actions Taken
+                                {tUI('key_actions')}
                             </h2>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
                                     <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">Conducted comprehensive audit</span>
+                                    <span className="text-navy-700 text-sm">{tUI('actions.audit')}</span>
                                 </li>
                                 <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
                                     <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">Fixed indexation & crawl issues</span>
+                                    <span className="text-navy-700 text-sm">{tUI('actions.indexation')}</span>
                                 </li>
                                 <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
                                     <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">Optimized site architecture</span>
+                                    <span className="text-navy-700 text-sm">{tUI('actions.architecture')}</span>
                                 </li>
                                 <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
                                     <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">Implemented structured data</span>
+                                    <span className="text-navy-700 text-sm">{tUI('actions.structured_data')}</span>
                                 </li>
                             </ul>
                         </div>
@@ -121,24 +167,43 @@ export default async function CaseStudyPage({ params }: Props) {
                         {/* Comparison Metrics Table (Conditional) */}
                         {(study as any).comparisonMetrics && (
                             <div className="space-y-6">
-                                <h2 className="text-2xl font-serif font-bold text-navy-900">Before & After Performance</h2>
+                                <h2 className="text-2xl font-serif font-bold text-navy-900">{tUI('before_after')}</h2>
                                 <div className="overflow-hidden rounded-xl border border-navy-100 shadow-sm">
                                     <table className="w-full text-left border-collapse">
                                         <thead>
                                             <tr className="bg-navy-50 border-b border-navy-100">
-                                                <th className="p-4 text-sm font-semibold text-navy-600">Metric</th>
-                                                <th className="p-4 text-sm font-semibold text-navy-600">Before</th>
-                                                <th className="p-4 text-sm font-bold text-brand-purple">After Optimization</th>
+                                                <th className="p-4 text-sm font-semibold text-navy-600">{tUI('metric')}</th>
+                                                <th className="p-4 text-sm font-semibold text-navy-600">{tUI('before')}</th>
+                                                <th className="p-4 text-sm font-bold text-brand-purple">{tUI('after_optimization')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {(study as any).comparisonMetrics.map((metric: any, i: number) => (
-                                                <tr key={i} className="border-b border-navy-100 last:border-0 hover:bg-navy-50/50 transition-colors">
-                                                    <td className="p-4 text-navy-900 font-medium">{metric.label}</td>
-                                                    <td className="p-4 text-navy-500 font-mono text-sm">{metric.before}</td>
-                                                    <td className="p-4 text-navy-900 font-bold font-mono text-sm bg-purple-50/30">{metric.after}</td>
-                                                </tr>
-                                            ))}
+                                            {/* Note: Comparison metrics hard to fully translate dynamically without structure change. 
+                                                For now we render them as is from JSON if they existed there, but they are in data.ts.
+                                                We added them to JSON for one item. We will try to fetch from JSON if available.
+                                            */}
+                                            {(study as any).comparisonMetrics.map((metric: any, i: number) => {
+                                                // Try to fetch translated match if available
+                                                let label = metric.label;
+                                                let before = metric.before;
+                                                let after = metric.after;
+                                                try {
+                                                    const m = t.raw(`${study.slug}.comparisonMetrics.${i}`);
+                                                    if (m) {
+                                                        label = m.label;
+                                                        before = m.before;
+                                                        after = m.after;
+                                                    }
+                                                } catch (e) { }
+
+                                                return (
+                                                    <tr key={i} className="border-b border-navy-100 last:border-0 hover:bg-navy-50/50 transition-colors">
+                                                        <td className="p-4 text-navy-900 font-medium">{label}</td>
+                                                        <td className="p-4 text-navy-500 font-mono text-sm">{before}</td>
+                                                        <td className="p-4 text-navy-900 font-bold font-mono text-sm bg-purple-50/30">{after}</td>
+                                                    </tr>
+                                                )
+                                            })}
                                         </tbody>
                                     </table>
                                 </div>
@@ -151,13 +216,13 @@ export default async function CaseStudyPage({ params }: Props) {
                         {/* Gallery / Screenshots */}
                         {(study as any).gallery && (study as any).gallery.length > 0 && (
                             <div className="space-y-6">
-                                <h2 className="text-2xl font-serif font-bold text-navy-900">Performance Evidence</h2>
+                                <h2 className="text-2xl font-serif font-bold text-navy-900">{tUI('performance_evidence')}</h2>
                                 <div className="grid grid-cols-1 gap-6">
                                     {(study as any).gallery.map((image: any, index: number) => (
                                         <div key={index} className="relative rounded-xl overflow-hidden shadow-md border border-navy-100 bg-navy-50">
                                             <Image
                                                 src={image.src}
-                                                alt={image.alt}
+                                                alt={galleryAlts[index] || image.alt}
                                                 width={1200}
                                                 height={800}
                                                 className="w-full h-auto"
@@ -172,9 +237,9 @@ export default async function CaseStudyPage({ params }: Props) {
                         <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 flex gap-4 items-start">
                             <FileText className="text-amber-600 shrink-0 mt-1" size={24} />
                             <div>
-                                <h4 className="font-bold text-amber-900 text-sm uppercase tracking-wide mb-1">Confidentiality Note</h4>
+                                <h4 className="font-bold text-amber-900 text-sm uppercase tracking-wide mb-1">{tUI('confidentiality.title')}</h4>
                                 <p className="text-amber-800 text-sm">
-                                    This project is presented anonymously due to client confidentiality agreements. Specific names and proprietary data have been generalized.
+                                    {tUI('confidentiality.text')}
                                 </p>
                             </div>
                         </div>
@@ -185,9 +250,9 @@ export default async function CaseStudyPage({ params }: Props) {
                     <div className="lg:col-span-4 space-y-8">
                         {/* Results Card */}
                         <div className="bg-navy-900 text-white rounded-2xl p-8 shadow-xl">
-                            <h3 className="text-xl font-bold mb-6 border-b border-navy-700 pb-4">Key Results</h3>
+                            <h3 className="text-xl font-bold mb-6 border-b border-navy-700 pb-4">{tUI('key_results')}</h3>
                             <div className="space-y-6">
-                                {study.results.map((result, idx) => (
+                                {resultItems.map((result, idx) => (
                                     <div key={idx}>
                                         <p className="text-3xl font-bold text-brand-purple-light mb-1">
                                             {/* Extract number if possible, else generic icon/bullet */}
@@ -201,9 +266,9 @@ export default async function CaseStudyPage({ params }: Props) {
 
                         {/* Tools Used */}
                         <div className="bg-white border border-navy-100 rounded-2xl p-8 shadow-sm">
-                            <h3 className="text-sm font-bold text-navy-400 uppercase tracking-wider mb-6">Tools Used</h3>
+                            <h3 className="text-sm font-bold text-navy-400 uppercase tracking-wider mb-6">{tUI('tools_used')}</h3>
                             <div className="flex flex-wrap gap-2">
-                                {study.tools.map(tool => (
+                                {study.tools.map((tool: any) => (
                                     <span key={tool} className="px-3 py-1.5 bg-navy-50 text-navy-700 rounded-lg text-xs font-semibold uppercase tracking-wide">
                                         {tool}
                                     </span>
@@ -218,9 +283,9 @@ export default async function CaseStudyPage({ params }: Props) {
             {/* Final CTA */}
             <section className="bg-white">
                 <FinalCTA
-                    title="Discuss Your Project"
-                    description="Ready to achieve similar results for your business? Let's talk strategy."
-                    buttonText="Book a Free Discovery Call"
+                    title={tCommon('title')}
+                    description={tCommon('description')}
+                    buttonText={tCommon('button')}
                 />
             </section>
         </>

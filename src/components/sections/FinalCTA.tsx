@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Button from "@/components/ui/Button";
+import { useTranslations } from 'next-intl';
 
 interface FinalCTAProps {
     title?: string;
@@ -10,29 +11,36 @@ interface FinalCTAProps {
 }
 
 export default function FinalCTA({
-    title = "Ready to improve your search visibility?",
-    description = (
-        <>
-            Ready to improve your organic visibility and performance? <br className="hidden md:block" />
-            Let&apos;s discuss how data-driven SEO can support your business goals.
-        </>
-    ),
-    buttonText = "Contact Me"
+    title,
+    description,
+    buttonText
 }: FinalCTAProps) {
+    const t = useTranslations('HomePage.FinalCTA');
+
+    const contentTitle = title || t('title');
+    const contentDescription = description || (
+        <>
+            {t.rich('description', {
+                br: () => <br className="hidden md:block" />
+            })}
+        </>
+    );
+    const contentButtonText = buttonText || t('button');
+
     return (
         <section className="py-24 bg-navy-900 text-white text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-grid-white/[0.05] -z-0 pointer-events-none" />
 
             <div className="container-custom relative z-10 max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">
-                    {title}
+                    {contentTitle}
                 </h2>
                 <div className="text-xl text-navy-200 mb-10 leading-relaxed">
-                    {description}
+                    {contentDescription}
                 </div>
                 <Link href="/contact">
                     <Button variant="primary" size="lg" className="bg-white text-brand-purple hover:bg-navy-50 text-lg px-8 py-4 h-auto font-bold">
-                        {buttonText}
+                        {contentButtonText}
                     </Button>
                 </Link>
             </div>

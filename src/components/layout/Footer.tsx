@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { NAV_LINKS, PERSONAL_INFO } from "@/lib/constants";
 import { Linkedin, Mail, Phone } from "lucide-react";
 

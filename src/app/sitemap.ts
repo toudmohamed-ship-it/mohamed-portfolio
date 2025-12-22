@@ -5,7 +5,9 @@ import { BLOG_POSTS } from "@/lib/blog-data";
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://www.mohamedtoudghi.com";
 
-    const staticRoutes = [
+    const locales = ['en', 'fr', 'ar'];
+
+    const staticRoutes = locales.flatMap(locale => [
         "",
         "/about",
         "/services",
@@ -13,25 +15,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/contact",
         "/blog",
     ].map((route) => ({
-        url: `${baseUrl}${route}`,
+        url: `${baseUrl}/${locale}${route}`,
         lastModified: new Date(),
         changeFrequency: "monthly" as const,
         priority: route === "" ? 1 : 0.8,
-    }));
+    })));
 
-    const projectRoutes = CASE_STUDIES.map((study) => ({
-        url: `${baseUrl}/portfolio/${study.slug}`,
+    const projectRoutes = locales.flatMap(locale => CASE_STUDIES.map((study) => ({
+        url: `${baseUrl}/${locale}/portfolio/${study.slug}`,
         lastModified: new Date(),
         changeFrequency: "monthly" as const,
         priority: 0.7,
-    }));
+    })));
 
-    const blogRoutes = BLOG_POSTS.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
+    const blogRoutes = locales.flatMap(locale => BLOG_POSTS.map((post) => ({
+        url: `${baseUrl}/${locale}/blog/${post.slug}`,
         lastModified: new Date(post.date),
         changeFrequency: "weekly" as const,
         priority: 0.6,
-    }));
+    })));
 
     return [...staticRoutes, ...projectRoutes, ...blogRoutes];
 }

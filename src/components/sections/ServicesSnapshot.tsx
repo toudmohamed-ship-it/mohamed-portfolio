@@ -1,49 +1,48 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Search, BarChart3, Settings, Layout, ArrowRight, MapPin } from "lucide-react";
 import Button from "@/components/ui/Button";
-
-const services = [
-    {
-        icon: Search,
-        title: "Technical SEO",
-        description: "Audits, indexation fixes, crawl optimization, site structure, and Core Web Vitals improvements.",
-    },
-    {
-        icon: BarChart3,
-        title: "Analytics & Tracking",
-        description: "GA4, GTM, GSC, event tracking, and Looker Studio dashboards for measurable insights.",
-    },
-    {
-        icon: MapPin,
-        title: "Local SEO",
-        description: "Google Business Profile optimization, local visibility, and ranking improvements.",
-    },
-    {
-        icon: Layout,
-        title: "Website Optimization",
-        description: "SEO-friendly WordPress setup, UX improvements, and conversion optimization.",
-    },
-];
+import { useTranslations } from 'next-intl';
 
 export default function ServicesSnapshot() {
+    const t = useTranslations('HomePage.ServicesSnapshot');
+
+    const services = [
+        {
+            icon: Search,
+            key: "tech_seo"
+        },
+        {
+            icon: BarChart3,
+            key: "analytics"
+        },
+        {
+            icon: MapPin,
+            key: "local_seo"
+        },
+        {
+            icon: Layout,
+            key: "web_opt"
+        },
+    ];
+
     return (
         <section className="py-20 md:py-32 bg-navy-50">
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                     <div className="max-w-xl">
                         <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-4">
-                            My Expertise
+                            {t('title')}
                         </h2>
                         <p className="text-navy-600">
-                            I combine technical precision with creative marketing strategies to deliver measurable growth.
+                            {t('description')}
                         </p>
                     </div>
                     <Link href="/services">
                         <Button variant="outline">
-                            View All Services
-                            <ArrowRight className="ml-2 h-4 w-4" />
+                            {t('cta')}
+                            <ArrowRight className="ml-2 h-4 w-4 rtl:rotate-180" />
                         </Button>
                     </Link>
                 </div>
@@ -58,10 +57,10 @@ export default function ServicesSnapshot() {
                                 <service.icon size={24} />
                             </div>
                             <h3 className="text-xl font-bold text-navy-900 mb-3">
-                                {service.title}
+                                {t(`services.${service.key}.title`)}
                             </h3>
                             <p className="text-sm text-navy-600 leading-relaxed">
-                                {service.description}
+                                {t(`services.${service.key}.description`)}
                             </p>
                         </div>
                     ))}

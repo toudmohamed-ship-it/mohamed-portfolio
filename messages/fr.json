@@ -1,0 +1,557 @@
+{
+    "HomePage": {
+        "title": "Mohamed | Spécialiste SEO & Marketing Digital",
+        "hero": {
+            "greeting": "Bonjour, je suis Mohamed",
+            "role": "Spécialiste SEO & Marketing Digital",
+            "subheadline": "J'aide les entreprises à améliorer leur visibilité organique et leurs conversions grâce au SEO, à l'analytique et à l'optimisation basés sur les données.",
+            "description": "Je travaille sur le SEO technique, le SEO local et l'analytique de performance pour résoudre des défis de recherche complexes et construire des systèmes de croissance évolutifs.",
+            "cta_projects": "Voir les études de cas",
+            "cta_contact": "Travailler avec moi"
+        },
+        "about": {
+            "title": "À propos de moi",
+            "description": "Je suis un marketeur numérique passionné avec une expertise en SEO, SEM et marketing des médias sociaux. Mon objectif est de vous aider à atteindre vos objectifs commerciaux grâce à des stratégies numériques efficaces."
+        },
+        "services": {
+            "title": "Mes Services",
+            "seo": "Optimisation pour les moteurs de recherche (SEO)",
+            "seo_desc": "Amélioration du classement de votre site Web sur les moteurs de recherche.",
+            "ads": "Publicité payante",
+            "ads_desc": "Gestion de campagnes Google Ads et réseaux sociaux.",
+            "analytics": "Analyse de données",
+            "analytics_desc": "Analyse des données pour améliorer les performances."
+        },
+        "contact": {
+            "title": "Contactez-moi",
+            "name": "Nom",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Envoyer le message"
+        },
+        "nav": {
+            "home": "Accueil",
+            "about": "À propos",
+            "services": "Services",
+            "portfolio": "Portfolio",
+            "contact": "Contact",
+            "blog": "Blog"
+        },
+        "TrustStrip": {
+            "label": "Expérience auprès d'équipes et d'organisations telles que"
+        },
+        "ServicesSnapshot": {
+            "title": "Mon Expertise",
+            "description": "J'allie précision technique et stratégies marketing créatives pour générer une croissance mesurable.",
+            "cta": "Voir Tous les Services",
+            "services": {
+                "tech_seo": {
+                    "title": "SEO Technique",
+                    "description": "Audits, corrections d'indexation, optimisation du crawl, structure de site et améliorations Core Web Vitals."
+                },
+                "analytics": {
+                    "title": "Analytics & Tracking",
+                    "description": "GA4, GTM, GSC, suivi d'événements et tableaux de bord Looker Studio pour des insights mesurables."
+                },
+                "local_seo": {
+                    "title": "SEO Local",
+                    "description": "Optimisation Google Business Profile, visibilité locale et amélioration du classement."
+                },
+                "web_opt": {
+                    "title": "Optimisation Web",
+                    "description": "Configuration WordPress SEO-friendly, améliorations UX et optimisation des conversions."
+                }
+            }
+        },
+        "CaseStudyPreview": {
+            "title": "Études de Cas",
+            "view_case": "Voir l'Étude de Cas",
+            "view_all": "Voir Toutes les Études de Cas"
+        },
+        "AboutPreview": {
+            "title": "À Propos",
+            "description": "Je suis Mohamed Toudghi, spécialiste SEO et marketing digital, axé sur la data, l'analytics et les stratégies de croissance durable. J'ai travaillé sur des projets allant de plateformes internationales à des entreprises de services, aidant à améliorer la performance de recherche et la prise de décision grâce à des systèmes clairs et évolutifs.",
+            "cta": "En Savoir Plus"
+        },
+        "FinalCTA": {
+            "title": "Prêt à améliorer votre visibilité sur les moteurs de recherche ?",
+            "description": "Prêt à améliorer votre visibilité organique et vos performances ? <br/>Discutons de la manière dont le SEO piloté par les données peut soutenir vos objectifs commerciaux.",
+            "button": "Contactez-moi"
+        }
+    },
+    "CaseStudies": {
+        "global-marketplace-audit": {
+            "client": "Marketplace de Luxe",
+            "title": "Audit SEO Technique & Optimisation pour une Marketplace de Luxe",
+            "summary": "Amélioration de l'efficacité du crawl, de la découvrabilité du contenu et de la fiabilité technique pour une marketplace à grande échelle.",
+            "tags": "SEO Technique • Architecture de Site • Indexation",
+            "challenge": "Le client est une marketplace d'envergure nécessitant de solides améliorations en SEO technique. L'accent a été mis sur l'optimisation des métadonnées des pages clés, la résolution des problèmes de santé du site (liens brisés), la restructuration de la hiérarchie on-page, l'accessibilité HTML et l'implémentation de schema markup avancé.",
+            "approach": "Audit technique en plusieurs phases. La phase 1 a ciblé l'optimisation des métadonnées (titres/H1). La phase 2 a traité la santé du site en corrigeant les erreurs 'sans réponse' et en implémentant des canoniques auto-référencées. La phase 3 a porté sur le balisage Schema.org et l'optimisation du maillage interne.",
+            "results": {
+                "0": "Trafic Organique +6% (562.8K visites mensuelles - Données US)",
+                "1": "Visibilité Mots-clés +3.3% (281.4K mots-clés classés - Données US)",
+                "2": "Score d'Autorité maintenu à 48 (Très Bon)",
+                "3": "Amélioration de l'efficacité du Crawl et de la stabilité de l'indexation"
+            },
+            "gallery_alts": {
+                "0": "Tendance de croissance du trafic organique sur 6 mois",
+                "1": "Tableau de bord SEO montrant 562.8K de trafic organique",
+                "2": "Performance Search Console : 5.99M de Clics et 214M d'Impressions"
+            }
+        },
+        "uk-compliance-service-audit": {
+            "client": "Service de Conformité UK",
+            "title": "SEO & Optimisation des Conversions pour une Entreprise de Services au Royaume-Uni",
+            "summary": "Conversions doublées et classements dans le top 10 pour les pages de services clés via une optimisation ciblée des landing pages.",
+            "tags": "SEO Local • CRO • SEO Technique",
+            "challenge": "Un prestataire de services basé au Royaume-Uni sur le marché compétitif de Londres faisait face à de faibles conversions sur des pages à fort trafic. Le site souffrait d'une dette technique, de pages sans réponse, d'un manque de balises H1 et de méta-descriptions dupliquées. La performance mobile était médiocre (Score 66).",
+            "approach": "Mise en œuvre d'une campagne précise. Conception d'une landing page dédiée avec des signaux de confiance clairs, améliorant la vitesse mobile à 93. Optimisation de 26 pages clés et 20 articles de blog, et publication de 10 nouveaux articles ciblés. Correction de plus de 10 problèmes techniques critiques.",
+            "results": {
+                "0": "Conversions > doublées dès le 1er mois",
+                "1": "Vitesse de page : Mobile 66 → 93, Bureau 90 → 97",
+                "2": "18.3K+ Impressions de recherche (Pos Moy #10)"
+            },
+            "gallery_alts": {
+                "0": "Score de Performance Google Lighthouse de 95/100",
+                "1": "Détail PageSpeed Insights confirmant des scores de 90+",
+                "2": "Tendance du Trafic Organique montrant une croissance constante"
+            }
+        },
+        "saas-digital-launch": {
+            "client": "Startup SaaS (Inventaire)",
+            "title": "Lancement Digital Complet pour une Startup SaaS",
+            "summary": "Jan–Mai 2024 : Construction des fondations digitales de zéro, livraison d'un site mobile-first et de workflows de leads automatisés.",
+            "tags": "Stratégie SEO • Web Design • Marketing Automation",
+            "challenge": "Une nouvelle marque de gestion d'inventaire avait besoin d'un écosystème numérique complet en partant de zéro. Le besoin : un site web no-code responsive, une fondation SEO robuste et des canaux de génération de leads automatisés.",
+            "approach": "En tant que consultant, j'ai développé un site entièrement responsive. J'ai implémenté une stratégie SEO complète, structurant la navigation selon l'intention de l'utilisateur. Intégration de Gist pour le chatbot et l'automatisation des emails. Établissement d'une présence sociale multi-canal.",
+            "results": {
+                "0": "Lancement réussi d'un site responsive mobile",
+                "1": "Mise en place de workflows d'email automation (Gist)",
+                "2": "Établissement d'une présence sociale multi-canaux"
+            },
+            "gallery_alts": {
+                "0": "Version de lancement initiale - Design clair",
+                "1": "Itération Dark Mode à haute conversion",
+                "2": "Intégration Chatbot Gist pour la capture de leads"
+            }
+        },
+        "premium-medspa-seo-audit": {
+            "client": "Spa Médical Premium",
+            "title": "Audit SEO Technique & Optimisation Locale",
+            "summary": "Résolution de problèmes techniques critiques bloquant l'indexation Google et élaboration d'une stratégie SEO locale complète.",
+            "tags": "SEO Technique • SEO Local • Audit de Site",
+            "challenge": "Un site de spa médical manquait de visibilité malgré des services premium. L'enquête a révélé que les métadonnées SEO n'apparaissaient pas dans le code HTML à cause d'un conflit de plugins (RankMath vs Yoast). De plus, les balises canoniques étaient mal configurées, pointant vers des domaines de développement locaux.",
+            "approach": "Audit SEO complet (technique, on-page, local). Création d'une feuille de suivi d'implémentation. Résolution du conflit de plugins en désactivant RankMath. Correction de toutes les balises canoniques. Rédaction de titres et méta-descriptions optimisés. Développement d'une stratégie SEO locale détaillée.",
+            "results": {
+                "0": "Conflit de plugin résolu : métadonnées restaurées",
+                "1": "Balises canoniques corrigées : signaux URL propres",
+                "2": "Optimisations On-Page rédigées et prêtes",
+                "3": "Roadmap SEO Local développée pour une croissance durable"
+            },
+            "gallery_alts": {
+                "0": "Tableau de bord SEO montrant le trafic et les mots-clés",
+                "1": "Tendance du trafic organique montrant la récupération",
+                "2": "Feuille de suivi d'implémentation SEO"
+            }
+        },
+        "national-sports-org": {
+            "client": "Organisation Sportive Nationale",
+            "title": "SEO & Stratégie de Contenu pour une Organisation Sportive",
+            "summary": "Développement d'une stratégie de contenu structurée, amélioration du maillage interne et optimisation de l'architecture du site.",
+            "tags": "Stratégie de Contenu • SEO • Maillage Interne",
+            "challenge": "Le contenu était non structuré et difficile à trouver. Les utilisateurs quittaient le site en raison d'une mauvaise navigation.",
+            "approach": "Analyse du comportement de recherche pour créer une nouvelle taxonomie. Implémentation du schema markup pour les événements et réorganisation des liens internes.",
+            "results": {
+                "0": "Amélioration du temps d'engagement utilisateur de 40%",
+                "1": "Apparition des données structurées (Rich Snippets) dans les SERPs",
+                "2": "Meilleure fonctionnalité de recherche interne"
+            }
+        },
+        "medical-spa-seo": {
+            "client": "Spa Médical (USA)",
+            "title": "SEO & Optimisation de Site pour un Spa Médical aux US",
+            "summary": "Amélioration des fondations SEO, optimisation des pages de services et renforcement de la visibilité locale.",
+            "tags": "SEO Local • Optimisation de Contenu • SEO Technique",
+            "challenge": "Le spa avait du mal à se classer sur des termes locaux face à une forte concurrence. Les pages de services manquaient de profondeur.",
+            "approach": "Audit complet et optimisation des pages de services avec des mots-clés localisés et du schema. Renforcement du profil Google Business et de la cohérence des citations.",
+            "results": {
+                "0": "Augmentation du trafic organique local de 45%",
+                "1": "Classement dans le top 3 pour les termes de services clés",
+                "2": "Hausse significative des rendez-vous pris via la recherche organique"
+            }
+        },
+        "law-firm-local-seo": {
+            "client": "Cabinet d'Avocats (USA)",
+            "title": "SEO Local & Optimisation pour un Cabinet d'Avocats",
+            "summary": "Optimisation des pages de services, renforcement des signaux SEO locaux et amélioration de la structure du site.",
+            "tags": "SEO Local • SEO On-Page • Optimisation Web",
+            "challenge": "Le cabinet devait établir son autorité dans un domaine juridique précis mais avait une structure de site décousue et des signaux locaux faibles.",
+            "approach": "Restructuration du site pour créer des silos par domaine de pratique. Optimisation du contenu pour l'intention locale et création de citations de haute qualité.",
+            "results": {
+                "0": "Génération de 30% de leads qualifiés en plus via la recherche locale",
+                "1": "Classements en première page pour 'Ville + Domaine'",
+                "2": "Amélioration de l'autorité de domaine et des signaux de confiance"
+            }
+        },
+        "moroccan-b2b-seo": {
+            "client": "Site B2B Marocain",
+            "title": "Optimisation SEO On-Page pour un Site B2B",
+            "summary": "Amélioration des classements de la page d'accueil, du CTR et des clics organiques grâce à une optimisation ciblée.",
+            "tags": "SEO On-Page • Optimisation CTR • Maillage Interne",
+            "challenge": "La page d'accueil classait mal, recevait des impressions mais peu de clics (CTR faible). L'objectif était d'augmenter le trafic qualifié sans créer de nouvelles pages.",
+            "approach": "Amélioration du ciblage par mots-clés sur la page d'accueil et réécriture des titres/descriptions pour s'aligner sur l'intention de recherche. Renforcement de la clarté de la page et du maillage interne.",
+            "results": {
+                "0": "Clics +130% (32 → 74) en 3 Mois",
+                "1": "CTR +128% (0.7% → 1.6%)",
+                "2": "Position Moyenne améliorée de 34.2 à 14.1"
+            },
+            "comparisonMetrics": {
+                "0": {
+                    "label": "Clics Totaux",
+                    "before": "32",
+                    "after": "74 (+131%)"
+                },
+                "1": {
+                    "label": "Impressions",
+                    "before": "4.33K",
+                    "after": "4.49K (+3.7%)"
+                },
+                "2": {
+                    "label": "CTR Moy",
+                    "before": "0.7%",
+                    "after": "1.6% (+128%)"
+                },
+                "3": {
+                    "label": "Pos Moy",
+                    "before": "34.2",
+                    "after": "14.1 (Top 15)"
+                }
+            }
+        }
+    },
+    "ServicesPage": {
+        "header": {
+            "title": "Mes Services",
+            "subtitle": "J'aide les entreprises de services, les startups et les équipes en croissance à résoudre leurs problèmes techniques de SEO, à capter un trafic qualifié et à transformer les visites en résultats mesurables.",
+            "supportingText": "Chaque service est conçu sur mesure pour vos objectifs, votre infrastructure technique et votre marché — pas de forfaits génériques."
+        },
+        "how_it_works": {
+            "title": "Ma Méthodologie",
+            "subtitle": "Un processus axé sur les données pour garantir transparence et résultats.",
+            "step1_title": "Audit & Analyse",
+            "step1_desc": "J'identifie d'abord les blocages techniques, les opportunités de recherche et les écarts de performance grâce à des audits approfondis.",
+            "step2_title": "Stratégie",
+            "step2_desc": "Sur la base des résultats, je conçois une stratégie SEO et de croissance alignée sur vos objectifs commerciaux.",
+            "step3_title": "Exécution & Mesure",
+            "step3_desc": "La mise en œuvre est suivie, mesurée et ajustée en continu pour assurer des résultats durables."
+        },
+        "core_services": {
+            "title": "Services Principaux",
+            "subtitle": "Des services pratiques et orientés résultats pour votre croissance digitale.",
+            "tech_seo": {
+                "title": "Audit SEO Technique & Corrections",
+                "bestFor": "Idéal pour les sites ayant des problèmes d'indexation ou de performance.",
+                "description": "J'analyse les fondations techniques de votre site pour détecter ce qui freine votre visibilité, puis je fournis des solutions concrètes et applicables.",
+                "deliverables": [
+                    "Crawl complet & analyse des erreurs techniques",
+                    "Corrections d'indexation & de balises canoniques",
+                    "Optimisation des Core Web Vitals & performance",
+                    "Implémentation de données structurées (Schema)",
+                    "Optimisation du maillage interne & architecture"
+                ]
+            },
+            "keyword_strategy": {
+                "title": "Recherche de Mots-clés & Stratégie de Contenu",
+                "bestFor": "Pour les entreprises qui peinent à attirer du trafic organique qualifié.",
+                "description": "Je crée des stratégies de contenu basées sur l'intention de recherche réelle — pour arrêter de deviner et commencer à convertir.",
+                "deliverables": [
+                    "Analyse de l'intention de recherche & des SERP",
+                    "Analyse des écarts avec la concurrence (Gap Analysis)",
+                    "Clustering sémantique & roadmap éditoriale",
+                    "Briefs de contenu SEO détaillés",
+                    "Optimisation du contenu existant"
+                ]
+            },
+            "local_seo": {
+                "title": "SEO Local (Google Business Profile)",
+                "bestFor": "Pour les entreprises de services visant une clientèle locale.",
+                "description": "J'optimise votre présence locale pour augmenter votre visibilité dans votre zone géographique et générer plus d'appels.",
+                "deliverables": [
+                    "Optimisation de la fiche Google Business Profile",
+                    "Nettoyage & cohérence des citations",
+                    "Stratégie de landing pages locales",
+                    "Gestion & acquisition d'avis clients",
+                    "Amélioration de la visibilité sur Google Maps"
+                ]
+            },
+            "international_seo": {
+                "title": "SEO International",
+                "bestFor": "Pour les entreprises s'étendant vers de nouveaux marchés ou langues.",
+                "description": "J'accompagne votre expansion internationale avec une structure SEO multilingue solide et adaptée aux moteurs de recherche.",
+                "deliverables": [
+                    "Implémentation des balises Hreflang",
+                    "Planification de la structure URL multilingue",
+                    "Ciblage géographique dans Search Console",
+                    "Recherche de mots-clés par marché cible",
+                    "Recommandations de localisation de contenu"
+                ]
+            },
+            "analytics": {
+                "title": "Tracking & Analytics",
+                "bestFor": "Pour les équipes ayant besoin de données fiables.",
+                "description": "Je configure un tracking précis pour que vous compreniez exactement le parcours de vos utilisateurs et l'origine de vos conversions.",
+                "deliverables": [
+                    "Configuration avancée de GA4",
+                    "Installation de Google Tag Manager (GTM)",
+                    "Tracking d'événements & conversions personnalisés",
+                    "Tableaux de bord Looker Studio",
+                    "Visualisation de l'entonnoir de conversion"
+                ]
+            },
+            "wp_optimization": {
+                "title": "Optimisation WordPress",
+                "bestFor": "Pour les sites WordPress nécessitant vitesse et sécurité.",
+                "description": "J'optimise votre site WordPress pour qu'il soit plus rapide, mieux classé et convertisse plus efficacement.",
+                "deliverables": [
+                    "Configuration & sécurité WordPress",
+                    "Optimisation de la vitesse (Cache, Performance)",
+                    "Audit UX/UI & améliorations",
+                    "Optimisation du taux de conversion (CRO)",
+                    "Corrections de la version mobile"
+                ]
+            },
+            "cta_quote": "Demander un Devis",
+            "cta_discuss": "Discuter de mon Projet",
+            "what_you_get": "Ce que vous obtenez :"
+        },
+        "who_i_work_with": {
+            "title": "Avec qui je travaille",
+            "service_business": {
+                "title": "Entreprises de services",
+                "desc": "Cherchant à accroître leur visibilité locale et leurs leads."
+            },
+            "startups": {
+                "title": "Startups & PME",
+                "desc": "Ayant besoin d'expertises pour bâtir une croissance scalable."
+            },
+            "optimizers": {
+                "title": "Sites en stagnation",
+                "desc": "Entreprises ayant du trafic mais peu de conversions (CRO)."
+            },
+            "growth_seekers": {
+                "title": "Visionnaires",
+                "desc": "Ceux qui cherchent de la clarté et une feuille de route basée sur la data."
+            }
+        },
+        "final_cta": {
+            "title": "Prêt à booster votre visibilité ?",
+            "description": "Discutons de vos objectifs et identifions où le SEO peut avoir le plus d'impact.",
+            "disclaimer": "Expérience sur des plateformes internationales. Certains projets sont anonymisés par confidentialité.",
+            "button": "Réserver un Appel Découverte"
+        }
+    },
+    "AboutPage": {
+        "metadata": {
+            "title": "À Propos | Expert SEO & Marketing Digital Data-Driven",
+            "description": "Découvrez le parcours de Mohamed Toudghi, spécialiste SEO de premier plan. Expert en SEO technique, Analytics et marketing digital avec des résultats prouvés.",
+            "og_title": "À Propos de Mohamed Toudghi | Parcours d'Expert SEO",
+            "og_description": "Apprenez-en plus sur mon parcours, de l'AUI à mon statut de spécialiste SEO, avec une expertise en SEO technique, Analytics et marketing digital."
+        },
+        "hero": {
+            "title": "À Propos",
+            "subtitle": "Je suis un marketeur obsédé par la data, convaincu que chaque clic doit avoir un but précis."
+        },
+        "journey": {
+            "title": "Mon Parcours",
+            "p1": "Mon parcours professionnel a débuté à l'<b>Université Al Akhawayn (AUI)</b>, où j'ai acquis une solide base en esprit critique et en communication. Ce bagage académique a servi de tremplin à ma carrière dans le paysage numérique.",
+            "p2": "En commençant par des stages qui m'ont plongé dans l'univers rapide du marketing digital, j'ai rapidement réalisé que la <b>data</b> était la pièce manquante de la plupart des stratégies. Je me suis alors réorienté vers le SEO et l'Analytics, maîtrisant l'art de rendre les sites web non seulement visibles, mais rentables.",
+            "p3": "Aujourd'hui, j'accompagne des entreprises allant de startups locales à des organisations internationales, les aidant à naviguer dans la complexité des algorithmes de recherche et du comportement des utilisateurs. Mon approche est simple : <b>prendre des décisions basées sur des données, pas des suppositions.</b>"
+        },
+        "languages": {
+            "title": "Langues",
+            "arabic": "Arabe",
+            "english": "Anglais",
+            "french": "Français",
+            "native": "Langue Maternelle",
+            "professional": "Professionnel (C1)",
+            "advanced": "Courant (B2)"
+        },
+        "resume": "Télécharger mon CV",
+        "expertise": {
+            "title": "Expertise Technique",
+            "categories": {
+                "seo_content": "SEO & Contenu",
+                "analytics_data": "Analytics & Data",
+                "tools_platforms": "Outils & Plateformes"
+            },
+            "skills": {
+                "technical_seo_audits": "Audits SEO Techniques",
+                "on_page_optimization": "Optimisation On-Page",
+                "keyword_research": "Recherche de Mots-clés & Stratégie",
+                "content_clustering": "Clustering de Contenu",
+                "local_seo": "SEO Local (GBP)",
+                "international_seo": "SEO International (Hreflang)",
+                "ga4": "Google Analytics 4 (GA4)",
+                "gtm": "Google Tag Manager (GTM)",
+                "gsc": "Google Search Console",
+                "looker_studio": "Looker Studio / Data Studio",
+                "cro": "Optimisation du Taux de Conversion (CRO)",
+                "user_behavior": "Analyse du Comportement Utilisateur",
+                "semrush_ahrefs": "SEMrush / Ahrefs",
+                "screaming_frog": "Screaming Frog",
+                "wordpress_elementor": "WordPress / Elementor",
+                "shopify_seo": "Shopify SEO",
+                "hubspot_crm": "HubSpot CRM",
+                "google_ads": "Google Ads"
+            }
+        },
+        "certifications": {
+            "title": "Certifications",
+            "items": [
+                "Certification Google Analytics",
+                "Google Ads (Recherche & Display)",
+                "Recherche de Mots-clés Semrush",
+                "Email Marketing HubSpot",
+                "SEO Local BrightLocal"
+            ]
+        }
+    },
+    "CaseStudyPage": {
+        "back_to_portfolio": "Retour au Portfolio",
+        "challenge": "Le Défi",
+        "approach": "Mon Approche",
+        "key_actions": "Actions Clés Entreprises",
+        "actions": {
+            "audit": "Réalisation d'un audit complet",
+            "indexation": "Correction des problèmes d'indexation et de crawl",
+            "architecture": "Optimisation de l'architecture du site",
+            "structured_data": "Mise en place de données structurées"
+        },
+        "performance_evidence": "Preuves de Performance",
+        "before_after": "Performance Avant & Après",
+        "metric": "Métrique",
+        "before": "Avant",
+        "after_optimization": "Après Optimisation",
+        "confidentiality": {
+            "title": "Note de Confidentialité",
+            "text": "Ce projet est présenté de manière anonyme en raison d'accords de confidentialité. Les noms spécifiques et les données propriétaires ont été généralisés."
+        },
+        "key_results": "Résultats Clés",
+        "tools_used": "Outils Utilisés"
+    },
+    "PortfolioPage": {
+        "metadata": {
+            "title": "Portfolio | Résultats SEO Prouvés & Études de Cas",
+            "description": "Découvrez des résultats SEO prouvés et des études de cas en SEO technique, SEO local et analytique. Des histoires de croissance réelles pour des entreprises internationales.",
+            "og_title": "Portfolio SEO & Études de Cas | Mohamed Toudghi",
+            "og_description": "Résultats SEO prouvés pour des clients internationaux, incluant l'optimisation de marketplaces, d'entreprises locales et de lancements SaaS."
+        },
+        "header": {
+            "title": "Portfolio",
+            "subtitle": "Projets sélectionnés en SEO, optimisation de sites web et analyse de performance.",
+            "supporting_text": "Certains projets sont présentés sous forme anonyme ou descriptive pour des raisons de confidentialité."
+        },
+        "view_study": "Voir l'Étude de Cas",
+        "footer_note": "Les projets incluent un mélange de rôles internes, de travaux collaboratifs et de contributions par projet. Les détails sont résumés pour respecter la confidentialité des clients."
+    },
+    "BlogPage": {
+        "metadata": {
+            "title": "Blog & Insights | Mohamed Toudghi",
+            "description": "Dernières tendances et guides sur le SEO, le marketing numérique et l'analytique."
+        },
+        "header": {
+            "title": "Insights & Articles",
+            "subtitle": "Réflexions sur le paysage en constante évolution de la recherche et du marketing numérique."
+        },
+        "read_article": "Lire l'Article",
+        "back_to_blog": "Retour au Blog",
+        "placeholder_content": "Ceci est un espace réservé pour le contenu complet de l'article. Dans une mise en œuvre réelle, ce serait un fichier Markdown ou du contenu d'un CMS."
+    },
+    "BlogPosts": {
+        "local-seo-morocco": {
+            "title": "Comment Améliorer le SEO Local au Maroc",
+            "excerpt": "Un guide complet pour se classer sur les recherches 'À proximité' sur le marché marocain.",
+            "date": "12 Déc 2024",
+            "category": "SEO Local",
+            "content": "Espace réservé pour le contenu..."
+        },
+        "technical-seo-checklist-2025": {
+            "title": "La Checklist SEO Technique Ultime pour 2025",
+            "excerpt": "Ne laissez pas les erreurs techniques tuer vos classements. Voici ce que vous devez vérifier.",
+            "date": "10 Déc 2024",
+            "category": "SEO Technique",
+            "content": "Espace réservé pour le contenu..."
+        },
+        "why-websites-fail": {
+            "title": "Pourquoi la Plupart des Sites Web Échouent sur Google (Et Comment y Remédier)",
+            "excerpt": "Ce n'est pas seulement une question de mots-clés. C'est une question d'autorité, d'expérience utilisateur et d'intention.",
+            "date": "05 Déc 2024",
+            "category": "Stratégie",
+            "content": "Espace réservé pour le contenu..."
+        },
+        "ga4-event-tracking": {
+            "title": "Guide du Débutant pour le Suivi des Événements GA4",
+            "excerpt": "Arrêtez de compter sur les pages vues. Apprenez à suivre ce qui compte : clics, défilements et conversions.",
+            "date": "28 Nov 2024",
+            "category": "Analytique",
+            "content": "Espace réservé pour le contenu..."
+        },
+        "keyword-research-process": {
+            "title": "Mon Processus de Recherche de Mots-clés en 4 Étapes",
+            "excerpt": "Comment je trouve des mots-clés de grande valeur et à faible concurrence pour n'importe quelle niche.",
+            "date": "15 Nov 2024",
+            "category": "Recherche de Mots-clés",
+            "content": "Espace réservé pour le contenu..."
+        }
+    },
+    "ContactPage": {
+        "metadata": {
+            "title": "Contact | Obtenir une Consultation SEO Gratuite",
+            "description": "Contactez-nous pour des audits SEO experts et du conseil en marketing numérique. Appels découverte de 15 minutes gratuits disponibles.",
+            "og_title": "Contacter Mohamed Toudghi | Consultation SEO Gratuite",
+            "og_description": "Prêt à améliorer le SEO de votre site ? Contactez-moi pour une consultation gratuite. Services SEO experts pour entreprises internationales."
+        },
+        "header": {
+            "title": "Restons en Contact",
+            "subtitle": "Prêt à développer votre entreprise ? Remplissez le formulaire ci-dessous ou réservez un appel."
+        },
+        "info": {
+            "title": "Informations de Contact",
+            "email_label": "Email",
+            "linkedin_label": "Se connecter sur LinkedIn",
+            "phone_label": "Téléphone"
+        }
+    },
+    "ContactForm": {
+        "title": "Envoyer un Message",
+        "subtitle": "Je réponds généralement sous 24 heures.",
+        "labels": {
+            "name": "Nom",
+            "email": "Email",
+            "service": "Service Souhaité",
+            "message": "Message"
+        },
+        "placeholders": {
+            "name": "Jean Dupont",
+            "email": "jean@entreprise.com",
+            "service": "Sélectionnez un service...",
+            "message": "Parlez-moi de votre projet ou de vos objectifs..."
+        },
+        "services": {
+            "seo": "SEO Technique",
+            "marketing": "Stratégie Marketing Digital",
+            "analytics": "Analytique & Tracking",
+            "web": "Optimisation de Site Web",
+            "other": "Autre"
+        },
+        "button": {
+            "idle": "Envoyer le Message",
+            "loading": "Envoi en cours..."
+        },
+        "messages": {
+            "success": "Merci ! Je reviendrai vers vous sous 24 heures.",
+            "error": "Oups ! Une erreur est survenue. Veuillez réessayer ou m'envoyer un email directement.",
+            "generic_error": "Impossible d'envoyer le message. Veuillez réessayer ou me contacter par email."
+        }
+    }
+}
