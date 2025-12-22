@@ -110,7 +110,7 @@ export default function ServicesPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {servicesData.map((service, index) => (
-                            <div key={index} className="flex flex-col h-full bg-white border border-navy-100 rounded-2xl p-8 hover:shadow-xl hover:border-brand-purple/20 transition-all duration-300">
+                            <div id={service.key} key={index} className="flex flex-col h-full bg-white border border-navy-100 rounded-2xl p-8 hover:shadow-xl hover:border-brand-purple/20 transition-all duration-300 scroll-mt-24">
                                 <div className="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center text-brand-purple mb-6">
                                     <service.icon size={28} />
                                 </div>

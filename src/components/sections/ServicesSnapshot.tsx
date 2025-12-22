@@ -49,9 +49,10 @@ export default function ServicesSnapshot() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
-                        <div
+                        <Link
                             key={index}
-                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                            href={`/services#${service.key}`}
+                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group block"
                         >
                             <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-brand-purple mb-6 group-hover:bg-brand-purple group-hover:text-white transition-colors">
                                 <service.icon size={24} />
@@ -62,7 +63,7 @@ export default function ServicesSnapshot() {
                             <p className="text-sm text-navy-600 leading-relaxed">
                                 {t(`services.${service.key}.description`)}
                             </p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

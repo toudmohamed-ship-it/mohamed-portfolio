@@ -34,6 +34,38 @@ export default function Footer() {
                         </ul>
                     </div>
 
+                    {/* Services Quick Links */}
+                    <div>
+                        <h4 className="font-bold text-navy-900 mb-6">Services</h4>
+                        <ul className="space-y-3">
+                            <li>
+                                <Link href="/services#tech_seo" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
+                                    Technical SEO
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/services#local_seo" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
+                                    Local SEO
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/services#analytics" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
+                                    Analytics & Tracking
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/services#keyword_strategy" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
+                                    Keyword Research
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/services#wp_optimization" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
+                                    Website Optimization
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
                     {/* Contact */}
                     <div>
                         <h4 className="font-bold text-navy-900 mb-6">Contact</h4>

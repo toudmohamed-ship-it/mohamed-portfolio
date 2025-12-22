@@ -280,6 +280,38 @@ export default async function CaseStudyPage({ params }: Props) {
                 </div>
             </section>
 
+            {/* Related Case Studies */}
+            <section className="py-16 bg-navy-50">
+                <div className="container-custom">
+                    <h2 className="text-2xl font-serif font-bold text-navy-900 mb-8">Related Case Studies</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {CASE_STUDIES.filter(s => s.slug !== study.slug).slice(0, 3).map((relatedStudy) => (
+                            <Link
+                                key={relatedStudy.slug}
+                                href={`/portfolio/${relatedStudy.slug}`}
+                                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group border border-navy-100"
+                            >
+                                <div className={`w-full h-2 ${relatedStudy.imageColor} rounded-full mb-4`}></div>
+                                <h3 className="font-bold text-navy-900 mb-2 group-hover:text-brand-purple transition-colors">
+                                    {t(`${relatedStudy.slug}.title`)}
+                                </h3>
+                                <p className="text-sm text-navy-600 line-clamp-2">
+                                    {t(`${relatedStudy.slug}.summary`)}
+                                </p>
+                                <span className="inline-flex items-center text-sm font-semibold text-brand-purple mt-4">
+                                    View Case Study <ChevronRight className="ml-1 h-4 w-4 rtl:rotate-180" />
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="text-center mt-8">
+                        <Link href="/portfolio" className="inline-flex items-center text-brand-purple font-semibold hover:underline">
+                            View All Case Studies <ChevronRight className="ml-1 h-4 w-4 rtl:rotate-180" />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* Final CTA */}
             <section className="bg-white">
                 <FinalCTA
