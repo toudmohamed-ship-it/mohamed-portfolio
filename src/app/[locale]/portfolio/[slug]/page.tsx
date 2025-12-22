@@ -268,7 +268,7 @@ export default async function CaseStudyPage({ params }: Props) {
                         <div className="bg-white border border-navy-100 rounded-2xl p-8 shadow-sm">
                             <h3 className="text-sm font-bold text-navy-400 uppercase tracking-wider mb-6">{tUI('tools_used')}</h3>
                             <div className="flex flex-wrap gap-2">
-                                {study.tools.map((tool: any) => (
+                                {study.tools?.map((tool: any) => (
                                     <span key={tool} className="px-3 py-1.5 bg-navy-50 text-navy-700 rounded-lg text-xs font-semibold uppercase tracking-wide">
                                         {tool}
                                     </span>
