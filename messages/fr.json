@@ -1,4 +1,12 @@
 {
+    "Breadcrumbs": {
+        "home": "Accueil",
+        "blog": "Blog",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "about": "À Propos",
+        "contact": "Contact"
+    },
     "HomePage": {
         "title": "Mohamed | Spécialiste SEO & Marketing Digital",
         "hero": {
@@ -7,7 +15,8 @@
             "subheadline": "J'aide les entreprises à améliorer leur visibilité organique et leurs conversions grâce au SEO, à l'analytique et à l'optimisation basés sur les données.",
             "description": "Je travaille sur le SEO technique, le SEO local et l'analytique de performance pour résoudre des défis de recherche complexes et construire des systèmes de croissance évolutifs.",
             "cta_projects": "Voir les études de cas",
-            "cta_contact": "Travailler avec moi"
+            "cta_contact": "Travailler avec moi",
+            "available": "Disponible pour de nouveaux projets"
         },
         "about": {
             "title": "À propos de moi",
@@ -217,6 +226,10 @@
         }
     },
     "ServicesPage": {
+        "metadata": {
+            "title": "Services | SEO Technique & Stratégies de Croissance",
+            "description": "Services SEO complets et marketing digital sur mesure pour les startups et les entreprises. SEO technique, SEO local et Analytics."
+        },
         "header": {
             "title": "Mes Services",
             "subtitle": "J'aide les entreprises de services, les startups et les équipes en croissance à résoudre leurs problèmes techniques de SEO, à capter un trafic qualifié et à transformer les visites en résultats mesurables.",
@@ -447,48 +460,57 @@
             "description": "Dernières tendances et guides sur le SEO, le marketing numérique et l'analytique."
         },
         "header": {
-            "title": "Insights & Articles",
-            "subtitle": "Réflexions sur le paysage en constante évolution de la recherche et du marketing numérique."
+            "title": "Le Journal SEO",
+            "subtitle": "Expertise, analyses locales et guides techniques pour le marché marocain."
         },
         "read_article": "Lire l'Article",
-        "back_to_blog": "Retour au Blog",
-        "placeholder_content": "Ceci est un espace réservé pour le contenu complet de l'article. Dans une mise en œuvre réelle, ce serait un fichier Markdown ou du contenu d'un CMS."
+        "back_to_blog": "Tous les Articles",
+        "sidebar": {
+            "cta_title": "Besoin d'aide pour votre SEO au Maroc ?",
+            "cta_desc": "Boostez votre visibilité sur Google Maps et Search. Demandez votre audit gratuit dès aujourd'hui.",
+            "cta_button": "Discuter sur WhatsApp"
+        },
+        "related_posts": {
+            "title": "Articles Similaires"
+        },
+        "view_all": "Voir tous les articles",
+        "placeholder_content": "Ceci est un espace réservé pour le contenu complet de l'article."
     },
     "BlogPosts": {
         "local-seo-morocco": {
-            "title": "Comment Améliorer le SEO Local au Maroc",
-            "excerpt": "Un guide complet pour se classer sur les recherches 'À proximité' sur le marché marocain.",
-            "date": "12 Déc 2024",
+            "title": "Comment Améliorer le SEO Local au Maroc (Guide Complet)",
+            "excerpt": "Si vous gérez une entreprise au Maroc, le SEO local est indispensable. Voici comment dominer les résultats Google Maps.",
+            "date": "12 Déc 2025",
             "category": "SEO Local",
-            "content": "Espace réservé pour le contenu..."
+            "content": "<p><strong>Par Mohamed Toudghi – Spécialiste SEO & Marketing Digital</strong></p><p>Si vous gérez une entreprise au Maroc, le SEO local est indispensable. Que vous soyez une clinique à Casablanca, un restaurant à Marrakech ou une agence à Rabat, vos clients vous cherchent déjà en ligne.</p><hr/><h2>1. Pourquoi le SEO Local au Maroc ?</h2><p>Le Maroc est un marché 'Mobile-First'. Les recherches 'Proche de moi' et les requêtes spécifiques aux villes sont la norme. Si vous n'êtes pas dans le 'Local Pack' de Google, vous perdez des clients au profit de vos concurrents.</p><h3>Spécificités Marocaines</h3><ul><li><strong>Multilinguisme :</strong> Les recherches se font en Français, Arabe et Anglais.</li><li><strong>Précision des adresses :</strong> Utilisez des points de repère et des noms de quartiers clairs.</li></ul><hr/><h2>2. Les Facteurs de Classement Google</h2><ul><li><strong>Proximité :</strong> La distance entre l'internaute et votre établissement.</li><li><strong>Pertinence :</strong> La correspondance entre votre fiche et la requête.</li><li><strong>Prominence :</strong> Votre notoriété (avis, citations, backlinks).</li></ul><hr/><h2>3. Optimisation Google Business Profile</h2><p>Choisissez les bonnes catégories, rédigez une description multilingue et surtout, publiez des photos de haute qualité. Les Marocains accordent une grande importance au visuel.</p><hr/><h2>4. Stratégie de Mots-Clés et On-Page</h2><p>Ciblez des patterns comme <strong>[Service] + [Ville]</strong>. Créez des pages spécifiques pour chaque ville desservie sur votre site web avec un balisage Schema LocalBusiness.</p><hr/><h2>5. Avis et Réputation</h2><p>Encouragez vos clients à laisser des avis détaillés. Répondez toujours de manière professionnelle, quelle que soit la langue de l'auteur.</p><hr/><h2>6. Plan d'Action Final</h2><ul><li>☐ Revendiquez votre fiche Google Business Profile</li><li>☐ Standardisez votre format d'adresse (NAP)</li><li>☐ Créez des pages de destination locales</li><li>☐ Mettez en place un processus de collecte d'avis</li><li>☐ Optimisez la vitesse mobile de votre site</li></ul><p>Le SEO local est un marathon. Les premiers résultats apparaissent en 3 mois, avec une autorité consolidée sous 6 à 12 mois.</p>"
         },
         "technical-seo-checklist-2025": {
             "title": "La Checklist SEO Technique Ultime pour 2025",
             "excerpt": "Ne laissez pas les erreurs techniques tuer vos classements. Voici ce que vous devez vérifier.",
-            "date": "10 Déc 2024",
+            "date": "10 Déc 2025",
             "category": "SEO Technique",
-            "content": "Espace réservé pour le contenu..."
+            "content": "Une stratégie de SEO technique réussie pour 2025 commence par les Core Web Vitals. Optimisez le Largest Contentful Paint (LCP) et le Cumulative Layout Shift (CLS) en optimisant la taille des images et en utilisant des formats modernes comme WebP. Assurez-vous que l'architecture de votre site est fluide, permettant aux moteurs de recherche de parcourir toutes les pages en moins de trois clics. Implémentez les données structurées Schema.org pour améliorer la visibilité et auditez régulièrement votre site pour corriger les liens internes rompus ou les balises canoniques mal gérées."
         },
         "why-websites-fail": {
             "title": "Pourquoi la Plupart des Sites Web Échouent sur Google (Et Comment y Remédier)",
             "excerpt": "Ce n'est pas seulement une question de mots-clés. C'est une question d'autorité, d'expérience utilisateur et d'intention.",
-            "date": "05 Déc 2024",
+            "date": "05 Déc 2025",
             "category": "Stratégie",
-            "content": "Espace réservé pour le contenu..."
+            "content": "Les sites Web échouent souvent à se classer non pas à cause d'une seule erreur, mais en raison d'un décalage entre le contenu et l'intention de recherche. Si votre page cible un mot-clé à fort volume mais ne répond pas à la requête spécifique de l'utilisateur, Google privilégiera des concurrents plus pertinents. De plus, l'autorité se construit grâce à des backlinks de qualité et des structures de liens internes cohérentes. Assurez-vous que votre site est techniquement sain, mais n'oubliez jamais que l'expérience utilisateur et un contenu de haute qualité sont les moteurs ultimes du succès de la recherche."
         },
         "ga4-event-tracking": {
             "title": "Guide du Débutant pour le Suivi des Événements GA4",
             "excerpt": "Arrêtez de compter sur les pages vues. Apprenez à suivre ce qui compte : clics, défilements et conversions.",
-            "date": "28 Nov 2024",
+            "date": "28 Nov 2025",
             "category": "Analytique",
-            "content": "Espace réservé pour le contenu..."
+            "content": "Google Analytics 4 (GA4) marque un changement majeur du suivi basé sur les sessions vers un suivi basé sur les événements. Pour tirer le meilleur parti de vos données, vous devez aller au-delà des simples métriques de pages vues. Commencez par définir vos événements de conversion clés, tels que les soumissions de formulaires ou les clics sur les boutons. Utilisez Google Tag Manager pour implémenter ces événements sans modifier directement le code. En visualisant votre entonnoir de conversion dans GA4 Explorations, vous pouvez identifier précisément où les utilisateurs décrochent et optimiser votre site pour de meilleures performances."
         },
         "keyword-research-process": {
             "title": "Mon Processus de Recherche de Mots-clés en 4 Étapes",
             "excerpt": "Comment je trouve des mots-clés de grande valeur et à faible concurrence pour n'importe quelle niche.",
-            "date": "15 Nov 2024",
+            "date": "15 Nov 2025",
             "category": "Recherche de Mots-clés",
-            "content": "Espace réservé pour le contenu..."
+            "content": "Une recherche efficace de mots-clés consiste à trouver l'intersection du volume, de la pertinence et de la difficulté. Mon processus en 4 étapes commence par un brainstorming de mots-clés basé sur les services de base. Deuxièmement, j'utilise des outils comme SEMrush ou Ahrefs pour analyser les classements des concurrents et identifier les opportunités faciles. Troisièmement, j'analyse l'intent de recherche pour m'assurer que nous créons le bon type de contenu. Enfin, je cartographie ces mots-clés dans une stratégie de cluster de contenu pour renforcer l'autorité thématique au fil du temps."
         }
     },
     "ContactPage": {

@@ -5,7 +5,7 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-dm-serif);
 
-  /* Colors */
+  /* Colors - Base Palette */
   --color-navy-50: #f8fafc;
   --color-navy-100: #f1f5f9;
   --color-navy-200: #e2e8f0;
@@ -18,31 +18,114 @@
   --color-navy-900: #0F172A;
   --color-navy-950: #020617;
 
-  --color-purple-50: #f5f3ff;
-  --color-purple-100: #ede9fe;
-  --color-purple-200: #ddd6fe;
-  --color-purple-300: #c4b5fd;
-  --color-purple-400: #a78bfa;
-  --color-purple-500: #8b5cf6;
-  --color-purple-600: #7c3aed;
-  --color-purple-700: #6d28d9;
-  --color-purple-800: #5b21b6;
-  --color-purple-900: #4c1d95;
-  --color-brand-purple: #6C63FF; /* The specific accent color requested */
-  --color-brand-purple-light: #A78BFA;
+  --color-brand-purple: #6C63FF;
+  --color-brand-mint: #00F5A0;
+  --color-brand-cyan: #00D2FF;
+
+  /* Theme-aware Semantic Colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-subtle: var(--border-subtle);
+  --color-glass-bg: var(--glass-bg);
+  --shadow-premium: var(--shadow-premium);
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #020617;
+  --text-secondary: #475569;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg-primary: #020617;
+  --bg-secondary: #0F172A;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --shadow-premium: none;
 }
 
 /* Base Styles */
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900;
+    @apply bg-bg-primary text-text-primary transition-colors duration-300 selection:bg-brand-purple/30 antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-navy-900;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-text-primary tracking-tight;
   }
 }
 
 /* Utilities */
 @utility container-custom {
   @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility glass {
+  @apply bg-glass-bg backdrop-blur-xl border border-border-subtle shadow-premium transition-all duration-300;
+}
+
+@utility glass-dark {
+  @apply bg-black/40 backdrop-blur-xl border border-white/5;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-text-primary to-brand-purple;
+}
+
+@utility text-gradient-mint {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-mint via-brand-cyan to-brand-purple;
+}
+
+/* Blog Content Reset */
+.blog-content {
+  @apply text-lg md:text-xl leading-relaxed text-text-secondary;
+}
+
+.blog-content h2 {
+  @apply text-3xl md:text-4xl font-bold text-text-primary mt-16 mb-8;
+}
+
+.blog-content h3 {
+  @apply text-2xl md:text-3xl font-bold text-text-primary mt-12 mb-6;
+}
+
+.blog-content p {
+  @apply mb-8;
+}
+
+.blog-content ul {
+  @apply list-disc pl-6 mb-10 space-y-4;
+}
+
+.blog-content ol {
+  @apply list-decimal pl-6 mb-10 space-y-4;
+}
+
+.blog-content li {
+  @apply marker:text-brand-purple ps-2;
+}
+
+.blog-content strong {
+  @apply text-text-primary font-bold;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-brand-purple bg-brand-purple/5 p-8 my-10 rounded-2xl italic;
+}
+
+.blog-content hr {
+  @apply border-t border-border-subtle my-16;
 }

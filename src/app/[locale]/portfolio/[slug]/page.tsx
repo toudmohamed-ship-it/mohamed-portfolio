@@ -36,6 +36,14 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: `${t(`${study.slug}.title`)} | Case Study`,
         description: t(`${study.slug}.summary`),
+        alternates: {
+            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}portfolio/${slug}`,
+            languages: {
+                'en': `https://www.mohamedtoudghi.com/portfolio/${slug}`,
+                'fr': `https://www.mohamedtoudghi.com/fr/portfolio/${slug}`,
+                'ar': `https://www.mohamedtoudghi.com/ar/portfolio/${slug}`,
+            },
+        },
     };
 }
 
@@ -90,23 +98,25 @@ export default async function CaseStudyPage({ params }: Props) {
     return (
         <>
             {/* Header / Intro */}
-            <section className="bg-navy-50 py-20 border-b border-navy-100">
-                <div className="container-custom">
-                    <Link href="/portfolio" className="inline-flex items-center text-sm font-medium text-navy-500 hover:text-brand-purple mb-8 transition-colors">
-                        <ArrowLeft className="mr-1 h-4 w-4 rtl:rotate-180" /> {tUI('back_to_portfolio')}
+            <section className="bg-bg-primary py-24 md:py-32 border-b border-border-subtle relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-purple/5 blur-[150px] rounded-full -z-0" />
+
+                <div className="container-custom relative z-10">
+                    <Link href="/portfolio" className="inline-flex items-center text-xs font-bold text-text-secondary hover:text-brand-mint mb-12 transition-colors uppercase tracking-[0.2em]">
+                        <ArrowLeft className="mr-2 h-4 w-4 rtl:rotate-180" /> {tUI('back_to_portfolio')}
                     </Link>
-                    <div className="max-w-4xl">
-                        <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="max-w-4xl space-y-8">
+                        <div className="flex flex-wrap gap-3">
                             {tags.map((tag, i) => (
-                                <span key={i} className="px-3 py-1 bg-white border border-navy-200 rounded-full text-xs font-semibold text-navy-700">
+                                <span key={i} className="px-4 py-1.5 bg-brand-mint/5 border border-brand-mint/10 rounded-full text-[10px] font-bold text-brand-mint uppercase tracking-wider">
                                     {tag}
                                 </span>
                             ))}
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-navy-900 mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-text-primary leading-[1.1] tracking-tight">
                             {t(`${study.slug}.title`)}
                         </h1>
-                        <p className="text-xl text-navy-600 leading-relaxed max-w-3xl">
+                        <p className="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl font-light">
                             {t(`${study.slug}.summary`)}
                         </p>
                     </div>
@@ -114,80 +124,70 @@ export default async function CaseStudyPage({ params }: Props) {
             </section>
 
             {/* Main Content */}
-            <section className="py-20 bg-white">
-                <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <section className="py-24 md:py-40 bg-bg-primary">
+                <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
 
                     {/* Left Column: Narrative */}
-                    <div className="lg:col-span-8 space-y-16">
+                    <div className="lg:col-span-8 space-y-24">
 
                         {/* Challenge */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl font-serif font-bold text-navy-900 flex items-center gap-3">
-                                <div className="p-2 bg-red-50 text-red-600 rounded-lg"><BarChart size={24} /></div>
+                        <div className="space-y-8">
+                            <h2 className="text-3xl font-serif font-bold text-text-primary flex items-center gap-4 tracking-tight">
+                                <div className="p-3 bg-black/5 dark:bg-white/5 text-brand-purple rounded-2xl border border-border-subtle"><BarChart size={28} /></div>
                                 {tUI('challenge')}
                             </h2>
-                            <p className="text-lg text-navy-600 leading-relaxed border-l-4 border-navy-100 pl-6">
+                            <p className="text-lg md:text-xl text-text-secondary leading-relaxed border-l-2 border-brand-purple/30 pl-8">
                                 {t(`${study.slug}.challenge`)}
                             </p>
                         </div>
 
                         {/* Approach */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl font-serif font-bold text-navy-900 flex items-center gap-3">
-                                <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Settings size={24} /></div>
+                        <div className="space-y-8">
+                            <h2 className="text-3xl font-serif font-bold text-text-primary flex items-center gap-4 tracking-tight">
+                                <div className="p-3 bg-black/5 dark:bg-white/5 text-brand-mint rounded-2xl border border-border-subtle"><Settings size={28} /></div>
                                 {tUI('approach')}
                             </h2>
-                            <p className="text-lg text-navy-600 leading-relaxed">
+                            <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
                                 {t(`${study.slug}.approach`)}
                             </p>
                         </div>
 
-                        {/* Methodology / Actions (Simulated for this template based on approach) */}
-                        <div className="space-y-4">
-                            <h2 className="text-2xl font-serif font-bold text-navy-900 flex items-center gap-3">
-                                <div className="p-2 bg-purple-50 text-purple-600 rounded-lg"><Code size={24} /></div>
+                        {/* Methodology / Actions */}
+                        <div className="space-y-8">
+                            <h2 className="text-3xl font-serif font-bold text-text-primary flex items-center gap-4 tracking-tight">
+                                <div className="p-3 bg-black/5 dark:bg-white/5 text-brand-cyan rounded-2xl border border-border-subtle"><Code size={28} /></div>
                                 {tUI('key_actions')}
                             </h2>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
-                                    <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">{tUI('actions.audit')}</span>
-                                </li>
-                                <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
-                                    <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">{tUI('actions.indexation')}</span>
-                                </li>
-                                <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
-                                    <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">{tUI('actions.architecture')}</span>
-                                </li>
-                                <li className="flex items-start gap-3 bg-navy-50 p-4 rounded-lg">
-                                    <CheckCircle2 size={18} className="text-green-600 mt-1 shrink-0" />
-                                    <span className="text-navy-700 text-sm">{tUI('actions.structured_data')}</span>
-                                </li>
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {[
+                                    { key: 'audit', icon: 'green' },
+                                    { key: 'indexation', icon: 'green' },
+                                    { key: 'architecture', icon: 'green' },
+                                    { key: 'structured_data', icon: 'green' }
+                                ].map((action) => (
+                                    <li key={action.key} className="flex items-start gap-4 glass p-6 rounded-2xl border-border-subtle">
+                                        <CheckCircle2 size={24} className="text-brand-mint mt-0.5 shrink-0" />
+                                        <span className="text-text-secondary font-medium">{tUI(`actions.${action.key}`)}</span>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
-                        {/* Comparison Metrics Table (Conditional) */}
+                        {/* Comparison Metrics Table */}
                         {(study as any).comparisonMetrics && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-serif font-bold text-navy-900">{tUI('before_after')}</h2>
-                                <div className="overflow-hidden rounded-xl border border-navy-100 shadow-sm">
+                            <div className="space-y-10">
+                                <h2 className="text-3xl font-serif font-bold text-text-primary tracking-tight">{tUI('before_after')}</h2>
+                                <div className="overflow-hidden rounded-[2rem] border border-border-subtle shadow-2xl glass">
                                     <table className="w-full text-left border-collapse">
                                         <thead>
-                                            <tr className="bg-navy-50 border-b border-navy-100">
-                                                <th className="p-4 text-sm font-semibold text-navy-600">{tUI('metric')}</th>
-                                                <th className="p-4 text-sm font-semibold text-navy-600">{tUI('before')}</th>
-                                                <th className="p-4 text-sm font-bold text-brand-purple">{tUI('after_optimization')}</th>
+                                            <tr className="bg-black/5 dark:bg-white/5 border-b border-border-subtle">
+                                                <th className="p-6 text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em]">{tUI('metric')}</th>
+                                                <th className="p-6 text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em]">{tUI('before')}</th>
+                                                <th className="p-6 text-[10px] font-bold text-brand-purple uppercase tracking-[0.2em]">{tUI('after_optimization')}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {/* Note: Comparison metrics hard to fully translate dynamically without structure change. 
-                                                For now we render them as is from JSON if they existed there, but they are in data.ts.
-                                                We added them to JSON for one item. We will try to fetch from JSON if available.
-                                            */}
                                             {(study as any).comparisonMetrics.map((metric: any, i: number) => {
-                                                // Try to fetch translated match if available
                                                 let label = metric.label;
                                                 let before = metric.before;
                                                 let after = metric.after;
@@ -201,10 +201,10 @@ export default async function CaseStudyPage({ params }: Props) {
                                                 } catch (e) { }
 
                                                 return (
-                                                    <tr key={i} className="border-b border-navy-100 last:border-0 hover:bg-navy-50/50 transition-colors">
-                                                        <td className="p-4 text-navy-900 font-medium">{label}</td>
-                                                        <td className="p-4 text-navy-500 font-mono text-sm">{before}</td>
-                                                        <td className="p-4 text-navy-900 font-bold font-mono text-sm bg-purple-50/30">{after}</td>
+                                                    <tr key={i} className="border-b border-border-subtle last:border-0 dark:hover:bg-white/[0.02] hover:bg-black/[0.02] transition-colors">
+                                                        <td className="p-6 text-text-primary font-bold tracking-tight">{label}</td>
+                                                        <td className="p-6 text-text-secondary font-mono text-sm">{before}</td>
+                                                        <td className="p-6 text-brand-mint font-bold font-mono text-sm bg-brand-mint/5">{after}</td>
                                                     </tr>
                                                 )
                                             })}
@@ -214,23 +214,21 @@ export default async function CaseStudyPage({ params }: Props) {
                             </div>
                         )}
 
-
-
-
                         {/* Gallery / Screenshots */}
                         {(study as any).gallery && (study as any).gallery.length > 0 && (
-                            <div className="space-y-6">
-                                <h2 className="text-2xl font-serif font-bold text-navy-900">{tUI('performance_evidence')}</h2>
-                                <div className="grid grid-cols-1 gap-6">
+                            <div className="space-y-10">
+                                <h2 className="text-3xl font-serif font-bold text-text-primary tracking-tight">{tUI('performance_evidence')}</h2>
+                                <div className="grid grid-cols-1 gap-10">
                                     {(study as any).gallery.map((image: any, index: number) => (
-                                        <div key={index} className="relative rounded-xl overflow-hidden shadow-md border border-navy-100 bg-navy-50">
+                                        <div key={index} className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-border-subtle bg-bg-primary group">
                                             <Image
                                                 src={image.src}
                                                 alt={galleryAlts[index] || image.alt}
                                                 width={1200}
                                                 height={800}
-                                                className="w-full h-auto"
+                                                className="w-full h-auto grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                                             />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 to-transparent" />
                                         </div>
                                     ))}
                                 </div>
@@ -238,11 +236,11 @@ export default async function CaseStudyPage({ params }: Props) {
                         )}
 
                         {/* Confidentiality Warning */}
-                        <div className="bg-amber-50 border border-amber-100 rounded-xl p-6 flex gap-4 items-start">
-                            <FileText className="text-amber-600 shrink-0 mt-1" size={24} />
-                            <div>
-                                <h4 className="font-bold text-amber-900 text-sm uppercase tracking-wide mb-1">{tUI('confidentiality.title')}</h4>
-                                <p className="text-amber-800 text-sm">
+                        <div className="bg-brand-purple/10 border border-brand-purple/20 rounded-3xl p-8 flex gap-6 items-start">
+                            <FileText className="text-brand-purple shrink-0 mt-1" size={32} />
+                            <div className="space-y-2">
+                                <h4 className="font-bold text-text-primary text-sm uppercase tracking-widest">{tUI('confidentiality.title')}</h4>
+                                <p className="text-text-secondary text-base leading-relaxed">
                                     {tUI('confidentiality.text')}
                                 </p>
                             </div>
@@ -251,29 +249,29 @@ export default async function CaseStudyPage({ params }: Props) {
                     </div>
 
                     {/* Right Column: Results & Info */}
-                    <div className="lg:col-span-4 space-y-8">
+                    <div className="lg:col-span-4 space-y-12">
                         {/* Results Card */}
-                        <div className="bg-navy-900 text-white rounded-2xl p-8 shadow-xl">
-                            <h3 className="text-xl font-bold mb-6 border-b border-navy-700 pb-4">{tUI('key_results')}</h3>
-                            <div className="space-y-6">
+                        <div className="glass border-border-subtle rounded-[2.5rem] p-10 shadow-2xl relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-purple to-brand-mint" />
+                            <h3 className="text-2xl font-bold text-text-primary mb-10 tracking-tight">{tUI('key_results')}</h3>
+                            <div className="space-y-10">
                                 {resultItems.map((result, idx) => (
-                                    <div key={idx}>
-                                        <p className="text-3xl font-bold text-brand-purple-light mb-1">
-                                            {/* Extract number if possible, else generic icon/bullet */}
+                                    <div key={idx} className="space-y-2">
+                                        <p className="text-4xl font-serif font-black text-brand-purple tracking-tighter">
                                             {idx + 1}
                                         </p>
-                                        <p className="text-navy-100 font-medium">{result}</p>
+                                        <p className="text-text-secondary font-medium text-lg leading-tight">{result}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
                         {/* Tools Used */}
-                        <div className="bg-white border border-navy-100 rounded-2xl p-8 shadow-sm">
-                            <h3 className="text-sm font-bold text-navy-400 uppercase tracking-wider mb-6">{tUI('tools_used')}</h3>
-                            <div className="flex flex-wrap gap-2">
+                        <div className="glass border-border-subtle rounded-[2rem] p-8 shadow-xl">
+                            <h3 className="text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em] mb-8">{tUI('tools_used')}</h3>
+                            <div className="flex flex-wrap gap-3">
                                 {study.tools?.map((tool: any) => (
-                                    <span key={tool} className="px-3 py-1.5 bg-navy-50 text-navy-700 rounded-lg text-xs font-semibold uppercase tracking-wide">
+                                    <span key={tool} className="px-4 py-2 bg-black/5 dark:bg-white/5 text-text-secondary rounded-xl text-xs font-bold uppercase tracking-wider border border-border-subtle">
                                         {tool}
                                     </span>
                                 ))}
@@ -285,45 +283,38 @@ export default async function CaseStudyPage({ params }: Props) {
             </section>
 
             {/* Related Case Studies */}
-            <section className="py-16 bg-navy-50">
+            <section className="py-24 md:py-40 bg-bg-primary border-t border-border-subtle">
                 <div className="container-custom">
-                    <h2 className="text-2xl font-serif font-bold text-navy-900 mb-8">Related Case Studies</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <h2 className="text-3xl md:text-5xl font-serif font-bold text-text-primary mb-16 tracking-tight text-center">More Success Stories</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {CASE_STUDIES.filter(s => s.slug !== study.slug).slice(0, 3).map((relatedStudy) => (
                             <Link
                                 key={relatedStudy.slug}
                                 href={`/portfolio/${relatedStudy.slug}`}
-                                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group border border-navy-100"
+                                className="glass rounded-[2rem] p-8 shadow-xl dark:hover:bg-white/[0.05] hover:bg-black/[0.02] transition-all duration-500 group border-border-subtle hover:-translate-y-2"
                             >
-                                <div className={`w-full h-2 ${relatedStudy.imageColor} rounded-full mb-4`}></div>
-                                <h3 className="font-bold text-navy-900 mb-2 group-hover:text-brand-purple transition-colors">
+                                <div className={`w-12 h-1.5 ${relatedStudy.imageColor} rounded-full mb-8 shadow-xl shadow-current`}></div>
+                                <h3 className="text-2xl font-serif font-bold text-text-primary mb-4 group-hover:text-brand-purple transition-colors">
                                     {t(`${relatedStudy.slug}.title`)}
                                 </h3>
-                                <p className="text-sm text-navy-600 line-clamp-2">
+                                <p className="text-text-secondary text-sm leading-relaxed line-clamp-2 group-hover:text-text-primary transition-colors">
                                     {t(`${relatedStudy.slug}.summary`)}
                                 </p>
-                                <span className="inline-flex items-center text-sm font-semibold text-brand-purple mt-4">
-                                    View Case Study <ChevronRight className="ml-1 h-4 w-4 rtl:rotate-180" />
-                                </span>
+                                <div className="inline-flex items-center text-xs font-bold text-brand-purple mt-8 uppercase tracking-widest gap-2">
+                                    View Study <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180" />
+                                </div>
                             </Link>
                         ))}
-                    </div>
-                    <div className="text-center mt-8">
-                        <Link href="/portfolio" className="inline-flex items-center text-brand-purple font-semibold hover:underline">
-                            View All Case Studies <ChevronRight className="ml-1 h-4 w-4 rtl:rotate-180" />
-                        </Link>
                     </div>
                 </div>
             </section>
 
             {/* Final CTA */}
-            <section className="bg-white">
-                <FinalCTA
-                    title={tCommon('title')}
-                    description={tCommon('description')}
-                    buttonText={tCommon('button')}
-                />
-            </section>
+            <FinalCTA
+                title={tCommon('title')}
+                description={tCommon('description')}
+                buttonText={tCommon('button')}
+            />
         </>
     );
 }

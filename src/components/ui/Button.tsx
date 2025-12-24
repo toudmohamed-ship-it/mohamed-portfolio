@@ -15,16 +15,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             <button
                 ref={ref}
                 className={twMerge(clsx(
-                    "inline-flex items-center justify-center rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+                    "inline-flex items-center justify-center rounded-full font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-purple/50 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]",
                     {
-                        "bg-brand-purple text-white hover:bg-purple-700 shadow-lg shadow-purple-500/20": variant === "primary",
-                        "bg-navy-900 text-white hover:bg-navy-800 shadow-lg shadow-navy-900/10": variant === "secondary",
-                        "border-2 border-navy-200 text-navy-700 hover:border-brand-purple hover:text-brand-purple": variant === "outline",
-                        "text-navy-600 hover:text-brand-purple hover:bg-purple-50": variant === "ghost",
+                        "bg-brand-purple text-white hover:bg-purple-600 shadow-lg shadow-brand-purple/20 hover:shadow-brand-purple/40 border-none": variant === "primary",
+                        "bg-bg-secondary text-text-primary hover:bg-black/5 dark:hover:bg-white/5 shadow-xl border border-border-subtle": variant === "secondary",
+                        "border border-border-subtle text-text-primary hover:border-brand-purple hover:bg-brand-purple/5": variant === "outline",
+                        "text-text-secondary hover:text-text-primary hover:bg-black/5 dark:hover:bg-white/5": variant === "ghost",
 
-                        "px-4 py-2 text-sm": size === "sm",
-                        "px-6 py-3 text-base": size === "md",
-                        "px-8 py-4 text-lg": size === "lg",
+                        "px-5 py-2 text-xs uppercase tracking-widest": size === "sm",
+                        "px-8 py-3.5 text-sm": size === "md",
+                        "px-12 py-5 text-base": size === "lg",
                     },
                     className
                 ))}

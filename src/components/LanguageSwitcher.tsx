@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
 
     return (
         <div className="flex items-center gap-3">
-            <Globe className="w-4 h-4 text-slate-400" />
+            <Globe className="w-4 h-4 text-text-secondary" />
             <div className="flex items-center gap-2">
                 {languages.map((lang, index) => (
                     <div key={lang.code} className="flex items-center">
@@ -25,7 +25,7 @@ export default function LanguageSwitcher() {
                             locale={lang.code}
                             className={clsx(
                                 "text-xs font-bold transition-colors hover:text-brand-purple",
-                                locale === lang.code ? "text-brand-purple" : "text-slate-500"
+                                locale === lang.code ? "text-brand-purple" : "text-text-secondary"
                             )}
                         >
                             {lang.label}

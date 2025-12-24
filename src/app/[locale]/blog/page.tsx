@@ -15,6 +15,14 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: t('title'),
         description: t('description'),
+        alternates: {
+            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}blog`,
+            languages: {
+                'en': 'https://www.mohamedtoudghi.com/blog',
+                'fr': 'https://www.mohamedtoudghi.com/fr/blog',
+                'ar': 'https://www.mohamedtoudghi.com/ar/blog',
+            },
+        },
     };
 }
 
@@ -32,36 +40,33 @@ export default async function BlogPage({ params }: Props) {
                 subtitle={t('header.subtitle')}
             />
 
-            <section className="py-20 bg-white">
+            <section className="py-24 md:py-40 bg-bg-primary min-h-screen">
                 <div className="container-custom">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <h2 className="sr-only">Latest Insights</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {BLOG_POSTS.map((post) => (
-                            <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col h-full border border-navy-100 rounded-2xl overflow-hidden hover:shadow-xl hover:border-brand-purple/20 transition-all duration-300 bg-white">
-                                <div className="bg-navy-50 aspect-video flex items-center justify-center text-navy-300">
-                                    {/* Placeholder generic image */}
-                                    <span className="font-serif text-4xl opacity-20 font-bold">Blog</span>
+                            <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col h-full glass rounded-[2.5rem] overflow-hidden border-border-subtle hover:border-brand-purple/30 dark:hover:bg-white/[0.05] hover:bg-black/[0.02] transition-all duration-500 shadow-2xl">
+                                <div className="bg-black/5 dark:bg-white/5 aspect-video flex items-center justify-center relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                    <span className="font-serif text-5xl opacity-5 font-bold tracking-tighter group-hover:scale-110 transition-transform duration-700 text-text-primary">Insights</span>
                                 </div>
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="flex items-center gap-4 text-xs font-medium text-navy-500 mb-4">
-                                        <span className="flex items-center gap-1">
-                                            <Calendar size={12} />
-                                            {/* Note: In a real app we'd format date by locale using new Date(post.date).toLocaleDateString(locale) 
-                                                For now we are reading localized string from JSON or fallback to Data?
-                                                Actually, let's use the translated date from JSON if available, as 'date' is in BlogPosts object 
-                                            */}
+                                <div className="p-8 md:p-10 flex flex-col flex-grow">
+                                    <div className="flex items-center gap-4 text-[10px] font-bold text-text-secondary mb-6 uppercase tracking-[0.2em]">
+                                        <span className="flex items-center gap-2">
+                                            <Calendar size={12} className="text-brand-purple" />
                                             {tPosts(`${post.slug}.date`)}
                                         </span>
-                                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-50 text-brand-purple">
-                                            <Tag size={12} /> {tPosts(`${post.slug}.category`)}
+                                        <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 text-brand-purple border border-brand-purple/20">
+                                            {tPosts(`${post.slug}.category`)}
                                         </span>
                                     </div>
-                                    <h3 className="text-xl font-bold text-navy-900 mb-3 group-hover:text-brand-purple transition-colors">
+                                    <h3 className="text-2xl font-serif font-bold text-text-primary mb-4 group-hover:text-brand-purple transition-colors leading-tight">
                                         {tPosts(`${post.slug}.title`)}
                                     </h3>
-                                    <p className="text-navy-600 text-sm mb-6 flex-grow">
+                                    <p className="text-text-secondary text-sm mb-8 flex-grow leading-relaxed group-hover:text-text-primary transition-colors">
                                         {tPosts(`${post.slug}.excerpt`)}
                                     </p>
-                                    <div className="flex items-center text-sm font-medium text-navy-900 group-hover:text-brand-purple transition-colors">
+                                    <div className="flex items-center text-xs font-bold text-text-primary uppercase tracking-[0.2em] group-hover:text-brand-mint transition-colors">
                                         {t('read_article')} <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform rtl:rotate-180 rtl:ml-0 rtl:mr-2 rtl:group-hover:-translate-x-1" />
                                     </div>
                                 </div>

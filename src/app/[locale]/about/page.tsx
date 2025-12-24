@@ -96,32 +96,34 @@ export default async function AboutPage({ params }: Props) {
                 subtitle={t('hero.subtitle')}
             />
 
-            <section className="py-20 bg-white">
-                <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <section className="py-24 md:py-40 bg-bg-primary">
+                <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                     {/* Bio Section */}
-                    <div className="space-y-6">
-                        <h2 className="text-3xl font-serif font-bold text-navy-900">
-                            {t('journey.title')}
-                        </h2>
-                        <div className="prose prose-lg text-navy-600 prose-headings:text-navy-900">
-                            <p dangerouslySetInnerHTML={{ __html: t.raw('journey.p1') }} />
-                            <p dangerouslySetInnerHTML={{ __html: t.raw('journey.p2') }} />
-                            <p dangerouslySetInnerHTML={{ __html: t.raw('journey.p3') }} />
+                    <div className="space-y-12">
+                        <div className="space-y-6">
+                            <h2 className="text-4xl font-serif font-bold text-text-primary tracking-tight">
+                                {t('journey.title')}
+                            </h2>
+                            <div className="prose prose-lg text-text-secondary prose-headings:text-text-primary leading-relaxed max-w-none">
+                                <p dangerouslySetInnerHTML={{ __html: t.raw('journey.p1') }} />
+                                <p dangerouslySetInnerHTML={{ __html: t.raw('journey.p2') }} />
+                                <p dangerouslySetInnerHTML={{ __html: t.raw('journey.p3') }} />
+                            </div>
                         </div>
 
-                        <div className="pt-4">
-                            <h3 className="text-xl font-bold text-navy-900 mb-4">{t('languages.title')}</h3>
-                            <ul className="space-y-2">
-                                <li className="flex items-center gap-2"><span className="w-24 font-semibold text-navy-900">{t('languages.arabic')}</span> <span className="text-navy-500">{t('languages.native')}</span></li>
-                                <li className="flex items-center gap-2"><span className="w-24 font-semibold text-navy-900">{t('languages.english')}</span> <span className="text-navy-500">{t('languages.professional')}</span></li>
-                                <li className="flex items-center gap-2"><span className="w-24 font-semibold text-navy-900">{t('languages.french')}</span> <span className="text-navy-500">{t('languages.advanced')}</span></li>
+                        <div className="pt-8 border-t border-border-subtle">
+                            <h3 className="text-xl font-bold text-text-primary mb-6 uppercase tracking-widest text-xs">{t('languages.title')}</h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-4"><span className="w-24 font-bold text-text-secondary text-sm uppercase tracking-wider">{t('languages.arabic')}</span> <span className="text-brand-mint font-medium">{t('languages.native')}</span></li>
+                                <li className="flex items-center gap-4"><span className="w-24 font-bold text-text-secondary text-sm uppercase tracking-wider">{t('languages.english')}</span> <span className="text-text-secondary font-medium">{t('languages.professional')}</span></li>
+                                <li className="flex items-center gap-4"><span className="w-24 font-bold text-text-secondary text-sm uppercase tracking-wider">{t('languages.french')}</span> <span className="text-text-secondary font-medium">{t('languages.advanced')}</span></li>
                             </ul>
                         </div>
 
-                        <div className="pt-6">
+                        <div className="pt-8">
                             <a href="/resume.pdf" download="Mohamed_Toudghi_Resume.pdf">
-                                <Button>
-                                    <Download className="mr-2 h-4 w-4" />
+                                <Button size="lg" className="rounded-full px-10">
+                                    <Download className="mr-2 h-5 w-5" />
                                     {t('resume')}
                                 </Button>
                             </a>
@@ -129,19 +131,19 @@ export default async function AboutPage({ params }: Props) {
                     </div>
 
                     {/* Skills Grid */}
-                    <div className="space-y-12">
+                    <div className="space-y-16">
                         <div>
-                            <h2 className="text-3xl font-serif font-bold text-navy-900 mb-8">
+                            <h2 className="text-3xl font-serif font-bold text-text-primary mb-10 tracking-tight">
                                 {t('expertise.title')}
                             </h2>
                             <div className="grid grid-cols-1 gap-8">
                                 {Object.entries(skills).map(([category, items]) => (
-                                    <div key={category} className="bg-navy-50 p-6 rounded-xl">
-                                        <h3 className="text-xl font-bold text-brand-purple mb-4">{category}</h3>
-                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div key={category} className="glass p-8 rounded-3xl border-border-subtle">
+                                        <h3 className="text-xl font-bold text-brand-purple mb-6 tracking-tight">{category}</h3>
+                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             {items.map((skill) => (
-                                                <li key={skill} className="flex items-start gap-2 text-sm font-medium text-navy-700">
-                                                    <CheckCircle2 className="h-4 w-4 text-brand-purple mt-0.5 shrink-0" />
+                                                <li key={skill} className="flex items-start gap-3 text-sm font-medium text-text-secondary">
+                                                    <CheckCircle2 className="h-4 w-4 text-brand-mint mt-0.5 shrink-0" />
                                                     {skill}
                                                 </li>
                                             ))}
@@ -153,12 +155,12 @@ export default async function AboutPage({ params }: Props) {
 
                         {/* Certifications */}
                         <div>
-                            <h3 className="text-2xl font-serif font-bold text-navy-900 mb-6">{t('certifications.title')}</h3>
+                            <h3 className="text-2xl font-serif font-bold text-text-primary mb-8 tracking-tight">{t('certifications.title')}</h3>
                             <div className="flex flex-wrap gap-3">
                                 {certifications.map((cert) => (
                                     <span
                                         key={cert}
-                                        className="px-4 py-2 bg-white border border-navy-200 rounded-full text-sm font-medium text-navy-600 shadow-sm"
+                                        className="px-5 py-2.5 bg-black/5 dark:bg-white/5 border border-border-subtle rounded-full text-xs font-bold text-text-secondary tracking-wider uppercase"
                                     >
                                         {cert}
                                     </span>

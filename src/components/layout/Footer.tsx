@@ -4,28 +4,48 @@ import { Linkedin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-navy-50 py-16 mt-auto">
+        <footer className="bg-bg-primary border-t border-border-subtle py-24 md:py-32">
             <div className="container-custom">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-16 md:gap-12">
                     {/* Brand */}
-                    <div className="space-y-4 col-span-1 md:col-span-1">
-                        <h3 className="font-serif text-2xl font-bold text-navy-900">
-                            Mohamed Toudghi
+                    <div className="space-y-6 lg:col-span-2">
+                        <h3 className="font-serif text-3xl font-bold text-text-primary tracking-tight group cursor-default">
+                            Mohamed <span className="text-brand-purple">Toudghi</span>
                         </h3>
-                        <p className="text-navy-600 text-sm leading-relaxed font-medium">
-                            SEO & Digital Marketing Specialist
+                        <p className="text-text-secondary text-base leading-relaxed max-w-sm">
+                            High-performance SEO & Digital Marketing strategies that drive growth and maximize ROI for global brands.
                         </p>
+
+                        {/* Social / Contact Icons Quick */}
+                        <div className="flex items-center gap-4 pt-4">
+                            {[
+                                { icon: Linkedin, href: PERSONAL_INFO.linkedin, label: "LinkedIn" },
+                                { icon: Mail, href: `mailto:${PERSONAL_INFO.email}`, label: "Email" },
+                                { icon: Phone, href: `https://wa.me/${PERSONAL_INFO.phone.replace(/[^0-9]/g, "")}`, label: "WhatsApp" }
+                            ].map((item, i) => (
+                                <a
+                                    key={i}
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-brand-purple hover:bg-brand-purple/5 transition-all duration-300"
+                                    aria-label={item.label}
+                                >
+                                    <item.icon size={18} />
+                                </a>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Navigation */}
                     <div>
-                        <h4 className="font-bold text-navy-900 mb-6">Explore</h4>
-                        <ul className="space-y-3">
+                        <h4 className="font-bold text-text-primary text-xs uppercase tracking-[0.2em] mb-8">Explore</h4>
+                        <ul className="space-y-4">
                             {NAV_LINKS.map((link) => (
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-navy-600 hover:text-brand-purple text-sm transition-colors"
+                                        className="text-text-secondary hover:text-brand-mint text-sm transition-colors block"
                                     >
                                         {link.label}
                                     </Link>
@@ -36,89 +56,49 @@ export default function Footer() {
 
                     {/* Services Quick Links */}
                     <div>
-                        <h4 className="font-bold text-navy-900 mb-6">Services</h4>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href="/services#tech_seo" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
-                                    Technical SEO
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services#local_seo" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
-                                    Local SEO
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services#analytics" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
-                                    Analytics & Tracking
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services#keyword_strategy" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
-                                    Keyword Research
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services#wp_optimization" className="text-navy-600 hover:text-brand-purple text-sm transition-colors">
-                                    Website Optimization
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div>
-                        <h4 className="font-bold text-navy-900 mb-6">Contact</h4>
+                        <h4 className="font-bold text-text-primary text-xs uppercase tracking-[0.2em] mb-8">Specialties</h4>
                         <ul className="space-y-4">
-                            <li className="flex items-start gap-3 text-navy-600 text-sm">
-                                <Mail size={18} className="shrink-0 mt-0.5" />
-                                <a href={`mailto:${PERSONAL_INFO.email}`} className="hover:text-brand-purple">
-                                    {PERSONAL_INFO.email}
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-3 text-navy-600 text-sm">
-                                <Linkedin size={18} className="shrink-0 mt-0.5" />
-                                <a
-                                    href={PERSONAL_INFO.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-brand-purple"
-                                >
-                                    LinkedIn Profile
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-3 text-navy-600 text-sm">
-                                <Phone size={18} className="shrink-0 mt-0.5" />
-                                <a
-                                    href={`https://wa.me/${PERSONAL_INFO.phone.replace(/[^0-9]/g, "")}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-brand-purple"
-                                >
-                                    WhatsApp
-                                </a>
-                            </li>
+                            {[
+                                { label: "Technical SEO", id: "tech_seo" },
+                                { label: "Local SEO", id: "local_seo" },
+                                { label: "Analytics", id: "analytics" },
+                                { label: "Performance", id: "wp_optimization" }
+                            ].map((s) => (
+                                <li key={s.id}>
+                                    <Link href={`/services#${s.id}`} className="text-text-secondary hover:text-brand-mint text-sm transition-colors block">
+                                        {s.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Legal / Extra */}
+                    {/* Legal */}
                     <div>
-                        <h4 className="font-bold text-navy-900 mb-6">Legal</h4>
-                        <ul className="space-y-3">
+                        <h4 className="font-bold text-text-primary text-xs uppercase tracking-[0.2em] mb-8">Information</h4>
+                        <ul className="space-y-4">
                             <li>
-                                <Link href="#" className="text-navy-600 hover:text-brand-purple text-sm">
+                                <Link href="#" className="text-text-secondary hover:text-brand-mint text-sm transition-colors block">
                                     Privacy Policy
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="text-navy-600 hover:text-brand-purple text-sm">
-                                    Terms of Service
+                                <Link href="#" className="text-text-secondary hover:text-brand-mint text-sm transition-colors block">
+                                    Terms of Use
                                 </Link>
                             </li>
                         </ul>
-                        <div className="mt-8 text-xs text-navy-400">
-                            © 2025 Mohamed Toudghi. All rights reserved.
-                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-24 pt-12 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-text-secondary font-medium uppercase tracking-widest">
+                    <p>© 2025 Mohamed Toudghi. Built with precision.</p>
+                    <div className="flex items-center gap-8">
+                        <span className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-mint animate-pulse" />
+                            Open for projects
+                        </span>
+                        <span>Casablanca, MA</span>
                     </div>
                 </div>
             </div>

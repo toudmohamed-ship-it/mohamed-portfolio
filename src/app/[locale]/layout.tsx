@@ -9,6 +9,11 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,9 +41,9 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
   const { locale } = await params;
 
   const descriptions: Record<string, string> = {
-    en: "Mohamed Toudghi is an SEO Specialist & Digital Marketing Consultant based in Morocco. Expert in Technical SEO, Analytics (GA4, GTM), Local SEO, and data-driven growth strategies for businesses worldwide.",
-    fr: "Mohamed Toudghi est un spécialiste SEO et consultant en marketing digital basé au Maroc. Expert en SEO technique, Analytics (GA4, GTM), SEO local et stratégies de croissance basées sur les données.",
-    ar: "محمد تودغي متخصص في تحسين محركات البحث ومستشار تسويق رقمي من المغرب. خبير في SEO التقني، التحليلات (GA4، GTM)، SEO المحلي، واستراتيجيات النمو المبنية على البيانات."
+    en: "Mohamed Toudghi is an SEO Specialist helping businesses improve organic visibility through Technical SEO, Analytics, and data-driven growth strategies.",
+    fr: "Mohamed Toudghi est un spécialiste SEO aidant les entreprises à améliorer leur visibilité organique grâce au SEO technique et aux stratégies de croissance.",
+    ar: "محمد تودغي متخصص SEO يساعد الشركات على تحسين ظهورها العضوي من خلال SEO التقني واستراتيجيات النمو المبنية على البيانات."
   };
 
   const titles: Record<string, string> = {
@@ -60,9 +65,10 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
     alternates: {
       canonical: `${baseUrl}${canonicalPath}`,
       languages: {
-        'en': '/',
-        'fr': '/fr',
-        'ar': '/ar',
+        'en': `${baseUrl}/`,
+        'fr': `${baseUrl}/fr`,
+        'ar': `${baseUrl}/ar`,
+        'x-default': `${baseUrl}/`,
       },
     },
     openGraph: {
@@ -101,24 +107,30 @@ export default async function LocaleLayout({
   }
 
   // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   // RTL Logic
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={dir}>
-      <body className={`${inter.variable} ${dmSerif.variable} ${cairo.variable} antialiased bg-slate-50 text-slate-900 flex flex-col min-h-screen`}>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <SchemaMarkup />
-          <Navbar />
-          <main className="flex-grow pt-20">
-            {children}
-          </main>
-          <Footer />
-          <WhatsAppButton />
-        </NextIntlClientProvider>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
+      <body className={`${inter.variable} ${dmSerif.variable} ${cairo.variable} antialiased flex flex-col min-h-screen`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <SchemaMarkup />
+            <Navbar />
+            <main className="flex-grow pt-20">
+              {children}
+            </main>
+            <Footer />
+            <WhatsAppButton />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
