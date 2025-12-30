@@ -54,24 +54,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Services Quick Links */}
-                    <div>
-                        <h4 className="font-bold text-text-primary text-xs uppercase tracking-[0.2em] mb-8">Specialties</h4>
-                        <ul className="space-y-4">
-                            {[
-                                { label: "Technical SEO", id: "tech_seo" },
-                                { label: "Local SEO", id: "local_seo" },
-                                { label: "Analytics", id: "analytics" },
-                                { label: "Performance", id: "wp_optimization" }
-                            ].map((s) => (
-                                <li key={s.id}>
-                                    <Link href={`/services#${s.id}`} className="text-text-secondary hover:text-brand-mint text-sm transition-colors block">
-                                        {s.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+
 
                     {/* Legal */}
                     <div>
