@@ -6,8 +6,14 @@ export const BLOG_POSTS = [
         image: "/blog/local-seo-morocco.png"
     },
     {
-        slug: "technical-seo-checklist-2025",
-        date: "Dec 10, 2024",
+        slug: "technical-seo-checklist-2026",
+        date: "Jan 02, 2026",
+        category: "Technical SEO",
+        image: "/blog/placeholder.png"
+    },
+    {
+        slug: "technical-seo-audit-checklist-lead-gen",
+        date: "Jan 05, 2026",
         category: "Technical SEO",
         image: "/blog/placeholder.png"
     },

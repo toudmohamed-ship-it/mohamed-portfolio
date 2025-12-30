@@ -25,7 +25,7 @@ export default function AuthorBio() {
                         <div className="flex items-center justify-center md:justify-start gap-4 text-xs font-bold text-text-secondary uppercase tracking-widest opacity-60">
                             <span className="flex items-center gap-2">
                                 <MapPin size={12} className="text-brand-purple" />
-                                Morocco
+                                International
                             </span>
                             <span className="w-1 h-1 bg-white/20 rounded-full"></span>
                             <span>Scale-up Specialist</span>
@@ -33,7 +33,7 @@ export default function AuthorBio() {
                     </div>
 
                     <p className="text-text-secondary leading-relaxed max-w-2xl text-lg italic opacity-90">
-                        "I help businesses in Morocco and beyond dominate search results through data-driven SEO strategies, technical precision, and a deep understanding of local search behavior."
+                        "I help businesses dominate search results through data-driven SEO strategies, technical precision, and a deep understanding of global search behavior."
                     </p>
 
                     <div className="flex items-center justify-center md:justify-start gap-6 pt-4">

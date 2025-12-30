@@ -98,7 +98,7 @@ export default function Footer() {
                             <span className="w-1.5 h-1.5 rounded-full bg-brand-mint animate-pulse" />
                             Open for projects
                         </span>
-                        <span>Casablanca, MA</span>
+                        <span>Global Services</span>
                     </div>
                 </div>
             </div>

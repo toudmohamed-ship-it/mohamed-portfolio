@@ -14,7 +14,7 @@ export default async function RelatedPosts({ currentSlug, relatedSlugs, locale }
     const t = await getTranslations({ locale, namespace: 'BlogPage' });
     const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
 
-    const relatedPosts = BLOG_POSTS.filter(post => relatedSlugs.includes(post.slug) && post.slug !== currentSlug);
+    const relatedPosts = BLOG_POSTS.filter(post => (relatedSlugs || []).includes(post.slug) && post.slug !== currentSlug);
 
     if (relatedPosts.length === 0) return null;
 

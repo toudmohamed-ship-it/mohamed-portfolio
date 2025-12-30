@@ -69,9 +69,15 @@ export default async function BlogPostPage({ params }: Props) {
     const t = await getTranslations({ locale, namespace: 'BlogPage' });
     const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
 
+    interface BlogMetadata {
+        faqs: any[];
+        relatedSlugs?: string[];
+        relatedPosts?: string[];
+    }
+
     // Try to read content from file system (CMS-like)
     let content = "";
-    let meta = { faqs: [], relatedSlugs: [] };
+    let meta: BlogMetadata = { faqs: [], relatedSlugs: [] };
 
     try {
         const blogDir = path.resolve(process.cwd(), "src/content/blog", slug);
@@ -197,7 +203,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                         {/* Outside Content Box for Related Items */}
                         <div className="mt-24">
-                            <RelatedPosts currentSlug={slug} relatedSlugs={meta.relatedSlugs} locale={locale} />
+                            <RelatedPosts currentSlug={slug} relatedSlugs={meta.relatedPosts || meta.relatedSlugs || []} locale={locale} />
                         </div>
                     </div>
 

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
   const descriptions: Record<string, string> = {
-    en: "Mohamed Toudghi is an SEO Specialist & Digital Marketing Consultant helping businesses improve organic visibility through Technical SEO, Analytics, and data-driven strategies. Based in Morocco, serving clients worldwide.",
+    en: "Mohamed Toudghi is an SEO Specialist & Digital Marketing Consultant helping businesses improve organic visibility through Technical SEO, Analytics, and data-driven strategies. Serving clients worldwide.",
     fr: "Mohamed Toudghi est un spécialiste SEO et consultant en marketing digital aidant les entreprises à améliorer leur visibilité organique grâce au SEO technique, à l'Analytics et aux stratégies basées sur les données.",
     ar: "محمد تودغي متخصص في تحسين محركات البحث ومستشار تسويق رقمي يساعد الشركات على تحسين ظهورها العضوي من خلال SEO التقني والتحليلات والاستراتيجيات المبنية على البيانات."
   };

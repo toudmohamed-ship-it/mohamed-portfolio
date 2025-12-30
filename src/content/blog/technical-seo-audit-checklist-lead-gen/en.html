@@ -1,0 +1,582 @@
+<h1>Technical SEO Audit Checklist for Lead-Generation Websites (Service Businesses & SaaS)</h1>
+
+<p class="lead">For service businesses and SaaS companies, your website's job is simple: generate qualified leads, demo
+    bookings, and trial sign-ups. But if your technical SEO is weak, your best content and high-intent pages never get
+    the visibility they deserve—no impressions, no clicks, no pipeline.</p>
+
+<p>A structured technical SEO audit checklist helps you:</p>
+<ul>
+    <li>Ensure key pages are crawlable and indexable.</li>
+    <li>Remove technical roadblocks that hurt rankings and conversions.</li>
+    <li>Improve speed and UX so more visitors actually complete forms or start trials.</li>
+</ul>
+
+<p>This article gives you a step-by-step technical SEO audit checklist tailored to lead-generation sites (service, B2B,
+    SaaS), not e-commerce. You can follow it yourself, delegate parts to your team, or use it to brief an agency.</p>
+
+<p>It's part of a broader technical SEO framework for service businesses and SaaS. For the full strategy view, see the
+    pillar article on <a href="/blog/technical-seo-service-businesses-saas">technical SEO for service businesses</a>
+    (crawlability, site architecture, Core Web Vitals, and more).</p>
+
+<div class="toc-container">
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#how-to-use">How to Use This Checklist</a></li>
+        <li><a href="#step-1">Step 1: Crawlability & Indexation Basics</a></li>
+        <li><a href="#step-2">Step 2: Fix Indexation Bloat & Thin Content</a></li>
+        <li><a href="#step-3">Step 3: Site Architecture & Internal Linking</a></li>
+        <li><a href="#step-4">Step 4: URL Structure & Canonicals</a></li>
+        <li><a href="#step-5">Step 5: Performance & Core Web Vitals</a></li>
+        <li><a href="#step-6">Step 6: Mobile-Friendliness & UX Basics</a></li>
+        <li><a href="#step-7">Step 7: On-Page Technical Elements</a></li>
+        <li><a href="#step-8">Step 8: Structured Data & Schema Markup</a></li>
+        <li><a href="#step-9">Step 9: Technical Health Checks in GSC</a></li>
+        <li><a href="#step-10">Step 10: Prioritizing Issues & Action Plan</a></li>
+        <li><a href="#consultant">When to Bring in a Consultant</a></li>
+        <li><a href="#conclusion">Conclusion & Next Steps</a></li>
+    </ul>
+</div>
+
+<h2 id="how-to-use">How to Use This Technical SEO Audit Checklist</h2>
+
+<h3>Who This Checklist Is For</h3>
+<p>This checklist is designed for:</p>
+<ul>
+    <li>Marketing managers and heads of growth.</li>
+    <li>Founders and in-house generalist marketers.</li>
+    <li>SEO managers at agencies or B2B/SaaS companies.</li>
+</ul>
+<p>You should already understand SEO basics (titles, content, links), but you don't need to be a developer. Some fixes
+    will require dev help, but you'll know what to ask for and why.</p>
+
+<h3>Tools You'll Need</h3>
+<p>You don't need an expensive tool stack. Minimum recommended:</p>
+<ul>
+    <li><strong>Google Search Console (GSC)</strong> – for indexation, coverage, and Core Web Vitals.</li>
+    <li><strong>A crawler</strong> – e.g., Screaming Frog, Sitebulb, or Semrush Site Audit.</li>
+    <li><strong>PageSpeed Insights / Lighthouse</strong> – for performance and Core Web Vitals.</li>
+    <li><strong>Google Analytics (GA4)</strong> – to map technical issues to traffic and conversions.</li>
+    <li><strong>Optional:</strong> Ahrefs / Semrush / Moz – to cross-check organic performance.</li>
+</ul>
+
+<p>Use this checklist as:</p>
+<ul>
+    <li>A baseline audit (first time).</li>
+    <li>A quarterly health check to catch issues after changes, redesigns, or content pushes.</li>
+    <li>A prioritization tool to decide where your dev and SEO resources should go.</li>
+</ul>
+
+<h2 id="step-1">Step 1: Crawlability & Indexation Basics</h2>
+<p>If search engines can't crawl or index your pages, nothing else matters. Start with the basics.</p>
+
+<h3>1.1 Check robots.txt</h3>
+<p>Your <code>robots.txt</code> file tells crawlers what they're allowed to access.</p>
+<p><strong>Actions:</strong></p>
+<ul>
+    <li>Visit <code>yourdomain.com/robots.txt</code>.</li>
+    <li>Confirm it doesn't block your main site sections (e.g., <code>/services/</code>, <code>/pricing/</code>,
+        <code>/blog/</code>).</li>
+    <li>Disallowed paths are intentional (e.g., <code>/wp-admin/</code>, <code>/cart/</code>, staging routes).</li>
+</ul>
+<p><strong>Watch out for:</strong></p>
+<ul>
+    <li><code>Disallow: /</code> on production sites (sometimes left after staging).</li>
+    <li>Overly broad disallows like <code>Disallow: /blog</code> when you meant <code>/blog/tag/</code>.</li>
+</ul>
+<p>Use the robots.txt Tester inside Google Search Console to validate and test specific URLs.</p>
+
+<h3>1.2 Check XML Sitemaps</h3>
+<p>Your XML sitemap helps search engines discover important URLs.</p>
+<p><strong>Actions:</strong></p>
+<ul>
+    <li>Visit <code>/sitemap.xml</code> or check in GSC under Sitemaps.</li>
+    <li>Confirm it only includes canonical, indexable URLs (no test, tag, or parameter pages).</li>
+    <li>Key pages are present: services, pricing, demo/trial, contact, top resources.</li>
+    <li>If you have multiple sitemaps (e.g., <code>/sitemap_pages.xml</code>, <code>/sitemap_posts.xml</code>), verify
+        each.</li>
+</ul>
+<p>If you're using WordPress (Yoast, Rank Math, etc.) or a SaaS CMS, make sure the sitemap modules are correctly
+    configured and submitted in GSC.</p>
+
+<h3>1.3 Make Sure Important Pages Are Crawlable</h3>
+<p>Use your crawler (e.g., Screaming Frog):</p>
+<ul>
+    <li>Run a full site crawl.</li>
+    <li>Filter for: Status code 200 (OK), no <code>noindex</code> meta robots tags, not blocked by
+        <code>robots.txt</code>.</li>
+    <li>Confirm that your primary service pages, pricing page, demo/trial signup, and contact/consultation forms are all
+        crawlable and not accidentally excluded.</li>
+</ul>
+
+<h3>1.4 Check for Noindex Tags on Key Pages</h3>
+<p>Sometimes teams add <code>noindex</code> for testing and forget to remove it.</p>
+<p><strong>Actions using your crawler:</strong></p>
+<ul>
+    <li>Filter pages with a meta robots noindex directive.</li>
+    <li>Review: Should any core commercial or top-of-funnel content be indexable?</li>
+    <li>Are you mistakenly noindexing entire sections (e.g., <code>/blog/</code>)?</li>
+</ul>
+<p>Use GSC "Inspect URL" for spot checks on critical pages to confirm "URL is on Google" and indexable.</p>
+
+<h3>1.5 Use GSC "Pages" / "Indexing" Reports</h3>
+<p>In Google Search Console:</p>
+<ul>
+    <li>Go to Indexing → Pages.</li>
+    <li>Review indexed pages – Are there any you don't want indexed?</li>
+    <li>Review not indexed pages – Look for: Soft 404, Discovered – currently not indexed, Crawled – currently not
+        indexed, Alternate page with proper canonical tag.</li>
+</ul>
+<p>Each status can highlight different issues:</p>
+<ul>
+    <li>A lot of soft 404s → thin/duplicate content.</li>
+    <li>Many "Discovered – currently not indexed" → possible crawl budget or quality issues.</li>
+</ul>
+
+<h2 id="step-2">Step 2: Fix Indexation Bloat & Thin Content</h2>
+<p>Too many low-value pages dilute your crawl budget and can drag down overall site quality.</p>
+
+<h3>2.1 Identify Low-Value Indexed Pages</h3>
+<p>Use both GSC and your crawler to identify:</p>
+<ul>
+    <li>Blog tag and category archives with little unique content.</li>
+    <li>Author archives with no value.</li>
+    <li>Search result pages on your own site (<code>/search/?q=</code>).</li>
+    <li>URLs with tracking parameters: <code>?utm_source=</code>, <code>?ref=</code>, etc.</li>
+    <li>Auto-generated thin pages (e.g., "Hello World", test landing pages).</li>
+</ul>
+<p>Export indexed URLs from GSC, then cross-match with your crawl data to identify patterns.</p>
+
+<h3>2.2 Decide What to Keep, Noindex, or Canonicalize</h3>
+<p>For each type of URL:</p>
+
+<p><strong>Keep indexed:</strong></p>
+<ul>
+    <li>Service and solution pages.</li>
+    <li>High-quality blog posts and resources.</li>
+    <li>Key lead-gen pages (pricing, demo, contact, case studies).</li>
+</ul>
+
+<p><strong>Noindex (but keep crawlable if needed for UX):</strong></p>
+<ul>
+    <li>Tag/author archives that don't add much value.</li>
+    <li>Thank-you pages (to avoid polluting data).</li>
+    <li>Internal search results.</li>
+    <li>Admin or login pages.</li>
+</ul>
+
+<p><strong>Canonicalize:</strong></p>
+<ul>
+    <li>Tracking parameter variants (point to the clean URL).</li>
+    <li>Printer-friendly versions or slight duplicates.</li>
+    <li>HTTP vs HTTPS (to the HTTPS version).</li>
+</ul>
+
+<p>Work with devs or your CMS/SEO plugin to set meta robots, <code>rel="canonical"</code>, and URL parameter rules where
+    necessary.</p>
+
+<h2 id="step-3">Step 3: Site Architecture & Internal Linking</h2>
+<p>Your site structure should make it easy for both users and crawlers to find high-intent pages.</p>
+
+<h3>3.1 Check Click Depth for Important Pages</h3>
+<p>Click depth = how many clicks from the homepage.</p>
+<p><strong>Using your crawler:</strong></p>
+<ul>
+    <li>Look at the Crawl Depth report.</li>
+    <li>Confirm: Core pages (services, pricing, demo/trial, contact) are within 1–3 clicks from the homepage.</li>
+    <li>Key resources (guides, case studies) are within 3–4 clicks.</li>
+</ul>
+<p>If critical pages are buried (5+ clicks away), add navigation links, footer links, or internal links from
+    high-traffic blog posts.</p>
+
+<h3>3.2 Ensure Key Lead-Gen Pages Are Easy to Reach</h3>
+<p>From the main navigation, users should quickly find:</p>
+<ul>
+    <li>What you do (Services / Solutions).</li>
+    <li>How to buy/engage (Pricing, Book a Demo, Talk to Sales, Contact).</li>
+    <li>Why you (Case studies, Testimonials, Resources).</li>
+</ul>
+<p>If you rely heavily on paid or direct traffic to these pages, but they're hard to reach from organic entry pages
+    (blog posts, resources), you're losing potential leads.</p>
+<p>Add contextual internal links with clear anchor text, e.g.:</p>
+<ul>
+    <li>"See all our B2B lead generation services."</li>
+    <li>"Ready to see it in action? Book a live demo."</li>
+</ul>
+
+<h3>3.3 Create a Clear Hierarchy (Hub-and-Spoke)</h3>
+<p>For lead-gen sites, a simple, logical structure works best:</p>
+<ul>
+    <li><strong>Home</strong></li>
+    <li><strong>Services / Solutions</strong> → Individual service pages → Industries / Use cases</li>
+    <li><strong>Resources</strong> → Guides, blog posts, webinars, etc.</li>
+    <li><strong>About / Company</strong></li>
+    <li><strong>Pricing / Plans</strong></li>
+    <li><strong>Contact / Book a demo</strong></li>
+</ul>
+<p>Use internal linking to create topic clusters: Each core service page links out to supporting blogs, FAQs, and case
+    studies. Supporting content links back up to the main service hub.</p>
+<p>For more depth on architecture, see: <a href="/blog/technical-seo-service-businesses-saas">technical SEO framework
+        for service businesses and SaaS</a>.</p>
+
+<h2 id="step-4">Step 4: URL Structure & Canonicals</h2>
+<p>Clean, consistent URLs and correct canonical tags prevent duplicate content and confusion.</p>
+
+<h3>4.1 Check for Duplicate Site Versions</h3>
+<p>Make sure your site resolves to one canonical version:</p>
+<ul>
+    <li><code>http://example.com</code></li>
+    <li><code>https://example.com</code></li>
+    <li><code>http://www.example.com</code></li>
+    <li><code>https://www.example.com</code></li>
+</ul>
+<p>Only one should be accessible; the others should 301 redirect to your primary (usually
+    <code>https://www.example.com</code> or <code>https://example.com</code>).</p>
+<p>Also check:</p>
+<ul>
+    <li>Trailing vs non-trailing slash (choose one consistent convention).</li>
+    <li>Lowercase vs mixed-case URLs (prefer lowercase).</li>
+</ul>
+
+<h3>4.2 Ensure One Canonical Version per Page</h3>
+<p><strong>Using your crawler:</strong></p>
+<ul>
+    <li>Extract canonical tags.</li>
+    <li>Check: Each indexable URL has a self-referencing canonical (points to itself) when it is the main version.</li>
+    <li>Parameterized or alternate versions point to the correct canonical.</li>
+</ul>
+<p><strong>Common issues on service/SaaS sites:</strong></p>
+<ul>
+    <li>Blog tag pages canonicalizing incorrectly to the homepage.</li>
+    <li>Staging or test URLs being marked as canonical.</li>
+    <li>Language or region variants incorrectly canonicalizing to the wrong version.</li>
+</ul>
+<p>For multilingual setups, ensure canonicals stay within the same language, and use hreflang (carefully) only if you
+    understand it—otherwise, get specialist help.</p>
+
+<h2 id="step-5">Step 5: Performance & Core Web Vitals</h2>
+<p>Slow, unstable pages hurt both rankings and conversions. For demo/trial sign-ups and lead forms, speed is
+    non-negotiable.</p>
+
+<h3>5.1 Measure Core Web Vitals</h3>
+<p>Use PageSpeed Insights and GSC's Core Web Vitals report.</p>
+<p><strong>Focus on:</strong></p>
+<ul>
+    <li><strong>LCP (Largest Contentful Paint)</strong> – how long it takes the main content to load.</li>
+    <li><strong>CLS (Cumulative Layout Shift)</strong> – how much things move around while loading.</li>
+    <li><strong>FID/INP (First Input Delay / Interaction to Next Paint)</strong> – how quickly the page responds to
+        interactions.</li>
+</ul>
+<p><strong>Check:</strong></p>
+<ul>
+    <li>Core templates: homepage, main service pages, pricing, demo/contact forms.</li>
+    <li>High-traffic pages from GA4.</li>
+</ul>
+<p>Aim for Good status on as many key URLs as possible.</p>
+
+<h3>5.2 Fix Common Performance Issues (WordPress & SaaS Sites)</h3>
+<p>Typical problems and fixes:</p>
+
+<p><strong>Large images:</strong></p>
+<ul>
+    <li>Compress and resize.</li>
+    <li>Use modern formats (WebP/AVIF) where possible.</li>
+    <li>Implement lazy loading for below-the-fold images.</li>
+</ul>
+
+<p><strong>Render-blocking CSS & JS:</strong></p>
+<ul>
+    <li>Minify and combine where reasonable.</li>
+    <li>Defer non-critical JS.</li>
+    <li>Inline critical CSS.</li>
+</ul>
+
+<p><strong>Third-party scripts (chat widgets, analytics, marketing tools):</strong></p>
+<ul>
+    <li>Remove unused tools.</li>
+    <li>Load non-essential scripts after main content.</li>
+    <li>Use tag managers (GTM) carefully.</li>
+</ul>
+
+<p><strong>Unoptimized fonts:</strong></p>
+<ul>
+    <li>Use system fonts where possible.</li>
+    <li>Limit font weights and families.</li>
+    <li>Preload key font files.</li>
+</ul>
+
+<p>Work with dev or your CMS performance plugins (e.g., caching plugins for WordPress) to implement changes, then
+    re-test.</p>
+
+<h2 id="step-6">Step 6: Mobile-Friendliness & UX Basics</h2>
+<p>Most discovery and research, especially for SaaS and B2B, now happens on mobile. Poor mobile UX kills lead
+    generation.</p>
+
+<h3>6.1 Check Mobile Rendering</h3>
+<p><strong>Use:</strong></p>
+<ul>
+    <li>Mobile-friendly test (within GSC or standalone tools).</li>
+    <li>Your own phone or different devices.</li>
+</ul>
+<p><strong>Check:</strong></p>
+<ul>
+    <li>Text is readable without zooming.</li>
+    <li>Content fits within the screen; no horizontal scrolling.</li>
+    <li>Navigation is easy to use on touch devices.</li>
+    <li>No critical content hidden or broken on mobile.</li>
+</ul>
+
+<h3>6.2 Ensure Primary CTAs Are Visible & Clickable</h3>
+<p>On mobile, your main CTAs (e.g., Book a demo, Start free trial, Talk to sales, Get a quote) should:</p>
+<ul>
+    <li>Appear above the fold or very close.</li>
+    <li>Use clear, high-contrast buttons.</li>
+    <li>Be big enough to tap easily.</li>
+</ul>
+<p><strong>Test the full flow:</strong></p>
+<ul>
+    <li>Land on a blog or service page.</li>
+    <li>Click through to a demo/lead form.</li>
+    <li>Complete the form on a small device.</li>
+</ul>
+<p>If it feels frustrating, it's hurting conversions and SEO indirectly (through behavior signals and user
+    satisfaction).</p>
+
+<h3>6.3 Avoid Intrusive Interstitials</h3>
+<p>Pop-ups and banners that cover most of the content, are hard to close on mobile, or appear immediately when landing
+    can hurt both UX and Google's perception of your page experience.</p>
+<p><strong>Use:</strong></p>
+<ul>
+    <li>Timed or scroll-based triggers.</li>
+    <li>Smaller, less intrusive banners.</li>
+    <li>Clear, easy-to-tap close buttons.</li>
+</ul>
+
+<h2 id="step-7">Step 7: On-Page Technical Elements (Titles, Meta, Headings)</h2>
+<p>This is where technical SEO meets on-page optimization. It impacts both rankings and click-through rates.</p>
+
+<h3>7.1 Audit Title Tags & Meta Descriptions</h3>
+<p><strong>Using your crawler:</strong></p>
+<ul>
+    <li>Export page titles and meta descriptions.</li>
+    <li>Identify: Missing titles or descriptions, duplicate titles on different URLs, very long or very short titles.
+    </li>
+</ul>
+<p>For key pages (services, pricing, demo/contact, best-performing content):</p>
+<ul>
+    <li>Write unique, descriptive titles including primary keywords and value props.</li>
+    <li>Use meta descriptions to reinforce the benefit and include a soft CTA, e.g., "Learn how our B2B SaaS helps you
+        automate invoices. Book a 30-minute demo today."</li>
+</ul>
+
+<h3>7.2 Check H1/H2 Structure</h3>
+<p>For main templates:</p>
+<ul>
+    <li>Ensure one clear H1 per page (often the main page heading).</li>
+    <li>Use H2s to structure sections logically (features, use cases, FAQs, testimonials).</li>
+</ul>
+<p><strong>Make sure:</strong></p>
+<ul>
+    <li>H1 and title tag are aligned (not necessarily identical, but clearly related).</li>
+    <li>You aren't using logos or navigation elements as H1s.</li>
+    <li>H2s include relevant secondary keywords where natural.</li>
+</ul>
+<p>This helps search engines understand page context and improves readability, especially on content-heavy resources.
+</p>
+
+<h2 id="step-8">Step 8: Structured Data & Schema Markup</h2>
+<p>Structured data (schema markup) helps search engines better understand your content and can unlock rich results.</p>
+
+<h3>8.1 What Structured Data Is (In Plain Terms)</h3>
+<p>Schema markup is code (usually JSON-LD) that labels your content with meaning:</p>
+<ul>
+    <li>"This page is about a Service."</li>
+    <li>"This company is an Organization located in X."</li>
+    <li>"This content is an Article with FAQs."</li>
+</ul>
+<p>It doesn't guarantee rich snippets, but it improves clarity for search engines.</p>
+
+<h3>8.2 Recommended Schema Types for Service & SaaS Sites</h3>
+<p><strong>Prioritize:</strong></p>
+<ul>
+    <li><strong>Organization</strong> – On the homepage and/or About page. Include name, logo, URL, social profiles.
+    </li>
+    <li><strong>LocalBusiness</strong> (if you have offices or local targeting) – Address, phone, opening hours.</li>
+    <li><strong>Service</strong> – On individual service pages; describe what you provide and who it's for.</li>
+    <li><strong>FAQPage</strong> – On pages with clearly formatted FAQs (especially service pages and key blog posts).
+    </li>
+    <li><strong>Article / BlogPosting</strong> – For blog posts and in-depth guides.</li>
+</ul>
+
+<h3>8.3 Validate Schema with Testing Tools</h3>
+<p><strong>Use:</strong></p>
+<ul>
+    <li><a href="https://search.google.com/test/rich-results" target="_blank" rel="nofollow">Google Rich Results
+            Test</a></li>
+    <li>Schema Markup Validator</li>
+</ul>
+<p><strong>Check:</strong></p>
+<ul>
+    <li>No major errors.</li>
+    <li>Warnings are understood and acceptable.</li>
+    <li>Markup correctly reflects on-page content (don't fake reviews or ratings).</li>
+</ul>
+<p>If you're using a CMS plugin for schema (e.g., in WordPress), configure templates for each content type (page, post,
+    service) and then spot-check.</p>
+
+<h2 id="step-9">Step 9: Technical Health Checks in Google Search Console</h2>
+<p>GSC should be your ongoing "health monitor" after the initial audit.</p>
+
+<h3>9.1 Core Web Vitals & Page Experience</h3>
+<p>In GSC:</p>
+<ul>
+    <li>Go to Experience → Core Web Vitals.</li>
+    <li>Review URLs with poor or needs improvement metrics.</li>
+    <li>Prioritize templates that affect revenue: Service pages, pricing, demo forms, high-traffic blogs that drive
+        MQLs.</li>
+</ul>
+<p>Use insights from Step 5 to inform dev and design fixes.</p>
+
+<h3>9.2 Coverage & Indexing Reports</h3>
+<p>Under Indexing → Pages:</p>
+<ul>
+    <li>Track changes after your clean-up: Fewer soft 404s? Reduced bloat from unwanted indexed URLs?</li>
+    <li>Watch for new issues after site changes or migrations.</li>
+</ul>
+<p><strong>Look specifically for:</strong></p>
+<ul>
+    <li><strong>5xx server errors</strong> – hosting or server configuration issues.</li>
+    <li><strong>Not found (404)</strong> for URLs that should exist – misconfigured redirects or deleted content.</li>
+</ul>
+
+<h3>9.3 Security Issues & Manual Actions</h3>
+<p>In GSC, check Security & Manual Actions. If anything appears here (hacked content, unnatural links, etc.), prioritize
+    immediately—it can directly impact visibility across your entire site.</p>
+<p>If your site has a history of spammy link building or was recently migrated from another domain, keep an eye on this
+    regularly.</p>
+
+<h2 id="step-10">Step 10: Prioritizing Issues & Creating an Action Plan</h2>
+<p>You'll uncover more issues than you can fix at once. Prioritization is where strategy meets execution.</p>
+
+<h3>10.1 Prioritize by Impact, Effort, and Dependencies</h3>
+<p>For each issue, ask:</p>
+
+<p><strong>Impact on leads/traffic:</strong></p>
+<ul>
+    <li>Does this affect pages that drive demos, trials, or consultations?</li>
+    <li>Could it significantly improve crawlability or rankings?</li>
+</ul>
+
+<p><strong>Difficulty / complexity:</strong></p>
+<ul>
+    <li>Is this a content setting, CMS toggle, or hard dev task?</li>
+</ul>
+
+<p><strong>Dependencies:</strong></p>
+<ul>
+    <li>Do you need developers, designers, or hosting changes?</li>
+</ul>
+
+<h3>10.2 Group into Quick Wins, Medium-Term, and Long-Term</h3>
+
+<div class="overflow-x-auto my-12">
+    <table class="w-full border-collapse text-left rounded-xl overflow-hidden glass">
+        <thead>
+            <tr class="bg-brand-purple/10 text-brand-mint border-b border-border-subtle">
+                <th class="p-4 font-bold uppercase tracking-wider text-sm">Priority Group</th>
+                <th class="p-4 font-bold uppercase tracking-wider text-sm">Timeframe</th>
+                <th class="p-4 font-bold uppercase tracking-wider text-sm">Focus</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-border-subtle">
+            <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-4 font-bold text-text-primary">Quick Wins</td>
+                <td class="p-4 text-text-secondary">1–2 Days</td>
+                <td class="p-4 text-text-secondary">Fixing noindex on key pages. Updating titles/meta on top 10 money
+                    pages. Adding internal links from high-traffic blogs to demo/pricing.</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-4 font-bold text-text-primary">Medium-Term</td>
+                <td class="p-4 text-text-secondary">2–4 Weeks</td>
+                <td class="p-4 text-text-secondary">Cleaning up indexation bloat (noindexing archives, canonicalizing
+                    parameter URLs). Implementing structured data templates. Basic performance improvements (image
+                    compression, caching setup).</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-4 font-bold text-text-primary">Long-Term</td>
+                <td class="p-4 text-text-secondary">1–3 Months</td>
+                <td class="p-4 text-text-secondary">Redesigning navigation and site architecture. Refactoring bloated
+                    themes or page builders. Core Web Vitals improvements at the template level.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Translate this into a roadmap with owners and timelines. Review progress monthly and re-audit quarterly.</p>
+
+<h2 id="consultant">When to Bring in a Technical SEO Consultant</h2>
+<p>Doing a basic technical SEO audit with this checklist is realistic for many in-house teams. But some situations
+    justify specialist help.</p>
+
+<h3>11.1 When DIY Is Enough</h3>
+<p>You can often handle it internally when:</p>
+<ul>
+    <li>The site is relatively small (≤ 500–1,000 URLs).</li>
+    <li>You have a clean CMS (e.g., modern WordPress, Webflow, or a SaaS website builder).</li>
+    <li>Most issues are configuration-level (titles, meta, simple redirects, basic schema).</li>
+</ul>
+<p>Use this checklist as your playbook, and involve devs only for specific tasks.</p>
+
+<h3>11.2 When You Should Involve an Expert</h3>
+<p>Consider hiring a technical SEO consultant when:</p>
+
+<p><strong>You have a complex setup:</strong></p>
+<ul>
+    <li>SaaS app + marketing site on different subdomains.</li>
+    <li>Multilingual or multi-region sites with hreflang.</li>
+    <li>Multiple brands or microsites.</li>
+</ul>
+
+<p><strong>You're planning or just did a migration or redesign:</strong></p>
+<ul>
+    <li>Domain change or HTTP → HTTPS.</li>
+    <li>Major URL structure changes.</li>
+    <li>CMS replatforming.</li>
+</ul>
+
+<p><strong>You have persistent indexation or performance issues:</strong></p>
+<ul>
+    <li>Important pages not being indexed, despite optimization.</li>
+    <li>Core Web Vitals failing across key templates.</li>
+    <li>Complex JS frameworks (SPA, React, Vue) where content rendering is tricky.</li>
+</ul>
+
+<p>A good consultant will:</p>
+<ul>
+    <li>Run an in-depth technical SEO audit.</li>
+    <li>Prioritize issues based on business impact.</li>
+    <li>Create a roadmap and work directly with devs and product/marketing teams.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion & Next Steps</h2>
+<p>Technical SEO for service businesses and SaaS isn't about chasing every minor error; it's about building a reliable,
+    scalable foundation for generating leads, demos, and trials.</p>
+
+<p>With this technical SEO audit checklist, you can:</p>
+<ul>
+    <li>Ensure crawlability and indexation for your most important pages.</li>
+    <li>Clean up indexation bloat and thin content.</li>
+    <li>Improve site architecture, internal linking, and performance.</li>
+    <li>Implement structured data and monitor ongoing technical health in GSC.</li>
+</ul>
+
+<p>Make this audit a quarterly routine, especially after major site changes or content pushes. Over time, you'll reduce
+    surprises, stabilize rankings, and create a faster, more user-friendly site that converts more of your organic
+    traffic.</p>
+
+<p>To see how this checklist fits into the bigger picture of crawlability, site architecture, Core Web Vitals, and
+    structured data at scale, revisit the pillar article on <a
+        href="/blog/technical-seo-service-businesses-saas">technical SEO for service businesses and SaaS</a> and its
+    broader technical SEO framework.</p>
+
+<p>If you're unsure where to start or facing complex issues, consider a dedicated <a href="/contact">technical SEO
+        audit</a> to get a clear, prioritized, and data-backed action plan.</p>
