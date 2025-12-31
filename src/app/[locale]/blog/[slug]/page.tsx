@@ -94,7 +94,22 @@ export default async function BlogPostPage({ params }: Props) {
         if (fs.existsSync(metaPath)) {
             const metaRaw = fs.readFileSync(metaPath, "utf-8");
             if (metaRaw) {
-                meta = JSON.parse(metaRaw);
+                meta = { ...meta, ...JSON.parse(metaRaw) };
+            }
+        }
+
+        // Try to load localized metadata (e.g., metadata.fr.json)
+        const localizedMetaPath = path.join(blogDir, `metadata.${locale}.json`);
+        if (fs.existsSync(localizedMetaPath)) {
+            const localizedMetaRaw = fs.readFileSync(localizedMetaPath, "utf-8");
+            if (localizedMetaRaw) {
+                const localizedMeta = JSON.parse(localizedMetaRaw);
+                meta = {
+                    ...meta,
+                    ...localizedMeta,
+                    // Specifically merge FAQs if they exist in localized meta
+                    faqs: localizedMeta.faqs || meta.faqs
+                };
             }
         }
     } catch (e) {

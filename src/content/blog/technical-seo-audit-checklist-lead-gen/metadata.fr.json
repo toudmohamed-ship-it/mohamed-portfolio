@@ -1,0 +1,20 @@
+{
+    "faqs": [
+        {
+            "question": "Qu'est-ce qu'un audit SEO technique ?",
+            "answer": "Un audit SEO technique est un processus d'évaluation de la santé technique de votre site web pour s'assurer que les moteurs de recherche peuvent explorer, indexer et afficher vos pages efficacement."
+        },
+        {
+            "question": "À quelle fréquence dois-je effectuer un audit SEO technique ?",
+            "answer": "Pour la plupart des sites SaaS et de génération de leads, un audit approfondi doit être effectué <strong>au moins deux fois par an</strong>."
+        },
+        {
+            "question": "Quels outils sont nécessaires pour un audit SEO technique ?",
+            "answer": "Les outils essentiels incluent <strong>Google Search Console</strong>, un crawler comme <strong>Screaming Frog</strong>, et <strong>Google PageSpeed Insights</strong>."
+        },
+        {
+            "question": "Le SEO technique influence-t-il le taux de conversion ?",
+            "answer": "Oui. En améliorant la vitesse du site et en corrigeant les liens cassés, vous offrez une meilleure expérience utilisateur, ce qui favorise <strong>des taux de conversion plus élevés</strong>."
+        }
+    ]
+}

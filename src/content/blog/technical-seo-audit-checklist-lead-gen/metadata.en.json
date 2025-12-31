@@ -1,0 +1,20 @@
+{
+    "faqs": [
+        {
+            "question": "What is a Technical SEO Audit?",
+            "answer": "A Technical SEO Audit is a process where you evaluate your website's technical health to ensure search engines can crawl, index, and render your pages efficiently. It focuses on infrastructure rather than content."
+        },
+        {
+            "question": "How often should I perform a Technical SEO Audit?",
+            "answer": "For most lead-gen and SaaS websites, a deep audit should be performed <strong>at least twice a year</strong>. However, critical metrics like crawl errors and site speed should be monitored weekly."
+        },
+        {
+            "question": "Which tools do I need for a Technical SEO Audit?",
+            "answer": "Essential tools include <strong>Google Search Console</strong>, a crawler like <strong>Screaming Frog</strong> or <strong>Ahrefs</strong>, and <strong>Google PageSpeed Insights</strong> for performance data."
+        },
+        {
+            "question": "Does Technical SEO impact conversion rates?",
+            "answer": "Yes. By improving site speed and fixing broken links (404s), you provide a smoother user experience, which directly correlates with <strong>higher conversion rates</strong> and lower bounce rates."
+        }
+    ]
+}
