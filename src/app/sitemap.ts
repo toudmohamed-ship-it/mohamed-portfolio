@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = locales.flatMap(locale => [
         "",
         "/about",
-        "/services",
+
         "/portfolio",
         "/contact",
         "/blog",

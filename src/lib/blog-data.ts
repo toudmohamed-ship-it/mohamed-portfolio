@@ -1,9 +1,9 @@
 export const BLOG_POSTS = [
     {
-        slug: "local-seo-morocco",
+        slug: "local-seo-guide-businesses",
         date: "Dec 12, 2024",
         category: "Local SEO",
-        image: "/blog/local-seo-morocco.png"
+        image: "/blog/local-seo-guide.png"
     },
     {
         slug: "technical-seo-checklist-2026",

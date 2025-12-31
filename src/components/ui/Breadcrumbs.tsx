@@ -27,7 +27,7 @@ export default function Breadcrumbs() {
                     const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
                     const isLast = index === pathSegments.length - 1;
 
-                    // Format segment for display (e.g., local-seo-morocco -> Local Seo Morocco)
+                    // Format segment for display (e.g., local-seo-guide -> Local Seo Guide)
                     const label = segment
                         .split("-")
                         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

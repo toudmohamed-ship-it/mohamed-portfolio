@@ -461,13 +461,13 @@
         },
         "header": {
             "title": "Le Journal SEO",
-            "subtitle": "Expertise, analyses locales et guides techniques pour le marché marocain."
+            "subtitle": "Expertise, analyses et guides SEO techniques pour les entreprises en croissance."
         },
         "read_article": "Lire l'Article",
         "back_to_blog": "Tous les Articles",
         "sidebar": {
-            "cta_title": "Besoin d'aide pour votre SEO au Maroc ?",
-            "cta_desc": "Boostez votre visibilité sur Google Maps et Search. Demandez votre audit gratuit dès aujourd'hui.",
+            "cta_title": "Besoin d'aide pour votre SEO ?",
+            "cta_desc": "Boostez votre visibilité sur Google Search. Demandez votre audit gratuit dès aujourd'hui.",
             "cta_button": "Discuter sur WhatsApp"
         },
         "related_posts": {
@@ -477,12 +477,12 @@
         "placeholder_content": "Ceci est un espace réservé pour le contenu complet de l'article."
     },
     "BlogPosts": {
-        "local-seo-morocco": {
-            "title": "Comment Améliorer le SEO Local au Maroc (Guide Complet)",
-            "excerpt": "Si vous gérez une entreprise au Maroc, le SEO local est indispensable. Voici comment dominer les résultats Google Maps.",
+        "local-seo-guide-businesses": {
+            "title": "Le Guide Complet du SEO Local pour les Entreprises de Services",
+            "excerpt": "Apprenez à dominer les résultats de recherche locale. Un guide pratique sur l'optimisation de Google Business Profile.",
             "date": "12 Déc 2025",
             "category": "SEO Local",
-            "content": "<p><strong>Par Mohamed Toudghi – Spécialiste SEO & Marketing Digital</strong></p><p>Si vous gérez une entreprise au Maroc, le SEO local est indispensable. Que vous soyez une clinique à Casablanca, un restaurant à Marrakech ou une agence à Rabat, vos clients vous cherchent déjà en ligne.</p><hr/><h2>1. Pourquoi le SEO Local au Maroc ?</h2><p>Le Maroc est un marché 'Mobile-First'. Les recherches 'Proche de moi' et les requêtes spécifiques aux villes sont la norme. Si vous n'êtes pas dans le 'Local Pack' de Google, vous perdez des clients au profit de vos concurrents.</p><h3>Spécificités Marocaines</h3><ul><li><strong>Multilinguisme :</strong> Les recherches se font en Français, Arabe et Anglais.</li><li><strong>Précision des adresses :</strong> Utilisez des points de repère et des noms de quartiers clairs.</li></ul><hr/><h2>2. Les Facteurs de Classement Google</h2><ul><li><strong>Proximité :</strong> La distance entre l'internaute et votre établissement.</li><li><strong>Pertinence :</strong> La correspondance entre votre fiche et la requête.</li><li><strong>Prominence :</strong> Votre notoriété (avis, citations, backlinks).</li></ul><hr/><h2>3. Optimisation Google Business Profile</h2><p>Choisissez les bonnes catégories, rédigez une description multilingue et surtout, publiez des photos de haute qualité. Les Marocains accordent une grande importance au visuel.</p><hr/><h2>4. Stratégie de Mots-Clés et On-Page</h2><p>Ciblez des patterns comme <strong>[Service] + [Ville]</strong>. Créez des pages spécifiques pour chaque ville desservie sur votre site web avec un balisage Schema LocalBusiness.</p><hr/><h2>5. Avis et Réputation</h2><p>Encouragez vos clients à laisser des avis détaillés. Répondez toujours de manière professionnelle, quelle que soit la langue de l'auteur.</p><hr/><h2>6. Plan d'Action Final</h2><ul><li>☐ Revendiquez votre fiche Google Business Profile</li><li>☐ Standardisez votre format d'adresse (NAP)</li><li>☐ Créez des pages de destination locales</li><li>☐ Mettez en place un processus de collecte d'avis</li><li>☐ Optimisez la vitesse mobile de votre site</li></ul><p>Le SEO local est un marathon. Les premiers résultats apparaissent en 3 mois, avec une autorité consolidée sous 6 à 12 mois.</p>"
+            "content": "<p><strong>Par Mohamed Toudghi – Spécialiste SEO & Marketing Digital</strong></p><p>Si vous gérez une entreprise de services, le SEO local est indispensable. Vos clients vous cherchent déjà en ligne.</p><hr/><h2>1. Pourquoi le SEO Local ?</h2><p>Le SEO local cible les personnes au moment exact où elles cherchent une solution dans leur zone immédiate.</p><hr/><h2>2. Les Facteurs de Classement Google</h2><ul><li><strong>Proximité :</strong> La distance entre l'internaute et votre établissement.</li><li><strong>Pertinence :</strong> La correspondance entre votre fiche et la requête.</li><li><strong>Prominence :</strong> Votre notoriété (avis, citations, backlinks).</li></ul><hr/><h2>3. Optimisation Google Business Profile</h2><p>Choisissez les bonnes catégories, rédigez une description claire et surtout, publiez des photos de haute qualité.</p><hr/><h2>4. Stratégie de Mots-Clés et On-Page</h2><p>Ciblez des patterns comme <strong>[Service] + [Ville]</strong>. Créez des pages spécifiques pour chaque ville desservie.</p><hr/><h2>5. Avis et Réputation</h2><p>Encouragez vos clients à laisser des avis détaillés. Répondez toujours de manière professionnelle.</p><hr/><h2>6. Plan d'Action Final</h2><ul><li>☐ Revendiquez votre fiche Google Business Profile</li><li>☐ Standardisez votre format d'adresse (NAP)</li><li>☐ Créez des pages de destination locales</li><li>☐ Mettez en place un processus de collecte d'avis</li></ul><p>Le SEO local est un marathon. Les premiers résultats apparaissent en 3 mois.</p>"
         },
         "technical-seo-checklist-2026": {
             "title": "SEO Technique pour les Entreprises de Services & SaaS: Le Guide Complet",

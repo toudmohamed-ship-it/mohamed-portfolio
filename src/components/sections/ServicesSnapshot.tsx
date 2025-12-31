@@ -55,12 +55,7 @@ export default function ServicesSnapshot() {
                             {t('description')}
                         </p>
                     </div>
-                    <Link href="/services">
-                        <Button variant="outline" className="border-border-subtle hover:bg-black/5 dark:hover:bg-white/5 px-8 py-3 h-auto text-sm font-bold text-text-primary">
-                            {t('cta')}
-                            <ArrowRight className="ml-2 h-4 w-4 rtl:rotate-180" />
-                        </Button>
-                    </Link>
+
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -72,8 +67,7 @@ export default function ServicesSnapshot() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <Link
-                                href={`/services#${service.key}`}
+                            <div
                                 className="glass p-10 rounded-[2rem] border-border-subtle hover:bg-black/[0.02] dark:hover:bg-white/[0.05] hover:-translate-y-2 transition-all duration-500 group block relative overflow-hidden h-full flex flex-col"
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-purple/5 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -92,10 +86,8 @@ export default function ServicesSnapshot() {
                                     {t(`services.${service.key}.description`)}
                                 </p>
 
-                                <div className="mt-8 flex items-center gap-2 text-brand-purple font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                                    Learn More <ArrowRight size={14} />
-                                </div>
-                            </Link>
+
+                            </div>
                         </motion.div>
                     ))}
                 </div>
