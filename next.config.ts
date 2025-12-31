@@ -57,6 +57,17 @@ const nextConfig: NextConfig = {
         destination: '/portfolio/premium-medspa-seo-audit',
         permanent: true,
       },
+      // Redirect old Local SEO blog slug
+      {
+        source: '/blog/local-seo-morocco',
+        destination: '/blog/local-seo-guide-businesses',
+        permanent: true,
+      },
+      {
+        source: '/:locale(fr|ar)/blog/local-seo-morocco',
+        destination: '/:locale/blog/local-seo-guide-businesses',
+        permanent: true,
+      },
     ];
   },
 };
