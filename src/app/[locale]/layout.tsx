@@ -88,6 +88,9 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       index: true,
       follow: true,
     },
+    verification: {
+      google: "SGUSHuPBmaMkgTXn53ifmKreVw6C7d_TcwlOQYpjBq8",
+    },
   };
 }
 
