@@ -8,7 +8,7 @@ The site is the proof of his SEO work, so SEO, speed and accessibility are not o
 
 - Use only facts, numbers, client names and contact details that already exist in `messages/*.json`, `src/lib/data.ts`, `src/lib/constants.ts`, or that Mohamed gives in chat.
 - Never invent numbers, testimonials, prices, clients, awards, dates or processes. If content is missing (prices, a testimonial), leave the section out and tell Mohamed what is needed.
-- Client "Landlord Safety Cert" is under NDA: do not name it.
+- Never name a client or show a client's website, logo, domain or a person's face: Mohamed has no permission. Blur them in screenshots (`D:/tools/site-check/blur.js`) and describe clients generically ("Law firm (U.S.)").
 
 ## Writing (all three languages)
 
@@ -31,7 +31,7 @@ The site is the proof of his SEO work, so SEO, speed and accessibility are not o
 Motion stays only while it costs nothing measurable. Before adding or changing any:
 
 - Animate `transform` and `opacity` only. Never animate width, height, top/left, box-shadow or anything that triggers layout or paint each frame.
-- No JavaScript animation loop on page load. JS motion (hero cursor light, card drift, wave swells, `CursorFollower`) runs only after the mouse moves, only on `(pointer: fine)`, and stops when settled.
+- No JavaScript animation loop on page load. JS motion (hero cursor light, card drift, `CursorFollower`) runs only after the mouse moves, only on `(pointer: fine)`, and stops when settled.
 - Content must never be hidden from crawlers: entrance animations are gated on `html.js` (set by an inline script) and never applied to the H1 or the LCP element.
 - Text that changes (the rotating hero word) must not move the layout: its box is sized by the longest word (`.words::after`).
 - Everything is disabled under `prefers-reduced-motion: reduce`.

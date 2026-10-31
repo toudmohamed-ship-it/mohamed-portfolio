@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import HeroWaves, { LAYERS } from "./HeroWaves";
 
 export default function Hero() {
     const t = useTranslations("HomePage.hero");
@@ -13,7 +12,6 @@ export default function Hero() {
 
     const sectionRef = useRef<HTMLElement>(null);
     const cardsRef = useRef<HTMLDivElement>(null);
-    const hillRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [wordIndex, setWordIndex] = useState(0);
     const [rotated, setRotated] = useState(false);
 
@@ -28,14 +26,14 @@ export default function Hero() {
         return () => clearInterval(id);
     }, [words.length]);
 
-    // Mouse-only effects: cursor light, card drift and wave swells. Nothing runs until the mouse moves,
+    // Mouse-only effects: cursor light and card drift. Nothing runs until the mouse moves,
     // and the loop stops as soon as everything has settled, so page load and phones pay nothing.
     useEffect(() => {
         const section = sectionRef.current;
         if (!section) return;
         if (!matchMedia("(pointer: fine)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-        const target = { x: 0, y: 0, px: 0, py: 0, bump: 0, bx: 0 };
+        const target = { x: 0, y: 0, px: 0, py: 0 };
         const cur = { ...target };
         let raf = 0;
 
@@ -44,30 +42,21 @@ export default function Hero() {
             (Object.keys(cur) as (keyof typeof cur)[]).forEach((k) => {
                 const d = target[k] - cur[k];
                 cur[k] += d * 0.07;
-                if (Math.abs(d) > (k === "px" || k === "py" || k === "bump" ? 0.001 : 0.3)) moving = true;
+                if (Math.abs(d) > (k === "px" || k === "py" ? 0.001 : 0.3)) moving = true;
             });
             section.style.setProperty("--mx", `${cur.x.toFixed(1)}px`);
             section.style.setProperty("--my", `${cur.y.toFixed(1)}px`);
             if (cardsRef.current) cardsRef.current.style.transform = `translate3d(${(-cur.px * 14).toFixed(2)}px, ${(-cur.py * 10).toFixed(2)}px, 0)`;
-            hillRefs.current.forEach((el, i) => {
-                if (!el) return;
-                const L = LAYERS[i];
-                const hidden = L.lift + L.amp * 1.5;
-                el.style.transform = `translate3d(${(cur.bx - el.offsetWidth / 2).toFixed(1)}px, ${((1 - cur.bump) * hidden).toFixed(1)}px, 0)`;
-            });
             raf = moving ? requestAnimationFrame(tick) : 0;
         };
 
         const onMove = (e: MouseEvent) => {
             const r = section.getBoundingClientRect();
             const inside = e.clientY >= r.top && e.clientY <= r.bottom;
-            if (!target.bx) cur.bx = e.clientX - r.left; // first move: place the swell under the cursor instead of sliding in
             target.x = e.clientX - r.left;
             target.y = e.clientY - r.top;
             target.px = e.clientX / window.innerWidth - 0.5;
             target.py = e.clientY / window.innerHeight - 0.5;
-            target.bx = e.clientX - r.left;
-            target.bump = inside ? 1 : 0;
             section.style.setProperty("--glow", inside ? "1" : "0.6");
             if (!raf) raf = requestAnimationFrame(tick);
         };
@@ -88,7 +77,7 @@ export default function Hero() {
             <div className="hero-glow" aria-hidden="true" />
             <div className="hero-spot" aria-hidden="true" />
 
-            <div className="container-custom relative z-[1] pt-12 md:pt-16 pb-[150px] lg:pb-[110px] flex flex-wrap items-center gap-16">
+            <div className="container-custom relative z-[1] pt-12 md:pt-16 pb-20 md:pb-24 flex flex-wrap items-center gap-16">
                 <div className="flex-[1_1_520px] min-w-0 flex flex-col gap-6">
                     <p className="in d1 m-0 font-mono text-[13px] text-forest tracking-wide">{t("eyebrow")}</p>
                     <h1 className="hero-title m-0 text-[34px] sm:text-5xl lg:text-[60px] leading-[1.1] lg:leading-[1.07] font-semibold tracking-[-0.03em]">
@@ -177,7 +166,6 @@ export default function Hero() {
                 </div>
             </div>
 
-            <HeroWaves ref={hillRefs} pinLabel={t("pin")} />
         </section>
     );
 }

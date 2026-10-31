@@ -37,8 +37,7 @@
             "position": "Position moyenne",
             "page4": "page 4",
             "page1": "page 1",
-            "ctr": "Taux de clic",
-            "pin": "votre site monte"
+            "ctr": "Taux de clic"
         },
         "about": {
             "title": "À propos de moi",
@@ -76,7 +75,16 @@
             "close_menu": "Fermer le menu"
         },
         "TrustStrip": {
-            "label": "J'ai travaillé avec les équipes de"
+            "label": "Projets récents pour",
+            "items": [
+                "Marketplace de luxe (États-Unis)",
+                "Service de conformité (Royaume-Uni)",
+                "Startup SaaS",
+                "Organisation sportive nationale",
+                "Cabinet d'avocats (États-Unis)",
+                "Med spa (États-Unis)",
+                "Entreprise B2B (Maroc)"
+            ]
         },
         "ServicesSnapshot": {
             "title": "Mon Expertise",
@@ -260,10 +268,12 @@
                 "3": "Amélioration de l'efficacité du Crawl et de la stabilité de l'indexation"
             },
             "gallery_alts": {
-                "0": "Tendance de croissance du trafic organique sur 6 mois",
-                "1": "Tableau de bord SEO montrant 562.8K de trafic organique",
-                "2": "Performance Search Console : 5.99M de Clics et 214M d'Impressions"
-            }
+                "0": "Évolution du trafic organique et des mots-clés, 2024 à 2025 (données US)",
+                "1": "Tableau de bord SEO : 562,8 K de trafic organique et 281,4 K mots-clés positionnés (données US)",
+                "2": "Google Search Console, 16 mois : 5,99 M de clics et 214 M d'impressions"
+            },
+            "seo_title": "Étude de cas SEO technique : grande marketplace de luxe",
+            "market": "États-Unis"
         },
         "uk-compliance-service-audit": {
             "client": "Service de Conformité UK",
@@ -278,10 +288,15 @@
                 "2": "18.3K+ Impressions de recherche (Pos Moy #10)"
             },
             "gallery_alts": {
-                "0": "Score de Performance Google Lighthouse de 95/100",
-                "1": "Détail PageSpeed Insights confirmant des scores de 90+",
-                "2": "Tendance du Trafic Organique montrant une croissance constante"
-            }
+                "0": "Score de performance Lighthouse de 95 sur la nouvelle page d'atterrissage",
+                "1": "Scores PageSpeed Insights après les corrections",
+                "2": "Trafic organique mensuel, novembre 2024 à avril 2025",
+                "3": "Plan de mots-clés pour la page de service principale : mots-clés principaux, secondaires et questions",
+                "4": "Optimisation on-page d'un article de blog dans Rank Math (domaine masqué)",
+                "5": "Google Ads, du 23 février au 3 avril 2025 : 625 clics et 45 conversions"
+            },
+            "seo_title": "Étude de cas SEO local et CRO : entreprise de services au Royaume-Uni",
+            "market": "Royaume-Uni"
         },
         "saas-digital-launch": {
             "client": "Startup SaaS (Inventaire)",
@@ -296,10 +311,12 @@
                 "2": "Établissement d'une présence sociale multi-canaux"
             },
             "gallery_alts": {
-                "0": "Version de lancement initiale - Design clair",
-                "1": "Itération Dark Mode à haute conversion",
-                "2": "Intégration Chatbot Gist pour la capture de leads"
-            }
+                "0": "Première version du site au lancement, design clair (marque masquée)",
+                "1": "Deuxième version du site, design sombre (marque masquée)",
+                "2": "Widget de chat Gist pour capter des leads (marque masquée)"
+            },
+            "seo_title": "Étude de cas : lancement d'un SaaS, site, SEO et automatisation",
+            "period": "Janvier à mai 2024"
         },
         "premium-medspa-seo-audit": {
             "client": "Spa Médical Premium (Basé aux É.-U.)",
@@ -315,10 +332,12 @@
                 "3": "Roadmap SEO Local développée pour une croissance durable"
             },
             "gallery_alts": {
-                "0": "Tableau de bord SEO montrant le trafic et les mots-clés",
-                "1": "Tendance du trafic organique montrant la récupération",
-                "2": "Feuille de suivi d'implémentation SEO"
-            }
+                "0": "Tableau de bord SEO : 83 visites organiques, 212 mots-clés, Authority Score 18",
+                "1": "Évolution du trafic organique après les corrections techniques",
+                "2": "Fichier de suivi SEO avec les nouveaux titres et méta-descriptions des pages de service"
+            },
+            "seo_title": "Étude de cas SEO technique et local : med spa aux États-Unis",
+            "market": "États-Unis"
         },
         "national-sports-org": {
             "client": "Organisation Sportive Nationale",
@@ -331,7 +350,8 @@
                 "0": "Amélioration du temps d'engagement utilisateur de 40%",
                 "1": "Apparition des données structurées (Rich Snippets) dans les SERPs",
                 "2": "Meilleure fonctionnalité de recherche interne"
-            }
+            },
+            "seo_title": "Étude de cas SEO de contenu : organisation sportive nationale"
         },
         "law-firm-local-seo": {
             "client": "Cabinet d'Avocats (USA)",
@@ -344,7 +364,9 @@
                 "0": "Génération de 30% de leads qualifiés en plus via la recherche locale",
                 "1": "Classements en première page pour 'Ville + Domaine'",
                 "2": "Amélioration de l'autorité de domaine et des signaux de confiance"
-            }
+            },
+            "seo_title": "Étude de cas SEO local : cabinet d'avocats aux États-Unis",
+            "market": "États-Unis"
         },
         "moroccan-b2b-seo": {
             "client": "Site B2B Marocain",
@@ -379,6 +401,11 @@
                     "before": "34.2",
                     "after": "14.1 (Top 15)"
                 }
+            },
+            "seo_title": "Étude de cas SEO on-page : site B2B marocain",
+            "market": "Maroc",
+            "gallery_alts": {
+                "0": "Google Search Console : les 3 derniers mois comparés aux 3 mois précédents"
             }
         }
     },
@@ -514,7 +541,7 @@
             "title": "À propos, consultant SEO à Rabat",
             "description": "Consultant SEO diplômé de l'Université Al Akhawayn, spécialisé en SEO technique, SEO local et suivi GA4. Arabe, anglais et français.",
             "og_title": "À propos de Mohamed Toudghi | Consultant SEO",
-            "og_description": "De l'Université Al Akhawayn au SEO et à l'analytics pour des équipes comme duPont Registry, Webloo et FF Inventory."
+            "og_description": "De l'Université Al Akhawayn au SEO et à l'analytics pour des clients au Royaume-Uni, aux États-Unis et au Maroc."
         },
         "hero": {
             "eyebrow": "À propos",
@@ -575,7 +602,7 @@
                 "SEO Local BrightLocal"
             ]
         },
-        "teams_title": "Équipes avec lesquelles j'ai travaillé",
+        "teams_title": "Clients récents",
         "photo_alt": "Mohamed Toudghi, consultant SEO"
     },
     "CaseStudyPage": {
@@ -601,7 +628,14 @@
         "key_results": "Résultats clés",
         "tools_used": "Outils utilisés",
         "client": "Client",
-        "more_studies": "Autres études de cas"
+        "more_studies": "Autres études de cas",
+        "at_a_glance": "En bref",
+        "market": "Marché",
+        "services": "Services",
+        "period": "Période",
+        "related_title": "Pour aller plus loin",
+        "related_service": "Le service derrière ce projet",
+        "related_article": "Lire le guide sur ce sujet"
     },
     "PortfolioPage": {
         "metadata": {

@@ -8,8 +8,6 @@ interface Props {
     params: Promise<{ locale: string }>;
 }
 
-const TEAMS = ["duPont Registry", "Webloo", "FF Inventory", "FRMF"];
-
 export async function generateMetadata({ params }: Props) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'AboutPage.metadata' });
@@ -33,6 +31,8 @@ export default async function AboutPage({ params }: Props) {
 
     const t = await getTranslations({ locale, namespace: 'AboutPage' });
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
+    // Clients are described, never named
+    const TEAMS = (await getTranslations({ locale, namespace: 'HomePage.TrustStrip' })).raw('items') as string[];
 
     const skills: { title: string; items: string[] }[] = [
         {
@@ -98,7 +98,7 @@ export default async function AboutPage({ params }: Props) {
                     <h2 className="m-0 text-sm font-normal text-muted tracking-normal">{t('teams_title')}</h2>
                     <ul className="list-none m-0 p-0 flex flex-wrap gap-x-12 gap-y-3">
                         {TEAMS.map((team) => (
-                            <li key={team} className="font-semibold text-lg text-ink-soft">{team}</li>
+                            <li key={team} className="font-medium text-[17px] text-ink-soft">{team}</li>
                         ))}
                     </ul>
                 </div>

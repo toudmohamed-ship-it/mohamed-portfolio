@@ -101,7 +101,6 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
 @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @keyframes ping { 0% { transform: scale(1); opacity: .45; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
 @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 
 /* Entrance motion only once JS has mounted (html.js), so content is never hidden from crawlers or no-JS visitors */
 .js .in { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
@@ -124,11 +123,6 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
 .breathe::after { content: ""; position: absolute; inset: 0; border-radius: 999px; background: var(--color-forest); animation: ping 3s ease-out infinite; }
 .marquee { display: flex; width: max-content; animation: drift 40s linear infinite; }
 [dir="rtl"] .marquee { animation-direction: reverse; }
-.bob { animation: bob 3.2s ease-in-out infinite; }
-.wave-flow { animation: drift 22s linear infinite; will-change: transform; }
-@keyframes swell { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -10px, 0); } }
-.wave-swell { transform-origin: 50% 100%; animation: swell 8s ease-in-out infinite; will-change: transform; }
-.hill { will-change: transform; }
 
 /* Rotating word in the hero. The box is sized by the longest word (an invisible ::after, not real text),
    so swapping words never moves the rest of the headline (no layout shift). */
@@ -175,7 +169,7 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
   html { scroll-behavior: auto; }
   .js .in, .js .reveal, .js .bar, .js .typed, .js .marker-track, .js .underline-draw path { animation: none !important; }
   .js .typed { clip-path: none; border-inline-end-color: transparent; }
-  .breathe::after, .marquee, .bob, .wave-flow, .wave-swell { animation: none; }
+  .breathe::after, .marquee { animation: none; }
   .lift, .row-link, .btn { transition: none; }
   .cur-ring, .cur-dot { display: none; }
 }

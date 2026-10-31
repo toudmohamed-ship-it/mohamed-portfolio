@@ -6,7 +6,7 @@ import { IMAGE_SIZES } from "@/lib/image-sizes";
 import FinalCTA from "@/components/sections/FinalCTA";
 import PageHeader from "@/components/ui/PageHeader";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { localizedUrl, pageAlternates } from "@/lib/seo";
+import { BASE_URL, localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
 
 interface Props {
     params: Promise<{
@@ -14,11 +14,6 @@ interface Props {
         locale: string;
     }>;
 }
-
-type Study = (typeof CASE_STUDIES)[number] & {
-    gallery?: { src: string; alt: string }[];
-    comparisonMetrics?: { label: string; before: string; after: string }[];
-};
 
 export async function generateStaticParams() {
     return ['en', 'fr', 'ar'].flatMap((locale) => CASE_STUDIES.map((study) => ({ locale, slug: study.slug })));
@@ -30,54 +25,87 @@ export async function generateMetadata({ params }: Props) {
     const study = CASE_STUDIES.find((s) => s.slug === slug);
     if (!study) return { title: "Case Study Not Found" };
 
+    // Search-friendly title ("Local SEO Case Study: U.S. Law Firm"); the layout template adds the name
+    const title = t.has(`${slug}.seo_title`) ? t(`${slug}.seo_title`) : t(`${slug}.title`);
+    const image = study.gallery[0]?.src;
+
     return {
-        title: t(`${slug}.title`),
+        title,
         description: t(`${slug}.summary`),
         alternates: pageAlternates(locale, `/portfolio/${slug}`),
         openGraph: {
-            title: t(`${slug}.title`),
+            type: "article",
+            title,
             description: t(`${slug}.summary`),
             url: localizedUrl(locale, `/portfolio/${slug}`),
-            images: ['/og-image.jpg'],
+            images: [image || '/og-image.jpg'],
         },
     };
+}
+
+// "First sentence. Second sentence." -> steps. Keeps the exact wording; works for EN, FR and AR.
+function toSteps(text: string) {
+    return text.split(/(?<=[.!?؟])\s+(?=[A-ZÀ-ÖØ-Þ؀-ۿ"'«(])/u).map((s) => s.trim()).filter(Boolean);
 }
 
 export default async function CaseStudyPage({ params }: Props) {
     const { slug, locale } = await params;
     setRequestLocale(locale);
 
-    const study = CASE_STUDIES.find((s) => s.slug === slug) as Study | undefined;
+    const study = CASE_STUDIES.find((s) => s.slug === slug);
     if (!study) notFound();
 
     const t = await getTranslations({ locale, namespace: 'CaseStudies' });
     const tUI = await getTranslations({ locale, namespace: 'CaseStudyPage' });
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
+    const tServices = await getTranslations({ locale, namespace: 'ServicesPage.core_services' });
+    const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
 
     // Translated lists are stored as {"0": "...", "1": "..."} objects
     const list = (key: string): string[] => {
         if (!t.has(key)) return [];
-        try {
-            const raw = t.raw(key) as Record<string, string> | string[] | undefined;
-            return raw ? Object.values(raw).filter(Boolean) : [];
-        } catch {
-            return [];
-        }
+        const raw = t.raw(key) as Record<string, string> | string[];
+        return Object.values(raw).filter(Boolean);
     };
 
+    const title = t(`${slug}.title`);
+    const summary = t(`${slug}.summary`);
+    const client = t(`${slug}.client`);
     const results = list(`${slug}.results`);
-    const galleryAlts = list(`${slug}.gallery_alts`);
+    const captions = list(`${slug}.gallery_alts`);
     const tags = t(`${slug}.tags`).split(' • ');
-    const gallery = study.gallery || [];
-    const metrics = (study.comparisonMetrics || []).map((m, i) => {
-        if (!t.has(`${slug}.comparisonMetrics.${i}`)) return m;
-        try {
-            return (t.raw(`${slug}.comparisonMetrics.${i}`) as typeof m) || m;
-        } catch {
-            return m;
-        }
-    });
+    const steps = toSteps(t(`${slug}.approach`));
+    const market = t.has(`${slug}.market`) ? t(`${slug}.market`) : null;
+    const period = t.has(`${slug}.period`) ? t(`${slug}.period`) : null;
+    const metrics = (study.comparisonMetrics || []).map((m, i) =>
+        t.has(`${slug}.comparisonMetrics.${i}`) ? (t.raw(`${slug}.comparisonMetrics.${i}`) as typeof m) : m
+    );
     const others = CASE_STUDIES.filter((s) => s.slug !== slug).slice(0, 3);
+    const url = localizedUrl(locale, `/portfolio/${slug}`);
+
+    // Structured data: the case study as an Article written by Mohamed (client stays anonymous)
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: title,
+        description: summary,
+        inLanguage: locale,
+        url,
+        mainEntityOfPage: url,
+        ...(study.gallery[0] ? { image: `${BASE_URL}${study.gallery[0].src}` } : {}),
+        author: { "@type": "Person", name: "Mohamed Toudghi", url: BASE_URL },
+        publisher: { "@type": "Person", name: "Mohamed Toudghi", url: BASE_URL },
+        about: tags,
+        keywords: tags.join(", "),
+    };
+
+    const facts: { label: string; value: React.ReactNode }[] = [
+        { label: tUI('client'), value: client },
+        ...(market ? [{ label: tUI('market'), value: market }] : []),
+        ...(period ? [{ label: tUI('period'), value: period }] : []),
+        { label: tUI('services'), value: tags.join(' · ') },
+        { label: tUI('tools_used'), value: study.tools.join(' · ') },
+    ];
 
     return (
         <>
@@ -86,19 +114,29 @@ export default async function CaseStudyPage({ params }: Props) {
                 crumbs={[
                     { label: tCrumbs('home'), href: '/' },
                     { label: tCrumbs('portfolio'), href: '/portfolio' },
-                    { label: t(`${slug}.client`) },
+                    { label: client },
                 ]}
                 eyebrow={tags.join(' · ')}
-                title={t(`${slug}.title`)}
-                lead={t(`${slug}.summary`)}
-            />
+                title={title}
+                lead={summary}
+            >
+                <dl aria-label={tUI('at_a_glance')} className="m-0 mt-4 grid gap-px bg-line border border-line rounded-[18px] overflow-hidden [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+                    {facts.map((f) => (
+                        <div key={f.label} className="bg-white px-5 py-4 flex flex-col gap-1">
+                            <dt className="font-mono text-xs text-muted">{f.label}</dt>
+                            <dd className="m-0 text-[15px] font-medium text-ink">{f.value}</dd>
+                        </div>
+                    ))}
+                </dl>
+            </PageHeader>
 
+            {/* Results first: what a reader came for */}
             {results.length > 0 && (
                 <section aria-labelledby="results-title" className="container-custom pt-14 md:pt-16">
-                    <h2 id="results-title" className="m-0 mb-6 text-sm font-mono font-normal text-muted tracking-normal">{tUI('key_results')}</h2>
+                    <h2 id="results-title" className="m-0 mb-6 text-2xl md:text-[28px] font-semibold">{tUI('key_results')}</h2>
                     <ul className="list-none m-0 p-0 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(230px,1fr))]">
                         {results.map((r) => (
-                            <li key={r} className="in d2 bg-white border border-line rounded-2xl p-6 text-[17px] font-medium text-ink leading-snug border-s-4 border-s-forest">
+                            <li key={r} className="bg-white border border-line border-s-4 border-s-forest rounded-2xl p-6 text-[17px] font-medium text-ink leading-snug">
                                 {r}
                             </li>
                         ))}
@@ -107,19 +145,30 @@ export default async function CaseStudyPage({ params }: Props) {
             )}
 
             <div className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16 items-start">
-                <div className="min-w-0 max-w-[740px] flex flex-col gap-14">
-                    <section className="reveal flex flex-col gap-4">
+                <article className="min-w-0 max-w-[740px] flex flex-col gap-14">
+                    <section className="flex flex-col gap-4">
                         <h2 className="m-0 text-[28px] font-semibold">{tUI('challenge')}</h2>
                         <p className="m-0 text-[18px] leading-relaxed text-ink-soft">{t(`${slug}.challenge`)}</p>
                     </section>
 
-                    <section className="reveal flex flex-col gap-4">
+                    <section className="flex flex-col gap-5">
                         <h2 className="m-0 text-[28px] font-semibold">{tUI('approach')}</h2>
-                        <p className="m-0 text-[18px] leading-relaxed text-ink-soft">{t(`${slug}.approach`)}</p>
+                        {steps.length > 1 ? (
+                            <ol className="list-none m-0 p-0 flex flex-col gap-4">
+                                {steps.map((step, i) => (
+                                    <li key={i} className="flex gap-4 items-start">
+                                        <span aria-hidden="true" className="shrink-0 w-8 h-8 rounded-full bg-sage text-forest font-semibold text-sm flex items-center justify-center mt-0.5">{i + 1}</span>
+                                        <span className="text-[17px] leading-relaxed text-ink-soft">{step}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        ) : (
+                            <p className="m-0 text-[18px] leading-relaxed text-ink-soft">{steps[0]}</p>
+                        )}
                     </section>
 
                     {metrics.length > 0 && (
-                        <section className="reveal flex flex-col gap-5">
+                        <section className="flex flex-col gap-5">
                             <h2 className="m-0 text-[28px] font-semibold">{tUI('before_after')}</h2>
                             <div className="overflow-x-auto bg-white border border-line rounded-2xl">
                                 <table className="w-full text-start border-collapse text-[15px]">
@@ -144,45 +193,53 @@ export default async function CaseStudyPage({ params }: Props) {
                         </section>
                     )}
 
-                    {gallery.length > 0 && (
+                    {study.gallery.length > 0 && (
                         <section className="flex flex-col gap-6">
-                            <h2 className="reveal m-0 text-[28px] font-semibold">{tUI('performance_evidence')}</h2>
-                            {gallery.map((image, i) => {
+                            <h2 className="m-0 text-[28px] font-semibold">{tUI('performance_evidence')}</h2>
+                            {study.gallery.map((image, i) => {
                                 const [w, h] = IMAGE_SIZES[image.src] || [1200, 800];
-                                const alt = galleryAlts[i] || image.alt;
+                                const caption = captions[i] || image.alt;
                                 return (
-                                    <figure key={image.src} className="reveal m-0 bg-white border border-line rounded-2xl p-3 md:p-4">
+                                    <figure key={image.src} className="m-0 bg-white border border-line rounded-2xl p-3 md:p-4">
                                         <Image
                                             src={image.src}
-                                            alt={alt}
+                                            alt={caption}
                                             width={w}
                                             height={h}
                                             sizes="(min-width: 1024px) 740px, 100vw"
                                             className="w-full h-auto rounded-xl"
+                                            style={{ maxWidth: w }}
                                         />
-                                        <figcaption className="pt-3 px-1 text-sm text-muted">{alt}</figcaption>
+                                        <figcaption className="pt-3 px-1 text-sm text-muted">{caption}</figcaption>
                                     </figure>
                                 );
                             })}
                         </section>
                     )}
-                </div>
+                </article>
 
                 <aside className="flex flex-col gap-6 lg:sticky lg:top-24">
-                    <div className="bg-white border border-line rounded-[20px] p-6 flex flex-col gap-5">
-                        <div className="flex flex-col gap-1">
-                            <span className="font-mono text-xs text-muted">{tUI('client')}</span>
-                            <span className="font-semibold">{t(`${slug}.client`)}</span>
-                        </div>
+                    <nav aria-label={tUI('related_title')} className="bg-white border border-line rounded-[20px] p-6 flex flex-col gap-5">
+                        <p className="m-0 font-mono text-xs text-muted">{tUI('related_title')}</p>
                         <div className="flex flex-col gap-2">
-                            <span className="font-mono text-xs text-muted">{tUI('tools_used')}</span>
-                            <ul className="list-none m-0 p-0 flex flex-wrap gap-2">
-                                {study.tools.map((tool) => (
-                                    <li key={tool} className="text-sm px-3 py-1.5 rounded-full bg-paper border border-line">{tool}</li>
+                            <span className="text-sm text-muted">{tUI('related_service')}</span>
+                            <ul className="list-none m-0 p-0 flex flex-col gap-2">
+                                {study.services.map((s) => (
+                                    <li key={s}>
+                                        <Link href={`/services#${s}`} className="btn font-medium no-underline text-[15px]">
+                                            {tServices(`${s}.title`)} <span className="arrow" aria-hidden="true">→</span>
+                                        </Link>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
-                    </div>
+                        <div className="flex flex-col gap-2 pt-4 border-t border-line">
+                            <span className="text-sm text-muted">{tUI('related_article')}</span>
+                            <Link href={`/blog/${study.relatedPost}`} className="font-medium text-[15px] text-ink no-underline hover:text-forest leading-snug">
+                                {tPosts(`${study.relatedPost}.title`)}
+                            </Link>
+                        </div>
+                    </nav>
                     <p className="m-0 text-sm text-muted px-1">
                         <strong className="text-ink-soft font-medium">{tUI('confidentiality.title')}.</strong> {tUI('confidentiality.text')}
                     </p>
@@ -213,6 +270,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </section>
 
             <FinalCTA />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />
         </>
     );
 }

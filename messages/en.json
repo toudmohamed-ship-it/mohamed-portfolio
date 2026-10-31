@@ -37,8 +37,7 @@
             "position": "Average position",
             "page4": "page 4",
             "page1": "page 1",
-            "ctr": "Click-through rate",
-            "pin": "your site, climbing"
+            "ctr": "Click-through rate"
         },
         "about": {
             "title": "About Me",
@@ -76,7 +75,16 @@
             "close_menu": "Close menu"
         },
         "TrustStrip": {
-            "label": "Worked with teams at"
+            "label": "Recent projects for",
+            "items": [
+                "Luxury marketplace (U.S.)",
+                "Compliance service (UK)",
+                "SaaS startup",
+                "National sports organization",
+                "Law firm (U.S.)",
+                "Medical spa (U.S.)",
+                "B2B company (Morocco)"
+            ]
         },
         "ServicesSnapshot": {
             "title": "My Expertise",
@@ -252,7 +260,7 @@
             "summary": "Improved crawl efficiency, content discoverability, and technical reliability for a large-scale marketplace.",
             "tags": "Technical SEO • Site Architecture • Indexation",
             "challenge": "The client is a large-scale marketplace requiring robust technical SEO improvements. The focus was on metadata optimization across core pages, resolving site health issues like broken internal links, restructuring on-page hierarchy, accessible HTML, and implementing advanced schema markup to strengthen organic performance.",
-            "approach": "Executed a multi-phase technical audit. Phase 1 focused on metadata optimization (titles/H1 consistency). Phase 2 addressed site health by fixing 'no response' errors and implementing self-referencing canonicals on Vehicle Detail Pages. Phase 3 involved updating Schema.org markup and optimizing internal linking equity.",
+            "approach": "Executed a multi-phase technical audit. Phase 1 focused on metadata optimization (titles/H1 consistency). Phase 2 addressed site health by fixing 'no response' errors and implementing self-referencing canonicals on listing detail pages. Phase 3 involved updating Schema.org markup and optimizing internal linking equity.",
             "results": {
                 "0": "Organic Traffic +6% (562.8K monthly visits - US Data)",
                 "1": "Keyword Visibility +3.3% (281.4K ranked keywords - US Data)",
@@ -260,10 +268,12 @@
                 "3": "Improved Crawl Efficiency & Indexation Stability"
             },
             "gallery_alts": {
-                "0": "Organic traffic growth trend showing steady increase over 6 months (US Data)",
-                "1": "SEO dashboard showing 562.8K organic traffic and 42 AI visibility score (US Data)",
-                "2": "Google Search Console performance: 5.99M Total Clicks and 214M Impressions over 16 months"
-            }
+                "0": "Organic traffic and keyword trend, 2024 to 2025 (US data)",
+                "1": "SEO dashboard: 562.8K organic traffic and 281.4K ranked keywords (US data)",
+                "2": "Google Search Console, 16 months: 5.99M clicks and 214M impressions"
+            },
+            "seo_title": "Technical SEO Case Study: Large Luxury Marketplace",
+            "market": "United States"
         },
         "uk-compliance-service-audit": {
             "client": "UK Compliance Service",
@@ -278,10 +288,15 @@
                 "2": "18.3K+ Search Impressions (Avg Pos #10)"
             },
             "gallery_alts": {
-                "0": "Google Lighthouse Performance Score of 95/100",
-                "1": "PageSpeed Insights Breakdown confirming 90+ scores",
-                "2": "Organic Traffic Trend showing consistent growth"
-            }
+                "0": "Lighthouse performance score of 95 on the new landing page",
+                "1": "PageSpeed Insights scores after the fixes",
+                "2": "Monthly organic traffic, November 2024 to April 2025",
+                "3": "Keyword map for the main service page: primary, secondary and question keywords",
+                "4": "On-page optimization of a blog article in Rank Math (domain hidden)",
+                "5": "Google Ads, 23 February to 3 April 2025: 625 clicks and 45 conversions"
+            },
+            "seo_title": "Local SEO and CRO Case Study: UK Service Business",
+            "market": "United Kingdom"
         },
         "saas-digital-launch": {
             "client": "SaaS Inventory Startup",
@@ -296,10 +311,12 @@
                 "2": "Established Multi-Channel Social Presence"
             },
             "gallery_alts": {
-                "0": "Initial Launch Version - Clean Light Mode Design",
-                "1": "High-Converting Dark Mode Iteration",
-                "2": "Gist Chatbot integration for Automated Lead Capture"
-            }
+                "0": "First launch version of the website, light design (brand hidden)",
+                "1": "Second version of the website, dark design (brand hidden)",
+                "2": "Gist chat widget for lead capture (brand hidden)"
+            },
+            "seo_title": "SaaS Launch Case Study: Website, SEO and Lead Automation",
+            "period": "January to May 2024"
         },
         "premium-medspa-seo-audit": {
             "client": "Premium Medical Spa (U.S.-Based)",
@@ -315,10 +332,12 @@
                 "3": "Developed Local SEO Roadmap: Complete strategy for sustained growth"
             },
             "gallery_alts": {
-                "0": "SEO Dashboard showing 83 organic traffic visits, 212 keywords, and Authority Score of 18",
-                "1": "Organic traffic trend showing recovery and stabilization after technical fixes",
-                "2": "SEO Implementation Tracking Sheet showing optimized titles and meta descriptions for service pages"
-            }
+                "0": "SEO dashboard: 83 organic visits, 212 keywords, Authority Score 18",
+                "1": "Organic traffic trend after the technical fixes",
+                "2": "SEO tracking sheet with new titles and meta descriptions for service pages"
+            },
+            "seo_title": "Technical and Local SEO Case Study: U.S. Medical Spa",
+            "market": "United States"
         },
         "national-sports-org": {
             "client": "National Sports Organization",
@@ -331,7 +350,8 @@
                 "0": "Improved User Engagement Time by 40%",
                 "1": "Structured Data appearance (Rich Snippets) in SERPs",
                 "2": "Better internal search functionality"
-            }
+            },
+            "seo_title": "Content SEO Case Study: National Sports Organization"
         },
         "law-firm-local-seo": {
             "client": "U.S.-Based Law Firm",
@@ -344,7 +364,9 @@
                 "0": "Generated 30% more qualified leads from local search",
                 "1": "Achieved first-page rankings for 'City + Practice Area' keywords",
                 "2": "Improved domain authority and local trust signals"
-            }
+            },
+            "seo_title": "Local SEO Case Study: U.S. Law Firm",
+            "market": "United States"
         },
         "moroccan-b2b-seo": {
             "client": "Moroccan B2B Website",
@@ -379,6 +401,11 @@
                     "before": "34.2",
                     "after": "14.1 (Top 15)"
                 }
+            },
+            "seo_title": "On-Page SEO Case Study: Moroccan B2B Website",
+            "market": "Morocco",
+            "gallery_alts": {
+                "0": "Google Search Console: last 3 months compared with the previous 3 months"
             }
         }
     },
@@ -514,7 +541,7 @@
             "title": "About me, SEO consultant in Rabat",
             "description": "SEO consultant from Al Akhawayn University, working on technical SEO, local SEO and GA4 tracking. Arabic, English and French.",
             "og_title": "About Mohamed Toudghi | SEO Consultant",
-            "og_description": "From Al Akhawayn University to SEO and analytics work for teams like duPont Registry, Webloo and FF Inventory."
+            "og_description": "From Al Akhawayn University to SEO and analytics work for clients in the UK, the U.S. and Morocco."
         },
         "hero": {
             "eyebrow": "About",
@@ -575,7 +602,7 @@
                 "BrightLocal Local SEO"
             ]
         },
-        "teams_title": "Teams I have worked with",
+        "teams_title": "Recent clients",
         "photo_alt": "Mohamed Toudghi, SEO consultant"
     },
     "CaseStudyPage": {
@@ -601,7 +628,14 @@
         "key_results": "Key results",
         "tools_used": "Tools used",
         "client": "Client",
-        "more_studies": "More case studies"
+        "more_studies": "More case studies",
+        "at_a_glance": "At a glance",
+        "market": "Market",
+        "services": "Services",
+        "period": "Period",
+        "related_title": "Go further",
+        "related_service": "The service behind this project",
+        "related_article": "Read the guide on this topic"
     },
     "PortfolioPage": {
         "metadata": {

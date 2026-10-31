@@ -2,7 +2,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { Link } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { localizedUrl, pageAlternates } from "@/lib/seo";
+import { localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -131,7 +131,7 @@ export default async function ServicesPage({ params }: Props) {
             </section>
 
             <FinalCTA title={t('final_cta.title')} description={t('final_cta.description')} buttonText={t('final_cta.button')} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />
         </>
     );
 }

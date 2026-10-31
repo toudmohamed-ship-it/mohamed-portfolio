@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing";
-import { localizedUrl } from "@/lib/seo";
+import { localizedUrl, jsonLd } from "@/lib/seo";
 
 export type Crumb = { label: string; href?: string };
 
@@ -30,7 +30,7 @@ export default function Breadcrumbs({ items, locale }: { items: Crumb[]; locale:
                     </li>
                 ))}
             </ol>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />
         </nav>
     );
 }

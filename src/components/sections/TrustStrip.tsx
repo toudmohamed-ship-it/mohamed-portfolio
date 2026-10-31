@@ -1,14 +1,14 @@
 import { useTranslations } from "next-intl";
 
-const CLIENTS = ["duPont Registry", "Webloo", "FF Inventory", "FRMF"];
-
-// White strip that continues the hero's front wave. Names drift slowly; the copy is duplicated for a seamless loop.
+// White strip under the hero. Clients are described, never named (no permission to name them).
+// The list drifts slowly; it is duplicated for a seamless loop.
 export default function TrustStrip() {
     const t = useTranslations("HomePage.TrustStrip");
+    const CLIENTS = t.raw("items") as string[];
 
     return (
-        <section data-tone="white" className="bg-white border-b border-line">
-            <div className="container-custom pt-2 pb-8 flex items-center gap-8">
+        <section data-tone="white" className="bg-white border-y border-line">
+            <div className="container-custom py-7 flex items-center gap-8">
                 <h2 className="shrink-0 m-0 text-sm font-normal text-muted tracking-normal">{t("label")}</h2>
                 <div className="flex-1 min-w-0 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
                     <ul className="marquee list-none m-0 p-0 gap-14">
@@ -16,7 +16,7 @@ export default function TrustStrip() {
                             <li
                                 key={i}
                                 aria-hidden={i >= CLIENTS.length ? true : undefined}
-                                className="font-semibold text-lg text-ink-soft whitespace-nowrap last:pe-14"
+                                className="font-medium text-[17px] text-ink-soft whitespace-nowrap last:pe-14"
                             >
                                 {name}
                             </li>

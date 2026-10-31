@@ -1,3 +1,5 @@
+import { jsonLd } from "@/lib/seo";
+
 interface FAQItem {
     question: string;
     answer: string;
@@ -31,7 +33,7 @@ export default function BlogFAQ({ faqs, title }: { faqs: FAQItem[]; title: strin
                     </details>
                 ))}
             </div>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />
         </section>
     );
 }

@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { CASE_STUDIES } from "@/lib/data";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { localizedUrl, pageAlternates } from "@/lib/seo";
+import { localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -34,6 +34,18 @@ export default async function PortfolioPage({ params }: Props) {
     const tStudies = await getTranslations({ locale, namespace: 'CaseStudies' });
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
 
+    // Structured data: the portfolio as a list of case study articles
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: t('header.title'),
+        url: localizedUrl(locale, '/portfolio'),
+        mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: CASE_STUDIES.map((s, i) => ({ '@type': 'ListItem', position: i + 1, url: localizedUrl(locale, `/portfolio/${s.slug}`), name: tStudies(`${s.slug}.title`) })),
+        },
+    };
+
     return (
         <>
             <PageHeader
@@ -54,7 +66,7 @@ export default async function PortfolioPage({ params }: Props) {
                                 className={`lift h-full bg-white border border-line rounded-[20px] p-7 md:p-8 flex flex-col gap-4 text-ink no-underline hover:text-ink ${i === 0 ? 'md:grid md:grid-cols-[1.1fr_1fr] md:gap-10' : ''}`}
                             >
                                 <span className="flex flex-col gap-3">
-                                    <span className="font-mono text-[13px] text-forest">{tStudies(`${study.slug}.client`)}</span>
+                                    <span className="font-mono text-[13px] text-forest">{tStudies(`${study.slug}.client`)}{tStudies.has(`${study.slug}.market`) && <span className="text-muted"> · {tStudies(`${study.slug}.market`)}</span>}</span>
                                     <span className={`font-semibold leading-snug tracking-[-0.01em] ${i === 0 ? 'text-[26px] md:text-[30px]' : 'text-[22px]'}`}>{tStudies(`${study.slug}.title`)}</span>
                                 </span>
                                 <span className="flex flex-col gap-4 flex-1">
@@ -76,6 +88,7 @@ export default async function PortfolioPage({ params }: Props) {
             </section>
 
             <FinalCTA />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />
         </>
     );
 }
