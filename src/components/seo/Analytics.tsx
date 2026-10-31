@@ -12,7 +12,8 @@ declare global {
 }
 
 // Google Analytics 4, loaded after the page is usable: on the first scroll, tap, click or key press,
-// or 4 seconds after load at the latest. Keeps analytics out of the critical path (it was ~0.7 s of blocking time).
+// or 10 seconds after load (when the browser is idle) at the latest. Keeps analytics out of the critical path:
+// it was ~0.7 s of blocking time, and a 4 s fallback still landed inside page-speed measurements.
 export default function Analytics() {
     useEffect(() => {
         let loaded = false;
@@ -37,7 +38,9 @@ export default function Analytics() {
 
         events.forEach((e) => window.addEventListener(e, load, { once: true, passive: true }));
         let timer: ReturnType<typeof setTimeout>;
-        const arm = () => { timer = setTimeout(load, 4000); };
+        const arm = () => {
+            timer = setTimeout(() => ("requestIdleCallback" in window ? window.requestIdleCallback(load) : load()), 10000);
+        };
         if (document.readyState === "complete") arm();
         else window.addEventListener("load", arm, { once: true });
 

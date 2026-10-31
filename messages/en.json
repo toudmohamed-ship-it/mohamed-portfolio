@@ -687,6 +687,16 @@
             "label": "Written by",
             "bio": "SEO consultant based in Morocco. I work remotely on technical SEO, local SEO and GA4 tracking for service businesses in the UK, the U.S. and Morocco.",
             "more": "About me"
+        },
+        "serp": {
+            "search_label": "Search the blog",
+            "placeholder": "Search the guides, for example local SEO",
+            "clear": "Clear the search",
+            "all": "All",
+            "results": "{count} articles",
+            "no_results": "No article matches “{query}”. Try another word.",
+            "paa_title": "People also ask",
+            "paa_read": "Read the full article"
         }
     },
     "BlogPosts": {

@@ -49,7 +49,7 @@ Motion stays only while it costs nothing measurable. Before adding or changing a
 
 ## Analytics
 
-- GA4 (`G-9GBZG4HWN2`) loads from `src/components/seo/Analytics.tsx` on first interaction or 4 s after load. Do not move it back into `<head>`.
+- GA4 (`G-9GBZG4HWN2`) loads from `src/components/seo/Analytics.tsx` on first interaction or 10 s after load (when idle). Do not move it back into `<head>`.
 - The GTM container `GTM-53XVQ2J6` was empty and was removed. Re-add it only if Mohamed sets up tags in it, and load it the same delayed way.
 
 ## Performance budget

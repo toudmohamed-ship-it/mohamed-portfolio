@@ -687,6 +687,16 @@
             "label": "Écrit par",
             "bio": "Consultant SEO basé au Maroc. Je travaille à distance sur le SEO technique, le SEO local et le suivi GA4 pour des entreprises de services au Royaume-Uni, aux États-Unis et au Maroc.",
             "more": "À propos"
+        },
+        "serp": {
+            "search_label": "Rechercher dans le blog",
+            "placeholder": "Chercher un guide, par exemple SEO local",
+            "clear": "Effacer la recherche",
+            "all": "Tous",
+            "results": "{count} articles",
+            "no_results": "Aucun article ne correspond à « {query} ». Essayez un autre mot.",
+            "paa_title": "Autres questions posées",
+            "paa_read": "Lire l'article complet"
         }
     },
     "BlogPosts": {

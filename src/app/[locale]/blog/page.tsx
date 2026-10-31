@@ -1,7 +1,12 @@
-import PageHeader from "@/components/ui/PageHeader";
-import FinalCTA from "@/components/sections/FinalCTA";
+import fs from "fs";
+import path from "path";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
+import FinalCTA from "@/components/sections/FinalCTA";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import BlogSerp, { type SerpPost, type SerpQuestion } from "@/components/blog/BlogSerp";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { PERSONAL_INFO } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageAlternates } from "@/lib/seo";
 
@@ -20,6 +25,26 @@ export async function generateMetadata({ params }: Props) {
     };
 }
 
+// First FAQ of each article that has one, in the page's language, for the "People also ask" box
+function loadQuestions(locale: string): SerpQuestion[] {
+    const out: SerpQuestion[] = [];
+    for (const post of BLOG_POSTS) {
+        const dir = path.resolve(process.cwd(), "src/content/blog", post.slug);
+        for (const file of [`metadata.${locale}.json`, "metadata.json"]) {
+            const p = path.join(dir, file);
+            if (!fs.existsSync(p)) continue;
+            try {
+                const faqs = (JSON.parse(fs.readFileSync(p, "utf-8")).faqs || []) as { question: string; answer: string }[];
+                if (faqs[0]) out.push({ ...faqs[0], slug: post.slug });
+            } catch {
+                /* ignore a broken metadata file */
+            }
+            break;
+        }
+    }
+    return out.slice(0, 4);
+}
+
 export default async function BlogPage({ params }: Props) {
     const { locale } = await params;
     setRequestLocale(locale);
@@ -27,54 +52,75 @@ export default async function BlogPage({ params }: Props) {
     const t = await getTranslations({ locale, namespace: 'BlogPage' });
     const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
-    const [featured, ...rest] = BLOG_POSTS;
+    const tNav = await getTranslations({ locale, namespace: 'HomePage.nav' });
+
+    const posts: SerpPost[] = BLOG_POSTS.map((p) => ({
+        slug: p.slug,
+        title: tPosts(`${p.slug}.title`),
+        excerpt: tPosts(`${p.slug}.excerpt`),
+        date: tPosts(`${p.slug}.date`),
+        category: tPosts(`${p.slug}.category`),
+    }));
 
     return (
         <>
-            <PageHeader
-                locale={locale}
-                crumbs={[{ label: tCrumbs('home'), href: '/' }, { label: tCrumbs('blog') }]}
-                eyebrow={t('header.eyebrow')}
-                title={t('header.title')}
-                lead={t('header.subtitle')}
-            />
+            <section className="relative border-b border-line bg-paper">
+                <div className="container-custom pt-10 md:pt-12 pb-8 flex flex-col gap-5">
+                    <Breadcrumbs items={[{ label: tCrumbs('home'), href: '/' }, { label: tCrumbs('blog') }]} locale={locale} />
+                    <div className="flex flex-col gap-2 max-w-[690px]">
+                        <p className="m-0 font-mono text-[13px] text-forest">{t('header.eyebrow')}</p>
+                        <h1 className="m-0 text-[32px] sm:text-[40px] leading-[1.1] font-semibold tracking-[-0.02em]">{t('header.title')}</h1>
+                        <p className="m-0 text-[17px] text-muted">{t('header.subtitle')}</p>
+                    </div>
+                </div>
+            </section>
 
-            <section className="container-custom py-16 md:py-24 flex flex-col gap-14">
-                <h2 className="sr-only">{t('list_title')}</h2>
+            <section className="container-custom py-8 md:py-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-16 items-start">
+                <BlogSerp
+                    posts={posts}
+                    questions={loadQuestions(locale)}
+                    labels={{
+                        search_label: t('serp.search_label'),
+                        placeholder: t('serp.placeholder'),
+                        clear: t('serp.clear'),
+                        all: t('serp.all'),
+                        results: t('serp.results', { count: '{count}' }),
+                        no_results: t('serp.no_results', { query: '{query}' }),
+                        paa_title: t('serp.paa_title'),
+                        paa_read: t('serp.paa_read'),
+                        site_name: "Mohamed Toudghi",
+                    }}
+                />
 
-                {/* Featured: the first post, wide */}
-                <Link
-                    href={`/blog/${featured.slug}`}
-                    className="reveal lift grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 bg-white border border-line rounded-[22px] p-7 md:p-10 text-ink no-underline hover:text-ink"
-                >
-                    <span className="flex flex-col gap-4">
-                        <span className="font-mono text-[13px] text-forest">{tPosts(`${featured.slug}.category`)} · {tPosts(`${featured.slug}.date`)}</span>
-                        <span className="text-[26px] md:text-[34px] font-semibold leading-tight tracking-[-0.02em]">{tPosts(`${featured.slug}.title`)}</span>
-                    </span>
-                    <span className="flex flex-col justify-between gap-6">
-                        <span className="text-muted text-[17px]">{tPosts(`${featured.slug}.excerpt`)}</span>
-                        <span className="btn font-medium text-forest">{t('read_article')} <span className="arrow" aria-hidden="true">→</span></span>
-                    </span>
-                </Link>
-
-                {/* The rest: a calm list */}
-                <ul className="list-none m-0 p-0">
-                    {rest.map((post, i) => (
-                        <li key={post.slug} className="reveal">
-                            <Link
-                                href={`/blog/${post.slug}`}
-                                className={`row-link flex flex-wrap items-baseline gap-x-8 gap-y-2 py-7 border-t border-line rounded-xl text-ink no-underline hover:text-ink ${i === rest.length - 1 ? 'border-b' : ''}`}
-                            >
-                                <span className="basis-[180px] shrink-0 font-mono text-[13px] text-muted">{tPosts(`${post.slug}.category`)}<br />{tPosts(`${post.slug}.date`)}</span>
-                                <span className="flex-[1_1_420px] min-w-0">
-                                    <span className="block text-[21px] font-semibold leading-snug">{tPosts(`${post.slug}.title`)}</span>
-                                    <span className="block text-muted text-base mt-1">{tPosts(`${post.slug}.excerpt`)}</span>
-                                </span>
-                                <span className="arrow text-xl shrink-0" aria-hidden="true">→</span>
-                            </Link>
+                {/* Knowledge panel: who writes this blog */}
+                <aside aria-label={t('author.label')} className="bg-white border border-line rounded-[18px] overflow-hidden lg:sticky lg:top-24">
+                    <div className="flex items-center gap-4 p-5 border-b border-line">
+                        <Image src="/images/profile.png" alt="" width={64} height={64} sizes="64px" className="w-16 h-16 rounded-full object-cover bg-sage" />
+                        <div className="flex flex-col">
+                            <span className="text-[20px] font-semibold leading-tight">Mohamed Toudghi</span>
+                            <span className="text-[14px] text-muted">{tNav('role')}</span>
+                        </div>
+                    </div>
+                    <p className="m-0 p-5 text-[14px] leading-relaxed text-ink-soft border-b border-line">{t('author.bio')}</p>
+                    <ul className="list-none m-0 p-0 text-[14px]">
+                        {[
+                            { href: '/services', label: tNav('services') },
+                            { href: '/portfolio', label: tNav('work') },
+                            { href: '/about', label: tNav('about') },
+                        ].map((l) => (
+                            <li key={l.href} className="border-b border-line">
+                                <Link href={l.href} className="row-link flex justify-between items-center px-5 py-3 text-ink no-underline hover:text-ink">
+                                    {l.label} <span className="arrow" aria-hidden="true">→</span>
+                                </Link>
+                            </li>
+                        ))}
+                        <li>
+                            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="row-link flex justify-between items-center px-5 py-3 text-ink no-underline hover:text-ink">
+                                LinkedIn <span className="arrow" aria-hidden="true">→</span>
+                            </a>
                         </li>
-                    ))}
-                </ul>
+                    </ul>
+                </aside>
             </section>
 
             <FinalCTA />
