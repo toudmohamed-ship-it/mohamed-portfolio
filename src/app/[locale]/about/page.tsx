@@ -2,6 +2,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import Button from "@/components/ui/Button";
 import { Download, CheckCircle2 } from "lucide-react";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: {
@@ -21,9 +22,7 @@ export async function generateMetadata({ params }: Props) {
             description: t('og_description'),
             images: ['/og-image.jpg'],
         },
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale}/about`,
-        },
+        alternates: pageAlternates(locale, '/about'),
     };
 }
 

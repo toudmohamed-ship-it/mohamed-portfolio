@@ -6,6 +6,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { ArrowLeft, CheckCircle2, ChevronRight, BarChart, Settings, Code, FileText } from "lucide-react";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: {
@@ -36,14 +37,7 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: `${t(`${study.slug}.title`)} | Case Study`,
         description: t(`${study.slug}.summary`),
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}portfolio/${slug}`,
-            languages: {
-                'en': `https://www.mohamedtoudghi.com/portfolio/${slug}`,
-                'fr': `https://www.mohamedtoudghi.com/fr/portfolio/${slug}`,
-                'ar': `https://www.mohamedtoudghi.com/ar/portfolio/${slug}`,
-            },
-        },
+        alternates: pageAlternates(locale, `/portfolio/${slug}`),
     };
 }
 
@@ -312,7 +306,6 @@ export default async function CaseStudyPage({ params }: Props) {
             {/* Final CTA */}
             <FinalCTA
                 title={tCommon('title')}
-                description={tCommon('description')}
                 buttonText={tCommon('button')}
             />
         </>

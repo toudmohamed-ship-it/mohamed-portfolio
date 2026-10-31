@@ -9,7 +9,11 @@ export const routing = defineRouting({
     defaultLocale: 'en',
 
     // Don't show /en in URLs - English is at root /
-    localePrefix: 'as-needed'
+    localePrefix: 'as-needed',
+
+    // The URL alone decides the language. Without this, a visitor who once opened /fr or /ar
+    // (or whose browser prefers French/Arabic) got redirected away from every English link.
+    localeDetection: false
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

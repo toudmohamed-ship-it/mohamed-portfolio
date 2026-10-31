@@ -14,6 +14,7 @@ import SocialShare from "@/components/blog/SocialShare";
 import AuthorBio from "@/components/blog/AuthorBio";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{
@@ -43,16 +44,9 @@ export async function generateMetadata({ params }: Props) {
     if (!post) return { title: "Post Not Found" };
 
     return {
-        title: `${tPosts(`${slug}.title`)} | Mohamed Toudghi Blog`,
+        title: tPosts(`${slug}.title`),
         description: tPosts(`${slug}.excerpt`),
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}blog/${slug}`,
-            languages: {
-                'en': `https://www.mohamedtoudghi.com/blog/${slug}`,
-                'fr': `https://www.mohamedtoudghi.com/fr/blog/${slug}`,
-                'ar': `https://www.mohamedtoudghi.com/ar/blog/${slug}`,
-            },
-        },
+        alternates: pageAlternates(locale, `/blog/${slug}`),
     };
 }
 

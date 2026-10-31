@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { Search, Globe, MapPin, BarChart2, Code2, LayoutDashboard, Database, Target, LineChart } from "lucide-react";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -16,14 +17,7 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: t('title'),
         description: t('description'),
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}services`,
-            languages: {
-                'en': 'https://www.mohamedtoudghi.com/services',
-                'fr': 'https://www.mohamedtoudghi.com/fr/services',
-                'ar': 'https://www.mohamedtoudghi.com/ar/services',
-            },
-        },
+        alternates: pageAlternates(locale, '/services'),
     };
 }
 

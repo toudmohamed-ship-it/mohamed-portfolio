@@ -3,6 +3,7 @@ import ContactForm from "@/components/ui/ContactForm";
 import { Mail, Linkedin, Phone } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -20,9 +21,7 @@ export async function generateMetadata({ params }: Props) {
             description: t('og_description'),
             images: ['/og-image.jpg'],
         },
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}contact`,
-        },
+        alternates: pageAlternates(locale, '/contact'),
     };
 }
 

@@ -5,6 +5,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { ArrowRight } from "lucide-react";
 import { CASE_STUDIES } from "@/lib/data";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -22,9 +23,7 @@ export async function generateMetadata({ params }: Props) {
             description: t('og_description'),
             images: ['/og-image.jpg'],
         },
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}portfolio`,
-        },
+        alternates: pageAlternates(locale, '/portfolio'),
     };
 }
 
@@ -93,7 +92,6 @@ export default async function PortfolioPage({ params }: Props) {
 
             <FinalCTA
                 title={tFinalCTA('title')}
-                description={tFinalCTA('description')}
                 buttonText={tFinalCTA('button')}
             />
         </>

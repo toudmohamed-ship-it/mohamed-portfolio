@@ -3,6 +3,7 @@ import { Link } from "@/i18n/routing";
 import { ArrowRight, Calendar, Tag } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -15,14 +16,7 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: t('title'),
         description: t('description'),
-        alternates: {
-            canonical: `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}blog`,
-            languages: {
-                'en': 'https://www.mohamedtoudghi.com/blog',
-                'fr': 'https://www.mohamedtoudghi.com/fr/blog',
-                'ar': 'https://www.mohamedtoudghi.com/ar/blog',
-            },
-        },
+        alternates: pageAlternates(locale, '/blog'),
     };
 }
 
