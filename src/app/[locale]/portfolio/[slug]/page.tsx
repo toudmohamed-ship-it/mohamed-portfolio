@@ -7,7 +7,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import PageHeader from "@/components/ui/PageHeader";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { BASE_URL, localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
-import { serviceHref } from "@/lib/services";
+import { SERVICE_PAGES, serviceHref } from "@/lib/services";
 
 interface Props {
     params: Promise<{
@@ -61,6 +61,9 @@ export default async function CaseStudyPage({ params }: Props) {
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
     const tServices = await getTranslations({ locale, namespace: 'ServicesPage.core_services' });
     const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
+    const tPages = await getTranslations({ locale, namespace: 'ServicePages' });
+    // Industry pages that use this study as their main proof (e.g. the law firm study -> SEO for law firms)
+    const industryPages = SERVICE_PAGES.filter((p) => p.parent && p.caseStudies[0] === study.slug);
 
     // Translated lists are stored as {"0": "...", "1": "..."} objects
     const list = (key: string): string[] => {
@@ -229,6 +232,13 @@ export default async function CaseStudyPage({ params }: Props) {
                                     <li key={s}>
                                         <Link href={serviceHref(s)} className="btn font-medium no-underline text-[15px]">
                                             {tServices(`${s}.title`)} <span className="arrow" aria-hidden="true">→</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                                {industryPages.map((p) => (
+                                    <li key={p.slug}>
+                                        <Link href={`/services/${p.slug}`} className="btn font-medium no-underline text-[15px]">
+                                            {tPages(`${p.slug}.title`)} <span className="arrow" aria-hidden="true">→</span>
                                         </Link>
                                     </li>
                                 ))}

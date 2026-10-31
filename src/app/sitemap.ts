@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { CASE_STUDIES } from "@/lib/data";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { SERVICE_PAGES } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://www.mohamedtoudghi.com";
@@ -11,9 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "",
         "/about",
         "/services",
-        "/services/technical-seo-audit",
-        "/services/local-seo",
-        "/services/ga4-tracking",
+        ...SERVICE_PAGES.map((p) => `/services/${p.slug}`),
         "/privacy",
         "/portfolio",
         "/contact",

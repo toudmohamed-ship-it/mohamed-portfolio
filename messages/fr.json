@@ -848,7 +848,8 @@
             "view_case": "Lire l'étude de cas",
             "learn_more": "En savoir plus",
             "on_this_page": "Sur cette page",
-            "bridge_label": "Vous voulez que je m'en occupe pour votre site ?"
+            "bridge_label": "Vous voulez que je m'en occupe pour votre site ?",
+            "industry_label": "SEO local par secteur"
         },
         "technical-seo-audit": {
             "meta_title": "Audit SEO technique pour entreprises de services et SaaS",
@@ -1236,6 +1237,138 @@
                 {
                     "question": "Combien coûte une configuration GA4 ?",
                     "answer": "Le prix dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires. Vous recevez un devis après l'appel gratuit de 15 minutes."
+                }
+            ]
+        },
+        "seo-for-law-firms": {
+            "meta_title": "SEO pour avocats : référencement local des cabinets",
+            "meta_description": "SEO pour cabinets d'avocats : pages par domaine de pratique, fiche Google Business Profile, avis et citations pour obtenir des consultations.",
+            "eyebrow": "Service · SEO pour avocats",
+            "crumb": "Cabinets d'avocats",
+            "title": "SEO pour cabinets d'avocats",
+            "lead": "Faites apparaître votre cabinet quand les personnes de votre région cherchent un avocat dans votre domaine, et transformez ces recherches en consultations.",
+            "definition": {
+                "title": "Qu'est-ce que le SEO pour avocats ?",
+                "paragraphs": [
+                    "Le SEO pour avocats consiste à faire apparaître un cabinet dans Google quand une personne cherche une aide juridique, par exemple « avocat divorce Lyon » ou « avocat droit du travail près de moi ». La plupart de ces recherches citent un domaine de pratique et un lieu : le SEO pour avocats est donc surtout du SEO local appliqué aux services juridiques.",
+                    "Google répond à ces recherches avec des annonces, une carte qui montre trois cabinets, puis les résultats classiques. La carte dépend de votre fiche Google Business Profile, de vos avis et de votre distance avec la personne qui cherche. Les résultats classiques dépendent de votre site : une page solide par domaine de pratique et par ville, un site rapide, et des liens venant de sources locales et juridiques fiables.",
+                    "Les recherches juridiques sont concurrentielles, car un seul client peut représenter beaucoup pour un cabinet. C'est pourquoi la structure compte plus que le volume : un site clair où chaque domaine de pratique a sa page fait mieux qu'un grand site où tout tient sur une seule page de services."
+                ]
+            },
+            "for_who": {
+                "title": "Les signes que votre cabinet a besoin de SEO",
+                "items": [
+                    "Votre cabinet n'apparaît pas sur la carte pour votre domaine principal dans votre ville.",
+                    "Tous vos domaines de pratique partagent une seule page, et aucun ne se positionne bien.",
+                    "Les annuaires affichent une adresse ou un numéro différent pour votre cabinet.",
+                    "La plupart de vos nouveaux clients viennent du bouche-à-oreille ou de la publicité, presque aucun de Google.",
+                    "Vous couvrez plusieurs villes avec une seule page générique."
+                ]
+            },
+            "included": {
+                "title": "Ce que comprend le SEO pour un cabinet d'avocats",
+                "intro": "Six chantiers, dans l'ordre qui apporte en général des consultations le plus vite.",
+                "items": [
+                    {
+                        "name": "Structure par domaine de pratique",
+                        "desc": "Une page par domaine de pratique, et par ville où vous avez un bureau ou des clients. Chaque page explique la situation du client, ce que fait le cabinet et comment le contacter. C'est la structure utilisée dans l'étude de cas du cabinet américain ci-dessous."
+                    },
+                    {
+                        "name": "Google Business Profile pour avocats",
+                        "desc": "La catégorie principale la plus précise (par exemple « Avocat en droit de la famille » plutôt que « Avocat »), des catégories secondaires pour les autres domaines, les services, la zone desservie, des photos et une description conforme aux règles de Google."
+                    },
+                    {
+                        "name": "Citations juridiques et locales",
+                        "desc": "Le nom, l'adresse et le numéro du cabinet rendus identiques dans les annuaires juridiques et généralistes (Pages Jaunes, Bing Places, Apple Business Connect, et aux États-Unis Avvo, Justia ou FindLaw)."
+                    },
+                    {
+                        "name": "Routine d'avis",
+                        "desc": "Une méthode simple pour demander un avis aux clients satisfaits et répondre à chacun, sans rien révéler du dossier du client."
+                    },
+                    {
+                        "name": "Corrections techniques et on-page",
+                        "desc": "Des titres qui nomment le domaine de pratique et la ville, le balisage schema LegalService, des pages mobiles rapides, et la correction des problèmes d'indexation signalés par la Search Console."
+                    },
+                    {
+                        "name": "Suivi des demandes",
+                        "desc": "Appels, formulaires et prises de rendez-vous suivis dans GA4, pour savoir quelles pages de domaine apportent des dossiers."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "Le SEO pour avocats, étape par étape",
+                "items": [
+                    {
+                        "title": "Audit",
+                        "desc": "J'analyse vos positions par domaine et par ville, votre fiche Google Business Profile, vos citations et la structure du site."
+                    },
+                    {
+                        "title": "Structurer et corriger",
+                        "desc": "Pages par domaine, fiche, citations et corrections techniques, par ordre d'impact."
+                    },
+                    {
+                        "title": "Développer et mesurer",
+                        "desc": "Avis, liens locaux et pages qui répondent aux questions des clients, avec les consultations venant de Google suivies chaque mois."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Outils et données pour le SEO des avocats",
+                "intro": "Les positions changent d'une ville à l'autre : elles se mesurent là où vos clients cherchent.",
+                "items": [
+                    {
+                        "name": "Google Search Console",
+                        "desc": "Montre quelles recherches par domaine amènent des visiteurs, et quelles pages Google n'indexe pas."
+                    },
+                    {
+                        "name": "Google Business Profile",
+                        "desc": "Appels, clics vers le site et demandes d'itinéraire depuis la carte."
+                    },
+                    {
+                        "name": "BrightLocal",
+                        "desc": "Suit les positions sur la carte par ville et vérifie les citations dans les annuaires."
+                    },
+                    {
+                        "name": "Screaming Frog",
+                        "desc": "Explore le site pour trouver les pages en double, les titres manquants et les liens cassés."
+                    },
+                    {
+                        "name": "Google Analytics 4",
+                        "desc": "Mesure les appels, formulaires et rendez-vous par page d'arrivée."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "SEO pour avocats ou Google Ads ?",
+                "paragraphs": [
+                    "Google Ads place votre cabinet en haut de la page dès le premier jour, et s'arrête le jour où vous arrêtez de payer. Les mots-clés juridiques font partie des plus chers de Google Ads, chaque clic peut donc coûter cher.",
+                    "Le SEO demande des mois, mais les positions, les avis et les pages continuent d'amener des clients sans coût par clic. Beaucoup de cabinets combinent les deux : la publicité pour les dossiers immédiats pendant que le SEO progresse, puis moins de budget publicitaire quand les positions naturelles prennent le relais."
+                ]
+            },
+            "faqs": [
+                {
+                    "question": "Combien de temps faut-il pour voir des résultats SEO pour un cabinet ?",
+                    "answer": "Les corrections de la fiche Google Business Profile et des citations peuvent se voir sur la carte en quelques semaines. Les pages par domaine et les avis se construisent sur plusieurs mois. Le rythme dépend de votre ville et du nombre de cabinets sur votre domaine."
+                },
+                {
+                    "question": "Sur quels domaines de pratique pouvez-vous aider ?",
+                    "answer": "Tout domaine où les clients cherchent localement : préjudice corporel, droit de la famille, droit des étrangers, droit pénal, successions ou droit des affaires."
+                },
+                {
+                    "question": "Les règles déontologiques des avocats ont-elles un impact sur le SEO ?",
+                    "answer": "Oui. Les règles sur la communication des avocats s'appliquent au site, à la fiche et aux réponses aux avis. Les pages ne doivent pas promettre de résultat, et les réponses aux avis ne doivent jamais révéler d'information sur un client. Vérifiez les règles de votre barreau avant de publier des résultats ou des témoignages."
+                },
+                {
+                    "question": "Faut-il une page par ville ?",
+                    "answer": "Si vous avez un bureau dans cette ville ou y servez des clients régulièrement, oui. Chaque page doit contenir de vrais éléments locaux, pas le même texte avec un nom de ville différent."
+                },
+                {
+                    "question": "Combien coûte le SEO pour un cabinet d'avocats ?",
+                    "answer": "Le prix dépend du nombre de domaines de pratique et de bureaux. Vous recevez un devis après l'appel gratuit de 15 minutes, avant tout travail."
+                },
+                {
+                    "question": "Travaillez-vous avec des cabinets hors des États-Unis ?",
+                    "answer": "Oui. Je suis basé au Maroc, je travaille à distance, avec des entreprises au Maroc, au Royaume-Uni et aux États-Unis, en français, anglais ou arabe."
                 }
             ]
         }

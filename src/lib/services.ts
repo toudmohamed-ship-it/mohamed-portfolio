@@ -18,6 +18,8 @@ export interface ServicePage {
     about: Entity;
     /** Other entities the page explains (schema "mentions") */
     mentions: Entity[];
+    /** Industry pages: slug of the main service page they belong to (breadcrumb and links from that page) */
+    parent?: string;
 }
 
 const wiki = (name: string, page: string): Entity => ({ name, sameAs: `https://en.wikipedia.org/wiki/${page}` });
@@ -66,7 +68,28 @@ export const SERVICE_PAGES: ServicePage[] = [
             wiki("Conversion marketing", "Conversion_marketing"),
         ],
     },
+    // Industry pages come after the three main services (ServicesSnapshot and serviceHref rely on that order)
+    {
+        slug: "seo-for-law-firms",
+        key: "local_seo",
+        parent: "local-seo",
+        caseStudies: ["law-firm-local-seo", "uk-compliance-service-audit", "premium-medspa-seo-audit"],
+        relatedPost: "local-seo-guide-businesses",
+        about: wiki("Local search engine optimisation", "Local_search_engine_optimisation"),
+        mentions: [
+            wiki("Law firm", "Law_firm"),
+            wiki("Google Business Profile", "Google_Business_Profile"),
+            wiki("Google Maps", "Google_Maps"),
+            wiki("Schema.org", "Schema.org"),
+            wiki("Google Ads", "Google_Ads"),
+        ],
+    },
 ];
+
+/** Industry pages that belong to a main service page */
+export function childPages(slug: string) {
+    return SERVICE_PAGES.filter((p) => p.parent === slug);
+}
 
 /** Link for a services-hub anchor: its own page when it has one, otherwise the section on /services */
 export function serviceHref(key: ServiceAnchor) {

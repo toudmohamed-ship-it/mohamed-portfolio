@@ -848,7 +848,8 @@
             "view_case": "Read the case study",
             "learn_more": "Learn more",
             "on_this_page": "On this page",
-            "bridge_label": "Want this done for your site?"
+            "bridge_label": "Want this done for your site?",
+            "industry_label": "Local SEO by industry"
         },
         "technical-seo-audit": {
             "meta_title": "Technical SEO Audit for Service Businesses and SaaS",
@@ -1236,6 +1237,138 @@
                 {
                     "question": "How much does a GA4 setup cost?",
                     "answer": "The price depends on how many actions you want to track and how many sites or ad accounts are involved. You get a quote after the free 15-minute call."
+                }
+            ]
+        },
+        "seo-for-law-firms": {
+            "meta_title": "SEO for Law Firms: Local SEO for Attorneys",
+            "meta_description": "SEO for law firms: practice area pages, Google Business Profile, reviews and citations that bring consultations from local search.",
+            "eyebrow": "Service · SEO for law firms",
+            "crumb": "Law firms",
+            "title": "SEO for law firms",
+            "lead": "Get your firm found when people in your area search for a lawyer in your practice area, and turn those searches into consultations.",
+            "definition": {
+                "title": "What is law firm SEO?",
+                "paragraphs": [
+                    "Law firm SEO is the work of making a law firm appear in Google when someone searches for legal help, such as “personal injury lawyer Houston” or “divorce attorney near me”. Most of these searches name a practice area and a place, so law firm SEO is mostly local SEO applied to legal services.",
+                    "Google answers these searches with ads, a map showing three firms, and then the regular results. The map depends on your Google Business Profile, your reviews and your distance from the person searching. The regular results depend on your website: one strong page per practice area and per city, a fast site, and links from trusted local and legal sources.",
+                    "Legal searches are competitive because one client can be worth a lot to a firm. That is why structure matters more than volume: a clear site where each practice area has its own page does better than a large site where everything sits on one services page."
+                ]
+            },
+            "for_who": {
+                "title": "Signs your firm needs SEO work",
+                "items": [
+                    "Your firm does not appear in the map results for your main practice area in your city.",
+                    "All your practice areas share one page, so none of them ranks well.",
+                    "Directories list a different address or phone number for your firm.",
+                    "Most new clients come from referrals or paid ads, and almost none from Google.",
+                    "You serve several cities or counties with one generic page."
+                ]
+            },
+            "included": {
+                "title": "What law firm SEO work includes",
+                "intro": "Six pieces of work, in the order that usually brings consultations fastest.",
+                "items": [
+                    {
+                        "name": "Practice area page structure",
+                        "desc": "One page per practice area, and per city where you have an office or serve clients. Each page explains the client's situation, what the firm does and how to get in touch. This is the structure behind the U.S. law firm case study below."
+                    },
+                    {
+                        "name": "Google Business Profile for law firms",
+                        "desc": "The most precise primary category (for example “Personal injury attorney” rather than “Lawyer”), secondary categories for other practice areas, services, service area, photos and a description that follows Google's guidelines."
+                    },
+                    {
+                        "name": "Legal and local citations",
+                        "desc": "Your firm's name, address and phone number made consistent across legal directories (Avvo, Justia, FindLaw, Martindale-Hubbell) and general ones (Yelp, Bing Places, Apple Business Connect)."
+                    },
+                    {
+                        "name": "Review routine",
+                        "desc": "A simple routine for asking satisfied clients for reviews and replying to each one, without revealing anything about the client's matter."
+                    },
+                    {
+                        "name": "Technical and on-page fixes",
+                        "desc": "Titles and headings that name the practice area and the city, LegalService schema markup, fast mobile pages, and fixes for the indexing problems Search Console reports."
+                    },
+                    {
+                        "name": "Lead tracking",
+                        "desc": "Calls, form submissions and consultation bookings tracked in GA4, so you know which practice area pages bring cases."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "How law firm SEO works, step by step",
+                "items": [
+                    {
+                        "title": "Audit",
+                        "desc": "I check your rankings by practice area and city, your Google Business Profile, your citations and your site structure."
+                    },
+                    {
+                        "title": "Structure and fix",
+                        "desc": "Practice area pages, profile, citations and technical fixes, in order of impact."
+                    },
+                    {
+                        "title": "Grow and measure",
+                        "desc": "Reviews, local links and pages that answer the questions clients ask, with consultations from Google tracked every month."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Tools and data for law firm SEO",
+                "intro": "Legal rankings change from one city to the next, so they are measured where your clients search.",
+                "items": [
+                    {
+                        "name": "Google Search Console",
+                        "desc": "Shows which practice area searches bring visitors, and which pages Google does not index."
+                    },
+                    {
+                        "name": "Google Business Profile",
+                        "desc": "Calls, website clicks and direction requests from the map results."
+                    },
+                    {
+                        "name": "BrightLocal",
+                        "desc": "Tracks map rankings by city and checks citations across legal and general directories."
+                    },
+                    {
+                        "name": "Screaming Frog",
+                        "desc": "Crawls the site to find duplicate practice area pages, missing titles and broken links."
+                    },
+                    {
+                        "name": "Google Analytics 4",
+                        "desc": "Measures calls, forms and bookings by landing page."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "Law firm SEO vs. Google Ads for lawyers",
+                "paragraphs": [
+                    "Google Ads puts your firm at the top of the page from the first day, and stops the day you stop paying. Legal keywords are among the most expensive in Google Ads, so each click can cost a firm a lot.",
+                    "SEO takes months to build, but the rankings, reviews and pages keep bringing clients without a cost per click. Many firms use both: ads for immediate cases while SEO grows, then less ad spend as organic rankings take over."
+                ]
+            },
+            "faqs": [
+                {
+                    "question": "How long does SEO take for a law firm?",
+                    "answer": "Fixes to your Google Business Profile and citations can show in the map results within weeks. Practice area pages and reviews build up over months. The pace depends on your city and how many firms compete for your practice area."
+                },
+                {
+                    "question": "Which practice areas can you help with?",
+                    "answer": "Any practice area where clients search locally, such as personal injury, family law, immigration, criminal defense, estate planning or business law."
+                },
+                {
+                    "question": "Do lawyer advertising rules affect SEO?",
+                    "answer": "Yes. Bar rules on lawyer advertising apply to your website, your profile and your review replies. Pages should not promise case outcomes, and replies to reviews should never reveal client information. Check your state bar's rules before publishing case results or testimonials."
+                },
+                {
+                    "question": "Do I need a separate page for each city?",
+                    "answer": "If you have an office in that city or regularly serve clients there, yes. Each page needs real local details, not the same text with the city name changed."
+                },
+                {
+                    "question": "How much does SEO for a law firm cost?",
+                    "answer": "The price depends on how many practice areas and locations you have. You get a quote after the free 15-minute call, before any work starts."
+                },
+                {
+                    "question": "Do you work with law firms outside the U.S.?",
+                    "answer": "Yes. I am based in Morocco, work remotely, and work with businesses in Morocco, the UK and the U.S., in English, French or Arabic."
                 }
             ]
         }

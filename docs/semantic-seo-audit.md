@@ -17,6 +17,7 @@ Mohamed Toudghi, SEO consultant (home)                      core
 ├── Services hub (/services)                                core
 │   ├── Technical SEO audit (/services/technical-seo-audit)  core, money page
 │   ├── Local SEO (/services/local-seo)                      core, money page
+│   │   └── SEO for law firms (/services/seo-for-law-firms) industry page, child of Local SEO
 │   └── GA4 & tracking (/services/ga4-tracking)              core, money page
 ├── Proof: case studies (/portfolio, 7 studies)              core support
 ├── About, Contact, Privacy                                  trust

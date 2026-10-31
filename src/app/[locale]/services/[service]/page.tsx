@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import PageHeader from "@/components/ui/PageHeader";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { SERVICE_PAGES } from "@/lib/services";
+import { SERVICE_PAGES, childPages } from "@/lib/services";
 import { BASE_URL, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
@@ -17,6 +17,8 @@ type Copy = {
     meta_title: string;
     meta_description: string;
     eyebrow: string;
+    /** Short name for breadcrumbs and links (industry pages) */
+    crumb?: string;
     title: string;
     lead: string;
     definition: { title: string; paragraphs: string[] };
@@ -67,6 +69,8 @@ export default async function ServiceDetailPage({ params }: Props) {
         return { slug, client: tCases(`${slug}.client`), title: tCases(`${slug}.title`), result: Object.values(results)[0] };
     });
     const url = localizedUrl(locale, `/services/${service}`);
+    const parent = page.parent ? SERVICE_PAGES.find((s) => s.slug === page.parent) : undefined;
+    const children = childPages(page.slug).map((p) => ({ slug: p.slug, label: (t.raw(p.slug) as Copy).title }));
 
     const toc = [
         { id: "definition", label: c.definition.title },
@@ -84,7 +88,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         "@type": "Service",
         "@id": `${url}#service`,
         name: c.title,
-        serviceType: tHub(`${page.key}.title`),
+        serviceType: c.crumb ? c.title : tHub(`${page.key}.title`),
         description: c.meta_description,
         url,
         inLanguage: locale,
@@ -107,7 +111,8 @@ export default async function ServiceDetailPage({ params }: Props) {
                 crumbs={[
                     { label: tCrumbs("home"), href: "/" },
                     { label: tCrumbs("services"), href: "/services" },
-                    { label: tHub(`${page.key}.title`) },
+                    ...(parent ? [{ label: tHub(`${parent.key}.title`), href: `/services/${parent.slug}` }] : []),
+                    { label: c.crumb ?? tHub(`${page.key}.title`) },
                 ]}
                 eyebrow={c.eyebrow}
                 title={c.title}
@@ -216,6 +221,18 @@ export default async function ServiceDetailPage({ params }: Props) {
                         </ul>
                     </section>
 
+                    {/* Industry pages, for small screens (the sidebar has them on desktop) */}
+                    {children.length > 0 && (
+                        <nav aria-label={t("ui.industry_label")} className="lg:hidden flex flex-col gap-2">
+                            <p className="m-0 font-mono text-xs text-muted">{t("ui.industry_label")}</p>
+                            {children.map((ch) => (
+                                <Link key={ch.slug} href={`/services/${ch.slug}`} className="btn self-start font-medium no-underline">
+                                    {ch.label} <span className="arrow" aria-hidden="true">→</span>
+                                </Link>
+                            ))}
+                        </nav>
+                    )}
+
                     {/* FAQ */}
                     <div id="faq" className="scroll-mt-24">
                         <BlogFAQ faqs={c.faqs} title={t("ui.faq_title")} />
@@ -238,6 +255,16 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <Link href={`/blog/${page.relatedPost}`} className="font-medium text-[15px] text-ink no-underline hover:text-forest leading-snug">
                             {tPosts(`${page.relatedPost}.title`)}
                         </Link>
+                        {children.length > 0 && (
+                            <div className="pt-3 border-t border-line flex flex-col gap-2">
+                                <p className="m-0 font-mono text-xs text-muted">{t("ui.industry_label")}</p>
+                                {children.map((ch) => (
+                                    <Link key={ch.slug} href={`/services/${ch.slug}`} className="font-medium text-[15px] text-ink no-underline hover:text-forest leading-snug">
+                                        {ch.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                         <Link href="/services" className="btn pt-3 border-t border-line font-medium no-underline text-[15px]">
                             {t("ui.cta_secondary")} <span className="arrow" aria-hidden="true">→</span>
                         </Link>

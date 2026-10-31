@@ -114,6 +114,11 @@ export default async function ServicesPage({ params }: Props) {
                                             {tPages('ui.learn_more')}<span className="sr-only">: {s.title}</span> <span className="arrow" aria-hidden="true">→</span>
                                         </Link>
                                     )}
+                                    {SERVICE_PAGES.filter((p) => p.parent && p.key === s.key).map((p) => (
+                                        <Link key={p.slug} href={`/services/${p.slug}`} className="btn font-medium no-underline">
+                                            {tPages(`${p.slug}.title`)} <span className="arrow" aria-hidden="true">→</span>
+                                        </Link>
+                                    ))}
                                     <Link href="/contact" className="btn font-medium no-underline text-ink">{t('core_services.cta_discuss')} <span className="arrow" aria-hidden="true">→</span></Link>
                                 </div>
                             </div>
