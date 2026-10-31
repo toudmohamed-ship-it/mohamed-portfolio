@@ -1,51 +1,31 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
 
 interface PageHeaderProps {
+    eyebrow?: string;
     title: string;
-    subtitle: string;
-    supportingText?: string;
+    lead?: string;
+    crumbs: Crumb[];
+    locale: string;
+    children?: React.ReactNode;
 }
 
-export default function PageHeader({ title, subtitle, supportingText }: PageHeaderProps) {
+// Shared header for inner pages: breadcrumbs, a small mono label, the H1 and one lead paragraph. Left-aligned, no motion on the H1.
+export default function PageHeader({ eyebrow, title, lead, crumbs, locale, children }: PageHeaderProps) {
     return (
-        <section className="pt-40 pb-24 md:pt-48 md:pb-32 bg-bg-primary relative overflow-hidden border-b border-border-subtle">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(108,99,255,0.08),transparent_70%)] -z-0" />
-
-            <div className="container-custom relative z-10">
-                <div className="max-w-4xl mx-auto">
-                    <Breadcrumbs />
+        <section className="relative border-b border-line bg-paper overflow-hidden">
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none opacity-50 [background-image:radial-gradient(#D9D3C7_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(180deg,#000_0%,transparent_75%)]"
+            />
+            <div className="container-custom relative pt-10 md:pt-14 pb-14 md:pb-20 flex flex-col gap-6">
+                <Breadcrumbs items={crumbs} locale={locale} />
+                <div className="flex flex-col gap-5 max-w-[760px] pt-4">
+                    {eyebrow && <p className="in d1 m-0 font-mono text-[13px] text-forest tracking-wide">{eyebrow}</p>}
+                    <h1 className="m-0 text-[36px] sm:text-5xl lg:text-[56px] leading-[1.08] font-semibold tracking-[-0.03em]">{title}</h1>
+                    {lead && <p className="in d2 m-0 text-lg md:text-[19px] text-muted max-w-[620px]">{lead}</p>}
                 </div>
-                <div className="max-w-4xl mx-auto text-center space-y-8">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-brand-purple text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
-                            {subtitle}
-                        </span>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-text-primary leading-[1.1] tracking-tight">
-                            {title}
-                        </h1>
-                    </motion.div>
-
-                    {supportingText && (
-                        <motion.p
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2, duration: 0.5 }}
-                            className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light"
-                        >
-                            {supportingText}
-                        </motion.p>
-                    )}
-                </div>
+                {children}
             </div>
-
-            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
         </section>
     );
 }

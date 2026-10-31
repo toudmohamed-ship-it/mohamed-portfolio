@@ -1,11 +1,9 @@
 import PageHeader from "@/components/ui/PageHeader";
 import { Link } from "@/i18n/routing";
-import Button from "@/components/ui/Button";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { ArrowRight } from "lucide-react";
 import { CASE_STUDIES } from "@/lib/data";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageAlternates } from "@/lib/seo";
+import { localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -21,6 +19,7 @@ export async function generateMetadata({ params }: Props) {
         openGraph: {
             title: t('og_title'),
             description: t('og_description'),
+            url: localizedUrl(locale, '/portfolio'),
             images: ['/og-image.jpg'],
         },
         alternates: pageAlternates(locale, '/portfolio'),
@@ -32,68 +31,51 @@ export default async function PortfolioPage({ params }: Props) {
     setRequestLocale(locale);
 
     const t = await getTranslations({ locale, namespace: 'PortfolioPage' });
-    const tStudies = await getTranslations({ locale, namespace: 'CaseStudies' }); // Namespace for dynamic data
-    const tFinalCTA = await getTranslations({ locale, namespace: 'HomePage.FinalCTA' }); // Namespace for common CTA
+    const tStudies = await getTranslations({ locale, namespace: 'CaseStudies' });
+    const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
 
     return (
         <>
             <PageHeader
+                locale={locale}
+                crumbs={[{ label: tCrumbs('home'), href: '/' }, { label: tCrumbs('portfolio') }]}
+                eyebrow={t('header.eyebrow')}
                 title={t('header.title')}
-                subtitle={t('header.subtitle')}
-                supportingText={t('header.supporting_text')}
+                lead={t('header.subtitle')}
             />
 
-            <section className="py-24 md:py-40 bg-bg-primary">
-                <div className="container-custom">
-                    <h2 className="sr-only">Our Case Studies</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-                        {CASE_STUDIES.map((study) => (
+            <section className="container-custom py-16 md:py-24">
+                <h2 className="sr-only">{t('list_title')}</h2>
+                <ul className="list-none m-0 p-0 grid gap-5 md:grid-cols-2">
+                    {CASE_STUDIES.map((study, i) => (
+                        <li key={study.slug} className={`reveal ${i === 0 ? 'md:col-span-2' : ''}`}>
                             <Link
-                                key={study.slug}
                                 href={`/portfolio/${study.slug}`}
-                                className="group flex flex-col h-full glass rounded-[2.5rem] overflow-hidden border-border-subtle hover:border-brand-purple/30 dark:hover:bg-white/[0.05] hover:bg-black/[0.02] hover:-translate-y-2 transition-all duration-500 shadow-2xl"
+                                className={`lift h-full bg-white border border-line rounded-[20px] p-7 md:p-8 flex flex-col gap-4 text-ink no-underline hover:text-ink ${i === 0 ? 'md:grid md:grid-cols-[1.1fr_1fr] md:gap-10' : ''}`}
                             >
-                                <div className="p-10 md:p-12 flex flex-col h-full relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-purple/5 to-transparent blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                                    <div className="flex flex-wrap gap-3 mb-8">
-                                        {tStudies(`${study.slug}.tags`).split(' • ').map((tag, i) => (
-                                            <span
-                                                key={i}
-                                                className="px-4 py-1.5 text-[10px] font-bold text-brand-mint bg-brand-mint/5 border border-brand-mint/10 rounded-full uppercase tracking-wider"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <h3 className="text-3xl font-serif font-bold text-text-primary mb-4 group-hover:text-brand-purple transition-colors leading-tight">
-                                        {tStudies(`${study.slug}.title`)}
-                                    </h3>
-                                    <p className="text-text-secondary text-base leading-relaxed mb-10 flex-grow group-hover:text-text-primary transition-colors">
-                                        {tStudies(`${study.slug}.summary`)}
-                                    </p>
-                                    <div className="mt-auto">
-                                        <div className="inline-flex items-center gap-2 text-text-primary font-bold text-xs uppercase tracking-[0.2em] group-hover:text-brand-mint transition-colors">
-                                            {t('view_study')} <ArrowRight size={16} className="transition-transform group-hover:translate-x-1 rtl:rotate-180" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <span className="flex flex-col gap-3">
+                                    <span className="font-mono text-[13px] text-forest">{tStudies(`${study.slug}.client`)}</span>
+                                    <span className={`font-semibold leading-snug tracking-[-0.01em] ${i === 0 ? 'text-[26px] md:text-[30px]' : 'text-[22px]'}`}>{tStudies(`${study.slug}.title`)}</span>
+                                </span>
+                                <span className="flex flex-col gap-4 flex-1">
+                                    <span className="text-muted text-base">{tStudies(`${study.slug}.summary`)}</span>
+                                    <span className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-2">
+                                        <span className="flex flex-wrap gap-2">
+                                            {tStudies(`${study.slug}.tags`).split(' • ').map((tag) => (
+                                                <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-paper border border-line text-ink-soft">{tag}</span>
+                                            ))}
+                                        </span>
+                                        <span className="btn font-medium text-forest text-[15px]">{t('view_study')} <span className="arrow" aria-hidden="true">→</span></span>
+                                    </span>
+                                </span>
                             </Link>
-                        ))}
-                    </div>
-
-                    <div className="mt-24 text-center max-w-2xl mx-auto">
-                        <p className="text-sm text-text-secondary leading-relaxed font-medium uppercase tracking-[0.1em] opacity-60">
-                            {t('footer_note')}
-                        </p>
-                    </div>
-                </div>
+                        </li>
+                    ))}
+                </ul>
+                <p className="reveal m-0 mt-10 text-sm text-muted max-w-[640px]">{t('footer_note')}</p>
             </section>
 
-            <FinalCTA
-                title={tFinalCTA('title')}
-                buttonText={tFinalCTA('button')}
-            />
+            <FinalCTA />
         </>
     );
 }

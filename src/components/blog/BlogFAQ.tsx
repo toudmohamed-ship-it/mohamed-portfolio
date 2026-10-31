@@ -1,82 +1,37 @@
-"use client";
-
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
-
 interface FAQItem {
     question: string;
     answer: string;
 }
 
-interface BlogFAQProps {
-    faqs: FAQItem[];
-    title?: string;
-}
-
-export default function BlogFAQ({ faqs, title = "Frequently Asked Questions" }: BlogFAQProps) {
-    const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+// Native <details> accordion: works without JavaScript and every answer stays in the HTML for crawlers.
+export default function BlogFAQ({ faqs, title }: { faqs: FAQItem[]; title: string }) {
     if (!faqs || faqs.length === 0) return null;
 
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer.replace(/<[^>]*>?/gm, "") },
+        })),
+    };
+
     return (
-        <section className="space-y-12">
-            <h2 className="text-3xl font-serif font-bold text-text-primary tracking-tight">{title}</h2>
-
-            <div className="space-y-4">
-                {faqs.map((faq, index) => (
-                    <div
-                        key={index}
-                        className={cn(
-                            "glass rounded-3xl border border-border-subtle transition-all duration-500 overflow-hidden",
-                            openIndex === index ? "bg-white/[0.03] border-brand-purple/30" : "hover:bg-white/[0.02]"
-                        )}
-                    >
-                        <button
-                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                            className="w-full p-8 flex items-center justify-between text-left transition-colors"
-                        >
-                            <span className="text-lg font-bold text-text-primary pr-8">{faq.question}</span>
-                            <div className={cn(
-                                "w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 transition-all",
-                                openIndex === index ? "bg-brand-purple text-white" : "bg-white/5 text-text-secondary"
-                            )}>
-                                {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
-                            </div>
-                        </button>
-
-                        <div
-                            className={cn(
-                                "transition-all duration-500 ease-in-out",
-                                openIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                            )}
-                        >
-                            <div className="p-8 pt-0 text-text-secondary leading-relaxed prose prose-sm dark:prose-invert">
-                                <p dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                            </div>
-                        </div>
-                    </div>
+        <section aria-labelledby="faq-title" className="flex flex-col gap-5">
+            <h2 id="faq-title" className="m-0 text-2xl md:text-[28px] font-semibold">{title}</h2>
+            <div className="border-t border-line">
+                {faqs.map((faq, i) => (
+                    <details key={i} className="faq group border-b border-line">
+                        <summary className="flex items-center justify-between gap-6 py-5 cursor-pointer list-none text-[17px] font-medium text-ink">
+                            {faq.question}
+                            <span aria-hidden="true" className="shrink-0 w-8 h-8 rounded-full border border-line flex items-center justify-center text-forest transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <div className="pb-6 text-ink-soft leading-relaxed [&_a]:text-forest" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    </details>
                 ))}
             </div>
-
-            {/* JSON-LD Schema (Server-side would be better but this works for client hydration too) */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        "mainEntity": faqs.map(faq => ({
-                            "@type": "Question",
-                            "name": faq.question,
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": faq.answer.replace(/<[^>]*>?/gm, "")
-                            }
-                        }))
-                    })
-                }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
         </section>
     );
 }

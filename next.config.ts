@@ -7,11 +7,8 @@ const isPreview = process.env.VERCEL_ENV === 'preview';
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   experimental: {
     workerThreads: false,

@@ -5,7 +5,8 @@
         "services": "Services",
         "portfolio": "Portfolio",
         "about": "About",
-        "contact": "Contact"
+        "contact": "Contact",
+        "privacy": "Privacy"
     },
     "HomePage": {
         "title": "Mohamed | SEO & Digital Marketing Specialist",
@@ -22,7 +23,7 @@
             "after": "get",
             "highlight": "found on Google",
             "end": "and turn visits into clients.",
-            "subtitle": "I find what keeps Google from showing your site, fix it, and show you the numbers. No jargon, no long contracts.",
+            "subtitle": "I find what keeps Google from showing your site, fix it, and show you the numbers.",
             "cta_call": "Book a free 15-min call",
             "cta_work": "See case studies",
             "languages": "I work in English, French and Arabic.",
@@ -121,7 +122,7 @@
         },
         "FinalCTA": {
             "title": "Tell me about your website.",
-            "description": "A free 15-minute call. I will look at your site before we talk and tell you the first three things I would fix.",
+            "description": "A free 15-minute call to talk about your website and what is holding it back. I reply within 24 hours.",
             "button": "Book a call",
             "whatsapp": "Message on WhatsApp"
         },
@@ -164,7 +165,7 @@
                         "Core Web Vitals and mobile speed",
                         "Structured data and site structure"
                     ],
-                    "meta": "Delivered in 1 to 2 weeks"
+                    "meta": "One-time project"
                 },
                 {
                     "title": "Local SEO",
@@ -174,7 +175,7 @@
                         "City and service landing pages",
                         "A plan for reviews and local citations"
                     ],
-                    "meta": "Ongoing, reviewed every month"
+                    "meta": "Ongoing work"
                 },
                 {
                     "title": "GA4 & tracking setup",
@@ -227,18 +228,15 @@
             "steps": [
                 {
                     "title": "Audit",
-                    "desc": "I crawl the site, read your Search Console and GA4 data, and find what is really holding you back.",
-                    "when": "Week 1"
+                    "desc": "I crawl the site, read your Search Console and GA4 data, and find what is really holding you back."
                 },
                 {
                     "title": "Fix",
-                    "desc": "The most important fixes come first. I do them myself or hand them to your developer with clear instructions.",
-                    "when": "Weeks 2 to 4"
+                    "desc": "The most important fixes come first. I do them myself or hand them to your developer with clear instructions."
                 },
                 {
                     "title": "Measure",
-                    "desc": "A short monthly report with rankings, clicks and leads, and what we do next.",
-                    "when": "Every month"
+                    "desc": "Rankings, clicks and leads are tracked in Search Console and GA4, so you can see what changed."
                 }
             ]
         },
@@ -273,7 +271,7 @@
             "summary": "Doubled conversions and achieved top 10 rankings for key service pages via targeted landing page optimization.",
             "tags": "Local SEO • CRO • Technical SEO",
             "challenge": "A UK-based service provider in the competitive London market faced low conversions on high-traffic pages. The site suffered from technical debt, with 1,170 pages crawled showing 'no response' errors, lack of H1 tags on key pages, and duplicate meta descriptions. Mobile performance was poor (PageSpeed 66), and the business was invisible in local map packs.",
-            "approach": "Executed a granular 'Landlord Safety' campaign. Designed a dedicated landing page with clear trust signals, improving Mobile PageSpeed to 93. Optimized 26 core pages and 20 existing blog posts, while publishing 10 new long-tail keyword articles. Fixed 10+ critical technical issues (blocked pages, broken links) using Screaming Frog and GSC.",
+            "approach": "Ran a focused campaign for the main landlord safety service. Designed a dedicated landing page with clear trust signals, improving Mobile PageSpeed to 93. Optimized 26 core pages and 20 existing blog posts, while publishing 10 new long-tail keyword articles. Fixed 10+ critical technical issues (blocked pages, broken links) using Screaming Frog and GSC.",
             "results": {
                 "0": "Conversions > doubled in Month 1 (High-traffic service page)",
                 "1": "PageSpeed: Mobile 66 → 93, Desktop 90 → 97",
@@ -308,7 +306,7 @@
             "title": "Technical SEO Audit & Local Optimization for U.S.-Based Medical Spa",
             "summary": "Resolved critical technical SEO issues blocking Google indexation and developed comprehensive local SEO strategy.",
             "tags": "Technical SEO • Local SEO • Site Audit",
-            "challenge": "A medical spa website was experiencing poor visibility despite offering premium services. Initial investigation revealed that SEO metadata (titles & descriptions) were not appearing in the HTML source due to a plugin conflict between RankMath and Yoast SEO. Additionally, canonical tags were misconfigured—some self-referenced incorrectly, while others pointed to local development domains instead of the live site. These issues prevented Google from properly crawling, indexing, and ranking the site's service pages.",
+            "challenge": "A medical spa website was experiencing poor visibility despite offering premium services. Initial investigation revealed that SEO metadata (titles & descriptions) were not appearing in the HTML source due to a plugin conflict between RankMath and Yoast SEO. Additionally, canonical tags were misconfigured, some self-referenced incorrectly, while others pointed to local development domains instead of the live site. These issues prevented Google from properly crawling, indexing, and ranking the site's service pages.",
             "approach": "Conducted a comprehensive SEO audit covering technical, on-page, and local SEO factors. Built an SEO Implementation Tracking Sheet to organize all optimizations and monitor progress. Resolved the metadata visibility issue by deactivating RankMath and maintaining Yoast SEO as the single source of truth. Fixed all canonical tag errors to ensure each page properly referenced its authoritative URL. Drafted optimized titles, meta descriptions, and heading structures for service and location pages. Developed a detailed Local SEO Strategy covering on-page optimization, local citations, link building, and content strategy.",
             "results": {
                 "0": "Fixed Plugin Conflict: Restored SEO metadata visibility in HTML",
@@ -386,23 +384,24 @@
     },
     "ServicesPage": {
         "metadata": {
-            "title": "Services | Data-Driven SEO & Digital Growth Strategies",
-            "description": "Comprehensive SEO and digital marketing services tailored for startups and service businesses. Technical SEO, Local SEO, and Analytics."
+            "title": "SEO Services: Technical SEO, Local SEO, GA4",
+            "description": "Technical SEO audits, keyword research, local SEO, international SEO, GA4 tracking and WordPress optimization for service businesses and startups."
         },
         "header": {
-            "title": "My Services",
-            "subtitle": "I help service-based businesses, startups, and growing teams solve technical SEO issues, capture high-intent traffic, and turn website visits into measurable results.",
-            "supportingText": "Each service is tailored to your business goals, technical setup, and market — no generic packages."
+            "eyebrow": "Services",
+            "title": "SEO and tracking services",
+            "subtitle": "I help service businesses, startups and growing teams fix technical SEO issues, reach people who are ready to buy, and measure what their website brings in.",
+            "supportingText": ""
         },
         "how_it_works": {
-            "title": "How I Work",
-            "subtitle": "A data-driven process designed for transparency and results.",
-            "step1_title": "Audit & Analysis",
-            "step1_desc": "I start by identifying technical issues, search opportunities, and performance gaps using data and proven frameworks.",
-            "step2_title": "Strategy",
-            "step2_desc": "Based on findings, I design a clear SEO and growth strategy aligned with your business objectives.",
-            "step3_title": "Execution & Measurement",
-            "step3_desc": "Implementation is tracked, measured, and refined to ensure real, sustainable results."
+            "title": "How I work",
+            "subtitle": "Every project follows the same three steps.",
+            "step1_title": "Audit",
+            "step1_desc": "I look for technical issues, search opportunities and performance gaps in your data.",
+            "step2_title": "Plan",
+            "step2_desc": "I turn the findings into a clear plan, ordered by what will help your business most.",
+            "step3_title": "Do and measure",
+            "step3_desc": "The work is done, tracked and adjusted so you can see the results in your own data."
         },
         "core_services": {
             "title": "Core Services",
@@ -410,7 +409,7 @@
             "tech_seo": {
                 "title": "Technical SEO Audit & Fixes",
                 "bestFor": "Best for websites with indexing, crawlability, or performance issues.",
-                "description": "I analyze your website’s technical foundation to uncover issues affecting crawlability, indexation, and performance — then provide clear, actionable fixes.",
+                "description": "I check your website's technical base for anything that stops Google from crawling, indexing or loading your pages, then give you clear fixes.",
                 "deliverables": [
                     "Full website crawl & technical error analysis",
                     "Indexing, crawlability & canonical fixes",
@@ -422,7 +421,7 @@
             "keyword_strategy": {
                 "title": "Keyword Research & Content Strategy",
                 "bestFor": "Best for businesses struggling to attract qualified organic traffic.",
-                "description": "I build data-backed content strategies that target real search intent — so you stop guessing and start capturing qualified traffic.",
+                "description": "I build content plans around what people really search for, so you stop guessing and start attracting the right visitors.",
                 "deliverables": [
                     "Search intent & SERP analysis",
                     "Competitor gap analysis",
@@ -484,7 +483,7 @@
             "what_you_get": "What You Get:"
         },
         "who_i_work_with": {
-            "title": "Who I Work With",
+            "title": "Who I work with",
             "service_business": {
                 "title": "Service-based businesses",
                 "desc": "Looking to increase local visibility and generate more qualified leads."
@@ -499,32 +498,34 @@
             },
             "growth_seekers": {
                 "title": "Growth Seekers",
-                "desc": "Businesses needing clarity, structure, and a data-backed roadmap."
+                "desc": "Businesses that need clarity, structure and a roadmap based on their own data."
             }
         },
         "final_cta": {
-            "title": "Ready to improve your visibility and performance?",
-            "description": "Let’s discuss your goals and identify where SEO and analytics can create the most impact.",
-            "disclaimer": "Experience across international platforms and service-based businesses. Some projects presented anonymously due to confidentiality.",
-            "button": "Book a Free Discovery Call"
-        }
+            "title": "Not sure which service you need?",
+            "description": "Tell me about your website in a free 15-minute call and I will point you to the right place to start.",
+            "disclaimer": "",
+            "button": "Book a free call"
+        },
+        "jump_label": "Jump to a service"
     },
     "AboutPage": {
         "metadata": {
-            "title": "About | SEO Expert & Data-Driven Digital Marketer",
-            "description": "Discover Mohamed Toudghi's journey to becoming a leading SEO Specialist. Expert in Technical SEO, Analytics, and Digital Marketing with proven results.",
-            "og_title": "About Mohamed Toudghi | SEO Expert Journey",
-            "og_description": "Learn about my journey from AUI to becoming a leading SEO Specialist with expertise in Technical SEO, Analytics, and Digital Marketing."
+            "title": "About me, SEO consultant in Rabat",
+            "description": "SEO consultant from Al Akhawayn University, working on technical SEO, local SEO and GA4 tracking. Arabic, English and French.",
+            "og_title": "About Mohamed Toudghi | SEO Consultant",
+            "og_description": "From Al Akhawayn University to SEO and analytics work for teams like duPont Registry, Webloo and FF Inventory."
         },
         "hero": {
-            "title": "About Me",
-            "subtitle": "I’m a data-obsessed marketer who believes that every click should have a purpose."
+            "eyebrow": "About",
+            "title": "Hi, I'm Mohamed. I help businesses get found on Google.",
+            "subtitle": "SEO consultant based in Rabat, working with clients in the UK, the U.S. and Morocco."
         },
         "journey": {
-            "title": "My Journey",
-            "p1": "My professional journey began at <b>Al Akhawayn University (AUI)</b>, where I developed a strong foundation in critical thinking and communication. This academic background served as the launchpad for my career in the digital landscape.",
-            "p2": "Starting with internships that exposed me to the fast-paced world of digital marketing, I quickly realized that <b>data</b> was the missing piece in most marketing strategies. I pivoted to focus specifically on SEO and Analytics, mastering the art of making websites not just visible, but profitable.",
-            "p3": "Today, I work with businesses ranging from local startups to international organizations, helping them navigate the complexities of search algorithms and user behavior. My approach is simple: <b>make decisions based on data, not guesses.</b>"
+            "title": "How I got here",
+            "p1": "I studied at Al Akhawayn University (AUI), where I built a base in critical thinking and communication.",
+            "p2": "My first internships were in digital marketing. I noticed that most marketing plans were missing one thing: data. So I moved into SEO and analytics, with one goal: websites that bring in clients, not only visits.",
+            "p3": "Today I work with businesses from local startups to international organizations. My rule is simple: decide with data, not guesses."
         },
         "languages": {
             "title": "Languages",
@@ -535,9 +536,9 @@
             "professional": "Professional (C1)",
             "advanced": "Advanced (B2)"
         },
-        "resume": "Download Resume",
+        "resume": "Download my CV",
         "expertise": {
-            "title": "Technical Expertise",
+            "title": "What I work with",
             "categories": {
                 "seo_content": "SEO & Content",
                 "analytics_data": "Analytics & Data",
@@ -573,12 +574,14 @@
                 "HubSpot Email Marketing",
                 "BrightLocal Local SEO"
             ]
-        }
+        },
+        "teams_title": "Teams I have worked with",
+        "photo_alt": "Mohamed Toudghi, SEO consultant"
     },
     "CaseStudyPage": {
-        "back_to_portfolio": "Back to Portfolio",
-        "challenge": "The Challenge",
-        "approach": "My Approach",
+        "back_to_portfolio": "All case studies",
+        "challenge": "The challenge",
+        "approach": "What I did",
         "key_actions": "Key Actions Taken",
         "actions": {
             "audit": "Conducted comprehensive audit",
@@ -586,64 +589,79 @@
             "architecture": "Optimized site architecture",
             "structured_data": "Implemented structured data"
         },
-        "performance_evidence": "Performance Evidence",
-        "before_after": "Before & After Performance",
+        "performance_evidence": "Screenshots",
+        "before_after": "Before and after",
         "metric": "Metric",
         "before": "Before",
-        "after_optimization": "After Optimization",
+        "after_optimization": "After",
         "confidentiality": {
-            "title": "Confidentiality Note",
-            "text": "This project is presented anonymously due to client confidentiality agreements. Specific names and proprietary data have been generalized."
+            "title": "Confidentiality",
+            "text": "Some projects are shown without the client's name because of confidentiality agreements. Names and private data are generalized."
         },
-        "key_results": "Key Results",
-        "tools_used": "Tools Used"
+        "key_results": "Key results",
+        "tools_used": "Tools used",
+        "client": "Client",
+        "more_studies": "More case studies"
     },
     "PortfolioPage": {
         "metadata": {
-            "title": "Portfolio | Proven SEO Results & Case Studies",
-            "description": "Explore proven SEO results and case studies across Technical SEO, Local SEO, and analytics. Real growth stories for international businesses.",
-            "og_title": "SEO Portfolio & Case Studies | Mohamed Toudghi",
-            "og_description": "Proven SEO results across international clients including marketplace optimization, local service businesses, and SaaS launches."
+            "title": "SEO Case Studies and Results",
+            "description": "Seven SEO case studies with real numbers: technical SEO, local SEO, on-page work and GA4 tracking for clients in the UK, the U.S. and Morocco.",
+            "og_title": "SEO Case Studies | Mohamed Toudghi",
+            "og_description": "Seven SEO case studies with real numbers, from a 560K-visit marketplace to local service businesses."
         },
         "header": {
-            "title": "Portfolio",
-            "subtitle": "Selected projects across SEO, website optimization, and performance analytics.",
-            "supporting_text": "Some projects are presented in anonymized or descriptive form due to confidentiality."
+            "eyebrow": "Portfolio",
+            "title": "Case studies with real numbers",
+            "subtitle": "Technical SEO, local SEO, on-page work and tracking for clients in the UK, the U.S. and Morocco. Some clients stay anonymous because of NDAs."
         },
-        "view_study": "View Case Study",
-        "footer_note": "Projects include a mix of in-house roles, collaborative work, and project-based contributions. Details are summarized to respect client confidentiality."
+        "view_study": "Read the case study",
+        "footer_note": "These projects include in-house roles, team work and freelance projects. Details are summarized to respect client confidentiality.",
+        "list_title": "All case studies"
     },
     "BlogPage": {
         "metadata": {
-            "title": "Blog & Insights",
-            "description": "Explore the latest trends, expert guides, and actionable insights on SEO, Digital Marketing, and Analytics to help grow your business."
+            "title": "SEO Blog: Technical SEO, Local SEO and GA4 Guides",
+            "description": "Practical guides on technical SEO, local SEO, keyword research and GA4 tracking for service businesses and SaaS."
         },
-        "title": "SEO & Growth Insights",
-        "description": "Practical guides and data-driven strategies to master SEO and grow your business.",
+        "title": "SEO blog",
+        "description": "Practical guides on technical SEO, local SEO and GA4 tracking.",
         "header": {
-            "title": "THE SEO JOURNAL",
-            "subtitle": "Expert rankings, actionable insights, and technical SEO guides for growing businesses."
+            "eyebrow": "The blog",
+            "title": "Guides from real SEO work",
+            "subtitle": "Practical articles on technical SEO, local SEO, keyword research and GA4 tracking. Written for business owners and the people who run their websites."
         },
-        "back_to_blog": "All Articles",
-        "read_article": "Read Full Case",
+        "back_to_blog": "All articles",
+        "read_article": "Read the article",
         "sidebar": {
-            "cta_title": "Need Expert SEO Help?",
-            "cta_desc": "Let's help your business rank higher in Google Search. Book a free audit today.",
-            "cta_button": "Chat on WhatsApp"
+            "cta_title": "Want me to look at your site?",
+            "cta_desc": "Book a free 15-minute call to talk about your website and what is holding it back.",
+            "cta_button": "Book a call"
         },
         "related_posts": {
-            "title": "You Might Also Like"
+            "title": "More articles"
         },
-        "view_all": "View All Posts",
-        "placeholder_content": "This is a placeholder for the full article content. In a real implementation, this would be a Markdown file or content from a CMS."
+        "view_all": "All articles",
+        "list_title": "All articles",
+        "read_time": "{minutes} min read",
+        "share": "Share",
+        "copy_link": "Copy link",
+        "copied": "Link copied",
+        "on_this_page": "On this page",
+        "faq_title": "Questions and answers",
+        "author": {
+            "label": "Written by",
+            "bio": "SEO consultant in Rabat. I work on technical SEO, local SEO and GA4 tracking for service businesses in the UK, the U.S. and Morocco.",
+            "more": "About me"
+        }
     },
     "BlogPosts": {
         "local-seo-guide-businesses": {
             "title": "The Complete Local SEO Guide for Service Businesses",
-            "excerpt": "Learn how to dominate local search results. A practical guide to Google Business Profile optimization and local keywords.",
+            "excerpt": "A practical guide to Google Business Profile, local keywords and reviews, so nearby customers find you first.",
             "date": "Dec 12, 2025",
             "category": "Local SEO",
-            "content": "<p><strong>By Mohamed Toudghi – SEO & Digital Marketing Specialist</strong></p><p>If you run a service-based business and want more customers from <strong>Google Search</strong> and <strong>Google Maps</strong>, Local SEO is one of the highest-ROI channels you can invest in.</p><p>Whether you’re a clinic, a restaurant, a real estate agency, or a service provider, your potential customers are already searching for you online.</p><p>This guide will show you, step by step, how to improve local SEO so you can rank higher, generate more leads, and build a trusted reputation. I’ll focus on data-driven, practical tactics that work for businesses in any local market.</p><hr/><h2>1. Why Local SEO Matters</h2><p>Local search is no longer just “nice to have”. It’s how people make real buying decisions. If you’re not visible in Google’s Local Pack (the 3–4 map results) or in Maps, you’re losing customers to competitors who are.</p><hr/><h2>2. How Google Local Search Works</h2><p>Google’s local algorithm is based on three main factors: Proximity, Relevance, and Prominence.</p><hr/><h2>3. Google Business Profile Optimization</h2><p>Choose one primary category and relevant secondary categories. Avoid irrelevant ones. Regularly upload high-quality images of your team, office, and projects.</p><hr/><h2>4. Local Keyword Research</h2><p>Target patterns like <strong>[Service] + [City]</strong>. Language intent matters depending on your target audience.</p><hr/><h2>5. On-Page Local SEO Optimization</h2><ul><li><strong>Location Pages:</strong> Create dedicated pages for each city you serve.</li><li><strong>Title Tags & Meta Descriptions:</strong> Include the main service and city name.</li></ul><hr/><h2>6. Local Citations & NAP Consistency</h2><p>Ensure your <strong>Name, Address, and Phone (NAP)</strong> are consistent across all platforms.</p><hr/><h2>7. Reviews & Local Trust Signals</h2><p>Reviews are a core reputation signal. Respond professionally to all feedback.</p><hr/><h2>8. Technical SEO for Local Rankings</h2><p>Website speed and mobile-friendliness are essential. Implement <strong>LocalBusiness Schema Markup</strong>.</p><hr/><h2>9. Final Action Plan & Checklist</h2><ul><li>☐ Claim and verify your Google Business Profile</li><li>☐ Standardize your NAP format across the web</li><li>☐ Create dedicated city location pages</li><li>☐ Implement a review collection process</li></ul><p>By following this roadmap, you'll attract more leads and grow your business organically.</p>"
+            "content": "<p><strong>By Mohamed Toudghi – SEO & Digital Marketing Specialist</strong></p><p>If you run a service-based business and want more customers from <strong>Google Search</strong> and <strong>Google Maps</strong>, Local SEO is one of the highest-ROI channels you can invest in.</p><p>Whether you’re a clinic, a restaurant, a real estate agency, or a service provider, your potential customers are already searching for you online.</p><p>This guide will show you, step by step, how to improve local SEO so you can rank higher, generate more leads, and build a trusted reputation. I’ll focus on practical tactics, backed by data, that work for businesses in any local market.</p><hr/><h2>1. Why Local SEO Matters</h2><p>Local search is no longer just “nice to have”. It’s how people make real buying decisions. If you’re not visible in Google’s Local Pack (the 3–4 map results) or in Maps, you’re losing customers to competitors who are.</p><hr/><h2>2. How Google Local Search Works</h2><p>Google’s local algorithm is based on three main factors: Proximity, Relevance, and Prominence.</p><hr/><h2>3. Google Business Profile Optimization</h2><p>Choose one primary category and relevant secondary categories. Avoid irrelevant ones. Regularly upload high-quality images of your team, office, and projects.</p><hr/><h2>4. Local Keyword Research</h2><p>Target patterns like <strong>[Service] + [City]</strong>. Language intent matters depending on your target audience.</p><hr/><h2>5. On-Page Local SEO Optimization</h2><ul><li><strong>Location Pages:</strong> Create dedicated pages for each city you serve.</li><li><strong>Title Tags & Meta Descriptions:</strong> Include the main service and city name.</li></ul><hr/><h2>6. Local Citations & NAP Consistency</h2><p>Ensure your <strong>Name, Address, and Phone (NAP)</strong> are consistent across all platforms.</p><hr/><h2>7. Reviews & Local Trust Signals</h2><p>Reviews are a core reputation signal. Respond professionally to all feedback.</p><hr/><h2>8. Technical SEO for Local Rankings</h2><p>Website speed and mobile-friendliness are essential. Implement <strong>LocalBusiness Schema Markup</strong>.</p><hr/><h2>9. Final Action Plan & Checklist</h2><ul><li>☐ Claim and verify your Google Business Profile</li><li>☐ Standardize your NAP format across the web</li><li>☐ Create dedicated city location pages</li><li>☐ Implement a review collection process</li></ul><p>By following this roadmap, you'll attract more leads and grow your business organically.</p>"
         },
         "technical-seo-checklist-2026": {
             "title": "Technical SEO for Service Businesses & SaaS: The Complete Framework",
@@ -671,70 +689,108 @@
             "excerpt": "Stop relying on pageviews. Learn how to track what matters: clicks, scrolls, and conversions.",
             "date": "Nov 28, 2025",
             "category": "Analytics",
-            "content": "Google Analytics 4 (GA4) marks a major shift from session-based to event-based tracking. To get the most out of your data, you must move beyond simple pageview metrics. Start by defining your core conversion events—such as form submissions, button clicks, or video views. Use Google Tag Manager to implement these events without modifying code directly. By visualizing your conversion funnel in GA4 Explorations, you can identify precisely where users are dropping off and optimize your site for better performance."
+            "content": "Google Analytics 4 (GA4) marks a major shift from session-based to event-based tracking. To get the most out of your data, you must move beyond simple pageview metrics. Start by defining your core conversion events, such as form submissions, button clicks, or video views. Use Google Tag Manager to implement these events without modifying code directly. By visualizing your conversion funnel in GA4 Explorations, you can identify precisely where users are dropping off and optimize your site for better performance."
         },
         "keyword-research-process": {
             "title": "My 4-Step Keyword Research Process",
             "excerpt": "How I find low-competition, high-value keywords for any niche.",
             "date": "Nov 15, 2025",
             "category": "Keyword Research",
-            "content": "Effective keyword research is about finding the intersection of volume, relevance, and difficulty. My 4-step process begins with seed keyword brainstorming based on core business services. Second, I use tools like SEMrush or Ahrefs to analyze competitor rankings and identify 'low-hanging fruit'—keywords where competitors are weak. Third, I analyze the SERP intent to ensure we're creating the right type of content (informational vs transactional). Finally, I map these keywords to a content cluster strategy to build topical authority over time."
+            "content": "Effective keyword research is about finding the intersection of volume, relevance, and difficulty. My 4-step process begins with seed keyword brainstorming based on core business services. Second, I use tools like SEMrush or Ahrefs to analyze competitor rankings and identify 'low-hanging fruit', keywords where competitors are weak. Third, I analyze the SERP intent to ensure we're creating the right type of content (informational vs transactional). Finally, I map these keywords to a content cluster strategy to build topical authority over time."
         }
     },
     "ContactPage": {
         "metadata": {
-            "title": "Contact | Get a Free SEO Consultation",
-            "description": "Get in touch for expert SEO audits and digital marketing consulting. Free 15-minute discovery calls available for international clients.",
-            "og_title": "Contact Mohamed Toudghi | Free SEO Consultation",
-            "og_description": "Ready to improve your website's SEO? Get in touch for a free consultation. Expert SEO services for businesses worldwide."
+            "title": "Contact: Book a Free 15-Minute SEO Call",
+            "description": "Send a message or book a free 15-minute call about your website's SEO. Reply within 24 hours, in English, French or Arabic.",
+            "og_title": "Contact Mohamed Toudghi | Free 15-Minute Call",
+            "og_description": "Book a free 15-minute call about your website's SEO. Reply within 24 hours."
         },
         "header": {
-            "title": "Get In Touch",
-            "subtitle": "Ready to grow your business? Fill out the form below or book a call."
+            "eyebrow": "Contact",
+            "title": "Tell me about your website",
+            "subtitle": "Send a message or write on WhatsApp. I reply within 24 hours, in English, French or Arabic."
         },
         "info": {
-            "title": "Contact Information",
+            "title": "Write to me directly",
             "email_label": "Email",
-            "linkedin_label": "Connect on LinkedIn",
+            "linkedin_label": "Mohamed Toudghi on LinkedIn",
             "phone_label": "Phone"
+        },
+        "steps": {
+            "title": "What happens next",
+            "items": [
+                "I read your message and reply within 24 hours.",
+                "We book a free 15-minute call at a time that suits you.",
+                "If it is a good fit, I send you a clear proposal for the work."
+            ]
         }
     },
     "ContactForm": {
-        "title": "Send a Message",
-        "subtitle": "I usually respond within 24 hours.",
+        "title": "Send a message",
+        "subtitle": "The more you tell me about your site, the more useful my reply will be.",
         "labels": {
             "name": "Name",
             "email": "Email",
-            "service": "Service Needed",
+            "website": "Website",
+            "service": "What do you need?",
             "message": "Message"
         },
+        "optional": "(optional)",
         "placeholders": {
-            "name": "John Doe",
-            "email": "john@company.com",
-            "service": "Select a service...",
-            "message": "Tell me about your project or goals..."
+            "name": "Your name",
+            "email": "you@company.com",
+            "service": "Choose one",
+            "message": "What is your site, and what would you like to improve?"
         },
         "services": {
-            "seo": "Technical SEO",
-            "marketing": "Digital Marketing Strategy",
-            "analytics": "Analytics & Tracking",
-            "web": "Website Optimization",
-            "other": "Other"
+            "audit": "Technical SEO audit",
+            "local": "Local SEO",
+            "analytics": "GA4 and tracking",
+            "web": "Website optimization",
+            "other": "Something else"
         },
         "button": {
-            "idle": "Send Message",
-            "loading": "Sending..."
+            "idle": "Send message",
+            "loading": "Sending"
         },
         "messages": {
-            "success": "Thank you! I'll get back to you within 24 hours.",
-            "error": "Oops! Something went wrong. Please try again or email me directly.",
-            "generic_error": "Unable to send message. Please try again or contact me via email."
-        }
+            "success": "Thank you. Your message is sent and I will reply within 24 hours.",
+            "error": "The message could not be sent. Please try again or email me at toudmohamed@gmail.com."
+        },
+        "privacy": "I only use your details to reply to you.",
+        "privacy_link": "Privacy"
     },
     "Footer": {
         "tagline": "SEO consultant in Rabat, Morocco. Technical SEO, local SEO and GA4 tracking for service businesses.",
         "pages": "Pages",
         "contact": "Contact",
-        "bottom": "SEO consultant, Rabat"
+        "bottom": "SEO consultant, Rabat",
+        "privacy": "Privacy"
+    },
+    "PrivacyPage": {
+        "title": "Privacy",
+        "description": "How mohamedtoudghi.com handles your data: the contact form, Google Analytics and hosting.",
+        "updated": "Last updated: 31 October 2026",
+        "sections": [
+            {
+                "title": "Contact form",
+                "body": "When you send the contact form, your name, email, website, chosen service and message are sent through Formspree to my email inbox. I only use them to reply to you and I do not share them."
+            },
+            {
+                "title": "Analytics",
+                "body": "This site uses Google Analytics 4 to count visits and see which pages are read. It loads only after your first scroll, tap or key press, or a few seconds after the page opens. Google Analytics uses cookies and receives information such as the pages you visit, your device type and your approximate location."
+            },
+            {
+                "title": "Hosting",
+                "body": "The site is hosted by Vercel, which keeps standard server logs (such as IP address and browser type) to run and protect the service."
+            },
+            {
+                "title": "Links to other sites",
+                "body": "Links to WhatsApp, LinkedIn and other sites take you to services with their own privacy policies."
+            }
+        ],
+        "contact_title": "Questions or requests",
+        "contact_body": "To ask what data I hold about you or to have it deleted, email"
     }
 }

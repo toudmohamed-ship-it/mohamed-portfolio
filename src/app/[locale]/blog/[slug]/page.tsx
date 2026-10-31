@@ -1,20 +1,17 @@
-import { Link } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/lib/blog-data";
-import Image from "next/image";
-import { ArrowLeft, Clock, Share2, Calendar } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import fs from "fs";
 import path from "path";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import TableOfContents from "@/components/blog/TableOfContents";
+import TableOfContents, { type Heading } from "@/components/blog/TableOfContents";
 import BlogSidebar from "@/components/blog/BlogSidebar";
-import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import SocialShare from "@/components/blog/SocialShare";
 import AuthorBio from "@/components/blog/AuthorBio";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import RelatedPosts from "@/components/blog/RelatedPosts";
-import { pageAlternates } from "@/lib/seo";
+import FinalCTA from "@/components/sections/FinalCTA";
+import { localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{
@@ -23,17 +20,14 @@ interface Props {
     }>;
 }
 
+interface BlogMetadata {
+    faqs: { question: string; answer: string }[];
+    relatedSlugs?: string[];
+    relatedPosts?: string[];
+}
+
 export async function generateStaticParams() {
-    const locales = ['en', 'fr', 'ar'];
-    const params = [];
-
-    for (const locale of locales) {
-        for (const post of BLOG_POSTS) {
-            params.push({ locale, slug: post.slug });
-        }
-    }
-
-    return params;
+    return ['en', 'fr', 'ar'].flatMap((locale) => BLOG_POSTS.map((post) => ({ locale, slug: post.slug })));
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -47,7 +41,48 @@ export async function generateMetadata({ params }: Props) {
         title: tPosts(`${slug}.title`),
         description: tPosts(`${slug}.excerpt`),
         alternates: pageAlternates(locale, `/blog/${slug}`),
+        openGraph: {
+            type: "article",
+            title: tPosts(`${slug}.title`),
+            description: tPosts(`${slug}.excerpt`),
+            url: localizedUrl(locale, `/blog/${slug}`),
+            images: ['/og-image.jpg'],
+        },
     };
+}
+
+// Heading ids that also work for Arabic and French text (keeps letters and digits from any script)
+function slugify(text: string) {
+    return text
+        .replace(/<[^>]*>?/gm, "")
+        .toLowerCase()
+        .replace(/&[a-z]+;/g, "")
+        .replace(/[^\p{L}\p{N}\s-]/gu, "")
+        .trim()
+        .replace(/\s+/g, "-");
+}
+
+function loadPost(slug: string, locale: string, fallback: () => string) {
+    let content = "";
+    let meta: BlogMetadata = { faqs: [], relatedSlugs: [] };
+    const blogDir = path.resolve(process.cwd(), "src/content/blog", slug);
+    try {
+        const contentPath = path.join(blogDir, `${locale}.html`);
+        content = fs.existsSync(contentPath) ? fs.readFileSync(contentPath, "utf-8") : fallback();
+
+        const metaPath = path.join(blogDir, "metadata.json");
+        if (fs.existsSync(metaPath)) meta = { ...meta, ...JSON.parse(fs.readFileSync(metaPath, "utf-8")) };
+
+        const localizedMetaPath = path.join(blogDir, `metadata.${locale}.json`);
+        if (fs.existsSync(localizedMetaPath)) {
+            const localized = JSON.parse(fs.readFileSync(localizedMetaPath, "utf-8"));
+            meta = { ...meta, ...localized, faqs: localized.faqs || meta.faqs };
+        }
+    } catch (e) {
+        console.error(`Error reading blog files for ${slug}/${locale}:`, e);
+        content = content || fallback() || "";
+    }
+    return { content, meta };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -55,176 +90,89 @@ export default async function BlogPostPage({ params }: Props) {
     setRequestLocale(locale);
 
     const postData = BLOG_POSTS.find((p) => p.slug === slug);
-
-    if (!postData) {
-        notFound();
-    }
+    if (!postData) notFound();
 
     const t = await getTranslations({ locale, namespace: 'BlogPage' });
     const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
+    const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
 
-    interface BlogMetadata {
-        faqs: any[];
-        relatedSlugs?: string[];
-        relatedPosts?: string[];
-    }
+    const { content, meta } = loadPost(slug, locale, () => tPosts(`${slug}.content`));
+    const title = tPosts(`${slug}.title`);
 
-    // Try to read content from file system (CMS-like)
-    let content = "";
-    let meta: BlogMetadata = { faqs: [], relatedSlugs: [] };
-
-    try {
-        const blogDir = path.resolve(process.cwd(), "src/content/blog", slug);
-        const contentPath = path.join(blogDir, `${locale}.html`);
-        const metaPath = path.join(blogDir, "metadata.json");
-
-        if (fs.existsSync(contentPath)) {
-            content = fs.readFileSync(contentPath, "utf-8");
-        } else {
-            console.warn(`Content file not found: ${contentPath}. Falling back to translations.`);
-            content = tPosts(`${slug}.content`);
-        }
-
-        if (fs.existsSync(metaPath)) {
-            const metaRaw = fs.readFileSync(metaPath, "utf-8");
-            if (metaRaw) {
-                meta = { ...meta, ...JSON.parse(metaRaw) };
-            }
-        }
-
-        // Try to load localized metadata (e.g., metadata.fr.json)
-        const localizedMetaPath = path.join(blogDir, `metadata.${locale}.json`);
-        if (fs.existsSync(localizedMetaPath)) {
-            const localizedMetaRaw = fs.readFileSync(localizedMetaPath, "utf-8");
-            if (localizedMetaRaw) {
-                const localizedMeta = JSON.parse(localizedMetaRaw);
-                meta = {
-                    ...meta,
-                    ...localizedMeta,
-                    // Specifically merge FAQs if they exist in localized meta
-                    faqs: localizedMeta.faqs || meta.faqs
-                };
-            }
-        }
-    } catch (e) {
-        console.error(`Error reading blog files for ${slug}/${locale}:`, e);
-        // Ensure content is at least something to avoid further errors
-        content = content || tPosts(`${slug}.content`) || "";
-    }
-
-    // Simple reading time calculation (approx 200 words per minute)
     const wordCount = content.replace(/<[^>]*>?/gm, "").split(/\s+/).length;
-    const readingTime = Math.ceil(wordCount / 200);
+    const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
-    const fullUrl = `https://www.mohamedtoudghi.com/${locale === 'en' ? '' : locale + '/'}blog/${slug}`;
-
-    // Add IDs to headings for ToC functionality
-    const contentWithIds = content.replace(/<(h1|h2|h3)([^>]*)>(.*?)<\/\1>/gi, (match, tag, attrs, text) => {
-        if (attrs.includes('id=')) return match;
-        const plainText = text.replace(/<[^>]*>?/gm, "");
-        const id = plainText
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, "")
-            .replace(/\s+/g, "-");
-        return `<${tag}${attrs} id="${id}">${text}</${tag}>`;
-    });
+    // The page header already shows the title and has its own table of contents, so drop the article's leading H1
+    // and its inline TOC block, demote any other H1, then give H2/H3 stable ids for the sidebar table of contents
+    const headings: Heading[] = [];
+    const used = new Set<string>();
+    const body = content
+        .replace(/^\s*<h1[^>]*>[\s\S]*?<\/h1>/i, "")
+        .replace(/<div class="toc-container">[\s\S]*?<\/div>/gi, "")
+        .replace(/<h1([^>]*)>([\s\S]*?)<\/h1>/gi, "<h2$1>$2</h2>")
+        .replace(/<(h2|h3)([^>]*)>([\s\S]*?)<\/\1>/gi, (match, tag: string, attrs: string, text: string) => {
+            let id = /id="([^"]+)"/.exec(attrs)?.[1] || slugify(text) || `section-${used.size + 1}`;
+            while (used.has(id)) id = `${id}-2`;
+            used.add(id);
+            if (tag.toLowerCase() === "h2") headings.push({ id, text: text.replace(/<[^>]*>?/gm, "").replace(/&amp;/g, "&") });
+            return /id="/.test(attrs) ? match : `<${tag}${attrs} id="${id}">${text}</${tag}>`;
+        });
 
     return (
-        <article className="bg-bg-primary min-h-screen relative overflow-hidden">
-            <ScrollProgressBar />
-
-            {/* Immersive Hero Header */}
-            <header className="relative h-[60vh] md:h-[70vh] flex items-end pb-12 md:pb-24 overflow-hidden">
-                {/* Background Image with Gradient Overlay */}
-                <div className="absolute inset-0 -z-10">
-                    <Image
-                        src={postData.image || "/blog/placeholder.png"}
-                        alt={tPosts(`${slug}.title`)}
-                        fill
-                        className="object-cover opacity-40 transition-transform duration-700 hover:scale-105"
-                        priority
+        <>
+            <article>
+                <header className="relative border-b border-line bg-paper overflow-hidden">
+                    <div
+                        aria-hidden="true"
+                        className="absolute inset-0 pointer-events-none opacity-50 [background-image:radial-gradient(#D9D3C7_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(180deg,#000_0%,transparent_75%)]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/80 to-transparent" />
-                </div>
-
-                <div className="container-custom relative z-10 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                    <div className="max-w-4xl space-y-8">
-                        <div className="mb-6">
-                            <Breadcrumbs />
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-4 text-[10px] font-bold text-brand-mint uppercase tracking-[0.3em]">
-                            <span className="flex items-center gap-2 px-3 py-1 bg-brand-purple/10 border border-brand-purple/20 rounded-full">
-                                <Calendar className="w-3 h-3 text-brand-purple" />
-                                {tPosts(`${slug}.date`)}
-                            </span>
-                            <span className="w-1 h-1 bg-white/20 rounded-full"></span>
-                            <span className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
-                                <Clock className="w-3 h-3" />
-                                {readingTime} min read
-                            </span>
-                            <span className="w-1 h-1 bg-white/20 rounded-full"></span>
-                            <span className="text-brand-purple font-black">{tPosts(`${slug}.category`)}</span>
-                        </div>
-
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-text-primary leading-[1.1] tracking-tight text-glow-subtle">
-                            {tPosts(`${slug}.title`)}
-                        </h1>
-
-                        <div className="flex items-center gap-6 pt-4">
-                            <SocialShare url={fullUrl} title={tPosts(`${slug}.title`)} />
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <div className="container-custom relative pb-32">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                    {/* Main Content */}
-                    <div className="lg:col-span-8">
-                        <div className="glass p-6 md:p-12 lg:p-16 rounded-[3rem] border-border-subtle bg-white/[0.01] shadow-2xl relative overflow-hidden">
-                            {/* Abstract Decor within Content Area */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple/5 blur-[100px] pointer-events-none" />
-
-                            {/* Simple Excerpt Box */}
-                            <div className="mb-16 pb-12 border-b border-border-subtle">
-                                <p className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light italic opacity-80">
-                                    {tPosts(`${slug}.excerpt`)}
-                                </p>
-                            </div>
-
-                            <div className="lg:hidden mb-12 glass p-8 rounded-3xl border-border-subtle bg-white/5">
-                                <TableOfContents htmlContent={contentWithIds} />
-                            </div>
-
-                            <div className="blog-content">
-                                <div
-                                    dangerouslySetInnerHTML={{ __html: contentWithIds }}
+                    <div className="container-custom relative pt-10 md:pt-14 pb-12 md:pb-16 flex flex-col gap-6">
+                        <Breadcrumbs
+                            locale={locale}
+                            items={[
+                                { label: tCrumbs("home"), href: "/" },
+                                { label: tCrumbs("blog"), href: "/blog" },
+                                { label: title },
+                            ]}
+                        />
+                        <div className="max-w-[820px] flex flex-col gap-5 pt-4">
+                            <p className="m-0 font-mono text-[13px] text-forest flex flex-wrap gap-x-3 gap-y-1">
+                                <span>{tPosts(`${slug}.category`)}</span>
+                                <span aria-hidden="true">·</span>
+                                <span>{tPosts(`${slug}.date`)}</span>
+                                <span aria-hidden="true">·</span>
+                                <span>{t("read_time", { minutes: readingTime })}</span>
+                            </p>
+                            <h1 className="m-0 text-[32px] sm:text-[44px] lg:text-[52px] leading-[1.1] font-semibold tracking-[-0.03em]">{title}</h1>
+                            <p className="m-0 text-lg md:text-xl text-muted max-w-[680px]">{tPosts(`${slug}.excerpt`)}</p>
+                            <div className="pt-2">
+                                <SocialShare
+                                    url={localizedUrl(locale, `/blog/${slug}`)}
+                                    title={title}
+                                    labels={{ share: t("share"), copy: t("copy_link"), copied: t("copied") }}
                                 />
                             </div>
-
-                            {/* Author & Verification Card */}
-                            <div className="mt-24 pt-24 border-t border-border-subtle space-y-24">
-                                <AuthorBio />
-                                <BlogFAQ faqs={meta.faqs} />
-                            </div>
-                        </div>
-
-                        {/* Outside Content Box for Related Items */}
-                        <div className="mt-24">
-                            <RelatedPosts currentSlug={slug} relatedSlugs={meta.relatedPosts || meta.relatedSlugs || []} locale={locale} />
                         </div>
                     </div>
+                </header>
 
-                    {/* Sidebar */}
-                    <aside className="lg:col-span-4 sticky top-32 space-y-12">
-                        <div className="hidden lg:block glass p-8 rounded-[2.5rem] border-border-subtle bg-white/[0.01] shadow-xl">
-                            <TableOfContents htmlContent={contentWithIds} />
+                <div className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16 items-start">
+                    <div className="min-w-0 max-w-[720px] flex flex-col gap-16">
+                        <div className="lg:hidden bg-white border border-line rounded-2xl p-5">
+                            <TableOfContents headings={headings} title={t("on_this_page")} />
                         </div>
+                        <div className="blog-content" dangerouslySetInnerHTML={{ __html: body }} />
+                        <AuthorBio locale={locale} />
+                        <BlogFAQ faqs={meta.faqs} title={t("faq_title")} />
+                        <RelatedPosts currentSlug={slug} relatedSlugs={meta.relatedPosts || meta.relatedSlugs || []} locale={locale} />
+                    </div>
+                    <aside className="hidden lg:flex flex-col gap-8 sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pe-1">
+                        <TableOfContents headings={headings} title={t("on_this_page")} />
                         <BlogSidebar locale={locale} />
                     </aside>
                 </div>
-            </div>
-        </article>
+            </article>
+            <FinalCTA />
+        </>
     );
 }

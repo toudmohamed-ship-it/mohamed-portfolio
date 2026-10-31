@@ -1,168 +1,102 @@
 "use client";
 
 import { useState } from "react";
-import Button from "@/components/ui/Button";
-import { CheckCircle2, AlertCircle, Mail, Linkedin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "@/i18n/routing";
+
+const FIELD = "w-full bg-white border border-line-strong rounded-xl px-4 py-3.5 text-ink text-base placeholder:text-[#8A928E] focus:outline-none focus:border-forest focus:ring-4 focus:ring-sage transition-colors disabled:opacity-60";
+const LABEL = "text-sm font-medium text-ink";
 
 export default function ContactForm() {
     const t = useTranslations("ContactForm");
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-    const [message, setMessage] = useState("");
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setStatus("loading");
-
         const form = e.currentTarget;
-        const formData = new FormData(form);
-
+        const data = new FormData(form);
+        // Honeypot: real people never fill this hidden field
+        if (data.get("_gotcha")) return;
+        setStatus("loading");
         try {
             const response = await fetch("https://formspree.io/f/xojajakq", {
                 method: "POST",
-                body: formData,
-                headers: {
-                    Accept: "application/json",
-                },
+                body: data,
+                headers: { Accept: "application/json" },
             });
-
             if (response.ok) {
                 setStatus("success");
-                setMessage(t('messages.success'));
                 form.reset();
             } else {
                 setStatus("error");
-                setMessage(t('messages.error'));
             }
-        } catch (error) {
+        } catch {
             setStatus("error");
-            setMessage(t('messages.generic_error'));
         }
     };
 
-    const isSubmitting = status === "loading";
+    const busy = status === "loading";
 
     return (
-        <div className="glass p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-            <div className="relative z-10">
-                <h2 className="text-3xl font-serif font-bold text-text-primary mb-3 tracking-tight">{t('title')}</h2>
-                <p className="text-text-secondary mb-10 text-lg leading-relaxed">{t('subtitle')}</p>
+        <div className="bg-white border border-line rounded-[22px] p-6 md:p-9">
+            <h2 className="m-0 text-2xl md:text-[28px] font-semibold">{t("title")}</h2>
+            <p className="m-0 mt-2 text-muted">{t("subtitle")}</p>
 
-                <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="space-y-3">
-                            <label htmlFor="name" className="text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-2">
-                                {t('labels.name')}
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                className="w-full bg-black/5 dark:bg-white/[0.03] border border-border-subtle rounded-2xl px-6 py-4 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/10 transition-all font-medium"
-                                placeholder={t('placeholders.name')}
-                                required
-                                disabled={isSubmitting}
-                            />
-                        </div>
-                        <div className="space-y-3">
-                            <label htmlFor="email" className="text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-2">
-                                {t('labels.email')}
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="w-full bg-black/5 dark:bg-white/[0.03] border border-border-subtle rounded-2xl px-6 py-4 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/10 transition-all font-medium"
-                                placeholder={t('placeholders.email')}
-                                required
-                                disabled={isSubmitting}
-                            />
-                        </div>
+            <form onSubmit={handleSubmit} className="mt-7 flex flex-col gap-5" noValidate={false}>
+                <div className="grid gap-5 sm:grid-cols-2">
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="name" className={LABEL}>{t("labels.name")}</label>
+                        <input id="name" name="name" type="text" autoComplete="name" required disabled={busy} className={FIELD} placeholder={t("placeholders.name")} />
                     </div>
-
-                    <div className="space-y-3">
-                        <label htmlFor="service" className="text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-2">
-                            {t('labels.service')}
-                        </label>
-                        <div className="relative">
-                            <select
-                                id="service"
-                                name="service"
-                                defaultValue=""
-                                className="w-full bg-black/5 dark:bg-white/[0.03] border border-border-subtle rounded-2xl px-6 py-4 text-text-primary appearance-none focus:outline-none focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/10 transition-all font-medium cursor-pointer"
-                                disabled={isSubmitting}
-                            >
-                                <option value="" disabled className="bg-bg-primary">
-                                    {t('placeholders.service')}
-                                </option>
-                                <option value="seo" className="bg-bg-primary">{t('services.seo')}</option>
-                                <option value="marketing" className="bg-bg-primary">{t('services.marketing')}</option>
-                                <option value="analytics" className="bg-bg-primary">{t('services.analytics')}</option>
-                                <option value="web" className="bg-bg-primary">{t('services.web')}</option>
-                                <option value="other" className="bg-bg-primary">{t('services.other')}</option>
-                            </select>
-                            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-text-secondary">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div className="flex flex-col gap-2">
+                        <label htmlFor="email" className={LABEL}>{t("labels.email")}</label>
+                        <input id="email" name="email" type="email" autoComplete="email" required disabled={busy} className={FIELD} placeholder={t("placeholders.email")} dir="ltr" />
                     </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="website" className={LABEL}>{t("labels.website")} <span className="text-muted font-normal">{t("optional")}</span></label>
+                    <input id="website" name="website" type="url" inputMode="url" disabled={busy} className={FIELD} placeholder="https://" dir="ltr" />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="service" className={LABEL}>{t("labels.service")}</label>
+                    <select id="service" name="service" defaultValue="" disabled={busy} className={`${FIELD} appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%235A645F%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>')] bg-no-repeat bg-[position:right_1rem_center] rtl:bg-[position:left_1rem_center]`}>
+                        <option value="" disabled>{t("placeholders.service")}</option>
+                        <option value="audit">{t("services.audit")}</option>
+                        <option value="local">{t("services.local")}</option>
+                        <option value="analytics">{t("services.analytics")}</option>
+                        <option value="web">{t("services.web")}</option>
+                        <option value="other">{t("services.other")}</option>
+                    </select>
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="message" className={LABEL}>{t("labels.message")}</label>
+                    <textarea id="message" name="message" required disabled={busy} rows={5} className={`${FIELD} resize-y min-h-[140px]`} placeholder={t("placeholders.message")} />
+                </div>
 
-                    <div className="space-y-3">
-                        <label htmlFor="message" className="text-[10px] font-bold text-text-secondary uppercase tracking-[0.2em] ml-2">
-                            {t('labels.message')}
-                        </label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            className="w-full bg-black/5 dark:bg-white/[0.03] border border-border-subtle rounded-2xl px-6 py-4 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-brand-purple focus:ring-4 focus:ring-brand-purple/10 transition-all min-h-[150px] font-medium resize-none"
-                            placeholder={t('placeholders.message')}
-                            required
-                            disabled={isSubmitting}
-                        ></textarea>
-                    </div>
+                {/* Honeypot (Formspree drops submissions that fill it) */}
+                <div aria-hidden="true" className="sr-only">
+                    <label htmlFor="_gotcha">Leave this empty</label>
+                    <input id="_gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
+                </div>
 
-                    <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full h-16 text-sm uppercase tracking-[0.2em] font-black rounded-2xl"
-                        isLoading={isSubmitting}
-                        disabled={isSubmitting}
-                    >
-                        {isSubmitting ? t('button.loading') : t('button.idle')}
-                    </Button>
-                </form>
+                <button
+                    type="submit"
+                    disabled={busy}
+                    className="btn mt-1 inline-flex items-center justify-center gap-2 min-h-[52px] px-6 rounded-xl bg-forest text-white font-medium hover:bg-forest-deep disabled:opacity-70"
+                >
+                    {busy ? t("button.loading") : t("button.idle")} {!busy && <span className="arrow" aria-hidden="true">→</span>}
+                </button>
+                <p className="m-0 text-sm text-muted">{t("privacy")} <Link href="/privacy" className="text-forest underline underline-offset-2">{t("privacy_link")}</Link></p>
 
-                <AnimatePresence>
+                <div aria-live="polite" className="empty:hidden">
                     {status === "success" && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            className="mt-8 p-6 bg-brand-mint/10 border border-brand-mint/20 rounded-2xl text-brand-mint font-bold text-center flex items-center justify-center gap-3"
-                        >
-                            <CheckCircle2 size={24} />
-                            {message}
-                        </motion.div>
+                        <p role="status" className="m-0 p-4 rounded-xl bg-sage text-forest-deep font-medium">{t("messages.success")}</p>
                     )}
-
                     {status === "error" && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            className="mt-8 p-6 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 font-bold text-center flex items-center justify-center gap-3"
-                        >
-                            <AlertCircle size={24} />
-                            {message}
-                        </motion.div>
+                        <p role="alert" className="m-0 p-4 rounded-xl bg-[#F6E3DE] text-[#7A2E1E] font-medium">{t("messages.error")}</p>
                     )}
-                </AnimatePresence>
-            </div>
-
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-purple/5 blur-[100px] rounded-full pointer-events-none" />
+                </div>
+            </form>
         </div>
     );
 }

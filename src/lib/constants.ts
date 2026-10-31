@@ -8,7 +8,7 @@ export const NAV_LINKS = [
 
 export const PERSONAL_INFO = {
     name: "Mohamed Toudghi",
-    title: "SEO & Digital Marketing Specialist",
+    title: "SEO Consultant",
     email: "toudmohamed@gmail.com",
     phone: "+212 618 623 792",
     linkedin: "https://www.linkedin.com/in/mohamed-toudghi-53a43825b/",

@@ -7,7 +7,7 @@ export default function AboutPreview() {
     const tags = t.raw("tags") as string[];
 
     return (
-        <section id="about" className="container-custom pt-8 pb-24 md:pb-[104px]">
+        <section id="about" className="cv container-custom pt-8 pb-24 md:pb-[104px]">
             <div data-tone="white" className="reveal bg-white border border-line rounded-[22px] p-8 md:p-11 flex flex-wrap items-center gap-11">
                 <div className="relative shrink-0">
                     <div aria-hidden="true" className="absolute top-3.5 bottom-[-14px] start-3.5 end-[-14px] rounded-2xl bg-sage" />

@@ -16,7 +16,7 @@ export default function SchemaMarkup() {
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        name: "Mohamed Toudghi - SEO & Digital Marketing",
+        name: "Mohamed Toudghi, SEO Consultant",
         image: "https://www.mohamedtoudghi.com/og-image.jpg",
         "@id": "https://www.mohamedtoudghi.com",
         url: "https://www.mohamedtoudghi.com",

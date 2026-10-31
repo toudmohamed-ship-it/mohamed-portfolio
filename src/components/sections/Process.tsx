@@ -1,13 +1,13 @@
 import { useTranslations } from "next-intl";
 
-type Step = { title: string; desc: string; when: string };
+type Step = { title: string; desc: string };
 
 export default function Process() {
     const t = useTranslations("HomePage.process");
     const steps = t.raw("steps") as Step[];
 
     return (
-        <section className="container-custom pt-24 md:pt-[104px] pb-20">
+        <section className="cv container-custom pt-24 md:pt-[104px] pb-20">
             <h2 className="reveal m-0 mb-12 text-3xl md:text-4xl font-semibold">{t("title")}</h2>
             <div className="relative">
                 <div aria-hidden="true" className="hidden md:block absolute inset-x-5 top-5 border-t-[1.5px] border-dashed border-line-strong" />
@@ -22,7 +22,6 @@ export default function Process() {
                             </span>
                             <h3 className="m-0 text-xl font-semibold">{step.title}</h3>
                             <p className="m-0 text-muted text-base">{step.desc}</p>
-                            <span className="font-mono text-xs text-forest">{step.when}</span>
                         </li>
                     ))}
                 </ol>

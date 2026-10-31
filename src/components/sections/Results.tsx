@@ -7,7 +7,7 @@ export default function Results() {
     const items = t.raw("items") as Item[];
 
     return (
-        <section className="container-custom pt-24 md:pt-[104px] pb-12">
+        <section className="cv container-custom pt-24 md:pt-[104px] pb-12">
             <div className="reveal flex flex-wrap justify-between items-end gap-4 mb-10">
                 <h2 className="m-0 text-3xl md:text-4xl font-semibold">{t("title")}</h2>
                 <p className="m-0 text-muted max-w-[380px] text-base">{t("note")}</p>

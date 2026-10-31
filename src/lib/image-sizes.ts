@@ -1,0 +1,27 @@
+// Intrinsic sizes of the case study screenshots, so next/image reserves the right space (no layout shift).
+// Regenerate if images in public/images/portfolio change.
+export const IMAGE_SIZES: Record<string, [number, number]> = {
+    "/images/portfolio/landlord-safety/issue-4xx.jpg": [600, 161],
+    "/images/portfolio/landlord-safety/issue-title.jpg": [329, 116],
+    "/images/portfolio/landlord-safety/resolved-h1.jpg": [562, 185],
+    "/images/portfolio/landlord-safety/resolved-title.jpg": [600, 174],
+    "/images/portfolio/landlord-safety/review.jpg": [600, 282],
+    "/images/portfolio/luxury-marketplace/gsc-performance-v2.png": [1024, 610],
+    "/images/portfolio/luxury-marketplace/gsc-performance.png": [1024, 610],
+    "/images/portfolio/luxury-marketplace/seo-dashboard.png": [1024, 196],
+    "/images/portfolio/luxury-marketplace/traffic-graph.png": [1024, 658],
+    "/images/portfolio/luxury-marketplace/us-seo-performance.png": [728, 680],
+    "/images/portfolio/medspa/organic-traffic-growth.png": [1009, 292],
+    "/images/portfolio/medspa/seo-metrics.png": [1024, 292],
+    "/images/portfolio/medspa/seo-tracking-sheet.png": [1024, 590],
+    "/images/portfolio/moroccan-b2b-seo/gsc-metrics.png": [838, 183],
+    "/images/portfolio/saas-launch/gist-chatbot.png": [525, 874],
+    "/images/portfolio/saas-launch/landing-page-dark.png": [1024, 573],
+    "/images/portfolio/saas-launch/landing-page-light.jpg": [1024, 484],
+    "/images/portfolio/uk-service/ads-performance.jpg": [1024, 332],
+    "/images/portfolio/uk-service/keyword-research.png": [1005, 140],
+    "/images/portfolio/uk-service/organic-traffic-trend.png": [1024, 459],
+    "/images/portfolio/uk-service/pagespeed-metrics.png": [357, 74],
+    "/images/portfolio/uk-service/performance-score.png": [1024, 550],
+    "/images/portfolio/uk-service/rankmath-snippet.jpg": [1003, 1024],
+};

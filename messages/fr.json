@@ -5,7 +5,8 @@
         "services": "Services",
         "portfolio": "Portfolio",
         "about": "À Propos",
-        "contact": "Contact"
+        "contact": "Contact",
+        "privacy": "Confidentialité"
     },
     "HomePage": {
         "title": "Mohamed | Spécialiste SEO & Marketing Digital",
@@ -22,7 +23,7 @@
             "after": "à",
             "highlight": "ressortir sur Google",
             "end": "et à transformer les visites en clients.",
-            "subtitle": "Je trouve ce qui empêche Google de montrer votre site, je le corrige et je vous montre les chiffres. Pas de jargon, pas de contrat long.",
+            "subtitle": "Je trouve ce qui empêche Google de montrer votre site, je le corrige et je vous montre les chiffres.",
             "cta_call": "Réserver un appel gratuit de 15 min",
             "cta_work": "Voir les études de cas",
             "languages": "Je travaille en français, en anglais et en arabe.",
@@ -121,7 +122,7 @@
         },
         "FinalCTA": {
             "title": "Parlez-moi de votre site.",
-            "description": "Un appel gratuit de 15 minutes. Je regarde votre site avant l'appel et je vous dis les trois premières choses que je corrigerais.",
+            "description": "Un appel gratuit de 15 minutes pour parler de votre site et de ce qui le freine. Je réponds sous 24 heures.",
             "button": "Réserver un appel",
             "whatsapp": "Écrire sur WhatsApp"
         },
@@ -164,7 +165,7 @@
                         "Core Web Vitals et vitesse mobile",
                         "Données structurées et structure du site"
                     ],
-                    "meta": "Livré en 1 à 2 semaines"
+                    "meta": "Projet ponctuel"
                 },
                 {
                     "title": "SEO local",
@@ -174,7 +175,7 @@
                         "Pages ville + service",
                         "Un plan pour les avis et les citations locales"
                     ],
-                    "meta": "Suivi mensuel"
+                    "meta": "Travail suivi"
                 },
                 {
                     "title": "Configuration GA4 et suivi",
@@ -227,18 +228,15 @@
             "steps": [
                 {
                     "title": "Audit",
-                    "desc": "J'analyse le site, je lis vos données Search Console et GA4, et je trouve ce qui vous freine vraiment.",
-                    "when": "Semaine 1"
+                    "desc": "J'analyse le site, je lis vos données Search Console et GA4, et je trouve ce qui vous freine vraiment."
                 },
                 {
                     "title": "Corrections",
-                    "desc": "Les corrections les plus importantes d'abord. Je les fais moi-même ou je les transmets à votre développeur avec des instructions claires.",
-                    "when": "Semaines 2 à 4"
+                    "desc": "Les corrections les plus importantes d'abord. Je les fais moi-même ou je les transmets à votre développeur avec des instructions claires."
                 },
                 {
                     "title": "Mesure",
-                    "desc": "Un court rapport mensuel avec les positions, les clics et les leads, et la suite.",
-                    "when": "Chaque mois"
+                    "desc": "Les positions, les clics et les leads sont suivis dans Search Console et GA4, pour voir ce qui a changé."
                 }
             ]
         },
@@ -386,23 +384,24 @@
     },
     "ServicesPage": {
         "metadata": {
-            "title": "Services | SEO Technique & Stratégies de Croissance",
-            "description": "Services SEO complets et marketing digital sur mesure pour les startups et les entreprises. SEO technique, SEO local et Analytics."
+            "title": "Services SEO : SEO technique, SEO local, GA4",
+            "description": "Audits SEO techniques, recherche de mots-clés, SEO local, SEO international, suivi GA4 et optimisation WordPress pour entreprises de services et startups."
         },
         "header": {
-            "title": "Mes Services",
-            "subtitle": "J'aide les entreprises de services, les startups et les équipes en croissance à résoudre leurs problèmes techniques de SEO, à capter un trafic qualifié et à transformer les visites en résultats mesurables.",
-            "supportingText": "Chaque service est conçu sur mesure pour vos objectifs, votre infrastructure technique et votre marché — pas de forfaits génériques."
+            "eyebrow": "Services",
+            "title": "Services SEO et suivi",
+            "subtitle": "J'aide les entreprises de services, les startups et les équipes en croissance à corriger leurs problèmes de SEO technique, à toucher des personnes prêtes à acheter et à mesurer ce que leur site leur apporte.",
+            "supportingText": ""
         },
         "how_it_works": {
-            "title": "Ma Méthodologie",
-            "subtitle": "Un processus axé sur les données pour garantir transparence et résultats.",
-            "step1_title": "Audit & Analyse",
-            "step1_desc": "J'identifie d'abord les blocages techniques, les opportunités de recherche et les écarts de performance grâce à des audits approfondis.",
-            "step2_title": "Stratégie",
-            "step2_desc": "Sur la base des résultats, je conçois une stratégie SEO et de croissance alignée sur vos objectifs commerciaux.",
-            "step3_title": "Exécution & Mesure",
-            "step3_desc": "La mise en œuvre est suivie, mesurée et ajustée en continu pour assurer des résultats durables."
+            "title": "Ma façon de travailler",
+            "subtitle": "Chaque projet suit les mêmes trois étapes.",
+            "step1_title": "Audit",
+            "step1_desc": "Je cherche les problèmes techniques, les opportunités de recherche et les points faibles dans vos données.",
+            "step2_title": "Plan",
+            "step2_desc": "Je transforme les constats en un plan clair, classé selon ce qui aidera le plus votre entreprise.",
+            "step3_title": "Action et mesure",
+            "step3_desc": "Le travail est réalisé, suivi et ajusté pour que vous voyiez les résultats dans vos propres données."
         },
         "core_services": {
             "title": "Services Principaux",
@@ -422,7 +421,7 @@
             "keyword_strategy": {
                 "title": "Recherche de Mots-clés & Stratégie de Contenu",
                 "bestFor": "Pour les entreprises qui peinent à attirer du trafic organique qualifié.",
-                "description": "Je crée des stratégies de contenu basées sur l'intention de recherche réelle — pour arrêter de deviner et commencer à convertir.",
+                "description": "Je crée des plans de contenu basés sur ce que les gens recherchent vraiment, pour arrêter de deviner et attirer les bons visiteurs.",
                 "deliverables": [
                     "Analyse de l'intention de recherche & des SERP",
                     "Analyse des écarts avec la concurrence (Gap Analysis)",
@@ -503,28 +502,30 @@
             }
         },
         "final_cta": {
-            "title": "Prêt à booster votre visibilité ?",
-            "description": "Discutons de vos objectifs et identifions où le SEO peut avoir le plus d'impact.",
-            "disclaimer": "Expérience sur des plateformes internationales. Certains projets sont anonymisés par confidentialité.",
-            "button": "Réserver un Appel Découverte"
-        }
+            "title": "Vous ne savez pas quel service choisir ?",
+            "description": "Parlez-moi de votre site lors d'un appel gratuit de 15 minutes et je vous indiquerai par où commencer.",
+            "disclaimer": "",
+            "button": "Réserver un appel gratuit"
+        },
+        "jump_label": "Aller à un service"
     },
     "AboutPage": {
         "metadata": {
-            "title": "À Propos | Expert SEO & Marketing Digital Data-Driven",
-            "description": "Découvrez le parcours de Mohamed Toudghi, spécialiste SEO de premier plan. Expert en SEO technique, Analytics et marketing digital avec des résultats prouvés.",
-            "og_title": "À Propos de Mohamed Toudghi | Parcours d'Expert SEO",
-            "og_description": "Apprenez-en plus sur mon parcours, de l'AUI à mon statut de spécialiste SEO, avec une expertise en SEO technique, Analytics et marketing digital."
+            "title": "À propos, consultant SEO à Rabat",
+            "description": "Consultant SEO diplômé de l'Université Al Akhawayn, spécialisé en SEO technique, SEO local et suivi GA4. Arabe, anglais et français.",
+            "og_title": "À propos de Mohamed Toudghi | Consultant SEO",
+            "og_description": "De l'Université Al Akhawayn au SEO et à l'analytics pour des équipes comme duPont Registry, Webloo et FF Inventory."
         },
         "hero": {
-            "title": "À Propos",
-            "subtitle": "Je suis un marketeur obsédé par la data, convaincu que chaque clic doit avoir un but précis."
+            "eyebrow": "À propos",
+            "title": "Bonjour, je suis Mohamed. J'aide les entreprises à ressortir sur Google.",
+            "subtitle": "Consultant SEO basé à Rabat, je travaille avec des clients au Royaume-Uni, aux États-Unis et au Maroc."
         },
         "journey": {
-            "title": "Mon Parcours",
-            "p1": "Mon parcours professionnel a débuté à l'<b>Université Al Akhawayn (AUI)</b>, où j'ai acquis une solide base en esprit critique et en communication. Ce bagage académique a servi de tremplin à ma carrière dans le paysage numérique.",
-            "p2": "En commençant par des stages qui m'ont plongé dans l'univers rapide du marketing digital, j'ai rapidement réalisé que la <b>data</b> était la pièce manquante de la plupart des stratégies. Je me suis alors réorienté vers le SEO et l'Analytics, maîtrisant l'art de rendre les sites web non seulement visibles, mais rentables.",
-            "p3": "Aujourd'hui, j'accompagne des entreprises allant de startups locales à des organisations internationales, les aidant à naviguer dans la complexité des algorithmes de recherche et du comportement des utilisateurs. Mon approche est simple : <b>prendre des décisions basées sur des données, pas des suppositions.</b>"
+            "title": "Mon parcours",
+            "p1": "J'ai étudié à l'Université Al Akhawayn (AUI), où j'ai acquis de bonnes bases en esprit critique et en communication.",
+            "p2": "Mes premiers stages étaient en marketing digital. J'ai remarqué que la plupart des plans marketing manquaient d'une chose : les données. Je me suis donc tourné vers le SEO et l'analytics, avec un objectif : des sites qui apportent des clients, pas seulement des visites.",
+            "p3": "Aujourd'hui, je travaille avec des entreprises allant des startups locales aux organisations internationales. Ma règle est simple : décider avec des données, pas avec des suppositions."
         },
         "languages": {
             "title": "Langues",
@@ -537,7 +538,7 @@
         },
         "resume": "Télécharger mon CV",
         "expertise": {
-            "title": "Expertise Technique",
+            "title": "Mes outils et compétences",
             "categories": {
                 "seo_content": "SEO & Contenu",
                 "analytics_data": "Analytics & Data",
@@ -573,12 +574,14 @@
                 "Email Marketing HubSpot",
                 "SEO Local BrightLocal"
             ]
-        }
+        },
+        "teams_title": "Équipes avec lesquelles j'ai travaillé",
+        "photo_alt": "Mohamed Toudghi, consultant SEO"
     },
     "CaseStudyPage": {
-        "back_to_portfolio": "Retour au Portfolio",
-        "challenge": "Le Défi",
-        "approach": "Mon Approche",
+        "back_to_portfolio": "Toutes les études de cas",
+        "challenge": "Le problème",
+        "approach": "Ce que j'ai fait",
         "key_actions": "Actions Clés Entreprises",
         "actions": {
             "audit": "Réalisation d'un audit complet",
@@ -586,54 +589,71 @@
             "architecture": "Optimisation de l'architecture du site",
             "structured_data": "Mise en place de données structurées"
         },
-        "performance_evidence": "Preuves de Performance",
-        "before_after": "Performance Avant & Après",
-        "metric": "Métrique",
+        "performance_evidence": "Captures d'écran",
+        "before_after": "Avant et après",
+        "metric": "Indicateur",
         "before": "Avant",
-        "after_optimization": "Après Optimisation",
+        "after_optimization": "Après",
         "confidentiality": {
-            "title": "Note de Confidentialité",
-            "text": "Ce projet est présenté de manière anonyme en raison d'accords de confidentialité. Les noms spécifiques et les données propriétaires ont été généralisés."
+            "title": "Confidentialité",
+            "text": "Certains projets sont présentés sans le nom du client à cause d'accords de confidentialité. Les noms et les données privées sont généralisés."
         },
-        "key_results": "Résultats Clés",
-        "tools_used": "Outils Utilisés"
+        "key_results": "Résultats clés",
+        "tools_used": "Outils utilisés",
+        "client": "Client",
+        "more_studies": "Autres études de cas"
     },
     "PortfolioPage": {
         "metadata": {
-            "title": "Portfolio | Résultats SEO Prouvés & Études de Cas",
-            "description": "Découvrez des résultats SEO prouvés et des études de cas en SEO technique, SEO local et analytique. Des histoires de croissance réelles pour des entreprises internationales.",
-            "og_title": "Portfolio SEO & Études de Cas | Mohamed Toudghi",
-            "og_description": "Résultats SEO prouvés pour des clients internationaux, incluant l'optimisation de marketplaces, d'entreprises locales et de lancements SaaS."
+            "title": "Études de cas SEO et résultats",
+            "description": "Sept études de cas SEO avec de vrais chiffres : SEO technique, SEO local, travail on-page et suivi GA4 pour des clients au Royaume-Uni, aux États-Unis et au Maroc.",
+            "og_title": "Études de cas SEO | Mohamed Toudghi",
+            "og_description": "Sept études de cas SEO avec de vrais chiffres, d'une marketplace de 560 K visites à des entreprises de services locales."
         },
         "header": {
-            "title": "Portfolio",
-            "subtitle": "Projets sélectionnés en SEO, optimisation de sites web et analyse de performance.",
-            "supporting_text": "Certains projets sont présentés sous forme anonyme ou descriptive pour des raisons de confidentialité."
+            "eyebrow": "Portfolio",
+            "title": "Des études de cas avec de vrais chiffres",
+            "subtitle": "SEO technique, SEO local, travail on-page et suivi pour des clients au Royaume-Uni, aux États-Unis et au Maroc. Certains clients restent anonymes à cause d'accords de confidentialité."
         },
-        "view_study": "Voir l'Étude de Cas",
-        "footer_note": "Les projets incluent un mélange de rôles internes, de travaux collaboratifs et de contributions par projet. Les détails sont résumés pour respecter la confidentialité des clients."
+        "view_study": "Lire l'étude de cas",
+        "footer_note": "Ces projets regroupent des postes en interne, du travail en équipe et des missions freelance. Les détails sont résumés pour respecter la confidentialité des clients.",
+        "list_title": "Toutes les études de cas"
     },
     "BlogPage": {
         "metadata": {
-            "title": "Blog & Insights",
-            "description": "Dernières tendances et guides sur le SEO, le marketing numérique et l'analytique."
+            "title": "Blog SEO : guides SEO technique, SEO local et GA4",
+            "description": "Guides pratiques sur le SEO technique, le SEO local, la recherche de mots-clés et le suivi GA4 pour les entreprises de services et SaaS."
         },
         "header": {
-            "title": "Le Journal SEO",
-            "subtitle": "Expertise, analyses et guides SEO techniques pour les entreprises en croissance."
+            "eyebrow": "Le blog",
+            "title": "Des guides tirés du terrain",
+            "subtitle": "Des articles pratiques sur le SEO technique, le SEO local, la recherche de mots-clés et le suivi GA4. Écrits pour les dirigeants et les personnes qui gèrent leur site."
         },
-        "read_article": "Lire l'Article",
-        "back_to_blog": "Tous les Articles",
+        "read_article": "Lire l'article",
+        "back_to_blog": "Tous les articles",
         "sidebar": {
-            "cta_title": "Besoin d'aide pour votre SEO ?",
-            "cta_desc": "Boostez votre visibilité sur Google Search. Demandez votre audit gratuit dès aujourd'hui.",
-            "cta_button": "Discuter sur WhatsApp"
+            "cta_title": "Voulez-vous que je regarde votre site ?",
+            "cta_desc": "Réservez un appel gratuit de 15 minutes pour parler de votre site et de ce qui le freine.",
+            "cta_button": "Réserver un appel"
         },
         "related_posts": {
-            "title": "Articles Similaires"
+            "title": "Autres articles"
         },
-        "view_all": "Voir tous les articles",
-        "placeholder_content": "Ceci est un espace réservé pour le contenu complet de l'article."
+        "view_all": "Tous les articles",
+        "title": "Blog SEO",
+        "description": "Guides pratiques sur le SEO technique, le SEO local et le suivi GA4.",
+        "list_title": "Tous les articles",
+        "read_time": "{minutes} min de lecture",
+        "share": "Partager",
+        "copy_link": "Copier le lien",
+        "copied": "Lien copié",
+        "on_this_page": "Sur cette page",
+        "faq_title": "Questions fréquentes",
+        "author": {
+            "label": "Écrit par",
+            "bio": "Consultant SEO à Rabat. Je travaille sur le SEO technique, le SEO local et le suivi GA4 pour des entreprises de services au Royaume-Uni, aux États-Unis et au Maroc.",
+            "more": "À propos"
+        }
     },
     "BlogPosts": {
         "local-seo-guide-businesses": {
@@ -681,58 +701,96 @@
     },
     "ContactPage": {
         "metadata": {
-            "title": "Contact | Obtenir une Consultation SEO Gratuite",
-            "description": "Contactez-nous pour des audits SEO experts et du conseil en marketing numérique. Appels découverte de 15 minutes gratuits disponibles.",
-            "og_title": "Contacter Mohamed Toudghi | Consultation SEO Gratuite",
-            "og_description": "Prêt à améliorer le SEO de votre site ? Contactez-moi pour une consultation gratuite. Services SEO experts pour entreprises internationales."
+            "title": "Contact : appel SEO gratuit de 15 minutes",
+            "description": "Envoyez un message ou réservez un appel gratuit de 15 minutes sur le SEO de votre site. Réponse sous 24 heures, en français, anglais ou arabe.",
+            "og_title": "Contacter Mohamed Toudghi | Appel gratuit de 15 minutes",
+            "og_description": "Réservez un appel gratuit de 15 minutes sur le SEO de votre site. Réponse sous 24 heures."
         },
         "header": {
-            "title": "Restons en Contact",
-            "subtitle": "Prêt à développer votre entreprise ? Remplissez le formulaire ci-dessous ou réservez un appel."
+            "eyebrow": "Contact",
+            "title": "Parlez-moi de votre site",
+            "subtitle": "Envoyez un message ou écrivez sur WhatsApp. Je réponds sous 24 heures, en français, anglais ou arabe."
         },
         "info": {
-            "title": "Informations de Contact",
-            "email_label": "Email",
-            "linkedin_label": "Se connecter sur LinkedIn",
+            "title": "Me contacter directement",
+            "email_label": "E-mail",
+            "linkedin_label": "Mohamed Toudghi sur LinkedIn",
             "phone_label": "Téléphone"
+        },
+        "steps": {
+            "title": "La suite",
+            "items": [
+                "Je lis votre message et je réponds sous 24 heures.",
+                "Nous fixons un appel gratuit de 15 minutes au moment qui vous convient.",
+                "Si le projet me correspond, je vous envoie une proposition claire."
+            ]
         }
     },
     "ContactForm": {
-        "title": "Envoyer un Message",
-        "subtitle": "Je réponds généralement sous 24 heures.",
+        "title": "Envoyer un message",
+        "subtitle": "Plus vous m'en dites sur votre site, plus ma réponse sera utile.",
         "labels": {
             "name": "Nom",
-            "email": "Email",
-            "service": "Service Souhaité",
+            "email": "E-mail",
+            "website": "Site web",
+            "service": "De quoi avez-vous besoin ?",
             "message": "Message"
         },
+        "optional": "(facultatif)",
         "placeholders": {
-            "name": "Jean Dupont",
-            "email": "jean@entreprise.com",
-            "service": "Sélectionnez un service...",
-            "message": "Parlez-moi de votre projet ou de vos objectifs..."
+            "name": "Votre nom",
+            "email": "vous@entreprise.com",
+            "service": "Choisissez",
+            "message": "Quel est votre site et que voulez-vous améliorer ?"
         },
         "services": {
-            "seo": "SEO Technique",
-            "marketing": "Stratégie Marketing Digital",
-            "analytics": "Analytique & Tracking",
-            "web": "Optimisation de Site Web",
-            "other": "Autre"
+            "audit": "Audit SEO technique",
+            "local": "SEO local",
+            "analytics": "GA4 et suivi",
+            "web": "Optimisation du site",
+            "other": "Autre chose"
         },
         "button": {
-            "idle": "Envoyer le Message",
-            "loading": "Envoi en cours..."
+            "idle": "Envoyer le message",
+            "loading": "Envoi en cours"
         },
         "messages": {
-            "success": "Merci ! Je reviendrai vers vous sous 24 heures.",
-            "error": "Oups ! Une erreur est survenue. Veuillez réessayer ou m'envoyer un email directement.",
-            "generic_error": "Impossible d'envoyer le message. Veuillez réessayer ou me contacter par email."
-        }
+            "success": "Merci. Votre message est envoyé, je vous réponds sous 24 heures.",
+            "error": "Le message n'a pas pu être envoyé. Réessayez ou écrivez-moi à toudmohamed@gmail.com."
+        },
+        "privacy": "J'utilise vos coordonnées uniquement pour vous répondre.",
+        "privacy_link": "Confidentialité"
     },
     "Footer": {
         "tagline": "Consultant SEO à Rabat, Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services.",
         "pages": "Pages",
         "contact": "Contact",
-        "bottom": "Consultant SEO, Rabat"
+        "bottom": "Consultant SEO, Rabat",
+        "privacy": "Confidentialité"
+    },
+    "PrivacyPage": {
+        "title": "Confidentialité",
+        "description": "Comment mohamedtoudghi.com traite vos données : formulaire de contact, Google Analytics et hébergement.",
+        "updated": "Dernière mise à jour : 31 octobre 2026",
+        "sections": [
+            {
+                "title": "Formulaire de contact",
+                "body": "Quand vous envoyez le formulaire, votre nom, votre e-mail, votre site, le service choisi et votre message sont transmis par Formspree à ma boîte e-mail. Je les utilise uniquement pour vous répondre et je ne les partage pas."
+            },
+            {
+                "title": "Mesure d'audience",
+                "body": "Ce site utilise Google Analytics 4 pour compter les visites et voir quelles pages sont lues. Il se charge seulement après votre premier défilement, toucher ou appui sur une touche, ou quelques secondes après l'ouverture de la page. Google Analytics utilise des cookies et reçoit des informations comme les pages visitées, le type d'appareil et votre localisation approximative."
+            },
+            {
+                "title": "Hébergement",
+                "body": "Le site est hébergé par Vercel, qui conserve des journaux serveur standards (comme l'adresse IP et le type de navigateur) pour faire fonctionner et protéger le service."
+            },
+            {
+                "title": "Liens vers d'autres sites",
+                "body": "Les liens vers WhatsApp, LinkedIn et d'autres sites mènent à des services qui ont leur propre politique de confidentialité."
+            }
+        ],
+        "contact_title": "Questions ou demandes",
+        "contact_body": "Pour savoir quelles données je détiens sur vous ou pour les faire supprimer, écrivez à"
     }
 }

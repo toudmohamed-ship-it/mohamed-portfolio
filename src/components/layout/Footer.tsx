@@ -49,9 +49,10 @@ export default async function Footer() {
                 </div>
             </div>
             <div className="border-t border-line">
-                <p className="container-custom py-6 m-0 text-sm text-muted">
-                    © {new Date().getFullYear()} Mohamed Toudghi · {t("bottom")}
-                </p>
+                <div className="container-custom py-6 flex flex-wrap justify-between gap-4 text-sm text-muted">
+                    <p className="m-0">© {new Date().getFullYear()} Mohamed Toudghi · {t("bottom")}</p>
+                    <Link href="/privacy" className="navlink text-muted hover:text-ink no-underline">{t("privacy")}</Link>
+                </div>
             </div>
         </footer>
     );

@@ -1,9 +1,8 @@
 import PageHeader from "@/components/ui/PageHeader";
 import ContactForm from "@/components/ui/ContactForm";
-import { Mail, Linkedin, Phone } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageAlternates } from "@/lib/seo";
+import { localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -19,6 +18,7 @@ export async function generateMetadata({ params }: Props) {
         openGraph: {
             title: t('og_title'),
             description: t('og_description'),
+            url: localizedUrl(locale, '/contact'),
             images: ['/og-image.jpg'],
         },
         alternates: pageAlternates(locale, '/contact'),
@@ -30,73 +30,62 @@ export default async function ContactPage({ params }: Props) {
     setRequestLocale(locale);
 
     const t = await getTranslations({ locale, namespace: 'ContactPage' });
+    const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
+    const steps = t.raw('steps.items') as string[];
+
+    const channels = [
+        { label: t('info.email_label'), value: PERSONAL_INFO.email, href: `mailto:${PERSONAL_INFO.email}` },
+        { label: "WhatsApp", value: PERSONAL_INFO.phone, href: PERSONAL_INFO.whatsapp, external: true },
+        { label: "LinkedIn", value: t('info.linkedin_label'), href: PERSONAL_INFO.linkedin, external: true },
+    ];
 
     return (
         <>
             <PageHeader
+                locale={locale}
+                crumbs={[{ label: tCrumbs('home'), href: '/' }, { label: tCrumbs('contact') }]}
+                eyebrow={t('header.eyebrow')}
                 title={t('header.title')}
-                subtitle={t('header.subtitle')}
+                lead={t('header.subtitle')}
             />
 
-            <section className="py-24 md:py-40 bg-bg-primary relative overflow-hidden">
-                {/* Background Decor */}
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-purple/5 blur-[120px] rounded-full -z-0" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-mint/5 blur-[120px] rounded-full -z-0" />
-
-                <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-
-                    {/* Contact Info */}
-                    <div className="space-y-16">
-                        <div className="space-y-8">
-                            <h2 className="text-3xl font-serif font-bold text-text-primary tracking-tight">{t('info.title')}</h2>
-                            <div className="space-y-4">
-                                <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-6 text-text-secondary hover:text-text-primary transition-all p-6 rounded-3xl glass group border-border-subtle">
-                                    <div className="bg-black/5 dark:bg-white/5 p-4 rounded-2xl border border-border-subtle group-hover:bg-brand-purple group-hover:text-white transition-all">
-                                        <Mail className="h-6 w-6" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] text-text-secondary font-bold uppercase tracking-[0.2em] mb-1">{t('info.email_label')}</span>
-                                        <span className="text-lg font-bold text-text-primary">{PERSONAL_INFO.email}</span>
-                                    </div>
-                                </a>
-
-                                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 text-text-secondary hover:text-text-primary transition-all p-6 rounded-3xl glass group border-border-subtle">
-                                    <div className="bg-black/5 dark:bg-white/5 p-4 rounded-2xl border border-border-subtle group-hover:bg-brand-purple group-hover:text-white transition-all">
-                                        <Linkedin className="h-6 w-6" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] text-text-secondary font-bold uppercase tracking-[0.2em] mb-1">LinkedIn</span>
-                                        <span className="text-lg font-bold text-text-primary">{t('info.linkedin_label')}</span>
-                                    </div>
-                                </a>
-
-                                <div className="flex items-center gap-6 text-text-secondary p-6 rounded-3xl glass group border-border-subtle">
-                                    <div className="bg-black/5 dark:bg-white/5 p-4 rounded-2xl border border-border-subtle">
-                                        <Phone className="h-6 w-6" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] text-text-secondary font-bold uppercase tracking-[0.1em] mb-1">{t('info.phone_label')}</span>
-                                        <span className="text-lg font-bold text-text-primary">{PERSONAL_INFO.phone}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Interactive Hint */}
-                        <div className="bg-brand-purple/10 border border-brand-purple/20 rounded-2xl p-6 flex gap-4 items-center">
-                            <span className="flex h-3 w-3 relative">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mint opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-mint"></span>
-                            </span>
-                            <p className="text-text-secondary text-sm font-medium">I usually respond within 2-4 business hours.</p>
-                        </div>
+            <section className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-16 items-start">
+                <div className="flex flex-col gap-12">
+                    <div className="flex flex-col gap-4">
+                        <h2 className="m-0 text-2xl font-semibold">{t('info.title')}</h2>
+                        <ul className="list-none m-0 p-0 border-t border-line">
+                            {channels.map((c) => (
+                                <li key={c.label}>
+                                    <a
+                                        href={c.href}
+                                        {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                        className="row-link flex items-center justify-between gap-4 py-5 border-b border-line rounded-xl text-ink no-underline hover:text-ink"
+                                    >
+                                        <span className="flex flex-col gap-0.5 min-w-0">
+                                            <span className="font-mono text-xs text-muted">{c.label}</span>
+                                            <span className="text-[17px] font-medium truncate" dir="ltr">{c.value}</span>
+                                        </span>
+                                        <span className="arrow text-xl" aria-hidden="true">→</span>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    {/* Contact Form Container */}
-                    <div className="relative">
-                        <ContactForm />
+                    <div className="flex flex-col gap-5">
+                        <h2 className="m-0 text-2xl font-semibold">{t('steps.title')}</h2>
+                        <ol className="list-none m-0 p-0 flex flex-col gap-5">
+                            {steps.map((step, i) => (
+                                <li key={i} className="flex gap-4 items-start">
+                                    <span aria-hidden="true" className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-semibold text-[15px] ${i === 0 ? 'bg-forest text-white' : 'bg-white border-[1.5px] border-forest text-forest'}`}>{i + 1}</span>
+                                    <span className="pt-1.5 text-ink-soft text-[17px]">{step}</span>
+                                </li>
+                            ))}
+                        </ol>
                     </div>
                 </div>
+
+                <ContactForm />
             </section>
         </>
     );

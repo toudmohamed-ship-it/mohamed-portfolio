@@ -1,7 +1,6 @@
 import { Link } from "@/i18n/routing";
-import { ArrowRight, Calendar } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 interface RelatedPostsProps {
     currentSlug: string;
@@ -10,45 +9,32 @@ interface RelatedPostsProps {
 }
 
 export default async function RelatedPosts({ currentSlug, relatedSlugs, locale }: RelatedPostsProps) {
-    setRequestLocale(locale);
-    const t = await getTranslations({ locale, namespace: 'BlogPage' });
-    const tPosts = await getTranslations({ locale, namespace: 'BlogPosts' });
+    const t = await getTranslations({ locale, namespace: "BlogPage" });
+    const tPosts = await getTranslations({ locale, namespace: "BlogPosts" });
 
-    const relatedPosts = BLOG_POSTS.filter(post => (relatedSlugs || []).includes(post.slug) && post.slug !== currentSlug);
-
-    if (relatedPosts.length === 0) return null;
+    // Use the article's picks, then fill with other posts so there are always two
+    const picks = BLOG_POSTS.filter((p) => (relatedSlugs || []).includes(p.slug) && p.slug !== currentSlug);
+    const fill = BLOG_POSTS.filter((p) => p.slug !== currentSlug && !picks.includes(p));
+    const posts = [...picks, ...fill].slice(0, 2);
 
     return (
-        <section className="pt-24 border-t border-border-subtle">
-            <div className="flex items-center justify-between mb-12">
-                <h2 className="text-3xl font-serif font-bold text-text-primary tracking-tight">{t('related_posts.title') || "You Might Also Like"}</h2>
-                <Link href="/blog" className="text-xs font-bold text-brand-purple hover:text-brand-mint transition-colors uppercase tracking-[0.2em] flex items-center gap-2">
-                    {t('view_all') || "View All Posts"} <ArrowRight size={14} />
+        <section aria-labelledby="related-title" className="flex flex-col gap-6">
+            <div className="flex flex-wrap justify-between items-end gap-4">
+                <h2 id="related-title" className="m-0 text-2xl md:text-[28px] font-semibold">{t("related_posts.title")}</h2>
+                <Link href="/blog" className="btn font-medium no-underline">
+                    {t("view_all")} <span className="arrow" aria-hidden="true">→</span>
                 </Link>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {relatedPosts.map((post) => (
+            <div className="grid gap-5 sm:grid-cols-2">
+                {posts.map((post) => (
                     <Link
                         key={post.slug}
                         href={`/blog/${post.slug}`}
-                        className="group glass p-8 rounded-[2rem] border-border-subtle hover:border-brand-purple/30 transition-all duration-500 flex flex-col h-full"
+                        className="lift bg-white border border-line rounded-2xl p-6 flex flex-col gap-3 text-ink no-underline hover:text-ink"
                     >
-                        <div className="flex items-center gap-4 text-[10px] font-bold text-text-secondary mb-6 uppercase tracking-[0.2em]">
-                            <span className="flex items-center gap-2">
-                                <Calendar size={12} className="text-brand-purple" />
-                                {tPosts(`${post.slug}.date`)}
-                            </span>
-                        </div>
-                        <h3 className="text-xl font-serif font-bold text-text-primary mb-4 group-hover:text-brand-purple transition-colors leading-tight">
-                            {tPosts(`${post.slug}.title`)}
-                        </h3>
-                        <p className="text-text-secondary text-sm mb-8 flex-grow leading-relaxed group-hover:text-text-primary transition-colors">
-                            {tPosts(`${post.slug}.excerpt`)}
-                        </p>
-                        <div className="flex items-center text-[10px] font-bold text-text-primary uppercase tracking-[0.2em] group-hover:text-brand-mint transition-colors">
-                            Read Article <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform rtl:rotate-180" />
-                        </div>
+                        <span className="font-mono text-xs text-forest">{post.category}</span>
+                        <span className="text-lg font-semibold leading-snug">{tPosts(`${post.slug}.title`)}</span>
+                        <span className="text-[15px] text-muted">{tPosts(`${post.slug}.excerpt`)}</span>
                     </Link>
                 ))}
             </div>

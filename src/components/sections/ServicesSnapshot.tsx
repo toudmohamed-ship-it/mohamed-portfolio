@@ -17,7 +17,7 @@ export default function ServicesSnapshot() {
     const offers = t.raw("items") as Offer[];
 
     return (
-        <section id="services" className="container-custom pt-[72px] pb-24">
+        <section id="services" className="cv container-custom pt-[72px] pb-24">
             <div className="reveal flex flex-wrap justify-between items-end gap-4 mb-10">
                 <h2 className="m-0 text-3xl md:text-4xl font-semibold">{t("title")}</h2>
                 <p className="m-0 text-muted max-w-[420px] text-base">{t("intro")}</p>

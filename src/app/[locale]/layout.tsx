@@ -26,8 +26,9 @@ const geist = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: "swap",
-  preload: false, // small labels only; not worth competing with the main font
+  // Small labels only: "optional" never swaps after first paint, so it cannot shift the layout (it caused CLS 0.21 on articles)
+  display: "optional",
+  preload: false,
 });
 
 // Helper type for params
@@ -40,15 +41,15 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
   const { locale } = await params;
 
   const descriptions: Record<string, string> = {
-    en: "Mohamed Toudghi is an SEO Specialist helping businesses improve organic visibility through Technical SEO, Analytics, and data-driven growth strategies.",
-    fr: "Mohamed Toudghi est un spécialiste SEO aidant les entreprises à améliorer leur visibilité organique grâce au SEO technique et aux stratégies de croissance.",
-    ar: "محمد تودغي متخصص SEO يساعد الشركات على تحسين ظهورها العضوي من خلال SEO التقني واستراتيجيات النمو المبنية على البيانات."
+    en: "SEO consultant in Rabat, Morocco. Technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
+    fr: "Consultant SEO à Rabat, Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services, B2B et SaaS.",
+    ar: "مستشار SEO في الرباط، المغرب. SEO تقني وSEO محلي وتتبع GA4 لشركات الخدمات وB2B وSaaS."
   };
 
   const titles: Record<string, string> = {
-    en: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant",
-    fr: "Mohamed Toudghi | Spécialiste SEO & Consultant Marketing Digital",
-    ar: "محمد تودغي | متخصص SEO ومستشار تسويق رقمي"
+    en: "Mohamed Toudghi | SEO Consultant in Morocco",
+    fr: "Mohamed Toudghi | Consultant SEO au Maroc",
+    ar: "محمد تودغي | مستشار SEO في المغرب"
   };
 
   const baseUrl = 'https://www.mohamedtoudghi.com';
@@ -111,7 +112,7 @@ export default async function LocaleLayout({
   // Only the namespaces that client components read are sent to the browser; server components read the rest directly
   const messages = await getMessages();
   const clientMessages = Object.fromEntries(
-    ['HomePage', 'Breadcrumbs', 'ContactForm'].filter((k) => k in messages).map((k) => [k, messages[k]])
+    ['HomePage', 'ContactForm'].filter((k) => k in messages).map((k) => [k, messages[k]])
   );
 
   // RTL Logic

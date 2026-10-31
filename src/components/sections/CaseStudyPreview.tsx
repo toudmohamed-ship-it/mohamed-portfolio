@@ -10,7 +10,7 @@ export default function CaseStudyPreview() {
     const items = (t.raw("items") as Work[]).filter((w) => CASE_STUDIES.some((s) => s.slug === w.slug));
 
     return (
-        <section id="work" data-tone="white" className="bg-white border-y border-line">
+        <section id="work" data-tone="white" className="cv bg-white border-y border-line">
             <div className="container-custom py-24">
                 <div className="reveal flex flex-wrap justify-between items-end gap-4 mb-7">
                     <h2 className="m-0 text-3xl md:text-4xl font-semibold">{t("title")}</h2>
