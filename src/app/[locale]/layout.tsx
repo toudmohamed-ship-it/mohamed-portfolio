@@ -41,9 +41,9 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
   const { locale } = await params;
 
   const descriptions: Record<string, string> = {
-    en: "SEO consultant in Rabat, Morocco. Technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
-    fr: "Consultant SEO à Rabat, Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services, B2B et SaaS.",
-    ar: "مستشار SEO في الرباط، المغرب. SEO تقني وSEO محلي وتتبع GA4 لشركات الخدمات وB2B وSaaS."
+    en: "SEO consultant in Morocco. Technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
+    fr: "Consultant SEO au Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services, B2B et SaaS.",
+    ar: "مستشار SEO في المغرب. SEO تقني وSEO محلي وتتبع GA4 لشركات الخدمات وB2B وSaaS."
   };
 
   const titles: Record<string, string> = {

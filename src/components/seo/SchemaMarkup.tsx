@@ -21,16 +21,12 @@ export default function SchemaMarkup() {
         "@id": "https://www.mohamedtoudghi.com",
         url: "https://www.mohamedtoudghi.com",
         telephone: PERSONAL_INFO.phone,
+        // Country only: Mohamed works remotely and has not settled on a city.
         address: {
             "@type": "PostalAddress",
-            addressLocality: "Rabat",
             addressCountry: "MA",
         },
-        geo: {
-            "@type": "GeoCoordinates",
-            latitude: 34.0209,
-            longitude: -6.8416,
-        },
+        logo: "https://www.mohamedtoudghi.com/logo.png",
         priceRange: "$$",
         openingHoursSpecification: [
             {

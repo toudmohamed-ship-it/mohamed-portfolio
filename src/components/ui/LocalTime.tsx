@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
 
-function rabatTime() {
+function moroccoTime() {
     try {
         return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Casablanca" }).format(new Date());
     } catch {
@@ -12,14 +12,14 @@ function rabatTime() {
     }
 }
 
-// "Rabat · 14:32 · replies within a day". The time is filled in after mount to avoid a hydration mismatch.
+// "Morocco · 14:32 · replies within a day". The time is filled in after mount to avoid a hydration mismatch.
 export default function LocalTime({ className }: { className?: string }) {
     const t = useTranslations("HomePage.nav");
     const [time, setTime] = useState("");
 
     useEffect(() => {
-        setTime(rabatTime());
-        const id = setInterval(() => setTime(rabatTime()), 30000);
+        setTime(moroccoTime());
+        const id = setInterval(() => setTime(moroccoTime()), 30000);
         return () => clearInterval(id);
     }, []);
 

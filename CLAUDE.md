@@ -1,6 +1,6 @@
 # mohamedtoudghi.com
 
-Portfolio of Mohamed Toudghi, SEO consultant in Rabat, Morocco (technical SEO, local SEO, GA4 tracking for service businesses, B2B and SaaS). Next.js 16 (App Router) + Tailwind CSS 4 + next-intl, deployed on Vercel. Three languages: English at `/`, French at `/fr`, Arabic (RTL) at `/ar`.
+Portfolio of Mohamed Toudghi, SEO consultant in Morocco, working remotely (technical SEO, local SEO, GA4 tracking for service businesses, B2B and SaaS). Next.js 16 (App Router) + Tailwind CSS 4 + next-intl, deployed on Vercel. Three languages: English at `/`, French at `/fr`, Arabic (RTL) at `/ar`.
 
 The site is the proof of his SEO work, so SEO, speed and accessibility are not optional.
 

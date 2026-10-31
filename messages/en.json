@@ -69,7 +69,7 @@
             "work": "Work",
             "book_call": "Book a call",
             "role": "SEO consultant",
-            "city": "Rabat",
+            "city": "Morocco",
             "replies": "replies within a day",
             "open_menu": "Open menu",
             "close_menu": "Close menu"
@@ -538,7 +538,7 @@
     },
     "AboutPage": {
         "metadata": {
-            "title": "About me, SEO consultant in Rabat",
+            "title": "About me, SEO consultant in Morocco",
             "description": "SEO consultant from Al Akhawayn University, working on technical SEO, local SEO and GA4 tracking. Arabic, English and French.",
             "og_title": "About Mohamed Toudghi | SEO Consultant",
             "og_description": "From Al Akhawayn University to SEO and analytics work for clients in the UK, the U.S. and Morocco."
@@ -546,7 +546,7 @@
         "hero": {
             "eyebrow": "About",
             "title": "Hi, I'm Mohamed. I help businesses get found on Google.",
-            "subtitle": "SEO consultant based in Rabat, working with clients in the UK, the U.S. and Morocco."
+            "subtitle": "SEO consultant working remotely from Morocco, with clients in the UK, the U.S. and Morocco."
         },
         "journey": {
             "title": "How I got here",
@@ -685,7 +685,7 @@
         "faq_title": "Questions and answers",
         "author": {
             "label": "Written by",
-            "bio": "SEO consultant in Rabat. I work on technical SEO, local SEO and GA4 tracking for service businesses in the UK, the U.S. and Morocco.",
+            "bio": "SEO consultant based in Morocco. I work remotely on technical SEO, local SEO and GA4 tracking for service businesses in the UK, the U.S. and Morocco.",
             "more": "About me"
         }
     },
@@ -796,10 +796,10 @@
         "privacy_link": "Privacy"
     },
     "Footer": {
-        "tagline": "SEO consultant in Rabat, Morocco. Technical SEO, local SEO and GA4 tracking for service businesses.",
+        "tagline": "SEO consultant in Morocco. Technical SEO, local SEO and GA4 tracking for service businesses.",
         "pages": "Pages",
         "contact": "Contact",
-        "bottom": "SEO consultant, Rabat",
+        "bottom": "SEO consultant, Morocco",
         "privacy": "Privacy"
     },
     "PrivacyPage": {

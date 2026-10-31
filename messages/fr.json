@@ -69,7 +69,7 @@
             "work": "Projets",
             "book_call": "Réserver un appel",
             "role": "Consultant SEO",
-            "city": "Rabat",
+            "city": "Maroc",
             "replies": "réponse sous 24 h",
             "open_menu": "Ouvrir le menu",
             "close_menu": "Fermer le menu"
@@ -538,7 +538,7 @@
     },
     "AboutPage": {
         "metadata": {
-            "title": "À propos, consultant SEO à Rabat",
+            "title": "À propos, consultant SEO au Maroc",
             "description": "Consultant SEO diplômé de l'Université Al Akhawayn, spécialisé en SEO technique, SEO local et suivi GA4. Arabe, anglais et français.",
             "og_title": "À propos de Mohamed Toudghi | Consultant SEO",
             "og_description": "De l'Université Al Akhawayn au SEO et à l'analytics pour des clients au Royaume-Uni, aux États-Unis et au Maroc."
@@ -546,7 +546,7 @@
         "hero": {
             "eyebrow": "À propos",
             "title": "Bonjour, je suis Mohamed. J'aide les entreprises à ressortir sur Google.",
-            "subtitle": "Consultant SEO basé à Rabat, je travaille avec des clients au Royaume-Uni, aux États-Unis et au Maroc."
+            "subtitle": "Consultant SEO à distance depuis le Maroc, je travaille avec des clients au Royaume-Uni, aux États-Unis et au Maroc."
         },
         "journey": {
             "title": "Mon parcours",
@@ -685,7 +685,7 @@
         "faq_title": "Questions fréquentes",
         "author": {
             "label": "Écrit par",
-            "bio": "Consultant SEO à Rabat. Je travaille sur le SEO technique, le SEO local et le suivi GA4 pour des entreprises de services au Royaume-Uni, aux États-Unis et au Maroc.",
+            "bio": "Consultant SEO basé au Maroc. Je travaille à distance sur le SEO technique, le SEO local et le suivi GA4 pour des entreprises de services au Royaume-Uni, aux États-Unis et au Maroc.",
             "more": "À propos"
         }
     },
@@ -796,10 +796,10 @@
         "privacy_link": "Confidentialité"
     },
     "Footer": {
-        "tagline": "Consultant SEO à Rabat, Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services.",
+        "tagline": "Consultant SEO au Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services.",
         "pages": "Pages",
         "contact": "Contact",
-        "bottom": "Consultant SEO, Rabat",
+        "bottom": "Consultant SEO, Maroc",
         "privacy": "Confidentialité"
     },
     "PrivacyPage": {

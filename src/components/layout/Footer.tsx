@@ -19,9 +19,8 @@ export default async function Footer() {
         <footer className="border-t border-line bg-paper">
             <div className="container-custom py-16 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
                 <div className="flex flex-col gap-4 max-w-sm">
-                    <Link href="/" className="flex items-center gap-2.5 text-ink no-underline">
-                        <Logo className="h-9 w-9" />
-                        <span className="font-semibold">Mohamed Toudghi</span>
+                    <Link href="/" className="self-start text-ink no-underline">
+                        <Logo className="text-xl" />
                     </Link>
                     <p className="text-muted text-[15px] m-0">{t("tagline")}</p>
                 </div>

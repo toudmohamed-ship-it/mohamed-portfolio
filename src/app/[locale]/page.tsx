@@ -23,9 +23,9 @@ const TITLES: Record<string, string> = {
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  en: "Technical SEO, local SEO and GA4 tracking for law firms, clinics, B2B and SaaS. Based in Rabat, working in English, French and Arabic.",
-  fr: "SEO technique, SEO local et suivi GA4 pour cabinets d'avocats, cliniques, B2B et SaaS. Basé à Rabat, je travaille en français, anglais et arabe.",
-  ar: "SEO تقني وSEO محلي وتتبع GA4 لمكاتب المحاماة والعيادات وشركات B2B وSaaS. مقيم في الرباط وأعمل بالعربية والفرنسية والإنجليزية.",
+  en: "Technical SEO, local SEO and GA4 tracking for law firms, clinics, B2B and SaaS. Based in Morocco, working in English, French and Arabic.",
+  fr: "SEO technique, SEO local et suivi GA4 pour cabinets d'avocats, cliniques, B2B et SaaS. Basé au Maroc, je travaille en français, anglais et arabe.",
+  ar: "SEO تقني وSEO محلي وتتبع GA4 لمكاتب المحاماة والعيادات وشركات B2B وSaaS. مقيم في المغرب وأعمل بالعربية والفرنسية والإنجليزية.",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
