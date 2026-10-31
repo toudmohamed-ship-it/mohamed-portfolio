@@ -6,7 +6,7 @@ mohamedtoudghi.com, 31 October 2026. Covers all pages in English, French and Ara
 
 **Central entity:** Mohamed Toudghi, SEO consultant (one `Person` with `@id` `https://www.mohamedtoudghi.com/#person`, referenced by every page's structured data).
 
-**Source context (why the site exists, how it earns):** an independent consultant in Rabat who sells three things to service businesses, B2B and SaaS: technical SEO audits, local SEO, and GA4 / conversion tracking. Every page should connect back to one of those three, or to proof that he delivers them.
+**Source context (why the site exists, how it earns):** an independent consultant based in Morocco, working remotely, who sells three things to service businesses, B2B and SaaS: technical SEO audits, local SEO, and GA4 / conversion tracking. Every page should connect back to one of those three, or to proof that he delivers them.
 
 **Central search intent:** "hire an SEO consultant who can fix my site and show results" (commercial), supported by "learn how to fix it myself" (informational, the blog).
 
@@ -65,7 +65,7 @@ Structured data per page: `Service` with `provider` → the Person, `about` (mai
 | 7 | Some French and Arabic articles fall back to a short translation (no fr/ar HTML file) | **To do:** translate `technical-seo-audit-checklist-lead-gen` into FR and AR |
 | 8 | `local-seo-guide-businesses` has its own FAQ section in the HTML and a second FAQ block from metadata | **To do:** keep one |
 | 9 | The services hub lists six services; only three have pages | **By design:** add pages for the other three only when there is proof (case studies) for them |
-| 10 | Entity presence outside the site is weak (LinkedIn only) | **To do (Mohamed):** Google Business Profile in Rabat, consistent name/title on LinkedIn, Clutch or Malt profiles, then add them to `sameAs` |
+| 10 | Entity presence outside the site is weak (LinkedIn only) | **To do (Mohamed):** Google Business Profile (once a city is chosen), consistent name/title on LinkedIn, Clutch or Malt profiles, then add them to `sameAs` |
 
 ## 5. Content backlog (in priority order)
 

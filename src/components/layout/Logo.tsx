@@ -1,12 +1,12 @@
 import clsx from "clsx";
 
-// "MT" monogram with a small growth line. Decorative next to the visible name, so it is hidden from screen readers.
+// Wordmark: the name as real text with a short forest bar under its first letters ("position one").
+// Sized by font-size; the bar ratios match D:\mohamedtoudghi-brand\logo\wordmark.svg. The Latin name stays LTR on /ar.
 export default function Logo({ className }: { className?: string }) {
     return (
-        <svg viewBox="0 0 34 34" aria-hidden="true" className={clsx("shrink-0", className)}>
-            <rect width="34" height="34" rx="9" fill="#1C2321" />
-            <path d="M8 23V11l5 7 5-7v12" fill="none" stroke="#F7F5F0" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M20 21l3-4 2 2 3-5" fill="none" stroke="#7FC4A8" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <span dir="ltr" className={clsx("inline-flex flex-col shrink-0 font-semibold tracking-[-0.03em] text-ink", className)}>
+            <span className="leading-none whitespace-nowrap">Mohamed Toudghi</span>
+            <span aria-hidden="true" className="mt-[0.14em] ms-[0.06em] h-[0.13em] w-[2.06em] rounded-full bg-forest" />
+        </span>
     );
 }

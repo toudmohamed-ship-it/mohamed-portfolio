@@ -45,14 +45,11 @@ export default function Navbar() {
         >
             <nav className="container-custom flex items-center justify-between gap-4 py-3.5" aria-label="Main">
                 <div className="flex items-center gap-4 min-w-0">
-                    <Link href="/" className="flex items-center gap-2.5 text-ink no-underline shrink-0">
-                        <Logo className="h-9 w-9" />
-                        <span className="flex flex-col leading-tight">
-                            <span className="font-semibold text-base">Mohamed Toudghi</span>
-                            <span className="text-[13px] text-muted">{t('role')}</span>
-                        </span>
+                    <Link href="/" className="flex items-center gap-3 text-ink no-underline shrink-0">
+                        <Logo className="text-[19px]" />
+                        <span className="hidden sm:inline text-[13px] text-muted border-s border-line ps-3 leading-tight">{t('role')}</span>
                     </Link>
-                    <LocalTime className="hidden xl:inline-flex" />
+                    <LocalTime compact className="hidden xl:inline-flex" />
                 </div>
 
                 {/* Desktop */}
@@ -70,7 +67,7 @@ export default function Navbar() {
                     <LanguageSwitcher />
                     <Link
                         href="/contact"
-                        className="btn inline-flex items-center min-h-11 px-[18px] rounded-[10px] bg-ink text-paper font-medium no-underline hover:bg-ink-soft hover:text-paper"
+                        className="btn inline-flex items-center whitespace-nowrap min-h-11 px-[18px] rounded-[10px] bg-ink text-paper font-medium no-underline hover:bg-ink-soft hover:text-paper"
                     >
                         {t('book_call')}
                     </Link>

@@ -4,6 +4,9 @@ import { SERVICE_PAGES } from "@/lib/services";
 
 const wiki = (name: string, page: string) => ({ "@type": "Thing", name, sameAs: `https://en.wikipedia.org/wiki/${page}` });
 
+// Country only: Mohamed works remotely and has not settled on a city.
+const ADDRESS = { "@type": "PostalAddress", addressCountry: "MA" };
+
 // Site-wide entity graph: one Person (the central entity), the website he publishes and the business he runs.
 // Other pages reference the Person by "@id" instead of repeating him. Only facts that appear on the site are used.
 export default function SchemaMarkup() {
@@ -15,12 +18,12 @@ export default function SchemaMarkup() {
                 "@id": `${BASE_URL}/#person`,
                 name: PERSONAL_INFO.name,
                 jobTitle: PERSONAL_INFO.title,
-                description: "SEO consultant in Rabat, Morocco, working on technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
+                description: "SEO consultant in Morocco, working remotely on technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
                 url: BASE_URL,
                 image: `${BASE_URL}/images/profile.png`,
                 email: PERSONAL_INFO.email,
                 telephone: PERSONAL_INFO.phone,
-                address: { "@type": "PostalAddress", addressLocality: "Rabat", addressCountry: "MA" },
+                address: ADDRESS,
                 alumniOf: { "@type": "CollegeOrUniversity", name: "Al Akhawayn University", sameAs: "https://en.wikipedia.org/wiki/Al_Akhawayn_University" },
                 knowsLanguage: ["ar", "en", "fr"],
                 knowsAbout: [
@@ -49,9 +52,10 @@ export default function SchemaMarkup() {
                 name: "Mohamed Toudghi, SEO Consultant",
                 url: BASE_URL,
                 image: `${BASE_URL}/og-image.jpg`,
+                logo: `${BASE_URL}/logo.png`,
                 telephone: PERSONAL_INFO.phone,
                 email: PERSONAL_INFO.email,
-                address: { "@type": "PostalAddress", addressLocality: "Rabat", addressCountry: "MA" },
+                address: ADDRESS,
                 areaServed: ["MA", "GB", "US"],
                 founder: { "@id": `${BASE_URL}/#person` },
                 knowsLanguage: ["ar", "en", "fr"],
