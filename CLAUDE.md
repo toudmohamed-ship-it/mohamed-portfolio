@@ -1,0 +1,63 @@
+# mohamedtoudghi.com
+
+Portfolio of Mohamed Toudghi, SEO consultant in Rabat, Morocco (technical SEO, local SEO, GA4 tracking for service businesses, B2B and SaaS). Next.js 16 (App Router) + Tailwind CSS 4 + next-intl, deployed on Vercel. Three languages: English at `/`, French at `/fr`, Arabic (RTL) at `/ar`.
+
+The site is the proof of his SEO work, so SEO, speed and accessibility are not optional.
+
+## Facts
+
+- Use only facts, numbers, client names and contact details that already exist in `messages/*.json`, `src/lib/data.ts`, `src/lib/constants.ts`, or that Mohamed gives in chat.
+- Never invent numbers, testimonials, prices, clients, awards, dates or processes. If content is missing (prices, a testimonial), leave the section out and tell Mohamed what is needed.
+- Client "Landlord Safety Cert" is under NDA: do not name it.
+
+## Writing (all three languages)
+
+- Plain, specific sentences. Name the real result, place or tool. Delete any sentence a competitor could also use.
+- No em dashes (—). No exclamation marks. No emojis.
+- Banned: unlock, elevate, seamless, cutting-edge, state-of-the-art, world-class, tailored solutions, data-driven, in today's fast-paced world, trusted partner, journey, empower, leverage, revolutionize, delve, passion for excellence, "it's not just X, it's Y".
+- Headings state a fact or a benefit. Buttons say what happens ("Book a call", not "Learn more").
+- Every copy change goes into `messages/en.json`, `fr.json` and `ar.json` together. No hard-coded user-facing strings in components.
+
+## Design
+
+- Calm palette, defined once in `src/app/globals.css` (`@theme`): paper `#F7F5F0`, ink `#1C2321`, muted `#5A645F`, line `#E2DDD3`, forest `#2E6B57`, sage `#E6EFEA`, mint `#7FC4A8`. Use the token classes (`bg-paper`, `text-ink`, `text-forest`...), not new hex values.
+- Fonts: Geist (Latin), Cairo (Arabic), Geist Mono for small data labels only. Loaded with `next/font` in `src/app/[locale]/layout.tsx`.
+- No gradients on text or backgrounds, no glassmorphism, no glow except the hero cursor light, no stock or AI images. Real photos only (`public/images`).
+- Shared patterns live in `globals.css`: `.lift` (card hover), `.row-link`, `.btn`, `.arrow`, `.navlink`, `.reveal`, `.in` + `.d1`–`.d6` (entrance delays).
+
+## Motion rules (performance first)
+
+Motion stays only while it costs nothing measurable. Before adding or changing any:
+
+- Animate `transform` and `opacity` only. Never animate width, height, top/left, box-shadow or anything that triggers layout or paint each frame.
+- No JavaScript animation loop on page load. JS motion (hero cursor light, card drift, wave swells, `CursorFollower`) runs only after the mouse moves, only on `(pointer: fine)`, and stops when settled.
+- Content must never be hidden from crawlers: entrance animations are gated on `html.js` (set by an inline script) and never applied to the H1 or the LCP element.
+- Text that changes (the rotating hero word) must not move the layout: its box is sized by the longest word (`.words::after`).
+- Everything is disabled under `prefers-reduced-motion: reduce`.
+
+## SEO
+
+- Canonical + hreflang (en, fr, ar, x-default) on every page via `pageAlternates(locale, path)` from `src/lib/seo.ts`. Pages must return the full `alternates` object: Next.js replaces the layout's, it does not merge.
+- Unique title under 60 characters and meta description under 155 per page and language. The layout title template (`%s | Mohamed Toudghi`) does not apply to the homepage, so its titles include the name.
+- One H1 per page, headings in order. The H1 Google reads must be one clean sentence (the server renders the first rotating word only).
+- New pages go into `src/app/sitemap.ts`. Internal links point to real URLs.
+- Language is decided by the URL only (`localeDetection: false` in `src/i18n/routing.ts`). Do not turn cookie or browser-language redirects back on.
+- Only the `HomePage`, `Breadcrumbs` and `ContactForm` message namespaces are sent to the browser (see the layout). Add a namespace there only if a client component needs it.
+
+## Analytics
+
+- GA4 (`G-9GBZG4HWN2`) loads from `src/components/seo/Analytics.tsx` on first interaction or 4 s after load. Do not move it back into `<head>`.
+- The GTM container `GTM-53XVQ2J6` was empty and was removed. Re-add it only if Mohamed sets up tags in it, and load it the same delayed way.
+
+## Performance budget
+
+- Lighthouse mobile performance 90+ on `/`, `/fr`, `/ar`; accessibility 100; CLS under 0.05; TBT under 200 ms.
+- Measured locally on 2026-10-31 (production build): `/` 92–93, `/fr` 88–90, `/ar` 87–92, accessibility 100. Local runs on this laptop vary by ±10; confirm with PageSpeed Insights on the Vercel preview.
+- Known slow pages not yet redesigned: blog articles (large PNGs in `public/images/blog`, hero image without `priority`), portfolio contrast issue.
+
+## Working method
+
+- This machine's C: drive is full. Keep everything on D: (repo at `D:\mohamedtoudghi-portfolio`, npm cache at `D:\npm-cache`).
+- Work on a branch, never directly on `main` (Vercel deploys `main` to production).
+- After a change: `npm run build`, check `/`, `/fr`, `/ar` at 375 and 1280 px with no horizontal overflow, run Lighthouse mobile, and report the scores. If a score drops by more than a few points, find the cause before going on.
+- Commit only when Mohamed asks.
