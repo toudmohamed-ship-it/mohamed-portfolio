@@ -1,140 +1,183 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/routing";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Button from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import HeroWaves, { LAYERS } from "./HeroWaves";
 
 export default function Hero() {
-    const t = useTranslations('HomePage.hero');
+    const t = useTranslations("HomePage.hero");
+    const words = t.raw("words") as string[];
+    const longestWord = words.reduce((a, b) => (b.length > a.length ? b : a), "");
+    const query = t("query");
+
+    const sectionRef = useRef<HTMLElement>(null);
+    const cardsRef = useRef<HTMLDivElement>(null);
+    const hillRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [wordIndex, setWordIndex] = useState(0);
+    const [rotated, setRotated] = useState(false);
+
+    // Rotate the highlighted audience. The server renders words[0] with no animation, so the H1 is painted
+    // immediately (good LCP) and Google reads one clean sentence.
+    useEffect(() => {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const id = setInterval(() => {
+            setRotated(true);
+            setWordIndex((i) => (i + 1) % words.length);
+        }, 3000);
+        return () => clearInterval(id);
+    }, [words.length]);
+
+    // Mouse-only effects: cursor light, card drift and wave swells. Nothing runs until the mouse moves,
+    // and the loop stops as soon as everything has settled, so page load and phones pay nothing.
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+        if (!matchMedia("(pointer: fine)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const target = { x: 0, y: 0, px: 0, py: 0, bump: 0, bx: 0 };
+        const cur = { ...target };
+        let raf = 0;
+
+        const tick = () => {
+            let moving = false;
+            (Object.keys(cur) as (keyof typeof cur)[]).forEach((k) => {
+                const d = target[k] - cur[k];
+                cur[k] += d * 0.07;
+                if (Math.abs(d) > (k === "px" || k === "py" || k === "bump" ? 0.001 : 0.3)) moving = true;
+            });
+            section.style.setProperty("--mx", `${cur.x.toFixed(1)}px`);
+            section.style.setProperty("--my", `${cur.y.toFixed(1)}px`);
+            if (cardsRef.current) cardsRef.current.style.transform = `translate3d(${(-cur.px * 14).toFixed(2)}px, ${(-cur.py * 10).toFixed(2)}px, 0)`;
+            hillRefs.current.forEach((el, i) => {
+                if (!el) return;
+                const L = LAYERS[i];
+                const hidden = L.lift + L.amp * 1.5;
+                el.style.transform = `translate3d(${(cur.bx - el.offsetWidth / 2).toFixed(1)}px, ${((1 - cur.bump) * hidden).toFixed(1)}px, 0)`;
+            });
+            raf = moving ? requestAnimationFrame(tick) : 0;
+        };
+
+        const onMove = (e: MouseEvent) => {
+            const r = section.getBoundingClientRect();
+            const inside = e.clientY >= r.top && e.clientY <= r.bottom;
+            if (!target.bx) cur.bx = e.clientX - r.left; // first move: place the swell under the cursor instead of sliding in
+            target.x = e.clientX - r.left;
+            target.y = e.clientY - r.top;
+            target.px = e.clientX / window.innerWidth - 0.5;
+            target.py = e.clientY / window.innerHeight - 0.5;
+            target.bx = e.clientX - r.left;
+            target.bump = inside ? 1 : 0;
+            section.style.setProperty("--glow", inside ? "1" : "0.6");
+            if (!raf) raf = requestAnimationFrame(tick);
+        };
+
+        window.addEventListener("mousemove", onMove, { passive: true });
+        return () => {
+            window.removeEventListener("mousemove", onMove);
+            cancelAnimationFrame(raf);
+        };
+    }, []);
 
     return (
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden py-20 lg:py-32 bg-bg-primary">
-            {/* Mesh Gradients & Abstract Shapes */}
-            <div className="absolute top-0 right-0 -z-10 w-[60%] h-[70%] bg-[radial-gradient(circle_at_50%_50%,rgba(108,99,255,0.25),transparent_70%)] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(108,99,255,0.15),transparent_70%)] blur-3xl opacity-60" />
-            <div className="absolute bottom-0 left-0 -z-10 w-[60%] h-[70%] bg-[radial-gradient(circle_at_30%_70%,rgba(0,245,160,0.2),transparent_70%)] dark:bg-[radial-gradient(circle_at_30%_70%,rgba(0,245,160,0.1),transparent_70%)] blur-3xl opacity-40" />
-
-            {/* Animated Decorative Elements */}
-            <motion.div
-                animate={{
-                    y: [0, -20, 0],
-                    rotate: [0, 10, 0]
-                }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/4 left-10 w-64 h-64 bg-brand-purple/5 rounded-full blur-3xl -z-10"
+        <section ref={sectionRef} className="relative overflow-hidden bg-paper">
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none opacity-55 [background-image:radial-gradient(#D9D3C7_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(180deg,#000_0%,transparent_80%)]"
             />
-            <motion.div
-                animate={{
-                    y: [0, 30, 0],
-                    rotate: [0, -20, 0]
-                }}
-                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-1/4 right-10 w-96 h-96 bg-brand-mint/5 rounded-full blur-3xl -z-10"
-            />
+            <div className="hero-glow" aria-hidden="true" />
+            <div className="hero-spot" aria-hidden="true" />
 
-            <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-                {/* Text Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="lg:col-span-7 space-y-8 relative z-10"
-                >
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-border-subtle text-brand-mint text-xs font-bold tracking-widest uppercase"
-                    >
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mint opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-mint"></span>
+            <div className="container-custom relative z-[1] pt-20 md:pt-24 pb-[230px] flex flex-wrap items-center gap-16">
+                <div className="flex-[1_1_520px] min-w-0 flex flex-col gap-6">
+                    <p className="in d1 m-0 font-mono text-[13px] text-forest tracking-wide">{t("eyebrow")}</p>
+                    <h1 className="hero-title m-0 text-[34px] sm:text-5xl lg:text-[60px] leading-[1.1] lg:leading-[1.07] font-semibold tracking-[-0.03em]">
+                        {t("before")}{" "}
+                        <span className="words text-forest" data-size={longestWord}>
+                            <span key={wordIndex} className={rotated ? "in" : undefined}>{words[wordIndex]}</span>
                         </span>
-                        {t('available')}
-                    </motion.div>
-
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.1] tracking-tight text-text-primary">
-                        {t('role').split(' ').map((word, i) => (
-                            <span key={i} className={i === 0 ? "block" : word.includes("SEO") ? "text-gradient-mint" : ""}>
-                                {word}{' '}
-                            </span>
-                        ))}
+                        <br className="hidden lg:inline" />{" "}
+                        {t("after")}{" "}
+                        <span className="relative lg:whitespace-nowrap">
+                            {t("highlight")}
+                            <svg className="hidden lg:block absolute start-0 -bottom-1.5 w-full h-3" aria-hidden="true" viewBox="0 0 300 14" preserveAspectRatio="none">
+                                <path d="M2 9 C 80 2, 200 2, 298 7" pathLength={1} fill="none" stroke="#2E6B57" strokeWidth="4" strokeLinecap="round" />
+                            </svg>
+                        </span>{" "}
+                        {t("end")}
                     </h1>
-
-                    <h2 className="text-2xl md:text-3xl font-medium text-text-secondary max-w-2xl leading-relaxed">
-                        {t('subheadline')}
-                    </h2>
-
-                    <p className="text-lg md:text-xl text-text-secondary/80 max-w-xl leading-relaxed">
-                        {t('description')}
-                    </p>
-
-                    <div className="flex flex-wrap gap-6 pt-4">
-                        <Link href="/contact" className="relative group">
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-purple to-brand-mint rounded-full blur opacity-20 dark:opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                            <Button size="lg" className="relative bg-brand-purple hover:bg-brand-purple/90 border-none px-10 py-4 h-auto text-base text-white">
-                                {t('cta_contact')}
-                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
-                            </Button>
+                    <p className="in d3 m-0 text-lg md:text-[19px] text-muted max-w-[540px]">{t("subtitle")}</p>
+                    <div className="in d4 flex flex-wrap items-center gap-3.5 pt-1.5">
+                        <Link href="/contact" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline shadow-[0_10px_24px_-14px_rgba(46,107,87,.8)] hover:bg-forest-deep hover:text-white">
+                            {t("cta_call")} <span className="arrow" aria-hidden="true">→</span>
                         </Link>
-                        <Link href="/portfolio">
-                            <Button variant="outline" size="lg" className="px-10 py-4 h-auto text-base">
-                                {t('cta_projects')}
-                            </Button>
+                        <Link href="/portfolio" className="btn inline-flex items-center px-[22px] py-[15px] rounded-xl border border-line-strong bg-white text-ink font-medium no-underline hover:text-ink">
+                            {t("cta_work")}
                         </Link>
                     </div>
+                    <p className="in d4 m-0 text-sm text-muted">{t("languages")}</p>
+                </div>
 
-                </motion.div>
-
-                {/* Image / Visual */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8, x: 30 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    className="lg:col-span-5 relative flex justify-center lg:justify-end"
-                >
-                    <div className="relative group">
-                        {/* Glowing Backgrounds */}
-                        <div className="absolute -inset-4 bg-brand-purple/20 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[conic-gradient(from_0deg,transparent,rgba(108,99,255,0.2),transparent)] animate-[spin_10s_linear_infinite] -z-10" />
-
-                        <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-border-subtle shadow-2xl bg-bg-secondary transition-transform duration-700 group-hover:scale-[1.02] group-hover:-rotate-1">
-                            <Image
-                                src="/images/profile.png"
-                                alt="Mohamed Toudghi - SEO & Digital Marketing Specialist"
-                                width={400}
-                                height={500}
-                                priority
-                                className="w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
-                            />
-
-                            {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-transparent to-transparent dark:from-bg-primary dark:opacity-60" />
+                {/* Visual: a search result and real before/after numbers. Drifts slightly with the mouse. */}
+                <div ref={cardsRef} className="flex-[1_1_400px] min-w-0 flex flex-col gap-4">
+                    <div className="in d3 lift bg-white border border-line rounded-[18px] p-[22px] shadow-[0_24px_50px_-36px_rgba(28,35,33,.45)]">
+                        <div className="flex items-center gap-2.5 border border-line rounded-full px-4 py-2.5" dir="ltr">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5A645F" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></svg>
+                            <span className="typed font-mono text-sm" style={{ ["--chars" as string]: `${query.length}ch`, ["--steps" as string]: query.length }}>{query}</span>
                         </div>
+                        <div className="in d6 pt-[18px] px-1 pb-1 flex flex-col gap-1">
+                            <span className="flex items-center gap-2 text-[13px] text-muted" dir="ltr">
+                                <span className="w-[18px] h-[18px] rounded-full bg-ink text-paper text-[9px] inline-flex items-center justify-center font-semibold" aria-hidden="true">MT</span>
+                                {t("serp_url")}
+                            </span>
+                            <span className="text-[19px] text-[#1F4FA8] font-medium leading-snug">{t("serp_title")}</span>
+                            <span className="text-sm text-muted leading-normal">{t("serp_desc")}</span>
+                        </div>
+                    </div>
 
-                        {/* Floating Badge */}
-                        <motion.div
-                            animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute -bottom-6 -right-6 lg:-right-12 glass p-4 rounded-2xl shadow-2xl z-20 hidden md:block whitespace-nowrap"
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-brand-mint/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <div className="w-4 h-4 bg-brand-mint rounded-sm rotate-45" />
+                    <div className="in d5 lift bg-white border border-line rounded-[18px] p-[22px] flex flex-col gap-[18px] shadow-[0_24px_50px_-36px_rgba(28,35,33,.45)]">
+                        <div className="flex flex-wrap justify-between items-baseline gap-3">
+                            <span className="font-semibold text-[15px]">{t("chart_title")}</span>
+                            <span className="font-mono text-xs text-muted">{t("chart_source")}</span>
+                        </div>
+                        <div className="flex items-end gap-5">
+                            <div className="flex items-end gap-2.5 h-24 shrink-0" aria-hidden="true">
+                                <div className="flex flex-col items-center gap-1.5">
+                                    <span className="font-mono text-xs text-muted">32</span>
+                                    <div className="bar w-[34px] h-10 rounded-t-md rounded-b-sm bg-line-strong" style={{ animationDelay: ".9s" }} />
                                 </div>
-                                <div className="flex flex-col">
-                                    <p className="text-xs text-text-secondary font-bold uppercase tracking-tight">Growth Expert</p>
-                                    <p className="text-sm font-bold text-text-primary leading-none mt-0.5">ROI Driven</p>
+                                <div className="flex flex-col items-center gap-1.5">
+                                    <span className="font-mono text-xs text-ink font-medium">74</span>
+                                    <div className="bar w-[34px] h-[76px] rounded-t-md rounded-b-sm bg-forest" style={{ animationDelay: "1.2s" }} />
                                 </div>
                             </div>
-                        </motion.div>
+                            <div className="min-w-0">
+                                <div className="text-[13px] text-muted">{t("clicks")}</div>
+                                <div className="text-[32px] font-semibold tracking-tight leading-tight">+130%</div>
+                                <div className="sr-only">32 → 74</div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <div className="flex justify-between text-[13px] text-muted">
+                                <span>{t("position")}</span>
+                                <span className="font-mono" dir="ltr">34.2 → <strong className="text-ink font-medium">14.1</strong></span>
+                            </div>
+                            <div className="relative h-[22px] mb-4" aria-hidden="true">
+                                <div className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 rounded bg-sage" />
+                                <span className="absolute start-0 top-6 font-mono text-[11px] text-muted">{t("page4")}</span>
+                                <span className="absolute end-0 top-6 font-mono text-[11px] text-muted">{t("page1")}</span>
+                                <span className="marker-track"><span className="marker w-4 h-4 rounded-full bg-forest border-[3px] border-white shadow-[0_0_0_1px_#2E6B57]" /></span>
+                            </div>
+                        </div>
+                        <div className="flex justify-between pt-3.5 border-t border-[#EEEAE2] text-[13px] text-muted">
+                            <span>{t("ctr")}</span>
+                            <span className="font-mono" dir="ltr">0.7% → <strong className="text-ink font-medium">1.6%</strong></span>
+                        </div>
                     </div>
-                </motion.div>
-
+                </div>
             </div>
+
+            <HeroWaves ref={hillRefs} pinLabel={t("pin")} />
         </section>
     );
 }

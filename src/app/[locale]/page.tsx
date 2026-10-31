@@ -1,44 +1,47 @@
-import AboutPreview from "@/components/sections/AboutPreview";
-import FinalCTA from "@/components/sections/FinalCTA";
-import CaseStudyPreview from "@/components/sections/CaseStudyPreview";
 import Hero from "@/components/sections/Hero";
-import ServicesSnapshot from "@/components/sections/ServicesSnapshot";
 import TrustStrip from "@/components/sections/TrustStrip";
+import Results from "@/components/sections/Results";
+import ServicesSnapshot from "@/components/sections/ServicesSnapshot";
+import CaseStudyPreview from "@/components/sections/CaseStudyPreview";
+import Process from "@/components/sections/Process";
+import AboutPreview from "@/components/sections/AboutPreview";
+import BlogPreview from "@/components/sections/BlogPreview";
+import FinalCTA from "@/components/sections/FinalCTA";
 import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
+import { localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ locale: string }>;
 }
 
+// The layout title template does not apply to the page in its own segment, so the name is written out here
+const TITLES: Record<string, string> = {
+  en: "SEO Consultant in Morocco | Mohamed Toudghi",
+  fr: "Consultant SEO au Maroc | Mohamed Toudghi",
+  ar: "مستشار SEO في المغرب | محمد تودغي",
+};
+
+const DESCRIPTIONS: Record<string, string> = {
+  en: "Technical SEO, local SEO and GA4 tracking for law firms, clinics, B2B and SaaS. Based in Rabat, working in English, French and Arabic.",
+  fr: "SEO technique, SEO local et suivi GA4 pour cabinets d'avocats, cliniques, B2B et SaaS. Basé à Rabat, je travaille en français, anglais et arabe.",
+  ar: "SEO تقني وSEO محلي وتتبع GA4 لمكاتب المحاماة والعيادات وشركات B2B وSaaS. مقيم في الرباط وأعمل بالعربية والفرنسية والإنجليزية.",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-
-  const descriptions: Record<string, string> = {
-    en: "Mohamed Toudghi is an SEO Specialist & Digital Marketing Consultant helping businesses improve organic visibility through Technical SEO, Analytics, and data-driven strategies. Serving clients worldwide.",
-    fr: "Mohamed Toudghi est un spécialiste SEO et consultant en marketing digital aidant les entreprises à améliorer leur visibilité organique grâce au SEO technique, à l'Analytics et aux stratégies basées sur les données.",
-    ar: "محمد تودغي متخصص في تحسين محركات البحث ومستشار تسويق رقمي يساعد الشركات على تحسين ظهورها العضوي من خلال SEO التقني والتحليلات والاستراتيجيات المبنية على البيانات."
-  };
-
-  const titles: Record<string, string> = {
-    en: "Mohamed Toudghi | SEO Specialist & Digital Marketing Consultant",
-    fr: "Mohamed Toudghi | Spécialiste SEO & Consultant Marketing Digital",
-    ar: "محمد تودغي | متخصص SEO ومستشار تسويق رقمي"
-  };
-
-  const baseUrl = 'https://www.mohamedtoudghi.com';
-  const canonicalPath = locale === 'en' ? '' : `/${locale}`;
+  const title = TITLES[locale] || TITLES.en;
+  const description = DESCRIPTIONS[locale] || DESCRIPTIONS.en;
 
   return {
-    title: titles[locale] || titles.en,
-    description: descriptions[locale] || descriptions.en,
-    alternates: {
-      canonical: `${baseUrl}${canonicalPath}`,
-    },
+    title: { absolute: title },
+    description,
+    alternates: pageAlternates(locale, ''),
     openGraph: {
-      title: titles[locale] || titles.en,
-      description: descriptions[locale] || descriptions.en,
-      url: `${baseUrl}${canonicalPath}`,
+      title,
+      description,
+      url: localizedUrl(locale, ''),
+      images: ['/og-image.jpg'],
     },
   };
 }
@@ -51,11 +54,13 @@ export default async function Home({ params }: Props) {
     <>
       <Hero />
       <TrustStrip />
+      <Results />
       <ServicesSnapshot />
       <CaseStudyPreview />
+      <Process />
       <AboutPreview />
+      <BlogPreview />
       <FinalCTA />
     </>
   );
 }
-

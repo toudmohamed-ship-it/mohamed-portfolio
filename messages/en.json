@@ -10,13 +10,34 @@
     "HomePage": {
         "title": "Mohamed | SEO & Digital Marketing Specialist",
         "hero": {
-            "greeting": "Hi, I'm Mohamed",
-            "role": "SEO & Digital Marketing Specialist",
-            "subheadline": "Helping businesses improve organic visibility and conversions through data-driven SEO, analytics, and optimization.",
-            "description": "I work across technical SEO, local SEO, and performance analytics to solve complex search challenges and build scalable growth systems.",
-            "cta_projects": "View Case Studies",
-            "cta_contact": "Work With Me",
-            "available": "Available for new projects"
+            "eyebrow": "Technical SEO · Local SEO · GA4 tracking",
+            "before": "I help",
+            "words": [
+                "service businesses",
+                "law firms",
+                "clinics",
+                "B2B companies",
+                "SaaS teams"
+            ],
+            "after": "get",
+            "highlight": "found on Google",
+            "end": "and turn visits into clients.",
+            "subtitle": "I find what keeps Google from showing your site, fix it, and show you the numbers. No jargon, no long contracts.",
+            "cta_call": "Book a free 15-min call",
+            "cta_work": "See case studies",
+            "languages": "I work in English, French and Arabic.",
+            "query": "seo consultant morocco",
+            "serp_url": "mohamedtoudghi.com › services",
+            "serp_title": "Mohamed Toudghi | Technical & Local SEO Consultant",
+            "serp_desc": "Audits, indexing fixes and GA4 tracking for service businesses. Free 15-minute call.",
+            "chart_title": "Moroccan B2B website",
+            "chart_source": "Search Console · 3 months",
+            "clicks": "Clicks from Google",
+            "position": "Average position",
+            "page4": "page 4",
+            "page1": "page 1",
+            "ctr": "Click-through rate",
+            "pin": "your site, climbing"
         },
         "about": {
             "title": "About Me",
@@ -44,10 +65,17 @@
             "services": "Services",
             "portfolio": "Portfolio",
             "contact": "Contact",
-            "blog": "Blog"
+            "blog": "Blog",
+            "work": "Work",
+            "book_call": "Book a call",
+            "role": "SEO consultant",
+            "city": "Rabat",
+            "replies": "replies within a day",
+            "open_menu": "Open menu",
+            "close_menu": "Close menu"
         },
         "TrustStrip": {
-            "label": "Experience across teams and organizations including"
+            "label": "Worked with teams at"
         },
         "ServicesSnapshot": {
             "title": "My Expertise",
@@ -78,14 +106,145 @@
             "view_all": "View All Case Studies"
         },
         "AboutPreview": {
-            "title": "About Me",
-            "description": "I’m Mohamed Toudghi, an SEO and digital marketing specialist with a strong focus on data, analytics, and sustainable growth strategies. I’ve worked on projects ranging from international platforms to service-based businesses, helping improve search performance and decision-making through clean, scalable systems.",
-            "cta": "Read More About Me"
+            "label": "About me",
+            "title": "Hi, I'm Mohamed.",
+            "p1": "I studied at Al Akhawayn University and moved into SEO after seeing how many marketing decisions were made without looking at the data. Since then I have worked on everything from a marketplace with 560K monthly visits to small local businesses in the UK, the U.S. and Morocco.",
+            "p2": "I like to keep things simple: find the real problem, fix it, and show you what changed.",
+            "tags": [
+                "Arabic: native",
+                "English: C1",
+                "French: B2",
+                "Google Analytics certified"
+            ],
+            "cta": "More about me",
+            "photo_alt": "Mohamed Toudghi, SEO consultant"
         },
         "FinalCTA": {
-            "title": "Ready to improve your search visibility?",
-            "description": "Ready to improve your organic visibility and performance? <br/>Let's discuss how data-driven SEO can support your business goals.",
-            "button": "Contact Me"
+            "title": "Tell me about your website.",
+            "description": "A free 15-minute call. I will look at your site before we talk and tell you the first three things I would fix.",
+            "button": "Book a call",
+            "whatsapp": "Message on WhatsApp"
+        },
+        "results": {
+            "title": "Results from recent projects",
+            "note": "Numbers from real client work. Some names stay private because of NDAs.",
+            "items": [
+                {
+                    "value": "2×",
+                    "label": "conversions in the first month on a key service page",
+                    "source": "UK service business"
+                },
+                {
+                    "value": "66 → 93",
+                    "label": "mobile PageSpeed score after the technical fixes",
+                    "source": "UK service business"
+                },
+                {
+                    "value": "+30%",
+                    "label": "more qualified leads from local search",
+                    "source": "U.S. law firm"
+                },
+                {
+                    "value": "+40%",
+                    "label": "more time spent on the site after a content restructure",
+                    "source": "National sports organisation"
+                }
+            ]
+        },
+        "offers": {
+            "title": "What I can do for you",
+            "intro": "Three focused offers. Each one starts with a short call so I can tell you honestly if it fits.",
+            "cta": "See all services",
+            "items": [
+                {
+                    "title": "Technical SEO audit",
+                    "desc": "A full crawl of your site, a clear list of what is blocking Google ranked by impact, and a call to walk you through it.",
+                    "points": [
+                        "Indexing, crawl and canonical issues",
+                        "Core Web Vitals and mobile speed",
+                        "Structured data and site structure"
+                    ],
+                    "meta": "Delivered in 1 to 2 weeks"
+                },
+                {
+                    "title": "Local SEO",
+                    "desc": "Show up when people nearby search for what you offer, on Google Maps and in local results.",
+                    "points": [
+                        "Google Business Profile setup and clean-up",
+                        "City and service landing pages",
+                        "A plan for reviews and local citations"
+                    ],
+                    "meta": "Ongoing, reviewed every month"
+                },
+                {
+                    "title": "GA4 & tracking setup",
+                    "desc": "See which pages and searches bring you leads, not only visits, in a dashboard you will actually open.",
+                    "points": [
+                        "GA4 and Google Tag Manager events",
+                        "Form, call and WhatsApp conversions",
+                        "A Looker Studio dashboard"
+                    ],
+                    "meta": "One-time setup"
+                }
+            ]
+        },
+        "work": {
+            "title": "Case studies",
+            "all": "All {count} case studies",
+            "items": [
+                {
+                    "slug": "uk-compliance-service-audit",
+                    "tag": "Local SEO · CRO",
+                    "title": "UK compliance service business",
+                    "desc": "A new landing page with clear trust signals, 26 key pages reworked and mobile speed fixed.",
+                    "result": "2× conversions"
+                },
+                {
+                    "slug": "law-firm-local-seo",
+                    "tag": "Local SEO",
+                    "title": "U.S. law firm",
+                    "desc": "First-page rankings for “city + practice area” searches and stronger local trust signals.",
+                    "result": "+30% leads"
+                },
+                {
+                    "slug": "moroccan-b2b-seo",
+                    "tag": "On-page SEO",
+                    "title": "Moroccan B2B website",
+                    "desc": "Titles, content and internal links reworked. Average position moved from page 4 to page 2.",
+                    "result": "+130% clicks"
+                },
+                {
+                    "slug": "global-marketplace-audit",
+                    "tag": "Technical SEO",
+                    "title": "Luxury marketplace, 560K monthly visits",
+                    "desc": "Crawl and indexing work on a large site, without losing authority.",
+                    "result": "+6% traffic"
+                }
+            ]
+        },
+        "process": {
+            "title": "How a project goes",
+            "steps": [
+                {
+                    "title": "Audit",
+                    "desc": "I crawl the site, read your Search Console and GA4 data, and find what is really holding you back.",
+                    "when": "Week 1"
+                },
+                {
+                    "title": "Fix",
+                    "desc": "The most important fixes come first. I do them myself or hand them to your developer with clear instructions.",
+                    "when": "Weeks 2 to 4"
+                },
+                {
+                    "title": "Measure",
+                    "desc": "A short monthly report with rankings, clicks and leads, and what we do next.",
+                    "when": "Every month"
+                }
+            ]
+        },
+        "blog": {
+            "title": "From the blog",
+            "all": "All articles"
         }
     },
     "CaseStudies": {
@@ -129,7 +288,7 @@
         "saas-digital-launch": {
             "client": "SaaS Inventory Startup",
             "title": "End-to-End Digital Launch for a SaaS Startup",
-            "summary": "Jan–May 2024: Built the digital foundation from scratch, deliverying a mobile-responsive site and automated lead workflows.",
+            "summary": "Jan–May 2024: Built the digital foundation from scratch, delivering a mobile-responsive site and automated lead workflows.",
             "tags": "SEO Strategy • Web Design • Marketing Automation",
             "challenge": "A new inventory management brand needed a complete digital ecosystem from the ground up. The requirement was a mobile-responsive no-code website, a robust SEO foundation (On-page + Structure), and automated lead generation channels to capture early interest.",
             "approach": "Acting as the SEO & Digital Marketing Consultant, I developed a fully responsive website using a no-code builder. Implemented a comprehensive SEO strategy, structuring navigation for user intent. Integrated Gist for chatbot and email automation workflows to nurture leads. Established a multi-channel social presence on Facebook, Instagram, and LinkedIn.",
@@ -456,7 +615,7 @@
     },
     "BlogPage": {
         "metadata": {
-            "title": "Blog & Insights | Mohamed Toudghi",
+            "title": "Blog & Insights",
             "description": "Explore the latest trends, expert guides, and actionable insights on SEO, Digital Marketing, and Analytics to help grow your business."
         },
         "title": "SEO & Growth Insights",
@@ -571,5 +730,11 @@
             "error": "Oops! Something went wrong. Please try again or email me directly.",
             "generic_error": "Unable to send message. Please try again or contact me via email."
         }
+    },
+    "Footer": {
+        "tagline": "SEO consultant in Rabat, Morocco. Technical SEO, local SEO and GA4 tracking for service businesses.",
+        "pages": "Pages",
+        "contact": "Contact",
+        "bottom": "SEO consultant, Rabat"
     }
 }

@@ -10,13 +10,34 @@
     "HomePage": {
         "title": "Mohamed | Spécialiste SEO & Marketing Digital",
         "hero": {
-            "greeting": "Bonjour, je suis Mohamed",
-            "role": "Spécialiste SEO & Marketing Digital",
-            "subheadline": "J'aide les entreprises à améliorer leur visibilité organique et leurs conversions grâce au SEO, à l'analytique et à l'optimisation basés sur les données.",
-            "description": "Je travaille sur le SEO technique, le SEO local et l'analytique de performance pour résoudre des défis de recherche complexes et construire des systèmes de croissance évolutifs.",
-            "cta_projects": "Voir les études de cas",
-            "cta_contact": "Travailler avec moi",
-            "available": "Disponible pour de nouveaux projets"
+            "eyebrow": "SEO technique · SEO local · Suivi GA4",
+            "before": "J'aide",
+            "words": [
+                "les entreprises de services",
+                "les cabinets d'avocats",
+                "les cliniques",
+                "les entreprises B2B",
+                "les équipes SaaS"
+            ],
+            "after": "à",
+            "highlight": "ressortir sur Google",
+            "end": "et à transformer les visites en clients.",
+            "subtitle": "Je trouve ce qui empêche Google de montrer votre site, je le corrige et je vous montre les chiffres. Pas de jargon, pas de contrat long.",
+            "cta_call": "Réserver un appel gratuit de 15 min",
+            "cta_work": "Voir les études de cas",
+            "languages": "Je travaille en français, en anglais et en arabe.",
+            "query": "consultant seo maroc",
+            "serp_url": "mohamedtoudghi.com › services",
+            "serp_title": "Mohamed Toudghi | Consultant SEO technique et local",
+            "serp_desc": "Audits, corrections d'indexation et suivi GA4 pour les entreprises de services. Appel gratuit de 15 minutes.",
+            "chart_title": "Site B2B marocain",
+            "chart_source": "Search Console · 3 mois",
+            "clicks": "Clics depuis Google",
+            "position": "Position moyenne",
+            "page4": "page 4",
+            "page1": "page 1",
+            "ctr": "Taux de clic",
+            "pin": "votre site monte"
         },
         "about": {
             "title": "À propos de moi",
@@ -44,10 +65,17 @@
             "services": "Services",
             "portfolio": "Portfolio",
             "contact": "Contact",
-            "blog": "Blog"
+            "blog": "Blog",
+            "work": "Projets",
+            "book_call": "Réserver un appel",
+            "role": "Consultant SEO",
+            "city": "Rabat",
+            "replies": "réponse sous 24 h",
+            "open_menu": "Ouvrir le menu",
+            "close_menu": "Fermer le menu"
         },
         "TrustStrip": {
-            "label": "Expérience auprès d'équipes et d'organisations telles que"
+            "label": "J'ai travaillé avec les équipes de"
         },
         "ServicesSnapshot": {
             "title": "Mon Expertise",
@@ -78,14 +106,145 @@
             "view_all": "Voir Toutes les Études de Cas"
         },
         "AboutPreview": {
-            "title": "À Propos",
-            "description": "Je suis Mohamed Toudghi, spécialiste SEO et marketing digital, axé sur la data, l'analytics et les stratégies de croissance durable. J'ai travaillé sur des projets allant de plateformes internationales à des entreprises de services, aidant à améliorer la performance de recherche et la prise de décision grâce à des systèmes clairs et évolutifs.",
-            "cta": "En Savoir Plus"
+            "label": "À propos",
+            "title": "Bonjour, je suis Mohamed.",
+            "p1": "J'ai étudié à l'Université Al Akhawayn et je me suis tourné vers le SEO en voyant combien de décisions marketing étaient prises sans regarder les données. Depuis, j'ai travaillé aussi bien sur une marketplace de 560 K visites par mois que sur de petites entreprises locales au Royaume-Uni, aux États-Unis et au Maroc.",
+            "p2": "J'aime garder les choses simples : trouver le vrai problème, le corriger et vous montrer ce qui a changé.",
+            "tags": [
+                "Arabe : langue maternelle",
+                "Anglais : C1",
+                "Français : B2",
+                "Certifié Google Analytics"
+            ],
+            "cta": "En savoir plus",
+            "photo_alt": "Mohamed Toudghi, consultant SEO"
         },
         "FinalCTA": {
-            "title": "Prêt à améliorer votre visibilité sur les moteurs de recherche ?",
-            "description": "Prêt à améliorer votre visibilité organique et vos performances ? <br/>Discutons de la manière dont le SEO piloté par les données peut soutenir vos objectifs commerciaux.",
-            "button": "Contactez-moi"
+            "title": "Parlez-moi de votre site.",
+            "description": "Un appel gratuit de 15 minutes. Je regarde votre site avant l'appel et je vous dis les trois premières choses que je corrigerais.",
+            "button": "Réserver un appel",
+            "whatsapp": "Écrire sur WhatsApp"
+        },
+        "results": {
+            "title": "Résultats de projets récents",
+            "note": "Des chiffres issus de vrais projets clients. Certains noms restent confidentiels à cause d'accords de confidentialité.",
+            "items": [
+                {
+                    "value": "2×",
+                    "label": "de conversions le premier mois sur une page de service clé",
+                    "source": "Entreprise de services, Royaume-Uni"
+                },
+                {
+                    "value": "66 → 93",
+                    "label": "score PageSpeed mobile après les corrections techniques",
+                    "source": "Entreprise de services, Royaume-Uni"
+                },
+                {
+                    "value": "+30%",
+                    "label": "de leads qualifiés venant de la recherche locale",
+                    "source": "Cabinet d'avocats, États-Unis"
+                },
+                {
+                    "value": "+40%",
+                    "label": "de temps passé sur le site après une refonte du contenu",
+                    "source": "Fédération sportive nationale"
+                }
+            ]
+        },
+        "offers": {
+            "title": "Ce que je peux faire pour vous",
+            "intro": "Trois offres claires. Chacune commence par un court appel, pour vous dire honnêtement si elle vous convient.",
+            "cta": "Voir tous les services",
+            "items": [
+                {
+                    "title": "Audit SEO technique",
+                    "desc": "Une analyse complète de votre site, une liste claire de ce qui bloque Google classée par impact, et un appel pour tout vous expliquer.",
+                    "points": [
+                        "Problèmes d'indexation, d'exploration et de canonicals",
+                        "Core Web Vitals et vitesse mobile",
+                        "Données structurées et structure du site"
+                    ],
+                    "meta": "Livré en 1 à 2 semaines"
+                },
+                {
+                    "title": "SEO local",
+                    "desc": "Apparaître quand les gens autour de vous cherchent ce que vous proposez, sur Google Maps et dans les résultats locaux.",
+                    "points": [
+                        "Création et nettoyage de la fiche Google Business Profile",
+                        "Pages ville + service",
+                        "Un plan pour les avis et les citations locales"
+                    ],
+                    "meta": "Suivi mensuel"
+                },
+                {
+                    "title": "Configuration GA4 et suivi",
+                    "desc": "Voir quelles pages et quelles recherches vous apportent des leads, pas seulement des visites, dans un tableau de bord que vous ouvrirez vraiment.",
+                    "points": [
+                        "Événements GA4 et Google Tag Manager",
+                        "Conversions formulaire, appel et WhatsApp",
+                        "Un tableau de bord Looker Studio"
+                    ],
+                    "meta": "Mise en place unique"
+                }
+            ]
+        },
+        "work": {
+            "title": "Études de cas",
+            "all": "Les {count} études de cas",
+            "items": [
+                {
+                    "slug": "uk-compliance-service-audit",
+                    "tag": "SEO local · CRO",
+                    "title": "Entreprise de conformité au Royaume-Uni",
+                    "desc": "Une nouvelle page d'atterrissage avec des signaux de confiance clairs, 26 pages clés retravaillées et une vitesse mobile corrigée.",
+                    "result": "2× conversions"
+                },
+                {
+                    "slug": "law-firm-local-seo",
+                    "tag": "SEO local",
+                    "title": "Cabinet d'avocats aux États-Unis",
+                    "desc": "Premières positions sur les recherches « ville + domaine du droit » et des signaux de confiance locaux renforcés.",
+                    "result": "+30 % de leads"
+                },
+                {
+                    "slug": "moroccan-b2b-seo",
+                    "tag": "SEO on-page",
+                    "title": "Site B2B marocain",
+                    "desc": "Titres, contenus et liens internes retravaillés. La position moyenne est passée de la page 4 à la page 2.",
+                    "result": "+130 % de clics"
+                },
+                {
+                    "slug": "global-marketplace-audit",
+                    "tag": "SEO technique",
+                    "title": "Marketplace de luxe, 560 K visites par mois",
+                    "desc": "Travail sur l'exploration et l'indexation d'un grand site, sans perte d'autorité.",
+                    "result": "+6 % de trafic"
+                }
+            ]
+        },
+        "process": {
+            "title": "Comment se passe un projet",
+            "steps": [
+                {
+                    "title": "Audit",
+                    "desc": "J'analyse le site, je lis vos données Search Console et GA4, et je trouve ce qui vous freine vraiment.",
+                    "when": "Semaine 1"
+                },
+                {
+                    "title": "Corrections",
+                    "desc": "Les corrections les plus importantes d'abord. Je les fais moi-même ou je les transmets à votre développeur avec des instructions claires.",
+                    "when": "Semaines 2 à 4"
+                },
+                {
+                    "title": "Mesure",
+                    "desc": "Un court rapport mensuel avec les positions, les clics et les leads, et la suite.",
+                    "when": "Chaque mois"
+                }
+            ]
+        },
+        "blog": {
+            "title": "Sur le blog",
+            "all": "Tous les articles"
         }
     },
     "CaseStudies": {
@@ -456,7 +615,7 @@
     },
     "BlogPage": {
         "metadata": {
-            "title": "Blog & Insights | Mohamed Toudghi",
+            "title": "Blog & Insights",
             "description": "Dernières tendances et guides sur le SEO, le marketing numérique et l'analytique."
         },
         "header": {
@@ -569,5 +728,11 @@
             "error": "Oups ! Une erreur est survenue. Veuillez réessayer ou m'envoyer un email directement.",
             "generic_error": "Impossible d'envoyer le message. Veuillez réessayer ou me contacter par email."
         }
+    },
+    "Footer": {
+        "tagline": "Consultant SEO à Rabat, Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services.",
+        "pages": "Pages",
+        "contact": "Contact",
+        "bottom": "Consultant SEO, Rabat"
     }
 }

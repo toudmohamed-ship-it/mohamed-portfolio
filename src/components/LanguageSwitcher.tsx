@@ -1,41 +1,39 @@
 'use client';
 import { useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
-import { Globe } from 'lucide-react';
 import clsx from 'clsx';
+
+const LANGUAGES = [
+    { code: 'en', label: 'EN', name: 'English' },
+    { code: 'fr', label: 'FR', name: 'Français' },
+    { code: 'ar', label: 'AR', name: 'العربية' },
+];
 
 export default function LanguageSwitcher() {
     const locale = useLocale();
     const pathname = usePathname();
 
-    const languages = [
-        { code: 'en', label: 'EN' },
-        { code: 'fr', label: 'FR' },
-        { code: 'ar', label: 'AR' },
-    ];
-
     return (
-        <div className="flex items-center gap-3">
-            <Globe className="w-4 h-4 text-text-secondary" />
-            <div className="flex items-center gap-2">
-                {languages.map((lang, index) => (
-                    <div key={lang.code} className="flex items-center">
-                        <Link
-                            href={pathname}
-                            locale={lang.code}
-                            className={clsx(
-                                "text-xs font-bold transition-colors hover:text-brand-purple",
-                                locale === lang.code ? "text-brand-purple" : "text-text-secondary"
-                            )}
-                        >
-                            {lang.label}
-                        </Link>
-                        {index < languages.length - 1 && (
-                            <span className="mx-1 text-slate-300 text-[10px]">|</span>
+        <div className="flex items-center gap-1 font-mono text-[13px]">
+            {LANGUAGES.map((lang, index) => (
+                <span key={lang.code} className="flex items-center gap-1">
+                    <Link
+                        href={pathname}
+                        locale={lang.code}
+                        lang={lang.code}
+                        title={lang.name}
+                        aria-current={locale === lang.code ? 'true' : undefined}
+                        className={clsx(
+                            "px-1 py-1 no-underline transition-colors",
+                            locale === lang.code ? "text-ink font-medium" : "text-muted hover:text-forest"
                         )}
-                    </div>
-                ))}
-            </div>
+                    >
+                        {lang.label}
+                        <span className="sr-only"> {lang.name}</span>
+                    </Link>
+                    {index < LANGUAGES.length - 1 && <span className="text-line-strong" aria-hidden="true">·</span>}
+                </span>
+            ))}
         </div>
     );
 }

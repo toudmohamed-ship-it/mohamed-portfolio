@@ -1,28 +1,27 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
+const CLIENTS = ["duPont Registry", "Webloo", "FF Inventory", "FRMF"];
+
+// White strip that continues the hero's front wave. Names drift slowly; the copy is duplicated for a seamless loop.
 export default function TrustStrip() {
-    const t = useTranslations('HomePage.TrustStrip');
-
-    const companies = [
-        "duPont Registry",
-        "Webloo",
-        "FF Inventory",
-        "Landlord Safety Cert",
-        "FRMF",
-    ];
+    const t = useTranslations("HomePage.TrustStrip");
 
     return (
-        <section className="py-16 border-y border-border-subtle bg-transparent">
-            <div className="container-custom">
-                <p className="text-center text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-10">
-                    {t('label')}
-                </p>
-                <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
-                    {companies.map((company) => (
-                        <div key={company} className="text-xl md:text-3xl font-serif font-bold text-text-primary tracking-tight select-none cursor-default">
-                            {company}
-                        </div>
-                    ))}
+        <section data-tone="white" className="bg-white border-b border-line">
+            <div className="container-custom pt-2 pb-8 flex items-center gap-8">
+                <h2 className="shrink-0 m-0 text-sm font-normal text-muted tracking-normal">{t("label")}</h2>
+                <div className="flex-1 min-w-0 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+                    <ul className="marquee list-none m-0 p-0 gap-14">
+                        {[...CLIENTS, ...CLIENTS].map((name, i) => (
+                            <li
+                                key={i}
+                                aria-hidden={i >= CLIENTS.length ? true : undefined}
+                                className="font-semibold text-lg text-ink-soft whitespace-nowrap last:pe-14"
+                            >
+                                {name}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>

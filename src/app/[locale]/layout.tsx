@@ -1,35 +1,38 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, DM_Serif_Display, Cairo } from "next/font/google";
+import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { IS_INDEXABLE } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import CursorFollower from "@/components/ui/CursorFollower";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const inter = Inter({
-  variable: "--font-inter",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const dmSerif = DM_Serif_Display({
-  variable: "--font-dm-serif",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: "400",
+  display: "swap",
 });
 
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic"],
+  display: "swap",
 });
 
 // Helper type for params
@@ -86,8 +89,8 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
       description: descriptions[locale] || descriptions.en,
     },
     robots: {
-      index: true,
-      follow: true,
+      index: IS_INDEXABLE,
+      follow: IS_INDEXABLE,
     },
     verification: {
       google: "SGUSHuPBmaMkgTXn53ifmKreVw6C7d_TcwlOQYpjBq8",
@@ -118,7 +121,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${inter.variable} ${dmSerif.variable} ${cairo.variable} antialiased flex flex-col min-h-screen`}>
+      <head>
+        {/* Marks JS as available before first paint, so entrance animations never hide content without JS */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body className={`${geist.variable} ${geistMono.variable} ${cairo.variable} antialiased flex flex-col min-h-screen`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -154,22 +161,16 @@ export default async function LocaleLayout({
             gtag('config', 'G-9GBZG4HWN2');
           `}
         </Script>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
           <NextIntlClientProvider messages={messages} locale={locale}>
             <SchemaMarkup />
             <Navbar />
-            <main className="flex-grow pt-20">
+            <main className="flex-grow">
               {children}
             </main>
             <Footer />
             <WhatsAppButton />
+            <CursorFollower />
           </NextIntlClientProvider>
-        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,89 +1,57 @@
 import { Link } from "@/i18n/routing";
-import { NAV_LINKS, PERSONAL_INFO } from "@/lib/constants";
-import { Linkedin, Mail, Phone } from "lucide-react";
+import { PERSONAL_INFO } from "@/lib/constants";
+import { getTranslations } from "next-intl/server";
+import Logo from "./Logo";
 
-export default function Footer() {
+export default async function Footer() {
+    const t = await getTranslations("Footer");
+    const nav = await getTranslations("HomePage.nav");
+
+    const links = [
+        { href: "/portfolio", label: nav("work") },
+        { href: "/services", label: nav("services") },
+        { href: "/about", label: nav("about") },
+        { href: "/blog", label: nav("blog") },
+        { href: "/contact", label: nav("contact") },
+    ];
+
     return (
-        <footer className="bg-bg-primary border-t border-border-subtle py-24 md:py-32">
-            <div className="container-custom">
-                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-16 md:gap-12">
-                    {/* Brand */}
-                    <div className="space-y-6 lg:col-span-2">
-                        <h3 className="font-serif text-3xl font-bold text-text-primary tracking-tight group cursor-default">
-                            Mohamed <span className="text-brand-purple">Toudghi</span>
-                        </h3>
-                        <p className="text-text-secondary text-base leading-relaxed max-w-sm">
-                            High-performance SEO & Digital Marketing strategies that drive growth and maximize ROI for global brands.
-                        </p>
-
-                        {/* Social / Contact Icons Quick */}
-                        <div className="flex items-center gap-4 pt-4">
-                            {[
-                                { icon: Linkedin, href: PERSONAL_INFO.linkedin, label: "LinkedIn" },
-                                { icon: Mail, href: `mailto:${PERSONAL_INFO.email}`, label: "Email" },
-                                { icon: Phone, href: `https://wa.me/${PERSONAL_INFO.phone.replace(/[^0-9]/g, "")}`, label: "WhatsApp" }
-                            ].map((item, i) => (
-                                <a
-                                    key={i}
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-brand-purple hover:bg-brand-purple/5 transition-all duration-300"
-                                    aria-label={item.label}
-                                >
-                                    <item.icon size={18} />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Navigation */}
-                    <div>
-                        <h4 className="font-bold text-text-primary text-xs uppercase tracking-[0.2em] mb-8">Explore</h4>
-                        <ul className="space-y-4">
-                            {NAV_LINKS.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-text-secondary hover:text-brand-mint text-sm transition-colors block"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-
-
-                    {/* Legal */}
-                    <div>
-                        <h4 className="font-bold text-text-primary text-xs uppercase tracking-[0.2em] mb-8">Information</h4>
-                        <ul className="space-y-4">
-                            <li>
-                                <Link href="#" className="text-text-secondary hover:text-brand-mint text-sm transition-colors block">
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="text-text-secondary hover:text-brand-mint text-sm transition-colors block">
-                                    Terms of Use
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+        <footer className="border-t border-line bg-paper">
+            <div className="container-custom py-16 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+                <div className="flex flex-col gap-4 max-w-sm">
+                    <Link href="/" className="flex items-center gap-2.5 text-ink no-underline">
+                        <Logo className="h-9 w-9" />
+                        <span className="font-semibold">Mohamed Toudghi</span>
+                    </Link>
+                    <p className="text-muted text-[15px] m-0">{t("tagline")}</p>
                 </div>
 
-                <div className="mt-24 pt-12 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-text-secondary font-medium uppercase tracking-widest">
-                    <p>© 2025 Mohamed Toudghi. Built with precision.</p>
-                    <div className="flex items-center gap-8">
-                        <span className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-mint animate-pulse" />
-                            Open for projects
-                        </span>
-                        <span>Global Services</span>
-                    </div>
+                <div>
+                    <h2 className="text-sm font-semibold mb-4">{t("pages")}</h2>
+                    <ul className="list-none p-0 m-0 flex flex-col gap-2.5 text-[15px]">
+                        {links.map((link) => (
+                            <li key={link.href}>
+                                <Link href={link.href} className="navlink text-muted hover:text-ink no-underline">
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
+
+                <div>
+                    <h2 className="text-sm font-semibold mb-4">{t("contact")}</h2>
+                    <ul className="list-none p-0 m-0 flex flex-col gap-2.5 text-[15px]">
+                        <li><a href={`mailto:${PERSONAL_INFO.email}`} className="navlink text-muted hover:text-ink no-underline">{PERSONAL_INFO.email}</a></li>
+                        <li><a href={PERSONAL_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="navlink text-muted hover:text-ink no-underline">WhatsApp</a></li>
+                        <li><a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="navlink text-muted hover:text-ink no-underline">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div className="border-t border-line">
+                <p className="container-custom py-6 m-0 text-sm text-muted">
+                    © {new Date().getFullYear()} Mohamed Toudghi · {t("bottom")}
+                </p>
             </div>
         </footer>
     );
