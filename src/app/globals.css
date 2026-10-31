@@ -101,6 +101,7 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
 @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @keyframes ping { 0% { transform: scale(1); opacity: .45; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
 @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes drift-rtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
 
 /* Entrance motion only once JS has mounted (html.js), so content is never hidden from crawlers or no-JS visitors */
 .js .in { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
@@ -122,7 +123,8 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
 .breathe { position: relative; }
 .breathe::after { content: ""; position: absolute; inset: 0; border-radius: 999px; background: var(--color-forest); animation: ping 3s ease-out infinite; }
 .marquee { display: flex; width: max-content; animation: drift 40s linear infinite; }
-[dir="rtl"] .marquee { animation-direction: reverse; }
+/* In RTL the list starts at the right edge and overflows to the left, so it has to move right to loop */
+[dir="rtl"] .marquee { animation-name: drift-rtl; }
 
 /* Rotating word in the hero. The box is sized by the longest word (an invisible ::after, not real text),
    so swapping words never moves the rest of the headline (no layout shift). */
