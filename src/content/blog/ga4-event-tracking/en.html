@@ -1,0 +1,77 @@
+<p class="lead">GA4 event tracking records what visitors do on your site: a phone tap, a WhatsApp click, a form sent, a booking made. Pageviews tell you that someone arrived. Events tell you whether the visit turned into a lead. This guide shows how GA4 events work, which ones a service business should track, and how to set them up with Google Tag Manager without touching your site's code.</p>
+
+<h2>What is an event in GA4?</h2>
+<p>In Google Analytics 4, every interaction is an event. A page view is an event (<code>page_view</code>), a scroll is an event (<code>scroll</code>), and so is a form submission you define yourself. Universal Analytics, the old version, was built on sessions and pageviews, with events as an extra. GA4 turned that around: the event is the basic unit, and sessions and users are built from events.</p>
+<p>Each event has a <strong>name</strong> and optional <strong>parameters</strong>. The name says what happened (<code>generate_lead</code>). The parameters add detail (<code>form_name: "contact"</code>, <code>page_location</code>). Parameters are what let you answer questions like "which form brings the most leads" instead of only "how many leads".</p>
+
+<h2>The four types of GA4 events</h2>
+<p>GA4 events come from four sources. Knowing which is which saves you from building something GA4 already collects.</p>
+<figure class="fig">
+  <table>
+    <thead><tr><th>Type</th><th>Who creates it</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>Automatically collected</td><td>GA4, as soon as the tag is installed</td><td><code>first_visit</code>, <code>session_start</code>, <code>user_engagement</code></td></tr>
+      <tr><td>Enhanced measurement</td><td>GA4, switched on in the data stream settings</td><td><code>page_view</code>, <code>scroll</code>, <code>click</code> (outbound links), <code>file_download</code>, <code>view_search_results</code>, <code>form_start</code></td></tr>
+      <tr><td>Recommended</td><td>You, using names Google has defined</td><td><code>generate_lead</code>, <code>sign_up</code>, <code>login</code>, <code>purchase</code></td></tr>
+      <tr><td>Custom</td><td>You, with your own names</td><td><code>whatsapp_click</code>, <code>phone_click</code>, <code>booking_confirmed</code></td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 1: Where GA4 events come from. Use a recommended name when one fits before inventing a custom one.</figcaption>
+</figure>
+
+<h3>What is the first_visit event?</h3>
+<p><code>first_visit</code> is an automatically collected event. GA4 fires it the first time a browser or device visits your site. It is how GA4 counts new users. You cannot turn it off and you do not need to set it up. If a returning visitor clears their cookies or switches browser, GA4 sees a new device and fires <code>first_visit</code> again, so "new users" is always a little higher than the real number of new people.</p>
+
+<h2>Which events a service business should track</h2>
+<p>A law firm, a clinic, a B2B agency or a consultant does not sell in a checkout. The lead happens through a handful of actions. Track those, and only those, as your main events:</p>
+<figure class="fig">
+  <table>
+    <thead><tr><th>Action</th><th>Event name</th><th>Useful parameters</th><th>Mark as key event?</th></tr></thead>
+    <tbody>
+      <tr><td>Contact form sent successfully</td><td><code>generate_lead</code></td><td><code>form_name</code>, <code>page_location</code></td><td>Yes</td></tr>
+      <tr><td>Tap on a phone number</td><td><code>phone_click</code></td><td><code>link_url</code>, <code>page_location</code></td><td>Yes</td></tr>
+      <tr><td>Click on a WhatsApp link</td><td><code>whatsapp_click</code></td><td><code>link_url</code>, <code>page_location</code></td><td>Yes</td></tr>
+      <tr><td>Click on an email address</td><td><code>email_click</code></td><td><code>page_location</code></td><td>Usually</td></tr>
+      <tr><td>Booking confirmed (Calendly or similar)</td><td><code>booking_confirmed</code></td><td><code>booking_type</code></td><td>Yes</td></tr>
+      <tr><td>Download of a brochure or price list</td><td><code>file_download</code> (enhanced measurement)</td><td><code>file_name</code></td><td>No</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 2: A tracking plan for a service website. Write it down before opening Tag Manager.</figcaption>
+</figure>
+<p>A <strong>key event</strong> is an event you mark as important in GA4 (Admin, Data display, Events). Key events were called conversions until 2024. Mark the four or five actions that mean "this person wants to talk to us". If you mark scrolls and page views as key events too, the number stops meaning anything.</p>
+
+<h2>How to set up GA4 event tracking with Google Tag Manager</h2>
+<p>Google Tag Manager (GTM) lets you add and change tracking without editing the site each time. The setup has five steps.</p>
+<ol>
+  <li><strong>Install the Google tag.</strong> In GTM, create a Google tag with your GA4 measurement ID (it starts with <code>G-</code>) and fire it on all pages. This sends page views and the enhanced measurement events.</li>
+  <li><strong>Create the triggers.</strong> For phone, WhatsApp and email clicks, use a "Click: Just Links" trigger with a condition on the Click URL: it starts with <code>tel:</code>, contains <code>wa.me</code>, or starts with <code>mailto:</code>. Turn on the built-in Click variables first.</li>
+  <li><strong>Create the GA4 event tags.</strong> Add one "Google Analytics: GA4 Event" tag per action, with the event name from your plan and the parameters you need (for example <code>link_url</code> set to the Click URL variable).</li>
+  <li><strong>Track forms on success, not on click.</strong> The most reliable signal is a <code>dataLayer</code> push sent by the site after the form is accepted: <code>dataLayer.push({event: "generate_lead", form_name: "contact"})</code>. In GTM, a Custom Event trigger listens for it. If your developer cannot add that line, use the thank-you page view as the trigger instead.</li>
+  <li><strong>Test, then publish.</strong> Open GTM Preview mode, click every phone link, send a test form, and check that each tag fires once. Then open GA4 DebugView (Admin, Data display) and confirm the events arrive with their parameters. Publish the GTM container only after both checks pass.</li>
+</ol>
+<p>Events appear in the Realtime report within seconds, but standard reports can take 24 to 48 hours to fill in. Do not change the setup on day one because a report looks empty.</p>
+
+<h2>Make your parameters visible in reports</h2>
+<p>GA4 receives every parameter you send, but standard reports and Explorations only show a custom parameter once you register it as a <strong>custom dimension</strong> (Admin, Data display, Custom definitions). Register <code>form_name</code> and <code>booking_type</code>, for example, and you can split leads by form. Registration is not retroactive: data from before you registered the dimension will not show it, so do this on the day you launch the events.</p>
+
+<h2>Common GA4 event tracking mistakes</h2>
+<ul>
+  <li><strong>Counting form clicks instead of form submissions.</strong> A click on "Send" fires even when the form shows an error. Your lead count goes up while your inbox stays empty.</li>
+  <li><strong>Double counting.</strong> Enhanced measurement can already send <code>form_submit</code>. If you also send your own event for the same form, you count every lead twice. Pick one and turn the other off.</li>
+  <li><strong>Inconsistent names.</strong> <code>Phone_Click</code>, <code>phone-click</code> and <code>phoneClick</code> are three different events in GA4. Use lowercase with underscores, and keep the names in your written plan.</li>
+  <li><strong>Personal data in parameters.</strong> Never send names, email addresses or phone numbers the visitor typed. Google's terms do not allow it, and it puts the property at risk of deletion.</li>
+  <li><strong>No consent setup in regions that need it.</strong> In the EU and UK, set up consent mode with your cookie banner, or a large part of your traffic will be missing or tracked without permission.</li>
+  <li><strong>Too many key events.</strong> If everything is a key event, nothing is. Keep the list to actions that start a sales conversation.</li>
+</ul>
+
+<h2>Reading the results</h2>
+<p>Once events flow, three reports answer most questions for a service business:</p>
+<ul>
+  <li><strong>Traffic acquisition</strong> (Reports, Acquisition), with key events as the metric: which channels bring leads, not just visits. A channel that brings few visits but many leads is the one to invest in.</li>
+  <li><strong>Pages and screens</strong>, with key events added: which service pages turn visitors into calls, and which ones need work.</li>
+  <li><strong>Funnel exploration</strong> (Explore): for example service page, then contact page, then <code>generate_lead</code>. The step with the biggest drop is the one to fix first.</li>
+</ul>
+<p>If the numbers will be read by someone who never opens GA4, connect the property to Looker Studio and build one page with leads per channel and per page. A report people read every month is worth more than a perfect setup nobody looks at.</p>
+
+<h2>Summary</h2>
+<p>Write a short tracking plan, track the four or five actions that create leads, send forms on success, register your parameters as custom dimensions, and test in Preview mode and DebugView before publishing. That is enough to know which pages and channels bring clients, which is the question GA4 should answer for a service business.</p>

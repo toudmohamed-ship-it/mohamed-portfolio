@@ -356,16 +356,16 @@
         "law-firm-local-seo": {
             "client": "Cabinet d'Avocats (USA)",
             "title": "SEO Local & Optimisation pour un Cabinet d'Avocats",
-            "summary": "Optimisation des pages de services, renforcement des signaux SEO locaux et amélioration de la structure du site.",
+            "summary": "SEO local pour un cabinet d'avocats américain : pages par domaine de pratique, contenu local et citations. Résultat : 30 % de demandes qualifiées en plus.",
             "tags": "SEO Local • SEO On-Page • Optimisation Web",
-            "challenge": "Le cabinet devait établir son autorité dans un domaine juridique précis mais avait une structure de site décousue et des signaux locaux faibles.",
-            "approach": "Restructuration du site pour créer des silos par domaine de pratique. Optimisation du contenu pour l'intention locale et création de citations de haute qualité.",
+            "challenge": "Le cabinet voulait se positionner sur un domaine juridique précis dans son marché local, mais la structure du site était décousue et les signaux locaux faibles.",
+            "approach": "J'ai restructuré le site en sections claires par domaine de pratique. J'ai optimisé le contenu pour les recherches locales (ville plus domaine de pratique) et créé des citations locales de qualité.",
             "results": {
                 "0": "Génération de 30% de leads qualifiés en plus via la recherche locale",
                 "1": "Classements en première page pour 'Ville + Domaine'",
                 "2": "Amélioration de l'autorité de domaine et des signaux de confiance"
             },
-            "seo_title": "Étude de cas SEO local : cabinet d'avocats aux États-Unis",
+            "seo_title": "SEO pour avocats : étude de cas aux États-Unis",
             "market": "États-Unis"
         },
         "moroccan-b2b-seo": {
@@ -729,8 +729,8 @@
             "content": "Les sites Web échouent souvent à se classer non pas à cause d'une seule erreur, mais en raison d'un décalage entre le contenu et l'intention de recherche. Si votre page cible un mot-clé à fort volume mais ne répond pas à la requête spécifique de l'utilisateur, Google privilégiera des concurrents plus pertinents. De plus, l'autorité se construit grâce à des backlinks de qualité et des structures de liens internes cohérentes. Assurez-vous que votre site est techniquement sain, mais n'oubliez jamais que l'expérience utilisateur et un contenu de haute qualité sont les moteurs ultimes du succès de la recherche."
         },
         "ga4-event-tracking": {
-            "title": "Guide du Débutant pour le Suivi des Événements GA4",
-            "excerpt": "Arrêtez de compter sur les pages vues. Apprenez à suivre ce qui compte : clics, défilements et conversions.",
+            "title": "Événements GA4 : guide pour sites de services",
+            "excerpt": "Comment fonctionnent les événements GA4, lesquels suivre (formulaires, appels, WhatsApp) et comment les configurer avec Google Tag Manager.",
             "date": "28 Nov 2025",
             "category": "Analytique",
             "content": "Google Analytics 4 (GA4) marque un changement majeur du suivi basé sur les sessions vers un suivi basé sur les événements. Pour tirer le meilleur parti de vos données, vous devez aller au-delà des simples métriques de pages vues. Commencez par définir vos événements de conversion clés, tels que les soumissions de formulaires ou les clics sur les boutons. Utilisez Google Tag Manager pour implémenter ces événements sans modifier directement le code. En visualisant votre entonnoir de conversion dans GA4 Explorations, vous pouvez identifier précisément où les utilisateurs décrochent et optimiser votre site pour de meilleures performances."
@@ -745,10 +745,10 @@
     },
     "ContactPage": {
         "metadata": {
-            "title": "Contact : appel SEO gratuit de 15 minutes",
-            "description": "Envoyez un message ou réservez un appel gratuit de 15 minutes sur le SEO de votre site. Réponse sous 24 heures, en français, anglais ou arabe.",
-            "og_title": "Contacter Mohamed Toudghi | Appel gratuit de 15 minutes",
-            "og_description": "Réservez un appel gratuit de 15 minutes sur le SEO de votre site. Réponse sous 24 heures."
+            "title": "Consultant SEO : appel gratuit de 15 minutes",
+            "description": "Faites appel à un consultant SEO pour un audit technique, le SEO local ou le suivi GA4. Appel gratuit de 15 minutes. Réponse sous 24 heures.",
+            "og_title": "Consultant SEO | Mohamed Toudghi",
+            "og_description": "Audit SEO technique, SEO local et suivi GA4. Réservez un appel gratuit de 15 minutes. Réponse sous 24 heures."
         },
         "header": {
             "eyebrow": "Contact",

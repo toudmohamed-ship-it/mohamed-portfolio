@@ -356,16 +356,16 @@
         "law-firm-local-seo": {
             "client": "U.S.-Based Law Firm",
             "title": "Local SEO & Website Optimization for a U.S.-Based Law Firm",
-            "summary": "Optimized service pages, strengthened local SEO signals, and improved website structure for legal services.",
+            "summary": "Local SEO for a U.S. law firm: practice area pages, on-page content for local searches and citations. Result: 30% more qualified leads from local search.",
             "tags": "Local SEO • On-Page SEO • Website Optimization",
-            "challenge": "The firm needed to establish authority in a specific practice area but had a disjointed site structure and weak local signals.",
-            "approach": "Restructured the website to create clear practice area silos. Optimized on-page content for local intent and built high-quality local citations.",
+            "challenge": "The firm wanted to rank for a specific practice area in its local market, but the site structure was disjointed and its local signals were weak.",
+            "approach": "I restructured the site into clear practice area sections. I optimized the on-page content for local searches (city plus practice area) and built quality local citations.",
             "results": {
                 "0": "Generated 30% more qualified leads from local search",
                 "1": "Achieved first-page rankings for 'City + Practice Area' keywords",
                 "2": "Improved domain authority and local trust signals"
             },
-            "seo_title": "Local SEO Case Study: U.S. Law Firm",
+            "seo_title": "Law Firm SEO Case Study: Local SEO in the U.S.",
             "market": "United States"
         },
         "moroccan-b2b-seo": {
@@ -729,8 +729,8 @@
             "content": "Websites often fail to rank not because of a single error, but due to a misalignment between content and search intent. If your page targets a high-volume keyword but doesn't answer the user's specific query, Google will prioritize more relevant competitors. Furthermore, authority is built through consistent, quality backlinks and internal linking structures that demonstrate topical expertise. Ensure your site is technically sound, but never forget that user experience and high-quality, helpful content are the ultimate drivers of search success."
         },
         "ga4-event-tracking": {
-            "title": "A Beginner's Guide to GA4 Event Tracking",
-            "excerpt": "Stop relying on pageviews. Learn how to track what matters: clicks, scrolls, and conversions.",
+            "title": "GA4 Event Tracking for Service Websites",
+            "excerpt": "How GA4 events work, which ones a service business should track (forms, calls, WhatsApp) and how to set them up with Google Tag Manager.",
             "date": "Nov 28, 2025",
             "category": "Analytics",
             "content": "Google Analytics 4 (GA4) marks a major shift from session-based to event-based tracking. To get the most out of your data, you must move beyond simple pageview metrics. Start by defining your core conversion events, such as form submissions, button clicks, or video views. Use Google Tag Manager to implement these events without modifying code directly. By visualizing your conversion funnel in GA4 Explorations, you can identify precisely where users are dropping off and optimize your site for better performance."
@@ -745,10 +745,10 @@
     },
     "ContactPage": {
         "metadata": {
-            "title": "Contact: Book a Free 15-Minute SEO Call",
-            "description": "Send a message or book a free 15-minute call about your website's SEO. Reply within 24 hours, in English, French or Arabic.",
-            "og_title": "Contact Mohamed Toudghi | Free 15-Minute Call",
-            "og_description": "Book a free 15-minute call about your website's SEO. Reply within 24 hours."
+            "title": "Hire an SEO Consultant: Free 15-Minute Call",
+            "description": "Hire an SEO consultant for a technical audit, local SEO or GA4 tracking. Book a free 15-minute call. Reply within 24 hours, in English, French or Arabic.",
+            "og_title": "Hire an SEO Consultant | Mohamed Toudghi",
+            "og_description": "Technical SEO audits, local SEO and GA4 tracking. Book a free 15-minute call. Reply within 24 hours."
         },
         "header": {
             "eyebrow": "Contact",

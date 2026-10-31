@@ -1,0 +1,77 @@
+<p class="lead">Le suivi des événements GA4 enregistre ce que font les visiteurs sur votre site : un appel lancé depuis le téléphone, un clic sur WhatsApp, un formulaire envoyé, un rendez-vous réservé. Les pages vues indiquent qu'une personne est arrivée. Les événements indiquent si la visite est devenue une demande de contact. Ce guide explique comment fonctionnent les événements GA4, lesquels suivre pour une entreprise de services, et comment les configurer avec Google Tag Manager sans toucher au code du site.</p>
+
+<h2>Qu'est-ce qu'un événement dans GA4 ?</h2>
+<p>Dans Google Analytics 4, chaque interaction est un événement. Une page vue est un événement (<code>page_view</code>), un défilement est un événement (<code>scroll</code>), tout comme un envoi de formulaire que vous définissez vous-même. Universal Analytics, l'ancienne version, reposait sur les sessions et les pages vues, avec les événements en complément. GA4 a inversé la logique : l'événement est l'unité de base, et les sessions et utilisateurs sont calculés à partir des événements.</p>
+<p>Chaque événement a un <strong>nom</strong> et des <strong>paramètres</strong> facultatifs. Le nom dit ce qui s'est passé (<code>generate_lead</code>). Les paramètres ajoutent du détail (<code>form_name: "contact"</code>, <code>page_location</code>). Ce sont les paramètres qui permettent de savoir quel formulaire apporte le plus de demandes, et pas seulement combien de demandes vous recevez.</p>
+
+<h2>Les quatre types d'événements GA4</h2>
+<p>Les événements GA4 ont quatre origines. Les distinguer évite de reconstruire ce que GA4 collecte déjà.</p>
+<figure class="fig">
+  <table>
+    <thead><tr><th>Type</th><th>Qui le crée</th><th>Exemples</th></tr></thead>
+    <tbody>
+      <tr><td>Collecté automatiquement</td><td>GA4, dès l'installation de la balise</td><td><code>first_visit</code>, <code>session_start</code>, <code>user_engagement</code></td></tr>
+      <tr><td>Mesures améliorées</td><td>GA4, activé dans les paramètres du flux de données</td><td><code>page_view</code>, <code>scroll</code>, <code>click</code> (liens sortants), <code>file_download</code>, <code>view_search_results</code>, <code>form_start</code></td></tr>
+      <tr><td>Recommandé</td><td>Vous, avec des noms définis par Google</td><td><code>generate_lead</code>, <code>sign_up</code>, <code>login</code>, <code>purchase</code></td></tr>
+      <tr><td>Personnalisé</td><td>Vous, avec vos propres noms</td><td><code>whatsapp_click</code>, <code>phone_click</code>, <code>booking_confirmed</code></td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 1 : l'origine des événements GA4. Utilisez un nom recommandé quand il existe avant d'en inventer un.</figcaption>
+</figure>
+
+<h3>Qu'est-ce que l'événement first_visit ?</h3>
+<p><code>first_visit</code> est un événement collecté automatiquement. GA4 le déclenche la première fois qu'un navigateur ou un appareil visite votre site. C'est ainsi que GA4 compte les nouveaux utilisateurs. Vous ne pouvez pas le désactiver et vous n'avez rien à configurer. Si un visiteur efface ses cookies ou change de navigateur, GA4 voit un nouvel appareil et déclenche à nouveau <code>first_visit</code> : le nombre de nouveaux utilisateurs est donc toujours un peu supérieur au nombre réel de nouvelles personnes.</p>
+
+<h2>Les événements à suivre pour une entreprise de services</h2>
+<p>Un cabinet d'avocats, une clinique, une agence B2B ou un consultant ne vend pas via un panier. La demande passe par quelques actions précises. Suivez celles-là, et seulement celles-là, comme événements principaux :</p>
+<figure class="fig">
+  <table>
+    <thead><tr><th>Action</th><th>Nom de l'événement</th><th>Paramètres utiles</th><th>Événement clé ?</th></tr></thead>
+    <tbody>
+      <tr><td>Formulaire de contact envoyé avec succès</td><td><code>generate_lead</code></td><td><code>form_name</code>, <code>page_location</code></td><td>Oui</td></tr>
+      <tr><td>Clic sur un numéro de téléphone</td><td><code>phone_click</code></td><td><code>link_url</code>, <code>page_location</code></td><td>Oui</td></tr>
+      <tr><td>Clic sur un lien WhatsApp</td><td><code>whatsapp_click</code></td><td><code>link_url</code>, <code>page_location</code></td><td>Oui</td></tr>
+      <tr><td>Clic sur une adresse e-mail</td><td><code>email_click</code></td><td><code>page_location</code></td><td>Souvent</td></tr>
+      <tr><td>Rendez-vous confirmé (Calendly ou autre)</td><td><code>booking_confirmed</code></td><td><code>booking_type</code></td><td>Oui</td></tr>
+      <tr><td>Téléchargement d'une brochure ou d'une grille tarifaire</td><td><code>file_download</code> (mesures améliorées)</td><td><code>file_name</code></td><td>Non</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 2 : un plan de marquage pour un site de services. Écrivez-le avant d'ouvrir Tag Manager.</figcaption>
+</figure>
+<p>Un <strong>événement clé</strong> est un événement que vous marquez comme important dans GA4 (Administration, Affichage des données, Événements). Les événements clés s'appelaient conversions jusqu'en 2024. Marquez les quatre ou cinq actions qui signifient « cette personne veut nous parler ». Si les défilements et les pages vues deviennent aussi des événements clés, le chiffre ne veut plus rien dire.</p>
+
+<h2>Configurer le suivi des événements GA4 avec Google Tag Manager</h2>
+<p>Google Tag Manager (GTM) permet d'ajouter et de modifier le suivi sans retoucher le site à chaque fois. La configuration se fait en cinq étapes.</p>
+<ol>
+  <li><strong>Installer la balise Google.</strong> Dans GTM, créez une balise Google avec votre ID de mesure GA4 (il commence par <code>G-</code>) et déclenchez-la sur toutes les pages. Elle envoie les pages vues et les événements des mesures améliorées.</li>
+  <li><strong>Créer les déclencheurs.</strong> Pour les clics sur téléphone, WhatsApp et e-mail, utilisez un déclencheur « Clic : liens uniquement » avec une condition sur Click URL : commence par <code>tel:</code>, contient <code>wa.me</code>, ou commence par <code>mailto:</code>. Activez d'abord les variables intégrées de clic.</li>
+  <li><strong>Créer les balises d'événement GA4.</strong> Ajoutez une balise « Google Analytics : événement GA4 » par action, avec le nom d'événement de votre plan et les paramètres nécessaires (par exemple <code>link_url</code> égal à la variable Click URL).</li>
+  <li><strong>Suivre les formulaires à la réussite, pas au clic.</strong> Le signal le plus fiable est un envoi <code>dataLayer</code> fait par le site une fois le formulaire accepté : <code>dataLayer.push({event: "generate_lead", form_name: "contact"})</code>. Dans GTM, un déclencheur « Événement personnalisé » l'écoute. Si votre développeur ne peut pas ajouter cette ligne, utilisez la page de remerciement comme déclencheur.</li>
+  <li><strong>Tester, puis publier.</strong> Ouvrez le mode Aperçu de GTM, cliquez sur chaque lien téléphone, envoyez un formulaire de test et vérifiez que chaque balise se déclenche une seule fois. Ouvrez ensuite DebugView dans GA4 (Administration, Affichage des données) et confirmez que les événements arrivent avec leurs paramètres. Ne publiez le conteneur GTM qu'après ces deux vérifications.</li>
+</ol>
+<p>Les événements apparaissent dans le rapport Temps réel en quelques secondes, mais les rapports standards peuvent mettre 24 à 48 heures à se remplir. Ne modifiez pas la configuration le premier jour parce qu'un rapport semble vide.</p>
+
+<h2>Rendre vos paramètres visibles dans les rapports</h2>
+<p>GA4 reçoit tous les paramètres envoyés, mais les rapports standards et les Explorations n'affichent un paramètre personnalisé qu'une fois enregistré comme <strong>dimension personnalisée</strong> (Administration, Affichage des données, Définitions personnalisées). Enregistrez par exemple <code>form_name</code> et <code>booking_type</code>, et vous pourrez répartir les demandes par formulaire. L'enregistrement n'est pas rétroactif : les données antérieures n'auront pas la dimension, alors faites-le le jour du lancement des événements.</p>
+
+<h2>Les erreurs fréquentes dans le suivi des événements GA4</h2>
+<ul>
+  <li><strong>Compter les clics sur le formulaire au lieu des envois.</strong> Un clic sur « Envoyer » se déclenche même quand le formulaire affiche une erreur. Le nombre de demandes monte, la boîte de réception reste vide.</li>
+  <li><strong>Le double comptage.</strong> Les mesures améliorées peuvent déjà envoyer <code>form_submit</code>. Si vous envoyez aussi votre propre événement pour le même formulaire, chaque demande compte deux fois. Choisissez l'un et désactivez l'autre.</li>
+  <li><strong>Des noms incohérents.</strong> <code>Phone_Click</code>, <code>phone-click</code> et <code>phoneClick</code> sont trois événements différents dans GA4. Utilisez des minuscules avec des tirets bas, et gardez les noms dans votre plan écrit.</li>
+  <li><strong>Des données personnelles dans les paramètres.</strong> N'envoyez jamais un nom, une adresse e-mail ou un numéro saisi par le visiteur. Les conditions de Google l'interdisent et la propriété risque d'être supprimée.</li>
+  <li><strong>Pas de gestion du consentement là où elle est obligatoire.</strong> Dans l'UE et au Royaume-Uni, configurez le mode Consentement avec votre bannière de cookies, sinon une grande partie du trafic manquera ou sera suivie sans autorisation.</li>
+  <li><strong>Trop d'événements clés.</strong> Si tout est un événement clé, plus rien ne l'est. Gardez seulement les actions qui ouvrent une conversation commerciale.</li>
+</ul>
+
+<h2>Lire les résultats</h2>
+<p>Une fois les événements en place, trois rapports répondent à la plupart des questions d'une entreprise de services :</p>
+<ul>
+  <li><strong>Acquisition de trafic</strong> (Rapports, Acquisition), avec les événements clés comme métrique : quels canaux apportent des demandes, pas seulement des visites. Un canal qui apporte peu de visites mais beaucoup de demandes est celui où investir.</li>
+  <li><strong>Pages et écrans</strong>, avec les événements clés ajoutés : quelles pages de services transforment les visiteurs en appels, et lesquelles sont à retravailler.</li>
+  <li><strong>Exploration de l'entonnoir</strong> (Explorer) : par exemple page de service, puis page de contact, puis <code>generate_lead</code>. L'étape où l'on perd le plus de monde est celle à corriger en premier.</li>
+</ul>
+<p>Si les chiffres sont lus par quelqu'un qui n'ouvre jamais GA4, reliez la propriété à Looker Studio et créez une page avec les demandes par canal et par page. Un rapport lu chaque mois vaut plus qu'une configuration parfaite que personne ne regarde.</p>
+
+<h2>En résumé</h2>
+<p>Rédigez un court plan de marquage, suivez les quatre ou cinq actions qui créent des demandes, comptez les formulaires à la réussite, enregistrez vos paramètres comme dimensions personnalisées, et testez dans le mode Aperçu et DebugView avant de publier. Cela suffit pour savoir quelles pages et quels canaux amènent des clients, la question à laquelle GA4 doit répondre pour une entreprise de services.</p>

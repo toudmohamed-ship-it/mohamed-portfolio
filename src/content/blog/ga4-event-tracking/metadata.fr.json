@@ -1,0 +1,24 @@
+{
+    "faqs": [
+        {
+            "question": "Quelle différence entre un événement et un événement clé dans GA4 ?",
+            "answer": "Chaque interaction enregistrée par GA4 est un événement. Un <strong>événement clé</strong> est un événement que vous marquez comme important, comme un formulaire envoyé ou un appel. Les événements clés s'appelaient conversions jusqu'en 2024."
+        },
+        {
+            "question": "Qu'est-ce que l'événement first_visit dans GA4 ?",
+            "answer": "<strong>first_visit</strong> est collecté automatiquement la première fois qu'un navigateur ou un appareil visite votre site. GA4 s'en sert pour compter les nouveaux utilisateurs. Rien à configurer."
+        },
+        {
+            "question": "Faut-il Google Tag Manager pour suivre les événements GA4 ?",
+            "answer": "Non, mais c'est beaucoup plus simple. Les mesures améliorées fonctionnent sans. Pour le téléphone, WhatsApp et les formulaires, Tag Manager permet d'ajouter et de modifier les événements sans retoucher le site."
+        },
+        {
+            "question": "Pourquoi mes paramètres personnalisés n'apparaissent pas dans les rapports GA4 ?",
+            "answer": "Un paramètre personnalisé n'apparaît qu'après son enregistrement comme <strong>dimension personnalisée</strong> (Administration, Affichage des données, Définitions personnalisées). L'enregistrement n'est pas rétroactif."
+        },
+        {
+            "question": "Combien de temps pour voir les événements GA4 ?",
+            "answer": "Les événements apparaissent dans le rapport Temps réel et DebugView en quelques secondes. Les rapports standards peuvent prendre <strong>24 à 48 heures</strong>."
+        }
+    ]
+}

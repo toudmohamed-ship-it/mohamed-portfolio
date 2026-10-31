@@ -1,0 +1,25 @@
+{
+    "faqs": [
+        {
+            "question": "What is the difference between an event and a key event in GA4?",
+            "answer": "Every interaction GA4 records is an event. A <strong>key event</strong> is an event you mark as important, such as a form sent or a phone tap. Key events were called conversions until 2024."
+        },
+        {
+            "question": "What is the first_visit event in GA4?",
+            "answer": "<strong>first_visit</strong> is collected automatically the first time a browser or device visits your site. GA4 uses it to count new users. You do not need to set it up."
+        },
+        {
+            "question": "Do I need Google Tag Manager to track events in GA4?",
+            "answer": "No, but it makes it much easier. Enhanced measurement works without it. For phone, WhatsApp and form tracking, Tag Manager lets you add and change events without editing the site each time."
+        },
+        {
+            "question": "Why do my custom parameters not show in GA4 reports?",
+            "answer": "A custom parameter only appears in reports after you register it as a <strong>custom dimension</strong> (Admin, Data display, Custom definitions). Registration is not retroactive."
+        },
+        {
+            "question": "How long do GA4 events take to appear?",
+            "answer": "Events show in the Realtime report and DebugView within seconds. Standard reports can take <strong>24 to 48 hours</strong> to fill in."
+        }
+    ],
+    "relatedSlugs": ["technical-seo-checklist-2026", "local-seo-guide-businesses"]
+}

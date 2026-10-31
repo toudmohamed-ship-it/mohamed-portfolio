@@ -28,7 +28,7 @@ Mohamed Toudghi, SEO consultant (home)                      core
     ├── Local SEO cluster      → links to Local SEO
     │   └── local-seo-guide-businesses             (1,200 words)
     ├── Analytics cluster      → links to GA4 & tracking
-    │   └── ga4-event-tracking                     (thin, 270 words)
+    │   └── ga4-event-tracking                     (1,200 words, rewritten Oct 2026)
     └── Keyword research       → links to the services hub
         └── keyword-research-process               (thin, 260 words)
 ```
@@ -60,7 +60,7 @@ Structured data per page: `Service` with `provider` → the Person, `about` (mai
 | 2 | No entity graph: Person had a job title and LinkedIn only; pages did not reference each other | **Fixed:** one `@graph` with Person (alumniOf AUI, knowsLanguage, knowsAbout with Wikipedia links), WebSite and ProfessionalService; services and case studies point to the Person by `@id` |
 | 3 | ProfessionalService claimed opening hours and a "$$" price range not in the facts | **Fixed:** removed |
 | 4 | Articles did not link to the service they support | **Fixed:** service box under each article in the three main clusters |
-| 5 | Three articles are thin (260 to 280 words): `ga4-event-tracking`, `keyword-research-process`, `why-websites-fail` | **To do:** expand to 1,200+ words each, with the same outline as the service pages (definition, steps, tools, mistakes, FAQ) |
+| 5 | Three articles were thin (260 to 280 words): `ga4-event-tracking`, `keyword-research-process`, `why-websites-fail` | **Partly fixed:** `ga4-event-tracking` rewritten (1,200 words, EN/FR/AR, FAQ). **To do:** expand the other two to 1,200+ words each, with the same outline as the service pages (definition, steps, tools, mistakes, FAQ) |
 | 6 | Articles have no `BlogPosting` schema | **Blocked:** the dates in `src/lib/blog-data.ts` and in the article text disagree (e.g. Nov 28, 2024 vs Nov 28, 2025). Needs the correct dates from Mohamed |
 | 7 | Some French and Arabic articles fall back to a short translation (no fr/ar HTML file) | **To do:** translate `technical-seo-audit-checklist-lead-gen` into FR and AR |
 | 8 | `local-seo-guide-businesses` has its own FAQ section in the HTML and a second FAQ block from metadata | **To do:** keep one |
