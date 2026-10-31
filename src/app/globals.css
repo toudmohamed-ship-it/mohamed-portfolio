@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Fonts: one calm sans for everything (Cairo for Arabic), a mono for small data labels */
-  --font-sans: var(--font-geist), var(--font-cairo), system-ui, sans-serif;
-  --font-serif: var(--font-geist), var(--font-cairo), system-ui, sans-serif;
+  /* Fonts: one calm sans for everything (system Arabic font on /ar), a mono for small data labels */
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  --font-serif: var(--font-geist), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
   /* Calm palette */
@@ -51,8 +51,9 @@
     letter-spacing: -0.02em;
   }
 
+  /* Arabic uses the device's own Arabic UI font (no download). Cairo cost about 10 Lighthouse points on /ar. */
   html[lang="ar"] body {
-    font-family: var(--font-cairo), var(--font-geist), system-ui, sans-serif;
+    font-family: var(--font-geist), system-ui, -apple-system, "Segoe UI", "Noto Sans Arabic", Tahoma, sans-serif;
   }
 
   :focus-visible {

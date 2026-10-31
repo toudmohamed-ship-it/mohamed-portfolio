@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Analytics from "@/components/seo/Analytics";
-import { Geist, Geist_Mono, Cairo } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -28,13 +28,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
   preload: false, // small labels only; not worth competing with the main font
-});
-
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic"],
-  display: "swap",
-  // Preloaded on every page (about 30 KB): without it the Arabic homepage scored 75 instead of 90+
 });
 
 // Helper type for params
@@ -130,7 +123,7 @@ export default async function LocaleLayout({
         {/* Marks JS as available before first paint, so entrance animations never hide content without JS */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
-      <body className={`${geist.variable} ${geistMono.variable} ${cairo.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${geist.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
         {/* GA4 loads after the first interaction (see Analytics). The GTM container (GTM-53XVQ2J6) was empty,
             so it was removed; add it back here if tags are ever configured in it. */}
         <Analytics />
