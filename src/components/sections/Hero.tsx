@@ -88,7 +88,7 @@ export default function Hero() {
             <div className="hero-glow" aria-hidden="true" />
             <div className="hero-spot" aria-hidden="true" />
 
-            <div className="container-custom relative z-[1] pt-20 md:pt-24 pb-[230px] flex flex-wrap items-center gap-16">
+            <div className="container-custom relative z-[1] pt-12 md:pt-16 pb-[150px] lg:pb-[110px] flex flex-wrap items-center gap-16">
                 <div className="flex-[1_1_520px] min-w-0 flex flex-col gap-6">
                     <p className="in d1 m-0 font-mono text-[13px] text-forest tracking-wide">{t("eyebrow")}</p>
                     <h1 className="hero-title m-0 text-[34px] sm:text-5xl lg:text-[60px] leading-[1.1] lg:leading-[1.07] font-semibold tracking-[-0.03em]">
