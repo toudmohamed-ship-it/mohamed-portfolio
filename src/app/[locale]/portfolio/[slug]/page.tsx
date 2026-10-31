@@ -7,6 +7,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import PageHeader from "@/components/ui/PageHeader";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { BASE_URL, localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
+import { serviceHref } from "@/lib/services";
 
 interface Props {
     params: Promise<{
@@ -226,7 +227,7 @@ export default async function CaseStudyPage({ params }: Props) {
                             <ul className="list-none m-0 p-0 flex flex-col gap-2">
                                 {study.services.map((s) => (
                                     <li key={s}>
-                                        <Link href={`/services#${s}`} className="btn font-medium no-underline text-[15px]">
+                                        <Link href={serviceHref(s)} className="btn font-medium no-underline text-[15px]">
                                             {tServices(`${s}.title`)} <span className="arrow" aria-hidden="true">→</span>
                                         </Link>
                                     </li>

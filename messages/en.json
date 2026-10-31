@@ -826,5 +826,162 @@
         ],
         "contact_title": "Questions or requests",
         "contact_body": "To ask what data I hold about you or to have it deleted, email"
+    },
+    "ServicePages": {
+        "ui": {
+            "for_who_title": "Is this for you?",
+            "included_title": "What you get",
+            "how_title": "How it works",
+            "proof_title": "Results from similar projects",
+            "faq_title": "Questions and answers",
+            "related_title": "Read more",
+            "cta_primary": "Book a free 15-min call",
+            "cta_secondary": "See all services",
+            "starts_with": "Every project starts with a free 15-minute call.",
+            "view_case": "Read the case study",
+            "learn_more": "Learn more"
+        },
+        "technical-seo-audit": {
+            "meta_title": "Technical SEO Audit for Service Businesses and SaaS",
+            "meta_description": "A full technical SEO audit: crawl, indexing, canonicals, Core Web Vitals and structured data, with a prioritized list of fixes. English, French or Arabic.",
+            "eyebrow": "Service · Technical SEO",
+            "title": "Technical SEO audit for service businesses and SaaS",
+            "lead": "I crawl your whole site, find what stops Google from crawling, indexing and showing your pages, and give you a clear list of fixes ranked by impact.",
+            "for_who": [
+                "Your pages do not show up in Google, or show up and then disappear.",
+                "Search Console lists pages as “Crawled, currently not indexed” or “Duplicate”.",
+                "Your site is slow on mobile or fails Core Web Vitals.",
+                "You redesigned or moved the site and traffic dropped.",
+                "You want an expert check before you spend more on content or ads."
+            ],
+            "steps": [
+                {
+                    "title": "Crawl and data",
+                    "desc": "I crawl the site with Screaming Frog and read your Search Console and analytics data."
+                },
+                {
+                    "title": "Prioritized findings",
+                    "desc": "Every issue is explained in plain language and ranked by its impact on traffic and leads."
+                },
+                {
+                    "title": "Fixes",
+                    "desc": "I fix the issues myself or hand them to your developer with clear instructions, then check the results in Search Console."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "What does a technical SEO audit check?",
+                    "answer": "Everything that affects how Google crawls, indexes and ranks your pages: crawl errors and broken links, indexing and canonical tags, redirects, site structure and internal links, page speed and Core Web Vitals, mobile usability and structured data."
+                },
+                {
+                    "question": "Do you only report the problems, or also fix them?",
+                    "answer": "Both are possible. I can fix the issues myself, especially on WordPress, or hand a clear list to your developer and check the work afterwards."
+                },
+                {
+                    "question": "Which platforms do you work with?",
+                    "answer": "I work a lot with WordPress and Shopify. The audit itself works on any website that Google can crawl."
+                },
+                {
+                    "question": "What do you need from me?",
+                    "answer": "Access to Google Search Console and, if you have it, Google Analytics. Admin access to the site is only needed if I make the fixes myself."
+                },
+                {
+                    "question": "Can we work in French or Arabic?",
+                    "answer": "Yes. I work in English, French and Arabic, so we can talk in the language you prefer."
+                }
+            ]
+        },
+        "local-seo": {
+            "meta_title": "Local SEO Services for Service Businesses",
+            "meta_description": "Local SEO for law firms, clinics and local services: Google Business Profile, city and service pages, citations and reviews. In English, French or Arabic.",
+            "eyebrow": "Service · Local SEO",
+            "title": "Local SEO for service businesses",
+            "lead": "Show up when people nearby search for what you offer, in the Google map results and the local listings, and turn those searches into calls.",
+            "for_who": [
+                "You do not appear in the map results for your main service in your city.",
+                "Competitors with fewer reviews rank above you.",
+                "Your business name, address or phone number differ from one directory to another.",
+                "You serve several cities but have one generic service page.",
+                "Calls and bookings from Google have slowed down."
+            ],
+            "steps": [
+                {
+                    "title": "Local audit",
+                    "desc": "I check your Google Business Profile, your local rankings and how your name, address and phone appear online."
+                },
+                {
+                    "title": "Fix the foundations",
+                    "desc": "Profile, categories, a useful page for each city and service, and consistent citations."
+                },
+                {
+                    "title": "Grow and measure",
+                    "desc": "A plan for reviews and local links, with calls and leads from Google tracked."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "What is local SEO?",
+                    "answer": "Local SEO helps your business appear when people search for a service near them, for example “family lawyer Rabat” or “dentist near me”. It covers your Google Business Profile, your website’s local pages, citations and reviews."
+                },
+                {
+                    "question": "How is local SEO different from normal SEO?",
+                    "answer": "Normal SEO competes for broad searches. Local SEO focuses on searches with a location, where the map results and your Google Business Profile matter as much as your website."
+                },
+                {
+                    "question": "Can you help if I serve several cities?",
+                    "answer": "Yes. Each city and service combination usually needs its own useful page, linked from your profile and your main service pages."
+                },
+                {
+                    "question": "Do you work with businesses in Morocco?",
+                    "answer": "Yes. I am based in Rabat and work with businesses in Morocco, the UK and the U.S."
+                }
+            ]
+        },
+        "ga4-tracking": {
+            "meta_title": "GA4 and Conversion Tracking Setup",
+            "meta_description": "GA4 and Google Tag Manager setup with form, call and WhatsApp conversions and a Looker Studio dashboard, so you see which pages and searches bring leads.",
+            "eyebrow": "Service · Analytics",
+            "title": "GA4 and conversion tracking setup",
+            "lead": "See which pages, searches and campaigns bring you leads, not only visits. I set up GA4 and Google Tag Manager properly and build a dashboard you will actually open.",
+            "for_who": [
+                "You have GA4 but do not trust the numbers.",
+                "You cannot tell which pages or campaigns bring form submissions, calls or WhatsApp messages.",
+                "Your Google Ads conversions do not match what really happens.",
+                "You still look only at pageviews and sessions.",
+                "Monthly reports take hours to put together."
+            ],
+            "steps": [
+                {
+                    "title": "Tracking plan",
+                    "desc": "We agree on what counts as a lead and which actions to measure."
+                },
+                {
+                    "title": "Setup and testing",
+                    "desc": "GA4 and Google Tag Manager are configured, and every event and conversion is tested."
+                },
+                {
+                    "title": "Dashboard",
+                    "desc": "A Looker Studio dashboard shows leads by page, source and campaign."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Why use GA4 and Google Tag Manager together?",
+                    "answer": "GA4 stores and reports your data. Tag Manager is where the tracking lives, so events can be added or fixed without changing the website code each time."
+                },
+                {
+                    "question": "Can you track WhatsApp and phone clicks?",
+                    "answer": "Yes. Clicks on WhatsApp links, phone numbers and email addresses can be tracked as events and marked as conversions in GA4."
+                },
+                {
+                    "question": "Does this work with Google Ads?",
+                    "answer": "Yes. GA4 conversions can be imported into Google Ads, so your campaigns are measured on real leads."
+                },
+                {
+                    "question": "Can you fix an existing GA4 setup?",
+                    "answer": "Yes. I can review what is already in place, fix broken or duplicate events and clean up the reports."
+                }
+            ]
+        }
     }
 }

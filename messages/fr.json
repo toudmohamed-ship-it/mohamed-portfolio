@@ -826,5 +826,162 @@
         ],
         "contact_title": "Questions ou demandes",
         "contact_body": "Pour savoir quelles données je détiens sur vous ou pour les faire supprimer, écrivez à"
+    },
+    "ServicePages": {
+        "ui": {
+            "for_who_title": "Est-ce pour vous ?",
+            "included_title": "Ce que vous obtenez",
+            "how_title": "Comment ça se passe",
+            "proof_title": "Résultats de projets similaires",
+            "faq_title": "Questions fréquentes",
+            "related_title": "Pour aller plus loin",
+            "cta_primary": "Réserver un appel gratuit de 15 min",
+            "cta_secondary": "Voir tous les services",
+            "starts_with": "Chaque projet commence par un appel gratuit de 15 minutes.",
+            "view_case": "Lire l'étude de cas",
+            "learn_more": "En savoir plus"
+        },
+        "technical-seo-audit": {
+            "meta_title": "Audit SEO technique pour entreprises de services et SaaS",
+            "meta_description": "Audit SEO technique : exploration, indexation, canonicals, Core Web Vitals et données structurées, avec une liste de corrections classées par priorité.",
+            "eyebrow": "Service · SEO technique",
+            "title": "Audit SEO technique pour entreprises de services et SaaS",
+            "lead": "J'analyse tout votre site, je trouve ce qui empêche Google d'explorer, d'indexer et d'afficher vos pages, et je vous donne une liste claire de corrections classées par impact.",
+            "for_who": [
+                "Vos pages n'apparaissent pas sur Google, ou apparaissent puis disparaissent.",
+                "Search Console indique des pages « Explorée, actuellement non indexée » ou « En double ».",
+                "Votre site est lent sur mobile ou échoue aux Core Web Vitals.",
+                "Vous avez refait ou déplacé le site et le trafic a baissé.",
+                "Vous voulez l'avis d'un expert avant d'investir davantage dans le contenu ou la publicité."
+            ],
+            "steps": [
+                {
+                    "title": "Exploration et données",
+                    "desc": "J'explore le site avec Screaming Frog et je lis vos données Search Console et analytics."
+                },
+                {
+                    "title": "Constats classés",
+                    "desc": "Chaque problème est expliqué simplement et classé selon son impact sur le trafic et les leads."
+                },
+                {
+                    "title": "Corrections",
+                    "desc": "Je corrige moi-même ou je transmets à votre développeur des instructions claires, puis je vérifie les résultats dans Search Console."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Que vérifie un audit SEO technique ?",
+                    "answer": "Tout ce qui influence la façon dont Google explore, indexe et classe vos pages : erreurs d'exploration et liens cassés, indexation et balises canonical, redirections, structure du site et maillage interne, vitesse et Core Web Vitals, ergonomie mobile et données structurées."
+                },
+                {
+                    "question": "Vous signalez seulement les problèmes ou vous les corrigez aussi ?",
+                    "answer": "Les deux sont possibles. Je peux corriger moi-même, surtout sur WordPress, ou transmettre une liste claire à votre développeur et vérifier le travail ensuite."
+                },
+                {
+                    "question": "Avec quelles plateformes travaillez-vous ?",
+                    "answer": "Je travaille beaucoup avec WordPress et Shopify. L'audit fonctionne sur tout site que Google peut explorer."
+                },
+                {
+                    "question": "De quoi avez-vous besoin ?",
+                    "answer": "Un accès à Google Search Console et, si vous l'avez, à Google Analytics. Un accès administrateur au site n'est nécessaire que si je fais les corrections moi-même."
+                },
+                {
+                    "question": "Peut-on travailler en français ou en arabe ?",
+                    "answer": "Oui. Je travaille en français, en anglais et en arabe, nous parlons dans la langue que vous préférez."
+                }
+            ]
+        },
+        "local-seo": {
+            "meta_title": "SEO local pour les entreprises de services",
+            "meta_description": "SEO local pour cabinets d'avocats, cliniques et services de proximité : fiche Google Business Profile, pages ville et service, citations et avis.",
+            "eyebrow": "Service · SEO local",
+            "title": "SEO local pour les entreprises de services",
+            "lead": "Apparaissez quand les gens autour de vous cherchent ce que vous proposez, sur Google Maps et dans les résultats locaux, et transformez ces recherches en appels.",
+            "for_who": [
+                "Vous n'apparaissez pas sur la carte pour votre service principal dans votre ville.",
+                "Des concurrents avec moins d'avis sont classés devant vous.",
+                "Votre nom, adresse ou téléphone diffèrent d'un annuaire à l'autre.",
+                "Vous servez plusieurs villes mais n'avez qu'une page de service générique.",
+                "Les appels et réservations venant de Google ont ralenti."
+            ],
+            "steps": [
+                {
+                    "title": "Audit local",
+                    "desc": "Je vérifie votre fiche Google Business Profile, vos positions locales et la façon dont votre nom, adresse et téléphone apparaissent en ligne."
+                },
+                {
+                    "title": "Corriger les bases",
+                    "desc": "Fiche, catégories, une page utile pour chaque ville et service, et des citations cohérentes."
+                },
+                {
+                    "title": "Développer et mesurer",
+                    "desc": "Un plan pour les avis et les liens locaux, avec le suivi des appels et des leads venant de Google."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Qu'est-ce que le SEO local ?",
+                    "answer": "Le SEO local aide votre entreprise à apparaître quand les gens cherchent un service près de chez eux, par exemple « avocat famille Rabat » ou « dentiste près de moi ». Il couvre la fiche Google Business Profile, les pages locales du site, les citations et les avis."
+                },
+                {
+                    "question": "Quelle différence avec le SEO classique ?",
+                    "answer": "Le SEO classique vise des recherches larges. Le SEO local se concentre sur les recherches avec un lieu, où la carte et la fiche Google Business Profile comptent autant que le site."
+                },
+                {
+                    "question": "Pouvez-vous aider si je sers plusieurs villes ?",
+                    "answer": "Oui. Chaque combinaison ville et service a généralement besoin de sa propre page utile, reliée à votre fiche et à vos pages de service principales."
+                },
+                {
+                    "question": "Travaillez-vous avec des entreprises au Maroc ?",
+                    "answer": "Oui. Je suis basé à Rabat et je travaille avec des entreprises au Maroc, au Royaume-Uni et aux États-Unis."
+                }
+            ]
+        },
+        "ga4-tracking": {
+            "meta_title": "Configuration GA4 et suivi des conversions",
+            "meta_description": "Configuration GA4 et Google Tag Manager, suivi des formulaires, appels et WhatsApp, et tableau de bord Looker Studio pour voir ce qui apporte des leads.",
+            "eyebrow": "Service · Analytics",
+            "title": "Configuration GA4 et suivi des conversions",
+            "lead": "Voyez quelles pages, recherches et campagnes vous apportent des leads, pas seulement des visites. Je configure GA4 et Google Tag Manager correctement et je crée un tableau de bord que vous ouvrirez vraiment.",
+            "for_who": [
+                "Vous avez GA4 mais vous ne faites pas confiance aux chiffres.",
+                "Vous ne savez pas quelles pages ou campagnes apportent des formulaires, des appels ou des messages WhatsApp.",
+                "Vos conversions Google Ads ne correspondent pas à la réalité.",
+                "Vous ne regardez encore que les pages vues et les sessions.",
+                "Les rapports mensuels prennent des heures."
+            ],
+            "steps": [
+                {
+                    "title": "Plan de suivi",
+                    "desc": "Nous définissons ce qui compte comme un lead et quelles actions mesurer."
+                },
+                {
+                    "title": "Configuration et tests",
+                    "desc": "GA4 et Google Tag Manager sont configurés, et chaque événement et conversion est testé."
+                },
+                {
+                    "title": "Tableau de bord",
+                    "desc": "Un tableau de bord Looker Studio montre les leads par page, source et campagne."
+                }
+            ],
+            "faqs": [
+                {
+                    "question": "Pourquoi utiliser GA4 et Google Tag Manager ensemble ?",
+                    "answer": "GA4 stocke et présente vos données. Tag Manager contient le suivi, ce qui permet d'ajouter ou de corriger des événements sans modifier le code du site à chaque fois."
+                },
+                {
+                    "question": "Pouvez-vous suivre les clics WhatsApp et téléphone ?",
+                    "answer": "Oui. Les clics sur les liens WhatsApp, les numéros de téléphone et les adresses e-mail peuvent être suivis comme événements et marqués comme conversions dans GA4."
+                },
+                {
+                    "question": "Est-ce compatible avec Google Ads ?",
+                    "answer": "Oui. Les conversions GA4 peuvent être importées dans Google Ads, pour mesurer vos campagnes sur de vrais leads."
+                },
+                {
+                    "question": "Pouvez-vous corriger une configuration GA4 existante ?",
+                    "answer": "Oui. Je peux examiner ce qui est en place, corriger les événements cassés ou en double et nettoyer les rapports."
+                }
+            ]
+        }
     }
 }

@@ -3,6 +3,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { Link } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
+import { SERVICE_PAGES, serviceHref } from "@/lib/services";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -29,6 +30,7 @@ export default async function ServicesPage({ params }: Props) {
 
     const t = await getTranslations({ locale, namespace: 'ServicesPage' });
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
+    const tPages = await getTranslations({ locale, namespace: 'ServicePages' });
 
     const services = SERVICES.map((key) => ({
         key,
@@ -106,7 +108,14 @@ export default async function ServicesPage({ params }: Props) {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href="/contact" className="btn mt-2 self-start font-medium no-underline">{t('core_services.cta_discuss')} <span className="arrow" aria-hidden="true">→</span></Link>
+                                <div className="mt-2 flex flex-wrap gap-x-6 gap-y-2">
+                                    {SERVICE_PAGES.some((p) => p.key === s.key) && (
+                                        <Link href={serviceHref(s.key)} className="btn font-medium no-underline">
+                                            {tPages('ui.learn_more')}<span className="sr-only">: {s.title}</span> <span className="arrow" aria-hidden="true">→</span>
+                                        </Link>
+                                    )}
+                                    <Link href="/contact" className="btn font-medium no-underline text-ink">{t('core_services.cta_discuss')} <span className="arrow" aria-hidden="true">→</span></Link>
+                                </div>
                             </div>
                         </article>
                     ))}

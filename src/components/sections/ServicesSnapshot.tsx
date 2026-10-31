@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import { SERVICE_PAGES } from "@/lib/services";
 
 type Offer = { title: string; desc: string; points: string[]; meta: string };
 
@@ -14,7 +15,8 @@ const ICONS = [
 
 export default function ServicesSnapshot() {
     const t = useTranslations("HomePage.offers");
-    const offers = t.raw("items") as Offer[];
+    const tPages = useTranslations("ServicePages");
+    const offers = t.raw("items") as Offer[]; // same order as SERVICE_PAGES: audit, local, tracking
 
     return (
         <section id="services" className="cv container-custom pt-[72px] pb-24">
@@ -34,7 +36,12 @@ export default function ServicesSnapshot() {
                         <ul className="m-0 ps-[18px] text-ink-soft text-[15px] leading-[1.85]">
                             {offer.points.map((p) => <li key={p}>{p}</li>)}
                         </ul>
-                        <span className="mt-auto pt-3.5 border-t border-line text-[15px] text-ink-soft">{offer.meta}</span>
+                        <span className="mt-auto pt-3.5 border-t border-line flex flex-wrap items-center justify-between gap-3 text-[15px]">
+                            <span className="text-ink-soft">{offer.meta}</span>
+                            <Link href={`/services/${SERVICE_PAGES[i].slug}`} className="btn font-medium no-underline">
+                                {tPages("ui.learn_more")} <span className="sr-only">: {offer.title}</span> <span className="arrow" aria-hidden="true">→</span>
+                            </Link>
+                        </span>
                     </article>
                 ))}
             </div>

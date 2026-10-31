@@ -42,6 +42,7 @@ Motion stays only while it costs nothing measurable. Before adding or changing a
 - Unique title under 60 characters and meta description under 155 per page and language. The layout title template (`%s | Mohamed Toudghi`) does not apply to the homepage, so its titles include the name.
 - One H1 per page, headings in order. The H1 Google reads must be one clean sentence (the server renders the first rotating word only).
 - New pages go into `src/app/sitemap.ts`. Internal links point to real URLs.
+- Service pages: the three main services have their own page (`/services/<slug>`, data in `src/lib/services.ts`, copy in `ServicePages`); the hub `/services` keeps all six. Link to a service with `serviceHref(key)`.
 - Language is decided by the URL only (`localeDetection: false` in `src/i18n/routing.ts`). Do not turn cookie or browser-language redirects back on.
 - Only the `HomePage` and `ContactForm` message namespaces are sent to the browser (see the layout). Add a namespace there only if a client component needs it.
 
