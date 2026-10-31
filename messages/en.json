@@ -829,9 +829,6 @@
     },
     "ServicePages": {
         "ui": {
-            "for_who_title": "Is this for you?",
-            "included_title": "What you get",
-            "how_title": "How it works",
             "proof_title": "Results from similar projects",
             "faq_title": "Questions and answers",
             "related_title": "Read more",
@@ -839,39 +836,126 @@
             "cta_secondary": "See all services",
             "starts_with": "Every project starts with a free 15-minute call.",
             "view_case": "Read the case study",
-            "learn_more": "Learn more"
+            "learn_more": "Learn more",
+            "on_this_page": "On this page",
+            "bridge_label": "Want this done for your site?"
         },
         "technical-seo-audit": {
             "meta_title": "Technical SEO Audit for Service Businesses and SaaS",
             "meta_description": "A full technical SEO audit: crawl, indexing, canonicals, Core Web Vitals and structured data, with a prioritized list of fixes. English, French or Arabic.",
             "eyebrow": "Service · Technical SEO",
             "title": "Technical SEO audit for service businesses and SaaS",
-            "lead": "I crawl your whole site, find what stops Google from crawling, indexing and showing your pages, and give you a clear list of fixes ranked by impact.",
-            "for_who": [
-                "Your pages do not show up in Google, or show up and then disappear.",
-                "Search Console lists pages as “Crawled, currently not indexed” or “Duplicate”.",
-                "Your site is slow on mobile or fails Core Web Vitals.",
-                "You redesigned or moved the site and traffic dropped.",
-                "You want an expert check before you spend more on content or ads."
-            ],
-            "steps": [
-                {
-                    "title": "Crawl and data",
-                    "desc": "I crawl the site with Screaming Frog and read your Search Console and analytics data."
-                },
-                {
-                    "title": "Prioritized findings",
-                    "desc": "Every issue is explained in plain language and ranked by its impact on traffic and leads."
-                },
-                {
-                    "title": "Fixes",
-                    "desc": "I fix the issues myself or hand them to your developer with clear instructions, then check the results in Search Console."
-                }
-            ],
+            "lead": "Google can only rank the pages it can crawl, render and index. I audit your whole site, find what blocks that, and hand you a clear plan ranked by its impact on traffic and leads.",
+            "definition": {
+                "title": "What is a technical SEO audit?",
+                "paragraphs": [
+                    "A technical SEO audit is a full check of the parts of a website that search engines rely on before they even read the content: crawling, rendering, indexing, site structure, page speed and structured data. It answers one question: can Google reach, understand and trust every page that matters to your business?",
+                    "A content audit asks whether your pages say the right things. A technical audit asks whether Google can see them at all. When the technical base is broken, new content and new links are wasted, because the pages they point to never get indexed or load too slowly to rank.",
+                    "For a service business or a SaaS company, the pages that matter are the ones that bring leads: service pages, location pages, pricing, demo and trial pages. My audit starts from those pages and works outwards."
+                ]
+            },
+            "for_who": {
+                "title": "When your site needs a technical SEO audit",
+                "items": [
+                    "Your pages do not show up in Google, or show up and then disappear.",
+                    "Search Console lists pages as “Crawled, currently not indexed” or “Duplicate”.",
+                    "Your site is slow on mobile or fails Core Web Vitals.",
+                    "You redesigned or moved the site and traffic dropped.",
+                    "You want an expert check before you spend more on content or ads."
+                ]
+            },
+            "included": {
+                "title": "What the technical SEO audit includes",
+                "intro": "Every audit covers the same five areas. Each finding comes with the affected URLs, why it matters and how to fix it.",
+                "items": [
+                    {
+                        "name": "Full website crawl & technical error analysis",
+                        "desc": "I crawl every URL the way Googlebot does and list broken links, redirect chains, server errors, orphan pages and blocked resources."
+                    },
+                    {
+                        "name": "Indexing, crawlability & canonical fixes",
+                        "desc": "I compare what you want indexed with what Google actually indexes, then fix robots.txt rules, noindex tags, canonical tags and sitemaps so the right version of each page ranks."
+                    },
+                    {
+                        "name": "Core Web Vitals & performance recommendations",
+                        "desc": "I measure Largest Contentful Paint, Interaction to Next Paint and Cumulative Layout Shift on your real templates and list the changes that move them into the good range."
+                    },
+                    {
+                        "name": "Schema & structured data implementation guidance",
+                        "desc": "I check your schema.org markup for errors and show which types fit your pages, such as Organization, Service, LocalBusiness, FAQPage or Article."
+                    },
+                    {
+                        "name": "Internal linking & site architecture optimization",
+                        "desc": "I map how authority flows through your menus and links, find important pages buried too deep, and propose a structure where every service page sits close to the homepage."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "How the technical SEO audit works",
+                "items": [
+                    {
+                        "title": "Access and goals",
+                        "desc": "You share access to Google Search Console and, if you have it, Google Analytics. We agree which pages and conversions matter most."
+                    },
+                    {
+                        "title": "Crawl and data",
+                        "desc": "I crawl the site with Screaming Frog and compare the crawl with your Search Console indexing and performance data."
+                    },
+                    {
+                        "title": "Findings ranked by impact",
+                        "desc": "Every issue is explained in plain language and ranked by its effect on traffic and leads, so your developer knows what to do first."
+                    },
+                    {
+                        "title": "Fixes and checks",
+                        "desc": "I fix the issues myself or hand them to your developer with clear instructions, then confirm the results in Search Console."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Tools and data behind the audit",
+                "intro": "An audit is only as good as its data, so I combine a full crawl with Google's own reports.",
+                "items": [
+                    {
+                        "name": "Screaming Frog SEO Spider",
+                        "desc": "Crawls the site like a search engine and finds technical errors at scale."
+                    },
+                    {
+                        "name": "Google Search Console",
+                        "desc": "Shows which pages Google indexes, which it rejects and why, and how each page performs in search."
+                    },
+                    {
+                        "name": "PageSpeed Insights and Lighthouse",
+                        "desc": "Measure Core Web Vitals and loading performance on mobile and desktop."
+                    },
+                    {
+                        "name": "Semrush",
+                        "desc": "Tracks keyword visibility and site health over time."
+                    },
+                    {
+                        "name": "Rich Results Test",
+                        "desc": "Checks structured data against Google's requirements."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "Technical SEO audit vs. full SEO audit",
+                "paragraphs": [
+                    "A full SEO audit covers three layers: technical health, content and keywords, and backlinks. A technical SEO audit goes deep on the first layer.",
+                    "Start with the technical audit when pages are missing from Google, when traffic dropped after a redesign or migration, or when the site is slow. Once the base is solid, content and links finally have something to build on."
+                ]
+            },
             "faqs": [
                 {
                     "question": "What does a technical SEO audit check?",
                     "answer": "Everything that affects how Google crawls, indexes and ranks your pages: crawl errors and broken links, indexing and canonical tags, redirects, site structure and internal links, page speed and Core Web Vitals, mobile usability and structured data."
+                },
+                {
+                    "question": "How long does a technical SEO audit take?",
+                    "answer": "It depends on the size of the site. A small service website is much quicker to audit than a marketplace with thousands of listing pages. You get a clear timeline after the free call."
+                },
+                {
+                    "question": "How much does a technical SEO audit cost?",
+                    "answer": "The price depends on the number of pages, the platform and whether you want me to make the fixes. You get a quote after the free 15-minute call, before any work starts."
                 },
                 {
                     "question": "Do you only report the problems, or also fix them?",
@@ -897,39 +981,116 @@
             "eyebrow": "Service · Local SEO",
             "title": "Local SEO for service businesses",
             "lead": "Show up when people nearby search for what you offer, in the Google map results and the local listings, and turn those searches into calls.",
-            "for_who": [
-                "You do not appear in the map results for your main service in your city.",
-                "Competitors with fewer reviews rank above you.",
-                "Your business name, address or phone number differ from one directory to another.",
-                "You serve several cities but have one generic service page.",
-                "Calls and bookings from Google have slowed down."
-            ],
-            "steps": [
-                {
-                    "title": "Local audit",
-                    "desc": "I check your Google Business Profile, your local rankings and how your name, address and phone appear online."
-                },
-                {
-                    "title": "Fix the foundations",
-                    "desc": "Profile, categories, a useful page for each city and service, and consistent citations."
-                },
-                {
-                    "title": "Grow and measure",
-                    "desc": "A plan for reviews and local links, with calls and leads from Google tracked."
-                }
-            ],
+            "definition": {
+                "title": "What is local SEO?",
+                "paragraphs": [
+                    "Local SEO is the work of making a business visible when people search for a service in a specific place, such as “family lawyer Rabat” or “dentist near me”. Google answers these searches with a map, a short list of business profiles and then the regular results.",
+                    "Google names three factors that decide who appears there: relevance (how well your profile and website match the search), distance (how close you are to the person searching) and prominence (how well known and trusted your business is, through reviews, links and citations). You cannot change your distance, so local SEO works on relevance and prominence.",
+                    "For a service business, local search is often where the best leads come from: the person searching already knows what they need and is close enough to call today."
+                ]
+            },
+            "for_who": {
+                "title": "Signs your business needs local SEO",
+                "items": [
+                    "You do not appear in the map results for your main service in your city.",
+                    "Competitors with fewer reviews rank above you.",
+                    "Your business name, address or phone number differ from one directory to another.",
+                    "You serve several cities but have one generic service page.",
+                    "Calls and bookings from Google have slowed down."
+                ]
+            },
+            "included": {
+                "title": "What local SEO work includes",
+                "intro": "Five pieces of work, done in the order that brings results fastest.",
+                "items": [
+                    {
+                        "name": "Google Business Profile optimization",
+                        "desc": "I complete and correct your profile: primary and secondary categories, services, service areas, opening hours, photos and description, so Google knows exactly what you offer and where."
+                    },
+                    {
+                        "name": "Citation cleanup & consistency",
+                        "desc": "Your business name, address and phone number (NAP) must match on every directory and map. I find and fix the differences that confuse Google and customers."
+                    },
+                    {
+                        "name": "Local landing page strategy",
+                        "desc": "Each important service and city gets its own useful page with local details, proof and a clear call to action, linked from your profile and menus."
+                    },
+                    {
+                        "name": "Review management framework",
+                        "desc": "A simple routine for asking happy clients for reviews and replying to every review, because the number, rating and freshness of reviews all feed prominence."
+                    },
+                    {
+                        "name": "Local Map Pack visibility improvement",
+                        "desc": "I track your positions in the map results for your main searches and adjust the profile, pages and citations until you climb."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "How local SEO works, step by step",
+                "items": [
+                    {
+                        "title": "Local audit",
+                        "desc": "I check your Google Business Profile, your local rankings and how your name, address and phone appear online."
+                    },
+                    {
+                        "title": "Fix the foundations",
+                        "desc": "Profile, categories, a useful page for each city and service, and consistent citations."
+                    },
+                    {
+                        "title": "Grow and measure",
+                        "desc": "A plan for reviews and local links, with calls and leads from Google tracked."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Tools and data for local SEO",
+                "intro": "Local rankings change from one neighborhood to the next, so I measure them where your customers are.",
+                "items": [
+                    {
+                        "name": "Google Business Profile",
+                        "desc": "The profile itself, with its insights on calls, website clicks and direction requests."
+                    },
+                    {
+                        "name": "Google Search Console",
+                        "desc": "Shows the local searches that bring visitors to your website."
+                    },
+                    {
+                        "name": "BrightLocal",
+                        "desc": "Tracks map rankings and citations across directories."
+                    },
+                    {
+                        "name": "Google Analytics 4",
+                        "desc": "Measures calls, forms and bookings from local visitors."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "Local SEO vs. traditional SEO",
+                "paragraphs": [
+                    "Traditional SEO competes for broad searches with no place in them, often against national websites. Local SEO competes for searches with a place, where your Google Business Profile, reviews and citations matter as much as your website.",
+                    "Most service businesses need both: local SEO to win nearby customers, and a technically sound website so the service pages linked from the profile can rank and convert."
+                ]
+            },
             "faqs": [
                 {
-                    "question": "What is local SEO?",
-                    "answer": "Local SEO helps your business appear when people search for a service near them, for example “family lawyer Rabat” or “dentist near me”. It covers your Google Business Profile, your website’s local pages, citations and reviews."
+                    "question": "How long does local SEO take to show results?",
+                    "answer": "Fixes to your profile and citations can show in the map results within weeks. New pages and reviews build up over months. The pace depends on your city and your competition."
                 },
                 {
-                    "question": "How is local SEO different from normal SEO?",
-                    "answer": "Normal SEO competes for broad searches. Local SEO focuses on searches with a location, where the map results and your Google Business Profile matter as much as your website."
+                    "question": "Do I need a website for local SEO?",
+                    "answer": "A Google Business Profile can rank on its own, but a website with a page for each service and city gives Google more reasons to trust you and gives visitors a place to convert."
+                },
+                {
+                    "question": "How do reviews affect local rankings?",
+                    "answer": "Reviews are part of prominence. The number of reviews, the rating, how recent they are and whether you reply all help Google and customers trust your business."
                 },
                 {
                     "question": "Can you help if I serve several cities?",
                     "answer": "Yes. Each city and service combination usually needs its own useful page, linked from your profile and your main service pages."
+                },
+                {
+                    "question": "How much does local SEO cost?",
+                    "answer": "The price depends on how many locations and services you have. You get a quote after the free 15-minute call, before any work starts."
                 },
                 {
                     "question": "Do you work with businesses in Morocco?",
@@ -943,27 +1104,104 @@
             "eyebrow": "Service · Analytics",
             "title": "GA4 and conversion tracking setup",
             "lead": "See which pages, searches and campaigns bring you leads, not only visits. I set up GA4 and Google Tag Manager properly and build a dashboard you will actually open.",
-            "for_who": [
-                "You have GA4 but do not trust the numbers.",
-                "You cannot tell which pages or campaigns bring form submissions, calls or WhatsApp messages.",
-                "Your Google Ads conversions do not match what really happens.",
-                "You still look only at pageviews and sessions.",
-                "Monthly reports take hours to put together."
-            ],
-            "steps": [
-                {
-                    "title": "Tracking plan",
-                    "desc": "We agree on what counts as a lead and which actions to measure."
-                },
-                {
-                    "title": "Setup and testing",
-                    "desc": "GA4 and Google Tag Manager are configured, and every event and conversion is tested."
-                },
-                {
-                    "title": "Dashboard",
-                    "desc": "A Looker Studio dashboard shows leads by page, source and campaign."
-                }
-            ],
+            "definition": {
+                "title": "What is GA4 conversion tracking?",
+                "paragraphs": [
+                    "Google Analytics 4 (GA4) is Google's analytics platform. It records what visitors do on your website as events: a page view, a click on a phone number, a form submission. Conversion tracking means marking the events that create leads, so you can see exactly where those leads come from.",
+                    "Google Tag Manager sends those events to GA4 and Google Ads without editing the website code each time. Looker Studio turns the data into a dashboard anyone on your team can read.",
+                    "Without conversion tracking you see traffic but not results. With it, every page, keyword and campaign can be judged by the leads it brings."
+                ]
+            },
+            "for_who": {
+                "title": "Signs your tracking needs work",
+                "items": [
+                    "You have GA4 but do not trust the numbers.",
+                    "You cannot tell which pages or campaigns bring form submissions, calls or WhatsApp messages.",
+                    "Your Google Ads conversions do not match what really happens.",
+                    "You still look only at pageviews and sessions.",
+                    "Monthly reports take hours to put together."
+                ]
+            },
+            "included": {
+                "title": "What the GA4 setup includes",
+                "intro": "Five parts, tested end to end before you rely on them.",
+                "items": [
+                    {
+                        "name": "GA4 advanced configuration",
+                        "desc": "Data streams, data retention, internal traffic filters, cross-domain settings and the links to Google Ads and Search Console, set up correctly from the start."
+                    },
+                    {
+                        "name": "Google Tag Manager setup",
+                        "desc": "A clean container with clear naming, so tags, triggers and variables are easy to maintain and nothing fires twice."
+                    },
+                    {
+                        "name": "Custom event & conversion tracking",
+                        "desc": "Form submissions, phone and WhatsApp clicks, email clicks, bookings and other key actions tracked as events and marked as conversions."
+                    },
+                    {
+                        "name": "Looker Studio dashboards",
+                        "desc": "One dashboard with leads by page, source, campaign and device, updated automatically."
+                    },
+                    {
+                        "name": "Conversion funnel visualization",
+                        "desc": "A funnel report that shows where visitors drop off between landing on a page and becoming a lead."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "How the GA4 setup works",
+                "items": [
+                    {
+                        "title": "Tracking plan",
+                        "desc": "We agree on what counts as a lead and which actions to measure."
+                    },
+                    {
+                        "title": "Setup and testing",
+                        "desc": "GA4 and Google Tag Manager are configured, and every event and conversion is tested."
+                    },
+                    {
+                        "title": "Dashboard",
+                        "desc": "A Looker Studio dashboard shows leads by page, source and campaign."
+                    },
+                    {
+                        "title": "Handover",
+                        "desc": "I walk you through the dashboard and the list of events, so your team can use the data from day one."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Tools behind the setup",
+                "intro": "All of them are free Google tools, so there is no extra subscription to pay.",
+                "items": [
+                    {
+                        "name": "Google Analytics 4",
+                        "desc": "Stores your events and conversions and reports on them."
+                    },
+                    {
+                        "name": "Google Tag Manager",
+                        "desc": "Sends events to GA4 and Google Ads without code changes for every update."
+                    },
+                    {
+                        "name": "Looker Studio",
+                        "desc": "Builds dashboards from GA4, Search Console and Google Ads data."
+                    },
+                    {
+                        "name": "Google Ads",
+                        "desc": "Imports GA4 conversions so campaigns are measured on real leads."
+                    },
+                    {
+                        "name": "Tag Assistant",
+                        "desc": "Tests that every tag fires once, at the right moment."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "GA4 vs. Google Tag Manager",
+                "paragraphs": [
+                    "GA4 is where your data is stored and reported. Google Tag Manager is where tracking is configured and sent. You can run GA4 without Tag Manager, but every new event then needs a developer to edit the site.",
+                    "Universal Analytics, the previous version of Google Analytics, stopped collecting data in July 2023, so GA4 is now the standard for every website."
+                ]
+            },
             "faqs": [
                 {
                     "question": "Why use GA4 and Google Tag Manager together?",
@@ -980,6 +1218,14 @@
                 {
                     "question": "Can you fix an existing GA4 setup?",
                     "answer": "Yes. I can review what is already in place, fix broken or duplicate events and clean up the reports."
+                },
+                {
+                    "question": "How soon will I see data?",
+                    "answer": "Events start recording as soon as the setup is published. Useful trends appear after a few weeks of data."
+                },
+                {
+                    "question": "How much does a GA4 setup cost?",
+                    "answer": "The price depends on how many actions you want to track and how many sites or ad accounts are involved. You get a quote after the free 15-minute call."
                 }
             ]
         }

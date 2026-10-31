@@ -11,14 +11,20 @@ interface Props {
     params: Promise<{ locale: string; service: string }>;
 }
 
+// Page outline follows the questions a searcher asks, in order: what is it -> do I need it -> what is included
+// -> how does it work -> with which tools -> how does it compare -> does it work (proof) -> remaining questions.
 type Copy = {
     meta_title: string;
     meta_description: string;
     eyebrow: string;
     title: string;
     lead: string;
-    for_who: string[];
-    steps: { title: string; desc: string }[];
+    definition: { title: string; paragraphs: string[] };
+    for_who: { title: string; items: string[] };
+    included: { title: string; intro: string; items: { name: string; desc: string }[] };
+    steps: { title: string; items: { title: string; desc: string }[] };
+    tools: { title: string; intro: string; items: { name: string; desc: string }[] };
+    compare: { title: string; paragraphs: string[] };
     faqs: { question: string; answer: string }[];
 };
 
@@ -41,6 +47,8 @@ export async function generateMetadata({ params }: Props) {
     };
 }
 
+const H2 = "m-0 text-2xl md:text-[30px] font-semibold scroll-mt-24";
+
 export default async function ServiceDetailPage({ params }: Props) {
     const { locale, service } = await params;
     setRequestLocale(locale);
@@ -54,16 +62,27 @@ export default async function ServiceDetailPage({ params }: Props) {
     const tCrumbs = await getTranslations({ locale, namespace: "Breadcrumbs" });
 
     const c = t.raw(service) as Copy;
-    const deliverables = tHub.raw(`${page.key}.deliverables`) as string[];
     const cases = page.caseStudies.map((slug) => {
         const results = tCases.raw(`${slug}.results`) as Record<string, string>;
         return { slug, client: tCases(`${slug}.client`), title: tCases(`${slug}.title`), result: Object.values(results)[0] };
     });
     const url = localizedUrl(locale, `/services/${service}`);
 
+    const toc = [
+        { id: "definition", label: c.definition.title },
+        { id: "included", label: c.included.title },
+        { id: "process", label: c.steps.title },
+        { id: "tools", label: c.tools.title },
+        { id: "compare", label: c.compare.title },
+        { id: "proof", label: t("ui.proof_title") },
+        { id: "faq", label: t("ui.faq_title") },
+    ];
+
+    // Service entity: what it is about, what it mentions, who provides it and what it includes (all visible on the page)
     const schema = {
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": `${url}#service`,
         name: c.title,
         serviceType: tHub(`${page.key}.title`),
         description: c.meta_description,
@@ -71,11 +90,13 @@ export default async function ServiceDetailPage({ params }: Props) {
         inLanguage: locale,
         areaServed: "Worldwide",
         availableLanguage: ["en", "fr", "ar"],
-        provider: { "@type": "Person", name: "Mohamed Toudghi", url: BASE_URL, address: { "@type": "PostalAddress", addressLocality: "Rabat", addressCountry: "MA" } },
+        provider: { "@id": `${BASE_URL}/#person` },
+        about: { "@type": "Thing", name: page.about.name, sameAs: page.about.sameAs },
+        mentions: page.mentions.map((m) => ({ "@type": "Thing", name: m.name, sameAs: m.sameAs })),
         hasOfferCatalog: {
             "@type": "OfferCatalog",
-            name: t("ui.included_title"),
-            itemListElement: deliverables.map((d) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: d } })),
+            name: c.included.title,
+            itemListElement: c.included.items.map((d) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: d.name, description: d.desc } })),
         },
     };
 
@@ -100,80 +121,129 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </div>
             </PageHeader>
 
-            {/* Who it is for + what you get */}
-            <section className="container-custom py-16 md:py-20 grid gap-10 lg:grid-cols-2 lg:gap-16 items-start">
-                <div className="flex flex-col gap-5">
-                    <h2 className="m-0 text-2xl md:text-[30px] font-semibold">{t("ui.for_who_title")}</h2>
-                    <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
-                        {c.for_who.map((item) => (
-                            <li key={item} className="flex gap-3 items-start text-[17px] text-ink-soft">
-                                <span aria-hidden="true" className="shrink-0 mt-2.5 w-1.5 h-1.5 rounded-full bg-forest" />
-                                {item}
-                            </li>
+            <div className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-16 items-start">
+                <div className="min-w-0 max-w-[780px] flex flex-col gap-16">
+                    {/* What it is */}
+                    <section aria-labelledby="definition" className="flex flex-col gap-4">
+                        <h2 id="definition" className={H2}>{c.definition.title}</h2>
+                        {c.definition.paragraphs.map((p, i) => (
+                            <p key={i} className={`m-0 leading-relaxed ${i === 0 ? "text-[19px] text-ink" : "text-[17px] text-ink-soft"}`}>{p}</p>
                         ))}
-                    </ul>
-                </div>
-                <div className="bg-white border border-line rounded-[20px] p-7 md:p-8 flex flex-col gap-5">
-                    <h2 className="m-0 text-2xl font-semibold">{t("ui.included_title")}</h2>
-                    <ul className="list-none m-0 p-0 flex flex-col gap-3">
-                        {deliverables.map((d) => (
-                            <li key={d} className="flex gap-3 items-start text-[16px]">
-                                <svg className="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E6B57" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7" /></svg>
-                                {d}
-                            </li>
+                    </section>
+
+                    {/* Who needs it */}
+                    <section aria-labelledby="for-who" className="flex flex-col gap-5 bg-white border border-line rounded-[20px] p-7 md:p-8">
+                        <h2 id="for-who" className="m-0 text-xl md:text-2xl font-semibold scroll-mt-24">{c.for_who.title}</h2>
+                        <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
+                            {c.for_who.items.map((item) => (
+                                <li key={item} className="flex gap-3 items-start text-[17px] text-ink-soft">
+                                    <span aria-hidden="true" className="shrink-0 mt-2.5 w-1.5 h-1.5 rounded-full bg-forest" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* What is included: each deliverable with what it means */}
+                    <section aria-labelledby="included" className="flex flex-col gap-6">
+                        <div className="flex flex-col gap-3">
+                            <h2 id="included" className={H2}>{c.included.title}</h2>
+                            <p className="m-0 text-[17px] text-ink-soft">{c.included.intro}</p>
+                        </div>
+                        <ol className="list-none m-0 p-0 flex flex-col">
+                            {c.included.items.map((item, i) => (
+                                <li key={item.name} className="grid gap-x-5 gap-y-1 grid-cols-[36px_minmax(0,1fr)] py-5 border-t border-line last:border-b">
+                                    <span aria-hidden="true" className="row-span-2 w-9 h-9 rounded-full bg-sage text-forest font-semibold text-sm flex items-center justify-center">{i + 1}</span>
+                                    <h3 className="m-0 text-[19px] font-semibold leading-snug">{item.name}</h3>
+                                    <p className="m-0 text-[16px] text-ink-soft leading-relaxed">{item.desc}</p>
+                                </li>
+                            ))}
+                        </ol>
+                    </section>
+
+                    {/* How it works */}
+                    <section aria-labelledby="process" className="flex flex-col gap-6">
+                        <h2 id="process" className={H2}>{c.steps.title}</h2>
+                        <ol className="list-none m-0 p-0 grid gap-6 sm:grid-cols-2">
+                            {c.steps.items.map((step, i) => (
+                                <li key={step.title} className="flex flex-col gap-2">
+                                    <span aria-hidden="true" className={`w-9 h-9 rounded-full flex items-center justify-center font-semibold text-[15px] ${i === 0 ? "bg-forest text-white" : "bg-white border-[1.5px] border-forest text-forest"}`}>{i + 1}</span>
+                                    <h3 className="m-0 text-lg font-semibold">{step.title}</h3>
+                                    <p className="m-0 text-[16px] text-muted">{step.desc}</p>
+                                </li>
+                            ))}
+                        </ol>
+                    </section>
+
+                    {/* Tools */}
+                    <section aria-labelledby="tools" className="flex flex-col gap-5">
+                        <div className="flex flex-col gap-3">
+                            <h2 id="tools" className={H2}>{c.tools.title}</h2>
+                            <p className="m-0 text-[17px] text-ink-soft">{c.tools.intro}</p>
+                        </div>
+                        <dl className="m-0 grid gap-px bg-line border border-line rounded-[18px] overflow-hidden sm:grid-cols-2">
+                            {c.tools.items.map((tool) => (
+                                <div key={tool.name} className="bg-white p-5 flex flex-col gap-1 sm:[&:last-child:nth-child(odd)]:col-span-2">
+                                    <dt className="font-semibold text-[16px]">{tool.name}</dt>
+                                    <dd className="m-0 text-[15px] text-muted">{tool.desc}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                    </section>
+
+                    {/* Comparison */}
+                    <section aria-labelledby="compare" className="flex flex-col gap-4 border-s-4 border-forest ps-6">
+                        <h2 id="compare" className={H2}>{c.compare.title}</h2>
+                        {c.compare.paragraphs.map((p, i) => (
+                            <p key={i} className="m-0 text-[17px] text-ink-soft leading-relaxed">{p}</p>
                         ))}
-                    </ul>
-                </div>
-            </section>
+                    </section>
 
-            {/* How it works */}
-            <section data-tone="white" className="bg-white border-y border-line">
-                <div className="container-custom py-16 md:py-20">
-                    <h2 className="m-0 mb-10 text-2xl md:text-[30px] font-semibold">{t("ui.how_title")}</h2>
-                    <ol className="list-none m-0 p-0 grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(240px,1fr))]">
-                        {c.steps.map((step, i) => (
-                            <li key={step.title} className="flex flex-col gap-2.5">
-                                <span aria-hidden="true" className={`w-9 h-9 rounded-full flex items-center justify-center font-semibold text-[15px] ${i === 0 ? "bg-forest text-white" : "bg-white border-[1.5px] border-forest text-forest"}`}>{i + 1}</span>
-                                <h3 className="m-0 text-lg font-semibold">{step.title}</h3>
-                                <p className="m-0 text-[16px] text-muted">{step.desc}</p>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
-            </section>
+                    {/* Proof */}
+                    <section aria-labelledby="proof" className="flex flex-col gap-6">
+                        <h2 id="proof" className={H2}>{t("ui.proof_title")}</h2>
+                        <ul className="list-none m-0 p-0 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                            {cases.map((cs) => (
+                                <li key={cs.slug}>
+                                    <Link href={`/portfolio/${cs.slug}`} className="lift h-full bg-white border border-line rounded-[18px] p-5 flex flex-col gap-3 text-ink no-underline hover:text-ink">
+                                        <span className="font-mono text-xs text-forest">{cs.client}</span>
+                                        <span className="text-[17px] font-semibold leading-snug">{cs.title}</span>
+                                        <span className="text-[15px] text-ink-soft border-s-2 border-forest ps-3">{cs.result}</span>
+                                        <span className="btn mt-auto pt-1 font-medium text-forest text-[15px]">{t("ui.view_case")} <span className="arrow" aria-hidden="true">→</span></span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
 
-            {/* Proof */}
-            <section className="container-custom py-16 md:py-20">
-                <h2 className="m-0 mb-8 text-2xl md:text-[30px] font-semibold">{t("ui.proof_title")}</h2>
-                <ul className="list-none m-0 p-0 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
-                    {cases.map((cs) => (
-                        <li key={cs.slug}>
-                            <Link href={`/portfolio/${cs.slug}`} className="lift h-full bg-white border border-line rounded-[18px] p-6 flex flex-col gap-3 text-ink no-underline hover:text-ink">
-                                <span className="font-mono text-xs text-forest">{cs.client}</span>
-                                <span className="text-[18px] font-semibold leading-snug">{cs.title}</span>
-                                <span className="text-[15px] text-ink-soft border-s-2 border-forest ps-3">{cs.result}</span>
-                                <span className="btn mt-auto pt-2 font-medium text-forest text-[15px]">{t("ui.view_case")} <span className="arrow" aria-hidden="true">→</span></span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            {/* FAQ + further reading */}
-            <section className="container-custom pb-20 md:pb-24 grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16 items-start">
-                <div className="max-w-[760px]">
-                    <BlogFAQ faqs={c.faqs} title={t("ui.faq_title")} />
+                    {/* FAQ */}
+                    <div id="faq" className="scroll-mt-24">
+                        <BlogFAQ faqs={c.faqs} title={t("ui.faq_title")} />
+                    </div>
                 </div>
-                <aside className="bg-white border border-line rounded-[20px] p-6 flex flex-col gap-4">
-                    <p className="m-0 font-mono text-xs text-muted">{t("ui.related_title")}</p>
-                    <Link href={`/blog/${page.relatedPost}`} className="font-medium text-[16px] text-ink no-underline hover:text-forest leading-snug">
-                        {tPosts(`${page.relatedPost}.title`)}
-                    </Link>
-                    <Link href="/services" className="btn pt-3 border-t border-line font-medium no-underline text-[15px]">
-                        {t("ui.cta_secondary")} <span className="arrow" aria-hidden="true">→</span>
-                    </Link>
+
+                <aside className="hidden lg:flex flex-col gap-6 sticky top-24">
+                    <nav aria-label={t("ui.on_this_page")}>
+                        <p className="m-0 mb-3 font-mono text-xs text-muted">{t("ui.on_this_page")}</p>
+                        <ol className="list-none m-0 p-0 flex flex-col border-s border-line">
+                            {toc.map((item) => (
+                                <li key={item.id}>
+                                    <a href={`#${item.id}`} className="block ps-4 -ms-px py-1.5 text-[15px] leading-snug text-muted hover:text-ink no-underline border-s-2 border-transparent hover:border-forest">{item.label}</a>
+                                </li>
+                            ))}
+                        </ol>
+                    </nav>
+                    <div className="bg-white border border-line rounded-[20px] p-5 flex flex-col gap-3">
+                        <p className="m-0 font-mono text-xs text-muted">{t("ui.related_title")}</p>
+                        <Link href={`/blog/${page.relatedPost}`} className="font-medium text-[15px] text-ink no-underline hover:text-forest leading-snug">
+                            {tPosts(`${page.relatedPost}.title`)}
+                        </Link>
+                        <Link href="/services" className="btn pt-3 border-t border-line font-medium no-underline text-[15px]">
+                            {t("ui.cta_secondary")} <span className="arrow" aria-hidden="true">→</span>
+                        </Link>
+                    </div>
                 </aside>
-            </section>
+            </div>
 
             <FinalCTA />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />

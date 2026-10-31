@@ -829,9 +829,6 @@
     },
     "ServicePages": {
         "ui": {
-            "for_who_title": "Est-ce pour vous ?",
-            "included_title": "Ce que vous obtenez",
-            "how_title": "Comment ça se passe",
             "proof_title": "Résultats de projets similaires",
             "faq_title": "Questions fréquentes",
             "related_title": "Pour aller plus loin",
@@ -839,39 +836,126 @@
             "cta_secondary": "Voir tous les services",
             "starts_with": "Chaque projet commence par un appel gratuit de 15 minutes.",
             "view_case": "Lire l'étude de cas",
-            "learn_more": "En savoir plus"
+            "learn_more": "En savoir plus",
+            "on_this_page": "Sur cette page",
+            "bridge_label": "Vous voulez que je m'en occupe pour votre site ?"
         },
         "technical-seo-audit": {
             "meta_title": "Audit SEO technique pour entreprises de services et SaaS",
             "meta_description": "Audit SEO technique : exploration, indexation, canonicals, Core Web Vitals et données structurées, avec une liste de corrections classées par priorité.",
             "eyebrow": "Service · SEO technique",
             "title": "Audit SEO technique pour entreprises de services et SaaS",
-            "lead": "J'analyse tout votre site, je trouve ce qui empêche Google d'explorer, d'indexer et d'afficher vos pages, et je vous donne une liste claire de corrections classées par impact.",
-            "for_who": [
-                "Vos pages n'apparaissent pas sur Google, ou apparaissent puis disparaissent.",
-                "Search Console indique des pages « Explorée, actuellement non indexée » ou « En double ».",
-                "Votre site est lent sur mobile ou échoue aux Core Web Vitals.",
-                "Vous avez refait ou déplacé le site et le trafic a baissé.",
-                "Vous voulez l'avis d'un expert avant d'investir davantage dans le contenu ou la publicité."
-            ],
-            "steps": [
-                {
-                    "title": "Exploration et données",
-                    "desc": "J'explore le site avec Screaming Frog et je lis vos données Search Console et analytics."
-                },
-                {
-                    "title": "Constats classés",
-                    "desc": "Chaque problème est expliqué simplement et classé selon son impact sur le trafic et les leads."
-                },
-                {
-                    "title": "Corrections",
-                    "desc": "Je corrige moi-même ou je transmets à votre développeur des instructions claires, puis je vérifie les résultats dans Search Console."
-                }
-            ],
+            "lead": "Google ne peut classer que les pages qu'il peut explorer, afficher et indexer. J'audite tout votre site, je trouve ce qui bloque, et je vous remets un plan clair classé selon son impact sur le trafic et les leads.",
+            "definition": {
+                "title": "Qu'est-ce qu'un audit SEO technique ?",
+                "paragraphs": [
+                    "Un audit SEO technique est une vérification complète de tout ce dont les moteurs de recherche ont besoin avant même de lire le contenu : exploration, rendu, indexation, structure du site, vitesse et données structurées. Il répond à une question : Google peut-il atteindre, comprendre et faire confiance à chaque page importante pour votre activité ?",
+                    "Un audit de contenu vérifie si vos pages disent les bonnes choses. Un audit technique vérifie si Google peut les voir. Quand la base technique est cassée, le nouveau contenu et les nouveaux liens sont gaspillés, car les pages visées ne sont jamais indexées ou chargent trop lentement pour se classer.",
+                    "Pour une entreprise de services ou un SaaS, les pages importantes sont celles qui apportent des leads : pages de service, pages locales, tarifs, démo et essai. Mon audit part de ces pages et s'étend au reste du site."
+                ]
+            },
+            "for_who": {
+                "title": "Quand votre site a besoin d'un audit SEO technique",
+                "items": [
+                    "Vos pages n'apparaissent pas sur Google, ou apparaissent puis disparaissent.",
+                    "Search Console indique des pages « Explorée, actuellement non indexée » ou « En double ».",
+                    "Votre site est lent sur mobile ou échoue aux Core Web Vitals.",
+                    "Vous avez refait ou déplacé le site et le trafic a baissé.",
+                    "Vous voulez l'avis d'un expert avant d'investir davantage dans le contenu ou la publicité."
+                ]
+            },
+            "included": {
+                "title": "Ce que comprend l'audit SEO technique",
+                "intro": "Chaque audit couvre les mêmes cinq domaines. Chaque constat indique les URL concernées, pourquoi c'est important et comment corriger.",
+                "items": [
+                    {
+                        "name": "Crawl complet & analyse des erreurs techniques",
+                        "desc": "J'explore chaque URL comme le fait Googlebot et je liste les liens cassés, les chaînes de redirection, les erreurs serveur, les pages orphelines et les ressources bloquées."
+                    },
+                    {
+                        "name": "Corrections d'indexation & de balises canoniques",
+                        "desc": "Je compare ce que vous voulez voir indexé avec ce que Google indexe vraiment, puis je corrige le robots.txt, les balises noindex, les canonicals et les sitemaps pour que la bonne version de chaque page se classe."
+                    },
+                    {
+                        "name": "Optimisation des Core Web Vitals & performance",
+                        "desc": "Je mesure le Largest Contentful Paint, l'Interaction to Next Paint et le Cumulative Layout Shift sur vos vrais modèles de page et je liste les changements qui les font passer dans la zone verte."
+                    },
+                    {
+                        "name": "Implémentation de données structurées (Schema)",
+                        "desc": "Je vérifie votre balisage schema.org et je montre les types adaptés à vos pages, comme Organization, Service, LocalBusiness, FAQPage ou Article."
+                    },
+                    {
+                        "name": "Optimisation du maillage interne & architecture",
+                        "desc": "Je cartographie la circulation de l'autorité dans vos menus et vos liens, je repère les pages importantes trop enfouies et je propose une structure où chaque page de service reste proche de l'accueil."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "Comment se déroule l'audit SEO technique",
+                "items": [
+                    {
+                        "title": "Accès et objectifs",
+                        "desc": "Vous partagez l'accès à Google Search Console et, si vous l'avez, à Google Analytics. Nous définissons les pages et conversions prioritaires."
+                    },
+                    {
+                        "title": "Exploration et données",
+                        "desc": "J'explore le site avec Screaming Frog et je compare l'exploration avec vos données d'indexation et de performance Search Console."
+                    },
+                    {
+                        "title": "Constats classés par impact",
+                        "desc": "Chaque problème est expliqué simplement et classé selon son effet sur le trafic et les leads, pour que votre développeur sache par où commencer."
+                    },
+                    {
+                        "title": "Corrections et vérification",
+                        "desc": "Je corrige moi-même ou je transmets à votre développeur des instructions claires, puis je vérifie les résultats dans Search Console."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Les outils et données de l'audit",
+                "intro": "Un audit ne vaut que par ses données : je combine une exploration complète avec les rapports de Google.",
+                "items": [
+                    {
+                        "name": "Screaming Frog SEO Spider",
+                        "desc": "Explore le site comme un moteur de recherche et trouve les erreurs techniques à grande échelle."
+                    },
+                    {
+                        "name": "Google Search Console",
+                        "desc": "Montre les pages indexées par Google, celles qu'il rejette et pourquoi, et la performance de chaque page."
+                    },
+                    {
+                        "name": "PageSpeed Insights et Lighthouse",
+                        "desc": "Mesurent les Core Web Vitals et la vitesse sur mobile et ordinateur."
+                    },
+                    {
+                        "name": "Semrush",
+                        "desc": "Suit la visibilité des mots-clés et la santé du site dans le temps."
+                    },
+                    {
+                        "name": "Test des résultats enrichis",
+                        "desc": "Vérifie les données structurées selon les exigences de Google."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "Audit SEO technique ou audit SEO complet ?",
+                "paragraphs": [
+                    "Un audit SEO complet couvre trois niveaux : la santé technique, le contenu et les mots-clés, et les backlinks. Un audit SEO technique va en profondeur sur le premier niveau.",
+                    "Commencez par l'audit technique quand des pages manquent sur Google, quand le trafic a baissé après une refonte ou une migration, ou quand le site est lent. Une fois la base solide, le contenu et les liens ont enfin quelque chose sur quoi s'appuyer."
+                ]
+            },
             "faqs": [
                 {
                     "question": "Que vérifie un audit SEO technique ?",
                     "answer": "Tout ce qui influence la façon dont Google explore, indexe et classe vos pages : erreurs d'exploration et liens cassés, indexation et balises canonical, redirections, structure du site et maillage interne, vitesse et Core Web Vitals, ergonomie mobile et données structurées."
+                },
+                {
+                    "question": "Combien de temps dure un audit SEO technique ?",
+                    "answer": "Cela dépend de la taille du site. Un petit site de services s'audite bien plus vite qu'une marketplace de milliers de pages. Vous recevez un délai clair après l'appel gratuit."
+                },
+                {
+                    "question": "Combien coûte un audit SEO technique ?",
+                    "answer": "Le prix dépend du nombre de pages, de la plateforme et de si vous voulez que je fasse les corrections. Vous recevez un devis après l'appel gratuit de 15 minutes, avant tout travail."
                 },
                 {
                     "question": "Vous signalez seulement les problèmes ou vous les corrigez aussi ?",
@@ -897,39 +981,116 @@
             "eyebrow": "Service · SEO local",
             "title": "SEO local pour les entreprises de services",
             "lead": "Apparaissez quand les gens autour de vous cherchent ce que vous proposez, sur Google Maps et dans les résultats locaux, et transformez ces recherches en appels.",
-            "for_who": [
-                "Vous n'apparaissez pas sur la carte pour votre service principal dans votre ville.",
-                "Des concurrents avec moins d'avis sont classés devant vous.",
-                "Votre nom, adresse ou téléphone diffèrent d'un annuaire à l'autre.",
-                "Vous servez plusieurs villes mais n'avez qu'une page de service générique.",
-                "Les appels et réservations venant de Google ont ralenti."
-            ],
-            "steps": [
-                {
-                    "title": "Audit local",
-                    "desc": "Je vérifie votre fiche Google Business Profile, vos positions locales et la façon dont votre nom, adresse et téléphone apparaissent en ligne."
-                },
-                {
-                    "title": "Corriger les bases",
-                    "desc": "Fiche, catégories, une page utile pour chaque ville et service, et des citations cohérentes."
-                },
-                {
-                    "title": "Développer et mesurer",
-                    "desc": "Un plan pour les avis et les liens locaux, avec le suivi des appels et des leads venant de Google."
-                }
-            ],
+            "definition": {
+                "title": "Qu'est-ce que le SEO local ?",
+                "paragraphs": [
+                    "Le SEO local consiste à rendre une entreprise visible quand quelqu'un cherche un service dans un lieu précis, comme « avocat famille Rabat » ou « dentiste près de moi ». Google répond à ces recherches avec une carte, une courte liste de fiches d'entreprises, puis les résultats classiques.",
+                    "Google cite trois critères pour choisir qui apparaît : la pertinence (votre fiche et votre site correspondent-ils à la recherche), la distance (votre proximité avec la personne qui cherche) et la notoriété (à quel point votre entreprise est connue et fiable, à travers les avis, les liens et les citations). La distance ne se change pas : le SEO local agit sur la pertinence et la notoriété.",
+                    "Pour une entreprise de services, la recherche locale apporte souvent les meilleurs leads : la personne sait déjà ce qu'elle veut et elle est assez proche pour appeler aujourd'hui."
+                ]
+            },
+            "for_who": {
+                "title": "Les signes que votre entreprise a besoin de SEO local",
+                "items": [
+                    "Vous n'apparaissez pas sur la carte pour votre service principal dans votre ville.",
+                    "Des concurrents avec moins d'avis sont classés devant vous.",
+                    "Votre nom, adresse ou téléphone diffèrent d'un annuaire à l'autre.",
+                    "Vous servez plusieurs villes mais n'avez qu'une page de service générique.",
+                    "Les appels et réservations venant de Google ont ralenti."
+                ]
+            },
+            "included": {
+                "title": "Ce que comprend le travail de SEO local",
+                "intro": "Cinq chantiers, menés dans l'ordre qui donne des résultats le plus vite.",
+                "items": [
+                    {
+                        "name": "Optimisation de la fiche Google Business Profile",
+                        "desc": "Je complète et corrige votre fiche : catégories principale et secondaires, services, zones desservies, horaires, photos et description, pour que Google sache exactement ce que vous proposez et où."
+                    },
+                    {
+                        "name": "Nettoyage & cohérence des citations",
+                        "desc": "Votre nom, adresse et téléphone (NAP) doivent être identiques dans chaque annuaire et sur chaque carte. Je trouve et corrige les différences qui troublent Google et les clients."
+                    },
+                    {
+                        "name": "Stratégie de landing pages locales",
+                        "desc": "Chaque service et chaque ville importants ont leur propre page utile, avec des détails locaux, des preuves et un appel à l'action clair, reliée à votre fiche et à vos menus."
+                    },
+                    {
+                        "name": "Gestion & acquisition d'avis clients",
+                        "desc": "Une routine simple pour demander des avis aux clients satisfaits et répondre à chaque avis, car le nombre, la note et la fraîcheur des avis nourrissent la notoriété."
+                    },
+                    {
+                        "name": "Amélioration de la visibilité sur Google Maps",
+                        "desc": "Je suis vos positions sur la carte pour vos recherches principales et j'ajuste la fiche, les pages et les citations jusqu'à ce que vous montiez."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "Comment se passe le SEO local, étape par étape",
+                "items": [
+                    {
+                        "title": "Audit local",
+                        "desc": "Je vérifie votre fiche Google Business Profile, vos positions locales et la façon dont votre nom, adresse et téléphone apparaissent en ligne."
+                    },
+                    {
+                        "title": "Corriger les bases",
+                        "desc": "Fiche, catégories, une page utile pour chaque ville et service, et des citations cohérentes."
+                    },
+                    {
+                        "title": "Développer et mesurer",
+                        "desc": "Un plan pour les avis et les liens locaux, avec le suivi des appels et des leads venant de Google."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Les outils et données du SEO local",
+                "intro": "Les positions locales changent d'un quartier à l'autre : je les mesure là où sont vos clients.",
+                "items": [
+                    {
+                        "name": "Google Business Profile",
+                        "desc": "La fiche elle-même, avec ses statistiques d'appels, de clics vers le site et de demandes d'itinéraire."
+                    },
+                    {
+                        "name": "Google Search Console",
+                        "desc": "Montre les recherches locales qui amènent des visiteurs sur votre site."
+                    },
+                    {
+                        "name": "BrightLocal",
+                        "desc": "Suit les positions sur la carte et les citations dans les annuaires."
+                    },
+                    {
+                        "name": "Google Analytics 4",
+                        "desc": "Mesure les appels, formulaires et réservations des visiteurs locaux."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "SEO local ou SEO classique ?",
+                "paragraphs": [
+                    "Le SEO classique vise des recherches larges sans lieu, souvent face à des sites nationaux. Le SEO local vise des recherches avec un lieu, où votre fiche Google Business Profile, vos avis et vos citations comptent autant que votre site.",
+                    "La plupart des entreprises de services ont besoin des deux : le SEO local pour gagner les clients proches, et un site techniquement solide pour que les pages de service reliées à la fiche puissent se classer et convertir."
+                ]
+            },
             "faqs": [
                 {
-                    "question": "Qu'est-ce que le SEO local ?",
-                    "answer": "Le SEO local aide votre entreprise à apparaître quand les gens cherchent un service près de chez eux, par exemple « avocat famille Rabat » ou « dentiste près de moi ». Il couvre la fiche Google Business Profile, les pages locales du site, les citations et les avis."
+                    "question": "En combien de temps le SEO local donne-t-il des résultats ?",
+                    "answer": "Les corrections de la fiche et des citations peuvent apparaître sur la carte en quelques semaines. Les nouvelles pages et les avis se construisent sur plusieurs mois. Le rythme dépend de votre ville et de la concurrence."
                 },
                 {
-                    "question": "Quelle différence avec le SEO classique ?",
-                    "answer": "Le SEO classique vise des recherches larges. Le SEO local se concentre sur les recherches avec un lieu, où la carte et la fiche Google Business Profile comptent autant que le site."
+                    "question": "Faut-il un site web pour le SEO local ?",
+                    "answer": "Une fiche Google Business Profile peut se classer seule, mais un site avec une page par service et par ville donne à Google plus de raisons de vous faire confiance et offre aux visiteurs un endroit pour convertir."
+                },
+                {
+                    "question": "Quel est l'effet des avis sur le classement local ?",
+                    "answer": "Les avis font partie de la notoriété. Leur nombre, la note, leur fraîcheur et vos réponses aident Google et les clients à faire confiance à votre entreprise."
                 },
                 {
                     "question": "Pouvez-vous aider si je sers plusieurs villes ?",
                     "answer": "Oui. Chaque combinaison ville et service a généralement besoin de sa propre page utile, reliée à votre fiche et à vos pages de service principales."
+                },
+                {
+                    "question": "Combien coûte le SEO local ?",
+                    "answer": "Le prix dépend du nombre d'emplacements et de services. Vous recevez un devis après l'appel gratuit de 15 minutes, avant tout travail."
                 },
                 {
                     "question": "Travaillez-vous avec des entreprises au Maroc ?",
@@ -943,27 +1104,104 @@
             "eyebrow": "Service · Analytics",
             "title": "Configuration GA4 et suivi des conversions",
             "lead": "Voyez quelles pages, recherches et campagnes vous apportent des leads, pas seulement des visites. Je configure GA4 et Google Tag Manager correctement et je crée un tableau de bord que vous ouvrirez vraiment.",
-            "for_who": [
-                "Vous avez GA4 mais vous ne faites pas confiance aux chiffres.",
-                "Vous ne savez pas quelles pages ou campagnes apportent des formulaires, des appels ou des messages WhatsApp.",
-                "Vos conversions Google Ads ne correspondent pas à la réalité.",
-                "Vous ne regardez encore que les pages vues et les sessions.",
-                "Les rapports mensuels prennent des heures."
-            ],
-            "steps": [
-                {
-                    "title": "Plan de suivi",
-                    "desc": "Nous définissons ce qui compte comme un lead et quelles actions mesurer."
-                },
-                {
-                    "title": "Configuration et tests",
-                    "desc": "GA4 et Google Tag Manager sont configurés, et chaque événement et conversion est testé."
-                },
-                {
-                    "title": "Tableau de bord",
-                    "desc": "Un tableau de bord Looker Studio montre les leads par page, source et campagne."
-                }
-            ],
+            "definition": {
+                "title": "Qu'est-ce que le suivi des conversions GA4 ?",
+                "paragraphs": [
+                    "Google Analytics 4 (GA4) est la plateforme d'analyse de Google. Elle enregistre ce que font les visiteurs sous forme d'événements : une page vue, un clic sur un numéro, un envoi de formulaire. Suivre les conversions, c'est marquer les événements qui créent des leads pour savoir exactement d'où ils viennent.",
+                    "Google Tag Manager envoie ces événements à GA4 et à Google Ads sans modifier le code du site à chaque fois. Looker Studio transforme les données en un tableau de bord lisible par toute votre équipe.",
+                    "Sans suivi des conversions, vous voyez le trafic mais pas les résultats. Avec, chaque page, mot-clé et campagne se juge aux leads qu'il apporte."
+                ]
+            },
+            "for_who": {
+                "title": "Les signes que votre suivi doit être revu",
+                "items": [
+                    "Vous avez GA4 mais vous ne faites pas confiance aux chiffres.",
+                    "Vous ne savez pas quelles pages ou campagnes apportent des formulaires, des appels ou des messages WhatsApp.",
+                    "Vos conversions Google Ads ne correspondent pas à la réalité.",
+                    "Vous ne regardez encore que les pages vues et les sessions.",
+                    "Les rapports mensuels prennent des heures."
+                ]
+            },
+            "included": {
+                "title": "Ce que comprend la configuration GA4",
+                "intro": "Cinq éléments, testés de bout en bout avant que vous vous y fiiez.",
+                "items": [
+                    {
+                        "name": "Configuration avancée de GA4",
+                        "desc": "Flux de données, conservation des données, filtres du trafic interne, suivi multi-domaines et liaisons avec Google Ads et Search Console, réglés correctement dès le départ."
+                    },
+                    {
+                        "name": "Installation de Google Tag Manager (GTM)",
+                        "desc": "Un conteneur propre avec un nommage clair, pour que balises, déclencheurs et variables restent faciles à maintenir et que rien ne se déclenche deux fois."
+                    },
+                    {
+                        "name": "Tracking d'événements & conversions personnalisés",
+                        "desc": "Envois de formulaires, clics téléphone et WhatsApp, clics e-mail, réservations et autres actions clés suivis comme événements et marqués comme conversions."
+                    },
+                    {
+                        "name": "Tableaux de bord Looker Studio",
+                        "desc": "Un tableau de bord avec les leads par page, source, campagne et appareil, mis à jour automatiquement."
+                    },
+                    {
+                        "name": "Visualisation de l'entonnoir de conversion",
+                        "desc": "Un rapport d'entonnoir qui montre où les visiteurs décrochent entre l'arrivée sur une page et la demande de contact."
+                    }
+                ]
+            },
+            "steps": {
+                "title": "Comment se passe la configuration GA4",
+                "items": [
+                    {
+                        "title": "Plan de suivi",
+                        "desc": "Nous définissons ce qui compte comme un lead et quelles actions mesurer."
+                    },
+                    {
+                        "title": "Configuration et tests",
+                        "desc": "GA4 et Google Tag Manager sont configurés, et chaque événement et conversion est testé."
+                    },
+                    {
+                        "title": "Tableau de bord",
+                        "desc": "Un tableau de bord Looker Studio montre les leads par page, source et campagne."
+                    },
+                    {
+                        "title": "Passation",
+                        "desc": "Je vous présente le tableau de bord et la liste des événements, pour que votre équipe utilise les données dès le premier jour."
+                    }
+                ]
+            },
+            "tools": {
+                "title": "Les outils de la configuration",
+                "intro": "Ce sont tous des outils Google gratuits : aucun abonnement en plus.",
+                "items": [
+                    {
+                        "name": "Google Analytics 4",
+                        "desc": "Stocke vos événements et conversions et en fait des rapports."
+                    },
+                    {
+                        "name": "Google Tag Manager",
+                        "desc": "Envoie les événements à GA4 et Google Ads sans changer le code à chaque mise à jour."
+                    },
+                    {
+                        "name": "Looker Studio",
+                        "desc": "Crée des tableaux de bord à partir de GA4, Search Console et Google Ads."
+                    },
+                    {
+                        "name": "Google Ads",
+                        "desc": "Importe les conversions GA4 pour mesurer les campagnes sur de vrais leads."
+                    },
+                    {
+                        "name": "Tag Assistant",
+                        "desc": "Vérifie que chaque balise se déclenche une seule fois, au bon moment."
+                    }
+                ]
+            },
+            "compare": {
+                "title": "GA4 ou Google Tag Manager ?",
+                "paragraphs": [
+                    "GA4 stocke et présente vos données. Google Tag Manager configure et envoie le suivi. On peut utiliser GA4 sans Tag Manager, mais chaque nouvel événement demande alors l'intervention d'un développeur.",
+                    "Universal Analytics, l'ancienne version de Google Analytics, a cessé de collecter des données en juillet 2023 : GA4 est désormais la norme pour tous les sites."
+                ]
+            },
             "faqs": [
                 {
                     "question": "Pourquoi utiliser GA4 et Google Tag Manager ensemble ?",
@@ -980,6 +1218,14 @@
                 {
                     "question": "Pouvez-vous corriger une configuration GA4 existante ?",
                     "answer": "Oui. Je peux examiner ce qui est en place, corriger les événements cassés ou en double et nettoyer les rapports."
+                },
+                {
+                    "question": "Quand verrai-je des données ?",
+                    "answer": "Les événements s'enregistrent dès la mise en ligne. Les tendances utiles apparaissent après quelques semaines de données."
+                },
+                {
+                    "question": "Combien coûte une configuration GA4 ?",
+                    "answer": "Le prix dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires. Vous recevez un devis après l'appel gratuit de 15 minutes."
                 }
             ]
         }

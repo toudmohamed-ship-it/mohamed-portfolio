@@ -8,6 +8,7 @@ import TableOfContents, { type Heading } from "@/components/blog/TableOfContents
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import SocialShare from "@/components/blog/SocialShare";
 import AuthorBio from "@/components/blog/AuthorBio";
+import ServiceBridge from "@/components/blog/ServiceBridge";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -162,6 +163,7 @@ export default async function BlogPostPage({ params }: Props) {
                             <TableOfContents headings={headings} title={t("on_this_page")} />
                         </div>
                         <div className="blog-content" dangerouslySetInnerHTML={{ __html: body }} />
+                        <ServiceBridge postSlug={slug} locale={locale} />
                         <AuthorBio locale={locale} />
                         <BlogFAQ faqs={meta.faqs} title={t("faq_title")} />
                         <RelatedPosts currentSlug={slug} relatedSlugs={meta.relatedPosts || meta.relatedSlugs || []} locale={locale} />

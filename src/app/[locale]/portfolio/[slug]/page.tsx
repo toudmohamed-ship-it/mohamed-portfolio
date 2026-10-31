@@ -94,8 +94,8 @@ export default async function CaseStudyPage({ params }: Props) {
         url,
         mainEntityOfPage: url,
         ...(study.gallery[0] ? { image: `${BASE_URL}${study.gallery[0].src}` } : {}),
-        author: { "@type": "Person", name: "Mohamed Toudghi", url: BASE_URL },
-        publisher: { "@type": "Person", name: "Mohamed Toudghi", url: BASE_URL },
+        author: { "@id": `${BASE_URL}/#person` },
+        publisher: { "@id": `${BASE_URL}/#person` },
         about: tags,
         keywords: tags.join(", "),
     };
