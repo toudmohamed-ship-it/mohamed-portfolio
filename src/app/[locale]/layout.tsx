@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import Analytics from "@/components/seo/Analytics";
 import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
@@ -27,12 +27,14 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: false, // small labels only; not worth competing with the main font
 });
 
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic"],
   display: "swap",
+  // Preloaded on every page (about 30 KB): without it the Arabic homepage scored 75 instead of 90+
 });
 
 // Helper type for params
@@ -113,8 +115,11 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Providing all messages to the client
+  // Only the namespaces that client components read are sent to the browser; server components read the rest directly
   const messages = await getMessages();
+  const clientMessages = Object.fromEntries(
+    ['HomePage', 'Breadcrumbs', 'ContactForm'].filter((k) => k in messages).map((k) => [k, messages[k]])
+  );
 
   // RTL Logic
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
@@ -126,42 +131,10 @@ export default async function LocaleLayout({
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
       <body className={`${geist.variable} ${geistMono.variable} ${cairo.variable} antialiased flex flex-col min-h-screen`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-53XVQ2J6"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-53XVQ2J6');
-          `}
-        </Script>
-        {/* End Google Tag Manager */}
-        {/* Google Tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9GBZG4HWN2"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-9GBZG4HWN2');
-          `}
-        </Script>
-          <NextIntlClientProvider messages={messages} locale={locale}>
+        {/* GA4 loads after the first interaction (see Analytics). The GTM container (GTM-53XVQ2J6) was empty,
+            so it was removed; add it back here if tags are ever configured in it. */}
+        <Analytics />
+          <NextIntlClientProvider messages={clientMessages} locale={locale}>
             <SchemaMarkup />
             <Navbar />
             <main className="flex-grow">
