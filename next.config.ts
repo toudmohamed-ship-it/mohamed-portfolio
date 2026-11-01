@@ -58,6 +58,17 @@ const nextConfig: NextConfig = {
         destination: '/portfolio/premium-medspa-seo-audit',
         permanent: true,
       },
+      // Old slug of the technical SEO pillar article (Search Console reported it as 404)
+      {
+        source: '/blog/technical-seo-service-businesses-saas',
+        destination: '/blog/technical-seo-checklist-2026',
+        permanent: true,
+      },
+      {
+        source: '/:locale(fr|ar)/blog/technical-seo-service-businesses-saas',
+        destination: '/:locale/blog/technical-seo-checklist-2026',
+        permanent: true,
+      },
       // Redirect old Local SEO blog slug
       {
         source: '/blog/local-seo-morocco',

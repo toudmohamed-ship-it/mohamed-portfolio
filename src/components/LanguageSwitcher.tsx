@@ -1,6 +1,7 @@
 'use client';
+import NextLink from 'next/link';
 import { useLocale } from 'next-intl';
-import { Link, usePathname } from '@/i18n/routing';
+import { usePathname } from '@/i18n/routing';
 import clsx from 'clsx';
 
 const LANGUAGES = [
@@ -8,6 +9,14 @@ const LANGUAGES = [
     { code: 'fr', label: 'FR', name: 'Français' },
     { code: 'ar', label: 'AR', name: 'العربية' },
 ];
+
+// Plain URLs for each language: English at the root, the others under /fr and /ar.
+// next-intl's Link renders /en/... when switching to the default locale, which only redirects
+// and made Google crawl a dozen /en URLs, so the hrefs are built here instead.
+function localeHref(code: string, pathname: string) {
+    if (code === 'en') return pathname;
+    return pathname === '/' ? `/${code}` : `/${code}${pathname}`;
+}
 
 export default function LanguageSwitcher() {
     const locale = useLocale();
@@ -17,9 +26,9 @@ export default function LanguageSwitcher() {
         <div className="flex items-center gap-1 font-mono text-[13px]">
             {LANGUAGES.map((lang, index) => (
                 <span key={lang.code} className="flex items-center gap-1">
-                    <Link
-                        href={pathname}
-                        locale={lang.code}
+                    <NextLink
+                        href={localeHref(lang.code, pathname)}
+                        hrefLang={lang.code}
                         lang={lang.code}
                         title={lang.name}
                         aria-current={locale === lang.code ? 'true' : undefined}
@@ -30,7 +39,7 @@ export default function LanguageSwitcher() {
                     >
                         {lang.label}
                         <span className="sr-only"> {lang.name}</span>
-                    </Link>
+                    </NextLink>
                     {index < LANGUAGES.length - 1 && <span className="text-line-strong" aria-hidden="true">·</span>}
                 </span>
             ))}
