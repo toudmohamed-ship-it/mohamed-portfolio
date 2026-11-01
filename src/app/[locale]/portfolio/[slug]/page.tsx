@@ -29,15 +29,16 @@ export async function generateMetadata({ params }: Props) {
     // Search-friendly title ("Local SEO Case Study: U.S. Law Firm"); the layout template adds the name
     const title = t.has(`${slug}.seo_title`) ? t(`${slug}.seo_title`) : t(`${slug}.title`);
     const image = study.gallery[0]?.src;
+    const description = t.has(`${slug}.seo_description`) ? t(`${slug}.seo_description`) : t(`${slug}.summary`);
 
     return {
         title,
-        description: t(`${slug}.summary`),
+        description,
         alternates: pageAlternates(locale, `/portfolio/${slug}`),
         openGraph: {
             type: "article",
             title,
-            description: t(`${slug}.summary`),
+            description,
             url: localizedUrl(locale, `/portfolio/${slug}`),
             images: [image || '/og-image.jpg'],
         },
@@ -82,6 +83,10 @@ export default async function CaseStudyPage({ params }: Props) {
     const captions = list(`${slug}.gallery_alts`);
     const tags = t(`${slug}.tags`).split(' • ');
     const steps = toSteps(t(`${slug}.approach`));
+    const context = t.has(`${slug}.context`) ? t(`${slug}.context`) : null;
+    const problems = t.has(`${slug}.problems`) ? (t.raw(`${slug}.problems`) as { title: string; desc: string }[]) : [];
+    const richSteps = t.has(`${slug}.steps`) ? (t.raw(`${slug}.steps`) as { title: string; desc: string }[]) : [];
+    const lessons = t.has(`${slug}.lessons`) ? (t.raw(`${slug}.lessons`) as string[]) : [];
     const market = t.has(`${slug}.market`) ? t(`${slug}.market`) : null;
     const period = t.has(`${slug}.period`) ? t(`${slug}.period`) : null;
     const metrics = (study.comparisonMetrics || []).map((m, i) =>
@@ -148,19 +153,57 @@ export default async function CaseStudyPage({ params }: Props) {
                             </li>
                         ))}
                     </ul>
+                    <div data-tone="white" className="mt-6 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-wrap items-center justify-between gap-5">
+                        <div className="flex flex-col gap-1 max-w-[560px]">
+                            <p className="m-0 text-[19px] font-semibold text-ink">{tUI('cta_title')}</p>
+                            <p className="m-0 text-[16px] text-ink-soft">{tUI('cta_text')}</p>
+                        </div>
+                        <Link href="/contact" className="btn inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white">
+                            {tUI('cta_button')} <span className="arrow" aria-hidden="true">→</span>
+                        </Link>
+                    </div>
                 </section>
             )}
 
             <div className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16 items-start">
                 <article className="min-w-0 max-w-[740px] flex flex-col gap-14">
+                    {context && (
+                        <section className="flex flex-col gap-4">
+                            <h2 className="m-0 text-[28px] font-semibold">{tUI('about_project')}</h2>
+                            <p className="m-0 text-[18px] leading-relaxed text-ink-soft">{context}</p>
+                        </section>
+                    )}
+
                     <section className="flex flex-col gap-4">
                         <h2 className="m-0 text-[28px] font-semibold">{tUI('challenge')}</h2>
                         <p className="m-0 text-[18px] leading-relaxed text-ink-soft">{t(`${slug}.challenge`)}</p>
+                        {problems.length > 0 && (
+                            <ul className="list-none m-0 p-0 flex flex-col">
+                                {problems.map((pr) => (
+                                    <li key={pr.title} className="flex flex-col gap-1 py-4 border-t border-line last:border-b">
+                                        <h3 className="m-0 text-[18px] font-semibold leading-snug">{pr.title}</h3>
+                                        <p className="m-0 text-[16px] leading-relaxed text-ink-soft">{pr.desc}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </section>
 
                     <section className="flex flex-col gap-5">
                         <h2 className="m-0 text-[28px] font-semibold">{tUI('approach')}</h2>
-                        {steps.length > 1 ? (
+                        {richSteps.length > 0 ? (
+                            <ol className="list-none m-0 p-0 flex flex-col gap-5">
+                                {richSteps.map((step, i) => (
+                                    <li key={step.title} className="flex gap-4 items-start">
+                                        <span aria-hidden="true" className="shrink-0 w-8 h-8 rounded-full bg-sage text-forest font-semibold text-sm flex items-center justify-center mt-0.5">{i + 1}</span>
+                                        <div className="flex flex-col gap-1">
+                                            <h3 className="m-0 text-[18px] font-semibold leading-snug">{step.title}</h3>
+                                            <p className="m-0 text-[16px] leading-relaxed text-ink-soft">{step.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ol>
+                        ) : steps.length > 1 ? (
                             <ol className="list-none m-0 p-0 flex flex-col gap-4">
                                 {steps.map((step, i) => (
                                     <li key={i} className="flex gap-4 items-start">
@@ -221,6 +264,17 @@ export default async function CaseStudyPage({ params }: Props) {
                                     </figure>
                                 );
                             })}
+                        </section>
+                    )}
+
+                    {lessons.length > 0 && (
+                        <section className="flex flex-col gap-5 border-s-4 border-forest ps-6">
+                            <h2 className="m-0 text-[28px] font-semibold">{tUI('lessons')}</h2>
+                            <ul className="list-none m-0 p-0 flex flex-col gap-4">
+                                {lessons.map((l) => (
+                                    <li key={l} className="text-[17px] leading-relaxed text-ink-soft">{l}</li>
+                                ))}
+                            </ul>
                         </section>
                     )}
                 </article>

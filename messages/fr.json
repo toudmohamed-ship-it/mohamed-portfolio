@@ -636,7 +636,13 @@
         "period": "Période",
         "related_title": "Pour aller plus loin",
         "related_service": "Le service derrière ce projet",
-        "related_article": "Lire le guide sur ce sujet"
+        "related_article": "Lire le guide sur ce sujet",
+        "about_project": "Le projet",
+        "problems": "Les problèmes identifiés",
+        "lessons": "Ce qu'une entreprise similaire peut en retenir",
+        "cta_title": "Les mêmes problèmes sur votre site ?",
+        "cta_text": "Parlons-en lors d'un appel gratuit de 15 minutes. Vous saurez clairement quoi corriger en premier.",
+        "cta_button": "Réserver un appel gratuit de 15 min"
     },
     "PortfolioPage": {
         "metadata": {

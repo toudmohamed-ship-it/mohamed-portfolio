@@ -258,9 +258,9 @@
         "global-marketplace-audit": {
             "client": "Premier Luxury Marketplace",
             "title": "Technical SEO Audit & Optimization for a Luxury Marketplace",
-            "summary": "Improved crawl efficiency, content discoverability, and technical reliability for a large-scale marketplace.",
+            "summary": "A technical SEO audit for a large U.S. luxury marketplace: titles and H1s aligned, crawl errors fixed, canonicals and schema updated. Organic traffic up 6% to 562.8K monthly visits.",
             "tags": "Technical SEO • Site Architecture • Indexation",
-            "challenge": "The client is a large-scale marketplace requiring robust technical SEO improvements. The focus was on metadata optimization across core pages, resolving site health issues like broken internal links, restructuring on-page hierarchy, accessible HTML, and implementing advanced schema markup to strengthen organic performance.",
+            "challenge": "A large site repeats its problems at scale. One wrong template affects every page built on it, and crawl errors eat into the time Google spends on the pages that matter. The audit found four groups of issues.",
             "approach": "Executed a multi-phase technical audit. Phase 1 focused on metadata optimization (titles/H1 consistency). Phase 2 addressed site health by fixing 'no response' errors and implementing self-referencing canonicals on listing detail pages. Phase 3 involved updating Schema.org markup and optimizing internal linking equity.",
             "results": {
                 "0": "Organic Traffic +6% (562.8K monthly visits - US Data)",
@@ -274,14 +274,57 @@
                 "2": "Google Search Console, 16 months: 5.99M clicks and 214M impressions"
             },
             "seo_title": "Technical SEO Case Study: Large Luxury Marketplace",
-            "market": "United States"
+            "market": "United States",
+            "context": "The client is a large luxury marketplace whose main market is the United States. The site already had serious search traffic: Google Search Console showed 5.99 million clicks and 214 million impressions over 16 months. On a site this size the goal is not to start from zero. It is to protect what already ranks, remove the problems that waste Google's crawling, and win more searches from the pages that exist.",
+            "problems": [
+                {
+                    "title": "Titles and H1s that did not agree",
+                    "desc": "On core pages, the title tag and the H1 heading described the page in different ways. That sends Google mixed signals about the main topic of each page."
+                },
+                {
+                    "title": "Broken internal links and “no response” errors",
+                    "desc": "The crawl found broken internal links and URLs that returned no response. Each one is a dead end for visitors and a wasted request for Googlebot."
+                },
+                {
+                    "title": "Listing pages without a self-referencing canonical",
+                    "desc": "Listing detail pages did not declare themselves as the main version of their URL. On marketplaces, filters and tracking parameters can create several URLs for the same listing, and without a canonical Google has to guess which one to rank."
+                },
+                {
+                    "title": "Outdated structured data and a loose heading hierarchy",
+                    "desc": "The Schema.org markup needed updating, and the on-page heading structure and HTML were not as clear and accessible as they could be."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Phase 1: titles and H1s",
+                    "desc": "I aligned the title tags and H1 headings on core pages so that each page states one clear topic, in the words people actually search."
+                },
+                {
+                    "title": "Phase 2: site health",
+                    "desc": "I fixed the “no response” errors and broken internal links, and added self-referencing canonical tags on listing detail pages so each listing points to itself as the version to index."
+                },
+                {
+                    "title": "Phase 3: structured data and internal links",
+                    "desc": "I updated the Schema.org markup, tidied the heading hierarchy and HTML, and reworked internal linking so more link value flows to the most important pages."
+                },
+                {
+                    "title": "Measurement",
+                    "desc": "Organic traffic and ranked keywords were tracked in Semrush on U.S. data, alongside Google Search Console."
+                }
+            ],
+            "lessons": [
+                "On a large site, fix patterns, not pages. One corrected template fixes every page that uses it, which is why the audit grouped issues by type instead of listing URLs one by one.",
+                "Small percentages are big numbers at this size. A 6% gain on a site at 562.8K monthly organic visits is roughly 30,000 more visits a month.",
+                "On any marketplace or listing site, check canonical tags early. Filters, sorting and tracking parameters create duplicate URLs quickly, and canonicals tell Google which version counts."
+            ],
+            "seo_description": "Technical SEO audit for a large U.S. luxury marketplace: titles, crawl errors, canonicals and schema fixed. Organic traffic up 6% to 562.8K visits a month."
         },
         "uk-compliance-service-audit": {
             "client": "UK Compliance Service",
             "title": "SEO & Conversion Optimization for a UK Service Business",
-            "summary": "Doubled conversions and achieved top 10 rankings for key service pages via targeted landing page optimization.",
+            "summary": "Technical fixes, a new landing page and on-page work for a London compliance service. Conversions on the main service page more than doubled in the first month; mobile PageSpeed went from 66 to 93.",
             "tags": "Local SEO • CRO • Technical SEO",
-            "challenge": "A UK-based service provider in the competitive London market faced low conversions on high-traffic pages. The site suffered from technical debt, with 1,170 pages crawled showing 'no response' errors, lack of H1 tags on key pages, and duplicate meta descriptions. Mobile performance was poor (PageSpeed 66), and the business was invisible in local map packs.",
+            "challenge": "Traffic was not the main problem. Conversions were. And behind the low conversions sat a set of technical issues that also held rankings back.",
             "approach": "Ran a focused campaign for the main landlord safety service. Designed a dedicated landing page with clear trust signals, improving Mobile PageSpeed to 93. Optimized 26 core pages and 20 existing blog posts, while publishing 10 new long-tail keyword articles. Fixed 10+ critical technical issues (blocked pages, broken links) using Screaming Frog and GSC.",
             "results": {
                 "0": "Conversions > doubled in Month 1 (High-traffic service page)",
@@ -297,14 +340,61 @@
                 "5": "Google Ads, 23 February to 3 April 2025: 625 clicks and 45 conversions"
             },
             "seo_title": "Local SEO and CRO Case Study: UK Service Business",
-            "market": "United Kingdom"
+            "market": "United Kingdom",
+            "context": "The client is a UK service business in the London market. Its main service is landlord safety compliance, which property owners search for when they need a certificate or an inspection. The site had traffic on its key pages, but too few of those visitors became enquiries, and the business did not appear in the local map results.",
+            "problems": [
+                {
+                    "title": "1,170 crawled pages with “no response” errors",
+                    "desc": "A crawl returned 1,170 pages with no response. That much noise wastes Google's crawling and hides the pages that should rank."
+                },
+                {
+                    "title": "Missing H1s and duplicate meta descriptions",
+                    "desc": "Key pages had no H1 heading, and many pages shared the same meta description, so neither Google nor searchers could tell the pages apart."
+                },
+                {
+                    "title": "Slow on mobile",
+                    "desc": "Mobile PageSpeed was 66. Most people searching for a local service do it on a phone, and a slow page loses them before they read the offer."
+                },
+                {
+                    "title": "Invisible in the map results",
+                    "desc": "The business did not show in the local map pack for its services in London."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "A keyword map for the main service",
+                    "desc": "I mapped primary, secondary and question keywords for the landlord safety service, so the page would answer what people actually search for."
+                },
+                {
+                    "title": "A dedicated landing page",
+                    "desc": "I designed a landing page for that service with clear trust signals. Its mobile PageSpeed went from 66 to 93, and desktop from 90 to 97."
+                },
+                {
+                    "title": "On-page work across the site",
+                    "desc": "I optimized 26 core pages and 20 existing blog posts, and published 10 new articles targeting long-tail searches."
+                },
+                {
+                    "title": "Technical fixes",
+                    "desc": "Using Screaming Frog and Google Search Console, I fixed more than 10 critical issues, including blocked pages and broken links."
+                },
+                {
+                    "title": "Paid search alongside SEO",
+                    "desc": "A Google Ads campaign ran from 23 February to 3 April 2025 and brought 625 clicks and 45 conversions, a conversion rate of about 7%."
+                }
+            ],
+            "lessons": [
+                "When a page gets traffic but few enquiries, start with the page, not with more traffic. Here, a focused landing page doubled conversions in its first month.",
+                "Speed is part of conversion work. Moving mobile PageSpeed from 66 to 93 removed a reason for visitors to leave before reading the offer.",
+                "A keyword map per service page keeps the content focused. It shows which questions the page must answer and which searches belong to a blog post instead."
+            ],
+            "seo_description": "SEO and CRO for a London compliance service: conversions doubled in month one, mobile PageSpeed 66 to 93, 26 pages and 20 posts optimized."
         },
         "saas-digital-launch": {
             "client": "SaaS Inventory Startup",
             "title": "End-to-End Digital Launch for a SaaS Startup",
-            "summary": "Jan–May 2024: Built the digital foundation from scratch, delivering a mobile-responsive site and automated lead workflows.",
+            "summary": "January to May 2024: a SaaS inventory startup's full digital launch, from a mobile-responsive no-code website and SEO structure to Gist chat and email automation.",
             "tags": "SEO Strategy • Web Design • Marketing Automation",
-            "challenge": "A new inventory management brand needed a complete digital ecosystem from the ground up. The requirement was a mobile-responsive no-code website, a robust SEO foundation (On-page + Structure), and automated lead generation channels to capture early interest.",
+            "challenge": "Starting from nothing has one advantage: the structure can be right from day one. The risk is launching a site that looks good but that Google cannot read and that lets interested visitors leave without a trace.",
             "approach": "Acting as the SEO & Digital Marketing Consultant, I developed a fully responsive website using a no-code builder. Implemented a comprehensive SEO strategy, structuring navigation for user intent. Integrated Gist for chatbot and email automation workflows to nurture leads. Established a multi-channel social presence on Facebook, Instagram, and LinkedIn.",
             "results": {
                 "0": "Successful Launch of Mobile-Responsive Site",
@@ -317,14 +407,53 @@
                 "2": "Gist chat widget for lead capture (brand hidden)"
             },
             "seo_title": "SaaS Launch Case Study: Website, SEO and Lead Automation",
-            "period": "January to May 2024"
+            "period": "January to May 2024",
+            "context": "The client was a new inventory management brand with no website, no search presence and no way to collect leads. I worked as its SEO and digital marketing consultant from January to May 2024, with one goal: launch a site that could be found, explain the product clearly and capture early interest from the first visit.",
+            "problems": [
+                {
+                    "title": "No website",
+                    "desc": "The brand needed a mobile-responsive site, built on a no-code builder."
+                },
+                {
+                    "title": "No SEO foundation",
+                    "desc": "Pages, navigation and on-page elements had to be planned around how buyers search for inventory software, before any content was written."
+                },
+                {
+                    "title": "No lead capture",
+                    "desc": "Early visitors had no way to ask questions or leave their details, so interest from launch would be lost."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "The website",
+                    "desc": "I built a fully responsive website on a no-code builder. It went through two design versions, a light one at first and then a dark one."
+                },
+                {
+                    "title": "SEO structure",
+                    "desc": "I planned the navigation around user intent, so each main page answers one type of search, and set up the on-page SEO for each page."
+                },
+                {
+                    "title": "Lead capture and automation",
+                    "desc": "I set up Gist for live chat and email automation, so visitors could ask questions on the site and leads received follow-up emails automatically."
+                },
+                {
+                    "title": "Social channels",
+                    "desc": "I set up the brand on Facebook, Instagram and LinkedIn, with visuals made in Canva, and set up Google Analytics."
+                }
+            ],
+            "lessons": [
+                "Plan the site structure before the design. Navigation built around search intent is far easier to rank than pages reorganized after launch.",
+                "Capture leads before you have traffic. A chat widget and an email sequence from day one mean early visitors are not lost.",
+                "A no-code site can rank if the basics are right: one topic per page, clear headings, fast mobile pages and internal links."
+            ],
+            "seo_description": "How a SaaS inventory startup launched in 2024: no-code website, SEO structure, Gist chat and email automation, and social channels."
         },
         "premium-medspa-seo-audit": {
             "client": "Premium Medical Spa (U.S.-Based)",
             "title": "Technical SEO Audit & Local Optimization for U.S.-Based Medical Spa",
-            "summary": "Resolved critical technical SEO issues blocking Google indexation and developed comprehensive local SEO strategy.",
+            "summary": "A U.S. medical spa's pages were missing their SEO titles in the HTML because two SEO plugins clashed, and canonicals pointed to a development domain. Both fixed, with a local SEO plan.",
             "tags": "Technical SEO • Local SEO • Site Audit",
-            "challenge": "A medical spa website was experiencing poor visibility despite offering premium services. Initial investigation revealed that SEO metadata (titles & descriptions) were not appearing in the HTML source due to a plugin conflict between RankMath and Yoast SEO. Additionally, canonical tags were misconfigured, some self-referenced incorrectly, while others pointed to local development domains instead of the live site. These issues prevented Google from properly crawling, indexing, and ranking the site's service pages.",
+            "challenge": "Poor visibility usually points to content or links. Here, the first checks found something more basic: Google was not receiving the right signals from the pages at all.",
             "approach": "Conducted a comprehensive SEO audit covering technical, on-page, and local SEO factors. Built an SEO Implementation Tracking Sheet to organize all optimizations and monitor progress. Resolved the metadata visibility issue by deactivating RankMath and maintaining Yoast SEO as the single source of truth. Fixed all canonical tag errors to ensure each page properly referenced its authoritative URL. Drafted optimized titles, meta descriptions, and heading structures for service and location pages. Developed a detailed Local SEO Strategy covering on-page optimization, local citations, link building, and content strategy.",
             "results": {
                 "0": "Fixed Plugin Conflict: Restored SEO metadata visibility in HTML",
@@ -338,28 +467,102 @@
                 "2": "SEO tracking sheet with new titles and meta descriptions for service pages"
             },
             "seo_title": "Technical and Local SEO Case Study: U.S. Medical Spa",
-            "market": "United States"
+            "market": "United States",
+            "context": "The client is a medical spa in the United States offering premium treatments. Despite the quality of its services, the website had poor visibility in Google. A dashboard snapshot from the project shows 83 organic visits, 212 ranking keywords and an Authority Score of 18.",
+            "problems": [
+                {
+                    "title": "SEO titles and descriptions missing from the HTML",
+                    "desc": "Two SEO plugins, Rank Math and Yoast SEO, were active at the same time. The conflict meant the titles and meta descriptions written for the pages did not appear in the HTML source that Google reads."
+                },
+                {
+                    "title": "Canonical tags pointing to the wrong place",
+                    "desc": "Some canonical tags referenced the wrong URL, and others pointed to a local development domain instead of the live site. In effect, the site was telling Google that its real pages lived somewhere else."
+                },
+                {
+                    "title": "Service pages that could not rank",
+                    "desc": "Together, these issues stopped Google from properly crawling, indexing and ranking the service pages."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Full audit",
+                    "desc": "I audited the technical, on-page and local SEO factors, and built an SEO implementation tracking sheet to organize every change and follow its progress."
+                },
+                {
+                    "title": "One SEO plugin",
+                    "desc": "I deactivated Rank Math and kept Yoast SEO as the single source of SEO settings. The titles and meta descriptions appeared in the HTML again."
+                },
+                {
+                    "title": "Canonicals corrected",
+                    "desc": "I fixed every canonical tag so that each page points to its own live URL."
+                },
+                {
+                    "title": "New titles, descriptions and headings",
+                    "desc": "I drafted optimized titles, meta descriptions and heading structures for the service and location pages, ready for the client's approval."
+                },
+                {
+                    "title": "Local SEO strategy",
+                    "desc": "I wrote a local SEO strategy covering on-page optimization, local citations, link building and content."
+                }
+            ],
+            "lessons": [
+                "Never run two SEO plugins at once. They overwrite each other's output, and the result can be pages with no title or description at all.",
+                "Check canonical tags after any move from a staging or development site. Canonicals that still point to the old domain are a common and costly leftover.",
+                "Fix the signals before writing more content. New pages will not help while Google receives the wrong URL or no title for the pages you already have."
+            ],
+            "seo_description": "A U.S. medical spa lost its SEO titles to a plugin conflict and its canonicals pointed to a dev domain. How the audit found and fixed both."
         },
         "national-sports-org": {
             "client": "National Sports Organization",
             "title": "SEO & Content Strategy for a National Sports Organization",
-            "summary": "Developed a structured content strategy, improved internal linking, and optimized website architecture.",
+            "summary": "A content structure, event and match schema and better internal links for a national sports organization. Time spent on the site rose by 40%, and rich results appeared in Google.",
             "tags": "Content Strategy • SEO • Internal Linking",
-            "challenge": "Content was unstructured and difficult to find. Users were churning due to poor navigation and lack of clear content pathways.",
+            "challenge": "When content is hard to find, visitors leave and Google struggles to understand which pages matter. The work focused on structure first.",
             "approach": "Analyzed user search behavior to create a new content taxonomy. Implemented schema markup for events and matches and reorganized internal linking.",
             "results": {
                 "0": "Improved User Engagement Time by 40%",
                 "1": "Structured Data appearance (Rich Snippets) in SERPs",
                 "2": "Better internal search functionality"
             },
-            "seo_title": "Content SEO Case Study: National Sports Organization"
+            "seo_title": "Content SEO Case Study: National Sports Organization",
+            "context": "The client is a national sports organization with a lot of content, including events and matches. The content had grown without a clear structure, and visitors had trouble finding what they came for.",
+            "problems": [
+                {
+                    "title": "Unstructured content",
+                    "desc": "Content was not organized in a way that matched how people look for it, so related pages were scattered."
+                },
+                {
+                    "title": "Poor navigation",
+                    "desc": "Visitors left because there were no clear paths from one piece of content to the next."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Search behavior analysis",
+                    "desc": "I analyzed how people search for the organization's content, and used it to define a new content taxonomy: the categories and groupings that pages belong to."
+                },
+                {
+                    "title": "Structured data for events and matches",
+                    "desc": "I implemented schema markup for events and matches, so Google can read the event details and show them as rich results."
+                },
+                {
+                    "title": "Internal linking",
+                    "desc": "I reorganized internal links so each page leads to related content, giving visitors a next step and Google a clearer map of the site."
+                }
+            ],
+            "lessons": [
+                "Organize content around how people search, not around how the organization is structured internally.",
+                "Events and matches are good candidates for structured data: the information is already on the page, and schema lets Google display it directly in results.",
+                "Internal links do two jobs at once: they keep visitors on the site and tell Google which pages belong together."
+            ],
+            "seo_description": "Content structure, event schema and internal links for a national sports organization: 40% more time on site and rich results in Google."
         },
         "law-firm-local-seo": {
             "client": "U.S.-Based Law Firm",
             "title": "Local SEO & Website Optimization for a U.S.-Based Law Firm",
             "summary": "Local SEO for a U.S. law firm: practice area pages, on-page content for local searches and citations. Result: 30% more qualified leads from local search.",
             "tags": "Local SEO • On-Page SEO • Website Optimization",
-            "challenge": "The firm wanted to rank for a specific practice area in its local market, but the site structure was disjointed and its local signals were weak.",
+            "challenge": "In legal search, the firms that rank for “city plus practice area” get the calls. This firm had the expertise but not the site structure or the local signals to compete.",
             "approach": "I restructured the site into clear practice area sections. I optimized the on-page content for local searches (city plus practice area) and built quality local citations.",
             "results": {
                 "0": "Generated 30% more qualified leads from local search",
@@ -367,14 +570,44 @@
                 "2": "Improved domain authority and local trust signals"
             },
             "seo_title": "Law Firm SEO Case Study: Local SEO in the U.S.",
-            "market": "United States"
+            "market": "United States",
+            "context": "The client is a law firm in the United States that wanted to win more clients from local search in one practice area.",
+            "problems": [
+                {
+                    "title": "A disjointed site structure",
+                    "desc": "Practice areas were not organized into clear sections, so no single page was strong enough to rank for its main search."
+                },
+                {
+                    "title": "Weak local signals",
+                    "desc": "The firm's local presence online, including citations in directories, was too thin for Google to treat it as a strong local result."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Practice area sections",
+                    "desc": "I restructured the site into clear practice area sections, so each area has its own page and supporting content linked to it."
+                },
+                {
+                    "title": "On-page content for local searches",
+                    "desc": "I optimized the content for local searches combining the city and the practice area, the way potential clients actually search."
+                },
+                {
+                    "title": "Local citations",
+                    "desc": "I built quality local citations to strengthen the firm's local signals."
+                }
+            ],
+            "lessons": [
+                "For law firms, one strong page per practice area beats one page that lists every service.",
+                "Write for the search people type: the city and the practice area together.",
+                "Citations and a consistent name, address and phone number across directories are what make Google trust a firm as a local result."
+            ]
         },
         "moroccan-b2b-seo": {
             "client": "Moroccan B2B Website",
             "title": "On-Page SEO Optimization for a Moroccan B2B Website",
-            "summary": "Improved homepage rankings, CTR, and organic clicks through targeted on-page SEO and structural optimization.",
+            "summary": "On-page SEO for a Moroccan B2B website's homepage, with no new pages: clicks up from 32 to 74 in 3 months, CTR from 0.7% to 1.6%, average position from 34.2 to 14.1.",
             "tags": "On-Page SEO • CTR Optimization • Internal Linking",
-            "challenge": "The homepage was ranking outside top positions, receiving impressions but few clicks, and underperforming in CTR despite visibility. The goal was to increase qualified organic traffic without adding new pages.",
+            "challenge": "The goal was to bring more qualified visitors without creating new pages. That meant getting more out of the visibility the homepage already had.",
             "approach": "I improved keyword targeting within homepage content and rewrote meta titles/descriptions to align with search intent. I also improved page clarity and strengthened internal linking structure.",
             "results": {
                 "0": "Clicks +130% (32 → 74) in 3 Months",
@@ -407,7 +640,42 @@
             "market": "Morocco",
             "gallery_alts": {
                 "0": "Google Search Console: last 3 months compared with the previous 3 months"
-            }
+            },
+            "context": "The client is a B2B company in Morocco. Its homepage already appeared in Google, with about 4,330 impressions over three months, but it ranked too low and its search result was not convincing enough to earn clicks.",
+            "problems": [
+                {
+                    "title": "Ranked too low",
+                    "desc": "The homepage's average position was 34.2, on the fourth page of results, where very few people look."
+                },
+                {
+                    "title": "A search result people did not click",
+                    "desc": "The click-through rate was 0.7%: out of every 1,000 times the page appeared, about 7 people clicked."
+                },
+                {
+                    "title": "Keyword targeting and structure that could be clearer",
+                    "desc": "The homepage content did not target its main searches clearly enough, and internal links did not support it well."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Keyword targeting",
+                    "desc": "I improved how the homepage content targets its main searches, so Google can match the page to the right queries."
+                },
+                {
+                    "title": "Titles and descriptions rewritten",
+                    "desc": "I rewrote the meta title and description to match search intent, so the result in Google gives people a reason to click."
+                },
+                {
+                    "title": "Clarity and internal links",
+                    "desc": "I made the page clearer to read and strengthened the internal links pointing to it."
+                }
+            ],
+            "lessons": [
+                "Impressions barely moved (+3.7%), but clicks more than doubled. The growth came from ranking higher and from a better search result, not from more visibility.",
+                "Before creating new pages, check the ones you have. A page that already gets impressions is often the fastest win.",
+                "The title and description are your ad in Google. Rewriting them around what people search for is one of the cheapest ways to raise clicks."
+            ],
+            "seo_description": "On-page SEO for a Moroccan B2B homepage, no new pages: clicks 32 to 74 in 3 months, CTR 0.7% to 1.6%, position 34.2 to 14.1."
         }
     },
     "ServicesPage": {
@@ -636,7 +904,13 @@
         "period": "Period",
         "related_title": "Go further",
         "related_service": "The service behind this project",
-        "related_article": "Read the guide on this topic"
+        "related_article": "Read the guide on this topic",
+        "about_project": "About the project",
+        "problems": "What was wrong",
+        "lessons": "What a similar business can take from this",
+        "cta_title": "Seeing the same problems on your site?",
+        "cta_text": "Tell me about it in a free 15-minute call. You get a straight answer on what to fix first.",
+        "cta_button": "Book a free 15-min call"
     },
     "PortfolioPage": {
         "metadata": {
