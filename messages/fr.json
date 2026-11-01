@@ -155,9 +155,9 @@
                     "source": "Cabinet d'avocats, États-Unis"
                 },
                 {
-                    "value": "+40%",
-                    "label": "de temps passé sur le site après une refonte du contenu",
-                    "source": "Fédération sportive nationale"
+                    "value": "+130 %",
+                    "label": "de clics venant de Google en 3 mois, sans nouvelle page",
+                    "source": "Entreprise B2B (Maroc)"
                 }
             ]
         },
@@ -341,18 +341,18 @@
             "market": "États-Unis"
         },
         "national-sports-org": {
-            "client": "Organisation Sportive Nationale",
-            "title": "SEO & Stratégie de Contenu pour une Organisation Sportive",
-            "summary": "Développement d'une stratégie de contenu structurée, amélioration du maillage interne et optimisation de l'architecture du site.",
-            "tags": "Stratégie de Contenu • SEO • Maillage Interne",
-            "challenge": "Le contenu était non structuré et difficile à trouver. Les utilisateurs quittaient le site en raison d'une mauvaise navigation.",
-            "approach": "Analyse du comportement de recherche pour créer une nouvelle taxonomie. Implémentation du schema markup pour les événements et réorganisation des liens internes.",
+            "client": "Fédération sportive nationale",
+            "title": "Contenu SEO pour le site d'une fédération sportive nationale",
+            "summary": "Recherche de mots-clés, contenu SEO, titres et méta-descriptions pour trois pages du site d'une fédération sportive nationale, dont sa page partenaires.",
+            "tags": "Recherche de mots-clés • Contenu SEO • SEO On-Page",
+            "challenge": "Les pages avaient besoin d'un contenu et de métadonnées construits autour de ce que les gens recherchent, pour que Google comprenne chaque page et l'affiche pour les bonnes requêtes.",
+            "approach": "J'ai fait la recherche de mots-clés pour chaque page. J'ai optimisé le contenu autour de ces mots-clés. J'ai rédigé de nouveaux titres SEO et méta-descriptions et traité les autres éléments on-page.",
             "results": {
-                "0": "Amélioration du temps d'engagement utilisateur de 40%",
-                "1": "Apparition des données structurées (Rich Snippets) dans les SERPs",
-                "2": "Meilleure fonctionnalité de recherche interne"
+                "0": "Page partenaires et deux autres pages optimisées pour le référencement",
+                "1": "Recherche de mots-clés réalisée pour chaque page",
+                "2": "Nouveaux titres SEO et méta-descriptions en place"
             },
-            "seo_title": "Étude de cas SEO de contenu : organisation sportive nationale"
+            "seo_title": "Étude de cas contenu SEO : fédération sportive nationale"
         },
         "law-firm-local-seo": {
             "client": "Cabinet d'Avocats (USA)",

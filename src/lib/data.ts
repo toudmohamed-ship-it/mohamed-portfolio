@@ -65,10 +65,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     {
         slug: "national-sports-org",
-        services: ["keyword_strategy", "tech_seo"],
-        relatedPost: "technical-seo-checklist-2026",
+        services: ["keyword_strategy"],
+        relatedPost: "keyword-research-process",
         gallery: [],
-        tools: ["SEO Audit", "Content Strategy", "Internal Linking"],
+        tools: ["Keyword research", "SEO content", "On-page SEO"],
     },
     {
         slug: "law-firm-local-seo",

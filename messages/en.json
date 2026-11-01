@@ -155,9 +155,9 @@
                     "source": "U.S. law firm"
                 },
                 {
-                    "value": "+40%",
-                    "label": "more time spent on the site after a content restructure",
-                    "source": "National sports organisation"
+                    "value": "+130%",
+                    "label": "more clicks from Google in 3 months, with no new pages",
+                    "source": "B2B company (Morocco)"
                 }
             ]
         },
@@ -548,49 +548,41 @@
             "period": "Second half of 2025"
         },
         "national-sports-org": {
-            "client": "National Sports Organization",
-            "title": "SEO & Content Strategy for a National Sports Organization",
-            "summary": "A content structure, event and match schema and better internal links for a national sports organization. Time spent on the site rose by 40%, and rich results appeared in Google.",
-            "tags": "Content Strategy • SEO • Internal Linking",
-            "challenge": "When content is hard to find, visitors leave and Google struggles to understand which pages matter. The work focused on structure first.",
-            "approach": "Analyzed user search behavior to create a new content taxonomy. Implemented schema markup for events and matches and reorganized internal linking.",
+            "client": "National sports federation",
+            "title": "SEO Content for a National Sports Federation's Website",
+            "summary": "Keyword research, SEO content, titles and meta descriptions for three pages of a national sports federation's website, including its partners page.",
+            "tags": "Keyword Research • SEO Content • On-Page SEO",
+            "challenge": "The pages needed content and metadata built around what people actually search for, so that Google understands what each page is about and shows it for the right queries.",
+            "approach": "I did the keyword research for each page. I optimized the content around those keywords. I wrote new SEO titles and meta descriptions and handled the other on-page elements.",
             "results": {
-                "0": "Improved User Engagement Time by 40%",
-                "1": "Structured Data appearance (Rich Snippets) in SERPs",
-                "2": "Better internal search functionality"
+                "0": "Partners page and two other pages optimized for search",
+                "1": "Keyword research completed for each page",
+                "2": "New SEO titles and meta descriptions in place"
             },
-            "seo_title": "Content SEO Case Study: National Sports Organization",
-            "context": "The client is a national sports organization with a lot of content, including events and matches. The content had grown without a clear structure, and visitors had trouble finding what they came for.",
-            "problems": [
-                {
-                    "title": "Unstructured content",
-                    "desc": "Content was not organized in a way that matched how people look for it, so related pages were scattered."
-                },
-                {
-                    "title": "Poor navigation",
-                    "desc": "Visitors left because there were no clear paths from one piece of content to the next."
-                }
-            ],
+            "seo_title": "SEO Content Case Study: National Sports Federation",
+            "seo_description": "Keyword research, SEO content, titles and meta descriptions for three pages of a national sports federation's website, including its partners page.",
+            "role": "Sole SEO specialist at a digital marketing agency",
+            "period": "Second half of 2025",
+            "context": "The client is a national sports federation, served by the digital marketing agency where I was the only SEO specialist. My part of this project was deliberately small: the federation's partners page and two other pages of its website.",
             "steps": [
                 {
-                    "title": "Search behavior analysis",
-                    "desc": "I analyzed how people search for the organization's content, and used it to define a new content taxonomy: the categories and groupings that pages belong to."
+                    "title": "Keyword research for each page",
+                    "desc": "I researched the searches each page should answer, including the names and terms people use when they look for the federation's partners."
                 },
                 {
-                    "title": "Structured data for events and matches",
-                    "desc": "I implemented schema markup for events and matches, so Google can read the event details and show them as rich results."
+                    "title": "Content optimization",
+                    "desc": "I optimized the content of the three pages around those keywords, so each page states its topic clearly in the words people search with."
                 },
                 {
-                    "title": "Internal linking",
-                    "desc": "I reorganized internal links so each page leads to related content, giving visitors a next step and Google a clearer map of the site."
+                    "title": "Titles, descriptions and on-page elements",
+                    "desc": "I wrote new SEO titles and meta descriptions and handled the other on-page elements, so the pages present themselves well in Google's results."
                 }
             ],
             "lessons": [
-                "Organize content around how people search, not around how the organization is structured internally.",
-                "Events and matches are good candidates for structured data: the information is already on the page, and schema lets Google display it directly in results.",
-                "Internal links do two jobs at once: they keep visitors on the site and tell Google which pages belong together."
-            ],
-            "seo_description": "Content structure, event schema and internal links for a national sports organization: 40% more time on site and rich results in Google."
+                "Partners pages are easy to overlook, yet people search for an organization's sponsors and partners by name. A clear, well-titled page can capture those searches.",
+                "Do the keyword research before writing. It shows which words people really use, which are often different from an organization's official terms.",
+                "A small scope is still worth doing properly. A few pages with the right keywords, content and metadata are better than many pages touched lightly."
+            ]
         },
         "law-firm-local-seo": {
             "client": "U.S.-Based Law Firm",
