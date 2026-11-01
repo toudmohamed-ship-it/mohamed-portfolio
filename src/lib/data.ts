@@ -25,7 +25,7 @@ export const CASE_STUDIES: CaseStudy[] = [
             { src: "/images/portfolio/luxury-marketplace/seo-dashboard.png", alt: "SEO dashboard: 562.8K organic traffic and 281.4K ranked keywords (US data)" },
             { src: "/images/portfolio/luxury-marketplace/gsc-performance-v2.png", alt: "Google Search Console, 16 months: 5.99M clicks and 214M impressions" },
         ],
-        tools: ["Semrush", "Screaming Frog", "Schema.org"],
+        tools: ["Google Search Console", "Screaming Frog", "Semrush", "Schema.org"],
     },
     {
         slug: "uk-compliance-service-audit",
@@ -39,7 +39,7 @@ export const CASE_STUDIES: CaseStudy[] = [
             { src: "/images/portfolio/uk-service/on-page-snippet.webp", alt: "On-page optimization of a blog article in Rank Math (domain hidden)" },
             { src: "/images/portfolio/uk-service/google-ads.webp", alt: "Google Ads, 23 February to 3 April 2025: 625 clicks and 45 conversions" },
         ],
-        tools: ["Google Tag Manager", "Google Ads", "Screaming Frog", "Google Search Console"],
+        tools: ["Semrush", "Rank Math", "Google Ads", "Google Tag Manager", "Screaming Frog", "Google Search Console", "Google Business Profile"],
     },
     {
         slug: "saas-digital-launch",
@@ -50,7 +50,7 @@ export const CASE_STUDIES: CaseStudy[] = [
             { src: "/images/portfolio/saas-launch/landing-v2.webp", alt: "Second version of the website, dark design (brand hidden)" },
             { src: "/images/portfolio/saas-launch/chat-widget.webp", alt: "Gist chat widget for lead capture (brand hidden)" },
         ],
-        tools: ["Gist", "Canva", "Google Analytics", "No-Code Builder"],
+        tools: ["Gist", "Canva", "Google Analytics", "No-code builder"],
     },
     {
         slug: "premium-medspa-seo-audit",
@@ -61,7 +61,7 @@ export const CASE_STUDIES: CaseStudy[] = [
             { src: "/images/portfolio/medspa/organic-traffic-growth.png", alt: "Organic traffic trend after the technical fixes" },
             { src: "/images/portfolio/medspa/seo-tracking-sheet.png", alt: "SEO tracking sheet with new titles and meta descriptions for service pages" },
         ],
-        tools: ["Yoast SEO", "Google Search Console", "SEO Audit Tools", "Google Sheets"],
+        tools: ["Yoast SEO", "Google Search Console", "Google Sheets", "WebP"],
     },
     {
         slug: "national-sports-org",
@@ -75,7 +75,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         services: ["local_seo"],
         relatedPost: "local-seo-guide-businesses",
         gallery: [],
-        tools: ["On-Page SEO", "Schema Markup", "Local SEO"],
+        tools: ["Local Falcon", "Google Search Console", "Google Business Profile"],
     },
     {
         slug: "moroccan-b2b-seo",
@@ -90,6 +90,6 @@ export const CASE_STUDIES: CaseStudy[] = [
             { label: "Avg CTR", before: "0.7%", after: "1.6% (+128%)" },
             { label: "Avg Position", before: "34.2", after: "14.1 (Top 15)" },
         ],
-        tools: ["Google Search Console", "On-Page SEO", "Keyword Research"],
+        tools: ["Google Search Console", "Google Keyword Planner", "Semrush", "Schema markup"],
     },
 ];

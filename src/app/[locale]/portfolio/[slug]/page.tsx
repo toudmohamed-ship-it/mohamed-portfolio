@@ -89,6 +89,7 @@ export default async function CaseStudyPage({ params }: Props) {
     const lessons = t.has(`${slug}.lessons`) ? (t.raw(`${slug}.lessons`) as string[]) : [];
     const market = t.has(`${slug}.market`) ? t(`${slug}.market`) : null;
     const period = t.has(`${slug}.period`) ? t(`${slug}.period`) : null;
+    const role = t.has(`${slug}.role`) ? t(`${slug}.role`) : null;
     const metrics = (study.comparisonMetrics || []).map((m, i) =>
         t.has(`${slug}.comparisonMetrics.${i}`) ? (t.raw(`${slug}.comparisonMetrics.${i}`) as typeof m) : m
     );
@@ -113,6 +114,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
     const facts: { label: string; value: React.ReactNode }[] = [
         { label: tUI('client'), value: client },
+        ...(role ? [{ label: tUI('role'), value: role }] : []),
         ...(market ? [{ label: tUI('market'), value: market }] : []),
         ...(period ? [{ label: tUI('period'), value: period }] : []),
         { label: tUI('services'), value: tags.join(' · ') },

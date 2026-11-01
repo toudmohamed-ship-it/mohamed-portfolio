@@ -302,7 +302,7 @@
         "saas-digital-launch": {
             "client": "Startup SaaS (Inventaire)",
             "title": "Lancement Digital Complet pour une Startup SaaS",
-            "summary": "Jan–Mai 2024 : Construction des fondations digitales de zéro, livraison d'un site mobile-first et de workflows de leads automatisés.",
+            "summary": "Jan–Mai 2025 : Construction des fondations digitales de zéro, livraison d'un site mobile-first et de workflows de leads automatisés.",
             "tags": "Stratégie SEO • Web Design • Marketing Automation",
             "challenge": "Une nouvelle marque de gestion d'inventaire avait besoin d'un écosystème numérique complet en partant de zéro. Le besoin : un site web no-code responsive, une fondation SEO robuste et des canaux de génération de leads automatisés.",
             "approach": "En tant que consultant, j'ai développé un site entièrement responsive. J'ai implémenté une stratégie SEO complète, structurant la navigation selon l'intention de l'utilisateur. Intégration de Gist pour le chatbot et l'automatisation des emails. Établissement d'une présence sociale multi-canal.",
@@ -317,7 +317,7 @@
                 "2": "Widget de chat Gist pour capter des leads (marque masquée)"
             },
             "seo_title": "Étude de cas : lancement d'un SaaS, site, SEO et automatisation",
-            "period": "Janvier à mai 2024"
+            "period": "Janvier à mai 2025"
         },
         "premium-medspa-seo-audit": {
             "client": "Spa Médical Premium (Basé aux É.-U.)",
@@ -357,10 +357,10 @@
         "law-firm-local-seo": {
             "client": "Cabinet d'Avocats (USA)",
             "title": "SEO Local & Optimisation pour un Cabinet d'Avocats",
-            "summary": "SEO local pour un cabinet d'avocats américain : pages par domaine de pratique, contenu local et citations. Résultat : 30 % de demandes qualifiées en plus.",
+            "summary": "SEO local pour un cabinet d'avocats américain : pages par domaine de pratique, contenu local et audit des citations. Résultat : 30 % de demandes qualifiées en plus.",
             "tags": "SEO Local • SEO On-Page • Optimisation Web",
             "challenge": "Le cabinet voulait se positionner sur un domaine juridique précis dans son marché local, mais la structure du site était décousue et les signaux locaux faibles.",
-            "approach": "J'ai restructuré le site en sections claires par domaine de pratique. J'ai optimisé le contenu pour les recherches locales (ville plus domaine de pratique) et créé des citations locales de qualité.",
+            "approach": "J'ai restructuré le site en sections claires par domaine de pratique. J'ai optimisé le contenu pour les recherches locales (ville plus domaine de pratique) et audité les citations locales existantes.",
             "results": {
                 "0": "Génération de 30% de leads qualifiés en plus via la recherche locale",
                 "1": "Classements en première page pour 'Ville + Domaine'",
@@ -642,7 +642,8 @@
         "lessons": "Ce qu'une entreprise similaire peut en retenir",
         "cta_title": "Les mêmes problèmes sur votre site ?",
         "cta_text": "Parlons-en lors d'un appel gratuit de 15 minutes. Vous saurez clairement quoi corriger en premier.",
-        "cta_button": "Réserver un appel gratuit de 15 min"
+        "cta_button": "Réserver un appel gratuit de 15 min",
+        "role": "Mon rôle"
     },
     "PortfolioPage": {
         "metadata": {
