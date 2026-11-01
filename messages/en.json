@@ -126,7 +126,8 @@
                 "Google Analytics certified"
             ],
             "cta": "More about me",
-            "photo_alt": "Mohamed Toudghi, SEO consultant"
+            "photo_alt": "Mohamed Toudghi, SEO consultant",
+            "morocco_cta": "SEO consultant in Morocco"
         },
         "FinalCTA": {
             "title": "Tell me about your website.",
@@ -538,7 +539,7 @@
     },
     "AboutPage": {
         "metadata": {
-            "title": "About me, SEO consultant in Morocco",
+            "title": "About Mohamed Toudghi, SEO consultant",
             "description": "SEO consultant from Al Akhawayn University, working on technical SEO, local SEO and GA4 tracking. Arabic, English and French.",
             "og_title": "About Mohamed Toudghi | SEO Consultant",
             "og_description": "From Al Akhawayn University to SEO and analytics work for clients in the UK, the U.S. and Morocco."
@@ -810,7 +811,8 @@
         "pages": "Pages",
         "contact": "Contact",
         "bottom": "SEO consultant, Morocco",
-        "privacy": "Privacy"
+        "privacy": "Privacy",
+        "morocco": "SEO consultant in Morocco"
     },
     "PrivacyPage": {
         "title": "Privacy",
@@ -1372,5 +1374,190 @@
                 }
             ]
         }
+    },
+    "MoroccoPage": {
+        "meta_title": "SEO Consultant in Morocco: Audits, Local SEO, GA4",
+        "meta_description": "SEO consultant based in Morocco: technical audits, local SEO (Google Business Profile) and GA4 tracking for Moroccan businesses. English, French, Arabic.",
+        "crumb": "SEO consultant in Morocco",
+        "eyebrow": "SEO consultant · Morocco",
+        "title": "SEO consultant in Morocco",
+        "lead": "I help Moroccan businesses show up on Google when customers search for their services, in Casablanca, Rabat, Marrakech or anywhere else, and turn those visits into calls and enquiries.",
+        "cta_call": "Book a free 15-min call",
+        "cta_whatsapp": "Message me on WhatsApp",
+        "facts": [
+            "Based in Morocco, working remotely",
+            "English, French, Arabic",
+            "Reply within 24 hours",
+            "Free 15-minute call"
+        ],
+        "on_this_page": "On this page",
+        "definition": {
+            "title": "What an SEO consultant in Morocco does",
+            "paragraphs": [
+                "An SEO consultant improves how a website appears in Google's organic results, the ones you do not pay for per click. In practice, that means finding what stops Google from crawling, understanding and ranking your pages, fixing it, and then measuring the effect on clicks, calls and enquiries.",
+                "In Morocco, this work has its own features: searches in French, Arabic and sometimes Darija, strong competition in the big cities, and customers who often contact businesses by phone or WhatsApp rather than through a form. An SEO strategy for the Moroccan market has to take all of this into account.",
+                "My name is Mohamed Toudghi. I am an independent SEO consultant based in Morocco and a graduate of Al Akhawayn University. I work with businesses in Morocco, the UK and the U.S., in three areas: technical SEO audits, local SEO and GA4 tracking."
+            ]
+        },
+        "proof": {
+            "title": "A measured result on a Moroccan website",
+            "intro": "A Moroccan B2B website got impressions on Google but very few clicks. Without adding new pages, I reworked the homepage keyword targeting, rewrote the titles and descriptions, and strengthened the internal links.",
+            "metrics": [
+                {
+                    "value": "+130%",
+                    "label": "clicks in 3 months (32 → 74)"
+                },
+                {
+                    "value": "0.7% → 1.6%",
+                    "label": "click-through rate (CTR)"
+                },
+                {
+                    "value": "34.2 → 14.1",
+                    "label": "average position on Google"
+                }
+            ],
+            "source": "Moroccan B2B website, Google Search Console data",
+            "link": "Read the case study"
+        },
+        "market": {
+            "title": "SEO in Morocco: what is different",
+            "intro": "Google's rules are the same everywhere, but the way people in Morocco search is not. Five points to handle from the start.",
+            "items": [
+                {
+                    "name": "Three languages, sometimes four",
+                    "desc": "The same customer may search “avocat Casablanca”, “محامي الدار البيضاء” or type in Darija. A French-only website misses part of these searches. Each language needs its own pages, linked with hreflang tags, not a machine translation."
+                },
+                {
+                    "name": "Local search, city by city",
+                    "desc": "For a law firm, a clinic or an agency, the Google map results (the Local Pack) often bring the best leads. They depend on a complete Google Business Profile, recent reviews and a page for each city you serve."
+                },
+                {
+                    "name": "Mobile first",
+                    "desc": "Most local searches happen on a phone, often on a mobile connection. A slow website loses visitors before it shows what it offers. Mobile speed (Core Web Vitals) can be measured and fixed."
+                },
+                {
+                    "name": "WhatsApp and phone calls as conversions",
+                    "desc": "Many customers in Morocco call or send a WhatsApp message instead of filling in a form. If those clicks are not tracked in GA4, you cannot tell which pages bring you customers."
+                },
+                {
+                    "name": ".ma or .com domain",
+                    "desc": "A .ma domain tells Google the site targets Morocco, which helps a business that only sells in Morocco. If you also target Europe, Africa or the Gulf, a .com with one version per language is more flexible. Changing domain later needs a careful migration."
+                }
+            ]
+        },
+        "services": {
+            "title": "My SEO services for Moroccan businesses",
+            "intro": "Three specialties, each with its own detailed page.",
+            "link": "See the service",
+            "items": [
+                {
+                    "name": "Technical SEO audit",
+                    "desc": "Crawling, indexing, mobile speed, tags and structured data: the list of problems holding your site back, ranked by impact, with the fixes to make."
+                },
+                {
+                    "name": "Local SEO and Google Business Profile",
+                    "desc": "Google Business Profile, pages for each city and service, consistent citations and a review routine, to show up on the map in your city."
+                },
+                {
+                    "name": "GA4 and conversion tracking",
+                    "desc": "Calls, WhatsApp clicks, forms and bookings tracked in GA4, with a simple report showing which pages and channels bring customers."
+                },
+                {
+                    "name": "SEO for law firms",
+                    "desc": "A method built for law firms: one page per practice area, a suitable Google profile, and respect for the profession's advertising rules."
+                }
+            ]
+        },
+        "for_who": {
+            "title": "Which businesses in Morocco I work with",
+            "items": [
+                "Law firms, clinics and medical practices that want more appointments from Google.",
+                "B2B companies that get visits but few quote requests.",
+                "Startups and SaaS companies launching a website that want solid SEO foundations from day one.",
+                "Businesses that target both Morocco and other countries, with a website in several languages."
+            ],
+            "cities_title": "Anywhere in Morocco, remotely",
+            "cities_text": "I work remotely with businesses in every city: Casablanca, Rabat, Marrakech, Tangier, Fes, Agadir and elsewhere. We talk by video call, phone or WhatsApp, in English, French or Arabic."
+        },
+        "compare": {
+            "title": "Independent SEO consultant or SEO agency in Morocco?",
+            "intro": "Both can do good work. The difference is mostly in how the work is organized.",
+            "head": [
+                "",
+                "Independent consultant",
+                "SEO agency"
+            ],
+            "rows": [
+                [
+                    "Who you talk to",
+                    "The person doing the work, from the first call to the report",
+                    "A project manager, with the work split across a team"
+                ],
+                [
+                    "Scope",
+                    "Technical SEO, local SEO and GA4 tracking",
+                    "Often SEO, ads, social media and web design"
+                ],
+                [
+                    "Capacity",
+                    "A limited number of projects at a time",
+                    "Several projects in parallel, with a larger team"
+                ],
+                [
+                    "Best for",
+                    "Being found on Google and measuring the results",
+                    "Handing all digital marketing to one company"
+                ]
+            ],
+            "note": "If you need ads, social media and a new website at the same time, an agency may be the right choice. If your priority is being found on Google and knowing what it brings you, a specialist consultant is more direct."
+        },
+        "tools": {
+            "title": "Tools I use",
+            "items": [
+                "Google Search Console",
+                "Google Analytics 4",
+                "Google Tag Manager",
+                "Google Business Profile",
+                "Screaming Frog",
+                "Semrush / Ahrefs",
+                "PageSpeed Insights",
+                "Looker Studio"
+            ]
+        },
+        "faq_title": "Questions about SEO in Morocco",
+        "faqs": [
+            {
+                "question": "How much does an SEO consultant in Morocco cost?",
+                "answer": "The price depends on the size of the site, the number of languages and cities, and the work needed: a one-off audit does not cost the same as several months of ongoing work. You get a precise quote after the free 15-minute call, before you commit to anything."
+            },
+            {
+                "question": "How long does it take to see results?",
+                "answer": "Technical fixes and Google Business Profile work can have an effect within weeks. For the Moroccan B2B website on this page, clicks grew by 130% in three months. Very competitive keywords usually take several months."
+            },
+            {
+                "question": "Do you work with businesses outside Casablanca?",
+                "answer": "Yes. I work remotely with businesses in every Moroccan city, and also in the UK and the U.S."
+            },
+            {
+                "question": "Can you optimize a website in Arabic and French?",
+                "answer": "Yes. I work in Arabic, French and English. On a multilingual website, each language has its own pages and keywords, linked with hreflang tags so Google shows each visitor the right version."
+            },
+            {
+                "question": "Do I need a .ma domain to rank in Morocco?",
+                "answer": "No, but it helps if you only target Morocco. A .com can also rank in Morocco with local content, a Google Business Profile and links from Moroccan websites. The choice depends mostly on your markets abroad."
+            },
+            {
+                "question": "What is the difference between SEO and Google Ads?",
+                "answer": "Google Ads shows your site at the top of the page as long as you pay for each click. SEO works on the organic results: it takes longer, but the rankings you earn keep bringing visits with no cost per click."
+            },
+            {
+                "question": "Do you work on WordPress, Shopify or custom websites?",
+                "answer": "Yes, including WordPress (Elementor) and Shopify. On a custom website, I make the fixes myself or hand them to your developer with clear instructions."
+            },
+            {
+                "question": "How does the first contact work?",
+                "answer": "You write to me through the form or on WhatsApp, or book a free 15-minute call. On the call we talk about your website, your goals and what can be improved. I reply within 24 hours."
+            }
+        ]
     }
 }

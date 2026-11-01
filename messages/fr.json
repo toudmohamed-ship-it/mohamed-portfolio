@@ -126,7 +126,8 @@
                 "Certifié Google Analytics"
             ],
             "cta": "En savoir plus",
-            "photo_alt": "Mohamed Toudghi, consultant SEO"
+            "photo_alt": "Mohamed Toudghi, consultant SEO",
+            "morocco_cta": "Consultant SEO au Maroc"
         },
         "FinalCTA": {
             "title": "Parlez-moi de votre site.",
@@ -538,7 +539,7 @@
     },
     "AboutPage": {
         "metadata": {
-            "title": "À propos, consultant SEO au Maroc",
+            "title": "À propos de Mohamed Toudghi, consultant SEO",
             "description": "Consultant SEO diplômé de l'Université Al Akhawayn, spécialisé en SEO technique, SEO local et suivi GA4. Arabe, anglais et français.",
             "og_title": "À propos de Mohamed Toudghi | Consultant SEO",
             "og_description": "De l'Université Al Akhawayn au SEO et à l'analytics pour des clients au Royaume-Uni, aux États-Unis et au Maroc."
@@ -810,7 +811,8 @@
         "pages": "Pages",
         "contact": "Contact",
         "bottom": "Consultant SEO, Maroc",
-        "privacy": "Confidentialité"
+        "privacy": "Confidentialité",
+        "morocco": "Consultant SEO au Maroc"
     },
     "PrivacyPage": {
         "title": "Confidentialité",
@@ -1372,5 +1374,190 @@
                 }
             ]
         }
+    },
+    "MoroccoPage": {
+        "meta_title": "Consultant SEO au Maroc : audit, SEO local, GA4",
+        "meta_description": "Consultant SEO basé au Maroc : audit technique, SEO local Google Business Profile et suivi GA4 pour entreprises marocaines. En français, arabe ou anglais.",
+        "crumb": "Consultant SEO au Maroc",
+        "eyebrow": "Consultant SEO · Maroc",
+        "title": "Consultant SEO au Maroc",
+        "lead": "J'aide les entreprises marocaines à apparaître sur Google quand leurs clients cherchent leurs services, à Casablanca, Rabat, Marrakech ou ailleurs, et à transformer ces visites en appels et en demandes.",
+        "cta_call": "Réserver un appel gratuit de 15 min",
+        "cta_whatsapp": "Écrire sur WhatsApp",
+        "facts": [
+            "Basé au Maroc, à distance",
+            "Français, arabe, anglais",
+            "Réponse sous 24 heures",
+            "Appel gratuit de 15 minutes"
+        ],
+        "on_this_page": "Sur cette page",
+        "definition": {
+            "title": "Ce que fait un consultant SEO au Maroc",
+            "paragraphs": [
+                "Un consultant SEO améliore la visibilité d'un site dans les résultats naturels de Google, ceux qu'on ne paie pas au clic. Concrètement, il trouve ce qui empêche Google de bien explorer, comprendre et classer vos pages, corrige ces problèmes, puis mesure l'effet sur les clics, les appels et les demandes de contact.",
+                "Au Maroc, ce travail a ses particularités : des recherches en français, en arabe et parfois en darija, une forte concurrence dans les grandes villes, et des clients qui contactent souvent les entreprises par téléphone ou WhatsApp plutôt que par formulaire. Une stratégie SEO pour le marché marocain doit tenir compte de tout cela.",
+                "Je m'appelle Mohamed Toudghi. Je suis consultant SEO indépendant, basé au Maroc et diplômé de l'Université Al Akhawayn. Je travaille avec des entreprises au Maroc, au Royaume-Uni et aux États-Unis, sur trois spécialités : l'audit SEO technique, le SEO local et le suivi GA4."
+            ]
+        },
+        "proof": {
+            "title": "Un résultat mesuré sur un site marocain",
+            "intro": "Un site B2B marocain recevait des impressions sur Google mais très peu de clics. Sans créer de nouvelles pages, j'ai revu le ciblage des mots-clés de la page d'accueil, réécrit les titres et les descriptions, et renforcé le maillage interne.",
+            "metrics": [
+                {
+                    "value": "+130 %",
+                    "label": "de clics en 3 mois (32 → 74)"
+                },
+                {
+                    "value": "0,7 % → 1,6 %",
+                    "label": "de taux de clic (CTR)"
+                },
+                {
+                    "value": "34,2 → 14,1",
+                    "label": "de position moyenne sur Google"
+                }
+            ],
+            "source": "Site B2B marocain, données Google Search Console",
+            "link": "Lire l'étude de cas"
+        },
+        "market": {
+            "title": "Le SEO au Maroc : ce qui change",
+            "intro": "Les règles de Google sont les mêmes partout, mais la façon dont les Marocains cherchent ne l'est pas. Cinq points à traiter dès le départ.",
+            "items": [
+                {
+                    "name": "Trois langues, parfois quatre",
+                    "desc": "Un même client peut chercher « avocat Casablanca », « محامي الدار البيضاء » ou écrire en darija. Un site uniquement en français laisse de côté une partie de ces recherches. Chaque langue a besoin de ses propres pages, reliées par des balises hreflang, et non d'une traduction automatique."
+                },
+                {
+                    "name": "La recherche locale, ville par ville",
+                    "desc": "Pour un cabinet, une clinique ou une agence, la carte Google (le « Local Pack ») apporte souvent les contacts les plus qualifiés. Elle dépend d'une fiche Google Business Profile complète, d'avis récents et de pages dédiées à chaque ville desservie."
+                },
+                {
+                    "name": "Le mobile d'abord",
+                    "desc": "La plupart des recherches locales se font sur téléphone, souvent avec une connexion mobile. Un site lent perd des visiteurs avant même d'afficher son offre. La vitesse mobile (les Core Web Vitals) se mesure et se corrige."
+                },
+                {
+                    "name": "WhatsApp et téléphone comme conversions",
+                    "desc": "Beaucoup de clients marocains appellent ou écrivent sur WhatsApp au lieu de remplir un formulaire. Si ces clics ne sont pas suivis dans GA4, vous ne savez pas quelles pages vous apportent des clients."
+                },
+                {
+                    "name": "Domaine .ma ou .com",
+                    "desc": "Un domaine en .ma indique à Google que le site vise le Maroc : c'est un atout pour une entreprise qui ne vend qu'au Maroc. Si vous visez aussi l'Europe, l'Afrique ou le Golfe, un .com avec une version par langue est plus souple. Changer de domaine plus tard demande une migration soignée."
+                }
+            ]
+        },
+        "services": {
+            "title": "Mes services SEO pour les entreprises marocaines",
+            "intro": "Trois spécialités, chacune avec sa page détaillée.",
+            "link": "Voir le service",
+            "items": [
+                {
+                    "name": "Audit SEO technique",
+                    "desc": "Exploration, indexation, vitesse mobile, balises et données structurées : la liste des problèmes qui freinent votre site, classés par impact, avec les corrections à faire."
+                },
+                {
+                    "name": "SEO local et Google Business Profile",
+                    "desc": "Fiche Google Business Profile, pages par ville et par service, citations cohérentes et routine d'avis, pour apparaître sur la carte dans votre ville."
+                },
+                {
+                    "name": "Suivi GA4 et conversions",
+                    "desc": "Appels, clics WhatsApp, formulaires et rendez-vous suivis dans GA4, avec un rapport simple pour voir quelles pages et quels canaux apportent des clients."
+                },
+                {
+                    "name": "SEO pour cabinets d'avocats",
+                    "desc": "Une méthode dédiée aux cabinets : une page par domaine de pratique, une fiche Google adaptée et le respect des règles de communication de la profession."
+                }
+            ]
+        },
+        "for_who": {
+            "title": "Pour quelles entreprises au Maroc",
+            "items": [
+                "Cabinets d'avocats, cliniques et cabinets médicaux qui veulent plus de rendez-vous venant de Google.",
+                "Entreprises B2B qui reçoivent des visites mais peu de demandes de devis.",
+                "Startups et SaaS qui lancent leur site et veulent des bases SEO solides dès le départ.",
+                "Entreprises qui visent à la fois le Maroc et l'étranger, avec un site en plusieurs langues."
+            ],
+            "cities_title": "Partout au Maroc, à distance",
+            "cities_text": "Je travaille à distance avec des entreprises de toutes les villes : Casablanca, Rabat, Marrakech, Tanger, Fès, Agadir et ailleurs. Les échanges se font par appel vidéo, par téléphone ou sur WhatsApp, en français, en arabe ou en anglais."
+        },
+        "compare": {
+            "title": "Consultant SEO indépendant ou agence SEO au Maroc ?",
+            "intro": "Les deux peuvent faire du bon travail. La différence tient surtout à l'organisation.",
+            "head": [
+                "",
+                "Consultant indépendant",
+                "Agence SEO"
+            ],
+            "rows": [
+                [
+                    "Interlocuteur",
+                    "La personne qui fait le travail, du premier appel au rapport",
+                    "Un chef de projet, le travail est réparti dans l'équipe"
+                ],
+                [
+                    "Périmètre",
+                    "SEO technique, SEO local et suivi GA4",
+                    "Souvent SEO, publicité, réseaux sociaux et création de site"
+                ],
+                [
+                    "Capacité",
+                    "Un nombre limité de projets en même temps",
+                    "Plusieurs projets en parallèle, avec une équipe plus large"
+                ],
+                [
+                    "Idéal pour",
+                    "Être trouvé sur Google et mesurer les résultats",
+                    "Confier tout son marketing digital à une seule structure"
+                ]
+            ],
+            "note": "Si vous avez besoin de publicité, de réseaux sociaux et d'un nouveau site en même temps, une agence peut être le bon choix. Si votre priorité est d'être trouvé sur Google et de savoir ce que cela vous rapporte, un consultant spécialisé est plus direct."
+        },
+        "tools": {
+            "title": "Les outils utilisés",
+            "items": [
+                "Google Search Console",
+                "Google Analytics 4",
+                "Google Tag Manager",
+                "Google Business Profile",
+                "Screaming Frog",
+                "Semrush / Ahrefs",
+                "PageSpeed Insights",
+                "Looker Studio"
+            ]
+        },
+        "faq_title": "Questions fréquentes sur le SEO au Maroc",
+        "faqs": [
+            {
+                "question": "Combien coûte un consultant SEO au Maroc ?",
+                "answer": "Le prix dépend de la taille du site, du nombre de langues et de villes, et du travail à faire : un audit ponctuel ne coûte pas le même prix qu'un accompagnement sur plusieurs mois. Vous recevez un devis précis après l'appel gratuit de 15 minutes, avant tout engagement."
+            },
+            {
+                "question": "En combien de temps voit-on des résultats ?",
+                "answer": "Les corrections techniques et la fiche Google Business Profile peuvent avoir un effet en quelques semaines. Pour le site B2B marocain présenté sur cette page, les clics ont augmenté de 130 % en trois mois. Sur des mots-clés très concurrentiels, comptez plutôt plusieurs mois."
+            },
+            {
+                "question": "Travaillez-vous avec des entreprises hors de Casablanca ?",
+                "answer": "Oui. Je travaille à distance avec des entreprises de toutes les villes du Maroc, et aussi au Royaume-Uni et aux États-Unis."
+            },
+            {
+                "question": "Pouvez-vous optimiser un site en arabe et en français ?",
+                "answer": "Oui. Je travaille en arabe, en français et en anglais. Sur un site multilingue, chaque langue a ses propres pages et ses propres mots-clés, reliés par des balises hreflang pour que Google montre la bonne version à chaque visiteur."
+            },
+            {
+                "question": "Faut-il un domaine .ma pour bien se positionner au Maroc ?",
+                "answer": "Non, mais il aide si vous ne visez que le Maroc. Un .com peut aussi se positionner au Maroc avec du contenu local, une fiche Google Business Profile et des liens de sites marocains. Le choix dépend surtout de vos marchés à l'étranger."
+            },
+            {
+                "question": "Quelle différence entre le SEO et Google Ads ?",
+                "answer": "Google Ads affiche votre site en haut de la page tant que vous payez chaque clic. Le SEO travaille les résultats naturels : il demande plus de temps, mais les positions obtenues continuent d'apporter des visites sans coût par clic."
+            },
+            {
+                "question": "Travaillez-vous sur WordPress, Shopify ou des sites sur mesure ?",
+                "answer": "Oui, notamment WordPress (Elementor) et Shopify. Sur un site sur mesure, je fais les corrections moi-même ou je les transmets à votre développeur avec des instructions claires."
+            },
+            {
+                "question": "Comment se passe le premier contact ?",
+                "answer": "Vous m'écrivez par le formulaire ou sur WhatsApp, ou vous réservez un appel gratuit de 15 minutes. Pendant l'appel, on parle de votre site, de vos objectifs et de ce qui peut être amélioré. Je réponds sous 24 heures."
+            }
+        ]
     }
 }

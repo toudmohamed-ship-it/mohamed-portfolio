@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "",
         "/about",
         "/services",
+        "/consultant-seo-maroc",
         ...SERVICE_PAGES.map((p) => `/services/${p.slug}`),
         "/privacy",
         "/portfolio",

@@ -44,6 +44,7 @@ Motion stays only while it costs nothing measurable. Before adding or changing a
 - New pages go into `src/app/sitemap.ts`. Internal links point to real URLs.
 - Semantic SEO plan, topical map and content backlog: `docs/semantic-seo-audit.md`. Follow its page outline for new service or article pages.
 - Growth plan (what to publish next, in order, and what to measure): `docs/growth-plan.md`.
+- "Consultant SEO au Maroc" / "مستشار SEO في المغرب" belongs to `/consultant-seo-maroc` (copy in `MoroccoPage`). Do not put "in Morocco" back in the homepage or About titles: two pages on the same query compete with each other.
 - Service pages: the three main services have their own page (`/services/<slug>`, data in `src/lib/services.ts`, copy in `ServicePages`); the hub `/services` keeps all six. Link to a service with `serviceHref(key)`. Industry pages (`seo-for-law-firms`) use the same template with `parent` set to their main service; add them after the three main entries.
 - Language is decided by the URL only (`localeDetection: false` in `src/i18n/routing.ts`). Do not turn cookie or browser-language redirects back on.
 - Only the `HomePage` and `ContactForm` message namespaces are sent to the browser (see the layout). Add a namespace there only if a client component needs it.

@@ -30,9 +30,14 @@ export default function AboutPreview() {
                             <li key={tag} className="text-sm px-3 py-1.5 rounded-full bg-paper border border-line">{tag}</li>
                         ))}
                     </ul>
-                    <Link href="/about" className="btn self-start mt-2 font-medium no-underline">
-                        {t("cta")} <span className="arrow" aria-hidden="true">→</span>
-                    </Link>
+                    <div className="mt-2 flex flex-wrap gap-x-7 gap-y-2">
+                        <Link href="/about" className="btn font-medium no-underline">
+                            {t("cta")} <span className="arrow" aria-hidden="true">→</span>
+                        </Link>
+                        <Link href="/consultant-seo-maroc" className="btn font-medium no-underline">
+                            {t("morocco_cta")} <span className="arrow" aria-hidden="true">→</span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>

@@ -64,6 +64,9 @@ export default async function CaseStudyPage({ params }: Props) {
     const tPages = await getTranslations({ locale, namespace: 'ServicePages' });
     // Industry pages that use this study as their main proof (e.g. the law firm study -> SEO for law firms)
     const industryPages = SERVICE_PAGES.filter((p) => p.parent && p.caseStudies[0] === study.slug);
+    // Market pages that use this study as their proof
+    const tMorocco = await getTranslations({ locale, namespace: 'MoroccoPage' });
+    const marketPages = study.slug === "moroccan-b2b-seo" ? [{ href: "/consultant-seo-maroc", label: tMorocco('crumb') }] : [];
 
     // Translated lists are stored as {"0": "...", "1": "..."} objects
     const list = (key: string): string[] => {
@@ -239,6 +242,13 @@ export default async function CaseStudyPage({ params }: Props) {
                                     <li key={p.slug}>
                                         <Link href={`/services/${p.slug}`} className="btn font-medium no-underline text-[15px]">
                                             {tPages(`${p.slug}.title`)} <span className="arrow" aria-hidden="true">→</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                                {marketPages.map((p) => (
+                                    <li key={p.href}>
+                                        <Link href={p.href} className="btn font-medium no-underline text-[15px]">
+                                            {p.label} <span className="arrow" aria-hidden="true">→</span>
                                         </Link>
                                     </li>
                                 ))}

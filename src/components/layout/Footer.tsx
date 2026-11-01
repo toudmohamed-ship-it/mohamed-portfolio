@@ -13,6 +13,7 @@ export default async function Footer() {
         { href: "/about", label: nav("about") },
         { href: "/blog", label: nav("blog") },
         { href: "/contact", label: nav("contact") },
+        { href: "/consultant-seo-maroc", label: t("morocco") },
     ];
 
     return (

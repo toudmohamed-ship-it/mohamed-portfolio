@@ -27,7 +27,7 @@ So the rule is: **service pages first, then 2 articles a month at most, each att
 ## Phase 2: December 2026 to February 2027 (pages that sell)
 
 - [x] **"SEO for law firms" page** (`/services/seo-for-law-firms`, EN/FR/AR, live 31 Oct 2026). Backed by the U.S. law firm case study. Search Console already shows a law firm searching for a U.S.-based SEO provider.
-- [ ] **"Consultant SEO au Maroc" / "خبير SEO في المغرب"**: Morocco is the only country sending real clicks (4 of 7). A French and Arabic page for Moroccan businesses, backed by the Moroccan B2B case study.
+- [x] **"Consultant SEO au Maroc" page** (`/consultant-seo-maroc`, FR/AR/EN, live 1 Nov 2026), backed by the Moroccan B2B case study. The homepage and About titles no longer say "in Morocco", so this page alone targets the Morocco searches; linked from the homepage, the footer and the case study.
 - [ ] Profiles outside the site: Malt and Clutch (or similar), then add them to `sameAs` in the schema.
 - [ ] Ask 2 or 3 past clients for a short written review that can be published without their name (for example "Law firm, U.S."). This is the biggest gap on the site.
 

@@ -17,9 +17,9 @@ interface Props {
 
 // The layout title template does not apply to the page in its own segment, so the name is written out here
 const TITLES: Record<string, string> = {
-  en: "SEO Consultant in Morocco | Mohamed Toudghi",
-  fr: "Consultant SEO au Maroc | Mohamed Toudghi",
-  ar: "مستشار SEO في المغرب | محمد تودغي",
+  en: "Mohamed Toudghi | SEO Consultant, Technical & Local SEO",
+  fr: "Mohamed Toudghi | Consultant SEO technique et local",
+  ar: "محمد تودغي | مستشار SEO تقني ومحلي",
 };
 
 const DESCRIPTIONS: Record<string, string> = {
