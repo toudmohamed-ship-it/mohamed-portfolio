@@ -17,6 +17,8 @@ So the rule is: **service pages first, then 2 articles a month at most, each att
 ## Phase 1: November 2026 (foundations)
 
 - [ ] Search Console: submit the sitemap again and request indexing for the 3 service pages, `/services`, `/contact` and the rewritten articles.
+- [x] Search Console fixes (2 Nov 2026): the language switcher no longer links to `/en/...` (12 redirect URLs), and the old article URL that returned 404 now redirects to the technical SEO checklist.
+- [x] Case studies rewritten in EN, FR and AR (2 Nov 2026): about the project, problems, steps with their reason, lessons, role and period. Facts from Mohamed and his CVs only; clients and agency unnamed. The sports federation study was cut back to his real scope, and the +40% claim was removed site-wide. Next: in Search Console, Validate fix on "Crawled, currently not indexed".
 - [ ] Give the correct article dates (the dates in `src/lib/blog-data.ts` and in the articles disagree). This unblocks `BlogPosting` schema.
 - [ ] Expand or retire the two remaining thin articles:
   - `keyword-research-process`: expand to 1,200+ words, linked to the services hub.
