@@ -256,37 +256,90 @@
     },
     "CaseStudies": {
         "global-marketplace-audit": {
-            "client": "Marketplace de Luxe",
-            "title": "Audit SEO Technique & Optimisation pour une Marketplace de Luxe",
-            "summary": "Amélioration de l'efficacité du crawl, de la découvrabilité du contenu et de la fiabilité technique pour une marketplace à grande échelle.",
-            "tags": "SEO Technique • Architecture de Site • Indexation",
-            "challenge": "Le client est une marketplace d'envergure nécessitant de solides améliorations en SEO technique. L'accent a été mis sur l'optimisation des métadonnées des pages clés, la résolution des problèmes de santé du site (liens brisés), la restructuration de la hiérarchie on-page, l'accessibilité HTML et l'implémentation de schema markup avancé.",
-            "approach": "Audit technique en plusieurs phases. La phase 1 a ciblé l'optimisation des métadonnées (titres/H1). La phase 2 a traité la santé du site en corrigeant les erreurs 'sans réponse' et en implémentant des canoniques auto-référencées. La phase 3 a porté sur le balisage Schema.org et l'optimisation du maillage interne.",
+            "client": "Marketplace de luxe (États-Unis)",
+            "title": "Audit SEO technique d'une grande marketplace de luxe américaine",
+            "summary": "SEO technique pour une grande marketplace de luxe américaine sur une plateforme sur mesure : intention de recherche corrigée sur des milliers de pages générées, erreurs de canonical et 404 réglées, structure d'URL préparée pour la nouvelle plateforme. Trafic organique en hausse de 6 %, à 562,8K visites par mois.",
+            "tags": "SEO technique • Architecture du site • Indexation",
+            "challenge": "Sur un site de plusieurs milliers de pages générées, chaque problème se répète à grande échelle. L'audit a montré que beaucoup de pages ne correspondaient pas à l'intention des internautes, et que des erreurs techniques gaspillaient l'exploration de Google.",
+            "approach": "J'ai réaligné les titres, les H1 et les contenus sur l'intention de recherche. Comme les pages sont générées à partir de modèles et de formules, chaque correction s'appliquait à des milliers de pages. J'ai corrigé la plupart des problèmes signalés dans la Google Search Console, notamment les erreurs de canonical et les 404, ainsi que ceux trouvés avec Screaming Frog. Les fiches annonces portent désormais une balise canonical vers elles-mêmes. J'ai mis à jour le balisage Schema.org et revu le maillage interne pour que l'autorité circule davantage vers les pages les plus importantes. Le client préparait une nouvelle version de sa plateforme. J'ai rédigé un document détaillé recommandant la structure d'URL à adopter, en comparant URL plates et URL hiérarchisées, pour que la nouvelle version démarre sur une base saine. Sans CMS, chaque modification passait par l'équipe de développement de l'agence, et je coordonnais chacune avec eux. Le trafic organique et les mots-clés positionnés étaient suivis dans Semrush sur les données américaines, en parallèle de la Google Search Console.",
             "results": {
-                "0": "Trafic Organique +6% (562.8K visites mensuelles - Données US)",
-                "1": "Visibilité Mots-clés +3.3% (281.4K mots-clés classés - Données US)",
-                "2": "Score d'Autorité maintenu à 48 (Très Bon)",
-                "3": "Amélioration de l'efficacité du Crawl et de la stabilité de l'indexation"
+                "0": "Trafic organique +6 % (562,8K visites par mois, données États-Unis)",
+                "1": "Visibilité mots-clés +3,3 % (281,4K mots-clés positionnés, données États-Unis)",
+                "2": "Authority Score maintenu à 48 (très bon)",
+                "3": "Exploration plus efficace et indexation plus stable"
             },
             "gallery_alts": {
                 "0": "Évolution du trafic organique et des mots-clés, 2024 à 2025 (données US)",
                 "1": "Tableau de bord SEO : 562,8 K de trafic organique et 281,4 K mots-clés positionnés (données US)",
                 "2": "Google Search Console, 16 mois : 5,99 M de clics et 214 M d'impressions"
             },
-            "seo_title": "Étude de cas SEO technique : grande marketplace de luxe",
-            "market": "États-Unis"
+            "seo_title": "Étude de cas SEO technique : marketplace de luxe",
+            "market": "États-Unis",
+            "seo_description": "Audit SEO technique d'une marketplace de luxe américaine : intention de recherche, canonicals, 404 et schema corrigés. Trafic organique +6 %.",
+            "role": "Seul spécialiste SEO d'une agence de marketing digital",
+            "period": "Second semestre 2025",
+            "context": "Le client est une grande marketplace de luxe dont le marché principal est les États-Unis. Le site avait déjà un trafic important : la Google Search Console affichait 5,99 millions de clics et 214 millions d'impressions sur 16 mois. Il ne tourne pas sur un CMS classique : les pages sont générées à partir de modèles, de formules et d'une structure dynamique, si bien qu'une modification s'applique à des milliers de pages d'un coup. J'ai dirigé le SEO technique en tant que seul spécialiste SEO d'une agence de marketing digital, en coordonnant chaque changement avec les développeurs de l'agence. C'est le plus grand projet sur lequel j'ai travaillé.",
+            "problems": [
+                {
+                    "title": "Une intention de recherche mal ciblée sur la plupart des pages",
+                    "desc": "Beaucoup de pages ne visaient pas ce que les internautes cherchaient vraiment : titres, intitulés et contenus ne correspondaient pas à l'intention derrière les requêtes sur lesquelles elles apparaissaient."
+                },
+                {
+                    "title": "Des titres et des H1 qui ne disaient pas la même chose",
+                    "desc": "Sur les pages principales, la balise title et le titre H1 décrivaient la page différemment, ce qui envoie des signaux contradictoires à Google."
+                },
+                {
+                    "title": "Erreurs de canonical et pages 404",
+                    "desc": "La Search Console signalait des problèmes de canonical, et l'exploration a trouvé des pages 404 et des URL sans réponse. Les fiches annonces ne se déclaraient pas comme version principale de leur URL : Google devait deviner laquelle classer."
+                },
+                {
+                    "title": "Autres erreurs d'exploration et données structurées dépassées",
+                    "desc": "Screaming Frog a fait ressortir des liens internes cassés et d'autres problèmes, et le balisage Schema.org devait être mis à jour."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "L'intention de recherche, au niveau des modèles",
+                    "desc": "J'ai réaligné les titres, les H1 et les contenus sur l'intention de recherche. Comme les pages sont générées à partir de modèles et de formules, chaque correction s'appliquait à des milliers de pages."
+                },
+                {
+                    "title": "Erreurs de la Search Console et de l'exploration",
+                    "desc": "J'ai corrigé la plupart des problèmes signalés dans la Google Search Console, notamment les erreurs de canonical et les 404, ainsi que ceux trouvés avec Screaming Frog. Les fiches annonces portent désormais une balise canonical vers elles-mêmes."
+                },
+                {
+                    "title": "Données structurées et maillage interne",
+                    "desc": "J'ai mis à jour le balisage Schema.org et revu le maillage interne pour que l'autorité circule davantage vers les pages les plus importantes."
+                },
+                {
+                    "title": "Structure d'URL pour la nouvelle plateforme",
+                    "desc": "Le client préparait une nouvelle version de sa plateforme. J'ai rédigé un document détaillé recommandant la structure d'URL à adopter, en comparant URL plates et URL hiérarchisées, pour que la nouvelle version démarre sur une base saine."
+                },
+                {
+                    "title": "Travail avec les développeurs",
+                    "desc": "Sans CMS, chaque modification passait par l'équipe de développement de l'agence, et je coordonnais chacune avec eux."
+                },
+                {
+                    "title": "Mesure",
+                    "desc": "Le trafic organique et les mots-clés positionnés étaient suivis dans Semrush sur les données américaines, en parallèle de la Google Search Console."
+                }
+            ],
+            "lessons": [
+                "Sur un site à base de modèles, on corrige le modèle, pas la page. Une formule corrigée répare toutes les pages qui en dépendent : c'est ainsi que des milliers de pages ont été améliorées.",
+                "Définissez la structure d'URL avant une refonte de plateforme. Changer les URL après le lancement, c'est des redirections, des signaux perdus et des mois de rattrapage.",
+                "À cette échelle, les petits pourcentages sont de grands chiffres. 6 % de plus sur un site à 562,8K visites organiques par mois, cela représente environ 30 000 visites de plus chaque mois."
+            ]
         },
         "uk-compliance-service-audit": {
-            "client": "Service de Conformité UK",
-            "title": "SEO & Optimisation des Conversions pour une Entreprise de Services au Royaume-Uni",
-            "summary": "Conversions doublées et classements dans le top 10 pour les pages de services clés via une optimisation ciblée des landing pages.",
-            "tags": "SEO Local • CRO • SEO Technique",
-            "challenge": "Un prestataire de services basé au Royaume-Uni sur le marché compétitif de Londres faisait face à de faibles conversions sur des pages à fort trafic. Le site souffrait d'une dette technique, de pages sans réponse, d'un manque de balises H1 et de méta-descriptions dupliquées. La performance mobile était médiocre (Score 66).",
-            "approach": "Mise en œuvre d'une campagne précise. Conception d'une landing page dédiée avec des signaux de confiance clairs, améliorant la vitesse mobile à 93. Optimisation de 26 pages clés et 20 articles de blog, et publication de 10 nouveaux articles ciblés. Correction de plus de 10 problèmes techniques critiques.",
+            "client": "Service de conformité (Royaume-Uni)",
+            "title": "SEO et conversion pour un service de conformité à Londres",
+            "summary": "SEO complet et optimisation des conversions pour un service londonien de mise en conformité des logements locatifs : audit Google Ads, page d'atterrissage repensée, métadonnées de toutes les pages, articles hebdomadaires, fiche Google, citations et backlinks. Conversions de la page principale plus que doublées dès le premier mois.",
+            "tags": "SEO local • CRO • SEO technique",
+            "challenge": "Le trafic n'était pas le vrai problème. Les conversions, si. Et derrière ces faibles conversions se cachaient des problèmes techniques qui freinaient aussi les positions.",
+            "approach": "En auditant le compte Google Ads, j'ai constaté que la page d'atterrissage qui recevait le trafic payant était mal conçue et pas pensée pour convertir. Une campagne du 23 février au 3 avril 2025 a apporté 625 clics et 45 conversions, soit un taux de conversion d'environ 7 %. J'ai travaillé avec le développeur pour repenser cette page avec des éléments de confiance clairs. Son score PageSpeed mobile est passé de 66 à 93, celui sur ordinateur de 90 à 97, et ses conversions ont plus que doublé dès le premier mois. J'ai fait la recherche de mots-clés dans Semrush et d'autres outils, puis établi la carte des mots-clés principaux, secondaires et des questions pour la page du service principal. J'ai réécrit les titres et méta-descriptions de toutes les pages dans Rank Math, et optimisé 26 pages principales et 20 articles existants. J'ai publié un nouvel article chaque semaine, sur des requêtes de longue traîne, soit 10 nouveaux articles sur la période présentée ici. Avec Screaming Frog et la Google Search Console, j'ai corrigé plus de 10 problèmes critiques, dont des pages bloquées et des liens cassés. J'ai optimisé la fiche Google Business Profile et créé des citations et des backlinks, pour rendre l'entreprise visible sur la carte à Londres.",
             "results": {
-                "0": "Conversions > doublées dès le 1er mois",
-                "1": "Vitesse de page : Mobile 66 → 93, Bureau 90 → 97",
-                "2": "18.3K+ Impressions de recherche (Pos Moy #10)"
+                "0": "Conversions plus que doublées le premier mois (page de service principale)",
+                "1": "PageSpeed : mobile de 66 à 93, ordinateur de 90 à 97",
+                "2": "Plus de 18,3K impressions dans Google (position moyenne 10)"
             },
             "gallery_alts": {
                 "0": "Score de performance Lighthouse de 95 sur la nouvelle page d'atterrissage",
@@ -296,49 +349,203 @@
                 "4": "Optimisation on-page d'un article de blog dans Rank Math (domaine masqué)",
                 "5": "Google Ads, du 23 février au 3 avril 2025 : 625 clics et 45 conversions"
             },
-            "seo_title": "Étude de cas SEO local et CRO : entreprise de services au Royaume-Uni",
-            "market": "Royaume-Uni"
+            "seo_title": "Étude de cas SEO local et CRO : service au Royaume-Uni",
+            "market": "Royaume-Uni",
+            "seo_description": "SEO et CRO pour un service de conformité à Londres : conversions doublées dès le premier mois, PageSpeed mobile de 66 à 93, 26 pages optimisées.",
+            "role": "Spécialiste marketing et SEO, à plein temps, à distance",
+            "period": "Janvier à mai 2025",
+            "context": "Le client est une entreprise de services britannique, sur le marché londonien. Son service principal est la mise en conformité de sécurité des logements loués, que les propriétaires recherchent quand ils ont besoin d'un certificat ou d'une inspection. De janvier à mai 2025, j'ai travaillé avec l'entreprise à plein temps, à distance, et j'ai pris en charge tout son SEO local ainsi que l'audit Google Ads. Les pages clés avaient du trafic, mais trop peu de visiteurs devenaient des demandes, et l'entreprise n'apparaissait pas sur la carte Google.",
+            "problems": [
+                {
+                    "title": "1 170 pages explorées sans réponse",
+                    "desc": "Une exploration a renvoyé 1 170 pages sans réponse. Autant de bruit gaspille l'exploration de Google et cache les pages qui devraient se positionner."
+                },
+                {
+                    "title": "H1 manquants et méta-descriptions en double",
+                    "desc": "Des pages clés n'avaient pas de titre H1, et beaucoup de pages partageaient la même méta-description : ni Google ni les internautes ne pouvaient les distinguer."
+                },
+                {
+                    "title": "Un site lent sur mobile",
+                    "desc": "Le score PageSpeed mobile était de 66. La plupart des gens qui cherchent un service local le font sur téléphone, et une page lente les perd avant qu'ils lisent l'offre."
+                },
+                {
+                    "title": "Absent de la carte Google",
+                    "desc": "L'entreprise n'apparaissait pas dans le pack local pour ses services à Londres."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Audit Google Ads",
+                    "desc": "En auditant le compte Google Ads, j'ai constaté que la page d'atterrissage qui recevait le trafic payant était mal conçue et pas pensée pour convertir. Une campagne du 23 février au 3 avril 2025 a apporté 625 clics et 45 conversions, soit un taux de conversion d'environ 7 %."
+                },
+                {
+                    "title": "Une page d'atterrissage repensée",
+                    "desc": "J'ai travaillé avec le développeur pour repenser cette page avec des éléments de confiance clairs. Son score PageSpeed mobile est passé de 66 à 93, celui sur ordinateur de 90 à 97, et ses conversions ont plus que doublé dès le premier mois."
+                },
+                {
+                    "title": "Recherche de mots-clés et carte des mots-clés",
+                    "desc": "J'ai fait la recherche de mots-clés dans Semrush et d'autres outils, puis établi la carte des mots-clés principaux, secondaires et des questions pour la page du service principal."
+                },
+                {
+                    "title": "Métadonnées de toutes les pages",
+                    "desc": "J'ai réécrit les titres et méta-descriptions de toutes les pages dans Rank Math, et optimisé 26 pages principales et 20 articles existants."
+                },
+                {
+                    "title": "Un article par semaine",
+                    "desc": "J'ai publié un nouvel article chaque semaine, sur des requêtes de longue traîne, soit 10 nouveaux articles sur la période présentée ici."
+                },
+                {
+                    "title": "Corrections techniques",
+                    "desc": "Avec Screaming Frog et la Google Search Console, j'ai corrigé plus de 10 problèmes critiques, dont des pages bloquées et des liens cassés."
+                },
+                {
+                    "title": "SEO local",
+                    "desc": "J'ai optimisé la fiche Google Business Profile et créé des citations et des backlinks, pour rendre l'entreprise visible sur la carte à Londres."
+                }
+            ],
+            "lessons": [
+                "Quand une page a du trafic mais peu de demandes, commencez par la page, pas par chercher plus de trafic. Ici, une page d'atterrissage repensée a doublé les conversions dès son premier mois.",
+                "Le payant et le naturel s'entraident. C'est l'audit Google Ads qui a révélé la page faible, et sa correction a amélioré les deux.",
+                "Le SEO local, c'est beaucoup de petites tâches faites chaque semaine : métadonnées, articles, fiche Google, citations et liens. C'est la régularité qui fait la différence."
+            ]
         },
         "saas-digital-launch": {
-            "client": "Startup SaaS (Inventaire)",
-            "title": "Lancement Digital Complet pour une Startup SaaS",
-            "summary": "Jan–Mai 2025 : Construction des fondations digitales de zéro, livraison d'un site mobile-first et de workflows de leads automatisés.",
-            "tags": "Stratégie SEO • Web Design • Marketing Automation",
-            "challenge": "Une nouvelle marque de gestion d'inventaire avait besoin d'un écosystème numérique complet en partant de zéro. Le besoin : un site web no-code responsive, une fondation SEO robuste et des canaux de génération de leads automatisés.",
-            "approach": "En tant que consultant, j'ai développé un site entièrement responsive. J'ai implémenté une stratégie SEO complète, structurant la navigation selon l'intention de l'utilisateur. Intégration de Gist pour le chatbot et l'automatisation des emails. Établissement d'une présence sociale multi-canal.",
+            "client": "Startup SaaS de gestion de stock",
+            "title": "Lancement digital complet d'une startup SaaS",
+            "summary": "De janvier à mai 2025, j'ai mené à temps partiel tout le lancement digital d'une startup SaaS de gestion de stock : site réalisé avec une développeuse freelance, SEO technique et on-page, plan de netlinking, CRM, chat et emails automatisés, réseaux sociaux et contenu de lancement.",
+            "tags": "Stratégie SEO • Création de site • Automatisation marketing",
+            "challenge": "Partir de zéro a un avantage : la structure peut être juste dès le premier jour. Le risque, c'est de lancer un beau site que Google ne comprend pas et qui laisse partir les visiteurs intéressés sans laisser de trace.",
+            "approach": "Une développeuse freelance a construit le site sur un outil no-code, et j'ai dirigé le travail : structure, pages, ce qu'il fallait faire et éviter pour le SEO. Le site a connu deux versions graphiques, une claire d'abord, puis une sombre. J'ai pris en charge tout le SEO : la configuration technique, une navigation pensée selon l'intention de recherche pour que chaque page principale réponde à un type de recherche, et le travail on-page de chaque page. J'ai préparé le netlinking pour l'après-lancement, afin que le nouveau domaine commence à gagner en autorité. J'ai mis en place le CRM et Gist pour le chat en direct et l'automatisation des emails : les visiteurs pouvaient poser leurs questions sur le site, et les contacts recevaient automatiquement des emails de suivi. J'ai créé les comptes Facebook, Instagram et LinkedIn de la marque, planifié le contenu du lancement, réalisé les visuels avec Canva et installé Google Analytics.",
             "results": {
-                "0": "Lancement réussi d'un site responsive mobile",
-                "1": "Mise en place de workflows d'email automation (Gist)",
-                "2": "Établissement d'une présence sociale multi-canaux"
+                "0": "Site adapté au mobile lancé avec succès",
+                "1": "Automatisation des emails mise en place (Gist)",
+                "2": "Présence établie sur plusieurs réseaux sociaux"
             },
             "gallery_alts": {
                 "0": "Première version du site au lancement, design clair (marque masquée)",
                 "1": "Deuxième version du site, design sombre (marque masquée)",
                 "2": "Widget de chat Gist pour capter des leads (marque masquée)"
             },
-            "seo_title": "Étude de cas : lancement d'un SaaS, site, SEO et automatisation",
-            "period": "Janvier à mai 2025"
+            "seo_title": "Étude de cas lancement SaaS : site, SEO et automatisation",
+            "period": "Janvier à mai 2025",
+            "seo_description": "Le lancement d'une startup SaaS en 2025 : site no-code, structure SEO, chat et emails automatisés avec Gist, réseaux sociaux.",
+            "role": "Responsable marketing digital à temps partiel, en interne",
+            "context": "Le client était une nouvelle marque de logiciel de gestion de stock, sans site, sans présence sur Google et sans moyen de collecter des contacts. De janvier à mai 2025, j'ai travaillé avec elle à temps partiel et pris en charge tout le marketing digital, pas seulement le SEO : le site, le référencement, le CRM et l'automatisation, les réseaux sociaux et le plan de contenu du lancement.",
+            "problems": [
+                {
+                    "title": "Pas de site",
+                    "desc": "La marque avait besoin d'un site adapté au mobile, construit avec un outil no-code."
+                },
+                {
+                    "title": "Pas de bases SEO",
+                    "desc": "Les pages, la navigation et les éléments on-page devaient être pensés selon la façon dont les acheteurs cherchent un logiciel de stock, avant d'écrire le moindre contenu."
+                },
+                {
+                    "title": "Aucune collecte de contacts",
+                    "desc": "Les premiers visiteurs n'avaient aucun moyen de poser une question ou de laisser leurs coordonnées : l'intérêt suscité au lancement aurait été perdu."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Le site, avec une développeuse freelance",
+                    "desc": "Une développeuse freelance a construit le site sur un outil no-code, et j'ai dirigé le travail : structure, pages, ce qu'il fallait faire et éviter pour le SEO. Le site a connu deux versions graphiques, une claire d'abord, puis une sombre."
+                },
+                {
+                    "title": "SEO technique et on-page",
+                    "desc": "J'ai pris en charge tout le SEO : la configuration technique, une navigation pensée selon l'intention de recherche pour que chaque page principale réponde à un type de recherche, et le travail on-page de chaque page."
+                },
+                {
+                    "title": "Plan de netlinking",
+                    "desc": "J'ai préparé le netlinking pour l'après-lancement, afin que le nouveau domaine commence à gagner en autorité."
+                },
+                {
+                    "title": "CRM, chat et emails automatisés",
+                    "desc": "J'ai mis en place le CRM et Gist pour le chat en direct et l'automatisation des emails : les visiteurs pouvaient poser leurs questions sur le site, et les contacts recevaient automatiquement des emails de suivi."
+                },
+                {
+                    "title": "Réseaux sociaux et contenu de lancement",
+                    "desc": "J'ai créé les comptes Facebook, Instagram et LinkedIn de la marque, planifié le contenu du lancement, réalisé les visuels avec Canva et installé Google Analytics."
+                }
+            ],
+            "lessons": [
+                "Pensez la structure du site avant le design. Une navigation construite selon l'intention de recherche se positionne bien plus facilement que des pages réorganisées après le lancement.",
+                "Quand un développeur construit le site, donnez les consignes SEO avant le début du travail, pas après. Corriger la structure ensuite coûte plus cher que de bien faire du premier coup.",
+                "Collectez des contacts avant d'avoir du trafic. Un chat et une séquence d'emails dès le premier jour, c'est l'assurance de ne pas perdre les premiers visiteurs."
+            ]
         },
         "premium-medspa-seo-audit": {
-            "client": "Spa Médical Premium (Basé aux É.-U.)",
-            "title": "Audit SEO Technique & Optimisation Locale pour un Spa Médical aux États-Unis",
-            "summary": "Résolution de problèmes techniques critiques bloquant l'indexation Google et élaboration d'une stratégie SEO locale complète.",
-            "tags": "SEO Technique • SEO Local • Audit de Site",
-            "challenge": "Un site de spa médical manquait de visibilité malgré des services premium. L'enquête a révélé que les métadonnées SEO n'apparaissaient pas dans le code HTML à cause d'un conflit de plugins (RankMath vs Yoast). De plus, les balises canoniques étaient mal configurées, pointant vers des domaines de développement locaux.",
-            "approach": "Audit SEO complet (technique, on-page, local). Création d'une feuille de suivi d'implémentation. Résolution du conflit de plugins en désactivant RankMath. Correction de toutes les balises canoniques. Rédaction de titres et méta-descriptions optimisés. Développement d'une stratégie SEO locale détaillée.",
+            "client": "Médecine esthétique (États-Unis)",
+            "title": "Audit SEO technique et local pour un centre de médecine esthétique américain",
+            "summary": "Les titres SEO d'un centre de médecine esthétique américain n'apparaissaient pas dans le HTML à cause d'un conflit entre deux extensions SEO, et ses canonicals pointaient vers un domaine de développement. J'ai corrigé les deux, réécrit titres et descriptions à partir d'une nouvelle recherche de mots-clés et optimisé les images. Le trafic et le taux de clic ont augmenté dans les semaines suivantes.",
+            "tags": "SEO technique • SEO local • Audit de site",
+            "challenge": "Une faible visibilité vient souvent du contenu ou des liens. Ici, les premières vérifications ont trouvé plus fondamental : Google ne recevait tout simplement pas les bons signaux.",
+            "approach": "J'ai audité les aspects techniques, on-page et locaux, et créé un tableau de suivi pour organiser chaque modification et suivre son avancement. J'ai désactivé Rank Math et gardé Yoast SEO comme unique source des réglages SEO. Les titres et méta-descriptions sont réapparus dans le HTML. J'ai corrigé chaque balise canonical pour que chaque page pointe vers sa propre URL en ligne. J'ai refait la recherche de mots-clés pour les services et les zones géographiques, pour que les nouveaux titres et descriptions visent ce que les gens recherchent vraiment. J'ai rédigé de nouveaux titres, méta-descriptions et structures de titres pour les pages de services et de zones, mis en ligne après validation du client. J'ai converti les images en WebP, ce qui allège et accélère les pages, et ajouté des textes alternatifs descriptifs pour que Google comprenne ce que montre chaque image. J'ai rédigé une stratégie de SEO local couvrant l'optimisation on-page, les citations locales, le netlinking et le contenu.",
             "results": {
-                "0": "Conflit de plugin résolu : métadonnées restaurées",
-                "1": "Balises canoniques corrigées : signaux URL propres",
-                "2": "Optimisations On-Page rédigées et prêtes",
-                "3": "Roadmap SEO Local développée pour une croissance durable"
+                "0": "Titres et descriptions SEO de nouveau visibles dans le HTML",
+                "1": "Toutes les balises canonical pointent vers l'URL en ligne",
+                "2": "Trafic et taux de clic en hausse dans les semaines suivantes",
+                "3": "Feuille de route SEO local livrée pour la suite"
             },
             "gallery_alts": {
                 "0": "Tableau de bord SEO : 83 visites organiques, 212 mots-clés, Authority Score 18",
                 "1": "Évolution du trafic organique après les corrections techniques",
                 "2": "Fichier de suivi SEO avec les nouveaux titres et méta-descriptions des pages de service"
             },
-            "seo_title": "Étude de cas SEO technique et local : med spa aux États-Unis",
-            "market": "États-Unis"
+            "seo_title": "Étude de cas SEO technique et local : medspa aux États-Unis",
+            "market": "États-Unis",
+            "seo_description": "Un medspa américain avait perdu ses titres SEO à cause d'un conflit d'extensions, et ses canonicals visaient un domaine de test. Diagnostic et corrections.",
+            "role": "Seul spécialiste SEO d'une agence de marketing digital",
+            "period": "Second semestre 2025",
+            "context": "Le client est un centre de médecine esthétique (medspa) aux États-Unis qui propose des soins haut de gamme. Malgré la qualité de ses services, son site était peu visible sur Google. Un relevé du tableau de bord pendant le projet montre 83 visites organiques, 212 mots-clés positionnés et un Authority Score de 18. J'ai géré le SEO en tant que seul spécialiste SEO d'une agence de marketing digital.",
+            "problems": [
+                {
+                    "title": "Titres et descriptions SEO absents du HTML",
+                    "desc": "Deux extensions SEO, Rank Math et Yoast SEO, étaient actives en même temps. Le conflit empêchait les titres et méta-descriptions rédigés pour les pages d'apparaître dans le code HTML que lit Google."
+                },
+                {
+                    "title": "Des balises canonical mal dirigées",
+                    "desc": "Certaines balises canonical renvoyaient vers la mauvaise URL, d'autres vers un domaine de développement local au lieu du site en ligne. En clair, le site disait à Google que ses vraies pages étaient ailleurs."
+                },
+                {
+                    "title": "Des pages de services incapables de se positionner",
+                    "desc": "Ensemble, ces problèmes empêchaient Google d'explorer, d'indexer et de classer correctement les pages de services."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Audit complet",
+                    "desc": "J'ai audité les aspects techniques, on-page et locaux, et créé un tableau de suivi pour organiser chaque modification et suivre son avancement."
+                },
+                {
+                    "title": "Une seule extension SEO",
+                    "desc": "J'ai désactivé Rank Math et gardé Yoast SEO comme unique source des réglages SEO. Les titres et méta-descriptions sont réapparus dans le HTML."
+                },
+                {
+                    "title": "Canonicals corrigées",
+                    "desc": "J'ai corrigé chaque balise canonical pour que chaque page pointe vers sa propre URL en ligne."
+                },
+                {
+                    "title": "Recherche de mots-clés à partir de zéro",
+                    "desc": "J'ai refait la recherche de mots-clés pour les services et les zones géographiques, pour que les nouveaux titres et descriptions visent ce que les gens recherchent vraiment."
+                },
+                {
+                    "title": "Nouveaux titres, descriptions et intitulés",
+                    "desc": "J'ai rédigé de nouveaux titres, méta-descriptions et structures de titres pour les pages de services et de zones, mis en ligne après validation du client."
+                },
+                {
+                    "title": "Optimisation des images",
+                    "desc": "J'ai converti les images en WebP, ce qui allège et accélère les pages, et ajouté des textes alternatifs descriptifs pour que Google comprenne ce que montre chaque image."
+                },
+                {
+                    "title": "Stratégie de SEO local",
+                    "desc": "J'ai rédigé une stratégie de SEO local couvrant l'optimisation on-page, les citations locales, le netlinking et le contenu."
+                }
+            ],
+            "lessons": [
+                "N'utilisez jamais deux extensions SEO en même temps. Elles écrasent mutuellement leur travail, et le résultat peut être des pages sans titre ni description.",
+                "Vérifiez les balises canonical après tout passage d'un site de test ou de développement à la mise en ligne. Des canonicals qui pointent encore vers l'ancien domaine sont un oubli fréquent et coûteux.",
+                "Corrigez les signaux avant d'écrire plus de contenu. De nouvelles pages ne servent à rien tant que Google reçoit la mauvaise URL ou aucun titre pour celles qui existent. Ici, le trafic et les clics ont commencé à monter quelques semaines après les corrections, sans une seule nouvelle page."
+            ]
         },
         "national-sports-org": {
             "client": "Fédération sportive nationale",
@@ -346,36 +553,111 @@
             "summary": "Recherche de mots-clés, contenu SEO, titres et méta-descriptions pour trois pages du site d'une fédération sportive nationale, dont sa page partenaires.",
             "tags": "Recherche de mots-clés • Contenu SEO • SEO On-Page",
             "challenge": "Les pages avaient besoin d'un contenu et de métadonnées construits autour de ce que les gens recherchent, pour que Google comprenne chaque page et l'affiche pour les bonnes requêtes.",
-            "approach": "J'ai fait la recherche de mots-clés pour chaque page. J'ai optimisé le contenu autour de ces mots-clés. J'ai rédigé de nouveaux titres SEO et méta-descriptions et traité les autres éléments on-page.",
+            "approach": "J'ai identifié les recherches auxquelles chaque page devait répondre, y compris les noms et les termes que les gens utilisent pour trouver les partenaires de la fédération. J'ai optimisé le contenu des trois pages autour de ces mots-clés, pour que chacune annonce clairement son sujet avec les mots des internautes. J'ai rédigé de nouveaux titres SEO et méta-descriptions et traité les autres éléments on-page, pour que les pages se présentent bien dans les résultats de Google.",
             "results": {
                 "0": "Page partenaires et deux autres pages optimisées pour le référencement",
                 "1": "Recherche de mots-clés réalisée pour chaque page",
                 "2": "Nouveaux titres SEO et méta-descriptions en place"
             },
-            "seo_title": "Étude de cas contenu SEO : fédération sportive nationale"
+            "seo_title": "Étude de cas contenu SEO : fédération sportive nationale",
+            "role": "Seul spécialiste SEO d'une agence de marketing digital",
+            "period": "Second semestre 2025",
+            "context": "Le client est une fédération sportive nationale, cliente de l'agence de marketing digital où j'étais le seul spécialiste SEO. Ma part du projet était volontairement limitée : la page partenaires de la fédération et deux autres pages de son site.",
+            "steps": [
+                {
+                    "title": "Recherche de mots-clés pour chaque page",
+                    "desc": "J'ai identifié les recherches auxquelles chaque page devait répondre, y compris les noms et les termes que les gens utilisent pour trouver les partenaires de la fédération."
+                },
+                {
+                    "title": "Optimisation du contenu",
+                    "desc": "J'ai optimisé le contenu des trois pages autour de ces mots-clés, pour que chacune annonce clairement son sujet avec les mots des internautes."
+                },
+                {
+                    "title": "Titres, descriptions et éléments on-page",
+                    "desc": "J'ai rédigé de nouveaux titres SEO et méta-descriptions et traité les autres éléments on-page, pour que les pages se présentent bien dans les résultats de Google."
+                }
+            ],
+            "lessons": [
+                "Les pages partenaires sont souvent négligées, alors que les gens recherchent les sponsors et partenaires d'une organisation par leur nom. Une page claire et bien titrée peut capter ces recherches.",
+                "Faites la recherche de mots-clés avant d'écrire. Elle montre les mots que les gens emploient vraiment, souvent différents des termes officiels d'une organisation.",
+                "Un petit périmètre mérite quand même un travail soigné. Quelques pages avec les bons mots-clés, le bon contenu et les bonnes métadonnées valent mieux que beaucoup de pages à peine retouchées."
+            ]
         },
         "law-firm-local-seo": {
-            "client": "Cabinet d'Avocats (USA)",
-            "title": "SEO Local & Optimisation pour un Cabinet d'Avocats",
-            "summary": "SEO local pour un cabinet d'avocats américain : pages par domaine de pratique, contenu local et audit des citations. Résultat : 30 % de demandes qualifiées en plus.",
-            "tags": "SEO Local • SEO On-Page • Optimisation Web",
-            "challenge": "Le cabinet voulait se positionner sur un domaine juridique précis dans son marché local, mais la structure du site était décousue et les signaux locaux faibles.",
-            "approach": "J'ai restructuré le site en sections claires par domaine de pratique. J'ai optimisé le contenu pour les recherches locales (ville plus domaine de pratique) et audité les citations locales existantes.",
+            "client": "Cabinet d'avocats (États-Unis)",
+            "title": "SEO local pour un cabinet d'avocats en préjudice corporel au Michigan",
+            "summary": "SEO local pour un cabinet d'avocats spécialisé en préjudice corporel au Michigan : pages corrigées, taux de clic travaillé sur les pages à fortes impressions, pages orphelines reliées, citations auditées et fiche Google Business Profile suspendue récupérée. 30 % de demandes qualifiées en plus venant de la recherche locale.",
+            "tags": "SEO local • Google Business Profile • SEO on-page",
+            "challenge": "Le cabinet voulait plus de clients venant de la recherche locale dans son domaine. Le site avait des pages avec des problèmes techniques et on-page, des pages que Google affichait mais sur lesquelles peu de gens cliquaient, et des pages sans aucun lien interne. En plein projet, un problème plus grave est arrivé : la fiche Google Business Profile principale du cabinet a été suspendue.",
+            "approach": "J'ai passé le site en revue, corrigé les pages qui avaient des problèmes et réorganisé le contenu en sections claires par domaine de pratique, pour que chaque domaine ait une page assez forte pour se positionner. Avec la Search Console, j'ai repéré les pages et les requêtes avec le plus d'impressions et les positions les plus faibles, puis optimisé leurs titres, descriptions et contenus pour répondre à ce que ces internautes cherchaient. J'ai recherché les pages orphelines et relié chaque page à des contenus pertinents, pour que toutes les pages soient connectées et découvrables par Google. J'ai publié des articles qui répondent aux questions que se posent les clients potentiels. Avec Local Falcon et d'autres outils de SEO local, j'ai audité les citations existantes du cabinet et ses positions locales, pour vérifier la cohérence de son nom, de son adresse et de son téléphone, et voir où il se classait dans la zone. Quand la fiche principale a été suspendue, j'ai donné au cabinet un plan clair : quoi faire, quoi éviter pendant la suspension, et comment demander la réintégration. La fiche a été récupérée.",
             "results": {
-                "0": "Génération de 30% de leads qualifiés en plus via la recherche locale",
-                "1": "Classements en première page pour 'Ville + Domaine'",
-                "2": "Amélioration de l'autorité de domaine et des signaux de confiance"
+                "0": "30 % de demandes qualifiées en plus venant de la recherche locale",
+                "1": "Première page sur les recherches « ville + préjudice corporel »",
+                "2": "Fiche Google Business Profile principale récupérée après une suspension"
             },
-            "seo_title": "SEO pour avocats : étude de cas aux États-Unis",
-            "market": "États-Unis"
+            "seo_title": "SEO pour avocats : étude de cas au Michigan",
+            "market": "États-Unis (Michigan)",
+            "seo_description": "SEO local pour un cabinet de préjudice corporel au Michigan : taux de clic, maillage interne, audit des citations et fiche Google suspendue récupérée.",
+            "role": "Seul spécialiste SEO d'une agence de marketing digital",
+            "period": "Second semestre 2025",
+            "context": "Le client est un cabinet d'avocats spécialisé en préjudice corporel (personal injury) au Michigan. C'est l'un des domaines les plus concurrentiels de la recherche juridique : après un accident, les gens appellent généralement l'un des premiers cabinets qu'ils voient, si bien qu'être en première page sur « avocat préjudice corporel + ville » a un effet direct sur les nouveaux dossiers. J'ai travaillé sur ce compte en tant que seul spécialiste SEO d'une agence de marketing digital.",
+            "problems": [
+                {
+                    "title": "Des pages avec des erreurs et des signaux on-page faibles",
+                    "desc": "L'audit du site a trouvé des pages avec des problèmes techniques et on-page qui les freinaient."
+                },
+                {
+                    "title": "Beaucoup d'impressions, peu de clics",
+                    "desc": "La Search Console montrait des requêtes et des pages avec beaucoup d'impressions, mais de mauvaises positions et peu de clics. Google associait déjà ces pages aux bonnes recherches ; elles n'étaient simplement pas assez convaincantes pour monter ou obtenir le clic."
+                },
+                {
+                    "title": "Des pages orphelines",
+                    "desc": "Certaines pages ne recevaient aucun lien interne. Google découvre les pages surtout en suivant les liens : une page orpheline est difficile à trouver et se positionne rarement."
+                },
+                {
+                    "title": "Une fiche Google Business Profile suspendue",
+                    "desc": "La fiche principale du cabinet a été suspendue. Pour un cabinet local, c'est elle qui apparaît sur la carte Google : la suspension coupait l'une de ses principales sources d'appels. L'équipe était, on le comprend, très inquiète."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Corriger les pages à problèmes",
+                    "desc": "J'ai passé le site en revue, corrigé les pages qui avaient des problèmes et réorganisé le contenu en sections claires par domaine de pratique, pour que chaque domaine ait une page assez forte pour se positionner."
+                },
+                {
+                    "title": "Taux de clic des pages à fortes impressions",
+                    "desc": "Avec la Search Console, j'ai repéré les pages et les requêtes avec le plus d'impressions et les positions les plus faibles, puis optimisé leurs titres, descriptions et contenus pour répondre à ce que ces internautes cherchaient."
+                },
+                {
+                    "title": "Pages orphelines et maillage interne",
+                    "desc": "J'ai recherché les pages orphelines et relié chaque page à des contenus pertinents, pour que toutes les pages soient connectées et découvrables par Google."
+                },
+                {
+                    "title": "Articles de blog",
+                    "desc": "J'ai publié des articles qui répondent aux questions que se posent les clients potentiels."
+                },
+                {
+                    "title": "Audit des citations",
+                    "desc": "Avec Local Falcon et d'autres outils de SEO local, j'ai audité les citations existantes du cabinet et ses positions locales, pour vérifier la cohérence de son nom, de son adresse et de son téléphone, et voir où il se classait dans la zone."
+                },
+                {
+                    "title": "Récupérer la fiche Google Business Profile",
+                    "desc": "Quand la fiche principale a été suspendue, j'ai donné au cabinet un plan clair : quoi faire, quoi éviter pendant la suspension, et comment demander la réintégration. La fiche a été récupérée."
+                }
+            ],
+            "lessons": [
+                "Commencez par les pages que Google affiche déjà. Les pages avec beaucoup d'impressions et de mauvaises positions sont les gains les plus rapides, car Google les a déjà reliées aux bonnes recherches.",
+                "Cherchez les pages orphelines. Une page sans lien interne peut être bien écrite et ne jamais se positionner, parce que Google la trouve rarement.",
+                "Si votre fiche Google Business Profile est suspendue, ne paniquez pas et n'en créez pas une nouvelle. Suivez la procédure de réintégration avec soin : une réaction précipitée peut rendre plus difficile la récupération de la fiche d'origine."
+            ]
         },
         "moroccan-b2b-seo": {
-            "client": "Site B2B Marocain",
-            "title": "Optimisation SEO On-Page pour un Site B2B",
-            "summary": "Amélioration des classements de la page d'accueil, du CTR et des clics organiques grâce à une optimisation ciblée.",
-            "tags": "SEO On-Page • Optimisation CTR • Maillage Interne",
-            "challenge": "La page d'accueil classait mal, recevait des impressions mais peu de clics (CTR faible). L'objectif était d'augmenter le trafic qualifié sans créer de nouvelles pages.",
-            "approach": "Amélioration du ciblage par mots-clés sur la page d'accueil et réécriture des titres/descriptions pour s'aligner sur l'intention de recherche. Renforcement de la clarté de la page et du maillage interne.",
+            "client": "Entreprise B2B (Maroc)",
+            "title": "Optimisation SEO on-page pour un site B2B marocain",
+            "summary": "SEO on-page en freelance pour un site B2B marocain dont les pages n'apportaient aucun trafic : mots-clés reciblés grâce à la Search Console et à l'analyse des concurrents, titres et descriptions réécrits, schema ajouté. Clics de 32 à 74 en 3 mois, CTR de 0,7 % à 1,6 %.",
+            "tags": "SEO on-page • Optimisation du CTR • Maillage interne",
+            "challenge": "L'objectif était d'attirer plus de visiteurs qualifiés sans créer de nouvelles pages. La Search Console montrait pourquoi les pages ne fonctionnaient pas : elles ne visaient pas les bons mots-clés.",
+            "approach": "J'ai listé les pages et les mots-clés avec beaucoup d'impressions mais de mauvaises positions : les recherches où Google montrait déjà le site sans bien le classer. Avec Google Keyword Planner, Semrush et d'autres outils, et en étudiant les concurrents bien classés, j'ai choisi les mots-clés que chaque page devait viser. J'ai réécrit les titres et méta-descriptions selon l'intention de recherche, pour que le résultat dans Google donne envie de cliquer. J'ai clarifié les pages, renforcé les liens internes et ajouté un balisage schema pour que Google comprenne l'entreprise et ses pages.",
             "results": {
                 "0": "Clics +130% (32 → 74) en 3 Mois",
                 "1": "CTR +128% (0.7% → 1.6%)",
@@ -407,7 +689,47 @@
             "market": "Maroc",
             "gallery_alts": {
                 "0": "Google Search Console : les 3 derniers mois comparés aux 3 mois précédents"
-            }
+            },
+            "seo_description": "SEO on-page pour la page d'accueil d'un site B2B marocain, sans nouvelle page : clics de 32 à 74 en 3 mois, CTR de 0,7 % à 1,6 %.",
+            "role": "Consultant SEO freelance",
+            "context": "Le client est une entreprise B2B au Maroc, avec laquelle j'ai travaillé en tant que consultant freelance. Ses pages étaient en ligne, mais n'apportaient presque aucun trafic. La page d'accueil apparaissait dans Google, avec environ 4 330 impressions sur trois mois, mais elle était trop mal classée et son résultat n'était pas assez convaincant pour obtenir des clics.",
+            "problems": [
+                {
+                    "title": "Les mauvais mots-clés",
+                    "desc": "Les données de la Search Console montraient que les pages visaient des mots-clés qui ne correspondaient pas à ce que cherchaient leurs clients potentiels."
+                },
+                {
+                    "title": "Un classement trop bas",
+                    "desc": "La position moyenne de la page d'accueil était de 34,2, soit la quatrième page des résultats, où presque personne ne regarde."
+                },
+                {
+                    "title": "Un résultat sur lequel personne ne cliquait",
+                    "desc": "Le taux de clic était de 0,7 % : sur 1 000 affichages de la page, environ 7 personnes cliquaient."
+                }
+            ],
+            "steps": [
+                {
+                    "title": "Analyse de la Search Console",
+                    "desc": "J'ai listé les pages et les mots-clés avec beaucoup d'impressions mais de mauvaises positions : les recherches où Google montrait déjà le site sans bien le classer."
+                },
+                {
+                    "title": "Recherche de mots-clés et analyse des concurrents",
+                    "desc": "Avec Google Keyword Planner, Semrush et d'autres outils, et en étudiant les concurrents bien classés, j'ai choisi les mots-clés que chaque page devait viser."
+                },
+                {
+                    "title": "Titres et descriptions réécrits",
+                    "desc": "J'ai réécrit les titres et méta-descriptions selon l'intention de recherche, pour que le résultat dans Google donne envie de cliquer."
+                },
+                {
+                    "title": "Contenu, maillage interne et schema",
+                    "desc": "J'ai clarifié les pages, renforcé les liens internes et ajouté un balisage schema pour que Google comprenne l'entreprise et ses pages."
+                }
+            ],
+            "lessons": [
+                "Les impressions ont à peine bougé (+3,7 %), mais les clics ont plus que doublé. La croissance est venue d'un meilleur classement et d'un résultat plus attractif, pas de plus de visibilité.",
+                "Avant de créer de nouvelles pages, regardez celles que vous avez. Une page qui reçoit déjà des impressions est souvent le gain le plus rapide.",
+                "Le titre et la description sont votre annonce dans Google. Les réécrire autour de ce que les gens recherchent est l'un des moyens les moins coûteux d'augmenter les clics."
+            ]
         }
     },
     "ServicesPage": {
