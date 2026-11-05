@@ -1,13 +1,17 @@
 import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { useLocale, useTranslations } from "next-intl";
+import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 
 const FEATURED = ["technical-seo-audit-checklist-lead-gen", "local-seo-guide-businesses", "ga4-event-tracking"];
 
 export default function BlogPreview() {
     const t = useTranslations("HomePage.blog");
     const tPosts = useTranslations("BlogPosts");
-    const posts = FEATURED.map((slug) => BLOG_POSTS.find((p) => p.slug === slug)).filter((p) => p !== undefined);
+    const locale = useLocale();
+    // Featured articles that are fully written in this language, topped up with other full articles
+    const pool = BLOG_POSTS.filter((p) => isFullyWritten(p, locale));
+    const featured = pool.filter((p) => FEATURED.includes(p.slug));
+    const posts = [...featured, ...pool.filter((p) => !featured.includes(p))].slice(0, 3);
 
     return (
         <section id="blog" className="cv container-custom pb-24 md:pb-[104px]">

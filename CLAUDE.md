@@ -17,6 +17,7 @@ The site is the proof of his SEO work, so SEO, speed and accessibility are not o
 - Banned: unlock, elevate, seamless, cutting-edge, state-of-the-art, world-class, tailored solutions, data-driven, in today's fast-paced world, trusted partner, journey, empower, leverage, revolutionize, delve, passion for excellence, "it's not just X, it's Y".
 - Headings state a fact or a benefit. Buttons say what happens ("Book a call", not "Learn more").
 - Every copy change goes into `messages/en.json`, `fr.json` and `ar.json` together. No hard-coded user-facing strings in components.
+- Selective languages (Nov 2026): a language version is indexed only when it is fully written. Articles list their full languages in `BLOG_POSTS.locales` (`src/lib/blog-data.ts`); other versions are summaries with noindex, left out of hreflang and the sitemap. New articles: English and French. Arabic is kept for the commercial pages. Write English first, then French, then Arabic.
 
 ## Design
 

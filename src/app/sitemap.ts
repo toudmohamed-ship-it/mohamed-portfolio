@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { CASE_STUDIES } from "@/lib/data";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 import { SERVICE_PAGES } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,9 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     })));
 
-    const blogRoutes = locales.flatMap(locale => BLOG_POSTS.map((post) => ({
+    // Articles only in the languages they are fully written in (see BLOG_POSTS.locales)
+    const blogRoutes = locales.flatMap(locale => BLOG_POSTS.filter((post) => isFullyWritten(post, locale)).map((post) => ({
         url: locale === 'en' ? `${baseUrl}/blog/${post.slug}` : `${baseUrl}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
+        lastModified: new Date(post.modified || post.published),
         changeFrequency: "weekly" as const,
         priority: 0.6,
     })));

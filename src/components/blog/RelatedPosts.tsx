@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 import { getTranslations } from "next-intl/server";
 
 interface RelatedPostsProps {
@@ -13,8 +13,9 @@ export default async function RelatedPosts({ currentSlug, relatedSlugs, locale }
     const tPosts = await getTranslations({ locale, namespace: "BlogPosts" });
 
     // Use the article's picks, then fill with other posts so there are always two
-    const picks = BLOG_POSTS.filter((p) => (relatedSlugs || []).includes(p.slug) && p.slug !== currentSlug);
-    const fill = BLOG_POSTS.filter((p) => p.slug !== currentSlug && !picks.includes(p));
+    const pool = BLOG_POSTS.filter((p) => isFullyWritten(p, locale));
+    const picks = pool.filter((p) => (relatedSlugs || []).includes(p.slug) && p.slug !== currentSlug);
+    const fill = pool.filter((p) => p.slug !== currentSlug && !picks.includes(p));
     const posts = [...picks, ...fill].slice(0, 2);
 
     return (

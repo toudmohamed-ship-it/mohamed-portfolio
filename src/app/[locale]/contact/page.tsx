@@ -51,6 +51,19 @@ export default async function ContactPage({ params }: Props) {
 
             <section className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-16 items-start">
                 <div className="flex flex-col gap-12">
+                    <section id="mini-audit" aria-labelledby="mini-audit-title" className="scroll-mt-24 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-col gap-4">
+                        <h2 id="mini-audit-title" className="m-0 text-2xl font-semibold">{t('mini_audit.title')}</h2>
+                        <ul className="list-none m-0 p-0 flex flex-col gap-3">
+                            {(t.raw('mini_audit.points') as string[]).map((point) => (
+                                <li key={point} className="flex gap-3 items-start text-[16px] text-ink-soft">
+                                    <svg className="shrink-0 mt-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E6B57" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7" /></svg>
+                                    {point}
+                                </li>
+                            ))}
+                        </ul>
+                        <p className="m-0 text-[15px] text-muted">{t('mini_audit.note')}</p>
+                    </section>
+
                     <div className="flex flex-col gap-4">
                         <h2 className="m-0 text-2xl font-semibold">{t('info.title')}</h2>
                         <ul className="list-none m-0 p-0 border-t border-line">

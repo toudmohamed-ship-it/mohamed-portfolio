@@ -70,3 +70,34 @@ Each article: English first, French and Arabic when the topic has demand there (
 | Leads by landing page | GA4, Pages and screens with key events | to be set up |
 
 Export Search Console (Queries, Pages, Countries, last 3 months) once a month and keep the files, so each month can be compared with the last.
+
+## Current plan (5 Nov 2026), from the language and competitor research
+
+Report: `reports/Languages and solo SEO competitors.md` (local only, not in git).
+
+**Decisions (Mohamed, 5 Nov 2026):** selective languages; prices set from the market, upper-middle (he usually charges 10,000 MAD a month); free mini-audit as the main offer; article dates chosen by Claude; stay on Next.js (no WordPress).
+
+**Batch 1, site structure (week of 5 Nov):**
+- [ ] Selective languages: a language version is indexed only if it is fully written. Thin FR/AR versions get noindex and leave hreflang and the sitemap. New articles: EN and FR only; Arabic for commercial pages.
+- [ ] Article dates fixed (2025 to 2026) and `BlogPosting` schema with datePublished and dateModified.
+- [ ] "From" prices in MAD (FR, AR) and USD (EN) on the services hub and service pages.
+- [ ] Free mini-audit as the main call to action, with a defined output and deadline.
+
+**Batch 2, content (week of 12 Nov):**
+- [ ] Rewrite `keyword-research-process` and `why-websites-fail` (EN, then FR).
+- [ ] Translate the lead-gen checklist into French; remove the duplicate FAQ in the local SEO guide.
+- [ ] Case study numbers near the top of the homepage and service pages.
+- [ ] GA4 tracking presented as a lead service; "you work with me directly" and "how it works".
+- [ ] Check that the site's GA4 records leads as key events (form, WhatsApp, booking).
+
+**Then measure:** Page indexing export in 2 to 3 weeks; Performance export in early December against the Aug to Oct baseline; French and Arabic review in February 2027.
+
+### Mohamed's checklist
+- [x] Resubmit the sitemap and request indexing of the reworked pages (done 5 Nov 2026).
+- [ ] Validate fix in Search Console: "Crawled, currently not indexed", "Not found (404)", "Page with redirect".
+- [ ] Create a Google Business Profile (choose the city to show).
+- [ ] Ask the two current freelance clients for a review when their projects end (Google or LinkedIn; anonymous is fine).
+- [ ] Check search volumes in Google Keyword Planner: "consultant SEO Maroc", "expert SEO Maroc", "خبير سيو", "مستشار SEO".
+- [ ] Malt and Clutch profiles; LinkedIn title and link consistent with the site.
+- [ ] Illustrated portrait with the eyes as separate layers, for the About page eye-follow effect.
+- [ ] Tell Claude when the master's is finished (update the About page in 3 languages).

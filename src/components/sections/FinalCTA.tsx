@@ -22,7 +22,7 @@ export default function FinalCTA({ title, description, buttonText }: FinalCTAPro
                     <div className="m-0 text-[#C9CFCB] text-lg max-w-[520px]">{description || t("description")}</div>
                 </div>
                 <div className="reveal flex flex-wrap gap-3.5">
-                    <Link href="/contact" className="btn inline-flex items-center gap-2 px-6 py-3.5 rounded-[10px] bg-paper text-ink font-medium no-underline hover:text-ink">
+                    <Link href="/contact#mini-audit" className="btn inline-flex items-center gap-2 px-6 py-3.5 rounded-[10px] bg-paper text-ink font-medium no-underline hover:text-ink">
                         {buttonText || t("button")} <span className="arrow" aria-hidden="true">→</span>
                     </Link>
                     <a href={PERSONAL_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="btn inline-flex items-center px-6 py-3.5 rounded-[10px] border border-[#4A5450] text-paper font-medium no-underline hover:text-paper">

@@ -21,6 +21,9 @@ type Copy = {
     crumb?: string;
     title: string;
     lead: string;
+    /** "From" price shown under the main button, with a short note (currency and scope) */
+    price?: string;
+    price_note?: string;
     definition: { title: string; paragraphs: string[] };
     for_who: { title: string; items: string[] };
     included: { title: string; intro: string; items: { name: string; desc: string }[] };
@@ -118,11 +121,19 @@ export default async function ServiceDetailPage({ params }: Props) {
                 title={c.title}
                 lead={c.lead}
             >
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
-                    <Link href="/contact" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white">
-                        {t("ui.cta_primary")} <span className="arrow" aria-hidden="true">→</span>
-                    </Link>
-                    <span className="text-sm text-muted">{t("ui.starts_with")}</span>
+                <div className="flex flex-col gap-4 pt-2">
+                    <div className="flex flex-wrap items-center gap-3.5">
+                        <Link href="/contact#mini-audit" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white">
+                            {t("ui.cta_primary")} <span className="arrow" aria-hidden="true">→</span>
+                        </Link>
+                        <span className="text-sm text-muted">{t("ui.starts_with")}</span>
+                    </div>
+                    {c.price && (
+                        <p className="m-0 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                            <span className="text-[19px] font-semibold text-ink">{c.price}</span>
+                            {c.price_note && <span className="text-sm text-muted">{c.price_note}</span>}
+                        </p>
+                    )}
                 </div>
             </PageHeader>
 

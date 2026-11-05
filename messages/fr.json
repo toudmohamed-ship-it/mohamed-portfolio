@@ -131,8 +131,8 @@
         },
         "FinalCTA": {
             "title": "Parlez-moi de votre site.",
-            "description": "Un appel gratuit de 15 minutes pour parler de votre site et de ce qui le freine. Je réponds sous 24 heures.",
-            "button": "Réserver un appel",
+            "description": "Commencez par un mini-audit gratuit : vos 5 corrections SEO les plus importantes, par écrit, sous 3 jours ouvrés. Ou écrivez-moi sur WhatsApp. Je réponds sous 24 heures.",
+            "button": "Recevoir un mini-audit gratuit",
             "whatsapp": "Écrire sur WhatsApp"
         },
         "results": {
@@ -1232,6 +1232,16 @@
                 "Nous fixons un appel gratuit de 15 minutes au moment qui vous convient.",
                 "Si le projet me correspond, je vous envoie une proposition claire."
             ]
+        },
+        "mini_audit": {
+            "title": "Mini-audit SEO gratuit",
+            "points": [
+                "J'analyse votre site à la main : indexation, titres des pages, vitesse sur mobile et signaux locaux.",
+                "Vous recevez vos 5 corrections les plus importantes, par écrit, classées par impact.",
+                "Sous 3 jours ouvrés, en français, en arabe ou en anglais.",
+                "Si vous me donnez accès à la Search Console, j'utilise aussi vos vraies données. C'est facultatif."
+            ],
+            "note": "Sans engagement. Si vous le souhaitez, on le passe en revue ensemble lors d'un appel de 15 minutes. Choisissez « Mini-audit SEO gratuit » dans le formulaire."
         }
     },
     "ContactForm": {
@@ -1256,7 +1266,8 @@
             "local": "SEO local",
             "analytics": "GA4 et suivi",
             "web": "Optimisation du site",
-            "other": "Autre chose"
+            "other": "Autre chose",
+            "mini_audit": "Mini-audit SEO gratuit"
         },
         "button": {
             "idle": "Envoyer le message",
@@ -1307,7 +1318,7 @@
             "proof_title": "Résultats de projets similaires",
             "faq_title": "Questions fréquentes",
             "related_title": "Pour aller plus loin",
-            "cta_primary": "Réserver un appel gratuit de 15 min",
+            "cta_primary": "Recevoir un mini-audit gratuit",
             "cta_secondary": "Voir tous les services",
             "starts_with": "Chaque projet commence par un appel gratuit de 15 minutes.",
             "view_case": "Lire l'étude de cas",
@@ -1431,7 +1442,7 @@
                 },
                 {
                     "question": "Combien coûte un audit SEO technique ?",
-                    "answer": "Le prix dépend du nombre de pages, de la plateforme et de si vous voulez que je fasse les corrections. Vous recevez un devis après l'appel gratuit de 15 minutes, avant tout travail."
+                    "answer": "Un audit commence à 7 000 MAD au Maroc, ou 1 200 $ pour les entreprises à l'étranger. Le prix exact dépend du nombre de pages, de la plateforme et de si vous voulez que je fasse les corrections. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout travail."
                 },
                 {
                     "question": "Vous signalez seulement les problèmes ou vous les corrigez aussi ?",
@@ -1449,7 +1460,9 @@
                     "question": "Peut-on travailler en français ou en arabe ?",
                     "answer": "Oui. Je travaille en français, en anglais et en arabe, nous parlons dans la langue que vous préférez."
                 }
-            ]
+            ],
+            "price": "À partir de 7 000 MAD",
+            "price_note": "Audit ponctuel · Hors Maroc : à partir de 1 200 $"
         },
         "local-seo": {
             "meta_title": "SEO local pour les entreprises de services",
@@ -1566,13 +1579,15 @@
                 },
                 {
                     "question": "Combien coûte le SEO local ?",
-                    "answer": "Le prix dépend du nombre d'emplacements et de services. Vous recevez un devis après l'appel gratuit de 15 minutes, avant tout travail."
+                    "answer": "Le SEO local commence à 6 000 MAD par mois au Maroc, ou 800 $ par mois à l'étranger. Le prix exact dépend du nombre d'emplacements et de services. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout travail."
                 },
                 {
                     "question": "Travaillez-vous avec des entreprises au Maroc ?",
                     "answer": "Oui. Je suis basé au Maroc, je travaille à distance, avec des entreprises au Maroc, au Royaume-Uni et aux États-Unis."
                 }
-            ]
+            ],
+            "price": "À partir de 6 000 MAD par mois",
+            "price_note": "Mensuel · Hors Maroc : à partir de 800 $ par mois"
         },
         "ga4-tracking": {
             "meta_title": "Configuration GA4 et suivi des conversions",
@@ -1701,9 +1716,11 @@
                 },
                 {
                     "question": "Combien coûte une configuration GA4 ?",
-                    "answer": "Le prix dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires. Vous recevez un devis après l'appel gratuit de 15 minutes."
+                    "answer": "Une configuration GA4 commence à 4 500 MAD au Maroc, ou 700 $ à l'étranger. Le prix exact dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires. Vous recevez un devis fixe après l'appel gratuit de 15 minutes."
                 }
-            ]
+            ],
+            "price": "À partir de 4 500 MAD",
+            "price_note": "Mise en place ponctuelle · Hors Maroc : à partir de 700 $"
         },
         "seo-for-law-firms": {
             "meta_title": "SEO pour avocats : référencement local des cabinets",
@@ -1829,13 +1846,15 @@
                 },
                 {
                     "question": "Combien coûte le SEO pour un cabinet d'avocats ?",
-                    "answer": "Le prix dépend du nombre de domaines de pratique et de bureaux. Vous recevez un devis après l'appel gratuit de 15 minutes, avant tout travail."
+                    "answer": "Le SEO pour un cabinet d'avocats commence à 6 000 MAD par mois au Maroc, ou 800 $ par mois à l'étranger. Le prix exact dépend du nombre de domaines de pratique et de bureaux. Vous recevez un devis fixe après l'appel gratuit de 15 minutes."
                 },
                 {
                     "question": "Travaillez-vous avec des cabinets hors des États-Unis ?",
                     "answer": "Oui. Je suis basé au Maroc, je travaille à distance, avec des entreprises au Maroc, au Royaume-Uni et aux États-Unis, en français, anglais ou arabe."
                 }
-            ]
+            ],
+            "price": "À partir de 6 000 MAD par mois",
+            "price_note": "Mensuel · Hors Maroc : à partir de 800 $ par mois"
         }
     },
     "MoroccoPage": {
@@ -1845,7 +1864,7 @@
         "eyebrow": "Consultant SEO · Maroc",
         "title": "Consultant SEO au Maroc",
         "lead": "J'aide les entreprises marocaines à apparaître sur Google quand leurs clients cherchent leurs services, à Casablanca, Rabat, Marrakech ou ailleurs, et à transformer ces visites en appels et en demandes.",
-        "cta_call": "Réserver un appel gratuit de 15 min",
+        "cta_call": "Recevoir un mini-audit gratuit",
         "cta_whatsapp": "Écrire sur WhatsApp",
         "facts": [
             "Basé au Maroc, à distance",
@@ -1991,7 +2010,7 @@
         "faqs": [
             {
                 "question": "Combien coûte un consultant SEO au Maroc ?",
-                "answer": "Le prix dépend de la taille du site, du nombre de langues et de villes, et du travail à faire : un audit ponctuel ne coûte pas le même prix qu'un accompagnement sur plusieurs mois. Vous recevez un devis précis après l'appel gratuit de 15 minutes, avant tout engagement."
+                "answer": "Un audit technique commence à 7 000 MAD, le SEO local à 6 000 MAD par mois et une configuration GA4 à 4 500 MAD. La plupart de mes projets mensuels tournent autour de 10 000 MAD. Le prix exact dépend de la taille du site, du nombre de langues et de villes, et du travail à faire. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout engagement."
             },
             {
                 "question": "En combien de temps voit-on des résultats ?",

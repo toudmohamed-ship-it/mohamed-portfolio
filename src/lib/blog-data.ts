@@ -1,32 +1,27 @@
-export const BLOG_POSTS = [
-    {
-        slug: "local-seo-guide-businesses",
-        date: "Dec 12, 2024",
-        category: "Local SEO"
-    },
-    {
-        slug: "technical-seo-checklist-2026",
-        date: "Jan 02, 2026",
-        category: "Technical SEO"
-    },
-    {
-        slug: "technical-seo-audit-checklist-lead-gen",
-        date: "Jan 05, 2026",
-        category: "Technical SEO"
-    },
-    {
-        slug: "why-websites-fail",
-        date: "Dec 05, 2024",
-        category: "Strategy"
-    },
-    {
-        slug: "ga4-event-tracking",
-        date: "Nov 28, 2024",
-        category: "Analytics"
-    },
-    {
-        slug: "keyword-research-process",
-        date: "Nov 15, 2024",
-        category: "Keyword Research"
-    },
+// Articles. Titles, excerpts and display dates live in messages/*.json under BlogPosts.<slug>.
+// `locales`: the languages in which the article is fully written (a src/content/blog/<slug>/<locale>.html file).
+// Other languages fall back to a short summary: they stay readable but get noindex and leave hreflang and the sitemap.
+// New articles are written in English and French; Arabic is kept for the commercial pages (growth plan, Nov 2026).
+export interface BlogPost {
+    slug: string;
+    /** First publication, ISO date */
+    published: string;
+    /** Last substantial rewrite, ISO date (defaults to published) */
+    modified?: string;
+    category: string;
+    locales: readonly ("en" | "fr" | "ar")[];
+}
+
+export const BLOG_POSTS: BlogPost[] = [
+    { slug: "local-seo-guide-businesses", published: "2025-12-12", category: "Local SEO", locales: ["en", "fr", "ar"] },
+    { slug: "technical-seo-checklist-2026", published: "2026-01-02", category: "Technical SEO", locales: ["en", "fr", "ar"] },
+    { slug: "technical-seo-audit-checklist-lead-gen", published: "2026-01-05", category: "Technical SEO", locales: ["en"] },
+    { slug: "why-websites-fail", published: "2025-12-05", category: "Strategy", locales: ["en"] },
+    { slug: "ga4-event-tracking", published: "2025-11-28", modified: "2026-11-01", category: "Analytics", locales: ["en", "fr", "ar"] },
+    { slug: "keyword-research-process", published: "2025-11-15", category: "Keyword Research", locales: ["en"] },
 ];
+
+/** Is this article fully written in this language (indexable)? */
+export function isFullyWritten(post: BlogPost, locale: string) {
+    return (post.locales as readonly string[]).includes(locale);
+}

@@ -131,8 +131,8 @@
         },
         "FinalCTA": {
             "title": "Tell me about your website.",
-            "description": "A free 15-minute call to talk about your website and what is holding it back. I reply within 24 hours.",
-            "button": "Book a call",
+            "description": "Start with a free mini-audit: your 5 most important SEO fixes, in writing, within 3 working days. Or message me on WhatsApp. I reply within 24 hours.",
+            "button": "Get a free mini-audit",
             "whatsapp": "Message on WhatsApp"
         },
         "results": {
@@ -1233,6 +1233,16 @@
                 "We book a free 15-minute call at a time that suits you.",
                 "If it is a good fit, I send you a clear proposal for the work."
             ]
+        },
+        "mini_audit": {
+            "title": "Free SEO mini-audit",
+            "points": [
+                "I review your website by hand: indexing, page titles, speed on mobile and local signals.",
+                "You get your 5 most important fixes, in writing, ranked by impact.",
+                "Within 3 working days, in English, French or Arabic.",
+                "If you share Search Console access, I use your real data too. This is optional."
+            ],
+            "note": "No obligation. If you want, we go through it together in a 15-minute call. Choose “Free SEO mini-audit” in the form."
         }
     },
     "ContactForm": {
@@ -1257,7 +1267,8 @@
             "local": "Local SEO",
             "analytics": "GA4 and tracking",
             "web": "Website optimization",
-            "other": "Something else"
+            "other": "Something else",
+            "mini_audit": "Free SEO mini-audit"
         },
         "button": {
             "idle": "Send message",
@@ -1308,7 +1319,7 @@
             "proof_title": "Results from similar projects",
             "faq_title": "Questions and answers",
             "related_title": "Read more",
-            "cta_primary": "Book a free 15-min call",
+            "cta_primary": "Get a free mini-audit",
             "cta_secondary": "See all services",
             "starts_with": "Every project starts with a free 15-minute call.",
             "view_case": "Read the case study",
@@ -1432,7 +1443,7 @@
                 },
                 {
                     "question": "How much does a technical SEO audit cost?",
-                    "answer": "The price depends on the number of pages, the platform and whether you want me to make the fixes. You get a quote after the free 15-minute call, before any work starts."
+                    "answer": "Audits start at $1,200, or 7,000 MAD for businesses in Morocco. The exact price depends on the number of pages, the platform and whether you want me to make the fixes. You get a fixed quote after the free 15-minute call, before any work starts."
                 },
                 {
                     "question": "Do you only report the problems, or also fix them?",
@@ -1450,7 +1461,9 @@
                     "question": "Can we work in French or Arabic?",
                     "answer": "Yes. I work in English, French and Arabic, so we can talk in the language you prefer."
                 }
-            ]
+            ],
+            "price": "From $1,200",
+            "price_note": "One-off audit · From 7,000 MAD for businesses in Morocco"
         },
         "local-seo": {
             "meta_title": "Local SEO Services for Service Businesses",
@@ -1567,13 +1580,15 @@
                 },
                 {
                     "question": "How much does local SEO cost?",
-                    "answer": "The price depends on how many locations and services you have. You get a quote after the free 15-minute call, before any work starts."
+                    "answer": "Local SEO starts at $800 a month, or 6,000 MAD a month for businesses in Morocco. The exact price depends on how many locations and services you have. You get a fixed quote after the free 15-minute call, before any work starts."
                 },
                 {
                     "question": "Do you work with businesses in Morocco?",
                     "answer": "Yes. I am based in Morocco, work remotely, and work with businesses in Morocco, the UK and the U.S."
                 }
-            ]
+            ],
+            "price": "From $800 a month",
+            "price_note": "Monthly · From 6,000 MAD a month in Morocco"
         },
         "ga4-tracking": {
             "meta_title": "GA4 and Conversion Tracking Setup",
@@ -1702,9 +1717,11 @@
                 },
                 {
                     "question": "How much does a GA4 setup cost?",
-                    "answer": "The price depends on how many actions you want to track and how many sites or ad accounts are involved. You get a quote after the free 15-minute call."
+                    "answer": "A GA4 setup starts at $700, or 4,500 MAD for businesses in Morocco. The exact price depends on how many actions you want to track and how many sites or ad accounts are involved. You get a fixed quote after the free 15-minute call."
                 }
-            ]
+            ],
+            "price": "From $700",
+            "price_note": "One-off setup · From 4,500 MAD in Morocco"
         },
         "seo-for-law-firms": {
             "meta_title": "SEO for Law Firms: Local SEO for Attorneys",
@@ -1830,13 +1847,15 @@
                 },
                 {
                     "question": "How much does SEO for a law firm cost?",
-                    "answer": "The price depends on how many practice areas and locations you have. You get a quote after the free 15-minute call, before any work starts."
+                    "answer": "SEO for a law firm starts at $800 a month. The exact price depends on how many practice areas and locations you have. You get a fixed quote after the free 15-minute call, before any work starts."
                 },
                 {
                     "question": "Do you work with law firms outside the U.S.?",
                     "answer": "Yes. I am based in Morocco, work remotely, and work with businesses in Morocco, the UK and the U.S., in English, French or Arabic."
                 }
-            ]
+            ],
+            "price": "From $800 a month",
+            "price_note": "Monthly · Fixed quote after a free call"
         }
     },
     "MoroccoPage": {
@@ -1846,7 +1865,7 @@
         "eyebrow": "SEO consultant · Morocco",
         "title": "SEO consultant in Morocco",
         "lead": "I help Moroccan businesses show up on Google when customers search for their services, in Casablanca, Rabat, Marrakech or anywhere else, and turn those visits into calls and enquiries.",
-        "cta_call": "Book a free 15-min call",
+        "cta_call": "Get a free mini-audit",
         "cta_whatsapp": "Message me on WhatsApp",
         "facts": [
             "Based in Morocco, working remotely",
@@ -1992,7 +2011,7 @@
         "faqs": [
             {
                 "question": "How much does an SEO consultant in Morocco cost?",
-                "answer": "The price depends on the size of the site, the number of languages and cities, and the work needed: a one-off audit does not cost the same as several months of ongoing work. You get a precise quote after the free 15-minute call, before you commit to anything."
+                "answer": "Technical audits start at 7,000 MAD, local SEO at 6,000 MAD a month and GA4 setups at 4,500 MAD. Most of my monthly projects are around 10,000 MAD. The exact price depends on the size of the site, the number of languages and cities, and the work needed. You get a fixed quote after the free 15-minute call, before you commit to anything."
             },
             {
                 "question": "How long does it take to see results?",

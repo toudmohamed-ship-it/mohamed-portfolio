@@ -5,7 +5,7 @@ import { Link } from "@/i18n/routing";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import BlogSerp, { type SerpPost, type SerpQuestion } from "@/components/blog/BlogSerp";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 import { PERSONAL_INFO } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageAlternates } from "@/lib/seo";
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
 // First FAQ of each article that has one, in the page's language, for the "People also ask" box
 function loadQuestions(locale: string): SerpQuestion[] {
     const out: SerpQuestion[] = [];
-    for (const post of BLOG_POSTS) {
+    for (const post of BLOG_POSTS.filter((p) => isFullyWritten(p, locale))) {
         const dir = path.resolve(process.cwd(), "src/content/blog", post.slug);
         for (const file of [`metadata.${locale}.json`, "metadata.json"]) {
             const p = path.join(dir, file);
@@ -54,7 +54,8 @@ export default async function BlogPage({ params }: Props) {
     const tCrumbs = await getTranslations({ locale, namespace: 'Breadcrumbs' });
     const tNav = await getTranslations({ locale, namespace: 'HomePage.nav' });
 
-    const posts: SerpPost[] = BLOG_POSTS.map((p) => ({
+    // Only articles fully written in this language are listed (the others are summaries, kept out of Google)
+    const posts: SerpPost[] = BLOG_POSTS.filter((p) => isFullyWritten(p, locale)).map((p) => ({
         slug: p.slug,
         title: tPosts(`${p.slug}.title`),
         excerpt: tPosts(`${p.slug}.excerpt`),

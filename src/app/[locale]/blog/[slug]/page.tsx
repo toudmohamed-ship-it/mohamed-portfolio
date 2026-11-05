@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import fs from "fs";
 import path from "path";
@@ -12,7 +12,7 @@ import ServiceBridge from "@/components/blog/ServiceBridge";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { localizedUrl, pageAlternates } from "@/lib/seo";
+import { BASE_URL, IS_INDEXABLE, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
     params: Promise<{
@@ -38,16 +38,22 @@ export async function generateMetadata({ params }: Props) {
     const post = BLOG_POSTS.find((p) => p.slug === slug);
     if (!post) return { title: "Post Not Found" };
 
+    // Only fully written language versions are offered to Google; a summary-only version stays readable but noindex
+    const full = isFullyWritten(post, locale);
+
     return {
         title: tPosts(`${slug}.title`),
         description: tPosts(`${slug}.excerpt`),
-        alternates: pageAlternates(locale, `/blog/${slug}`),
+        alternates: pageAlternates(locale, `/blog/${slug}`, post.locales),
+        ...(full || !IS_INDEXABLE ? {} : { robots: { index: false, follow: true } }),
         openGraph: {
             type: "article",
             title: tPosts(`${slug}.title`),
             description: tPosts(`${slug}.excerpt`),
             url: localizedUrl(locale, `/blog/${slug}`),
             images: ['/og-image.jpg'],
+            publishedTime: post.published,
+            modifiedTime: post.modified || post.published,
         },
     };
 }
@@ -105,6 +111,28 @@ export default async function BlogPostPage({ params }: Props) {
 
     // The page header already shows the title and has its own table of contents, so drop the article's leading H1
     // and its inline TOC block, demote any other H1, then give H2/H3 stable ids for the sidebar table of contents
+    // Article structured data, only on fully written language versions (the summaries are noindex)
+    const url = localizedUrl(locale, `/blog/${slug}`);
+    const schema = isFullyWritten(postData, locale)
+        ? {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "@id": `${url}#article`,
+            headline: title,
+            description: tPosts(`${slug}.excerpt`),
+            url,
+            mainEntityOfPage: url,
+            inLanguage: locale,
+            datePublished: postData.published,
+            dateModified: postData.modified || postData.published,
+            wordCount,
+            articleSection: postData.category,
+            image: `${BASE_URL}/og-image.jpg`,
+            author: { "@id": `${BASE_URL}/#person` },
+            publisher: { "@id": `${BASE_URL}/#person` },
+        }
+        : null;
+
     const headings: Heading[] = [];
     const used = new Set<string>();
     const body = content
@@ -174,6 +202,7 @@ export default async function BlogPostPage({ params }: Props) {
                     </aside>
                 </div>
             </article>
+            {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} />}
             <FinalCTA />
         </>
     );
