@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LivingPortrait from "@/components/ui/LivingPortrait";
 import { Link } from "@/i18n/routing";
 import PageHeader from "@/components/ui/PageHeader";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -78,17 +78,12 @@ export default async function AboutPage({ params }: Props) {
             {/* Who I am, with the photo and the facts at a glance */}
             <section className="container-custom py-16 md:py-24 grid gap-12 md:grid-cols-[300px_minmax(0,1fr)] md:gap-16 items-start">
                 <div className="flex flex-col gap-8">
-                    <div className="relative justify-self-start self-start">
+                    <div className="relative justify-self-start self-start w-[260px] md:w-[300px]">
                         <div aria-hidden="true" className="absolute top-4 bottom-[-16px] start-4 end-[-16px] rounded-[20px] bg-sage" />
-                        <Image
-                            src="/images/profile.png"
-                            alt={t('photo_alt')}
-                            width={300}
-                            height={360}
-                            sizes="(min-width: 768px) 300px, 80vw"
-                            priority
-                            className="relative block w-[260px] md:w-[300px] h-auto aspect-[5/6] object-cover rounded-[20px] bg-sage"
-                        />
+                        {/* Illustrated portrait; the eyes follow the cursor on desktop */}
+                        <div className="relative">
+                            <LivingPortrait alt={t('photo_alt')} />
+                        </div>
                     </div>
                     <dl className="m-0 mt-2 bg-white border border-line rounded-[18px] divide-y divide-line">
                         {facts.map((f) => (

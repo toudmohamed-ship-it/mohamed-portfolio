@@ -99,5 +99,5 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 - [ ] Ask the two current freelance clients for a review when their projects end (Google or LinkedIn; anonymous is fine).
 - [ ] Check search volumes in Google Keyword Planner: "consultant SEO Maroc", "expert SEO Maroc", "خبير سيو", "مستشار SEO".
 - [ ] Malt and Clutch profiles; LinkedIn title and link consistent with the site.
-- [ ] Illustrated portrait with the eyes as separate layers, for the About page eye-follow effect.
+- [x] Illustrated portrait with the eyes as separate layers (received 5 Nov 2026; live on the About page with batch 1).
 - [ ] Tell Claude when the master's is finished (update the About page in 3 languages).
