@@ -435,6 +435,32 @@
                 "shopify_seo": "SEO لمتجر شوبيفاي",
                 "hubspot_crm": "HubSpot CRM",
                 "google_ads": "إعلانات جوجل"
+            },
+            "groups": {
+                "seo_content": [
+                    "Technical SEO audits",
+                    "On-page optimization",
+                    "Keyword research and competitor analysis",
+                    "Local SEO and Google Business Profile",
+                    "International SEO (hreflang)",
+                    "Schema markup"
+                ],
+                "analytics_data": [
+                    "Google Analytics 4 (GA4)",
+                    "Google Tag Manager (GTM)",
+                    "Google Search Console",
+                    "Looker Studio",
+                    "Conversion rate optimization (CRO)",
+                    "Microsoft Clarity"
+                ],
+                "tools_platforms": [
+                    "Semrush, Ahrefs, Moz",
+                    "Screaming Frog",
+                    "Local Falcon, BrightLocal",
+                    "WordPress, Elementor, Shopify",
+                    "Rank Math, Yoast SEO",
+                    "Google Ads"
+                ]
             }
         },
         "certifications": {
@@ -448,7 +474,141 @@
             ]
         },
         "teams_title": "عملاء حديثون",
-        "photo_alt": "محمد تودغي، مستشار SEO"
+        "photo_alt": "محمد تودغي، مستشار SEO",
+        "intro": {
+            "title": "The short version",
+            "paragraphs": [
+                "I find what stops a website from bringing in clients, fix it, and measure the result. Most of my work is for service businesses, such as law firms, clinics, B2B companies and SaaS, where the goal is calls and enquiries, not traffic for its own sake.",
+                "I studied marketing and management at Al Akhawayn University, from 2020 to 2024. My first internships were in digital marketing, and I noticed that most marketing plans were missing one thing: data. So I moved into SEO and analytics.",
+                "Since then I have been the only SEO specialist at a digital marketing agency, handled SEO and Google Ads full-time for a UK service business, run the digital launch of a SaaS startup, and worked on local SEO for businesses across several cities. I am also completing a master's in digital marketing and analytics at Al Akhawayn.",
+                "My rule has not changed: decide with data, not guesses."
+            ]
+        },
+        "facts": [
+            {
+                "label": "Based in",
+                "value": "Morocco, working remotely"
+            },
+            {
+                "label": "Focus",
+                "value": "Technical SEO, local SEO, GA4 tracking"
+            },
+            {
+                "label": "Clients in",
+                "value": "U.S., UK, Morocco"
+            },
+            {
+                "label": "Languages",
+                "value": "Arabic, English, French"
+            }
+        ],
+        "experience": {
+            "title": "Experience",
+            "intro": "Agency, in-house and freelance work, most recent first. Clients and employers are described, not named.",
+            "case_label": "Case study",
+            "items": [
+                {
+                    "period": "December 2025 to now",
+                    "role": "SEO and Digital Marketing Specialist",
+                    "org": "Local SEO agency, remote",
+                    "points": [
+                        "Google Business Profile optimization, NAP consistency and citations for a portfolio of home improvement businesses in several cities.",
+                        "SEO strategy, competitor audits and technical SEO specifications across several client accounts at the same time.",
+                        "Rankings and traffic tracked in Looker Studio, GA4 and Local Falcon, with reports for each client's stakeholders.",
+                        "Built AI-assisted workflows and documented SEO procedures that the whole team now uses."
+                    ]
+                },
+                {
+                    "period": "July to December 2025",
+                    "role": "SEO and Growth Analyst",
+                    "org": "Digital marketing agency, Morocco",
+                    "points": [
+                        "The agency's only SEO specialist, responsible for the SEO strategy and sign-off of every new client project, from website build to content and technical work.",
+                        "Directed the technical SEO of a large U.S. luxury marketplace, and the keyword research and competitor analysis for a U.S. auction house.",
+                        "Built Looker Studio dashboards combining GA4, Search Console and Tag Manager data for international clients.",
+                        "Set up international measurement for multilingual sites: hreflang and cross-domain tracking."
+                    ],
+                    "cases": [
+                        "global-marketplace-audit",
+                        "law-firm-local-seo",
+                        "premium-medspa-seo-audit",
+                        "national-sports-org"
+                    ]
+                },
+                {
+                    "period": "January to May 2025",
+                    "role": "Marketing and SEO Specialist",
+                    "org": "UK compliance service, full-time, remote",
+                    "points": [
+                        "Set up Google Ads conversion tracking with Tag Manager and GA4, and audited the account.",
+                        "Redesigned the main landing page with the developer: conversions more than doubled in the first month.",
+                        "Ran the local SEO: metadata on every page, weekly articles, Google Business Profile, citations and backlinks. Key service pages reached Google's top 10."
+                    ],
+                    "cases": [
+                        "uk-compliance-service-audit"
+                    ]
+                },
+                {
+                    "period": "January to May 2025",
+                    "role": "Digital Marketing and Website Manager",
+                    "org": "SaaS startup, part-time",
+                    "points": [
+                        "Led the launch of a new inventory management brand: website built with a freelance developer, SEO, CRM, chat and email automation, and social media."
+                    ],
+                    "cases": [
+                        "saas-digital-launch"
+                    ]
+                },
+                {
+                    "period": "Freelance",
+                    "role": "SEO Consultant",
+                    "org": "Independent projects",
+                    "points": [
+                        "On-page SEO for a Moroccan B2B website: clicks from Google went from 32 to 74 in three months, with no new pages."
+                    ],
+                    "cases": [
+                        "moroccan-b2b-seo"
+                    ]
+                }
+            ]
+        },
+        "how": {
+            "title": "How I work",
+            "items": [
+                {
+                    "title": "Data first",
+                    "desc": "I start from Search Console, GA4 and a crawl of your site, not from opinions. Every recommendation comes with the data behind it."
+                },
+                {
+                    "title": "The biggest problem first",
+                    "desc": "Fixes are ranked by impact. Pages that Google already shows but does not rank well usually come before anything new."
+                },
+                {
+                    "title": "Done, or clearly briefed",
+                    "desc": "I make the changes myself, or hand them to your developer with clear instructions. I have worked both ways, including on sites where every change went through a development team."
+                },
+                {
+                    "title": "Results you can read",
+                    "desc": "Rankings, clicks and leads are tracked in Search Console and GA4, and reported in plain language: what changed, and what did not."
+                }
+            ]
+        },
+        "education": {
+            "title": "Education",
+            "items": [
+                {
+                    "degree": "MS, Digital Marketing and Analytics",
+                    "school": "Al Akhawayn University",
+                    "years": "In progress, since January 2026"
+                },
+                {
+                    "degree": "BBA, Marketing and Management",
+                    "school": "Al Akhawayn University",
+                    "years": "2020 to 2024"
+                }
+            ]
+        },
+        "linkedin": "See my LinkedIn profile"
     },
     "CaseStudies": {
         "global-marketplace-audit": {
