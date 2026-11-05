@@ -384,149 +384,67 @@
     "AboutPage": {
         "metadata": {
             "title": "عن محمد تودغي، مستشار SEO",
-            "description": "مستشار SEO من جامعة الأخوين، متخصص في SEO التقني وSEO المحلي وتتبع GA4. العربية والإنجليزية والفرنسية.",
+            "description": "مستشار SEO مقيم في المغرب، بخبرة في الوكالات وداخل الشركات وكمستقل: SEO تقني وSEO محلي وGA4، لعملاء في أمريكا وبريطانيا والمغرب.",
             "og_title": "عن محمد تودغي | مستشار SEO",
-            "og_description": "من جامعة الأخوين إلى العمل في SEO والتحليلات لعملاء في بريطانيا وأمريكا والمغرب."
+            "og_description": "خبرة في SEO داخل الوكالات وداخل الشركات وكمستقل، لعملاء في الولايات المتحدة والمملكة المتحدة والمغرب."
         },
         "hero": {
             "eyebrow": "من أنا",
-            "title": "مرحباً، أنا محمد. أساعد الشركات على الظهور في Google.",
-            "subtitle": "مستشار SEO أعمل عن بُعد من المغرب مع عملاء في بريطانيا وأمريكا والمغرب."
+            "title": "أنا محمد تودغي، مستشار SEO لشركات الخدمات.",
+            "subtitle": "أعمل عن بعد من المغرب في SEO التقني وSEO المحلي وتتبع GA4، لشركات في الولايات المتحدة والمملكة المتحدة والمغرب. قمت بهذا العمل داخل وكالات، وداخل الشركات، وكمستقل."
         },
-        "journey": {
-            "title": "كيف وصلت إلى هنا",
-            "p1": "درست في جامعة الأخوين (AUI)، حيث بنيت أساساً في التفكير النقدي والتواصل.",
-            "p2": "كانت تدريباتي الأولى في التسويق الرقمي. لاحظت أن معظم الخطط التسويقية ينقصها شيء واحد: البيانات. لذلك اتجهت إلى SEO والتحليلات بهدف واحد: مواقع تجلب العملاء، وليس الزيارات فقط.",
-            "p3": "اليوم أعمل مع شركات من الشركات الناشئة المحلية إلى المنظمات الدولية. قاعدتي بسيطة: القرار يُبنى على البيانات، لا على التخمين."
-        },
-        "languages": {
-            "title": "اللغات",
-            "arabic": "العربية",
-            "english": "الإنجليزية",
-            "french": "الفرنسية",
-            "native": "اللغة الأم",
-            "professional": "مستوى احترافي (C1)",
-            "advanced": "مستوى متقدم (B2)"
-        },
-        "resume": "تحميل سيرتي الذاتية",
-        "expertise": {
-            "title": "الأدوات والمهارات",
-            "categories": {
-                "seo_content": "SEO والمحتوى",
-                "analytics_data": "البيانات والتحليلات",
-                "tools_platforms": "الأدوات والمنصات"
-            },
-            "skills": {
-                "technical_seo_audits": "تدقيق SEO تقني",
-                "on_page_optimization": "تحسين الصفحات (On-Page)",
-                "keyword_research": "بحث واستراتيجية الكلمات المفتاحية",
-                "content_clustering": "عنقودية المحتوى (Content Clustering)",
-                "local_seo": "SEO محلي (GBP)",
-                "international_seo": "SEO دولي (Hreflang)",
-                "ga4": "Google Analytics 4 (GA4)",
-                "gtm": "Google Tag Manager (GTM)",
-                "gsc": "Google Search Console",
-                "looker_studio": "Looker Studio / Data Studio",
-                "cro": "تحسين معدل التحويل (CRO)",
-                "user_behavior": "تحليل سلوك المستخدم",
-                "semrush_ahrefs": "SEMrush / Ahrefs",
-                "screaming_frog": "Screaming Frog",
-                "wordpress_elementor": "WordPress / Elementor",
-                "shopify_seo": "SEO لمتجر شوبيفاي",
-                "hubspot_crm": "HubSpot CRM",
-                "google_ads": "إعلانات جوجل"
-            },
-            "groups": {
-                "seo_content": [
-                    "Technical SEO audits",
-                    "On-page optimization",
-                    "Keyword research and competitor analysis",
-                    "Local SEO and Google Business Profile",
-                    "International SEO (hreflang)",
-                    "Schema markup"
-                ],
-                "analytics_data": [
-                    "Google Analytics 4 (GA4)",
-                    "Google Tag Manager (GTM)",
-                    "Google Search Console",
-                    "Looker Studio",
-                    "Conversion rate optimization (CRO)",
-                    "Microsoft Clarity"
-                ],
-                "tools_platforms": [
-                    "Semrush, Ahrefs, Moz",
-                    "Screaming Frog",
-                    "Local Falcon, BrightLocal",
-                    "WordPress, Elementor, Shopify",
-                    "Rank Math, Yoast SEO",
-                    "Google Ads"
-                ]
-            }
-        },
-        "certifications": {
-            "title": "الشهادات",
-            "items": [
-                "شهادة Google Analytics",
-                "إعلانات جوجل (بحث وشبكة إعلانية)",
-                "بحث الكلمات المفتاحية من Semrush",
-                "التسويق عبر البريد الإلكتروني من HubSpot",
-                "SEO محلي من BrightLocal"
-            ]
-        },
-        "teams_title": "عملاء حديثون",
-        "photo_alt": "محمد تودغي، مستشار SEO",
         "intro": {
-            "title": "The short version",
+            "title": "باختصار",
             "paragraphs": [
-                "I find what stops a website from bringing in clients, fix it, and measure the result. Most of my work is for service businesses, such as law firms, clinics, B2B companies and SaaS, where the goal is calls and enquiries, not traffic for its own sake.",
-                "I studied marketing and management at Al Akhawayn University, from 2020 to 2024. My first internships were in digital marketing, and I noticed that most marketing plans were missing one thing: data. So I moved into SEO and analytics.",
-                "Since then I have been the only SEO specialist at a digital marketing agency, handled SEO and Google Ads full-time for a UK service business, run the digital launch of a SaaS startup, and worked on local SEO for businesses across several cities. I am also completing a master's in digital marketing and analytics at Al Akhawayn.",
-                "My rule has not changed: decide with data, not guesses."
+                "أجد ما يمنع الموقع من جلب العملاء، وأصلحه، ثم أقيس النتيجة. أغلب عملي لشركات الخدمات، مثل مكاتب المحاماة والعيادات وشركات B2B وشركات SaaS، حيث الهدف هو المكالمات والطلبات، لا الزيارات في حد ذاتها.",
+                "درست التسويق والإدارة في جامعة الأخوين من 2020 إلى 2024. كانت تجاربي التدريبية الأولى في التسويق الرقمي، ولاحظت أن أغلب خطط التسويق ينقصها شيء واحد: البيانات. لذلك اتجهت إلى SEO والتحليلات.",
+                "منذ ذلك الحين كنت أخصائي SEO الوحيد في وكالة تسويق رقمي، وتوليت بدوام كامل SEO وإعلانات Google لشركة خدمات بريطانية، وقدت الإطلاق الرقمي لشركة SaaS ناشئة، وعملت على SEO المحلي لشركات في عدة مدن. كما أواصل دراسة الماستر في التسويق الرقمي والتحليلات في جامعة الأخوين.",
+                "قاعدتي لم تتغير: القرار بالبيانات، لا بالتخمين."
             ]
         },
         "facts": [
             {
-                "label": "Based in",
-                "value": "Morocco, working remotely"
+                "label": "المقر",
+                "value": "المغرب، أعمل عن بعد"
             },
             {
-                "label": "Focus",
-                "value": "Technical SEO, local SEO, GA4 tracking"
+                "label": "التخصص",
+                "value": "SEO تقني، SEO محلي، تتبع GA4"
             },
             {
-                "label": "Clients in",
-                "value": "U.S., UK, Morocco"
+                "label": "العملاء في",
+                "value": "الولايات المتحدة، المملكة المتحدة، المغرب"
             },
             {
-                "label": "Languages",
-                "value": "Arabic, English, French"
+                "label": "اللغات",
+                "value": "العربية، الإنجليزية، الفرنسية"
             }
         ],
         "experience": {
-            "title": "Experience",
-            "intro": "Agency, in-house and freelance work, most recent first. Clients and employers are described, not named.",
-            "case_label": "Case study",
+            "title": "الخبرة",
+            "intro": "عمل في الوكالات وداخل الشركات وكمستقل، من الأحدث إلى الأقدم. العملاء وجهات العمل موصوفون دون ذكر أسمائهم.",
+            "case_label": "دراسة حالة",
             "items": [
                 {
-                    "period": "December 2025 to now",
-                    "role": "SEO and Digital Marketing Specialist",
-                    "org": "Local SEO agency, remote",
+                    "period": "من ديسمبر 2025 إلى اليوم",
+                    "role": "أخصائي SEO وتسويق رقمي",
+                    "org": "وكالة SEO محلي، عن بعد",
                     "points": [
-                        "Google Business Profile optimization, NAP consistency and citations for a portfolio of home improvement businesses in several cities.",
-                        "SEO strategy, competitor audits and technical SEO specifications across several client accounts at the same time.",
-                        "Rankings and traffic tracked in Looker Studio, GA4 and Local Falcon, with reports for each client's stakeholders.",
-                        "Built AI-assisted workflows and documented SEO procedures that the whole team now uses."
+                        "تحسين ملفات Google Business Profile وتوحيد الاسم والعنوان والهاتف (NAP) والاستشهادات لمجموعة من شركات تجديد المنازل في عدة مدن.",
+                        "استراتيجية SEO وتدقيق المنافسين ومواصفات SEO التقني لعدة حسابات عملاء في الوقت نفسه.",
+                        "متابعة الترتيب والزيارات في Looker Studio وGA4 وLocal Falcon، مع تقارير للمسؤولين لدى كل عميل.",
+                        "بناء سير عمل بمساعدة الذكاء الاصطناعي وإجراءات SEO موثقة يستعملها الفريق كله اليوم."
                     ]
                 },
                 {
-                    "period": "July to December 2025",
-                    "role": "SEO and Growth Analyst",
-                    "org": "Digital marketing agency, Morocco",
+                    "period": "من يوليوز إلى ديسمبر 2025",
+                    "role": "محلل SEO ونمو",
+                    "org": "وكالة تسويق رقمي، المغرب",
                     "points": [
-                        "The agency's only SEO specialist, responsible for the SEO strategy and sign-off of every new client project, from website build to content and technical work.",
-                        "Directed the technical SEO of a large U.S. luxury marketplace, and the keyword research and competitor analysis for a U.S. auction house.",
-                        "Built Looker Studio dashboards combining GA4, Search Console and Tag Manager data for international clients.",
-                        "Set up international measurement for multilingual sites: hreflang and cross-domain tracking."
+                        "أخصائي SEO الوحيد في الوكالة، مسؤول عن استراتيجية SEO والموافقة النهائية في كل مشروع عميل جديد، من بناء الموقع إلى المحتوى والعمل التقني.",
+                        "قيادة SEO التقني لسوق إلكتروني فاخر كبير في الولايات المتحدة، وبحث الكلمات المفتاحية وتحليل المنافسين لدار مزادات أمريكية.",
+                        "بناء لوحات Looker Studio تجمع بيانات GA4 وSearch Console وTag Manager لعملاء دوليين.",
+                        "إعداد القياس الدولي للمواقع متعددة اللغات: hreflang والتتبع بين النطاقات."
                     ],
                     "cases": [
                         "global-marketplace-audit",
@@ -536,35 +454,35 @@
                     ]
                 },
                 {
-                    "period": "January to May 2025",
-                    "role": "Marketing and SEO Specialist",
-                    "org": "UK compliance service, full-time, remote",
+                    "period": "من يناير إلى ماي 2025",
+                    "role": "أخصائي تسويق وSEO",
+                    "org": "خدمة امتثال في المملكة المتحدة، بدوام كامل وعن بعد",
                     "points": [
-                        "Set up Google Ads conversion tracking with Tag Manager and GA4, and audited the account.",
-                        "Redesigned the main landing page with the developer: conversions more than doubled in the first month.",
-                        "Ran the local SEO: metadata on every page, weekly articles, Google Business Profile, citations and backlinks. Key service pages reached Google's top 10."
+                        "إعداد تتبع تحويلات Google Ads عبر Tag Manager وGA4، وتدقيق الحساب.",
+                        "إعادة تصميم صفحة الهبوط الرئيسية مع المطور: تضاعفت التحويلات في الشهر الأول.",
+                        "إدارة SEO المحلي: بيانات وصفية لكل الصفحات، ومقالات أسبوعية، وملف Google Business Profile، واستشهادات وروابط خلفية. دخلت صفحات الخدمات الأساسية المراكز العشرة الأولى في Google."
                     ],
                     "cases": [
                         "uk-compliance-service-audit"
                     ]
                 },
                 {
-                    "period": "January to May 2025",
-                    "role": "Digital Marketing and Website Manager",
-                    "org": "SaaS startup, part-time",
+                    "period": "من يناير إلى ماي 2025",
+                    "role": "مسؤول التسويق الرقمي والموقع",
+                    "org": "شركة SaaS ناشئة، بدوام جزئي",
                     "points": [
-                        "Led the launch of a new inventory management brand: website built with a freelance developer, SEO, CRM, chat and email automation, and social media."
+                        "قيادة إطلاق علامة جديدة لبرنامج إدارة المخزون: موقع بني مع مطورة مستقلة، وSEO، ونظام CRM، ودردشة وبريد مؤتمت، ووسائل التواصل."
                     ],
                     "cases": [
                         "saas-digital-launch"
                     ]
                 },
                 {
-                    "period": "Freelance",
-                    "role": "SEO Consultant",
-                    "org": "Independent projects",
+                    "period": "عمل مستقل",
+                    "role": "مستشار SEO",
+                    "org": "مشاريع مستقلة",
                     "points": [
-                        "On-page SEO for a Moroccan B2B website: clicks from Google went from 32 to 74 in three months, with no new pages."
+                        "SEO داخل الصفحة لموقع B2B مغربي: ارتفعت النقرات من Google من 32 إلى 74 في ثلاثة أشهر، دون صفحات جديدة."
                     ],
                     "cases": [
                         "moroccan-b2b-seo"
@@ -573,42 +491,98 @@
             ]
         },
         "how": {
-            "title": "How I work",
+            "title": "طريقتي في العمل",
             "items": [
                 {
-                    "title": "Data first",
-                    "desc": "I start from Search Console, GA4 and a crawl of your site, not from opinions. Every recommendation comes with the data behind it."
+                    "title": "البيانات أولا",
+                    "desc": "أبدأ من Search Console وGA4 والزحف على موقعك، لا من الآراء. كل توصية تأتي مع البيانات التي تستند إليها."
                 },
                 {
-                    "title": "The biggest problem first",
-                    "desc": "Fixes are ranked by impact. Pages that Google already shows but does not rank well usually come before anything new."
+                    "title": "المشكلة الأكبر أولا",
+                    "desc": "الإصلاحات مرتبة حسب أثرها. الصفحات التي يعرضها Google دون أن يرتبها جيدا تأتي عادة قبل أي محتوى جديد."
                 },
                 {
-                    "title": "Done, or clearly briefed",
-                    "desc": "I make the changes myself, or hand them to your developer with clear instructions. I have worked both ways, including on sites where every change went through a development team."
+                    "title": "أنفذ بنفسي أو أشرح بوضوح",
+                    "desc": "أنفذ التعديلات بنفسي، أو أسلمها لمطورك مع تعليمات واضحة. عملت بالطريقتين، بما في ذلك مواقع كان كل تعديل فيها يمر عبر فريق تطوير."
                 },
                 {
-                    "title": "Results you can read",
-                    "desc": "Rankings, clicks and leads are tracked in Search Console and GA4, and reported in plain language: what changed, and what did not."
+                    "title": "نتائج سهلة القراءة",
+                    "desc": "تتم متابعة الترتيب والنقرات والطلبات في Search Console وGA4، وأعرضها بلغة بسيطة: ما الذي تغير، وما الذي لم يتغير."
                 }
             ]
+        },
+        "expertise": {
+            "title": "أدواتي ومهاراتي",
+            "categories": {
+                "seo_content": "SEO والمحتوى",
+                "analytics_data": "التحليلات والبيانات",
+                "tools_platforms": "الأدوات والمنصات"
+            },
+            "groups": {
+                "seo_content": [
+                    "تدقيق SEO التقني",
+                    "التحسين داخل الصفحة",
+                    "بحث الكلمات المفتاحية وتحليل المنافسين",
+                    "SEO المحلي وGoogle Business Profile",
+                    "SEO الدولي (hreflang)",
+                    "ترميز schema"
+                ],
+                "analytics_data": [
+                    "Google Analytics 4 (GA4)",
+                    "Google Tag Manager (GTM)",
+                    "Google Search Console",
+                    "Looker Studio",
+                    "تحسين معدل التحويل (CRO)",
+                    "Microsoft Clarity"
+                ],
+                "tools_platforms": [
+                    "Semrush، Ahrefs، Moz",
+                    "Screaming Frog",
+                    "Local Falcon، BrightLocal",
+                    "WordPress، Elementor، Shopify",
+                    "Rank Math، Yoast SEO",
+                    "Google Ads"
+                ]
+            }
         },
         "education": {
-            "title": "Education",
+            "title": "التعليم",
             "items": [
                 {
-                    "degree": "MS, Digital Marketing and Analytics",
-                    "school": "Al Akhawayn University",
-                    "years": "In progress, since January 2026"
+                    "degree": "ماستر في التسويق الرقمي والتحليلات",
+                    "school": "جامعة الأخوين",
+                    "years": "قيد الدراسة، منذ يناير 2026"
                 },
                 {
-                    "degree": "BBA, Marketing and Management",
-                    "school": "Al Akhawayn University",
-                    "years": "2020 to 2024"
+                    "degree": "إجازة (BBA) في التسويق والإدارة",
+                    "school": "جامعة الأخوين",
+                    "years": "من 2020 إلى 2024"
                 }
             ]
         },
-        "linkedin": "See my LinkedIn profile"
+        "certifications": {
+            "title": "الشهادات",
+            "items": [
+                "Google Analytics Certification، Google",
+                "Conversion Optimization Certification، Google",
+                "Google Ads البحث والإعلانات المصورة، Google Digital Academy",
+                "Keyword Research Essentials، Semrush",
+                "SEO المحلي وإدارة التقييمات وتنظيف القوائم، BrightLocal",
+                "التسويق عبر البريد الإلكتروني، HubSpot"
+            ]
+        },
+        "languages": {
+            "title": "اللغات",
+            "arabic": "العربية",
+            "english": "الإنجليزية",
+            "french": "الفرنسية",
+            "native": "اللغة الأم",
+            "professional": "مهني (C1)",
+            "advanced": "متقدم (B2)"
+        },
+        "resume": "تحميل سيرتي الذاتية",
+        "linkedin": "حسابي على LinkedIn",
+        "photo_alt": "محمد تودغي، مستشار SEO"
     },
     "CaseStudies": {
         "global-marketplace-audit": {
