@@ -4,14 +4,15 @@ import { useEffect, useRef } from "react";
 
 // Illustrated portrait whose eyes follow the cursor. Five aligned layers from the same 1024 x 1024 canvas:
 // eye whites (static), two irises (moving), and the face with holes cut for the eyes on top, so the eyelids
-// clip the irises. Positions are percentages of that canvas. Motion follows the site rules: transform only,
+// clip the irises. All layers were scaled on the same 800 x 800 grid before cropping, so they line up to the
+// pixel; positions are percentages of that grid. Motion follows the site rules: transform only,
 // mouse users only, no loop (one frame per pointer move), nothing under prefers-reduced-motion.
-const pct = (n: number) => `${(n / 1024) * 100}%`;
+const pct = (n: number) => `${(n / 800) * 100}%`;
 const box = (x: number, y: number, w: number, h: number) => ({ left: pct(x), top: pct(y), width: pct(w), height: pct(h) });
 
 // Point between the eyes, as a fraction of the canvas
-const EYES_X = 511 / 1024;
-const EYES_Y = 210 / 1024;
+const EYES_X = 400 / 800;
+const EYES_Y = 164 / 800;
 
 export default function LivingPortrait({ alt }: { alt: string }) {
     const ref = useRef<HTMLDivElement>(null);
@@ -42,15 +43,15 @@ export default function LivingPortrait({ alt }: { alt: string }) {
         return () => { removeEventListener("pointermove", onMove); if (frame) cancelAnimationFrame(frame); };
     }, []);
 
-    // Each iris can move about half its width sideways and a little up and down before the lids cover it
-    const iris = "absolute block max-w-none transition-transform duration-150 ease-out motion-reduce:transition-none [transform:translate(calc(var(--ex,0)*48%),calc(var(--ey,0)*14%))]";
+    // Each iris moves about a fifth of its width sideways and barely up or down, so it never slides under the lids
+    const iris = "absolute block max-w-none transition-transform duration-150 ease-out motion-reduce:transition-none [transform:translate(calc(var(--ex,0)*22%),calc(var(--ey,0)*4%))]";
 
     return (
         <div ref={ref} className="relative w-full aspect-square overflow-hidden rounded-[20px] bg-[#BFC0C2]">
-            <img src="/images/portrait/whites-l.webp" alt="" aria-hidden="true" width={134} height={31} className="absolute block max-w-none" style={box(426, 190, 171, 40)} />
-            <img src="/images/portrait/whites-r.webp" alt="" aria-hidden="true" width={134} height={31} className="absolute block max-w-none" style={box(426, 190, 171, 40)} />
-            <img src="/images/portrait/iris-l.webp" alt="" aria-hidden="true" width={18} height={19} className={iris} style={box(449, 203, 23, 24)} />
-            <img src="/images/portrait/iris-r.webp" alt="" aria-hidden="true" width={18} height={17} className={iris} style={box(552, 193, 23, 22)} />
+            <img src="/images/portrait/whites-l.webp" alt="" aria-hidden="true" width={135} height={33} className="absolute block max-w-none" style={box(332, 147, 135, 33)} />
+            <img src="/images/portrait/whites-r.webp" alt="" aria-hidden="true" width={135} height={33} className="absolute block max-w-none" style={box(332, 147, 135, 33)} />
+            <img src="/images/portrait/iris-l.webp" alt="" aria-hidden="true" width={20} height={20} className={iris} style={box(350, 158, 20, 20)} />
+            <img src="/images/portrait/iris-r.webp" alt="" aria-hidden="true" width={20} height={19} className={iris} style={box(430, 150, 20, 19)} />
             <img src="/images/portrait/face.webp" alt={alt} width={800} height={800} fetchPriority="high" className="absolute inset-0 block w-full h-full" />
         </div>
     );
