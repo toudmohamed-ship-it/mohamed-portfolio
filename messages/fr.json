@@ -24,7 +24,7 @@
             "highlight": "ressortir sur Google",
             "end": "et à transformer les visites en clients.",
             "subtitle": "Je trouve ce qui empêche Google de montrer votre site, je le corrige et je vous montre les chiffres.",
-            "cta_call": "Réserver un appel gratuit de 15 min",
+            "cta_call": "Recevoir un mini-audit gratuit",
             "cta_work": "Voir les études de cas",
             "languages": "Je travaille en français, en anglais et en arabe.",
             "query": "consultant seo maroc",
@@ -163,7 +163,7 @@
         },
         "offers": {
             "title": "Ce que je peux faire pour vous",
-            "intro": "Trois offres claires. Chacune commence par un court appel, pour vous dire honnêtement si elle vous convient.",
+            "intro": "Trois offres ciblées, avec le suivi pour les prouver : GA4 montre quelles pages vous amènent des clients, pas seulement des visites. Chacune commence par un court appel pour vous dire franchement si elle vous convient.",
             "cta": "Voir tous les services",
             "items": [
                 {
@@ -247,7 +247,8 @@
                     "title": "Mesure",
                     "desc": "Les positions, les clics et les leads sont suivis dans Search Console et GA4, pour voir ce qui a changé."
                 }
-            ]
+            ],
+            "direct": "Vous travaillez directement avec moi, du premier appel au rapport. Pas de chef de projet, pas d'intermédiaire, et une réponse sous 24 heures."
         },
         "blog": {
             "title": "Sur le blog",
@@ -1179,15 +1180,15 @@
             "content": "Une stratégie de SEO technique réussie..."
         },
         "technical-seo-audit-checklist-lead-gen": {
-            "title": "Checklist d'Audit SEO Technique pour Sites de Génération de Leads",
-            "excerpt": "Une checklist d'audit SEO technique pratique et étape par étape pour les entreprises de services et SaaS.",
+            "title": "Check-list d'audit SEO technique pour sites B2B",
+            "excerpt": "Une check-list d'audit SEO technique en 10 étapes pour les sites de services, B2B et SaaS : indexation, architecture, vitesse, schema et priorités.",
             "date": "05 Jan 2026",
             "category": "SEO Technique",
             "content": "..."
         },
         "why-websites-fail": {
-            "title": "Pourquoi la Plupart des Sites Web Échouent sur Google (Et Comment y Remédier)",
-            "excerpt": "Ce n'est pas seulement une question de mots-clés. C'est une question d'autorité, d'expérience utilisateur et d'intention.",
+            "title": "Pourquoi un site de services n'apporte pas de clients",
+            "excerpt": "Dix raisons pour lesquelles un site reste invisible sur Google ou reçoit des visites sans demandes, comment les repérer et quoi corriger d'abord.",
             "date": "05 Déc 2025",
             "category": "Stratégie",
             "content": "Les sites Web échouent souvent à se classer non pas à cause d'une seule erreur, mais en raison d'un décalage entre le contenu et l'intention de recherche. Si votre page cible un mot-clé à fort volume mais ne répond pas à la requête spécifique de l'utilisateur, Google privilégiera des concurrents plus pertinents. De plus, l'autorité se construit grâce à des backlinks de qualité et des structures de liens internes cohérentes. Assurez-vous que votre site est techniquement sain, mais n'oubliez jamais que l'expérience utilisateur et un contenu de haute qualité sont les moteurs ultimes du succès de la recherche."
@@ -1200,8 +1201,8 @@
             "content": "Google Analytics 4 (GA4) marque un changement majeur du suivi basé sur les sessions vers un suivi basé sur les événements. Pour tirer le meilleur parti de vos données, vous devez aller au-delà des simples métriques de pages vues. Commencez par définir vos événements de conversion clés, tels que les soumissions de formulaires ou les clics sur les boutons. Utilisez Google Tag Manager pour implémenter ces événements sans modifier directement le code. En visualisant votre entonnoir de conversion dans GA4 Explorations, vous pouvez identifier précisément où les utilisateurs décrochent et optimiser votre site pour de meilleures performances."
         },
         "keyword-research-process": {
-            "title": "Mon Processus de Recherche de Mots-clés en 4 Étapes",
-            "excerpt": "Comment je trouve des mots-clés de grande valeur et à faible concurrence pour n'importe quelle niche.",
+            "title": "Recherche de mots-clés : la méthode en 7 étapes",
+            "excerpt": "Une méthode en 7 étapes : mots des clients, données Search Console, Keyword Planner, pages de résultats, carte des mots-clés et priorités.",
             "date": "15 Nov 2025",
             "category": "Recherche de Mots-clés",
             "content": "Une recherche efficace de mots-clés consiste à trouver l'intersection du volume, de la pertinence et de la difficulté. Mon processus en 4 étapes commence par un brainstorming de mots-clés basé sur les services de base. Deuxièmement, j'utilise des outils comme SEMrush ou Ahrefs pour analyser les classements des concurrents et identifier les opportunités faciles. Troisièmement, j'analyse l'intent de recherche pour m'assurer que nous créons le bon type de contenu. Enfin, je cartographie ces mots-clés dans une stratégie de cluster de contenu pour renforcer l'autorité thématique au fil du temps."
@@ -1325,7 +1326,8 @@
             "learn_more": "En savoir plus",
             "on_this_page": "Sur cette page",
             "bridge_label": "Vous voulez que je m'en occupe pour votre site ?",
-            "industry_label": "SEO local par secteur"
+            "industry_label": "SEO local par secteur",
+            "proof_label": "Résultat d'un projet similaire"
         },
         "technical-seo-audit": {
             "meta_title": "Audit SEO technique pour entreprises de services et SaaS",

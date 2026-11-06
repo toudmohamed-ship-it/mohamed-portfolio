@@ -1,4 +1,4 @@
-import LivingPortrait from "@/components/ui/LivingPortrait";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import PageHeader from "@/components/ui/PageHeader";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -80,10 +80,15 @@ export default async function AboutPage({ params }: Props) {
                 <div className="flex flex-col gap-8">
                     <div className="relative justify-self-start self-start w-[260px] md:w-[300px]">
                         <div aria-hidden="true" className="absolute top-4 bottom-[-16px] start-4 end-[-16px] rounded-[20px] bg-sage" />
-                        {/* Illustrated portrait; the eyes follow the cursor on desktop */}
-                        <div className="relative">
-                            <LivingPortrait alt={t('photo_alt')} />
-                        </div>
+                        <Image
+                            src="/images/portrait.webp"
+                            alt={t('photo_alt')}
+                            width={800}
+                            height={800}
+                            sizes="(min-width: 768px) 300px, 260px"
+                            priority
+                            className="relative block w-full h-auto aspect-square object-cover rounded-[20px] bg-[#BFC0C2]"
+                        />
                     </div>
                     <dl className="m-0 mt-2 bg-white border border-line rounded-[18px] divide-y divide-line">
                         {facts.map((f) => (

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { track } from "@/components/seo/Analytics";
 
 const FIELD = "w-full bg-white border border-line-strong rounded-xl px-4 py-3.5 text-ink text-base placeholder:text-[#8A928E] focus:outline-none focus:border-forest focus:ring-4 focus:ring-sage transition-colors disabled:opacity-60";
 const LABEL = "text-sm font-medium text-ink";
@@ -31,6 +32,7 @@ export default function ContactForm() {
                 headers: { Accept: "application/json" },
             });
             if (response.ok) {
+                track("generate_lead", { form_name: "contact", service: String(data.get("service") || "none") });
                 setStatus("success");
                 form.reset();
             } else {

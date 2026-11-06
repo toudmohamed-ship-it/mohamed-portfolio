@@ -84,20 +84,21 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 - [ ] Free mini-audit as the main call to action, with a defined output and deadline.
 
 **Batch 2, content (week of 12 Nov):**
-- [ ] Rewrite `keyword-research-process` and `why-websites-fail` (EN, then FR).
-- [ ] Translate the lead-gen checklist into French; remove the duplicate FAQ in the local SEO guide.
-- [ ] Case study numbers near the top of the homepage and service pages.
-- [ ] GA4 tracking presented as a lead service; "you work with me directly" and "how it works".
-- [ ] Check that the site's GA4 records leads as key events (form, WhatsApp, booking).
+- [x] Rewrite `keyword-research-process` and `why-websites-fail` (EN, then FR).
+- [x] Translate the lead-gen checklist into French; remove the duplicate FAQ in the local SEO guide.
+- [x] Case study numbers near the top of the homepage and service pages.
+- [x] GA4 tracking presented as a lead service; "you work with me directly" and "how it works".
+- [x] Check that the site's GA4 records leads as key events (form, WhatsApp, booking).
 
 **Then measure:** Page indexing export in 2 to 3 weeks; Performance export in early December against the Aug to Oct baseline; French and Arabic review in February 2027.
 
 ### Mohamed's checklist
+- [ ] In GA4 (Admin, Data display, Events), mark generate_lead, whatsapp_click and email_click as key events once they appear (after the batch 2 release).
 - [x] Resubmit the sitemap and request indexing of the reworked pages (done 5 Nov 2026).
 - [ ] Validate fix in Search Console: "Crawled, currently not indexed", "Not found (404)", "Page with redirect".
 - [ ] Create a Google Business Profile (choose the city to show).
 - [ ] Ask the two current freelance clients for a review when their projects end (Google or LinkedIn; anonymous is fine).
 - [ ] Check search volumes in Google Keyword Planner: "consultant SEO Maroc", "expert SEO Maroc", "خبير سيو", "مستشار SEO".
 - [ ] Malt and Clutch profiles; LinkedIn title and link consistent with the site.
-- [x] Illustrated portrait with the eyes as separate layers (received 5 Nov 2026; live on the About page with batch 1).
+- [x] Illustrated portrait (received 5 Nov 2026). The eye-follow effect was removed at his request (6 Nov); the About page shows the full portrait as a still image.
 - [ ] Tell Claude when the master's is finished (update the About page in 3 languages).

@@ -1,0 +1,24 @@
+{
+    "faqs": [
+        {
+            "question": "Why is my website not showing on Google?",
+            "answer": "The most common causes are pages Google cannot index (noindex tags, wrong canonicals, blocked pages), pages that target the wrong searches, thin or repeated content, and slow mobile pages. Start with the Page indexing report in Search Console."
+        },
+        {
+            "question": "Why does my website get traffic but no leads?",
+            "answer": "Usually because the traffic does not match what you sell, the pages give no clear next step or proof, or contact is hard on a phone. Check which pages bring visits in GA4 and whether they lead to a service and an easy way to get in touch."
+        },
+        {
+            "question": "How do I know which problem my site has?",
+            "answer": "Search Console shows whether Google displays your site for service searches. GA4, with events for forms, calls and WhatsApp, shows whether visitors become enquiries. Low impressions point to visibility; visits without enquiries point to conversion."
+        },
+        {
+            "question": "What should I fix first?",
+            "answer": "Tracking first, then indexing, then the pages Google already shows. After that, conversion basics on service pages, and only then new content and local signals."
+        }
+    ],
+    "relatedSlugs": [
+        "ga4-event-tracking",
+        "keyword-research-process"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "faqs": [
+        {
+            "question": "Qu'est-ce que la recherche de mots-clés en SEO ?",
+            "answer": "La recherche de mots-clés identifie les recherches de vos futurs clients, mesure leur fréquence et leur difficulté, et décide quelle page de votre site doit répondre à chaque groupe de recherches."
+        },
+        {
+            "question": "Quels outils faut-il pour la recherche de mots-clés ?",
+            "answer": "La <strong>Google Search Console</strong> pour les recherches sur lesquelles vous apparaissez déjà, <strong>Google Keyword Planner</strong> pour les volumes de Google, et <strong>Semrush ou Ahrefs</strong> pour la difficulté et les concurrents. Les suggestions de Google et « Autres questions posées » complètent la liste."
+        },
+        {
+            "question": "Combien de mots-clés une page doit-elle viser ?",
+            "answer": "Un mot-clé principal et quelques variantes qui veulent dire la même chose. Une recherche avec une autre intention mérite une autre page."
+        },
+        {
+            "question": "Qu'est-ce que la cannibalisation de mots-clés ?",
+            "answer": "Deux pages ou plus du même site qui visent les mêmes recherches. Elles se partagent les signaux de Google, et souvent aucune ne se classe bien. Fusionnez-les ou donnez à chacune une cible distincte."
+        },
+        {
+            "question": "En combien de temps voit-on l'effet des changements ?",
+            "answer": "Les pages qui reçoivent déjà des impressions peuvent progresser en quelques semaines avec un meilleur titre et un meilleur contenu. Les nouvelles pages sur des mots-clés concurrentiels prennent en général plusieurs mois."
+        }
+    ]
+}

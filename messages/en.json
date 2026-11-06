@@ -24,7 +24,7 @@
             "highlight": "found on Google",
             "end": "and turn visits into clients.",
             "subtitle": "I find what keeps Google from showing your site, fix it, and show you the numbers.",
-            "cta_call": "Book a free 15-min call",
+            "cta_call": "Get a free mini-audit",
             "cta_work": "See case studies",
             "languages": "I work in English, French and Arabic.",
             "query": "seo consultant morocco",
@@ -163,7 +163,7 @@
         },
         "offers": {
             "title": "What I can do for you",
-            "intro": "Three focused offers. Each one starts with a short call so I can tell you honestly if it fits.",
+            "intro": "Three focused offers, with the tracking to prove them: GA4 shows which pages bring you clients, not only visits. Each one starts with a short call so I can tell you honestly if it fits.",
             "cta": "See all services",
             "items": [
                 {
@@ -247,7 +247,8 @@
                     "title": "Measure",
                     "desc": "Rankings, clicks and leads are tracked in Search Console and GA4, so you can see what changed."
                 }
-            ]
+            ],
+            "direct": "You work with me directly, from the first call to the report. No account manager, no hand-off, and a reply within 24 hours."
         },
         "blog": {
             "title": "From the blog",
@@ -1187,8 +1188,8 @@
             "content": "..."
         },
         "why-websites-fail": {
-            "title": "Why Most Websites Fail to Rank on Google (And How to Fix It)",
-            "excerpt": "It's not just about keywords. It's about authority, user experience, and intent.",
+            "title": "Why Service Websites Fail to Bring Clients",
+            "excerpt": "Ten reasons a service website stays invisible on Google or gets visits but no leads, how to spot each one, and what to fix first.",
             "date": "Dec 05, 2025",
             "category": "Strategy",
             "content": "Websites often fail to rank not because of a single error, but due to a misalignment between content and search intent. If your page targets a high-volume keyword but doesn't answer the user's specific query, Google will prioritize more relevant competitors. Furthermore, authority is built through consistent, quality backlinks and internal linking structures that demonstrate topical expertise. Ensure your site is technically sound, but never forget that user experience and high-quality, helpful content are the ultimate drivers of search success."
@@ -1201,8 +1202,8 @@
             "content": "Google Analytics 4 (GA4) marks a major shift from session-based to event-based tracking. To get the most out of your data, you must move beyond simple pageview metrics. Start by defining your core conversion events, such as form submissions, button clicks, or video views. Use Google Tag Manager to implement these events without modifying code directly. By visualizing your conversion funnel in GA4 Explorations, you can identify precisely where users are dropping off and optimize your site for better performance."
         },
         "keyword-research-process": {
-            "title": "My 4-Step Keyword Research Process",
-            "excerpt": "How I find low-competition, high-value keywords for any niche.",
+            "title": "Keyword Research Process for Service Businesses",
+            "excerpt": "A 7-step keyword research process: client language, Search Console data, Keyword Planner, results pages, keyword mapping and priorities.",
             "date": "Nov 15, 2025",
             "category": "Keyword Research",
             "content": "Effective keyword research is about finding the intersection of volume, relevance, and difficulty. My 4-step process begins with seed keyword brainstorming based on core business services. Second, I use tools like SEMrush or Ahrefs to analyze competitor rankings and identify 'low-hanging fruit', keywords where competitors are weak. Third, I analyze the SERP intent to ensure we're creating the right type of content (informational vs transactional). Finally, I map these keywords to a content cluster strategy to build topical authority over time."
@@ -1326,7 +1327,8 @@
             "learn_more": "Learn more",
             "on_this_page": "On this page",
             "bridge_label": "Want this done for your site?",
-            "industry_label": "Local SEO by industry"
+            "industry_label": "Local SEO by industry",
+            "proof_label": "Result from a similar project"
         },
         "technical-seo-audit": {
             "meta_title": "Technical SEO Audit for Service Businesses and SaaS",

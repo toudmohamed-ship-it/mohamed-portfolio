@@ -1,0 +1,497 @@
+<p class="lead">Pour une entreprise de services ou un SaaS, le rôle du site est simple : générer des demandes qualifiées, des rendez-vous de démo et des inscriptions à l'essai. Mais si le SEO technique est faible, vos meilleurs contenus et vos pages à forte intention n'obtiennent jamais la visibilité qu'ils méritent : pas d'impressions, pas de clics, pas de clients.</p>
+
+<p>Une check-list d'audit SEO technique structurée vous aide à :</p>
+<ul>
+    <li>Vous assurer que les pages clés peuvent être explorées et indexées.</li>
+    <li>Supprimer les blocages techniques qui nuisent aux positions et aux conversions.</li>
+    <li>Améliorer la vitesse et l'expérience pour que plus de visiteurs remplissent vraiment un formulaire ou démarrent un essai.</li>
+</ul>
+
+<p>Cet article vous donne une check-list d'audit SEO technique étape par étape, pensée pour les sites de génération de leads (services, B2B, SaaS) et non pour le e-commerce. Vous pouvez la suivre vous-même, en confier une partie à votre équipe, ou vous en servir pour briefer une agence.</p>
+
+<p>Elle fait partie d'une méthode plus large de SEO technique pour les entreprises de services et les SaaS. Pour la vue d'ensemble, consultez l'article principal sur le <a href="/fr/blog/technical-seo-checklist-2026">SEO technique pour les entreprises de services</a> (exploration, architecture du site, Core Web Vitals et plus).</p>
+
+<h2 id="how-to-use">Comment utiliser cette check-list</h2>
+
+<h3>À qui elle s'adresse</h3>
+<p>Cette check-list est faite pour :</p>
+<ul>
+    <li>Les responsables marketing et croissance.</li>
+    <li>Les fondateurs et les marketeurs généralistes en interne.</li>
+    <li>Les responsables SEO en agence ou dans des entreprises B2B et SaaS.</li>
+</ul>
+<p>Vous devez connaître les bases du SEO (titres, contenu, liens), mais pas besoin d'être développeur. Certaines corrections demanderont l'aide d'un développeur, mais vous saurez quoi demander et pourquoi.</p>
+
+<h3>Les outils nécessaires</h3>
+<p>Pas besoin d'outils coûteux. Le minimum recommandé :</p>
+<ul>
+    <li><strong>Google Search Console</strong> : indexation, couverture et Core Web Vitals.</li>
+    <li><strong>Un crawler</strong> : par exemple Screaming Frog, Sitebulb ou l'audit de site de Semrush.</li>
+    <li><strong>PageSpeed Insights ou Lighthouse</strong> : performance et Core Web Vitals.</li>
+    <li><strong>Google Analytics 4 (GA4)</strong> : relier les problèmes techniques au trafic et aux conversions.</li>
+    <li><strong>En option :</strong> Ahrefs, Semrush ou Moz pour recouper les performances organiques.</li>
+</ul>
+
+<p>Utilisez cette check-list comme :</p>
+<ul>
+    <li>Un audit de référence (la première fois).</li>
+    <li>Un bilan de santé trimestriel, pour repérer les problèmes après des modifications, une refonte ou une vague de contenus.</li>
+    <li>Un outil de priorisation, pour décider où vont les ressources de développement et de SEO.</li>
+</ul>
+
+<h2 id="step-1">Étape 1 : les bases de l'exploration et de l'indexation</h2>
+<p>Si les moteurs ne peuvent ni explorer ni indexer vos pages, rien d'autre ne compte. Commencez par les bases.</p>
+
+<h3>1.1 Vérifier le robots.txt</h3>
+<p>Le fichier <code>robots.txt</code> indique aux robots ce qu'ils ont le droit de visiter.</p>
+<p><strong>Actions :</strong></p>
+<ul>
+    <li>Ouvrez <code>votredomaine.com/robots.txt</code>.</li>
+    <li>Vérifiez qu'il ne bloque pas les sections principales du site (par exemple <code>/services/</code>, <code>/tarifs/</code>, <code>/blog/</code>).</li>
+    <li>Vérifiez que les chemins bloqués le sont volontairement (par exemple <code>/wp-admin/</code>, <code>/panier/</code>, les routes de test).</li>
+</ul>
+<p><strong>Attention à :</strong></p>
+<ul>
+    <li>Un <code>Disallow: /</code> sur le site en production (parfois oublié après la phase de test).</li>
+    <li>Des blocages trop larges comme <code>Disallow: /blog</code> alors que vous visiez <code>/blog/tag/</code>.</li>
+</ul>
+<p>Utilisez le rapport robots.txt de la Google Search Console pour valider le fichier et tester des URL précises.</p>
+
+<h3>1.2 Vérifier les sitemaps XML</h3>
+<p>Le sitemap XML aide les moteurs à découvrir vos URL importantes.</p>
+<p><strong>Actions :</strong></p>
+<ul>
+    <li>Ouvrez <code>/sitemap.xml</code> ou consultez la section Sitemaps de la Search Console.</li>
+    <li>Vérifiez qu'il ne contient que des URL canoniques et indexables (pas de pages de test, de tags ou de paramètres).</li>
+    <li>Vérifiez que les pages clés y figurent : services, tarifs, démo ou essai, contact, meilleures ressources.</li>
+    <li>Si vous avez plusieurs sitemaps (par exemple <code>/sitemap_pages.xml</code> et <code>/sitemap_posts.xml</code>), contrôlez chacun.</li>
+</ul>
+<p>Si vous utilisez WordPress (Yoast, Rank Math, etc.) ou un CMS en SaaS, vérifiez que le module de sitemap est bien configuré et soumis dans la Search Console.</p>
+
+<h3>1.3 S'assurer que les pages importantes sont explorables</h3>
+<p>Avec votre crawler (par exemple Screaming Frog) :</p>
+<ul>
+    <li>Lancez une exploration complète du site.</li>
+    <li>Filtrez les pages en code 200 (OK), sans balise meta robots <code>noindex</code> et non bloquées par le <code>robots.txt</code>.</li>
+    <li>Vérifiez que vos pages de services principales, la page tarifs, l'inscription à la démo ou à l'essai et les formulaires de contact sont explorables et pas exclus par erreur.</li>
+</ul>
+
+<h3>1.4 Chercher les balises noindex sur les pages clés</h3>
+<p>Il arrive qu'une équipe ajoute un <code>noindex</code> pour un test et oublie de le retirer.</p>
+<p><strong>Actions avec votre crawler :</strong></p>
+<ul>
+    <li>Filtrez les pages avec une directive meta robots noindex.</li>
+    <li>Demandez-vous si un contenu commercial ou d'acquisition devrait être indexable.</li>
+    <li>Vérifiez que vous ne bloquez pas par erreur des sections entières (par exemple <code>/blog/</code>).</li>
+</ul>
+<p>Utilisez l'outil « Inspection de l'URL » de la Search Console sur les pages critiques pour confirmer qu'elles sont sur Google et indexables.</p>
+
+<h3>1.5 Utiliser le rapport Indexation des pages</h3>
+<p>Dans la Google Search Console :</p>
+<ul>
+    <li>Allez dans Indexation, puis Pages.</li>
+    <li>Passez en revue les pages indexées : y en a-t-il que vous ne voulez pas voir indexées ?</li>
+    <li>Passez en revue les pages non indexées, en cherchant : soft 404, « Détectée, actuellement non indexée », « Explorée, actuellement non indexée », « Autre page avec balise canonique correcte ».</li>
+</ul>
+<p>Chaque statut révèle un problème différent :</p>
+<ul>
+    <li>Beaucoup de soft 404 : contenu pauvre ou dupliqué.</li>
+    <li>Beaucoup de « Détectée, actuellement non indexée » : problème possible de budget d'exploration ou de qualité.</li>
+</ul>
+
+<h2 id="step-2">Étape 2 : corriger l'excès de pages indexées et le contenu pauvre</h2>
+<p>Trop de pages sans valeur diluent votre budget d'exploration et peuvent faire baisser la qualité perçue de tout le site.</p>
+
+<h3>2.1 Repérer les pages indexées sans valeur</h3>
+<p>Avec la Search Console et votre crawler, repérez :</p>
+<ul>
+    <li>Les archives de tags et de catégories du blog avec peu de contenu unique.</li>
+    <li>Les archives d'auteur sans intérêt.</li>
+    <li>Les pages de résultats de recherche interne (<code>/search/?q=</code>).</li>
+    <li>Les URL avec des paramètres de suivi : <code>?utm_source=</code>, <code>?ref=</code>, etc.</li>
+    <li>Les pages pauvres générées automatiquement (« Hello World », pages d'atterrissage de test).</li>
+</ul>
+<p>Exportez les URL indexées depuis la Search Console, puis croisez-les avec votre exploration pour repérer des schémas.</p>
+
+<h3>2.2 Décider quoi garder, désindexer ou canonicaliser</h3>
+<p>Pour chaque type d'URL :</p>
+
+<p><strong>À garder indexé :</strong></p>
+<ul>
+    <li>Les pages de services et de solutions.</li>
+    <li>Les articles et ressources de qualité.</li>
+    <li>Les pages clés de génération de leads (tarifs, démo, contact, études de cas).</li>
+</ul>
+
+<p><strong>À passer en noindex (en les gardant explorables si l'expérience l'exige) :</strong></p>
+<ul>
+    <li>Les archives de tags ou d'auteurs sans réelle valeur.</li>
+    <li>Les pages de remerciement (pour ne pas fausser les données).</li>
+    <li>Les résultats de recherche interne.</li>
+    <li>Les pages d'administration ou de connexion.</li>
+</ul>
+
+<p><strong>À canonicaliser :</strong></p>
+<ul>
+    <li>Les variantes avec paramètres de suivi (vers l'URL propre).</li>
+    <li>Les versions imprimables ou les quasi-doublons.</li>
+    <li>HTTP et HTTPS (vers la version HTTPS).</li>
+</ul>
+
+<p>Travaillez avec les développeurs ou votre extension SEO pour définir les meta robots, les <code>rel="canonical"</code> et les règles de paramètres d'URL nécessaires.</p>
+
+<h2 id="step-3">Étape 3 : architecture du site et maillage interne</h2>
+<p>La structure du site doit permettre aux visiteurs comme aux robots de trouver facilement les pages à forte intention.</p>
+
+<h3>3.1 Vérifier la profondeur de clic des pages importantes</h3>
+<p>La profondeur de clic, c'est le nombre de clics depuis la page d'accueil.</p>
+<p><strong>Avec votre crawler :</strong></p>
+<ul>
+    <li>Consultez le rapport de profondeur d'exploration.</li>
+    <li>Vérifiez que les pages principales (services, tarifs, démo ou essai, contact) sont à 1 à 3 clics de l'accueil.</li>
+    <li>Vérifiez que les ressources clés (guides, études de cas) sont à 3 ou 4 clics.</li>
+</ul>
+<p>Si des pages critiques sont enfouies (5 clics ou plus), ajoutez des liens dans la navigation, le pied de page, ou depuis des articles qui reçoivent beaucoup de trafic.</p>
+
+<h3>3.2 Rendre les pages de génération de leads faciles à atteindre</h3>
+<p>Depuis la navigation principale, le visiteur doit trouver vite :</p>
+<ul>
+    <li>Ce que vous faites (services, solutions).</li>
+    <li>Comment acheter ou vous contacter (tarifs, réserver une démo, parler à un commercial, contact).</li>
+    <li>Pourquoi vous (études de cas, témoignages, ressources).</li>
+</ul>
+<p>Si ces pages reçoivent surtout du trafic payant ou direct mais sont difficiles à atteindre depuis les pages d'entrée organiques (articles, ressources), vous perdez des leads potentiels.</p>
+<p>Ajoutez des liens internes contextuels avec un texte d'ancre clair, par exemple :</p>
+<ul>
+    <li>« Découvrez tous nos services de génération de leads B2B. »</li>
+    <li>« Envie de le voir en action ? Réservez une démo. »</li>
+</ul>
+
+<h3>3.3 Créer une hiérarchie claire (hub et satellites)</h3>
+<p>Pour un site de génération de leads, une structure simple et logique fonctionne le mieux :</p>
+<ul>
+    <li><strong>Accueil</strong></li>
+    <li><strong>Services ou solutions</strong>, puis chaque page de service, puis les secteurs ou cas d'usage</li>
+    <li><strong>Ressources</strong> : guides, articles, webinaires, etc.</li>
+    <li><strong>À propos</strong></li>
+    <li><strong>Tarifs</strong></li>
+    <li><strong>Contact ou réserver une démo</strong></li>
+</ul>
+<p>Utilisez le maillage interne pour créer des clusters thématiques : chaque page de service renvoie vers les articles, FAQ et études de cas qui la soutiennent, et ces contenus renvoient vers la page de service principale.</p>
+<p>Pour aller plus loin sur l'architecture : <a href="/fr/blog/technical-seo-checklist-2026">la méthode de SEO technique pour les entreprises de services et les SaaS</a>.</p>
+
+<h2 id="step-4">Étape 4 : structure des URL et balises canonical</h2>
+<p>Des URL propres et cohérentes et des balises canonical correctes évitent le contenu dupliqué et la confusion.</p>
+
+<h3>4.1 Vérifier les versions en double du site</h3>
+<p>Le site doit répondre sur une seule version canonique :</p>
+<ul>
+    <li><code>http://example.com</code></li>
+    <li><code>https://example.com</code></li>
+    <li><code>http://www.example.com</code></li>
+    <li><code>https://www.example.com</code></li>
+</ul>
+<p>Une seule doit être accessible ; les autres doivent rediriger en 301 vers la version principale (en général <code>https://www.example.com</code> ou <code>https://example.com</code>).</p>
+<p>Vérifiez aussi :</p>
+<ul>
+    <li>La barre oblique finale ou non (choisissez une convention et tenez-vous-y).</li>
+    <li>Les URL en minuscules plutôt qu'en majuscules mélangées.</li>
+</ul>
+
+<h3>4.2 Une seule version canonique par page</h3>
+<p><strong>Avec votre crawler :</strong></p>
+<ul>
+    <li>Extrayez les balises canonical.</li>
+    <li>Vérifiez que chaque URL indexable a une canonical vers elle-même quand elle est la version principale.</li>
+    <li>Vérifiez que les versions avec paramètres ou alternatives pointent vers la bonne canonical.</li>
+</ul>
+<p><strong>Problèmes fréquents sur les sites de services et SaaS :</strong></p>
+<ul>
+    <li>Des pages de tags du blog canonicalisées par erreur vers l'accueil.</li>
+    <li>Des URL de test ou de préproduction déclarées comme canoniques.</li>
+    <li>Des variantes de langue ou de région canonicalisées vers la mauvaise version.</li>
+</ul>
+<p>Pour un site multilingue, gardez les canonicals dans la même langue et n'utilisez le hreflang que si vous le maîtrisez ; sinon, faites appel à un spécialiste.</p>
+
+<h2 id="step-5">Étape 5 : performance et Core Web Vitals</h2>
+<p>Des pages lentes et instables nuisent aux positions comme aux conversions. Pour les inscriptions à une démo ou à un essai et les formulaires de contact, la vitesse est indispensable.</p>
+
+<h3>5.1 Mesurer les Core Web Vitals</h3>
+<p>Utilisez PageSpeed Insights et le rapport Core Web Vitals de la Search Console.</p>
+<p><strong>Concentrez-vous sur :</strong></p>
+<ul>
+    <li><strong>LCP (Largest Contentful Paint)</strong> : le temps d'affichage du contenu principal.</li>
+    <li><strong>CLS (Cumulative Layout Shift)</strong> : à quel point les éléments bougent pendant le chargement.</li>
+    <li><strong>INP (Interaction to Next Paint)</strong> : la rapidité de réaction de la page aux interactions.</li>
+</ul>
+<p><strong>Vérifiez :</strong></p>
+<ul>
+    <li>Les modèles principaux : accueil, pages de services, tarifs, formulaires de démo et de contact.</li>
+    <li>Les pages qui reçoivent le plus de trafic selon GA4.</li>
+</ul>
+<p>Visez le statut « Bon » sur le plus grand nombre possible d'URL clés.</p>
+
+<h3>5.2 Corriger les problèmes de performance courants (WordPress et SaaS)</h3>
+<p>Problèmes typiques et solutions :</p>
+
+<p><strong>Images trop lourdes :</strong></p>
+<ul>
+    <li>Compressez-les et redimensionnez-les.</li>
+    <li>Utilisez des formats modernes (WebP, AVIF) quand c'est possible.</li>
+    <li>Chargez en différé les images situées sous la ligne de flottaison.</li>
+</ul>
+
+<p><strong>CSS et JS bloquant le rendu :</strong></p>
+<ul>
+    <li>Minifiez et regroupez quand c'est raisonnable.</li>
+    <li>Différez le JS non critique.</li>
+    <li>Intégrez le CSS critique dans la page.</li>
+</ul>
+
+<p><strong>Scripts tiers (chat, analytics, outils marketing) :</strong></p>
+<ul>
+    <li>Supprimez les outils inutilisés.</li>
+    <li>Chargez les scripts non essentiels après le contenu principal.</li>
+    <li>Utilisez Google Tag Manager avec prudence.</li>
+</ul>
+
+<p><strong>Polices non optimisées :</strong></p>
+<ul>
+    <li>Utilisez les polices système quand c'est possible.</li>
+    <li>Limitez le nombre de familles et de graisses.</li>
+    <li>Préchargez les fichiers de police essentiels.</li>
+</ul>
+
+<p>Travaillez avec le développeur ou les extensions de performance de votre CMS (par exemple une extension de cache sous WordPress), puis testez à nouveau.</p>
+
+<h2 id="step-6">Étape 6 : compatibilité mobile et bases de l'expérience</h2>
+<p>Une grande partie de la découverte et de la recherche, y compris en SaaS et en B2B, se fait sur mobile. Une mauvaise expérience mobile tue la génération de leads.</p>
+
+<h3>6.1 Vérifier l'affichage mobile</h3>
+<p><strong>Utilisez :</strong></p>
+<ul>
+    <li>Lighthouse ou l'inspection d'URL de la Search Console.</li>
+    <li>Votre propre téléphone et d'autres appareils.</li>
+</ul>
+<p><strong>Vérifiez :</strong></p>
+<ul>
+    <li>Que le texte se lit sans zoomer.</li>
+    <li>Que le contenu tient dans l'écran, sans défilement horizontal.</li>
+    <li>Que la navigation est facile au doigt.</li>
+    <li>Qu'aucun contenu important n'est caché ou cassé sur mobile.</li>
+</ul>
+
+<h3>6.2 Des appels à l'action visibles et cliquables</h3>
+<p>Sur mobile, vos appels à l'action principaux (réserver une démo, démarrer l'essai, parler à un commercial, demander un devis) doivent :</p>
+<ul>
+    <li>Apparaître en haut de l'écran ou très près.</li>
+    <li>Utiliser des boutons clairs et bien contrastés.</li>
+    <li>Être assez grands pour être touchés facilement.</li>
+</ul>
+<p><strong>Testez le parcours complet :</strong></p>
+<ul>
+    <li>Arrivez sur un article ou une page de service.</li>
+    <li>Cliquez jusqu'au formulaire de démo ou de contact.</li>
+    <li>Remplissez le formulaire sur un petit écran.</li>
+</ul>
+<p>Si c'est pénible, cela coûte des conversions, et indirectement du SEO (à travers la satisfaction des visiteurs).</p>
+
+<h3>6.3 Éviter les interstitiels intrusifs</h3>
+<p>Les pop-ups et bannières qui couvrent l'essentiel du contenu, se ferment mal sur mobile ou apparaissent dès l'arrivée nuisent à l'expérience et à la façon dont Google évalue votre page.</p>
+<p><strong>Préférez :</strong></p>
+<ul>
+    <li>Des déclenchements après un délai ou un défilement.</li>
+    <li>Des bannières plus petites et moins intrusives.</li>
+    <li>Des boutons de fermeture clairs et faciles à toucher.</li>
+</ul>
+
+<h2 id="step-7">Étape 7 : éléments techniques on-page (titres, méta, intitulés)</h2>
+<p>C'est là que le SEO technique rejoint l'optimisation on-page. Cela joue sur les positions comme sur le taux de clic.</p>
+
+<h3>7.1 Auditer les balises title et les méta-descriptions</h3>
+<p><strong>Avec votre crawler :</strong></p>
+<ul>
+    <li>Exportez les titres et méta-descriptions des pages.</li>
+    <li>Repérez les titres ou descriptions manquants, les titres en double sur plusieurs URL, et les titres trop longs ou trop courts.</li>
+</ul>
+<p>Pour les pages clés (services, tarifs, démo ou contact, contenus les plus performants) :</p>
+<ul>
+    <li>Rédigez des titres uniques et descriptifs, avec le mot-clé principal et la proposition de valeur.</li>
+    <li>Utilisez la méta-description pour appuyer le bénéfice et inclure un appel à l'action léger, par exemple : « Découvrez comment notre logiciel B2B automatise vos factures. Réservez une démo de 30 minutes. »</li>
+</ul>
+
+<h3>7.2 Vérifier la structure H1 et H2</h3>
+<p>Pour les modèles principaux :</p>
+<ul>
+    <li>Un seul H1 clair par page (en général le titre principal).</li>
+    <li>Des H2 pour structurer les sections de façon logique (fonctionnalités, cas d'usage, FAQ, témoignages).</li>
+</ul>
+<p><strong>Vérifiez que :</strong></p>
+<ul>
+    <li>Le H1 et la balise title sont cohérents (pas forcément identiques, mais clairement liés).</li>
+    <li>Le logo ou des éléments de navigation ne servent pas de H1.</li>
+    <li>Les H2 contiennent des mots-clés secondaires quand c'est naturel.</li>
+</ul>
+<p>Cela aide les moteurs à comprendre le contexte de la page et améliore la lisibilité, surtout sur les contenus longs.</p>
+
+<h2 id="step-8">Étape 8 : données structurées et balisage schema</h2>
+<p>Les données structurées aident les moteurs à mieux comprendre votre contenu et peuvent vous valoir des résultats enrichis.</p>
+
+<h3>8.1 Ce que sont les données structurées, simplement</h3>
+<p>Le balisage schema est du code (en général du JSON-LD) qui donne un sens à votre contenu :</p>
+<ul>
+    <li>« Cette page parle d'un service. »</li>
+    <li>« Cette entreprise est une organisation située à tel endroit. »</li>
+    <li>« Ce contenu est un article avec une FAQ. »</li>
+</ul>
+<p>Il ne garantit pas de résultat enrichi, mais il rend votre contenu plus clair pour les moteurs.</p>
+
+<h3>8.2 Les types de schema recommandés pour les sites de services et SaaS</h3>
+<p><strong>En priorité :</strong></p>
+<ul>
+    <li><strong>Organization</strong> : sur l'accueil ou la page À propos, avec nom, logo, URL et profils sociaux.</li>
+    <li><strong>LocalBusiness</strong> (si vous avez des bureaux ou un ciblage local) : adresse, téléphone, horaires.</li>
+    <li><strong>Service</strong> : sur chaque page de service, pour décrire ce que vous proposez et à qui.</li>
+    <li><strong>FAQPage</strong> : sur les pages qui ont une FAQ clairement présentée (pages de services et articles clés).</li>
+    <li><strong>Article ou BlogPosting</strong> : pour les articles et les guides détaillés.</li>
+</ul>
+
+<h3>8.3 Valider le balisage avec les outils de test</h3>
+<p><strong>Utilisez :</strong></p>
+<ul>
+    <li><a href="https://search.google.com/test/rich-results" target="_blank" rel="nofollow">le test des résultats enrichis de Google</a></li>
+    <li>le Schema Markup Validator</li>
+</ul>
+<p><strong>Vérifiez :</strong></p>
+<ul>
+    <li>Qu'il n'y a pas d'erreur importante.</li>
+    <li>Que les avertissements sont compris et acceptables.</li>
+    <li>Que le balisage reflète bien le contenu de la page (ne faites jamais de faux avis ni de fausses notes).</li>
+</ul>
+<p>Si vous utilisez une extension pour le schema (par exemple sous WordPress), configurez un modèle par type de contenu (page, article, service), puis contrôlez quelques pages.</p>
+
+<h2 id="step-9">Étape 9 : contrôles réguliers dans la Search Console</h2>
+<p>Après l'audit initial, la Search Console devient votre outil de surveillance au quotidien.</p>
+
+<h3>9.1 Core Web Vitals et expérience de page</h3>
+<p>Dans la Search Console :</p>
+<ul>
+    <li>Allez dans Expérience, puis Core Web Vitals.</li>
+    <li>Passez en revue les URL « Médiocres » ou « À améliorer ».</li>
+    <li>Priorisez les modèles qui rapportent : pages de services, tarifs, formulaires de démo, articles très visités qui génèrent des leads.</li>
+</ul>
+<p>Appuyez-vous sur l'étape 5 pour orienter les corrections de développement et de design.</p>
+
+<h3>9.2 Rapports d'indexation</h3>
+<p>Dans Indexation, puis Pages :</p>
+<ul>
+    <li>Suivez l'effet de votre nettoyage : moins de soft 404 ? Moins d'URL indexées inutilement ?</li>
+    <li>Surveillez les nouveaux problèmes après une modification du site ou une migration.</li>
+</ul>
+<p><strong>Cherchez en particulier :</strong></p>
+<ul>
+    <li><strong>Les erreurs serveur 5xx</strong> : problèmes d'hébergement ou de configuration.</li>
+    <li><strong>Les erreurs 404</strong> sur des URL qui devraient exister : redirections mal configurées ou contenu supprimé.</li>
+</ul>
+
+<h3>9.3 Problèmes de sécurité et actions manuelles</h3>
+<p>Dans la Search Console, consultez la section Sécurité et actions manuelles. Si quelque chose y apparaît (contenu piraté, liens artificiels, etc.), traitez-le en priorité : cela peut toucher la visibilité de tout le site.</p>
+<p>Si votre site a un passé de netlinking douteux ou vient d'être migré depuis un autre domaine, surveillez cette section régulièrement.</p>
+
+<h2 id="step-10">Étape 10 : prioriser les problèmes et bâtir un plan d'action</h2>
+<p>Vous trouverez plus de problèmes que vous ne pouvez en corriger d'un coup. C'est la priorisation qui transforme l'audit en résultats.</p>
+
+<h3>10.1 Prioriser selon l'impact, l'effort et les dépendances</h3>
+<p>Pour chaque problème, demandez-vous :</p>
+
+<p><strong>Impact sur les leads et le trafic :</strong></p>
+<ul>
+    <li>Cela touche-t-il des pages qui génèrent des démos, des essais ou des consultations ?</li>
+    <li>La correction peut-elle nettement améliorer l'exploration ou les positions ?</li>
+</ul>
+
+<p><strong>Difficulté :</strong></p>
+<ul>
+    <li>Est-ce un réglage de contenu, une option du CMS, ou un vrai chantier de développement ?</li>
+</ul>
+
+<p><strong>Dépendances :</strong></p>
+<ul>
+    <li>Faut-il des développeurs, des designers ou des changements d'hébergement ?</li>
+</ul>
+
+<h3>10.2 Regrouper en gains rapides, moyen terme et long terme</h3>
+
+<figure class="fig">
+    <table>
+        <thead><tr><th>Groupe</th><th>Délai</th><th>Contenu</th></tr></thead>
+        <tbody>
+            <tr><td>Gains rapides</td><td>1 à 2 jours</td><td>Retirer les noindex des pages clés. Mettre à jour les titres et méta des 10 pages les plus rentables. Ajouter des liens internes depuis les articles très visités vers la démo et les tarifs.</td></tr>
+            <tr><td>Moyen terme</td><td>2 à 4 semaines</td><td>Nettoyer l'excès de pages indexées (noindex des archives, canonicals des URL à paramètres). Mettre en place des modèles de données structurées. Premières améliorations de performance (compression des images, cache).</td></tr>
+            <tr><td>Long terme</td><td>1 à 3 mois</td><td>Repenser la navigation et l'architecture. Alléger les thèmes ou constructeurs de pages trop lourds. Améliorer les Core Web Vitals au niveau des modèles.</td></tr>
+        </tbody>
+    </table>
+    <figcaption>Figure 1 : classez les problèmes trouvés par effort et par délai, puis planifiez-les dans cet ordre.</figcaption>
+</figure>
+
+<p>Transformez ce tableau en feuille de route, avec des responsables et des échéances. Faites le point chaque mois et refaites l'audit chaque trimestre.</p>
+
+<h2 id="consultant">Quand faire appel à un consultant en SEO technique</h2>
+<p>Un audit SEO technique de base avec cette check-list est réaliste pour beaucoup d'équipes internes. Mais certaines situations justifient l'aide d'un spécialiste.</p>
+
+<h3>11.1 Quand vous pouvez le faire vous-même</h3>
+<p>Vous pouvez souvent gérer en interne quand :</p>
+<ul>
+    <li>Le site est assez petit (jusqu'à 500 à 1 000 URL).</li>
+    <li>Le CMS est propre (WordPress récent, Webflow ou un constructeur de site en SaaS).</li>
+    <li>La plupart des problèmes relèvent de la configuration (titres, méta, redirections simples, schema de base).</li>
+</ul>
+<p>Servez-vous de cette check-list comme guide, et ne mobilisez les développeurs que pour des tâches précises.</p>
+
+<h3>11.2 Quand faire appel à un expert</h3>
+<p>Envisagez un consultant en SEO technique quand :</p>
+
+<p><strong>Votre configuration est complexe :</strong></p>
+<ul>
+    <li>Une application SaaS et un site marketing sur des sous-domaines différents.</li>
+    <li>Un site multilingue ou multirégional avec hreflang.</li>
+    <li>Plusieurs marques ou micro-sites.</li>
+</ul>
+
+<p><strong>Vous préparez ou venez de faire une migration ou une refonte :</strong></p>
+<ul>
+    <li>Changement de domaine, ou passage de HTTP à HTTPS.</li>
+    <li>Changement important de la structure des URL.</li>
+    <li>Changement de CMS.</li>
+</ul>
+
+<p><strong>Vous avez des problèmes d'indexation ou de performance persistants :</strong></p>
+<ul>
+    <li>Des pages importantes non indexées malgré l'optimisation.</li>
+    <li>Des Core Web Vitals en échec sur les modèles clés.</li>
+    <li>Des frameworks JavaScript complexes (SPA, React, Vue) où l'affichage du contenu pose problème.</li>
+</ul>
+
+<p>Un bon consultant va :</p>
+<ul>
+    <li>Réaliser un audit SEO technique approfondi.</li>
+    <li>Prioriser les problèmes selon leur impact sur l'activité.</li>
+    <li>Construire une feuille de route et travailler directement avec les développeurs et les équipes produit et marketing.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion et prochaines étapes</h2>
+<p>Le SEO technique pour les entreprises de services et les SaaS ne consiste pas à corriger la moindre petite erreur. Il s'agit de construire une base fiable pour générer des demandes, des démos et des essais.</p>
+
+<p>Avec cette check-list, vous pouvez :</p>
+<ul>
+    <li>Garantir l'exploration et l'indexation de vos pages les plus importantes.</li>
+    <li>Nettoyer l'excès de pages indexées et le contenu pauvre.</li>
+    <li>Améliorer l'architecture du site, le maillage interne et la performance.</li>
+    <li>Mettre en place des données structurées et surveiller la santé technique dans la Search Console.</li>
+</ul>
+
+<p>Faites de cet audit une routine trimestrielle, surtout après des changements importants sur le site ou une vague de contenus. Avec le temps, vous aurez moins de mauvaises surprises, des positions plus stables, et un site plus rapide et plus agréable qui convertit davantage votre trafic organique.</p>
+
+<p>Pour replacer cette check-list dans la vue d'ensemble (exploration, architecture, Core Web Vitals et données structurées à grande échelle), relisez l'article principal sur le <a href="/fr/blog/technical-seo-checklist-2026">SEO technique pour les entreprises de services et les SaaS</a>.</p>
+
+<p>Si vous ne savez pas par où commencer ou si vos problèmes sont complexes, un <a href="/fr/services/technical-seo-audit">audit SEO technique</a> vous donne un plan d'action clair et priorisé à partir de vos données.</p>

@@ -1,0 +1,28 @@
+{
+    "faqs": [
+        {
+            "question": "What is keyword research in SEO?",
+            "answer": "Keyword research finds the searches your future clients make, measures how often they happen and how hard they are to rank for, and decides which page on your site should answer each group of searches."
+        },
+        {
+            "question": "Which tools do I need for keyword research?",
+            "answer": "<strong>Google Search Console</strong> for the searches you already appear for, <strong>Google Keyword Planner</strong> for volumes from Google, and <strong>Semrush or Ahrefs</strong> for difficulty and competitors. Google's own suggestions and \"People also ask\" complete the list."
+        },
+        {
+            "question": "How many keywords should one page target?",
+            "answer": "One primary keyword and a few close variations that mean the same thing. Searches with a different intent belong on a different page."
+        },
+        {
+            "question": "What is keyword cannibalization?",
+            "answer": "Two or more pages on the same site targeting the same searches. They split the signals Google uses, and often neither ranks well. Merge them or give each a distinct target."
+        },
+        {
+            "question": "How long until keyword changes show results?",
+            "answer": "Pages that already get impressions can move within weeks of a better title and content. New pages on competitive keywords usually take several months."
+        }
+    ],
+    "relatedSlugs": [
+        "technical-seo-checklist-2026",
+        "why-websites-fail"
+    ]
+}

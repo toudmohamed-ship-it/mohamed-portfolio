@@ -1,0 +1,70 @@
+<p class="lead">Most service business websites fail in one of two ways. Either Google does not show them, or Google shows them and nobody becomes a client. The causes are different, and so are the fixes. This guide walks through the most common reasons in both groups, how to spot each one in your own data, and what to fix first.</p>
+
+<h2>Two ways a website fails</h2>
+<p>Before changing anything, find out which problem you have. Open Google Search Console and Google Analytics 4 and answer two questions:</p>
+<ul>
+  <li><strong>Does Google show the site?</strong> In Search Console, look at impressions for searches that describe your services (not your business name). Close to zero means a visibility problem.</li>
+  <li><strong>Do visitors become enquiries?</strong> In GA4, compare visits from organic search with form submissions, calls and WhatsApp clicks. Many visits and almost no enquiries means a conversion problem.</li>
+</ul>
+<p>If you cannot answer the second question because nothing is tracked, that is the first thing to fix. Without it, every other change is a guess.</p>
+
+<h2>Part 1: Why Google does not show your site</h2>
+
+<h3>1. Google cannot index the important pages</h3>
+<p>A page that is not indexed cannot rank. Common causes are a forgotten <code>noindex</code> tag after a redesign, canonical tags pointing to the wrong address, pages blocked in robots.txt and SEO plugin conflicts. In one audit, two SEO plugins running at once stopped the page titles from reaching the HTML at all, and canonical tags pointed to a development domain (<a href="/portfolio/premium-medspa-seo-audit">medical spa case study</a>). Check the Page indexing report in Search Console first.</p>
+
+<h3>2. Pages target the wrong searches</h3>
+<p>Many sites describe their services in their own words instead of their clients' words, or put every service on one page. Google then has no clear page to show for "family lawyer" or "emergency plumber". Each important service needs its own page built around the searches people make. The <a href="/blog/keyword-research-process">keyword research process</a> explains how to find them.</p>
+
+<h3>3. The content is thin or repeated</h3>
+<p>Pages of 150 words, the same text copied across city pages, or translations that say less than the original give Google little reason to rank them. Google may crawl such pages and decide not to index them at all, which appears in Search Console as "Crawled, currently not indexed".</p>
+
+<h3>4. The site is slow on mobile</h3>
+<p>Most local searches happen on a phone. Google measures real-user speed through Core Web Vitals, and slow pages also lose visitors before they load. PageSpeed Insights shows both the score and the causes.</p>
+
+<h3>5. Weak local signals</h3>
+<p>For a local business, the map results often matter more than the website. A missing or incomplete Google Business Profile, inconsistent name, address and phone number across directories, and few recent reviews all keep a business out of the map pack.</p>
+
+<h2>Part 2: Why visitors do not become clients</h2>
+
+<h3>6. The traffic is the wrong traffic</h3>
+<p>Ranking for informational searches ("what is a will") brings readers, not clients. If most organic visits land on blog articles with no link to a service, the site gets traffic and no enquiries. Each article should lead to the service it relates to.</p>
+
+<h3>7. The page does not say what to do next</h3>
+<p>A visitor should know within a few seconds what you offer, for whom, where, and how to get in touch. Pages that open with a slogan, hide the phone number or end without a clear next step lose people who were ready to call.</p>
+
+<h3>8. No proof</h3>
+<p>People hiring a lawyer, a clinic or a consultant look for reasons to trust them: results, reviews, credentials, a real person behind the business. A page without any of these asks the visitor to take a risk.</p>
+
+<h3>9. Contact is harder than it should be</h3>
+<p>Long forms, a single contact method, or a form that is hard to use on a phone all cost enquiries. Offer the channels your clients already use, such as a short form, a phone number and, in many markets, WhatsApp.</p>
+
+<h3>10. Slow, cluttered landing pages</h3>
+<p>Speed and clarity affect conversions as much as rankings. In one project, the page receiving paid traffic was poorly built. After a redesign with clear trust signals, its mobile PageSpeed score went from 66 to 93 and its conversions more than doubled in the first month (<a href="/portfolio/uk-compliance-service-audit">UK service case study</a>).</p>
+
+<figure class="fig">
+  <table>
+    <thead><tr><th>Symptom in your data</th><th>Likely cause</th><th>Fix first</th></tr></thead>
+    <tbody>
+      <tr><td>Important pages missing from Google</td><td>Indexing or canonical problem</td><td>Page indexing report, then a technical audit</td></tr>
+      <tr><td>Impressions only for your business name</td><td>Pages target the wrong searches</td><td>Keyword research and one page per service</td></tr>
+      <tr><td>Many impressions, few clicks</td><td>Weak titles and descriptions</td><td>Rewrite them around search intent</td></tr>
+      <tr><td>Visits but no enquiries</td><td>Wrong traffic, no proof, unclear next step</td><td>Service links, proof, a clear call to action</td></tr>
+      <tr><td>Absent from the map results</td><td>Weak local signals</td><td>Google Business Profile, citations, reviews</td></tr>
+      <tr><td>You cannot tell where enquiries come from</td><td>No conversion tracking</td><td>GA4 events for forms, calls and WhatsApp</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 1: Match what you see in Search Console and GA4 to the most likely cause.</figcaption>
+</figure>
+
+<h2>What to fix first</h2>
+<ol>
+  <li><strong>Tracking.</strong> Set up GA4 events for form submissions, calls and WhatsApp clicks, so you can measure everything that follows. The <a href="/blog/ga4-event-tracking">GA4 event tracking guide</a> shows how.</li>
+  <li><strong>Indexing.</strong> Make sure Google can index your service pages. Nothing else matters if they are missing.</li>
+  <li><strong>Pages that already get impressions.</strong> Better titles, clearer content and stronger internal links on these pages are the fastest wins.</li>
+  <li><strong>Conversion basics.</strong> Proof, a clear next step and easy contact on every service page.</li>
+  <li><strong>New content and local signals.</strong> Then build what is missing: new service or city pages, reviews, citations.</li>
+</ol>
+
+<h2>Summary</h2>
+<p>A service website fails either because Google does not show it or because visitors do not become clients. Search Console tells you which one. Indexing problems, wrong keywords, thin content, slow pages and weak local signals keep a site invisible. Wrong traffic, unclear pages, missing proof and hard contact keep visitors from calling. Track enquiries first, fix indexing, improve the pages Google already shows, then build what is missing.</p>

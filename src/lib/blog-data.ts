@@ -15,10 +15,10 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
     { slug: "local-seo-guide-businesses", published: "2025-12-12", category: "Local SEO", locales: ["en", "fr", "ar"] },
     { slug: "technical-seo-checklist-2026", published: "2026-01-02", category: "Technical SEO", locales: ["en", "fr", "ar"] },
-    { slug: "technical-seo-audit-checklist-lead-gen", published: "2026-01-05", category: "Technical SEO", locales: ["en"] },
-    { slug: "why-websites-fail", published: "2025-12-05", category: "Strategy", locales: ["en"] },
+    { slug: "technical-seo-audit-checklist-lead-gen", published: "2026-01-05", modified: "2026-11-06", category: "Technical SEO", locales: ["en", "fr"] },
+    { slug: "why-websites-fail", published: "2025-12-05", modified: "2026-11-06", category: "Strategy", locales: ["en", "fr"] },
     { slug: "ga4-event-tracking", published: "2025-11-28", modified: "2026-11-01", category: "Analytics", locales: ["en", "fr", "ar"] },
-    { slug: "keyword-research-process", published: "2025-11-15", category: "Keyword Research", locales: ["en"] },
+    { slug: "keyword-research-process", published: "2025-11-15", modified: "2026-11-06", category: "Keyword Research", locales: ["en", "fr"] },
 ];
 
 /** Is this article fully written in this language (indexable)? */

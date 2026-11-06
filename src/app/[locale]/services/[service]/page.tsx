@@ -134,6 +134,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                             {c.price_note && <span className="text-sm text-muted">{c.price_note}</span>}
                         </p>
                     )}
+                    {/* Proof up front: the headline result of the most relevant case study */}
+                    {cases[0] && (
+                        <Link href={`/portfolio/${cases[0].slug}`} className="self-start flex flex-col gap-0.5 bg-white border border-line border-s-4 border-s-forest rounded-xl px-4 py-3 text-ink no-underline hover:border-forest hover:text-ink max-w-[560px]">
+                            <span className="font-mono text-xs text-muted">{t("ui.proof_label")} · {cases[0].client}</span>
+                            <span className="text-[16px] font-medium">{cases[0].result}</span>
+                        </Link>
+                    )}
                 </div>
             </PageHeader>
 

@@ -1,0 +1,20 @@
+{
+    "faqs": [
+        {
+            "question": "Pourquoi mon site n'apparaît-il pas sur Google ?",
+            "answer": "Les causes les plus fréquentes : des pages que Google ne peut pas indexer (balises noindex, mauvaises canonicals, pages bloquées), des pages qui visent les mauvaises recherches, un contenu pauvre ou répété, et des pages lentes sur mobile. Commencez par le rapport Indexation des pages de la Search Console."
+        },
+        {
+            "question": "Pourquoi mon site a-t-il du trafic mais pas de demandes ?",
+            "answer": "En général parce que le trafic ne correspond pas à ce que vous vendez, que les pages n'offrent ni étape suivante claire ni preuve, ou que le contact est difficile sur téléphone. Vérifiez dans GA4 quelles pages amènent les visites et si elles mènent à un service et à un contact facile."
+        },
+        {
+            "question": "Comment savoir quel problème a mon site ?",
+            "answer": "La Search Console montre si Google affiche votre site sur des recherches de services. GA4, avec des événements pour les formulaires, les appels et WhatsApp, montre si les visiteurs deviennent des demandes. Peu d'impressions : problème de visibilité. Des visites sans demandes : problème de conversion."
+        },
+        {
+            "question": "Que faut-il corriger en premier ?",
+            "answer": "D'abord le suivi, puis l'indexation, puis les pages que Google montre déjà. Ensuite les bases de la conversion sur les pages de services, et seulement après le nouveau contenu et les signaux locaux."
+        }
+    ]
+}

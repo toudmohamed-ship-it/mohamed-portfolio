@@ -1,0 +1,70 @@
+<p class="lead">La plupart des sites d'entreprises de services échouent de deux façons. Soit Google ne les montre pas, soit Google les montre et personne ne devient client. Les causes sont différentes, et les solutions aussi. Ce guide passe en revue les raisons les plus fréquentes dans chaque cas, comment les repérer dans vos propres données, et quoi corriger en premier.</p>
+
+<h2>Deux façons d'échouer</h2>
+<p>Avant de changer quoi que ce soit, identifiez votre problème. Ouvrez la Google Search Console et Google Analytics 4, et répondez à deux questions :</p>
+<ul>
+  <li><strong>Google montre-t-il le site ?</strong> Dans la Search Console, regardez les impressions sur les recherches qui décrivent vos services (pas le nom de votre entreprise). Presque zéro, c'est un problème de visibilité.</li>
+  <li><strong>Les visiteurs deviennent-ils des demandes ?</strong> Dans GA4, comparez les visites venant de Google avec les formulaires envoyés, les appels et les clics WhatsApp. Beaucoup de visites et presque aucune demande, c'est un problème de conversion.</li>
+</ul>
+<p>Si vous ne pouvez pas répondre à la deuxième question parce que rien n'est suivi, c'est la première chose à corriger. Sans cela, chaque autre changement est une supposition.</p>
+
+<h2>Partie 1 : pourquoi Google ne montre pas votre site</h2>
+
+<h3>1. Google ne peut pas indexer les pages importantes</h3>
+<p>Une page non indexée ne peut pas se classer. Causes fréquentes : une balise <code>noindex</code> oubliée après une refonte, des balises canonical qui pointent vers la mauvaise adresse, des pages bloquées dans le robots.txt, des conflits entre extensions SEO. Lors d'un audit, deux extensions SEO actives en même temps empêchaient les titres des pages d'apparaître dans le HTML, et les canonicals pointaient vers un domaine de développement (<a href="/fr/portfolio/premium-medspa-seo-audit">étude de cas du centre de médecine esthétique</a>). Commencez par le rapport Indexation des pages de la Search Console.</p>
+
+<h3>2. Les pages visent les mauvaises recherches</h3>
+<p>Beaucoup de sites décrivent leurs services avec leurs propres mots plutôt qu'avec ceux de leurs clients, ou mettent tous les services sur une seule page. Google n'a alors aucune page claire à montrer pour « avocat divorce » ou « plombier urgence ». Chaque service important a besoin de sa propre page, construite autour des recherches réelles. La <a href="/fr/blog/keyword-research-process">méthode de recherche de mots-clés</a> explique comment les trouver.</p>
+
+<h3>3. Le contenu est pauvre ou répété</h3>
+<p>Des pages de 150 mots, le même texte copié sur chaque page de ville, ou des traductions qui disent moins que l'original donnent peu de raisons à Google de les classer. Google peut explorer ces pages et décider de ne pas les indexer, ce qui apparaît dans la Search Console comme « Explorée, actuellement non indexée ».</p>
+
+<h3>4. Le site est lent sur mobile</h3>
+<p>La plupart des recherches locales se font sur téléphone. Google mesure la vitesse réelle avec les Core Web Vitals, et une page lente perd aussi des visiteurs avant de s'afficher. PageSpeed Insights donne le score et les causes.</p>
+
+<h3>5. Des signaux locaux faibles</h3>
+<p>Pour une entreprise locale, la carte Google compte souvent plus que le site. Une fiche Google Business Profile absente ou incomplète, un nom, une adresse et un téléphone différents selon les annuaires, et peu d'avis récents tiennent l'entreprise hors du pack local.</p>
+
+<h2>Partie 2 : pourquoi les visiteurs ne deviennent pas clients</h2>
+
+<h3>6. Ce n'est pas le bon trafic</h3>
+<p>Se classer sur des recherches d'information (« qu'est-ce qu'un testament ») amène des lecteurs, pas des clients. Si la plupart des visites arrivent sur des articles sans lien vers un service, le site a du trafic et aucune demande. Chaque article doit mener au service qui lui correspond.</p>
+
+<h3>7. La page ne dit pas quoi faire ensuite</h3>
+<p>En quelques secondes, le visiteur doit savoir ce que vous proposez, à qui, où, et comment vous joindre. Une page qui commence par un slogan, cache le numéro de téléphone ou se termine sans étape suivante claire perd des gens prêts à appeler.</p>
+
+<h3>8. Aucune preuve</h3>
+<p>Pour choisir un avocat, une clinique ou un consultant, on cherche des raisons de faire confiance : résultats, avis, qualifications, une vraie personne derrière l'entreprise. Une page sans rien de tout cela demande au visiteur de prendre un risque.</p>
+
+<h3>9. Le contact est plus difficile qu'il ne devrait</h3>
+<p>Un formulaire long, un seul moyen de contact, ou un formulaire pénible sur téléphone coûtent des demandes. Proposez les canaux que vos clients utilisent déjà : un formulaire court, un numéro de téléphone et, dans beaucoup de marchés, WhatsApp.</p>
+
+<h3>10. Des pages d'atterrissage lentes et encombrées</h3>
+<p>La vitesse et la clarté pèsent autant sur les conversions que sur les positions. Dans un projet, la page qui recevait le trafic payant était mal construite. Après une refonte avec des éléments de confiance clairs, son score PageSpeed mobile est passé de 66 à 93 et ses conversions ont plus que doublé dès le premier mois (<a href="/fr/portfolio/uk-compliance-service-audit">étude de cas du service britannique</a>).</p>
+
+<figure class="fig">
+  <table>
+    <thead><tr><th>Ce que vous voyez</th><th>Cause probable</th><th>À corriger en premier</th></tr></thead>
+    <tbody>
+      <tr><td>Pages importantes absentes de Google</td><td>Problème d'indexation ou de canonical</td><td>Rapport d'indexation, puis audit technique</td></tr>
+      <tr><td>Impressions seulement sur votre nom</td><td>Les pages visent les mauvaises recherches</td><td>Recherche de mots-clés, une page par service</td></tr>
+      <tr><td>Beaucoup d'impressions, peu de clics</td><td>Titres et descriptions faibles</td><td>Les réécrire selon l'intention de recherche</td></tr>
+      <tr><td>Des visites mais aucune demande</td><td>Mauvais trafic, pas de preuve, étape suivante floue</td><td>Liens vers les services, preuves, appel à l'action clair</td></tr>
+      <tr><td>Absent de la carte Google</td><td>Signaux locaux faibles</td><td>Fiche Google, citations, avis</td></tr>
+      <tr><td>Impossible de savoir d'où viennent les demandes</td><td>Pas de suivi des conversions</td><td>Événements GA4 pour formulaires, appels et WhatsApp</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 1 : reliez ce que vous voyez dans la Search Console et GA4 à la cause la plus probable.</figcaption>
+</figure>
+
+<h2>Quoi corriger en premier</h2>
+<ol>
+  <li><strong>Le suivi.</strong> Créez des événements GA4 pour les formulaires, les appels et les clics WhatsApp, pour mesurer tout ce qui suit. Le <a href="/fr/blog/ga4-event-tracking">guide du suivi des événements GA4</a> explique comment faire.</li>
+  <li><strong>L'indexation.</strong> Vérifiez que Google peut indexer vos pages de services. Rien d'autre ne compte si elles sont absentes.</li>
+  <li><strong>Les pages qui reçoivent déjà des impressions.</strong> De meilleurs titres, un contenu plus clair et un maillage interne plus fort sur ces pages sont les gains les plus rapides.</li>
+  <li><strong>Les bases de la conversion.</strong> Des preuves, une étape suivante claire et un contact facile sur chaque page de service.</li>
+  <li><strong>Le nouveau contenu et les signaux locaux.</strong> Ensuite seulement, construisez ce qui manque : pages de services ou de villes, avis, citations.</li>
+</ol>
+
+<h2>En résumé</h2>
+<p>Un site de services échoue soit parce que Google ne le montre pas, soit parce que les visiteurs ne deviennent pas clients. La Search Console vous dit lequel. Problèmes d'indexation, mauvais mots-clés, contenu pauvre, pages lentes et signaux locaux faibles rendent un site invisible. Mauvais trafic, pages floues, absence de preuves et contact difficile empêchent les visiteurs d'appeler. Suivez d'abord les demandes, corrigez l'indexation, améliorez les pages que Google montre déjà, puis construisez ce qui manque.</p>
