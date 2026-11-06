@@ -24,7 +24,7 @@ The site is the proof of his SEO work, so SEO, speed and accessibility are not o
 - Calm palette, defined once in `src/app/globals.css` (`@theme`): paper `#F7F5F0`, ink `#1C2321`, muted `#5A645F`, line `#E2DDD3`, forest `#2E6B57`, sage `#E6EFEA`, mint `#7FC4A8`. Use the token classes (`bg-paper`, `text-ink`, `text-forest`...), not new hex values.
 - Fonts: Geist (Latin) and Geist Mono for small data labels, loaded with `next/font` in `src/app/[locale]/layout.tsx`. Arabic uses the device system font (no web font): Cairo cost about 10 Lighthouse points on `/ar`.
 - No gradients on text or backgrounds, no glassmorphism, no glow except the hero cursor light, no stock or AI images. Real photos only (`public/images`).
-- Exception chosen by Mohamed (Nov 2026): his illustrated portrait on the About page (`public/images/portrait.webp`), shown as a still image. An eye-follow version was tried and removed at his request. Source files: `D:portrait-src`.
+- Exception chosen by Mohamed (Nov 2026): his illustrated portrait on the About page (`public/images/portrait.webp`), shown as a still image. An eye-follow version was tried and removed at his request. Source: `D:portrait-srcportrait-final.png` (eyes corrected, 6 Nov 2026).
 - The old blog images were AI-generated and were removed. Article figures are drawn in HTML/SVG (`.fig`, `.cwv` in globals.css). Case study screenshots use next/image with real sizes from `src/lib/image-sizes.ts`.
 - Shared patterns live in `globals.css`: `.lift` (card hover), `.row-link`, `.btn`, `.arrow`, `.navlink`, `.reveal`, `.in` + `.d1`–`.d6` (entrance delays).
 
