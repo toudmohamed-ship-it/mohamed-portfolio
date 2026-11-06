@@ -8,7 +8,7 @@ export default async function AuthorBio({ locale }: { locale: string }) {
 
     return (
         <aside aria-label={t("label")} className="flex flex-wrap items-center gap-6 p-6 md:p-8 bg-white border border-line rounded-[20px]">
-            <Image src="/images/profile.png" alt="" width={72} height={72} sizes="72px" className="w-[72px] h-[72px] rounded-full object-cover bg-sage" />
+            <Image src="/images/portrait-face.webp" alt="" width={72} height={72} sizes="72px" className="w-[72px] h-[72px] rounded-full object-cover bg-sage" />
             <div className="flex-[1_1_280px] min-w-0 flex flex-col gap-1.5">
                 <span className="font-mono text-xs text-forest">{t("label")}</span>
                 <span className="text-lg font-semibold">Mohamed Toudghi</span>

@@ -96,7 +96,7 @@ export default async function BlogPage({ params }: Props) {
                 {/* Knowledge panel: who writes this blog */}
                 <aside aria-label={t('author.label')} className="bg-white border border-line rounded-[18px] overflow-hidden lg:sticky lg:top-24">
                     <div className="flex items-center gap-4 p-5 border-b border-line">
-                        <Image src="/images/profile.png" alt="" width={64} height={64} sizes="64px" className="w-16 h-16 rounded-full object-cover bg-sage" />
+                        <Image src="/images/portrait-face.webp" alt="" width={64} height={64} sizes="64px" className="w-16 h-16 rounded-full object-cover bg-sage" />
                         <div className="flex flex-col">
                             <span className="text-[20px] font-semibold leading-tight">Mohamed Toudghi</span>
                             <span className="text-[14px] text-muted">{tNav('role')}</span>

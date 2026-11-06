@@ -20,7 +20,7 @@ export default function SchemaMarkup() {
                 jobTitle: PERSONAL_INFO.title,
                 description: "SEO consultant in Morocco, working remotely on technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
                 url: BASE_URL,
-                image: `${BASE_URL}/images/profile.png`,
+                image: `${BASE_URL}/images/portrait.webp`,
                 email: PERSONAL_INFO.email,
                 telephone: PERSONAL_INFO.phone,
                 address: ADDRESS,
