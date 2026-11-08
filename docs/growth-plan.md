@@ -96,9 +96,11 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 - [ ] In GA4 (Admin, Data display, Events), mark generate_lead, whatsapp_click and email_click as key events once they appear (after the batch 2 release).
 - [x] Resubmit the sitemap and request indexing of the reworked pages (done 5 Nov 2026).
 - [ ] Validate fix in Search Console: "Crawled, currently not indexed", "Not found (404)", "Page with redirect".
-- [ ] Create a Google Business Profile (choose the city to show).
+- [ ] Google Business Profile: only if he meets clients in person in a city (service-area profile, address hidden). Google does not allow online-only businesses (checked 8 Nov 2026); a profile without in-person contact risks suspension. Until then, reviews go on LinkedIn, Clutch and Malt.
+- [ ] Malt profile (Morocco is an open country; needs ID/passport and proof of auto-entrepreneur registration under 3 months old).
+- [ ] Clutch free profile (clutch.co/get-listed); ask 3 past clients for verified reviews.
 - [ ] Ask the two current freelance clients for a review when their projects end (Google or LinkedIn; anonymous is fine).
 - [ ] Check search volumes in Google Keyword Planner: "consultant SEO Maroc", "expert SEO Maroc", "خبير سيو", "مستشار SEO".
-- [ ] Malt and Clutch profiles; LinkedIn title and link consistent with the site.
+- [ ] LinkedIn: headline, About, Featured and Services page rewritten (drafts in chat, 8 Nov 2026).
 - [x] Illustrated portrait (received 5 Nov 2026). The eye-follow effect was removed at his request (6 Nov); the About page shows the full portrait as a still image.
 - [ ] Tell Claude when the master's is finished (update the About page in 3 languages).
