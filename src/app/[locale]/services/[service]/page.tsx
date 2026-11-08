@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props) {
         title: c.meta_title,
         description: c.meta_description,
         alternates: pageAlternates(locale, `/services/${service}`),
-        openGraph: { title: c.meta_title, description: c.meta_description, url: localizedUrl(locale, `/services/${service}`), images: ["/og-image.jpg"] },
+        openGraph: { title: c.meta_title, description: c.meta_description, url: localizedUrl(locale, `/services/${service}`) },
     };
 }
 

@@ -8,6 +8,7 @@ export const config = {
     matcher: [
         '/',
         '/(fr|ar)/:path*',
-        '/((?!api|_next|_vercel|.*\\..*).*)'
+        // Share images (opengraph-image) are served as generated, including English ones under /en
+        '/((?!api|_next|_vercel|.*opengraph-image|.*\\..*).*)'
     ]
 };

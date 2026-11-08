@@ -28,7 +28,6 @@ export async function generateMetadata({ params }: Props) {
 
     // Search-friendly title ("Local SEO Case Study: U.S. Law Firm"); the layout template adds the name
     const title = t.has(`${slug}.seo_title`) ? t(`${slug}.seo_title`) : t(`${slug}.title`);
-    const image = study.gallery[0]?.src;
     const description = t.has(`${slug}.seo_description`) ? t(`${slug}.seo_description`) : t(`${slug}.summary`);
 
     return {
@@ -40,7 +39,6 @@ export async function generateMetadata({ params }: Props) {
             title,
             description,
             url: localizedUrl(locale, `/portfolio/${slug}`),
-            images: [image || '/og-image.jpg'],
         },
     };
 }

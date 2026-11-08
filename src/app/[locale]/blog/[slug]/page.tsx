@@ -51,7 +51,6 @@ export async function generateMetadata({ params }: Props) {
             title: tPosts(`${slug}.title`),
             description: tPosts(`${slug}.excerpt`),
             url: localizedUrl(locale, `/blog/${slug}`),
-            images: ['/og-image.jpg'],
             publishedTime: post.published,
             modifiedTime: post.modified || post.published,
         },

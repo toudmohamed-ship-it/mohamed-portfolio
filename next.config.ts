@@ -49,8 +49,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/en/:path*',
-        destination: '/:path*',
+        // Share images keep their /en/... address (generated per locale); every other /en URL redirects
+        source: '/en/:path((?!.*opengraph-image).*)',
+        destination: '/:path',
         permanent: true,
       },
       {

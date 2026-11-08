@@ -19,7 +19,6 @@ export async function generateMetadata({ params }: Props) {
             title: t('og_title'),
             description: t('og_description'),
             url: localizedUrl(locale, '/contact'),
-            images: ['/og-image.jpg'],
         },
         alternates: pageAlternates(locale, '/contact'),
     };
