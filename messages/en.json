@@ -150,11 +150,6 @@
                     "source": "UK service business"
                 },
                 {
-                    "value": "+30%",
-                    "label": "more qualified leads from local search",
-                    "source": "U.S. law firm"
-                },
-                {
                     "value": "+130%",
                     "label": "more clicks from Google in 3 months, with no new pages",
                     "source": "B2B company (Morocco)"
@@ -213,8 +208,8 @@
                     "slug": "law-firm-local-seo",
                     "tag": "Local SEO",
                     "title": "U.S. law firm",
-                    "desc": "First-page rankings for “city + practice area” searches and stronger local trust signals.",
-                    "result": "+30% leads"
+                    "desc": "Problem pages fixed, orphan pages linked, citations audited and a suspended Google Business Profile recovered.",
+                    "result": "Profile recovered"
                 },
                 {
                     "slug": "moroccan-b2b-seo",
@@ -588,14 +583,13 @@
         "law-firm-local-seo": {
             "client": "U.S.-Based Law Firm",
             "title": "Local SEO for a Personal Injury Law Firm in Michigan",
-            "summary": "Local SEO for a personal injury law firm in Michigan: page fixes, CTR work on high-impression pages, orphan pages linked, citations audited and a suspended Google Business Profile recovered. 30% more qualified leads from local search.",
+            "summary": "Local SEO for a personal injury law firm in Michigan: page fixes, CTR work on high-impression pages, orphan pages linked, citations audited and a suspended Google Business Profile recovered.",
             "tags": "Local SEO • Google Business Profile • On-Page SEO",
             "challenge": "The firm wanted more clients from local search in its practice area. The site had pages with technical and on-page problems, pages Google was showing but few people clicked, and pages with no internal links at all. In the middle of the project, a bigger problem arrived: the firm's main Google Business Profile was suspended.",
             "approach": "I restructured the site into clear practice area sections. I optimized the on-page content for local searches (city plus practice area) and built quality local citations.",
             "results": {
-                "0": "30% more qualified leads from local search",
-                "1": "First-page rankings for “city + personal injury” searches",
-                "2": "Main Google Business Profile recovered after a suspension"
+                "0": "Main Google Business Profile recovered after a suspension",
+                "1": "First-page rankings for “city + personal injury” searches"
             },
             "seo_title": "Personal Injury Law Firm SEO Case Study: Michigan",
             "market": "United States (Michigan)",

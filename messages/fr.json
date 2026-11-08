@@ -150,11 +150,6 @@
                     "source": "Entreprise de services, Royaume-Uni"
                 },
                 {
-                    "value": "+30%",
-                    "label": "de leads qualifiés venant de la recherche locale",
-                    "source": "Cabinet d'avocats, États-Unis"
-                },
-                {
                     "value": "+130 %",
                     "label": "de clics venant de Google en 3 mois, sans nouvelle page",
                     "source": "Entreprise B2B (Maroc)"
@@ -213,8 +208,8 @@
                     "slug": "law-firm-local-seo",
                     "tag": "SEO local",
                     "title": "Cabinet d'avocats aux États-Unis",
-                    "desc": "Premières positions sur les recherches « ville + domaine du droit » et des signaux de confiance locaux renforcés.",
-                    "result": "+30 % de leads"
+                    "desc": "Pages corrigées, pages orphelines reliées, citations auditées et fiche Google Business Profile suspendue récupérée.",
+                    "result": "Fiche récupérée"
                 },
                 {
                     "slug": "moroccan-b2b-seo",
@@ -587,14 +582,13 @@
         "law-firm-local-seo": {
             "client": "Cabinet d'avocats (États-Unis)",
             "title": "SEO local pour un cabinet d'avocats en préjudice corporel au Michigan",
-            "summary": "SEO local pour un cabinet d'avocats spécialisé en préjudice corporel au Michigan : pages corrigées, taux de clic travaillé sur les pages à fortes impressions, pages orphelines reliées, citations auditées et fiche Google Business Profile suspendue récupérée. 30 % de demandes qualifiées en plus venant de la recherche locale.",
+            "summary": "SEO local pour un cabinet d'avocats spécialisé en préjudice corporel au Michigan : pages corrigées, taux de clic travaillé sur les pages à fortes impressions, pages orphelines reliées, citations auditées et fiche Google Business Profile suspendue récupérée.",
             "tags": "SEO local • Google Business Profile • SEO on-page",
             "challenge": "Le cabinet voulait plus de clients venant de la recherche locale dans son domaine. Le site avait des pages avec des problèmes techniques et on-page, des pages que Google affichait mais sur lesquelles peu de gens cliquaient, et des pages sans aucun lien interne. En plein projet, un problème plus grave est arrivé : la fiche Google Business Profile principale du cabinet a été suspendue.",
             "approach": "J'ai passé le site en revue, corrigé les pages qui avaient des problèmes et réorganisé le contenu en sections claires par domaine de pratique, pour que chaque domaine ait une page assez forte pour se positionner. Avec la Search Console, j'ai repéré les pages et les requêtes avec le plus d'impressions et les positions les plus faibles, puis optimisé leurs titres, descriptions et contenus pour répondre à ce que ces internautes cherchaient. J'ai recherché les pages orphelines et relié chaque page à des contenus pertinents, pour que toutes les pages soient connectées et découvrables par Google. J'ai publié des articles qui répondent aux questions que se posent les clients potentiels. Avec Local Falcon et d'autres outils de SEO local, j'ai audité les citations existantes du cabinet et ses positions locales, pour vérifier la cohérence de son nom, de son adresse et de son téléphone, et voir où il se classait dans la zone. Quand la fiche principale a été suspendue, j'ai donné au cabinet un plan clair : quoi faire, quoi éviter pendant la suspension, et comment demander la réintégration. La fiche a été récupérée.",
             "results": {
-                "0": "30 % de demandes qualifiées en plus venant de la recherche locale",
-                "1": "Première page sur les recherches « ville + préjudice corporel »",
-                "2": "Fiche Google Business Profile principale récupérée après une suspension"
+                "0": "Fiche Google Business Profile principale récupérée après une suspension",
+                "1": "Première page sur les recherches « ville + préjudice corporel »"
             },
             "seo_title": "SEO pour avocats : étude de cas au Michigan",
             "market": "États-Unis (Michigan)",
