@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import PageHeader from "@/components/ui/PageHeader";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 import { BASE_URL, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
 
 interface Props {
@@ -118,14 +118,14 @@ export default async function MoroccoPage({ params }: Props) {
                 lead={c.lead}
             >
                 <div className="flex flex-col gap-6 pt-2">
-                    <div className="flex flex-wrap items-center gap-3.5">
+                    {OPEN_FOR_WORK && <div className="flex flex-wrap items-center gap-3.5">
                         <Link href="/contact#mini-audit" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white">
                             {c.cta_call} <span className="arrow" aria-hidden="true">→</span>
                         </Link>
                         <a href={PERSONAL_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="btn inline-flex items-center gap-2 px-6 py-[14px] rounded-xl bg-white border border-line-strong text-ink font-medium no-underline hover:border-forest hover:text-ink">
                             {c.cta_whatsapp}
                         </a>
-                    </div>
+                    </div>}
                     <ul className="list-none m-0 p-0 flex flex-wrap gap-2.5">
                         {c.facts.map((f) => (
                             <li key={f} className="inline-flex items-center gap-2 bg-white border border-line rounded-full px-3.5 py-1.5 text-[14px] text-ink-soft">
@@ -294,14 +294,14 @@ export default async function MoroccoPage({ params }: Props) {
                             ))}
                         </ol>
                     </nav>
-                    <div className="bg-white border border-line rounded-[20px] p-5 flex flex-col gap-3">
+                    {OPEN_FOR_WORK && <div className="bg-white border border-line rounded-[20px] p-5 flex flex-col gap-3">
                         <Link href="/contact#mini-audit" className="btn inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white text-[15px]">
                             {c.cta_call}
                         </Link>
                         <a href={PERSONAL_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="btn text-center font-medium no-underline text-[15px]">
                             {c.cta_whatsapp}
                         </a>
-                    </div>
+                    </div>}
                 </aside>
             </div>
 

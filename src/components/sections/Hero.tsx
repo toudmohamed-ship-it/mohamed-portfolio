@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 export default function Hero() {
     const t = useTranslations("HomePage.hero");
@@ -97,9 +98,9 @@ export default function Hero() {
                     </h1>
                     <p className="in d3 m-0 text-lg md:text-[19px] text-muted max-w-[540px]">{t("subtitle")}</p>
                     <div className="in d4 flex flex-wrap items-center gap-3.5 pt-1.5">
-                        <Link href="/contact#mini-audit" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline shadow-[0_10px_24px_-14px_rgba(46,107,87,.8)] hover:bg-forest-deep hover:text-white">
+                        {OPEN_FOR_WORK && <Link href="/contact#mini-audit" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline shadow-[0_10px_24px_-14px_rgba(46,107,87,.8)] hover:bg-forest-deep hover:text-white">
                             {t("cta_call")} <span className="arrow" aria-hidden="true">→</span>
-                        </Link>
+                        </Link>}
                         <Link href="/portfolio" className="btn inline-flex items-center px-[22px] py-[15px] rounded-xl border border-line-strong bg-white text-ink font-medium no-underline hover:text-ink">
                             {t("cta_work")}
                         </Link>

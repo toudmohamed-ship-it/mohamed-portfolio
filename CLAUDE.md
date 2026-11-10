@@ -1,6 +1,10 @@
 # mohamedtoudghi.com
 
-Portfolio of Mohamed Toudghi, SEO consultant in Morocco, working remotely (technical SEO, local SEO, GA4 tracking for service businesses, B2B and SaaS). Next.js 16 (App Router) + Tailwind CSS 4 + next-intl, deployed on Vercel. Three languages: English at `/`, French at `/fr`, Arabic (RTL) at `/ar`.
+Portfolio of Mohamed Toudghi, SEO and growth specialist in Morocco, working remotely (technical SEO, local SEO, conversion, WordPress websites and GA4 tracking for service businesses, B2B and SaaS). Positioning is "SEO and growth", not "SEO and GA4" (Mohamed, 10 Nov 2026).
+
+Portfolio mode: `OPEN_FOR_WORK` in `src/lib/constants.ts` is `false` until Mohamed has his employer's written approval for freelance work. It hides the calls to action that ask for work; keep new ones behind it. No prices on the site (removed 10 Nov 2026), unless Mohamed asks.
+
+ Next.js 16 (App Router) + Tailwind CSS 4 + next-intl, deployed on Vercel. Three languages: English at `/`, French at `/fr`, Arabic (RTL) at `/ar`.
 
 The site is the proof of his SEO work, so SEO, speed and accessibility are not optional.
 

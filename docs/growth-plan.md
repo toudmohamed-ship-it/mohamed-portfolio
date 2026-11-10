@@ -80,7 +80,7 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 **Batch 1, site structure (week of 5 Nov):**
 - [ ] Selective languages: a language version is indexed only if it is fully written. Thin FR/AR versions get noindex and leave hreflang and the sitemap. New articles: EN and FR only; Arabic for commercial pages.
 - [ ] Article dates fixed (2025 to 2026) and `BlogPosting` schema with datePublished and dateModified.
-- [ ] "From" prices in MAD (FR, AR) and USD (EN) on the services hub and service pages.
+- [x] ~~"From" prices in MAD (FR, AR) and USD (EN) on the services hub and service pages.~~ Dropped 10 Nov 2026: prices stay private.
 - [ ] Free mini-audit as the main call to action, with a defined output and deadline.
 
 **Batch 2, content (week of 12 Nov):**
@@ -104,3 +104,12 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 - [ ] LinkedIn: headline, About, Featured and Services page rewritten (drafts in chat, 8 Nov 2026).
 - [x] Illustrated portrait (received 5 Nov 2026). The eye-follow effect was removed at his request (6 Nov); the About page shows the full portrait as a still image.
 - [ ] Tell Claude when the master's is finished (update the About page in 3 languages).
+
+## Decisions (Mohamed, 10 Nov 2026)
+
+- **Positioning: SEO and growth**, not "SEO and GA4 tracking". Growth means the work in the case studies (conversion optimization, SaaS launch with web design and marketing automation, CTR and content) plus building WordPress websites. GA4 tracking stays as a service, framed as measurement inside growth. Site copy not yet changed.
+- **Prices are private.** All published prices were removed (service pages, Morocco page, share images). The cost FAQs stay, without numbers. Do not publish prices again, even after employer approval, unless Mohamed asks.
+- **Employer approval:** not yet given. Until it is, nothing that actively seeks clients. Maintenance mode for the site is under discussion.
+- **WordPress websites:** a service he provides. An upcoming case study (a full site he built and optimized) will back it; the client has not signed off yet, so no service page or case study until then.
+- **Industry pages: later, not now.** Only for industries with real experience: clinics and medical spas (medspa audit), SaaS and B2B (SaaS launch, Moroccan B2B), marketplaces (luxury marketplace audit). The law firm page is the model.
+- **Blog:** keep a small blog of problem articles tied to one service; LinkedIn gets shorter, different versions that link back (strategy report, 10 Nov 2026).

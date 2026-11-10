@@ -1,8 +1,10 @@
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 // Small, calm call to action under the table of contents
 export default async function BlogSidebar({ locale }: { locale: string }) {
+    if (!OPEN_FOR_WORK) return null;
     const t = await getTranslations({ locale, namespace: "BlogPage.sidebar" });
 
     return (

@@ -41,15 +41,15 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
   const { locale } = await params;
 
   const descriptions: Record<string, string> = {
-    en: "SEO consultant in Morocco. Technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
-    fr: "Consultant SEO au Maroc. SEO technique, SEO local et suivi GA4 pour les entreprises de services, B2B et SaaS.",
-    ar: "مستشار SEO في المغرب. SEO تقني وSEO محلي وتتبع GA4 لشركات الخدمات وB2B وSaaS."
+    en: "SEO and growth specialist in Morocco. Technical SEO, local SEO, conversion and GA4 tracking for service businesses, B2B and SaaS.",
+    fr: "Spécialiste SEO et croissance au Maroc. SEO technique, SEO local, conversion et suivi GA4 pour les entreprises de services, B2B et SaaS.",
+    ar: "أخصائي SEO والنمو في المغرب. SEO تقني وSEO محلي وتحسين التحويل وتتبع GA4 لشركات الخدمات وB2B وSaaS."
   };
 
   const titles: Record<string, string> = {
-    en: "Mohamed Toudghi | SEO Consultant in Morocco",
-    fr: "Mohamed Toudghi | Consultant SEO au Maroc",
-    ar: "محمد تودغي | مستشار SEO في المغرب"
+    en: "Mohamed Toudghi | SEO & Growth Specialist",
+    fr: "Mohamed Toudghi | Spécialiste SEO et croissance",
+    ar: "محمد تودغي | أخصائي SEO والنمو"
   };
 
   const baseUrl = 'https://www.mohamedtoudghi.com';

@@ -8,6 +8,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { BASE_URL, localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
 import { SERVICE_PAGES, serviceHref } from "@/lib/services";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 interface Props {
     params: Promise<{
@@ -153,7 +154,7 @@ export default async function CaseStudyPage({ params }: Props) {
                             </li>
                         ))}
                     </ul>
-                    <div data-tone="white" className="mt-6 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-wrap items-center justify-between gap-5">
+                    {OPEN_FOR_WORK && <div data-tone="white" className="mt-6 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-wrap items-center justify-between gap-5">
                         <div className="flex flex-col gap-1 max-w-[560px]">
                             <p className="m-0 text-[19px] font-semibold text-ink">{tUI('cta_title')}</p>
                             <p className="m-0 text-[16px] text-ink-soft">{tUI('cta_text')}</p>
@@ -161,7 +162,7 @@ export default async function CaseStudyPage({ params }: Props) {
                         <Link href="/contact" className="btn inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white">
                             {tUI('cta_button')} <span className="arrow" aria-hidden="true">→</span>
                         </Link>
-                    </div>
+                    </div>}
                 </section>
             )}
 

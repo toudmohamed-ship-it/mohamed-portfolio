@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 
 interface FinalCTAProps {
     title?: string;
@@ -10,6 +10,7 @@ interface FinalCTAProps {
 
 export default function FinalCTA({ title, description, buttonText }: FinalCTAProps) {
     const t = useTranslations("HomePage.FinalCTA");
+    if (!OPEN_FOR_WORK) return null;
 
     return (
         <section id="cta" data-tone="dark" className="relative overflow-hidden bg-ink text-paper">

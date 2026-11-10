@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
 import { SERVICE_PAGES, serviceHref } from "@/lib/services";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -119,7 +120,7 @@ export default async function ServicesPage({ params }: Props) {
                                             {tPages(`${p.slug}.title`)} <span className="arrow" aria-hidden="true">→</span>
                                         </Link>
                                     ))}
-                                    <Link href="/contact" className="btn font-medium no-underline text-ink">{t('core_services.cta_discuss')} <span className="arrow" aria-hidden="true">→</span></Link>
+                                    {OPEN_FOR_WORK && <Link href="/contact" className="btn font-medium no-underline text-ink">{t('core_services.cta_discuss')} <span className="arrow" aria-hidden="true">→</span></Link>}
                                 </div>
                             </div>
                         </article>

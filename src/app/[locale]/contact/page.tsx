@@ -1,6 +1,6 @@
 import PageHeader from "@/components/ui/PageHeader";
 import ContactForm from "@/components/ui/ContactForm";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { localizedUrl, pageAlternates } from "@/lib/seo";
 
@@ -11,13 +11,14 @@ interface Props {
 export async function generateMetadata({ params }: Props) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: 'ContactPage.metadata' });
+    const c = await getTranslations({ locale, namespace: 'ContactPage.closed' });
 
     return {
-        title: t('title'),
-        description: t('description'),
+        title: OPEN_FOR_WORK ? t('title') : c('meta_title'),
+        description: OPEN_FOR_WORK ? t('description') : c('meta_description'),
         openGraph: {
-            title: t('og_title'),
-            description: t('og_description'),
+            title: OPEN_FOR_WORK ? t('og_title') : c('meta_title'),
+            description: OPEN_FOR_WORK ? t('og_description') : c('meta_description'),
             url: localizedUrl(locale, '/contact'),
         },
         alternates: pageAlternates(locale, '/contact'),
@@ -44,13 +45,13 @@ export default async function ContactPage({ params }: Props) {
                 locale={locale}
                 crumbs={[{ label: tCrumbs('home'), href: '/' }, { label: tCrumbs('contact') }]}
                 eyebrow={t('header.eyebrow')}
-                title={t('header.title')}
-                lead={t('header.subtitle')}
+                title={OPEN_FOR_WORK ? t('header.title') : t('closed.title')}
+                lead={OPEN_FOR_WORK ? t('header.subtitle') : t('closed.subtitle')}
             />
 
             <section className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-16 items-start">
                 <div className="flex flex-col gap-12">
-                    <section id="mini-audit" aria-labelledby="mini-audit-title" className="scroll-mt-24 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-col gap-4">
+                    {OPEN_FOR_WORK && <section id="mini-audit" aria-labelledby="mini-audit-title" className="scroll-mt-24 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-col gap-4">
                         <h2 id="mini-audit-title" className="m-0 text-2xl font-semibold">{t('mini_audit.title')}</h2>
                         <ul className="list-none m-0 p-0 flex flex-col gap-3">
                             {(t.raw('mini_audit.points') as string[]).map((point) => (
@@ -61,7 +62,7 @@ export default async function ContactPage({ params }: Props) {
                             ))}
                         </ul>
                         <p className="m-0 text-[15px] text-muted">{t('mini_audit.note')}</p>
-                    </section>
+                    </section>}
 
                     <div className="flex flex-col gap-4">
                         <h2 className="m-0 text-2xl font-semibold">{t('info.title')}</h2>
@@ -84,7 +85,7 @@ export default async function ContactPage({ params }: Props) {
                         </ul>
                     </div>
 
-                    <div className="flex flex-col gap-5">
+                    {OPEN_FOR_WORK && <div className="flex flex-col gap-5">
                         <h2 className="m-0 text-2xl font-semibold">{t('steps.title')}</h2>
                         <ol className="list-none m-0 p-0 flex flex-col gap-5">
                             {steps.map((step, i) => (
@@ -94,7 +95,7 @@ export default async function ContactPage({ params }: Props) {
                                 </li>
                             ))}
                         </ol>
-                    </div>
+                    </div>}
                 </div>
 
                 <ContactForm />

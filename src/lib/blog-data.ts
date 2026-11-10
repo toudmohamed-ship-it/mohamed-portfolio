@@ -13,8 +13,8 @@ export interface BlogPost {
 }
 
 export const BLOG_POSTS: BlogPost[] = [
-    { slug: "local-seo-guide-businesses", published: "2025-12-12", category: "Local SEO", locales: ["en", "fr", "ar"] },
-    { slug: "technical-seo-checklist-2026", published: "2026-01-02", category: "Technical SEO", locales: ["en", "fr", "ar"] },
+    { slug: "local-seo-guide-businesses", published: "2025-12-12", modified: "2026-11-10", category: "Local SEO", locales: ["en", "fr", "ar"] },
+    { slug: "technical-seo-checklist-2026", published: "2026-01-02", modified: "2026-11-10", category: "Technical SEO", locales: ["en", "fr", "ar"] },
     { slug: "technical-seo-audit-checklist-lead-gen", published: "2026-01-05", modified: "2026-11-06", category: "Technical SEO", locales: ["en", "fr"] },
     { slug: "why-websites-fail", published: "2025-12-05", modified: "2026-11-06", category: "Strategy", locales: ["en", "fr"] },
     { slug: "ga4-event-tracking", published: "2025-11-28", modified: "2026-11-01", category: "Analytics", locales: ["en", "fr", "ar"] },

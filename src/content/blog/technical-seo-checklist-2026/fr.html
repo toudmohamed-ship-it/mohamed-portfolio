@@ -1,82 +1,391 @@
+<p class="lead">Le SEO technique est le travail qui permet aux moteurs de recherche d'explorer, de comprendre et d'indexer un site, et aux visiteurs de l'utiliser rapidement. Sur un site d'entreprise de services ou de SaaS, il décide si les pages qui apportent des prospects (services, tarifs, démo, contact) peuvent se classer. Ce guide couvre les cinq domaines à vérifier, un audit en cinq étapes, les problèmes les plus fréquents et ce qu'il faut corriger en premier.</p>
 
-<h1>SEO Technique pour les entreprises de services et SaaS : Le guide complet</h1>
-
-<p class="lead">La plupart des guides de SEO technique se concentrent sur les sites e-commerce massifs. Mais pour les <strong>entreprises de services, la génération de leads B2B et les plateformes SaaS</strong>, les priorités sont différentes. Vous n'avez pas besoin de gérer 10 millions d'URL ; vous avez besoin d'un entonnoir qui est crawlé parfaitement, indexé rapidement et qui convertit sans friction.</p>
-
-<p>Voici le cadre complet que j'utilise pour auditer et optimiser les bases techniques des sites web de services et SaaS.</p>
-
-<div class="toc-container">
-  <h2>Table des matières</h2>
-  <ul>
-    <li><a href="#what-is-technical-seo">Qu'est-ce que le SEO technique (pour Lead-Gen & SaaS) ?</a></li>
-    <li><a href="#why-it-matters">Pourquoi c'est important pour le B2B</a></li>
-    <li><a href="#crawlability-indexation">Bases de l'explorabilité et de l'indexation</a></li>
-    <li><a href="#site-architecture">Architecture du site et maillage interne</a></li>
-    <li><a href="#core-web-vitals">Core Web Vitals et performance</a></li>
-    <li><a href="#local-seo-overlap">SEO technique et SEO local</a></li>
-    <li><a href="#international">Considérations internationales et multilingues</a></li>
-    <li><a href="#tracking">Suivi et fondations Data Layer</a></li>
-    <li><a href="#audit-process">Mon cadre d'audit SEO technique</a></li>
-  </ul>
-</div>
-
-<h2 id="what-is-technical-seo">Qu'est-ce que le SEO technique (pour Lead-Gen & SaaS) ?</h2>
-<p>Le SEO technique est la pratique consistant à optimiser l'infrastructure de votre site web afin que les moteurs de recherche puissent explorer, comprendre et indexer votre contenu efficacement. Pour un <strong>SaaS ou une entreprise de services</strong>, il ne s'agit pas seulement de corriger des erreurs ; il s'agit de s'assurer que votre <strong>autorité de contenu</strong> se traduit par des classements.</p>
-<p>Contrairement aux grands sites e-commerce où le "budget de crawl" est l'ennemi n°1, les sites B2B luttent avec :</p>
+<h2 id="why-it-matters">Pourquoi le SEO technique compte pour les entreprises de services et le SaaS</h2>
+<p>Le SEO technique compte parce qu'une page qui apporte des prospects ne peut se classer que si Google peut l'explorer et l'indexer, et ne peut convertir que si elle se charge vite. Sur un site de génération de leads ou de SaaS, il détermine :</p>
 <ul>
-    <li><strong>Surcharge d'indexation :</strong> Pages de balises WordPress, archives vides et paramètres PDF diluant la valeur.</li>
-    <li><strong>Contenu orphelin :</strong> Livres blancs ou études de cas de grande valeur cachés profondément dans l'architecture.</li>
-    <li><strong>Rendu JavaScript :</strong> Pages marketing SaaS construites avec des frameworks React/Next.js lourds que Google a du mal à lire.</li>
+  <li>Avec quelle efficacité les moteurs de recherche explorent et découvrent vos pages clés (services, tarifs, démo, essai, contact).</li>
+  <li>Si ces pages sont réellement indexées et peuvent se classer.</li>
+  <li>La rapidité et la stabilité de l'expérience quand quelqu'un arrive sur votre site et décide de réserver une démo, de commencer un essai ou de remplir un formulaire de consultation.</li>
+</ul>
+<p>Contrairement au e-commerce, où l'attention porte souvent sur les fiches produits et la navigation à facettes, les sites de services et de SaaS sont généralement construits autour de :</p>
+<ul>
+  <li><strong>Pages à forte intention</strong> (services, solutions, tarifs, démo ou essai, contact).</li>
+  <li><strong>Contenu d'expertise et pédagogique</strong> (blog, ressources, guides, webinaires).</li>
+  <li><strong>Parcours de conversion</strong> qui reposent sur la confiance et l'ergonomie plutôt que sur un paiement rapide.</li>
+</ul>
+<p>Ce guide porte sur le SEO technique des entreprises de services, des sites B2B et des plateformes SaaS. Vous pouvez l'appliquer en interne ou le confier à une agence ou à un consultant.</p>
+
+<h2 id="what-is-technical-seo">Qu'est-ce que le SEO technique (pour les sites de leads et de SaaS) ?</h2>
+<p>Le SEO technique consiste à optimiser la configuration technique de votre site pour que les moteurs de recherche puissent :</p>
+<ul>
+  <li>Explorer vos pages efficacement.</li>
+  <li>Comprendre et indexer votre contenu correctement.</li>
+  <li>Offrir aux utilisateurs une expérience rapide, stable et sécurisée.</li>
+</ul>
+<p>Sur un site de services ou de SaaS, le SEO technique se situe entre le contenu et le développement :</p>
+<ul>
+  <li><strong>SEO on-page et contenu :</strong> ce que vous dites et les mots-clés que vous ciblez.</li>
+  <li><strong>SEO off-page :</strong> qui fait des liens vers vous et quelle autorité a votre marque.</li>
+  <li><strong>SEO technique :</strong> à quel point votre site est découvrable, accessible et performant, pour les robots comme pour les personnes.</li>
+</ul>
+<p>Les notions techniques clés :</p>
+<ul>
+  <li><strong>Exploration et budget de crawl :</strong> les robots atteignent-ils vos pages importantes, et utilisent-ils leurs ressources limitées sur les bonnes URL ?</li>
+  <li><strong>Indexation :</strong> quelles pages sont réellement enregistrées dans l'index du moteur et peuvent se classer ?</li>
+  <li><strong>Structure du site et maillage interne :</strong> comment votre contenu est organisé et relié.</li>
+  <li><strong>Core Web Vitals et performance :</strong> la vitesse de chargement et de réaction de vos pages, et la stabilité de leur mise en page.</li>
+  <li><strong>Données structurées (schema) :</strong> du code qui aide les moteurs à comprendre votre entreprise, vos services et votre contenu.</li>
+</ul>
+<p>Quand la base technique est saine, le nouveau contenu et les nouveaux liens peuvent produire leur effet. Quand elle est cassée, ils sont perdus sur des pages que Google n'indexe pas ou qui se chargent trop lentement pour se classer.</p>
+
+<h2 id="impact-leads">Comment le SEO technique influence les leads, les démos et les essais</h2>
+<p>Le SEO technique influence les leads de quatre façons directes : les pages non indexées n'apportent aucune visite, les pages lentes perdent des visiteurs avant la conversion, les pages enfouies reçoivent moins d'attention de Google et des utilisateurs, et les URL de faible valeur détournent l'exploration des pages qui comptent. Chacune se voit dans les demandes de consultation, les réservations de démo et les inscriptions à l'essai :</p>
+<ul>
+  <li><strong>Une page non indexée ne peut pas générer de leads.</strong> Une page « Demander une démo » bloquée par le robots.txt ou marquée <code>noindex</code> n'apparaîtra jamais dans les résultats, quelle que soit la qualité du texte.</li>
+  <li><strong>Les pages lentes font perdre des conversions.</strong> Les visiteurs d'une page de tarifs lente partent plus souvent avant d'avoir vu votre offre. Les Core Web Vitals (comme le LCP et l'INP) mesurent justement ces moments de frustration.</li>
+  <li><strong>Une mauvaise structure cache vos services.</strong> Si vos pages de services ou de solutions sont à trois ou quatre niveaux de profondeur, ou absentes du menu principal, Google peut les juger moins importantes, et les utilisateurs peuvent ne jamais les trouver.</li>
+  <li><strong>Les URL inutiles diluent le budget de crawl.</strong> Des milliers d'URL pauvres ou dupliquées (pages de tags, résultats de recherche interne, URL filtrées) peuvent consommer le budget de crawl et retarder l'exploration de vos pages de génération de leads.</li>
+</ul>
+<p>Quand vous reliez le travail technique à un résultat concret, par exemple « corriger X rendra nos pages de services principales plus faciles à découvrir et plus rapides », il devient plus facile de le prioriser et de justifier l'investissement.</p>
+
+<h2 id="5-pillars">Les 5 piliers d'une base technique saine</h2>
+<p>Une base technique saine repose sur cinq domaines : l'exploration, l'indexation, la structure du site, la performance et les données structurées. Chaque partie ci-dessous dit ce qu'est le domaine et ce qu'il faut vérifier.</p>
+
+<h3>1. Exploration et budget de crawl</h3>
+<p>L'exploration (crawlabilité), c'est la capacité des robots des moteurs à atteindre vos pages. Le budget de crawl, c'est le nombre d'URL qu'un moteur explore sur votre site pendant une période donnée.</p>
+<p><strong>Leviers principaux :</strong></p>
+<p><strong>robots.txt :</strong> ce fichier indique aux robots quels chemins ils peuvent explorer ou non. Sur un site de génération de leads, en général :</p>
+<ul>
+  <li>Autorisez l'accès au contenu principal, au blog et aux ressources.</li>
+  <li>Bloquez les chemins inutiles ou sensibles (par exemple <code>/wp-admin/</code>, les résultats de recherche interne, les environnements de préproduction).</li>
+</ul>
+<p><strong>Sitemaps XML :</strong> ils listent les URL que vous voulez faire découvrir et indexer. Pour un site de services ou de SaaS :</p>
+<ul>
+  <li>Incluez les pages principales (accueil, services, tarifs, démo, contact).</li>
+  <li>Incluez les articles et ressources qui doivent se classer.</li>
+  <li>Excluez les pages <code>noindex</code> et les URL de faible valeur.</li>
+</ul>
+<p><strong>Liens internes :</strong> ils guident les robots dans votre site. Une page qui ne reçoit aucun lien interne (page orpheline) est difficile à découvrir et à évaluer pour les robots.</p>
+<p>Optimiser l'exploration, c'est supprimer les pièges à robots (calendriers infinis, filtres à facettes), resserrer le robots.txt, et faire en sorte que les sitemaps et les liens internes mettent en avant les URL qui comptent pour les leads et les essais.</p>
+
+<h3>2. Indexation et canonicalisation</h3>
+<p>Une fois une page explorée, Google décide s'il l'indexe. La couverture de l'index est l'ensemble des URL de votre site présentes dans l'index de Google. La canonicalisation est la façon d'indiquer la version « principale » d'une page quand plusieurs URL ont un contenu proche ou identique.</p>
+<p><strong>Points clés :</strong></p>
+<p><strong>Couverture de l'index :</strong> le rapport Indexation des pages de la Google Search Console montre :</p>
+<ul>
+  <li>Quelles pages sont indexées.</li>
+  <li>Lesquelles ne le sont pas, et pourquoi (par exemple « Explorée, actuellement non indexée » ou « Doublon : Google n'a pas choisi la même URL canonique que l'utilisateur »).</li>
 </ul>
 
-<h2 id="why-it-matters">Pourquoi c'est important pour le B2B</h2>
-<p>Vous pourriez penser : "Je n'ai que 50 pages, pourquoi ai-je besoin de SEO technique ?"</p>
-<p><strong>Qualité des leads et attribution :</strong> Une configuration technique défectueuse (comme des canoniques incorrectes) détruit vos analyses. Vous ne pouvez pas optimiser pour les conversions si vous ne pouvez pas suivre quelle page de destination a réellement été classée.</p>
-<p><strong>Le facteur "Confiance" :</strong> Pour le B2B, un site lent ou une mise en page mobile cassée n'est pas seulement un problème UX ; c'est un tueur de crédibilité. Les clients à gros budget vous auditent pendant qu'ils naviguent.</p>
+<figure class="fig">
+  <table>
+    <thead><tr><th>Motif dans la Search Console</th><th>Ce que cela veut dire en général</th><th>Ce qu'il faut vérifier</th></tr></thead>
+    <tbody>
+      <tr><td>Explorée, actuellement non indexée</td><td>Google a vu la page mais ne l'a pas encore jugée digne d'être indexée.</td><td>Contenu pauvre ou dupliqué, maillage interne faible.</td></tr>
+      <tr><td>Détectée, actuellement non indexée</td><td>Google connaît l'URL mais ne l'a pas explorée.</td><td>Budget de crawl, serveur lent, trop d'URL de faible valeur.</td></tr>
+      <tr><td>Doublon : Google n'a pas choisi la même URL canonique que l'utilisateur</td><td>Google a ignoré votre balise canonical.</td><td>Pages presque identiques, canonicals et liens internes contradictoires.</td></tr>
+      <tr><td>Exclue par la balise « noindex »</td><td>La page demande à ne pas être indexée.</td><td>Vérifiez que c'est voulu, surtout après un lancement de site.</td></tr>
+      <tr><td>Page avec redirection</td><td>L'URL redirige ailleurs.</td><td>Les liens internes et le sitemap doivent pointer vers l'URL finale.</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 1 : motifs fréquents du rapport Indexation des pages et où regarder en premier.</figcaption>
+</figure>
 
-<h2 id="crawlability-indexation">Bases de l'explorabilité et de l'indexation</h2>
-<p>Avant d'être classé, vous devez être indexé. Mais vous ne voulez pas que <em>tout</em> soit indexé.</p>
-<h3>Robots.txt & Sitemap.xml</h3>
-<p>Assurez-vous que votre <code>robots.txt</code> ne bloque pas vos ressources CSS/JS critiques. Pour les SaaS, assurez-vous que votre <code>app.votredomaine.com</code> (la zone de connexion) est correctement désavouée ou bloquée.</p>
-
-<h2 id="site-architecture">Architecture du site et maillage interne</h2>
-<p>Votre structure doit refléter votre entonnoir de vente.</p>
+<p><strong>Balises canonical :</strong> une balise canonical (<code>&lt;link rel="canonical" href="..." /&gt;</code>) indique aux moteurs quelle version d'une URL est la version préférée.</p>
 <ul>
-    <li><strong>Page d'accueil</strong> (Autorité de marque)</li>
-    <li><strong>Pages Services / Solutions</strong> (Intention commerciale)</li>
-    <li><strong>Cas d'utilisation / Industries</strong> (Intention de niche)</li>
-    <li><strong>Ressources / Blog</strong> (Intention informationnelle)</li>
+  <li>Exemple : <code>https://example.com/pricing/</code> est la version canonique, et <code>https://example.com/pricing?utm_source=google</code> doit pointer vers elle.</li>
+  <li>Évitez les contradictions (une canonical qui pointe vers une autre page sans raison).</li>
+</ul>
+<p><strong>Contenu dupliqué et index gonflé :</strong> sources fréquentes :</p>
+<ul>
+  <li>Plusieurs variantes d'URL (<code>/</code>, <code>/index.php</code>, paramètres de suivi).</li>
+  <li>Archives de tags ou de catégories au contenu qui se recoupe.</li>
+  <li>Environnements de préproduction ou de test indexés.</li>
+</ul>
+<p>Pour un site B2B ou SaaS, un bon SEO technique garde l'index léger et ciblé : seules les pages utiles qui méritent de se classer sont indexables.</p>
+
+<h3>3. Structure du site et maillage interne</h3>
+<p>L'architecture du site, c'est l'organisation de votre contenu en répertoires et la façon dont les pages sont reliées par des liens internes. Pour un site de services ou de SaaS, une structure logique est essentielle pour présenter vos offres principales aux utilisateurs comme aux moteurs.</p>
+<p>Une bonne approche est le <strong>modèle en étoile, ou cocon thématique</strong> :</p>
+
+<figure class="fig">
+  <svg viewBox="0 0 640 360" role="img" aria-labelledby="hubTitleFr">
+    <title id="hubTitleFr">Modèle en étoile : une page de service reliée à six articles associés, chacun renvoyant vers elle</title>
+    <line x1="320" y1="180" x2="320" y2="46" stroke="#CFE0D6" stroke-width="3"/>
+    <line x1="320" y1="180" x2="520" y2="110" stroke="#CFE0D6" stroke-width="3"/>
+    <line x1="320" y1="180" x2="520" y2="250" stroke="#CFE0D6" stroke-width="3"/>
+    <line x1="320" y1="180" x2="320" y2="314" stroke="#CFE0D6" stroke-width="3"/>
+    <line x1="320" y1="180" x2="120" y2="250" stroke="#CFE0D6" stroke-width="3"/>
+    <line x1="320" y1="180" x2="120" y2="110" stroke="#CFE0D6" stroke-width="3"/>
+    <rect x="205" y="148" width="230" height="64" rx="32" fill="#2E6B57"/>
+    <text x="320" y="176" text-anchor="middle" font-size="17" font-weight="600" fill="#FFFFFF" font-family="inherit">Page de service</text>
+    <text x="320" y="197" text-anchor="middle" font-size="13" fill="#CFE0D6" font-family="inherit">pilier, vise le mot-clé principal</text>
+    <rect x="248" y="26" width="144" height="40" rx="20" fill="#FFFFFF" stroke="#D5CFC3"/>
+    <text x="320" y="51" text-anchor="middle" font-size="14" fill="#1C2321" font-family="inherit">Article associé</text>
+    <rect x="448" y="90" width="144" height="40" rx="20" fill="#FFFFFF" stroke="#D5CFC3"/>
+    <text x="520" y="115" text-anchor="middle" font-size="14" fill="#1C2321" font-family="inherit">Article associé</text>
+    <rect x="448" y="230" width="144" height="40" rx="20" fill="#FFFFFF" stroke="#D5CFC3"/>
+    <text x="520" y="255" text-anchor="middle" font-size="14" fill="#1C2321" font-family="inherit">Article associé</text>
+    <rect x="248" y="294" width="144" height="40" rx="20" fill="#FFFFFF" stroke="#D5CFC3"/>
+    <text x="320" y="319" text-anchor="middle" font-size="14" fill="#1C2321" font-family="inherit">Article associé</text>
+    <rect x="48" y="230" width="144" height="40" rx="20" fill="#FFFFFF" stroke="#D5CFC3"/>
+    <text x="120" y="255" text-anchor="middle" font-size="14" fill="#1C2321" font-family="inherit">Article associé</text>
+    <rect x="48" y="90" width="144" height="40" rx="20" fill="#FFFFFF" stroke="#D5CFC3"/>
+    <text x="120" y="115" text-anchor="middle" font-size="14" fill="#1C2321" font-family="inherit">Article associé</text>
+  </svg>
+  <figcaption>Figure 2 : la page pilier renvoie vers chaque article associé et chaque article renvoie vers elle, pour que l'autorité aille vers la page qui apporte les leads.</figcaption>
+</figure>
+
+<ul>
+  <li><strong>Pages piliers :</strong> pages de services ou de solutions qui visent les sujets larges, par exemple :
+    <ul>
+      <li><code>/services/seo-consulting/</code></li>
+      <li><code>/solutions/enterprise-saas-platform/</code></li>
+    </ul>
+  </li>
+  <li><strong>Contenu associé :</strong> articles, guides et ressources qui approfondissent un sous-sujet et renvoient vers la page pilier, par exemple :
+    <ul>
+      <li><a href="/fr/blog/technical-seo-audit-checklist-lead-gen">Checklist d'audit SEO technique pour les sites de génération de leads</a></li>
+    </ul>
+  </li>
+</ul>
+<p><strong>Bonnes pratiques :</strong></p>
+<ul>
+  <li>Gardez les pages importantes à 2 ou 3 clics maximum de la page d'accueil.</li>
+  <li>Utilisez des URL claires et descriptives (par exemple <code>/services/technical-seo/</code> plutôt que <code>/page-id=123</code>).</li>
+  <li>Utilisez un fil d'Ariane pour renforcer la hiérarchie, pour les utilisateurs comme pour les robots.</li>
 </ul>
 
-<h2 id="core-web-vitals">Core Web Vitals et performance</h2>
-<p>La vitesse est une métrique de conversion. Pour les pages de destination de génération de leads, le <strong>Largest Contentful Paint (LCP)</strong> est critique.</p>
-
-<h2 id="local-seo-overlap">SEO technique et SEO local</h2>
-<p>Si vous êtes une entreprise de services avec des emplacements physiques (ex : Cabinet d'avocats), votre structure technique dicte vos classements sur les cartes.</p>
+<h3>4. Performance et Core Web Vitals</h3>
+<p>Les Core Web Vitals sont les trois mesures de Google sur l'expérience réelle des utilisateurs : chargement, réactivité et stabilité visuelle. Google les utilise dans ses systèmes de classement, et elles suivent aussi les moments où les visiteurs abandonnent.</p>
+<p>Les trois Core Web Vitals :</p>
 <ul>
-    <li><strong>Pages de localisation :</strong> des URL spécifiques comme <code>/locations/paris</code> nécessitent un contenu unique et un schéma LocalBusiness spécifique.</li>
+  <li><strong>Largest Contentful Paint (LCP) :</strong> mesure la vitesse d'affichage du contenu principal. Visez moins de 2,5 secondes.</li>
+  <li><strong>Interaction to Next Paint (INP) :</strong> remplace le FID ; mesure la réactivité quand l'utilisateur interagit (clic, toucher, touche du clavier). Visez 200 ms ou moins.</li>
+  <li><strong>Cumulative Layout Shift (CLS) :</strong> mesure la stabilité de la mise en page (par exemple des boutons qui bougent pendant le chargement d'images ou de publicités). Visez 0,1 ou moins.</li>
 </ul>
 
-<h2 id="international">Considérations internationales et multilingues</h2>
-<p>L'expansion vers les marchés mondiaux (Amérique du Nord, Europe, MENA) nécessite une mise en œuvre stricte de <strong>Hreflang</strong>.</p>
-<pre><code class="language-html">
-&lt;link rel="alternate" hreflang="en" href="https://example.com/en/service" /&gt;
-&lt;link rel="alternate" hreflang="fr" href="https://example.com/fr/service" /&gt;
-</code></pre>
+<figure class="fig">
+  <div class="cwv">
+    <div class="cwv-row"><strong>LCP</strong><div class="cwv-bar"><span class="cwv-good">Bon ≤ 2,5 s</span><span class="cwv-mid">≤ 4 s</span><span class="cwv-poor">Mauvais &gt; 4 s</span></div></div>
+    <div class="cwv-row"><strong>INP</strong><div class="cwv-bar"><span class="cwv-good">Bon ≤ 200 ms</span><span class="cwv-mid">≤ 500 ms</span><span class="cwv-poor">Mauvais &gt; 500 ms</span></div></div>
+    <div class="cwv-row"><strong>CLS</strong><div class="cwv-bar"><span class="cwv-good">Bon ≤ 0,1</span><span class="cwv-mid">≤ 0,25</span><span class="cwv-poor">Mauvais &gt; 0,25</span></div></div>
+  </div>
+  <figcaption>Figure 3 : seuils des Core Web Vitals de Google, mesurés au 75e centile des chargements réels. La bande du milieu correspond à « amélioration nécessaire ».</figcaption>
+</figure>
 
-<h2 id="audit-process">Mon cadre d'audit SEO technique</h2>
-<ol>
-    <li><strong>Analyse de crawl :</strong> Simuler Googlebot pour voir exactement ce qui est rendu.</li>
-    <li><strong>Analyse des logs :</strong> Vérifier les journaux du serveur pour voir où les bots vont <em>réellement</em>.</li>
-    <li><strong>Tri de l'indexation :</strong> Révision manuelle des rapports "Indexé, non soumis dans le sitemap" dans GSC.</li>
-</ol>
-
-<h2 id="hire-specialist">Quand engager un spécialiste en SEO technique</h2>
-<p>Vous n'avez pas besoin d'un audit mensuel si votre site est petit. Mais vous avez besoin d'un spécialiste quand :</p>
+<p>Pour les entreprises de services et le SaaS :</p>
 <ul>
-    <li>Vous faites une <strong>migration</strong> de domaine ou de CMS.</li>
-    <li>Vous lancez une version <strong>multilingue</strong>.</li>
-    <li>Votre trafic organique a <strong>chuté soudainement</strong>.</li>
+  <li>Un LCP lent sur votre page de tarifs ou de démo pénalise directement la génération de leads.</li>
+  <li>Un mauvais INP sur les formulaires (interactions ou validations lentes) pousse les utilisateurs à abandonner l'inscription.</li>
+  <li>Un CLS élevé sur une page d'atterrissage provoque des clics involontaires et de la frustration, et entame la confiance.</li>
+</ul>
+<p>Les corrections courantes : optimiser les images (compression, formats modernes comme le WebP), réduire les scripts qui bloquent l'affichage, utiliser un thème ou un framework rapide, et différer le JavaScript non essentiel.</p>
+
+<h3>5. Données structurées et résultats enrichis</h3>
+<p>Les données structurées (schema) sont du code, généralement en JSON-LD, ajouté à vos pages pour aider les moteurs à comprendre des entités précises : votre organisation, vos services, vos articles, vos FAQ.</p>
+<p>Les données structurées ne sont pas un facteur de classement direct, mais elles peuvent :</p>
+<ul>
+  <li>Améliorer l'affichage de vos extraits dans les résultats (résultats enrichis).</li>
+  <li>Augmenter le taux de clic sur les pages clés.</li>
+  <li>Clarifier le contexte de votre marque et de vos offres.</li>
+</ul>
+<p><strong>Types de schema utiles pour un site de services ou de SaaS :</strong></p>
+<ul>
+  <li><strong>Organization :</strong> les informations de votre entreprise (nom, logo, profils sociaux).</li>
+  <li><strong>LocalBusiness :</strong> si vous avez des bureaux ou des zones desservies (lien avec le SEO local).</li>
+  <li><strong>Service / Product :</strong> vos offres principales, en particulier les services et les formules SaaS.</li>
+  <li><strong>Article / BlogPosting :</strong> pour le contenu éditorial.</li>
+  <li><strong>FAQPage :</strong> pour les sections FAQ des pages de services ou de fonctionnalités.</li>
+  <li><strong>BreadcrumbList :</strong> pour le fil d'Ariane.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<ul>
+  <li>Une page « Tarifs et formules » peut utiliser le balisage <code>Product</code> ou <code>Service</code> pour chaque formule, et FAQPage pour les questions fréquentes sur les prix.</li>
+  <li>Un article comme « Checklist d'audit SEO technique pour les sites de génération de leads » peut utiliser Article et FAQPage.</li>
+</ul>
+<p>Validez toujours vos données structurées avec le test des résultats enrichis de Google et corrigez les avertissements et erreurs avant un déploiement à grande échelle.</p>
+
+<h2 id="audit-framework">Un audit SEO technique étape par étape</h2>
+<p>Un audit SEO technique d'un site de services ou de SaaS se fait en cinq étapes : explorer le site, vérifier l'indexation dans la Search Console, examiner la structure et les liens internes, mesurer la performance, puis valider les données structurées et les réglages globaux. Vous pouvez le mener en interne ou en faire la base d'une mission de consultant.</p>
+
+<h3>Étape 1 : explorer le site</h3>
+<p>Un crawler visite chaque URL qu'il peut atteindre depuis votre page d'accueil, comme le fait un moteur de recherche, et liste les erreurs rencontrées en chemin.</p>
+<p><strong>Outils possibles :</strong></p>
+<ul>
+  <li>Screaming Frog SEO Spider (répandu et complet pour la plupart des sites B2B et SaaS).</li>
+  <li>Sitebulb (rapports visuels, pratique pour les agences).</li>
+  <li>Semrush Site Audit ou Ahrefs Site Audit (adaptés au suivi régulier).</li>
+</ul>
+<p><strong>Ce qu'il faut regarder :</strong></p>
+<ul>
+  <li><strong>Codes de réponse :</strong>
+    <ul>
+      <li>200 (OK) : la plupart des contenus doivent renvoyer ce code.</li>
+      <li>3xx : redirections. Cherchez les chaînes de redirections longues et les boucles.</li>
+      <li>4xx : pages cassées (404, 410). Corrigez ou redirigez d'abord les plus importantes.</li>
+      <li>5xx : erreurs serveur, à corriger rapidement.</li>
+    </ul>
+  </li>
+  <li><strong>Liens cassés :</strong> les liens internes vers des 404 gaspillent le budget de crawl et gênent les utilisateurs. Mettez-les à jour, supprimez-les ou redirigez vers la page la plus proche.</li>
+  <li><strong>Balises canonical :</strong> chaque page indexable doit avoir une canonical cohérente vers elle-même (sauf intention contraire). Cherchez les doublons où plusieurs URL partagent le même contenu avec des canonicals incohérentes.</li>
+  <li><strong>Directives et balises meta :</strong> repérez les pages en <code>noindex</code>, <code>nofollow</code> ou avec d'autres directives. Vérifiez qu'elles correspondent à votre intention (par exemple <code>noindex</code> sur les pages de remerciement et les résultats de recherche interne, mais pas sur les pages de services).</li>
 </ul>
 
-<p class="final-cta"><strong>Besoin d'un audit approfondi ?</strong> Je me spécialise dans le SEO technique pour les architectures complexes de services et SaaS. <a href="/contact">Contactez-moi</a> pour discuter de votre projet.</p>
+<h3>Étape 2 : analyser l'indexation dans la Google Search Console</h3>
+<p>La Google Search Console (GSC) montre lesquelles de vos pages Google a indexées et pourquoi il a laissé les autres de côté.</p>
+<p><strong>Rapports clés :</strong></p>
+<p><strong>Pages (Indexation &gt; Pages) :</strong></p>
+<ul>
+  <li><strong>Indexées :</strong> vos pages de services, de tarifs et de démo y sont-elles ?</li>
+  <li><strong>Non indexées :</strong> examinez les motifs :
+    <ul>
+      <li>« Explorée, actuellement non indexée »</li>
+      <li>« Détectée, actuellement non indexée »</li>
+      <li>« Doublon : Google n'a pas choisi la même URL canonique que l'utilisateur »</li>
+      <li>« Autre page avec balise canonique correcte »</li>
+    </ul>
+  </li>
+</ul>
+<p><strong>Rapport Sitemaps :</strong></p>
+<ul>
+  <li>Vérifiez les sitemaps XML envoyés.</li>
+  <li>Confirmez qu'ils :
+    <ul>
+      <li>Sont valides et à jour.</li>
+      <li>Ne contiennent que des URL que vous voulez indexer.</li>
+      <li>Correspondent à vos versions canoniques (https ou http, www ou non).</li>
+    </ul>
+  </li>
+</ul>
+<p><strong>Signaux à repérer :</strong></p>
+<ul>
+  <li>Des pages importantes non indexées ou marquées comme doublons.</li>
+  <li>Beaucoup d'URL de faible valeur (paramètres, archives) explorées mais non indexées.</li>
+  <li>Des écarts entre ce que dit le sitemap et ce qui est réellement indexé.</li>
+</ul>
+
+<h3>Étape 3 : examiner l'architecture et les liens internes</h3>
+<p>Vos pages clés doivent être reliées depuis le menu principal et depuis le contenu associé, et se trouver à trois clics maximum de la page d'accueil.</p>
+<p><strong>Questions à se poser :</strong></p>
+<ul>
+  <li><strong>Les pages à forte intention sont-elles visibles ?</strong> Services, solutions, tarifs, démo, essai et contact doivent être reliés depuis :
+    <ul>
+      <li>Le menu principal.</li>
+      <li>Des liens contextuels dans les articles et ressources liés.</li>
+      <li>Le pied de page (pour plus de visibilité).</li>
+    </ul>
+  </li>
+  <li><strong>Pages proches ou profondes :</strong>
+    <ul>
+      <li>Pages proches : à 1 à 3 clics de la page d'accueil.</li>
+      <li>Pages profondes : à 4 niveaux ou plus.</li>
+      <li>Les pages importantes (services, ressources à forte intention) doivent être proches.</li>
+    </ul>
+  </li>
+  <li><strong>Structure des URL :</strong> utilisez des répertoires clairs et logiques :
+    <ul>
+      <li><code>/services/technical-seo/</code></li>
+      <li><code>/industries/b2b-saas/</code></li>
+      <li><code>/resources/technical-seo-audit-checklist/</code></li>
+    </ul>
+  </li>
+  <li><strong>Fil d'Ariane :</strong> il améliore l'ergonomie et ajoute des liens internes. Gardez une hiérarchie cohérente et ajoutez le schema BreadcrumbList.</li>
+</ul>
+<p>Pour un site B2B ou SaaS, formalisez vos cocons thématiques. Exemple :</p>
+<ul>
+  <li><strong>Page pilier :</strong> « SEO technique pour les entreprises de services et le SaaS » (cet article).</li>
+  <li><strong>Contenu associé :</strong>
+    <ul>
+      <li><a href="/fr/blog/technical-seo-audit-checklist-lead-gen">Checklist d'audit SEO technique pour les sites de génération de leads</a></li>
+      <li><a href="/fr/blog/why-websites-fail">Pourquoi les sites d'entreprises de services échouent</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Étape 4 : vérifier la performance et les Core Web Vitals</h3>
+<p>Mesurez les Core Web Vitals sur les modèles de pages qui apportent des leads, avec d'abord les données de terrain des vrais utilisateurs, puis les tests de laboratoire pour trouver les causes.</p>
+<p><strong>Outils :</strong></p>
+<ul>
+  <li>Google PageSpeed Insights : données de laboratoire et recommandations pour une URL donnée.</li>
+  <li>Google Search Console, rapport Core Web Vitals : données de terrain (utilisateurs réels) pour tout le site.</li>
+  <li>Lighthouse (dans les outils de développement de Chrome) : audits de page plus détaillés.</li>
+</ul>
+<p><strong>Concentrez-vous sur les modèles clés :</strong> page d'accueil, principales pages de services ou de solutions, pages de tarifs, de démo ou d'essai, articles les plus lus.</p>
+<p><strong>Problèmes fréquents :</strong></p>
+<ul>
+  <li><strong>Images lourdes et non optimisées :</strong> utilisez les bonnes dimensions, compressez, servez des formats modernes (WebP ou AVIF quand c'est possible), et chargez en différé les images sous la ligne de flottaison.</li>
+  <li><strong>Ressources bloquant l'affichage :</strong> réduisez le CSS et le JavaScript qui bloquent le premier affichage, différez les scripts non essentiels (par exemple certains widgets tiers), regroupez ou supprimez les bibliothèques inutilisées.</li>
+  <li><strong>Polices non optimisées :</strong> utilisez des formats modernes (WOFF2), limitez le nombre de graisses et de styles. Utilisez <code>font-display: swap</code> pour éviter le texte invisible au chargement, ou <code>optional</code> quand un changement de police tardif déplace la mise en page (ce qui apparaît dans le CLS).</li>
+</ul>
+
+<h3>Étape 5 : valider les données structurées et les réglages techniques</h3>
+<p>Les données structurées doivent être valides et correspondre à ce que montre la page, et tout le site doit répondre sur une seule version de chaque URL.</p>
+<p><strong>Vérification des données structurées :</strong></p>
+<ul>
+  <li>Utilisez le test des résultats enrichis de Google ou le validateur Schema.org sur la page d'accueil, les pages de services, les articles et les pages avec fil d'Ariane.</li>
+  <li>Corrigez les erreurs (propriétés invalides) et les avertissements importants (champs recommandés manquants sur les schemas clés).</li>
+</ul>
+<p><strong>Autres réglages à vérifier :</strong></p>
+<ul>
+  <li><strong>Règles de canonicalisation :</strong> HTTP ou HTTPS (imposez HTTPS), www ou non (choisissez une version et redirigez l'autre), barre oblique finale ou non (soyez cohérent).</li>
+  <li><strong>International (si besoin) :</strong> si vous êtes présent dans plusieurs langues ou pays, vérifiez qu'une stratégie hreflang est prévue. Sa mise en place détaillée est complexe et mérite souvent un projet dédié.</li>
+  <li><strong>Redirections :</strong> vérifiez qu'aucun ancien domaine ou domaine de préproduction n'est indexable, et que les anciennes URL redirigent vers leurs équivalents actuels.</li>
+</ul>
+
+<h2 id="common-issues">Problèmes techniques fréquents sur les sites de services et de SaaS</h2>
+<p>Les problèmes techniques les plus fréquents sur ces sites sont les pages orphelines, les versions du site en double, les mauvaises canonicals, les archives pauvres, les thèmes lourds, les sections bloquées et les redirections cassées après une refonte. Chacun est présenté ci-dessous avec son effet sur les leads :</p>
+<ul>
+  <li><strong>Pages de services orphelines :</strong> des pages de services ou de solutions existent mais ne sont reliées ni depuis le menu, ni depuis les articles, ni depuis d'autres pages. <em>Effet : exploration moins fréquente, classements plus faibles, moins de visites vers les démos et consultations.</em></li>
+  <li><strong>Plusieurs versions du site :</strong> les versions <code>http://</code> et <code>https://</code>, ou <code>www</code> et sans <code>www</code>, sont toutes accessibles. <em>Effet : contenu dupliqué, autorité diluée et confusion possible dans l'index.</em></li>
+  <li><strong>Canonicals manquantes ou incorrectes :</strong> pas de canonical sur les modèles clés, ou plusieurs pages qui pointent vers la mauvaise canonical. <em>Effet : Google peut indexer de mauvaises URL ou traiter vos pages principales comme des doublons.</em></li>
+  <li><strong>Archives de tags et catégories gonflées :</strong> des centaines de pages de tags pauvres au contenu qui se recoupe. <em>Effet : budget de crawl gaspillé sur des URL de faible valeur, index gonflé et pertinence diluée.</em></li>
+  <li><strong>Constructeurs de pages WordPress lents et thèmes lourds :</strong> des thèmes et extensions chargés de scripts inutilisés pour des pages simples. <em>Effet : mauvais Core Web Vitals sur les pages d'atterrissage clés, donc moins d'inscriptions à l'essai et de demandes de démo.</em></li>
+  <li><strong>Blog ou ressources non indexés :</strong> des sections entières bloquées par le robots.txt, des balises <code>noindex</code> ou une mauvaise canonicalisation. <em>Effet : le contenu d'expertise n'apporte ni notoriété ni trafic en haut de l'entonnoir.</em></li>
+  <li><strong>Redirections mal configurées après une refonte ou une migration :</strong> anciennes URL mal associées, ou redirections en masse vers la page d'accueil. <em>Effet : perte des signaux de classement acquis, fortes baisses du trafic organique et des leads.</em></li>
+</ul>
+
+<h2 id="prioritization">Priorités du SEO technique : quoi corriger en premier</h2>
+<p>Corrigez d'abord ce qui bloque l'indexation de vos pages de leads et demande peu d'effort, comme un <code>noindex</code> accidentel ou un blocage dans le robots.txt. Classez ensuite le reste selon l'effet sur l'indexation et les pages de conversion, face à l'effort demandé :</p>
+
+<figure class="fig">
+  <table>
+    <thead><tr><th>Priorité</th><th>Effet et effort</th><th>Exemples</th></tr></thead>
+    <tbody>
+      <tr><td>1. Gains rapides</td><td>Effet fort, effort faible</td><td><code>noindex</code> accidentel, mauvaises canonicals, blocages robots.txt, liens cassés vers les pages de services</td></tr>
+      <tr><td>2. Projets planifiés</td><td>Effet fort, effort élevé</td><td>Refonte de la structure, remplacement du thème ou du constructeur de pages, nettoyage d'un index très gonflé, cocons thématiques</td></tr>
+      <tr><td>3. Corrections courantes</td><td>Effet faible, effort faible</td><td>404 mineures, avertissements schema mineurs, ajustements d'ancres</td></tr>
+      <tr><td>4. À laisser pour plus tard</td><td>Effet faible, effort élevé</td><td>Cas particuliers, petits gains PageSpeed sur des pages qui n'apportent pas de leads</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Figure 4 : classez les corrections techniques selon leur effet sur les pages de leads face à l'effort, et commencez par le haut.</figcaption>
+</figure>
+
+<p>En cas de doute, demandez-vous : « Est-ce que corriger ce point aide plus de personnes à découvrir nos pages de leads clés et à y convertir dans les 3 à 6 prochains mois ? »</p>
+
+<h2 id="overall-strategy">La place du SEO technique dans votre stratégie SEO</h2>
+<p>Le SEO technique est la base d'une stratégie SEO : les autres parties ne fonctionnent qu'une fois le site explorable, indexable et utilisable. Pour une entreprise de services ou de SaaS, une stratégie complète relie :</p>
+<ul>
+  <li><strong>SEO technique :</strong> un site explorable, indexable, rapide et stable.</li>
+  <li><strong>Stratégie de contenu et mots-clés :</strong> les recherches à cibler (par exemple « SEO technique SaaS ») et le contenu adapté à chaque étape de l'entonnoir (TOFU, MOFU, BOFU).</li>
+  <li><strong>SEO off-page et autorité :</strong> obtenir des liens pertinents et des mentions de la marque.</li>
+  <li><strong>SEO local (si besoin) :</strong> optimiser les fiches Google Business Profile et les citations locales.</li>
+  <li><strong>Analytics et suivi (GA4, GTM) :</strong> mesurer les interactions et les conversions pour ajuster le travail.</li>
+</ul>
+
+<h2 id="hire-consultant">Quand faire appel à un consultant en SEO technique</h2>
+<p>Faites appel à un consultant en SEO technique quand les problèmes persistent après vos propres corrections, quand le site est complexe, ou quand personne en interne n'a le temps ou les compétences. Beaucoup d'équipes peuvent gérer les bases elles-mêmes.</p>
+<p><strong>Envisagez un consultant si :</strong></p>
+<ul>
+  <li>Vous avez des problèmes d'indexation persistants (pages non indexées malgré vos efforts).</li>
+  <li>Votre site est complexe (site marketing et application web, plusieurs langues ou pays).</li>
+  <li>Vous avez récemment migré ou refait votre site et le trafic a baissé.</li>
+  <li>Vous manquez de temps ou de compétences techniques en interne.</li>
+</ul>
+<p>Un bon consultant en SEO technique pour le B2B et le SaaS réalise un audit complet, transforme les constats en feuille de route priorisée, coordonne les équipes et met en place un suivi. Il fait le lien entre le marketing, le produit et les développeurs.</p>
+
+<h2 id="conclusion">En résumé : à quoi ressemble une base technique solide</h2>
+<p>Une base technique solide signifie que votre site marketing est <strong>découvrable, indexable, organisé, rapide et stable, et compréhensible</strong>. Courir après chaque petit score ou avertissement n'est pas l'objectif.</p>
+<p>En travaillant les cinq piliers et en suivant un audit étape par étape, vous donnez à votre contenu et à votre marque les meilleures chances dans la recherche organique.</p>
+
+<p class="final-cta"><strong>Si vous ne savez pas par où commencer :</strong> lancez une première exploration et une revue de la Search Console. Identifiez et classez vos principaux blocages techniques. Construisez une feuille de route de 60 à 90 jours centrée sur les corrections les plus utiles. Si vous avez besoin d'aide, pensez à un audit SEO technique mené par un consultant expérimenté.</p>

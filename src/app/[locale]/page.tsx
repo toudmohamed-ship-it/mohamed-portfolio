@@ -17,15 +17,15 @@ interface Props {
 
 // The layout title template does not apply to the page in its own segment, so the name is written out here
 const TITLES: Record<string, string> = {
-  en: "Mohamed Toudghi | SEO Consultant, Technical & Local SEO",
-  fr: "Mohamed Toudghi | Consultant SEO technique et local",
-  ar: "محمد تودغي | مستشار SEO تقني ومحلي",
+  en: "Mohamed Toudghi | SEO & Growth Specialist",
+  fr: "Mohamed Toudghi | Spécialiste SEO et croissance",
+  ar: "محمد تودغي | أخصائي SEO والنمو",
 };
 
 const DESCRIPTIONS: Record<string, string> = {
-  en: "Technical SEO, local SEO and GA4 tracking for law firms, clinics, B2B and SaaS. Based in Morocco, working in English, French and Arabic.",
-  fr: "SEO technique, SEO local et suivi GA4 pour cabinets d'avocats, cliniques, B2B et SaaS. Basé au Maroc, je travaille en français, anglais et arabe.",
-  ar: "SEO تقني وSEO محلي وتتبع GA4 لمكاتب المحاماة والعيادات وشركات B2B وSaaS. مقيم في المغرب وأعمل بالعربية والفرنسية والإنجليزية.",
+  en: "Technical SEO, local SEO, conversion and GA4 tracking for law firms, clinics, B2B and SaaS. Based in Morocco, working in English, French and Arabic.",
+  fr: "SEO technique, SEO local, conversion et suivi GA4 pour cabinets d'avocats, cliniques, B2B et SaaS. Basé au Maroc, en français, anglais et arabe.",
+  ar: "SEO تقني وSEO محلي وتحسين التحويل وتتبع GA4 لمكاتب المحاماة والعيادات وشركات B2B وSaaS. مقيم في المغرب وأعمل بالعربية والفرنسية والإنجليزية.",
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

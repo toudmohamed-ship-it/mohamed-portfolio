@@ -6,6 +6,7 @@ import BlogFAQ from "@/components/blog/BlogFAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { SERVICE_PAGES, childPages } from "@/lib/services";
 import { BASE_URL, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 interface Props {
     params: Promise<{ locale: string; service: string }>;
@@ -122,12 +123,12 @@ export default async function ServiceDetailPage({ params }: Props) {
                 lead={c.lead}
             >
                 <div className="flex flex-col gap-4 pt-2">
-                    <div className="flex flex-wrap items-center gap-3.5">
+                    {OPEN_FOR_WORK && <div className="flex flex-wrap items-center gap-3.5">
                         <Link href="/contact#mini-audit" className="btn inline-flex items-center gap-2 px-6 py-[15px] rounded-xl bg-forest text-white font-medium no-underline hover:bg-forest-deep hover:text-white">
                             {t("ui.cta_primary")} <span className="arrow" aria-hidden="true">→</span>
                         </Link>
                         <span className="text-sm text-muted">{t("ui.starts_with")}</span>
-                    </div>
+                    </div>}
                     {c.price && (
                         <p className="m-0 flex flex-wrap items-baseline gap-x-3 gap-y-1">
                             <span className="text-[19px] font-semibold text-ink">{c.price}</span>

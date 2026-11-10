@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import LanguageSwitcher from "../LanguageSwitcher";
 import Logo from "./Logo";
 import LocalTime from "../ui/LocalTime";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -65,12 +66,12 @@ export default function Navbar() {
                         </Link>
                     ))}
                     <LanguageSwitcher />
-                    <Link
+                    {OPEN_FOR_WORK && <Link
                         href="/contact"
                         className="btn inline-flex items-center whitespace-nowrap min-h-11 px-[18px] rounded-[10px] bg-ink text-paper font-medium no-underline hover:bg-ink-soft hover:text-paper"
                     >
                         {t('book_call')}
-                    </Link>
+                    </Link>}
                 </div>
 
                 {/* Mobile: language links live inside the menu so the name never collides with them */}
@@ -101,12 +102,12 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-                        <Link
+                        {OPEN_FOR_WORK && <Link
                             href="/contact"
                             className="mt-4 inline-flex items-center justify-center min-h-12 rounded-[10px] bg-forest text-white font-medium no-underline"
                         >
                             {t('book_call')}
-                        </Link>
+                        </Link>}
                         <div className="mt-4"><LanguageSwitcher /></div>
                         <LocalTime className="mt-4 self-start" />
                     </div>

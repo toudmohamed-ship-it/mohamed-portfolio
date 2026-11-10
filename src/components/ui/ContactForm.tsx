@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { track } from "@/components/seo/Analytics";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 const FIELD = "w-full bg-white border border-line-strong rounded-xl px-4 py-3.5 text-ink text-base placeholder:text-[#8A928E] focus:outline-none focus:border-forest focus:ring-4 focus:ring-sage transition-colors disabled:opacity-60";
 const LABEL = "text-sm font-medium text-ink";
@@ -15,7 +16,7 @@ export default function ContactForm() {
 
     // Buttons across the site link to /contact#mini-audit: preselect that option
     useEffect(() => {
-        if (window.location.hash === "#mini-audit" && serviceRef.current) serviceRef.current.value = "mini_audit";
+        if (OPEN_FOR_WORK && window.location.hash === "#mini-audit" && serviceRef.current) serviceRef.current.value = "mini_audit";
     }, []);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -69,7 +70,7 @@ export default function ContactForm() {
                     <label htmlFor="service" className={LABEL}>{t("labels.service")}</label>
                     <select ref={serviceRef} id="service" name="service" defaultValue="" disabled={busy} className={`${FIELD} appearance-none bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%235A645F%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>')] bg-no-repeat bg-[position:right_1rem_center] rtl:bg-[position:left_1rem_center]`}>
                         <option value="" disabled>{t("placeholders.service")}</option>
-                        <option value="mini_audit">{t("services.mini_audit")}</option>
+                        {OPEN_FOR_WORK && <option value="mini_audit">{t("services.mini_audit")}</option>}
                         <option value="audit">{t("services.audit")}</option>
                         <option value="local">{t("services.local")}</option>
                         <option value="analytics">{t("services.analytics")}</option>

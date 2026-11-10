@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import { SERVICE_PAGES } from "@/lib/services";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 // Contextual link from an article to the service it supports (blog = supporting content, service page = core page).
 const POST_TO_SERVICE: Record<string, string> = {
@@ -21,7 +22,7 @@ export default async function ServiceBridge({ postSlug, locale }: { postSlug: st
 
     return (
         <aside data-tone="white" className="bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-col gap-3">
-            <p className="m-0 font-mono text-xs text-forest">{t("ui.bridge_label")}</p>
+            <p className="m-0 font-mono text-xs text-forest">{t(OPEN_FOR_WORK ? "ui.bridge_label" : "ui.bridge_label_closed")}</p>
             <p className="m-0 text-xl font-semibold leading-snug">{t(`${slug}.title`)}</p>
             <p className="m-0 text-[16px] text-ink-soft">{lead}</p>
             <Link href={`/services/${slug}`} className="btn self-start mt-1 font-medium no-underline">
