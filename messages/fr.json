@@ -857,14 +857,14 @@
     },
     "AboutPage": {
         "metadata": {
-            "title": "À propos de Mohamed Toudghi, consultant SEO",
-            "description": "Consultant SEO basé au Maroc, avec une expérience en agence, en interne et en freelance : SEO technique, SEO local et GA4, pour des clients internationaux.",
-            "og_title": "À propos de Mohamed Toudghi | Consultant SEO",
+            "title": "À propos de Mohamed Toudghi, spécialiste SEO et croissance",
+            "description": "Spécialiste SEO et croissance basé au Maroc, avec une expérience en agence, en interne et en freelance : SEO technique, SEO local et GA4.",
+            "og_title": "À propos de Mohamed Toudghi | Spécialiste SEO et croissance",
             "og_description": "Une expérience SEO en agence, en interne et en freelance, pour des clients aux États-Unis, au Royaume-Uni et au Maroc."
         },
         "hero": {
             "eyebrow": "À propos",
-            "title": "Je suis Mohamed Toudghi, consultant SEO pour les entreprises de services.",
+            "title": "Je suis Mohamed Toudghi, spécialiste SEO et croissance pour les entreprises de services.",
             "subtitle": "Je travaille à distance depuis le Maroc sur le SEO technique, le SEO local et le suivi GA4, pour des entreprises aux États-Unis, au Royaume-Uni et au Maroc. J'ai fait ce travail en agence, en interne et en freelance."
         },
         "intro": {
