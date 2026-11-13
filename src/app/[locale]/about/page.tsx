@@ -81,7 +81,7 @@ export default async function AboutPage({ params }: Props) {
                     <div className="relative justify-self-start self-start w-[260px] md:w-[300px]">
                         <div aria-hidden="true" className="absolute top-4 bottom-[-16px] start-4 end-[-16px] rounded-[20px] bg-sage" />
                         <Image
-                            src="/images/portrait.webp"
+                            src="/images/mohamed-toudghi.webp"
                             alt={t('photo_alt')}
                             width={800}
                             height={800}

@@ -2,7 +2,7 @@
 
 Portfolio of Mohamed Toudghi, SEO and growth specialist in Morocco, working remotely (technical SEO, local SEO, conversion, WordPress websites and GA4 tracking for service businesses, B2B and SaaS). Positioning is "SEO and growth", not "SEO and GA4" (Mohamed, 10 Nov 2026).
 
-Portfolio mode: `OPEN_FOR_WORK` in `src/lib/constants.ts` is `false` until Mohamed has his employer's written approval for freelance work. It hides the calls to action that ask for work; keep new ones behind it. No prices on the site (removed 10 Nov 2026), unless Mohamed asks.
+Portfolio mode: `OPEN_FOR_WORK` in `src/lib/constants.ts` is `false` until Mohamed has his employer's written approval for freelance work. It hides the calls to action that ask for work, the sentences about calls and quotes (FAQ items use `answer_closed`), the `ProfessionalService` schema and the "SEO consultant" wording; keep new ones behind it. No CV download: the old file named clients. No prices on the site (removed 10 Nov 2026), unless Mohamed asks.
 
  Next.js 16 (App Router) + Tailwind CSS 4 + next-intl, deployed on Vercel. Three languages: English at `/`, French at `/fr`, Arabic (RTL) at `/ar`.
 
@@ -28,7 +28,7 @@ The site is the proof of his SEO work, so SEO, speed and accessibility are not o
 - Calm palette, defined once in `src/app/globals.css` (`@theme`): paper `#F7F5F0`, ink `#1C2321`, muted `#5A645F`, line `#E2DDD3`, forest `#2E6B57`, sage `#E6EFEA`, mint `#7FC4A8`. Use the token classes (`bg-paper`, `text-ink`, `text-forest`...), not new hex values.
 - Fonts: Geist (Latin) and Geist Mono for small data labels, loaded with `next/font` in `src/app/[locale]/layout.tsx`. Arabic uses the device system font (no web font): Cairo cost about 10 Lighthouse points on `/ar`.
 - No gradients on text or backgrounds, no glassmorphism, no glow except the hero cursor light, no stock or AI images. Real photos only (`public/images`).
-- Exception chosen by Mohamed (Nov 2026): his illustrated portrait on the About page (`public/images/portrait.webp`), shown as a still image. An eye-follow version was tried and removed at his request. Source: `D:portrait-srcportrait-final.png` (eyes corrected, 6 Nov 2026).
+- His photo (13 Nov 2026, Mohamed): the real photo, in three sizes made from one 1000 px original: `public/images/mohamed-toudghi.webp` (About, schema), `-card.webp` (homepage) and `-face.webp` (author boxes). It replaced the illustrated portrait used from 5 to 13 Nov 2026 (source kept in `D:/portrait-src`); an eye-follow version was tried and removed.
 - The old blog images were AI-generated and were removed. Article figures are drawn in HTML/SVG (`.fig`, `.cwv` in globals.css). Case study screenshots use next/image with real sizes from `src/lib/image-sizes.ts`.
 - Shared patterns live in `globals.css`: `.lift` (card hover), `.row-link`, `.btn`, `.arrow`, `.navlink`, `.reveal`, `.in` + `.d1`–`.d6` (entrance delays).
 
@@ -45,7 +45,7 @@ Motion stays only while it costs nothing measurable. Before adding or changing a
 ## SEO
 
 - Canonical + hreflang (en, fr, ar, x-default) on every page via `pageAlternates(locale, path)` from `src/lib/seo.ts`. Pages must return the full `alternates` object: Next.js replaces the layout's, it does not merge.
-- Unique title under 60 characters and meta description under 155 per page and language. The layout title template (`%s | Mohamed Toudghi`) does not apply to the homepage, so its titles include the name.
+- Unique title under 60 characters and meta description under 155 per page and language. Pass titles through `metaTitle()` from `src/lib/seo.ts`: it drops the name suffix when the total would pass 60. The layout title template (`%s | Mohamed Toudghi`) does not apply to the homepage, so its titles include the name.
 - One H1 per page, headings in order. The H1 Google reads must be one clean sentence (the server renders the first rotating word only).
 - New pages go into `src/app/sitemap.ts`. Internal links point to real URLs.
 - Semantic SEO plan, topical map and content backlog: `docs/semantic-seo-audit.md`. Follow its page outline for new service or article pages.

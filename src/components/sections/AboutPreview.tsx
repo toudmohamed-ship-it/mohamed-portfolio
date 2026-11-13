@@ -12,7 +12,7 @@ export default function AboutPreview() {
                 <div className="relative shrink-0">
                     <div aria-hidden="true" className="absolute top-3.5 bottom-[-14px] start-3.5 end-[-14px] rounded-2xl bg-sage" />
                     <Image
-                        src="/images/portrait-card.webp"
+                        src="/images/mohamed-toudghi-card.webp"
                         alt={t("photo_alt")}
                         width={230}
                         height={270}

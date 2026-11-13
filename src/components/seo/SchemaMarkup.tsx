@@ -23,7 +23,7 @@ export default function SchemaMarkup() {
                     ? "SEO consultant in Morocco, working remotely on technical SEO, local SEO, conversion and GA4 tracking for service businesses, B2B and SaaS."
                     : "SEO and growth specialist in Morocco, working remotely on technical SEO, local SEO, conversion and GA4 tracking for service businesses, B2B and SaaS.",
                 url: BASE_URL,
-                image: `${BASE_URL}/images/portrait.webp`,
+                image: `${BASE_URL}/images/mohamed-toudghi.webp`,
                 email: PERSONAL_INFO.email,
                 telephone: PERSONAL_INFO.phone,
                 address: ADDRESS,
