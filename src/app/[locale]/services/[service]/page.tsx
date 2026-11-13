@@ -5,7 +5,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { SERVICE_PAGES, childPages } from "@/lib/services";
-import { BASE_URL, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
+import { BASE_URL, jsonLd, localizedUrl, pageAlternates, metaTitle } from "@/lib/seo";
 import { OPEN_FOR_WORK } from "@/lib/constants";
 
 interface Props {
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props) {
     const c = t.raw(service) as Copy;
 
     return {
-        title: c.meta_title,
+        title: metaTitle(c.meta_title),
         description: c.meta_description,
         alternates: pageAlternates(locale, `/services/${service}`),
         openGraph: { title: c.meta_title, description: c.meta_description, url: localizedUrl(locale, `/services/${service}`) },

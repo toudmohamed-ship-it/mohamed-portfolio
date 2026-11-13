@@ -3,6 +3,11 @@ import { CASE_STUDIES } from "@/lib/data";
 import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 import { SERVICE_PAGES } from "@/lib/services";
 
+// Real dates of the last content change, not the build date: Google ignores lastmod when it changes on every deploy.
+// Update these when the copy of the pages changes (articles take their date from BLOG_POSTS).
+const PAGES_UPDATED = "2026-11-13";
+const CASE_STUDIES_UPDATED = "2026-11-10";
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://www.mohamedtoudghi.com";
 
@@ -20,14 +25,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/blog",
     ].map((route) => ({
         url: locale === 'en' ? `${baseUrl}${route}` : `${baseUrl}/${locale}${route}`,
-        lastModified: new Date(),
+        lastModified: new Date(PAGES_UPDATED),
         changeFrequency: "monthly" as const,
         priority: route === "" ? 1 : 0.8,
     })));
 
     const projectRoutes = locales.flatMap(locale => CASE_STUDIES.map((study) => ({
         url: locale === 'en' ? `${baseUrl}/portfolio/${study.slug}` : `${baseUrl}/${locale}/portfolio/${study.slug}`,
-        lastModified: new Date(),
+        lastModified: new Date(CASE_STUDIES_UPDATED),
         changeFrequency: "monthly" as const,
         priority: 0.7,
     })));

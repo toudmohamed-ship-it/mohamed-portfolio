@@ -1,13 +1,17 @@
 import { jsonLd } from "@/lib/seo";
+import { OPEN_FOR_WORK } from "@/lib/constants";
 
 interface FAQItem {
     question: string;
     answer: string;
+    /** Shown instead of `answer` in portfolio mode (no mention of calls or quotes) */
+    answer_closed?: string;
 }
 
 // Native <details> accordion: works without JavaScript and every answer stays in the HTML for crawlers.
-export default function BlogFAQ({ faqs, title }: { faqs: FAQItem[]; title: string }) {
-    if (!faqs || faqs.length === 0) return null;
+export default function BlogFAQ({ faqs: allFaqs, title }: { faqs: FAQItem[]; title: string }) {
+    if (!allFaqs || allFaqs.length === 0) return null;
+    const faqs = allFaqs.map((f) => ({ question: f.question, answer: !OPEN_FOR_WORK && f.answer_closed ? f.answer_closed : f.answer }));
 
     const schema = {
         "@context": "https://schema.org",

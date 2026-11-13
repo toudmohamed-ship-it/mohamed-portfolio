@@ -2,6 +2,13 @@ export const BASE_URL = 'https://www.mohamedtoudghi.com';
 
 const LOCALES = ['en', 'fr', 'ar'] as const;
 
+// The layout adds " | Mohamed Toudghi" to every title. When that would pass 60 characters
+// (Google cuts longer titles), the title is used alone.
+const TITLE_SUFFIX = ' | Mohamed Toudghi';
+export function metaTitle(title: string) {
+    return title.length + TITLE_SUFFIX.length <= 60 ? title : { absolute: title };
+}
+
 // English lives at the root (localePrefix: 'as-needed'), other locales are prefixed.
 export function localizedUrl(locale: string, path: string = '') {
     return locale === 'en' ? `${BASE_URL}${path || '/'}` : `${BASE_URL}/${locale}${path}`;

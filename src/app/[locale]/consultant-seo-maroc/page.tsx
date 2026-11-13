@@ -4,7 +4,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
-import { BASE_URL, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
+import { BASE_URL, jsonLd, localizedUrl, pageAlternates, metaTitle } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props) {
     const t = await getTranslations({ locale, namespace: "MoroccoPage" });
 
     return {
-        title: t("meta_title"),
+        title: metaTitle(t("meta_title")),
         description: t("meta_description"),
         alternates: pageAlternates(locale, PATH),
         openGraph: { title: t("meta_title"), description: t("meta_description"), url: localizedUrl(locale, PATH), images: ["/og-image.jpg"] },
@@ -127,7 +127,8 @@ export default async function MoroccoPage({ params }: Props) {
                         </a>
                     </div>}
                     <ul className="list-none m-0 p-0 flex flex-wrap gap-2.5">
-                        {c.facts.map((f) => (
+                        {/* The last fact is the free call: hidden in portfolio mode */}
+                        {(OPEN_FOR_WORK ? c.facts : c.facts.slice(0, -1)).map((f) => (
                             <li key={f} className="inline-flex items-center gap-2 bg-white border border-line rounded-full px-3.5 py-1.5 text-[14px] text-ink-soft">
                                 <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-forest" />
                                 {f}

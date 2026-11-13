@@ -8,7 +8,7 @@ import BlogSerp, { type SerpPost, type SerpQuestion } from "@/components/blog/Bl
 import { BLOG_POSTS, isFullyWritten } from "@/lib/blog-data";
 import { PERSONAL_INFO } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, localizedUrl, metaTitle } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -19,8 +19,9 @@ export async function generateMetadata({ params }: Props) {
     const t = await getTranslations({ locale, namespace: 'BlogPage.metadata' });
 
     return {
-        title: t('title'),
+        title: metaTitle(t('title')),
         description: t('description'),
+        openGraph: { title: t('title'), description: t('description'), url: localizedUrl(locale, '/blog'), images: ['/og-image.jpg'] },
         alternates: pageAlternates(locale, '/blog'),
     };
 }

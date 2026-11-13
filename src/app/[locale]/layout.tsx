@@ -1,3 +1,4 @@
+import { OPEN_FOR_WORK } from "@/lib/constants";
 import type { Metadata } from "next";
 import Analytics from "@/components/seo/Analytics";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -12,6 +13,9 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import CursorFollower from "@/components/ui/CursorFollower";
+
+// Messages left out of the browser payload while OPEN_FOR_WORK is false (see src/lib/constants.ts)
+const CLOSED_HIDDEN_MESSAGES = ['HomePage.hero.cta_call', 'HomePage.nav.book_call', 'HomePage.FinalCTA', 'HomePage.offers.intro', 'HomePage.process.direct'];
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -111,9 +115,18 @@ export default async function LocaleLayout({
 
   // Only the namespaces that client components read are sent to the browser; server components read the rest directly
   const messages = await getMessages();
-  const clientMessages = Object.fromEntries(
+  const clientMessages = structuredClone(Object.fromEntries(
     ['HomePage', 'ContactForm'].filter((k) => k in messages).map((k) => [k, messages[k]])
-  );
+  ));
+  // Portfolio mode: the copy that asks for work is not rendered, so it is not sent in the page data either
+  if (!OPEN_FOR_WORK) {
+    for (const path of CLOSED_HIDDEN_MESSAGES) {
+      const keys = path.split('.');
+      const last = keys.pop() as string;
+      const parent = keys.reduce((o, k) => o?.[k], clientMessages as any);
+      if (parent) delete parent[last];
+    }
+  }
 
   // RTL Logic
   const dir = locale === 'ar' ? 'rtl' : 'ltr';

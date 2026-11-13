@@ -4,7 +4,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { PERSONAL_INFO } from "@/lib/constants";
-import { BASE_URL, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
+import { BASE_URL, jsonLd, localizedUrl, pageAlternates, metaTitle } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props) {
     const t = await getTranslations({ locale, namespace: 'AboutPage.metadata' });
 
     return {
-        title: t('title'),
+        title: metaTitle(t('title')),
         description: t('description'),
         openGraph: {
             type: "profile",
@@ -105,9 +105,6 @@ export default async function AboutPage({ params }: Props) {
                         <p key={i} className={`m-0 leading-relaxed ${i === 0 ? "text-[19px] text-ink" : "text-[18px] text-ink-soft"}`}>{p}</p>
                     ))}
                     <div className="flex flex-wrap items-center gap-4 pt-3">
-                        <a href="/resume.pdf" download="Mohamed_Toudghi_Resume.pdf" className="btn inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-ink text-paper font-medium no-underline hover:text-paper hover:bg-ink-soft">
-                            {t('resume')} <span className="font-mono text-xs text-[#C9CFCB]">PDF</span>
-                        </a>
                         <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="btn font-medium no-underline">
                             {t('linkedin')} <span className="arrow" aria-hidden="true">→</span>
                         </a>

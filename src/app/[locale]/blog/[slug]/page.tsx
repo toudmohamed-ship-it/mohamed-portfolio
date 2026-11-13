@@ -12,7 +12,7 @@ import ServiceBridge from "@/components/blog/ServiceBridge";
 import BlogFAQ from "@/components/blog/BlogFAQ";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { BASE_URL, IS_INDEXABLE, jsonLd, localizedUrl, pageAlternates } from "@/lib/seo";
+import { BASE_URL, IS_INDEXABLE, jsonLd, localizedUrl, pageAlternates, metaTitle } from "@/lib/seo";
 
 interface Props {
     params: Promise<{
@@ -42,7 +42,8 @@ export async function generateMetadata({ params }: Props) {
     const full = isFullyWritten(post, locale);
 
     return {
-        title: tPosts(`${slug}.title`),
+        // A shorter title for search results when the article's own title passes 60 characters
+        title: metaTitle(tPosts.has(`${slug}.seo_title`) ? tPosts(`${slug}.seo_title`) : tPosts(`${slug}.title`)),
         description: tPosts(`${slug}.excerpt`),
         alternates: pageAlternates(locale, `/blog/${slug}`, post.locales),
         ...(full || !IS_INDEXABLE ? {} : { robots: { index: false, follow: true } }),

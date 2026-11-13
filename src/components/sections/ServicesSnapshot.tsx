@@ -1,3 +1,4 @@
+import { OPEN_FOR_WORK } from "@/lib/constants";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { SERVICE_PAGES } from "@/lib/services";
@@ -22,7 +23,7 @@ export default function ServicesSnapshot() {
         <section id="services" className="cv container-custom pt-[72px] pb-24">
             <div className="reveal flex flex-wrap justify-between items-end gap-4 mb-10">
                 <h2 className="m-0 text-3xl md:text-4xl font-semibold">{t("title")}</h2>
-                <p className="m-0 text-muted max-w-[420px] text-base">{t("intro")}</p>
+                <p className="m-0 text-muted max-w-[420px] text-base">{t(OPEN_FOR_WORK ? "intro" : "intro_closed")}</p>
             </div>
             <div className="grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(290px,1fr))]">
                 {offers.map((offer, i) => (

@@ -1,5 +1,7 @@
 # Growth plan, November 2026 to April 2027
 
+Reviewed 13 Nov 2026: finished items ticked, dropped items struck through, Phase 3 reordered. The decisions of 10 Nov 2026 at the end of this file override anything older above them.
+
 Starting point (Search Console, 30 July to 31 October 2026): 7 clicks, 240 impressions. Brand searches already work (homepage at position 1.9). Non-brand searches barely show. The rebuilt site went live on 31 October 2026, so this is the baseline to beat.
 
 ## Blog or no blog?
@@ -16,43 +18,43 @@ So the rule is: **service pages first, then 2 articles a month at most, each att
 
 ## Phase 1: November 2026 (foundations)
 
-- [ ] Search Console: submit the sitemap again and request indexing for the 3 service pages, `/services`, `/contact` and the rewritten articles.
+- [x] Search Console: sitemap resubmitted and indexing requested (5 Nov 2026).
 - [x] Search Console fixes (2 Nov 2026): the language switcher no longer links to `/en/...` (12 redirect URLs), and the old article URL that returned 404 now redirects to the technical SEO checklist.
 - [x] Case studies rewritten in EN, FR and AR (2 Nov 2026): about the project, problems, steps with their reason, lessons, role and period. Facts from Mohamed and his CVs only; clients and agency unnamed. The sports federation study was cut back to his real scope, and the +40% claim was removed site-wide. Next: in Search Console, Validate fix on "Crawled, currently not indexed".
-- [ ] Give the correct article dates (the dates in `src/lib/blog-data.ts` and in the articles disagree). This unblocks `BlogPosting` schema.
-- [ ] Expand or retire the two remaining thin articles:
+- [x] Article dates fixed in `src/lib/blog-data.ts`; `BlogPosting` schema is live.
+- [x] The two thin articles were rewritten in EN and FR (6 Nov 2026):
   - `keyword-research-process`: expand to 1,200+ words, linked to the services hub.
   - `why-websites-fail`: rewrite as "Why a service website gets traffic but no leads" (links to GA4 tracking and the technical audit), or redirect it to the technical SEO checklist.
-- [ ] Check that the site's own GA4 records leads as key events (contact form, WhatsApp clicks, call bookings). Otherwise we cannot measure any of this.
-- [ ] LinkedIn: same name and title as the site ("SEO consultant, technical SEO, local SEO and GA4"), link to the site in the featured section.
+- [x] The site's GA4 records leads as key events: generate_lead, whatsapp_click, email_click (9 Nov 2026).
+- [ ] LinkedIn: same name and title as the site ("SEO & Growth Specialist"), link to the site in the featured section.
 
 ## Phase 2: December 2026 to February 2027 (pages that sell)
 
 - [x] **"SEO for law firms" page** (`/services/seo-for-law-firms`, EN/FR/AR, live 31 Oct 2026). Backed by the U.S. law firm case study. Search Console already shows a law firm searching for a U.S.-based SEO provider.
 - [x] **"Consultant SEO au Maroc" page** (`/consultant-seo-maroc`, FR/AR/EN, live 1 Nov 2026), backed by the Moroccan B2B case study. The homepage and About titles no longer say "in Morocco", so this page alone targets the Morocco searches; linked from the homepage, the footer and the case study.
-- [ ] Profiles outside the site: Malt and Clutch (or similar), then add them to `sameAs` in the schema.
+- [ ] Profiles outside the site: Upwork (profile exists, needs a rewrite: https://www.upwork.com/freelancers/~01ef4abcbfdcca5b81). Add it to `sameAs` in the schema once it is rewritten and the employer has approved freelance work. ~~Malt and Clutch~~ dropped (8 Nov 2026).
 - [ ] Ask 2 or 3 past clients for a short written review that can be published without their name (for example "Law firm, U.S."). This is the biggest gap on the site.
 
 ## Phase 3: articles, from December 2026 (2 per month)
 
-In order. Each one names its target search and the page it links to.
+In order. Each one names its target search and the page it links to. Reordered 13 Nov 2026 (Mohamed): not too much GA4. The clusters now alternate, and GA4 is 2 of 12, plus the Looker Studio article as a reporting topic, all spread out. Nothing is written yet.
 
 | # | Article | Target search | Links to |
 |---|---|---|---|
-| 1 | Track WhatsApp clicks in GA4 with Google Tag Manager | track whatsapp clicks ga4 | GA4 tracking |
-| 2 | Crawled, currently not indexed: causes and fixes | crawled currently not indexed | Technical SEO audit |
-| 3 | Google Business Profile categories: how to choose | google business profile categories | Local SEO |
-| 4 | GA4 key events vs conversions: what changed | ga4 key events | GA4 tracking |
-| 5 | Website migration SEO checklist | website migration seo checklist | Technical SEO audit |
-| 6 | Local SEO for law firms: what actually moves rankings | law firm local seo | Local SEO, SEO for law firms |
-| 7 | Canonical tags explained, with examples | canonical tag | Technical SEO audit |
-| 8 | How to get Google reviews and reply to them | how to get google reviews | Local SEO |
-| 9 | Looker Studio dashboard for a service business | looker studio dashboard leads | GA4 tracking |
-| 10 | SEO local au Maroc : le guide (FR) / SEO محلي في المغرب (AR) | seo local maroc | Local SEO |
-| 11 | City pages that rank without duplicate content | location pages seo | Local SEO |
-| 12 | Medspa and clinic SEO: a technical checklist | medspa seo | Technical SEO audit |
+| 1 | Crawled, currently not indexed: causes and fixes | crawled currently not indexed | Technical SEO audit |
+| 2 | Google Business Profile categories: how to choose | google business profile categories | Local SEO |
+| 3 | Track WhatsApp clicks in GA4 with Google Tag Manager | track whatsapp clicks ga4 | GA4 tracking |
+| 4 | Website migration SEO checklist | website migration seo checklist | Technical SEO audit |
+| 5 | Local SEO for law firms: what actually moves rankings | law firm local seo | Local SEO, SEO for law firms |
+| 6 | Canonical tags explained, with examples | canonical tag | Technical SEO audit |
+| 7 | How to get Google reviews and reply to them | how to get google reviews | Local SEO |
+| 8 | SEO local au Maroc : le guide (written in French first, English version second) | seo local maroc | Local SEO |
+| 9 | City pages that rank without duplicate content | location pages seo | Local SEO |
+| 10 | Medspa and clinic SEO: a technical checklist | medspa seo | Technical SEO audit |
+| 11 | Looker Studio dashboard for a service business | looker studio dashboard leads | GA4 tracking |
+| 12 | GA4 key events vs conversions: what changed | ga4 key events | GA4 tracking |
 
-Each article: English first, French and Arabic when the topic has demand there (always for #10, then local SEO topics). Follow the outline in `docs/semantic-seo-audit.md`: definition, steps, tools, mistakes, FAQ. Share every article on LinkedIn the week it goes out, with one screenshot or one figure from it.
+Each article: English and French. No Arabic articles (selective languages, Nov 2026: Arabic is kept for the commercial pages). Follow the outline in `docs/semantic-seo-audit.md`: definition, steps, tools, mistakes, FAQ. Share every article on LinkedIn the week it goes out, with one screenshot or one figure from it.
 
 ## Phase 4: March to April 2027 (review)
 
@@ -78,10 +80,10 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 **Decisions (Mohamed, 5 Nov 2026):** selective languages; prices set from the market, upper-middle (he usually charges 10,000 MAD a month); free mini-audit as the main offer; article dates chosen by Claude; stay on Next.js (no WordPress).
 
 **Batch 1, site structure (week of 5 Nov):**
-- [ ] Selective languages: a language version is indexed only if it is fully written. Thin FR/AR versions get noindex and leave hreflang and the sitemap. New articles: EN and FR only; Arabic for commercial pages.
-- [ ] Article dates fixed (2025 to 2026) and `BlogPosting` schema with datePublished and dateModified.
+- [x] Selective languages: a language version is indexed only if it is fully written. Thin FR/AR versions get noindex and leave hreflang and the sitemap. New articles: EN and FR only; Arabic for commercial pages.
+- [x] Article dates fixed (2025 to 2026) and `BlogPosting` schema with datePublished and dateModified.
 - [x] ~~"From" prices in MAD (FR, AR) and USD (EN) on the services hub and service pages.~~ Dropped 10 Nov 2026: prices stay private.
-- [ ] Free mini-audit as the main call to action, with a defined output and deadline.
+- [x] Free mini-audit as the main call to action, with a defined output and deadline. Built, then hidden by portfolio mode (`OPEN_FOR_WORK = false`) until the employer approves.
 
 **Batch 2, content (week of 12 Nov):**
 - [x] Rewrite `keyword-research-process` and `why-websites-fail` (EN, then FR).
@@ -93,12 +95,12 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 **Then measure:** Page indexing export in 2 to 3 weeks; Performance export in early December against the Aug to Oct baseline; French and Arabic review in February 2027.
 
 ### Mohamed's checklist
-- [ ] In GA4 (Admin, Data display, Events), mark generate_lead, whatsapp_click and email_click as key events once they appear (after the batch 2 release).
+- [x] In GA4, generate_lead, whatsapp_click and email_click are marked as key events (9 Nov 2026).
 - [x] Resubmit the sitemap and request indexing of the reworked pages (done 5 Nov 2026).
 - [ ] Validate fix in Search Console: "Crawled, currently not indexed", "Not found (404)", "Page with redirect".
-- [ ] Google Business Profile: only if he meets clients in person in a city (service-area profile, address hidden). Google does not allow online-only businesses (checked 8 Nov 2026); a profile without in-person contact risks suspension. Until then, reviews go on LinkedIn, Clutch and Malt.
-- [ ] Malt profile (Morocco is an open country; needs ID/passport and proof of auto-entrepreneur registration under 3 months old).
-- [ ] Clutch free profile (clutch.co/get-listed); ask 3 past clients for verified reviews.
+- [ ] Google Business Profile: only if he meets clients in person in a city (service-area profile, address hidden). Google does not allow online-only businesses (checked 8 Nov 2026); a profile without in-person contact risks suspension. Until then, reviews go on LinkedIn and Upwork.
+- [x] ~~Malt profile~~ and ~~Clutch profile~~: dropped (8 Nov 2026). Malt is mostly France, and Mohamed decided against Clutch. Platforms kept: LinkedIn first, then Upwork.
+- [ ] Upwork profile: rewrite it (it exists but needs work).
 - [ ] Ask the two current freelance clients for a review when their projects end (Google or LinkedIn; anonymous is fine).
 - [ ] Check search volumes in Google Keyword Planner: "consultant SEO Maroc", "expert SEO Maroc", "خبير سيو", "مستشار SEO".
 - [ ] LinkedIn: headline, About, Featured and Services page rewritten (drafts in chat, 8 Nov 2026).
@@ -112,4 +114,6 @@ Report: `reports/Languages and solo SEO competitors.md` (local only, not in git)
 - **Employer approval:** not yet given. Until it is, nothing that actively seeks clients. Maintenance mode for the site is under discussion.
 - **WordPress websites:** a service he provides. An upcoming case study (a full site he built and optimized) will back it; the client has not signed off yet, so no service page or case study until then.
 - **Industry pages: later, not now.** Only for industries with real experience: clinics and medical spas (medspa audit), SaaS and B2B (SaaS launch, Moroccan B2B), marketplaces (luxury marketplace audit). The law firm page is the model.
+- **Site in portfolio mode** (`OPEN_FOR_WORK = false`): buttons that ask for work are hidden. Since 13 Nov 2026 this also covers the sentences about calls and quotes (homepage, cost FAQs, first-contact FAQ), the `ProfessionalService` schema and the "SEO consultant" description in the `Person` schema. All of it comes back when the constant is set to `true`. The CV download was removed on 13 Nov 2026: the file named clients and was out of date. A new CV can be added back once Mohamed supplies one without client names.
+- **Early December 2026:** Mohamed sends the Search Console export to compare with the August to October baseline.
 - **Blog:** keep a small blog of problem articles tied to one service; LinkedIn gets shorter, different versions that link back (strategy report, 10 Nov 2026).

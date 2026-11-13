@@ -1,3 +1,4 @@
+import { OPEN_FOR_WORK } from "@/lib/constants";
 import { useTranslations } from "next-intl";
 
 type Step = { title: string; desc: string };
@@ -25,7 +26,7 @@ export default function Process() {
                         </li>
                     ))}
                 </ol>
-                <p className="reveal m-0 mt-10 max-w-[680px] text-[17px] text-ink-soft border-s-4 border-forest ps-5">{t("direct")}</p>
+                {OPEN_FOR_WORK && <p className="reveal m-0 mt-10 max-w-[680px] text-[17px] text-ink-soft border-s-4 border-forest ps-5">{t("direct")}</p>}
             </div>
         </section>
     );

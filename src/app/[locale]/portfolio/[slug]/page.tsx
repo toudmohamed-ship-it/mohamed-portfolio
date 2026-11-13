@@ -6,7 +6,7 @@ import { IMAGE_SIZES } from "@/lib/image-sizes";
 import FinalCTA from "@/components/sections/FinalCTA";
 import PageHeader from "@/components/ui/PageHeader";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { BASE_URL, localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
+import { BASE_URL, localizedUrl, pageAlternates, metaTitle, jsonLd } from "@/lib/seo";
 import { SERVICE_PAGES, serviceHref } from "@/lib/services";
 import { OPEN_FOR_WORK } from "@/lib/constants";
 
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props) {
     const description = t.has(`${slug}.seo_description`) ? t(`${slug}.seo_description`) : t(`${slug}.summary`);
 
     return {
-        title,
+        title: metaTitle(title),
         description,
         alternates: pageAlternates(locale, `/portfolio/${slug}`),
         openGraph: {

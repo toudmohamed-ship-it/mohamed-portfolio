@@ -2,7 +2,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import ContactForm from "@/components/ui/ContactForm";
 import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { localizedUrl, pageAlternates } from "@/lib/seo";
+import { localizedUrl, pageAlternates, metaTitle } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props) {
     const c = await getTranslations({ locale, namespace: 'ContactPage.closed' });
 
     return {
-        title: OPEN_FOR_WORK ? t('title') : c('meta_title'),
+        title: metaTitle(OPEN_FOR_WORK ? t('title') : c('meta_title')),
         description: OPEN_FOR_WORK ? t('description') : c('meta_description'),
         openGraph: {
             title: OPEN_FOR_WORK ? t('og_title') : c('meta_title'),

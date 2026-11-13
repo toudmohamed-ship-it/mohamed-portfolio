@@ -2,7 +2,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { Link } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
+import { localizedUrl, pageAlternates, metaTitle, jsonLd } from "@/lib/seo";
 import { SERVICE_PAGES, serviceHref } from "@/lib/services";
 import { OPEN_FOR_WORK } from "@/lib/constants";
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
     const t = await getTranslations({ locale, namespace: 'ServicesPage.metadata' });
 
     return {
-        title: t('title'),
+        title: metaTitle(t('title')),
         description: t('description'),
         openGraph: { title: t('title'), description: t('description'), url: localizedUrl(locale, '/services'), images: ['/og-image.jpg'] },
         alternates: pageAlternates(locale, '/services'),

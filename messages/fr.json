@@ -159,6 +159,7 @@
         "offers": {
             "title": "Ce que je peux faire pour vous",
             "intro": "Trois offres ciblées, avec le suivi pour les prouver : GA4 montre quelles pages vous amènent des clients, pas seulement des visites. Chacune commence par un court appel pour vous dire franchement si elle vous convient.",
+            "intro_closed": "Trois services ciblés, avec le suivi pour les prouver : GA4 montre quelles pages vous amènent des clients, pas seulement des visites.",
             "cta": "Voir tous les services",
             "items": [
                 {
@@ -1053,7 +1054,6 @@
             "professional": "Professionnel (C1)",
             "advanced": "Avancé (B2)"
         },
-        "resume": "Télécharger mon CV",
         "linkedin": "Voir mon profil LinkedIn",
         "photo_alt": "Mohamed Toudghi, consultant SEO"
     },
@@ -1099,7 +1099,7 @@
     "PortfolioPage": {
         "metadata": {
             "title": "Études de cas SEO et résultats",
-            "description": "Sept études de cas SEO avec de vrais chiffres : SEO technique, SEO local, travail on-page et suivi GA4 pour des clients au Royaume-Uni, aux États-Unis et au Maroc.",
+            "description": "Sept études de cas SEO avec de vrais chiffres : SEO technique, SEO local, on-page et suivi GA4 pour des clients au Royaume-Uni, aux États-Unis et au Maroc.",
             "og_title": "Études de cas SEO | Mohamed Toudghi",
             "og_description": "Sept études de cas SEO avec de vrais chiffres, d'une marketplace de 560 K visites à des entreprises de services locales."
         },
@@ -1161,6 +1161,7 @@
     "BlogPosts": {
         "local-seo-guide-businesses": {
             "title": "Le Guide Complet du SEO Local pour les Entreprises de Services",
+            "seo_title": "Le guide complet du SEO local pour entreprises de services",
             "excerpt": "Un guide pratique sur Google Business Profile, les mots-clés locaux et les avis, pour que les clients proches vous trouvent en premier.",
             "date": "12 Déc 2025",
             "category": "SEO Local",
@@ -1168,6 +1169,7 @@
         },
         "technical-seo-checklist-2026": {
             "title": "SEO Technique pour les Entreprises de Services & SaaS: Le Guide Complet",
+            "seo_title": "SEO technique pour entreprises de services et SaaS : guide",
             "excerpt": "Le guide complet du SEO technique pour les sites de génération de leads, B2B et plateformes SaaS.",
             "date": "02 Jan 2026",
             "category": "SEO Technique",
@@ -1441,11 +1443,13 @@
                 },
                 {
                     "question": "Combien de temps dure un audit SEO technique ?",
-                    "answer": "Cela dépend de la taille du site. Un petit site de services s'audite bien plus vite qu'une marketplace de milliers de pages. Vous recevez un délai clair après l'appel gratuit."
+                    "answer": "Cela dépend de la taille du site. Un petit site de services s'audite bien plus vite qu'une marketplace de milliers de pages. Vous recevez un délai clair après l'appel gratuit.",
+                    "answer_closed": "Cela dépend de la taille du site. Un petit site de services s'audite bien plus vite qu'une marketplace de milliers de pages."
                 },
                 {
                     "question": "Combien coûte un audit SEO technique ?",
-                    "answer": "Le prix dépend du nombre de pages, de la plateforme et de si vous voulez que je fasse les corrections. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout travail."
+                    "answer": "Le prix dépend du nombre de pages, de la plateforme et de si vous voulez que je fasse les corrections. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout travail.",
+                    "answer_closed": "Le prix dépend du nombre de pages, de la plateforme et de si vous voulez que je fasse les corrections."
                 },
                 {
                     "question": "Vous signalez seulement les problèmes ou vous les corrigez aussi ?",
@@ -1580,7 +1584,8 @@
                 },
                 {
                     "question": "Combien coûte le SEO local ?",
-                    "answer": "Le prix dépend du nombre d'emplacements et de services. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout travail."
+                    "answer": "Le prix dépend du nombre d'emplacements et de services. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout travail.",
+                    "answer_closed": "Le prix dépend du nombre d'emplacements et de services."
                 },
                 {
                     "question": "Travaillez-vous avec des entreprises au Maroc ?",
@@ -1715,7 +1720,8 @@
                 },
                 {
                     "question": "Combien coûte une configuration GA4 ?",
-                    "answer": "Le prix dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires. Vous recevez un devis fixe après l'appel gratuit de 15 minutes."
+                    "answer": "Le prix dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires. Vous recevez un devis fixe après l'appel gratuit de 15 minutes.",
+                    "answer_closed": "Le prix dépend du nombre d'actions à suivre et du nombre de sites ou de comptes publicitaires."
                 }
             ]
         },
@@ -1843,7 +1849,8 @@
                 },
                 {
                     "question": "Combien coûte le SEO pour un cabinet d'avocats ?",
-                    "answer": "Le prix dépend du nombre de domaines de pratique et de bureaux. Vous recevez un devis fixe après l'appel gratuit de 15 minutes."
+                    "answer": "Le prix dépend du nombre de domaines de pratique et de bureaux. Vous recevez un devis fixe après l'appel gratuit de 15 minutes.",
+                    "answer_closed": "Le prix dépend du nombre de domaines de pratique et de bureaux."
                 },
                 {
                     "question": "Travaillez-vous avec des cabinets hors des États-Unis ?",
@@ -2005,7 +2012,8 @@
         "faqs": [
             {
                 "question": "Combien coûte un consultant SEO au Maroc ?",
-                "answer": "Le prix dépend de la taille du site, du nombre de langues et de villes, et du travail à faire. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout engagement."
+                "answer": "Le prix dépend de la taille du site, du nombre de langues et de villes, et du travail à faire. Vous recevez un devis fixe après l'appel gratuit de 15 minutes, avant tout engagement.",
+                "answer_closed": "Le prix dépend de la taille du site, du nombre de langues et de villes, et du travail à faire."
             },
             {
                 "question": "En combien de temps voit-on des résultats ?",
@@ -2033,7 +2041,8 @@
             },
             {
                 "question": "Comment se passe le premier contact ?",
-                "answer": "Vous m'écrivez par le formulaire ou sur WhatsApp, ou vous réservez un appel gratuit de 15 minutes. Pendant l'appel, on parle de votre site, de vos objectifs et de ce qui peut être amélioré. Je réponds sous 24 heures."
+                "answer": "Vous m'écrivez par le formulaire ou sur WhatsApp, ou vous réservez un appel gratuit de 15 minutes. Pendant l'appel, on parle de votre site, de vos objectifs et de ce qui peut être amélioré. Je réponds sous 24 heures.",
+                "answer_closed": "Vous m'écrivez par le formulaire, sur WhatsApp ou sur LinkedIn. Je réponds sous 24 heures."
             }
         ]
     }

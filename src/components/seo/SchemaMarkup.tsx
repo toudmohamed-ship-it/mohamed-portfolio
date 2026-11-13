@@ -1,4 +1,4 @@
-import { PERSONAL_INFO } from "@/lib/constants";
+import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 import { BASE_URL, jsonLd } from "@/lib/seo";
 import { SERVICE_PAGES } from "@/lib/services";
 
@@ -18,7 +18,10 @@ export default function SchemaMarkup() {
                 "@id": `${BASE_URL}/#person`,
                 name: PERSONAL_INFO.name,
                 jobTitle: PERSONAL_INFO.title,
-                description: "SEO consultant in Morocco, working remotely on technical SEO, local SEO and GA4 tracking for service businesses, B2B and SaaS.",
+                // Portfolio mode describes the person, not a consultant for hire. The consultant wording comes back with OPEN_FOR_WORK.
+                description: OPEN_FOR_WORK
+                    ? "SEO consultant in Morocco, working remotely on technical SEO, local SEO, conversion and GA4 tracking for service businesses, B2B and SaaS."
+                    : "SEO and growth specialist in Morocco, working remotely on technical SEO, local SEO, conversion and GA4 tracking for service businesses, B2B and SaaS.",
                 url: BASE_URL,
                 image: `${BASE_URL}/images/portrait.webp`,
                 email: PERSONAL_INFO.email,
@@ -46,7 +49,8 @@ export default function SchemaMarkup() {
                 publisher: { "@id": `${BASE_URL}/#person` },
                 about: { "@id": `${BASE_URL}/#person` },
             },
-            {
+            // The business and its offer catalog are published only when Mohamed is open for work
+            ...(OPEN_FOR_WORK ? [{
                 "@type": "ProfessionalService",
                 "@id": `${BASE_URL}/#business`,
                 name: "Mohamed Toudghi, SEO Consultant",
@@ -67,7 +71,7 @@ export default function SchemaMarkup() {
                         itemOffered: { "@id": `${BASE_URL}/services/${s.slug}#service` },
                     })),
                 },
-            },
+            }] : []),
         ],
     };
 

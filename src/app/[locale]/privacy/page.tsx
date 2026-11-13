@@ -1,7 +1,7 @@
 import PageHeader from "@/components/ui/PageHeader";
 import { PERSONAL_INFO } from "@/lib/constants";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, localizedUrl } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -13,6 +13,7 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: t('title'),
         description: t('description'),
+        openGraph: { title: t('title'), description: t('description'), url: localizedUrl(locale, '/privacy'), images: ['/og-image.jpg'] },
         alternates: pageAlternates(locale, '/privacy'),
     };
 }

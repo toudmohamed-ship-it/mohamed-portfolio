@@ -159,6 +159,7 @@
         "offers": {
             "title": "What I can do for you",
             "intro": "Three focused offers, with the tracking to prove them: GA4 shows which pages bring you clients, not only visits. Each one starts with a short call so I can tell you honestly if it fits.",
+            "intro_closed": "Three focused services, with the tracking to prove them: GA4 shows which pages bring you clients, not only visits.",
             "cta": "See all services",
             "items": [
                 {
@@ -1054,7 +1055,6 @@
             "professional": "Professional (C1)",
             "advanced": "Advanced (B2)"
         },
-        "resume": "Download my CV",
         "linkedin": "See my LinkedIn profile",
         "photo_alt": "Mohamed Toudghi, SEO consultant"
     },
@@ -1169,6 +1169,7 @@
         },
         "technical-seo-checklist-2026": {
             "title": "Technical SEO for Service Businesses & SaaS: The Complete Framework",
+            "seo_title": "Technical SEO for Service Businesses and SaaS: A Framework",
             "excerpt": "The complete technical SEO framework for lead-generation websites, B2B, and SaaS platforms.",
             "date": "Jan 02, 2026",
             "category": "Technical SEO",
@@ -1442,11 +1443,13 @@
                 },
                 {
                     "question": "How long does a technical SEO audit take?",
-                    "answer": "It depends on the size of the site. A small service website is much quicker to audit than a marketplace with thousands of listing pages. You get a clear timeline after the free call."
+                    "answer": "It depends on the size of the site. A small service website is much quicker to audit than a marketplace with thousands of listing pages. You get a clear timeline after the free call.",
+                    "answer_closed": "It depends on the size of the site. A small service website is much quicker to audit than a marketplace with thousands of listing pages."
                 },
                 {
                     "question": "How much does a technical SEO audit cost?",
-                    "answer": "The price depends on the number of pages, the platform and whether you want me to make the fixes. You get a fixed quote after the free 15-minute call, before any work starts."
+                    "answer": "The price depends on the number of pages, the platform and whether you want me to make the fixes. You get a fixed quote after the free 15-minute call, before any work starts.",
+                    "answer_closed": "The price depends on the number of pages, the platform and whether you want me to make the fixes."
                 },
                 {
                     "question": "Do you only report the problems, or also fix them?",
@@ -1581,7 +1584,8 @@
                 },
                 {
                     "question": "How much does local SEO cost?",
-                    "answer": "The price depends on how many locations and services you have. You get a fixed quote after the free 15-minute call, before any work starts."
+                    "answer": "The price depends on how many locations and services you have. You get a fixed quote after the free 15-minute call, before any work starts.",
+                    "answer_closed": "The price depends on how many locations and services you have."
                 },
                 {
                     "question": "Do you work with businesses in Morocco?",
@@ -1716,7 +1720,8 @@
                 },
                 {
                     "question": "How much does a GA4 setup cost?",
-                    "answer": "The price depends on how many actions you want to track and how many sites or ad accounts are involved. You get a fixed quote after the free 15-minute call."
+                    "answer": "The price depends on how many actions you want to track and how many sites or ad accounts are involved. You get a fixed quote after the free 15-minute call.",
+                    "answer_closed": "The price depends on how many actions you want to track and how many sites or ad accounts are involved."
                 }
             ]
         },
@@ -1844,7 +1849,8 @@
                 },
                 {
                     "question": "How much does SEO for a law firm cost?",
-                    "answer": "The price depends on how many practice areas and locations you have. You get a fixed quote after the free 15-minute call, before any work starts."
+                    "answer": "The price depends on how many practice areas and locations you have. You get a fixed quote after the free 15-minute call, before any work starts.",
+                    "answer_closed": "The price depends on how many practice areas and locations you have."
                 },
                 {
                     "question": "Do you work with law firms outside the U.S.?",
@@ -2006,7 +2012,8 @@
         "faqs": [
             {
                 "question": "How much does an SEO consultant in Morocco cost?",
-                "answer": "The price depends on the size of the site, the number of languages and cities, and the work needed. You get a fixed quote after the free 15-minute call, before you commit to anything."
+                "answer": "The price depends on the size of the site, the number of languages and cities, and the work needed. You get a fixed quote after the free 15-minute call, before you commit to anything.",
+                "answer_closed": "The price depends on the size of the site, the number of languages and cities, and the work needed."
             },
             {
                 "question": "How long does it take to see results?",
@@ -2034,7 +2041,8 @@
             },
             {
                 "question": "How does the first contact work?",
-                "answer": "You write to me through the form or on WhatsApp, or book a free 15-minute call. On the call we talk about your website, your goals and what can be improved. I reply within 24 hours."
+                "answer": "You write to me through the form or on WhatsApp, or book a free 15-minute call. On the call we talk about your website, your goals and what can be improved. I reply within 24 hours.",
+                "answer_closed": "You write to me through the form, on WhatsApp or on LinkedIn. I reply within 24 hours."
             }
         ]
     }

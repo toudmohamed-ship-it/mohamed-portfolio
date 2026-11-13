@@ -13,7 +13,10 @@ export const routing = defineRouting({
 
     // The URL alone decides the language. Without this, a visitor who once opened /fr or /ar
     // (or whose browser prefers French/Arabic) got redirected away from every English link.
-    localeDetection: false
+    localeDetection: false,
+
+    // No language cookie: nothing reads it, since the URL decides the language
+    localeCookie: false
 });
 
 // Lightweight wrappers around Next.js' navigation APIs

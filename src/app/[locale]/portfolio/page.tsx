@@ -3,7 +3,7 @@ import { Link } from "@/i18n/routing";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { CASE_STUDIES } from "@/lib/data";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { localizedUrl, pageAlternates, jsonLd } from "@/lib/seo";
+import { localizedUrl, pageAlternates, metaTitle, jsonLd } from "@/lib/seo";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props) {
     const t = await getTranslations({ locale, namespace: 'PortfolioPage.metadata' });
 
     return {
-        title: t('title'),
+        title: metaTitle(t('title')),
         description: t('description'),
         openGraph: {
             title: t('og_title'),
