@@ -1,4 +1,13 @@
 {
+    "NotFound": {
+        "label": "Erreur 404",
+        "title": "Cette page n'existe pas",
+        "text": "L'adresse est peut-être incorrecte, ou la page a été déplacée. Ces pages existent :",
+        "home": "Aller à l'accueil",
+        "work": "Lire les études de cas",
+        "services": "Voir les services",
+        "blog": "Lire le blog"
+    },
     "Breadcrumbs": {
         "home": "Accueil",
         "blog": "Blog",
@@ -328,8 +337,8 @@
         },
         "uk-compliance-service-audit": {
             "client": "Service de conformité (Royaume-Uni)",
-            "title": "SEO et conversion pour un service de conformité à Londres",
-            "summary": "SEO complet et optimisation des conversions pour un service londonien de mise en conformité des logements locatifs : audit Google Ads, page d'atterrissage repensée, métadonnées de toutes les pages, articles hebdomadaires, fiche Google, citations et backlinks. Conversions de la page principale plus que doublées dès le premier mois.",
+            "title": "SEO et conversion pour un service de conformité britannique",
+            "summary": "SEO complet et optimisation des conversions pour un service britannique de mise en conformité des logements locatifs : audit Google Ads, page d'atterrissage repensée, métadonnées de toutes les pages, articles hebdomadaires, fiche Google, citations et backlinks. Conversions de la page principale plus que doublées dès le premier mois.",
             "tags": "SEO local • CRO • SEO technique",
             "challenge": "Le trafic n'était pas le vrai problème. Les conversions, si. Et derrière ces faibles conversions se cachaient des problèmes techniques qui freinaient aussi les positions.",
             "approach": "En auditant le compte Google Ads, j'ai constaté que la page d'atterrissage qui recevait le trafic payant était mal conçue et pas pensée pour convertir. Une campagne du 23 février au 3 avril 2025 a apporté 625 clics et 45 conversions, soit un taux de conversion d'environ 7 %. J'ai travaillé avec le développeur pour repenser cette page avec des éléments de confiance clairs. Son score PageSpeed mobile est passé de 66 à 93, celui sur ordinateur de 90 à 97, et ses conversions ont plus que doublé dès le premier mois. J'ai fait la recherche de mots-clés dans Semrush et d'autres outils, puis établi la carte des mots-clés principaux, secondaires et des questions pour la page du service principal. J'ai réécrit les titres et méta-descriptions de toutes les pages dans Rank Math, et optimisé 26 pages principales et 20 articles existants. J'ai publié un nouvel article chaque semaine, sur des requêtes de longue traîne, soit 10 nouveaux articles sur la période présentée ici. Avec Screaming Frog et la Google Search Console, j'ai corrigé plus de 10 problèmes critiques, dont des pages bloquées et des liens cassés. J'ai optimisé la fiche Google Business Profile et créé des citations et des backlinks, pour rendre l'entreprise visible sur la carte à Londres.",
@@ -348,7 +357,7 @@
             },
             "seo_title": "Étude de cas SEO local et CRO : service au Royaume-Uni",
             "market": "Royaume-Uni",
-            "seo_description": "SEO et CRO pour un service de conformité à Londres : conversions doublées dès le premier mois, PageSpeed mobile de 66 à 93, 26 pages optimisées.",
+            "seo_description": "SEO et CRO pour un service de conformité britannique : conversions doublées dès le premier mois, PageSpeed mobile de 66 à 93, 26 pages optimisées.",
             "role": "Spécialiste marketing et SEO, à plein temps, au bureau marocain de l'entreprise",
             "period": "Janvier à mai 2025",
             "context": "Le client est une entreprise de services britannique, sur le marché londonien. Son service principal est la mise en conformité de sécurité des logements loués, que les propriétaires recherchent quand ils ont besoin d'un certificat ou d'une inspection. De janvier à mai 2025, j'ai travaillé avec l'entreprise à plein temps depuis son bureau au Maroc, et j'ai pris en charge tout son SEO local ainsi que l'audit Google Ads. Les pages clés avaient du trafic, mais trop peu de visiteurs devenaient des demandes, et l'entreprise n'apparaissait pas sur la carte Google.",

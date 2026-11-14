@@ -2,7 +2,7 @@ import PageHeader from "@/components/ui/PageHeader";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { Link } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { localizedUrl, pageAlternates, metaTitle, jsonLd } from "@/lib/seo";
+import { BASE_URL, localizedUrl, pageAlternates, metaTitle, jsonLd } from "@/lib/seo";
 import { SERVICE_PAGES, serviceHref } from "@/lib/services";
 import { OPEN_FOR_WORK } from "@/lib/constants";
 
@@ -48,7 +48,7 @@ export default async function ServicesPage({ params }: Props) {
         itemListElement: services.map((s, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            item: { "@type": "Service", name: s.title, description: s.description, provider: { "@type": "Person", name: "Mohamed Toudghi" }, areaServed: "Worldwide" },
+            item: { "@type": "Service", name: s.title, description: s.description, provider: { "@id": `${BASE_URL}/#person` } },
         })),
     };
 

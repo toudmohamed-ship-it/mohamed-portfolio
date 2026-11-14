@@ -1,4 +1,13 @@
 {
+    "NotFound": {
+        "label": "Error 404",
+        "title": "This page does not exist",
+        "text": "The address may be wrong, or the page may have moved. These pages do exist:",
+        "home": "Go to the homepage",
+        "work": "Read the case studies",
+        "services": "See the services",
+        "blog": "Read the blog"
+    },
     "Breadcrumbs": {
         "home": "Home",
         "blog": "Blog",
@@ -329,10 +338,10 @@
         "uk-compliance-service-audit": {
             "client": "UK Compliance Service",
             "title": "SEO & Conversion Optimization for a UK Service Business",
-            "summary": "Full SEO and conversion work for a London landlord safety compliance service: Google Ads audit, a redesigned landing page, every page's metadata, weekly articles, Google Business Profile, citations and backlinks. Conversions on the main page more than doubled in the first month.",
+            "summary": "Full SEO and conversion work for a UK property compliance service: Google Ads audit, a redesigned landing page, every page's metadata, weekly articles, Google Business Profile, citations and backlinks. Conversions on the main page more than doubled in the first month.",
             "tags": "Local SEO • CRO • Technical SEO",
             "challenge": "Traffic was not the main problem. Conversions were. And behind the low conversions sat a set of technical issues that also held rankings back.",
-            "approach": "Ran a focused campaign for the main landlord safety service. Designed a dedicated landing page with clear trust signals, improving Mobile PageSpeed to 93. Optimized 26 core pages and 20 existing blog posts, while publishing 10 new long-tail keyword articles. Fixed 10+ critical technical issues (blocked pages, broken links) using Screaming Frog and GSC.",
+            "approach": "Ran a focused campaign for the main compliance service. Designed a dedicated landing page with clear trust signals, improving Mobile PageSpeed to 93. Optimized 26 core pages and 20 existing blog posts, while publishing 10 new long-tail keyword articles. Fixed 10+ critical technical issues (blocked pages, broken links) using Screaming Frog and GSC.",
             "results": {
                 "0": "Conversions > doubled in Month 1 (High-traffic service page)",
                 "1": "PageSpeed: Mobile 66 → 93, Desktop 90 → 97",
@@ -348,7 +357,7 @@
             },
             "seo_title": "Local SEO and CRO Case Study: UK Service Business",
             "market": "United Kingdom",
-            "context": "The client is a UK service business in the London market. Its main service is landlord safety compliance, which property owners search for when they need a certificate or an inspection. From January to May 2025 I worked with the business full-time from its office in Morocco, and handled all its local SEO, plus the Google Ads audit. The site had traffic on its key pages, but too few of those visitors became enquiries, and the business did not appear in the local map results.",
+            "context": "The client is a UK service business in the London market. Its main service is safety compliance for rental properties, which property owners search for when they need a certificate or an inspection. From January to May 2025 I worked with the business full-time from its office in Morocco, and handled all its local SEO, plus the Google Ads audit. The site had traffic on its key pages, but too few of those visitors became enquiries, and the business did not appear in the local map results.",
             "problems": [
                 {
                     "title": "1,170 crawled pages with “no response” errors",
@@ -402,7 +411,7 @@
                 "Paid and organic search help each other. The Google Ads audit is what revealed the weak landing page, and the fix improved results for both.",
                 "Local SEO is many small jobs done every week: metadata, articles, profile, citations and links. Consistency is what makes it work."
             ],
-            "seo_description": "SEO and CRO for a London compliance service: conversions doubled in month one, mobile PageSpeed 66 to 93, 26 pages and 20 posts optimized.",
+            "seo_description": "SEO and CRO for a UK compliance service: conversions doubled in month one, mobile PageSpeed 66 to 93, 26 pages and 20 posts optimized.",
             "role": "Marketing and SEO specialist, full-time, at the company's Morocco office",
             "period": "January to May 2025"
         },

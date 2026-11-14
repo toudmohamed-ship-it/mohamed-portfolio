@@ -6,6 +6,24 @@ const isPreview = process.env.VERCEL_ENV === 'preview';
 
 const withNextIntl = createNextIntlPlugin();
 
+// Content-Security-Policy for the production site. Next.js needs inline scripts and styles (no nonces on static pages),
+// so the value of this header is in what it blocks: other script hosts, plugins, framing, and forms posting elsewhere.
+// Allowed outside hosts: Google Analytics (loaded by Analytics.tsx) and Formspree (the contact form).
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://formspree.io",
+  "form-action 'self' https://formspree.io",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "object-src 'none'",
+].join('; ');
+// Not in development (Next.js dev tools need eval) and not on Vercel previews (their toolbar loads from vercel.live)
+const useCsp = process.env.NODE_ENV === 'production' && !isPreview;
+
 const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
@@ -35,6 +53,7 @@ const nextConfig: NextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
+          ...(useCsp ? [{ key: 'Content-Security-Policy', value: CSP }] : []),
           ...(isPreview ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] : []),
         ],
       },
