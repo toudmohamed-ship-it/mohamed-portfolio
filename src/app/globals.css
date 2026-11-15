@@ -184,7 +184,7 @@ html[lang="ar"] em, html[lang="ar"] i {
 .cur-dot { width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; background: var(--cur, #2E6B57); transition: background-color .5s ease, opacity .3s ease; }
 [data-cur~="on"] .cur-ring { opacity: .9; }
 [data-cur~="on"] .cur-dot { opacity: 1; }
-/* Size changes use the scale property (48px and 22px from the 28px ring), which combines with the transform set in JS */
+/* Size changes use the scale property (48px and 22px from the 28px ring), and the position set in JS uses translate so it is not scaled too */
 [data-cur~="hot"] .cur-ring { scale: 1.714; background: var(--curfill, rgba(46, 107, 87, .12)); border-color: transparent; }
 [data-cur~="hot"] .cur-dot { opacity: 0; }
 [data-cur~="down"] .cur-ring { scale: .786; }

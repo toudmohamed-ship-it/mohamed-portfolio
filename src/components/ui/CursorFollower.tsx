@@ -30,7 +30,9 @@ export default function CursorFollower() {
         const tick = () => {
             s.rx += (s.x - s.rx) * 0.18;
             s.ry += (s.y - s.ry) * 0.18;
-            if (ringRef.current) ringRef.current.style.transform = `translate3d(${s.rx.toFixed(1)}px, ${s.ry.toFixed(1)}px, 0)`;
+            // The ring moves with the translate property, not transform: the CSS scale used for its hover size
+            // is applied after translate but before transform, so a transform would be scaled along with the ring.
+            if (ringRef.current) ringRef.current.style.translate = `${s.rx.toFixed(1)}px ${s.ry.toFixed(1)}px`;
             if (dotRef.current) dotRef.current.style.transform = `translate3d(${s.x}px, ${s.y}px, 0)`;
             raf = Math.abs(s.x - s.rx) + Math.abs(s.y - s.ry) > 0.2 ? requestAnimationFrame(tick) : 0;
         };
