@@ -66,7 +66,17 @@
 /* Arabic script needs more line height than Latin. Unlayered so it beats the leading-* utilities. */
 html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
   line-height: 1.35;
+}
+
+/* Any letter spacing pulls joined Arabic letters apart, so none anywhere on /ar (beats the tracking-* utilities). */
+html[lang="ar"] * {
   letter-spacing: 0;
+}
+
+/* Arabic has no italic: the browser only slants the letters. Emphasis by weight instead. */
+html[lang="ar"] em, html[lang="ar"] i {
+  font-style: normal;
+  font-weight: 600;
 }
 
 /* Utilities */
@@ -76,7 +86,7 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 {
 
 /* Kept for inner pages: now a plain white card instead of glassmorphism */
 @utility glass {
-  @apply bg-white border border-line shadow-premium transition-all duration-300;
+  @apply bg-white border border-line shadow-premium transition-colors duration-300;
 }
 
 @utility glass-dark {

@@ -143,7 +143,7 @@ export default function Hero() {
                             </div>
                             <div className="min-w-0">
                                 <div className="text-[13px] text-muted">{t("clicks")}</div>
-                                <div className="text-[32px] font-semibold tracking-tight leading-tight">+130%</div>
+                                <div className="text-[32px] font-semibold tracking-tight leading-tight"><bdi dir="ltr">+130%</bdi></div>
                                 <div className="sr-only">32 → 74</div>
                             </div>
                         </div>
