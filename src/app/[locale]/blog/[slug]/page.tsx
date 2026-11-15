@@ -84,6 +84,9 @@ function loadPost(slug: string, locale: string, fallback: () => string) {
         if (fs.existsSync(localizedMetaPath)) {
             const localized = JSON.parse(fs.readFileSync(localizedMetaPath, "utf-8"));
             meta = { ...meta, ...localized, faqs: localized.faqs || meta.faqs };
+        } else if (locale !== "en" && !fs.existsSync(contentPath)) {
+            // Summary version with no translated FAQs: show none instead of the English ones
+            meta = { ...meta, faqs: [] };
         }
     } catch (e) {
         console.error(`Error reading blog files for ${slug}/${locale}:`, e);

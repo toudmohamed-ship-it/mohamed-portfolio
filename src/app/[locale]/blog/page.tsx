@@ -111,13 +111,13 @@ export default async function BlogPage({ params }: Props) {
                             { href: '/about', label: tNav('about') },
                         ].map((l) => (
                             <li key={l.href} className="border-b border-line">
-                                <Link href={l.href} className="row-link flex justify-between items-center px-5 py-3 text-ink no-underline hover:text-ink">
+                                <Link href={l.href} className="row-link [--row-bleed:0px] flex justify-between items-center px-5 py-3 text-ink no-underline hover:text-ink">
                                     {l.label} <span className="arrow" aria-hidden="true">→</span>
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="row-link flex justify-between items-center px-5 py-3 text-ink no-underline hover:text-ink">
+                            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="row-link [--row-bleed:0px] flex justify-between items-center px-5 py-3 text-ink no-underline hover:text-ink">
                                 LinkedIn <span className="arrow" aria-hidden="true">→</span>
                             </a>
                         </li>

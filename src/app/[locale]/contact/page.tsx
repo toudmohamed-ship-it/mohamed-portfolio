@@ -50,7 +50,7 @@ export default async function ContactPage({ params }: Props) {
             />
 
             <section className="container-custom py-14 md:py-20 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-16 items-start">
-                <div className="flex flex-col gap-12">
+                <div className="min-w-0 flex flex-col gap-12">
                     {OPEN_FOR_WORK && <section id="mini-audit" aria-labelledby="mini-audit-title" className="scroll-mt-24 bg-sage border border-sage-mid rounded-[20px] p-6 md:p-7 flex flex-col gap-4">
                         <h2 id="mini-audit-title" className="m-0 text-2xl font-semibold">{t('mini_audit.title')}</h2>
                         <ul className="list-none m-0 p-0 flex flex-col gap-3">

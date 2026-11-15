@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 import { getTranslations } from "next-intl/server";
 import Logo from "./Logo";
 
@@ -50,7 +50,7 @@ export default async function Footer() {
             </div>
             <div className="border-t border-line">
                 <div className="container-custom py-6 flex flex-wrap justify-between gap-4 text-sm text-muted">
-                    <p className="m-0">© {new Date().getFullYear()} Mohamed Toudghi · {t("bottom")}</p>
+                    <p className="m-0">© {new Date().getFullYear()} Mohamed Toudghi · {t(OPEN_FOR_WORK ? "bottom" : "bottom_closed")}</p>
                     <Link href="/privacy" className="navlink text-muted hover:text-ink no-underline">{t("privacy")}</Link>
                 </div>
             </div>

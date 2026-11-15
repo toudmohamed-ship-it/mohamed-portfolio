@@ -1155,6 +1155,7 @@
         "author": {
             "label": "Written by",
             "bio": "SEO consultant based in Morocco. I work remotely on technical SEO, local SEO and GA4 tracking for service businesses in the UK, the U.S. and Morocco.",
+            "bio_closed": "SEO and growth specialist based in Morocco. I work remotely on technical SEO, local SEO and GA4 tracking for service businesses in the UK, the U.S. and Morocco.",
             "more": "About me"
         },
         "serp": {
@@ -1297,6 +1298,7 @@
         "pages": "Pages",
         "contact": "Contact",
         "bottom": "SEO consultant, Morocco",
+        "bottom_closed": "SEO and growth specialist, Morocco",
         "privacy": "Privacy",
         "morocco": "SEO consultant in Morocco"
     },

@@ -73,6 +73,11 @@ html[lang="ar"] * {
   letter-spacing: 0;
 }
 
+/* Arabic reads smaller than Latin at the same size: small labels are never under 13px on /ar. */
+html[lang="ar"] .text-xs, html[lang="ar"] .text-\[11px\], html[lang="ar"] .text-\[12px\] {
+  font-size: 13px;
+}
+
 /* Arabic has no italic: the browser only slants the letters. Emphasis by weight instead. */
 html[lang="ar"] em, html[lang="ar"] i {
   font-style: normal;
@@ -135,6 +140,8 @@ html[lang="ar"] em, html[lang="ar"] i {
 .marquee { display: flex; width: max-content; animation: drift 40s linear infinite; }
 /* In RTL the list starts at the right edge and overflows to the left, so it has to move right to loop */
 [dir="rtl"] .marquee { animation-name: drift-rtl; }
+/* Moving text needs a way to stop it: it pauses under the pointer or a touch */
+.marquee:hover, .marquee:active { animation-play-state: paused; }
 
 /* Rotating word in the hero. The box is sized by the longest word (an invisible ::after, not real text),
    so swapping words never moves the rest of the headline (no layout shift). */
@@ -149,10 +156,14 @@ html[lang="ar"] em, html[lang="ar"] i {
 /* Skip layout and paint for sections below the first screen until they are near the viewport (cuts initial style/layout work) */
 .cv { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 
-.lift { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
-.lift:hover { transform: translateY(-4px); border-color: #C9C2B4; box-shadow: 0 14px 34px -20px rgba(28, 35, 33, .4); }
-.row-link { transition: background-color .25s ease, padding .3s ease; }
-.row-link:hover { background: var(--color-paper); padding-inline: 16px; }
+/* Hover shadow and row highlight sit on pseudo-elements and fade with opacity, so nothing repaints or reflows per frame */
+.lift { position: relative; transition: transform .3s ease, border-color .3s ease; }
+.lift::after { content: ""; position: absolute; inset: -1px; border-radius: inherit; box-shadow: 0 14px 34px -20px rgba(28, 35, 33, .4); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+.lift:hover { transform: translateY(-4px); border-color: #C9C2B4; }
+.lift:hover::after { opacity: 1; }
+.row-link { position: relative; isolation: isolate; }
+.row-link::before { content: ""; position: absolute; inset: 0 var(--row-bleed, -16px); z-index: -1; border-radius: 12px; background: var(--color-paper); opacity: 0; transition: opacity .25s ease; }
+.row-link:hover::before { opacity: 1; }
 .arrow { display: inline-block; transition: transform .25s ease; }
 .row-link:hover .arrow, .btn:hover .arrow { transform: translateX(5px); }
 [dir="rtl"] .arrow { transform: scaleX(-1); }
@@ -169,20 +180,21 @@ html[lang="ar"] em, html[lang="ar"] i {
 
 /* Cursor follower: small dot + easing ring; colour follows the section, grows over clickable things */
 .cur-ring, .cur-dot { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 100; border-radius: 999px; opacity: 0; }
-.cur-ring { width: 28px; height: 28px; margin: -14px 0 0 -14px; border: 1.5px solid var(--cur, #2E6B57); transition: width .35s cubic-bezier(.2, .7, .2, 1), height .35s cubic-bezier(.2, .7, .2, 1), margin .35s cubic-bezier(.2, .7, .2, 1), background-color .35s ease, border-color .5s ease, opacity .4s ease; }
+.cur-ring { width: 28px; height: 28px; margin: -14px 0 0 -14px; border: 1.5px solid var(--cur, #2E6B57); transition: scale .35s cubic-bezier(.2, .7, .2, 1), background-color .35s ease, border-color .5s ease, opacity .4s ease; }
 .cur-dot { width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; background: var(--cur, #2E6B57); transition: background-color .5s ease, opacity .3s ease; }
 [data-cur~="on"] .cur-ring { opacity: .9; }
 [data-cur~="on"] .cur-dot { opacity: 1; }
-[data-cur~="hot"] .cur-ring { width: 48px; height: 48px; margin: -24px 0 0 -24px; background: var(--curfill, rgba(46, 107, 87, .12)); border-color: transparent; }
+/* Size changes use the scale property (48px and 22px from the 28px ring), which combines with the transform set in JS */
+[data-cur~="hot"] .cur-ring { scale: 1.714; background: var(--curfill, rgba(46, 107, 87, .12)); border-color: transparent; }
 [data-cur~="hot"] .cur-dot { opacity: 0; }
-[data-cur~="down"] .cur-ring { width: 22px; height: 22px; margin: -11px 0 0 -11px; }
+[data-cur~="down"] .cur-ring { scale: .786; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .in, .js .reveal, .js .bar, .js .typed, .js .marker-track, .js .underline-draw path { animation: none !important; }
   .js .typed { clip-path: none; border-inline-end-color: transparent; }
   .breathe::after, .marquee { animation: none; }
-  .lift, .row-link, .btn { transition: none; }
+  .lift, .lift::after, .row-link::before, .btn { transition: none; }
   .cur-ring, .cur-dot { display: none; }
 }
 

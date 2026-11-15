@@ -48,7 +48,7 @@ export default function BlogSerp({ posts, questions, labels }: { posts: SerpPost
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder={labels.placeholder}
-                        className="flex-1 min-w-0 bg-transparent outline-none text-[16px] text-ink placeholder:text-[#7B847F] [&::-webkit-search-cancel-button]:hidden"
+                        className="flex-1 min-w-0 bg-transparent outline-none text-[16px] text-ink placeholder:text-muted [&::-webkit-search-cancel-button]:hidden"
                     />
                     {query && (
                         <button type="button" onClick={() => setQuery("")} aria-label={labels.clear} className="w-8 h-8 rounded-full flex items-center justify-center text-muted hover:text-ink hover:bg-paper">

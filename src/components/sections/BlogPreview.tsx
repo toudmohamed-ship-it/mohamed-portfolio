@@ -28,7 +28,7 @@ export default function BlogPreview() {
                         href={`/blog/${post.slug}`}
                         className="reveal lift bg-white border border-line rounded-2xl p-[26px] flex flex-col gap-3 text-ink no-underline hover:text-ink"
                     >
-                        <span className="font-mono text-xs text-forest">{post.category}</span>
+                        <span className="font-mono text-xs text-forest">{tPosts(`${post.slug}.category`)}</span>
                         <span className="text-[19px] font-semibold leading-snug">{tPosts(`${post.slug}.title`)}</span>
                         <span className="text-[15px] text-muted">{tPosts(`${post.slug}.excerpt`)}</span>
                     </Link>

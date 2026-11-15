@@ -1154,6 +1154,7 @@
         "author": {
             "label": "Écrit par",
             "bio": "Consultant SEO basé au Maroc. Je travaille à distance sur le SEO technique, le SEO local et le suivi GA4 pour des entreprises de services au Royaume-Uni, aux États-Unis et au Maroc.",
+            "bio_closed": "Spécialiste SEO et croissance basé au Maroc. Je travaille à distance sur le SEO technique, le SEO local et le suivi GA4 pour des entreprises de services au Royaume-Uni, aux États-Unis et au Maroc.",
             "more": "À propos"
         },
         "serp": {
@@ -1297,6 +1298,7 @@
         "pages": "Pages",
         "contact": "Contact",
         "bottom": "Consultant SEO, Maroc",
+        "bottom_closed": "Spécialiste SEO et croissance, Maroc",
         "privacy": "Confidentialité",
         "morocco": "Consultant SEO au Maroc"
     },

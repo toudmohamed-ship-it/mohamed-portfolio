@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
-import { PERSONAL_INFO } from "@/lib/constants";
+import { PERSONAL_INFO, OPEN_FOR_WORK } from "@/lib/constants";
 
 export default async function AuthorBio({ locale }: { locale: string }) {
     const t = await getTranslations({ locale, namespace: "BlogPage.author" });
@@ -12,7 +12,7 @@ export default async function AuthorBio({ locale }: { locale: string }) {
             <div className="flex-[1_1_280px] min-w-0 flex flex-col gap-1.5">
                 <span className="font-mono text-xs text-forest">{t("label")}</span>
                 <span className="text-lg font-semibold">Mohamed Toudghi</span>
-                <p className="m-0 text-[15px] text-muted">{t("bio")}</p>
+                <p className="m-0 text-[15px] text-muted">{t(OPEN_FOR_WORK ? "bio" : "bio_closed")}</p>
                 <span className="flex flex-wrap gap-5 pt-1 text-[15px]">
                     <Link href="/about" className="navlink no-underline font-medium">{t("more")}</Link>
                     <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="navlink no-underline font-medium">LinkedIn</a>
